@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="SelectPie" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <PieChart id="PieChart00" taborder="0" left="0" top="0" bottom="0" right="0" binddataset="gdsCountryLitres" categorycolumn="bind:country">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Exploding Pie Slice by select",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Pie Chart",
+		"subtextalign": "right",
+		"subtextcolor": "gray",
+		"subtextfont": "italic 8/normal \"Arial\""
+	},
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": "60",
+			"itemtextvisible": true,
+			"itemtextfont": "bold 10pt \"Arial\",\"맑은 고딕\"",
+			"valuecolumn": "bind:value",
+			"fillstyle": "#1abd9c,#1a85be,#1a67bf,#1a4cbf,#641ac0,#9a1ac0,#c2251b,#c2541b,#c2911d,#21c34d",
+			"itemtexttype": "text",
+			"selectindent": "20",
+			"selectcolumn": "bind:select",
+			"selectopacity": "0.7",
+			"itemtextguidelinestyle": "1px solid darkgray",
+			"itemtextguideopacity": "1",
+			"itemtextguidesize": "20",
+			"itemtext": "expr:country +  \": \" + (value/dataset.getSum(\"value\")*100).toFixed(2) + \"%\"",
+			"opacity": "0.8",
+			"linestyle": "1px solid white",
+			"selectlinestyle": "1px solid white",
+			"highlightfillstyle": "yellow",
+			"highlightopacity": "0.5",
+			"highlightvisible": "true",
+			"selecttype": "bind"
+		}
+	]
+}]]></Contents>
+        </PieChart>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

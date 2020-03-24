@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commCalendarCustomPopDiv" left="0" top="0" width="304" height="307" titletext="Base2" onload="Grid_Calendar_onload" background="white">
+    <Layouts>
+      <Layout>
+        <Div id="divCal" taborder="2" left="1" top="1" text="Div00" style="border:1 solid blue ;" visible="true" right="0" bottom="2">
+          <Layouts>
+            <Layout>
+              <Grid id="grdCal" taborder="0" binddataset="dsCalendar" useinputpanel="false" selecttype="cell" autofittype="col" left="2" top="42" right="3" bottom="0" cssclass="grd_calGrd" oncellclick="divCal_grdCal_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="23"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="Sun"/>
+                      <Cell col="1" text="Mon"/>
+                      <Cell col="2" text="Tue"/>
+                      <Cell col="3" text="Wed"/>
+                      <Cell col="4" text="Thu"/>
+                      <Cell col="5" text="Fri"/>
+                      <Cell col="6" text="Sat"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell style="color:red;color2:red;" text="bind:cal0"/>
+                      <Cell col="1" text="bind:cal1"/>
+                      <Cell col="2" text="bind:cal2"/>
+                      <Cell col="3" text="bind:cal3"/>
+                      <Cell col="4" text="bind:cal4"/>
+                      <Cell col="5" text="bind:cal5"/>
+                      <Cell col="6" style="color:blue;color2:blue;" text="bind:cal6"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btnNext" taborder="2" top="11" height="23" right="29" width="23" cssclass="btn_WF_calendarNext" onclick="divCal_btnNext_onclick"/>
+              <Button id="btnYearNext" taborder="5" top="11" height="23" right="4" width="23" cssclass="btn_WF_calendarL" onclick="divCal_btnYearNext_onclick"/>
+              <Button id="btnPrev" taborder="6" left="28" top="11" width="23" height="23" cssclass="btn_WF_calendarPrev" onclick="divCal_btnPrev_onclick"/>
+              <Button id="btnYearPrev" taborder="7" top="11" width="23" height="23" left="3" cssclass="btn_WF_calendarF" onclick="divCal_btnYearPrev_onclick"/>
+              <Combo id="cboYear" taborder="8" text="Combo00" left="19.13%" top="10" right="51.34%" height="25" onitemchanged="Combo_onitemchanged" innerdataset="dsYear" codecolumn="Column0" datacolumn="Column1" type="search" autoselect="true" cssclass="cmb_basic01"/>
+              <Combo id="cboMonth" taborder="9" text="Combo00" left="51.01%" top="10" right="19.46%" height="25" innerdataset="dsMonth" codecolumn="Column0" datacolumn="Column1" type="search" autoselect="false" cssclass="cmb_basic01" onitemchanged="Combo_onitemchanged"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCalendar" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cal0" type="STRING" size="256"/>
+          <Column id="cal1" type="STRING" size="256"/>
+          <Column id="cal2" type="STRING" size="256"/>
+          <Column id="cal3" type="STRING" size="256"/>
+          <Column id="cal4" type="STRING" size="256"/>
+          <Column id="cal5" type="STRING" size="256"/>
+          <Column id="cal6" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsYear">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1900</Col>
+            <Col id="Column1">1900</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1901</Col>
+            <Col id="Column1">1901</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1902</Col>
+            <Col id="Column1">1902</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1903</Col>
+            <Col id="Column1">1903</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1904</Col>
+            <Col id="Column1">1904</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1905</Col>
+            <Col id="Column1">1905</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1906</Col>
+            <Col id="Column1">1906</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1907</Col>
+            <Col id="Column1">1907</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1908</Col>
+            <Col id="Column1">1908</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1909</Col>
+            <Col id="Column1">1909</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1910</Col>
+            <Col id="Column1">1910</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1911</Col>
+            <Col id="Column1">1911</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1912</Col>
+            <Col id="Column1">1912</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1913</Col>
+            <Col id="Column1">1913</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1914</Col>
+            <Col id="Column1">1914</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1915</Col>
+            <Col id="Column1">1915</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1916</Col>
+            <Col id="Column1">1916</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1917</Col>
+            <Col id="Column1">1917</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1918</Col>
+            <Col id="Column1">1918</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1919</Col>
+            <Col id="Column1">1919</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1920</Col>
+            <Col id="Column1">1920</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1921</Col>
+            <Col id="Column1">1921</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1922</Col>
+            <Col id="Column1">1922</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1923</Col>
+            <Col id="Column1">1923</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1924</Col>
+            <Col id="Column1">1924</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1925</Col>
+            <Col id="Column1">1925</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1926</Col>
+            <Col id="Column1">1926</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1927</Col>
+            <Col id="Column1">1927</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1928</Col>
+            <Col id="Column1">1928</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1929</Col>
+            <Col id="Column1">1929</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1930</Col>
+            <Col id="Column1">1930</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1931</Col>
+            <Col id="Column1">1931</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1932</Col>
+            <Col id="Column1">1932</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1933</Col>
+            <Col id="Column1">1933</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1934</Col>
+            <Col id="Column1">1934</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1935</Col>
+            <Col id="Column1">1935</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1936</Col>
+            <Col id="Column1">1936</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1937</Col>
+            <Col id="Column1">1937</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1938</Col>
+            <Col id="Column1">1938</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1939</Col>
+            <Col id="Column1">1939</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1940</Col>
+            <Col id="Column1">1940</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1941</Col>
+            <Col id="Column1">1941</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1942</Col>
+            <Col id="Column1">1942</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1943</Col>
+            <Col id="Column1">1943</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1944</Col>
+            <Col id="Column1">1944</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1945</Col>
+            <Col id="Column1">1945</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1946</Col>
+            <Col id="Column1">1946</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1947</Col>
+            <Col id="Column1">1947</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1948</Col>
+            <Col id="Column1">1948</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1949</Col>
+            <Col id="Column1">1949</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1950</Col>
+            <Col id="Column1">1950</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1951</Col>
+            <Col id="Column1">1951</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1952</Col>
+            <Col id="Column1">1952</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1953</Col>
+            <Col id="Column1">1953</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1954</Col>
+            <Col id="Column1">1954</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1955</Col>
+            <Col id="Column1">1955</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1956</Col>
+            <Col id="Column1">1956</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1957</Col>
+            <Col id="Column1">1957</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1958</Col>
+            <Col id="Column1">1958</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1959</Col>
+            <Col id="Column1">1959</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1960</Col>
+            <Col id="Column1">1960</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1961</Col>
+            <Col id="Column1">1961</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1962</Col>
+            <Col id="Column1">1962</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1963</Col>
+            <Col id="Column1">1963</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1964</Col>
+            <Col id="Column1">1964</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1965</Col>
+            <Col id="Column1">1965</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1966</Col>
+            <Col id="Column1">1966</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1967</Col>
+            <Col id="Column1">1967</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1968</Col>
+            <Col id="Column1">1968</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1969</Col>
+            <Col id="Column1">1969</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1970</Col>
+            <Col id="Column1">1970</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1971</Col>
+            <Col id="Column1">1971</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1972</Col>
+            <Col id="Column1">1972</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1973</Col>
+            <Col id="Column1">1973</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1974</Col>
+            <Col id="Column1">1974</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1975</Col>
+            <Col id="Column1">1975</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1976</Col>
+            <Col id="Column1">1976</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1977</Col>
+            <Col id="Column1">1977</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1978</Col>
+            <Col id="Column1">1978</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1979</Col>
+            <Col id="Column1">1979</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1980</Col>
+            <Col id="Column1">1980</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1981</Col>
+            <Col id="Column1">1981</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1982</Col>
+            <Col id="Column1">1982</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1983</Col>
+            <Col id="Column1">1983</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1984</Col>
+            <Col id="Column1">1984</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1985</Col>
+            <Col id="Column1">1985</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1986</Col>
+            <Col id="Column1">1986</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1987</Col>
+            <Col id="Column1">1987</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1988</Col>
+            <Col id="Column1">1988</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1989</Col>
+            <Col id="Column1">1989</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1990</Col>
+            <Col id="Column1">1990</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1991</Col>
+            <Col id="Column1">1991</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1992</Col>
+            <Col id="Column1">1992</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1993</Col>
+            <Col id="Column1">1993</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1994</Col>
+            <Col id="Column1">1994</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1995</Col>
+            <Col id="Column1">1995</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1996</Col>
+            <Col id="Column1">1996</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1997</Col>
+            <Col id="Column1">1997</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1998</Col>
+            <Col id="Column1">1998</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1999</Col>
+            <Col id="Column1">1999</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2000</Col>
+            <Col id="Column1">2000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2001</Col>
+            <Col id="Column1">2001</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2002</Col>
+            <Col id="Column1">2002</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2003</Col>
+            <Col id="Column1">2003</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2004</Col>
+            <Col id="Column1">2004</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2005</Col>
+            <Col id="Column1">2005</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2006</Col>
+            <Col id="Column1">2006</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2007</Col>
+            <Col id="Column1">2007</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2008</Col>
+            <Col id="Column1">2008</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2009</Col>
+            <Col id="Column1">2009</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">2010</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">2011</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">2012</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">2013</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">2014</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">2015</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">2016</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">2017</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">2018</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2019</Col>
+            <Col id="Column1">2019</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2020</Col>
+            <Col id="Column1">2020</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2021</Col>
+            <Col id="Column1">2021</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2022</Col>
+            <Col id="Column1">2022</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2023</Col>
+            <Col id="Column1">2023</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2024</Col>
+            <Col id="Column1">2024</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2025</Col>
+            <Col id="Column1">2025</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2026</Col>
+            <Col id="Column1">2026</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2027</Col>
+            <Col id="Column1">2027</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2028</Col>
+            <Col id="Column1">2028</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2029</Col>
+            <Col id="Column1">2029</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2030</Col>
+            <Col id="Column1">2030</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2031</Col>
+            <Col id="Column1">2031</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2032</Col>
+            <Col id="Column1">2032</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2033</Col>
+            <Col id="Column1">2033</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2034</Col>
+            <Col id="Column1">2034</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2035</Col>
+            <Col id="Column1">2035</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2036</Col>
+            <Col id="Column1">2036</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2037</Col>
+            <Col id="Column1">2037</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2038</Col>
+            <Col id="Column1">2038</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2039</Col>
+            <Col id="Column1">2039</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2040</Col>
+            <Col id="Column1">2040</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2041</Col>
+            <Col id="Column1">2041</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMonth">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">4</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">5</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">6</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+            <Col id="Column1">7</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">8</Col>
+            <Col id="Column1">8</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">9</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+            <Col id="Column1">10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">11</Col>
+            <Col id="Column1">11</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">12</Col>
+            <Col id="Column1">12</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    component > 확장컴포넌트 - 사용자 달력 컴포넌트
+*  @FileName    commCalendarCustomPopDiv.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/14
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/14          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.select_day;
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.Grid_Calendar_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var date = new Date();
+	
+	this.divCal.form.cboYear.set_value(date.getYear());
+	this.divCal.form.cboMonth.set_value(date.getMonth()+1);
+	
+	this.select_day = date.getDate();
+	
+	this.fnReSetCalendar();
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnGetDatePosition : Grid Calendar Common function
+* @param {object}  ds	- Dataset to explore
+* @param {object}  today	- Date
+* @return : {array} - [0]:Location of Dataset , [1]:Grid cell's location
+* @example :  
+*/
+this.fnGetDatePosition = function(ds, today)
+{
+	var i;
+	
+	for (i = 0 ; i <= 6 ; i++)
+	{
+		var idx = this.dsCalendar.findRowExpr("cal"+i+" == '"+nexacro.toNumber(today)+"'");
+		
+		if (idx >= 0) {
+			return [idx,i]; 
+		}
+	}
+	
+	return [-1,-1];
+}
+
+/**
+* fnSetGridPos : 선택된 날짜 달력 그리드에 표시
+* @param {array}  arr	- 선택된 날짜 정보
+* @return : N/A
+* @example :  
+*/
+this.fnSetGridPos = function(arr)
+{
+	if (arr[0] >= 0) {
+		this.dsCalendar.set_rowposition(arr[0]);
+		this.divCal.form.grdCal.setCellPos(arr[1]);
+	} else {
+		this.dsCalendar.set_rowposition(0);
+		this.divCal.form.grdCal.setCellPos(0);
+	}
+}
+
+/**
+* fnReSetCalendar : 달력정보를 초기화한다.
+* @param {String}  str	- YYYYMMDD
+* @return : N/A
+* @example :  
+*/
+this.fnReSetCalendar = function(str)
+{
+	var dataset = this.divCal.form.grdCal.getBindDataset();
+	
+	if (str)
+	{
+		this.divCal.form.cboYear.set_value(str.substr(0,4));
+		this.divCal.form.cboMonth.set_value(nexacro.toNumber(str.substr(4,2)));
+		this.select_day = str.substr(6,2);
+	}
+	
+
+	var str = this.divCal.form.cboYear.value +""+ this.divCal.form.cboMonth.value;
+	
+	dataset.set_rowposition(0);
+	
+	this.fnInitCalendarGrid(dataset, str);
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+* fnGetDate : 선택된 date 정보를 return
+* @param {String}  format	- YYYYMMDD
+* @return : {Function} 선택된 날짜 format에 맞는 string
+* @example :  
+*/
+this.fnGetDate = function(format)
+{
+	var date = new Date(this.divCal.form.cboYear.value ,this.divCal.form.cboMonth.value-1 ,this.select_day);
+	
+	if (format) {
+		return this.fnToFormatString(date, format);
+	} else {
+		return this.fnToFormatString(date, "Y-m-d");
+	}
+}
+
+
+/**
+* fnInitCalendarGrid : 년월 정보를 이용해서 그리드에 달력을 표시하는 데이터셋을 생성한다
+* @param {Objects}  objDataset	- 달력 표시 dataset
+* @param {String}   strDate		- YYYYMMDD
+* @return : N/A
+* @example :  
+*/
+this.fnInitCalendarGrid = function(objDataset, strDate)
+{
+	//Cutting date
+	var y = nexacro.toNumber(strDate.substr(0,4));	
+	var m = nexacro.toNumber(strDate.substr(4,2));	
+	
+	//Two dimentional array is used for special months
+	var arr = this.fnGetCalendarArr(y,m); // important
+	var i, y;
+	
+	// dataset setting
+	objDataset.set_enableevent(false);
+	objDataset.clearData();
+	
+	for (i = 0; i < arr.length; i++)
+	{
+		objDataset.addRow();
+		
+		for (y = 0; y < arr[i].length; y++)
+		{
+			if (arr[i][y] != null) { 
+				objDataset.setColumn(i,y, arr[i][y]); 
+			}
+		}
+	}
+	
+	objDataset.set_enableevent(true);
+}
+
+/**
+* fnGetCalendarArr : Using date object, converting special date into two dimensional array
+* @param {String}  y	- Example of year month : 	2014
+* @param {String}  m	- Month example : 	01 , 02 ..... 12
+* @param {String}  d	- Day example	:	01 ~ 31
+* @return : {Function} - 달력을 그리드에 표현해주는 이차원 배열 
+* @example :  
+*/
+this.fnGetCalendarArr = function(y,m,d)
+{
+	var date = new Date(1);
+	date.setFullYear(y, m-1 , 1);
+	
+	return this.fnGetDateArr(date, new Array(), m-1);
+}
+
+/**
+* fnGetDateArr : Using date object, setting special date into two dimensional array.(It is not calling directly, It is calling using fnGetCalendarArr method)
+* @param {Object} date	- The dataset whcich can have Year, month, date objects 
+* @param {Array}  arr  	- Array to be used 
+* @param {String} month	-  Column value that to be implemented (The value that can be insert into date object )
+* @return : {Function|Array} - 달력을 그리드에 표현해주는 이차원 배열 
+* @example :  
+*/
+this.fnGetDateArr = function(date, arr , month)
+{
+	if (month != date.getMonth()) { // Return the last date of the month 
+		return arr;
+	}
+	
+	var idx = date.getDay(); // get day
+	
+	if (arr.length == 0) { // When you receive first two dimensional array
+		arr[0] = new Array();
+	}
+	
+	if (idx == 0) { // Creating array to move into next
+		arr[arr.length] = new Array();
+	}
+	
+	arr[arr.length-1][idx] = date.getDate(); //Set in the day
+	date.addDate(1); //Adding 1 day 
+	
+	return this.fnGetDateArr(date, arr, month); //Recursion
+}
+
+/**
+* fnToFormatString : Changing date format according to need. 
+* @param {String}   dt	- Date object
+* @param {String}   fmt	- y year m month d date
+* @return : {String} - format적용된 날짜 string
+* @example :  
+*/
+this.fnToFormatString = function(dt, fmt) 
+{   
+	return fmt.replace(/(Y|y|m|d|h|H|i|s|am|pm)/gi,
+		function($1)
+		{
+			switch ($1)
+			{
+				case 'Y': return dt.getFullYear();
+				case 'y':   return dt.getFullYear().toString().substr(2);
+				case 'M':   return dt.getMonth()+1 < 10 ? 0+""+(dt.getMonth()+1) : dt.getMonth()+1;
+				case 'd':   return  dt.getDate() < 10 ? 0+""+dt.getDate() : dt.getDate();
+				case 'h':   return (h = dt.getHours() % 12) ? (h < 10 ? 0+""+h : h) : 12;
+				case 'H':  return dt.getHours()< 10 ? 0+""+dt.getHours() : dt.getHours();
+				case 'm':   return dt.getMinutes()< 10 ? 0+""+dt.getMinutes() : dt.getMinutes();
+				case 's':   return dt.getSeconds()< 10 ? 0+""+dt.getSeconds() : dt.getSeconds();
+				case 'am':   return dt.getHours() < 12 ? 'am' : 'pm';
+				case 'pm':   return dt.getHours() < 12 ? 'am' : 'pm';
+			}
+		}
+	);
+}
+
+ 
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 버튼 클릭 이벤트 - 다음달
+*/
+this.divCal_btnNext_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var value = ((this.divCal.form.cboMonth.value+1)%13)==0? 1:((this.divCal.form.cboMonth.value+1)%13);
+	
+	this.divCal.form.cboMonth.set_value(value);
+ 	this.fnReSetCalendar();
+// 	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+ * @description 버튼 클릭 이벤트 - 다음년도
+*/
+this.divCal_btnYearNext_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var value = parseInt(this.divCal.form.cboYear.value)+1;
+	
+	this.divCal.form.cboYear.set_value(value);
+	this.fnReSetCalendar();
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+ * @description 버튼 클릭 이벤트 - 지난달
+*/
+this.divCal_btnPrev_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var value = this.divCal.form.cboMonth.value-1 == 0? 12: this.divCal.form.cboMonth.value-1;
+	
+	this.divCal.form.cboMonth.set_value(value);
+	this.fnReSetCalendar();
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+ * @description 버튼 클릭 이벤트 - 지지난달
+*/
+this.divCal_btnYearPrev_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var value = this.divCal.form.cboYear.value-1;
+	
+	this.divCal.form.cboYear.set_value(value);
+	this.fnReSetCalendar();
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+ * @description 년월콤보 선택 변경 이벤트 
+*/
+this.Combo_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.fnReSetCalendar();
+	this.fnSetGridPos(this.fnGetDatePosition(this.dsCalendar,this.select_day));
+}
+
+/**
+ * @description 달력 그리드 선택 이벤트
+*/
+this.divCal_grdCal_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	this.select_day = this.dsCalendar.getColumn(e.row,e.cell);
+	if (e.oldcell == e.cell && e.oldrow == e.row) {
+		var strdate = this.fnGetDate("YMd");
+		//trace(" >>>>> " + this.parent.parent.name);
+		this.parent.parent.fnClosePopup(this, strdate);
+		this.parent.closePopup(strdate);
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

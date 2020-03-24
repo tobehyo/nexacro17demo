@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GridFindPop" width="315" height="190" titletext="New Form" onload="GridFindPop_onload" onkeydown="GridFindPop_onkeydown" background="white">
+    <Layouts>
+      <Layout>
+        <Combo id="cmb_findList" taborder="0" tabstop="false" innerdataset="@ds_findList" codecolumn="text" datacolumn="text" onitemchanged="cmb_findList_onitemchanged" cssclass="cmb_WF" left="85" top="32" width="221" height="20"/>
+        <Static id="Static00" taborder="1" text="찾을 문자열" cssclass="sta_WF" left="8" top="33" width="87" height="18"/>
+        <Edit id="edt_find" taborder="2" onkeydown="edt_find_onkeydown" cssclass="edt_WF" left="85" top="32" width="204" height="20"/>
+        <Radio id="rdo_scope" taborder="3" columncount="3" rowcount="0" index="0" innerdataset="@ds_scope" codecolumn="code" datacolumn="data" value="all" cssclass="rdo_WF" left="85" top="108" width="217" height="18"/>
+        <Static id="Static03" taborder="4" text="찾을 범위" cssclass="sta_WF" left="8" top="108" width="66" height="18"/>
+        <Static id="Static04" taborder="5" text="찾을 조건" cssclass="sta_WF" left="8" top="132" width="66" height="18"/>
+        <Radio id="rdo_condition" taborder="6" columncount="2" rowcount="0" index="0" innerdataset="@ds_condition" codecolumn="code" datacolumn="data" value="equal" cssclass="rdo_WF" left="85" top="132" width="117" height="18"/>
+        <CheckBox id="chk_strict" taborder="7" text="대/소문자 구분" left="203" top="131" width="102" height="18"/>
+        <Button id="btn_find" taborder="8" text="찾기" onclick="btn_find_onclick" left="170" top="156" width="64" height="24"/>
+        <Button id="btn_close" taborder="9" text="닫기" onclick="btn_close_onclick" cssclass="btn_WF_conf" left="242" top="156" width="64" height="24"/>
+        <Radio id="rdo_direction" taborder="10" columncount="2" rowcount="0" index="1" innerdataset="@ds_direction" codecolumn="code" datacolumn="data" value="next" cssclass="rdo_WF" left="85" top="62" width="145" height="18"/>
+        <Radio id="rdo_position" taborder="11" columncount="2" rowcount="0" index="0" innerdataset="@ds_position" codecolumn="code" datacolumn="data" value="current" onitemchanged="rdo_position_onitemchanged" cssclass="rdo_WF" left="85" top="84" width="144" height="18"/>
+        <Static id="Static01" taborder="12" text="찾을 방향" cssclass="sta_WF" left="8" top="61" width="66" height="18"/>
+        <Static id="Static02" taborder="13" text="찾을 위치" cssclass="sta_WF" left="8" top="83" width="66" height="18"/>
+        <Static id="st_title" taborder="14" text="찾기" left="0" top="0" width="316" height="25" background="rgba(70,76,87,1)" color="white" padding="0px 0px 0px 10px" font="bold 9pt Dotum"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_scope" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">all</Col>
+            <Col id="data">전체</Col>
+          </Row>
+          <Row>
+            <Col id="code">row</Col>
+            <Col id="data">행</Col>
+          </Row>
+          <Row>
+            <Col id="code">col</Col>
+            <Col id="data">열</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_condition" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">equal</Col>
+            <Col id="data">일치</Col>
+          </Row>
+          <Row>
+            <Col id="code">inclusion</Col>
+            <Col id="data">포함</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_direction" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">prev</Col>
+            <Col id="data">이전</Col>
+          </Row>
+          <Row>
+            <Col id="code">next</Col>
+            <Col id="data">다음</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_position" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">current</Col>
+            <Col id="data">현재위치</Col>
+          </Row>
+          <Row>
+            <Col id="code">first</Col>
+            <Col id="data">처음부터</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_findList" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+ * Grid Find Replace Sample at XPLATFORM
+ *
+ * Copyright (c) 2014 EcoSystem of TOBESOFT
+ * Licensed Free under XPLATFORM.
+ */
+
+/**
+ * onload event handler - 화면 로드
+ * @param {Form} obj 이벤트가 발생한 Form
+ * @param {LoadEventInfo} e LoadEventInfo
+ */
+this.GridFindPop_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	// EcoSys.XpCompEvent.makeDraggable(this.st_title, this.dragMove, this, [this.st_title]);
+	// EcoSys.XpCompEvent.makeDraggable(this, this.dragMove, this, [this]);
+
+	this.edt_find.setFocus();
+
+	// 문자열 목록 만들기
+	this.updateStringList();
+};
+
+this.dragMove = function (offsetX, offsetY, obj)
+{
+	var x = obj.getPixelLeft() + offsetX,y = obj.getPixelTop() + offsetY;
+	obj.move(x, y);
+};
+
+/**
+ * onkeydown event handler - Esc 키 발생시 화면 종료
+ * @param {Form} obj 이벤트가 발생한 Form
+ * @param {KeyEventInfo} e KeyEventInfo
+ */
+this.GridFindPop_onkeydown = function (obj:Form, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 27) 
+	{
+		this.close();
+	}
+};
+
+/**
+ * onkeydown event handler
+ * 찾을 문자열 입력박스 엔터키시 찾기
+ * @param {Edit} obj 이벤트가 발생한 Edit
+ * @param {KeyEventInfo} e KeyEventInfo
+ */
+this.edt_find_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		this.btn_find.click();
+	}
+};
+
+/**
+ * onitemchanged event handler
+ * 찾은 목록 콤보 변경시 입력박스에 값 지정
+ * @param {Combo} obj 이벤트가 발생한 Combo
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.cmb_findList_onitemchanged = function (obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.edt_find.value = e.postvalue;
+	obj.set_index(-1);
+};
+
+/**
+ * onitemchanged event handler
+ * 찾을 위치를 "처음부터" 로 변경시 시작 위치 지정
+ * @param {Radio} obj 이벤트가 발생한 Radio
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.rdo_position_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInfo)
+{
+	if (e.postvalue == "first") 
+	{
+		// 찾기 시작 위치 초기화
+		var grid = this.targetGrid;
+
+		grid.lastFindRow = 0;
+		grid.lastFindCell = 0;
+	}
+};
+
+/**
+ * onclick event handler - 찾기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_find_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var text = this.edt_find.value;
+	if (this.gfnIsNull(text)) 
+	{
+		this.edt_find.setFocus();
+		return;
+	}
+
+	var grid = this.targetGrid;
+	var parent = this.parent;
+	var option = this.getFindOption();
+	var findRowCell = parent.findGridText(grid, text, option);
+	var findRow = findRowCell[0];
+	var findCell = findRowCell[1];
+	if (findRow > -1 && findCell > -1) 
+	{
+		parent.markGridFindResult(grid, findRow, findCell);
+		this.setFocus();
+	}
+	else 
+	{
+		var message = this.gfn_Format(parent.GRID_FIND_NO_RESULT_MESSAGE, text);
+		this.alert(message);
+	}
+
+	this.updateStringList();
+};
+
+/**
+ * onclick event handler - 닫기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_close_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.set_visible(false);
+};
+
+/**
+ * 찾기/바꾸기 문자열 목록을 구성하여 콤보에 보이게끔 처리
+ */
+this.updateStringList = function ()
+{
+	var parent = this.parent;
+	var list = parent.getFindReplaceCache("find");
+	var ds = this.ds_findList;
+
+	ds.set_enableevent(false);
+	ds.deleteAll();
+	var text,row;
+	for (var i = 0,len = list.length; i < len; i++) 
+	{
+		text = list[i];
+		row = ds.addRow();
+		ds.setColumn(row, "text", text);
+	}
+	ds.set_enableevent(true);
+};
+
+/**
+ * 찾기 옵션을 얻어온다.
+ * @return {object} 옵션 정보
+ */
+this.getFindOption = function ()
+{
+	var option = {
+		'direction' : this.rdo_direction.value,
+		'position' : this.rdo_position.value,
+		'scope' : this.rdo_scope.value,
+		'condition' : this.rdo_condition.value,
+		'strict' : this.chk_strict.value
+	};
+
+	return option;
+};
+
+/**
+ * value의 Date 여부 반환.
+ * @param {date} value 확인할 value.
+ * @return {boolean} Date 여부.
+ * @example
+ * var a = new Date();
+ * trace(Base.isDate(a));	// output : true
+ *
+ * var a = "20130501";
+ * trace(Base.isDate(a));	// output : false
+ * @memberOf Base
+ */
+this.gfn_IsDate = function (value)
+{
+	// 아래내용을 9.2 Rumtiem 지원안함.
+	// 그리고 성능이슈가 발생할 수 있음(느림).
+	// 그런데 많은 곳에서 사용하고 있음.
+	// return toString.call(value) === '[object Date]';
+	// return Object.prototype.toString.call(value) === '[object Date]';
+	// typeof보다는 느리지만 아래처럼 사용하는것과는 대동소이?
+
+	if (typeof value == 'object' && value instanceof Date) 
+	{
+		return true;
+	}
+
+	return false;
+};
+
+
+/**
+ * value의 Object 여부 반환.
+ * @param {*} value 확인할 value.
+ * @return {boolean} Object 여부.
+ * @example
+ * var o = new Object();
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = {};
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = [1,2,3];
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Button();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Rect();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * @memberOf Base
+ */
+this.gfn_IsObject = function (value)
+{
+	if (value === null || value === undefined) 
+	{
+		return false;
+	}
+
+	// constructor 에 접근시 XP Comp 는 에러발생
+	if (this.gfnIsNexaComponent(value)) 
+	{
+		return false;
+	}
+
+	// 신규추가 2013.11.27 pbh. 데이터셋과 같은 xp object 거르기.
+	if (!this.gfnIsNull(value._type)) 
+	{
+		if (value._type.substr(0, 4) == "TOBE") 
+		{
+			return false;
+		}
+	}
+
+	return typeof value == "object" && 
+		'constructor' in value && 
+		value.constructor === Object;
+};
+
+/**
+ * 문자열 내의 {0},{1}...{n}값을 전달받은 arguments로 치환.
+ * @param {string} str 대상 문자열.
+ * @param {arguments} arguments 식별자 {N}을 대체할 값.
+ * @return {string} 치환된 문자열.
+ * @requires Base.formatRegExp
+ * @example
+ * var str = "I {0} a {1} {2}.";
+ * Base.string.format(str, "am", "cool", "guy"); //return "I am a cool guy."
+ *
+ * str = "Currency: [{0}], Date : [{1}], JuminNo: [{2}]";
+ * var result = Base.string.format(str,
+ *      Base.number.getMaskFormatString(12301234, "#,###"),
+ *      Base.date.getMaskFormatString(new Date(), "yyyy-MM-dd tt hh:mm"),
+ *      Base.string.getMaskFormatString("6601011234567", "@@@@@@-{@@@@@@@}")
+ *    );
+ * trace(result); // output : Currency: [12,301,234], Date : [2013-05-03 오후 07:49], JuminNo: [660101-*******]
+ * @memberOf Base.string
+ */
+this.gfn_Format = function ()
+{
+	var str = arguments[0];
+	var args = this.gfn_toArray(arguments, 1);
+	return str.replace("/\{(\d+)\}/g", function (m, i)
+	{
+		return args[i];
+	});
+};
+
+/**
+ * 배열 형태로 변환 처리한다.
+ * @param {object} iterant 변환 대상 Obejct
+ * @param {number=} start 시작 위치 (default: start Index)
+ * @param {number=} end 끝 위치 (default: end Index)
+ * @return {array} 변환된 Array
+ * @example
+ * this.fn_mon("Jan","Feb","Mar","Apr");
+ * function fn_mon()
+ * {
+ * 	var result = Base.array.toArray(arguments);
+ *	trace("result==>" + result);	// output : result==>[Jan,Feb,Mar,Apr]
+ * }
+ *
+ * var result = Base.array.toArray("ABCDEFG",1,3);
+ * trace("result==>" + result);	// output : result==>[B,C]
+ * @memberOf Base.array
+ */
+this.gfn_toArray = function (iterant, start, end)
+{
+	if (!iterant || !iterant.length) 
+	{
+		return [];
+	}
+
+	if (this.gfn_IsArray(iterant)) 
+	{
+		if (arguments.length == 1) 
+		{
+			return iterant;
+		}
+		else if (arguments.length == 2) 
+		{
+			return iterant.slice(start);
+		}
+		else 
+		{
+			return iterant.slice(start, end);
+		}
+	}
+
+	if (typeof iterant === "string") 
+	{
+		iterant = iterant.split("");
+	}
+
+	var i,array = [],start = start || 0;
+
+	end = end ? ((end < 0) ? iterant.length + end : end) : iterant.length;
+
+	for (i = start; i < end; i++) 
+	{
+		array.push(iterant[i]);
+	}
+
+	return array;
+};
+]]></Script>
+  </Form>
+</FDL>

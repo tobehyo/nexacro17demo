@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppVariables version="2.0">
+  <Datasets>
+    <Dataset id="gdsMenu">
+      <ColumnInfo>
+        <Column id="MENU_LVL" type="INT" size="22"/>
+        <Column id="MENU_ID" type="STRING" size="10"/>
+        <Column id="MENU_NM" type="STRING" size="256"/>
+        <Column id="MENU_URL" type="STRING" size="256"/>
+        <Column id="PARENT_MENU_ID" type="STRING" size="10"/>
+        <Column id="MOBILE_YN" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_NM">Grid Component</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MENU_ID">1000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1010</Col>
+          <Col id="MENU_NM">다양한 그리드 기능</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::Functions.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1020</Col>
+          <Col id="MENU_NM">다양한 그리드 표현</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::CellTypes.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1060</Col>
+          <Col id="MENU_NM">엑셀수식 Import/Export</Col>
+          <Col id="MENU_URL">grid::ExcelFormula.xfdl</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1070</Col>
+          <Col id="MENU_NM">개인화 설정</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::Personalization.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1080</Col>
+          <Col id="MENU_NM">대용량 데이터 조회</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::LargeData.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1090</Col>
+          <Col id="MENU_NM">동적 그리드</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::Dynamic.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1100</Col>
+          <Col id="MENU_NM">트리 그리드</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::TreeGrid.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1110</Col>
+          <Col id="MENU_NM">동적 트리 그리드</Col>
+          <Col id="MENU_URL">grid::DynamicTree.xfdl</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1130</Col>
+          <Col id="MENU_NM">카테고리 그리드</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::CategoryGrid.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_NM">Component</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MENU_ID">2000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2010</Col>
+          <Col id="MENU_NM">다양한 컴포넌트</Col>
+          <Col id="MENU_URL">comp::Components.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2020</Col>
+          <Col id="MENU_NM">컴포넌트 동적생성</Col>
+          <Col id="MENU_URL">comp::DynamicComponent.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_URL">comp::ComponentsArrange.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_NM">편리한 컴포넌트배치</Col>
+          <Col id="MENU_ID">2030</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2040</Col>
+          <Col id="MENU_NM">Fit To Contents</Col>
+          <Col id="MENU_URL">comp::FitToContents.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2050</Col>
+          <Col id="MENU_NM">파일 업/다운로드</Col>
+          <Col id="MENU_URL">comp::FileUpDown.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2060</Col>
+          <Col id="MENU_NM">확장 컴포넌트</Col>
+          <Col id="MENU_URL">comp::ExtComponent.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2070</Col>
+          <Col id="MENU_NM">양방향 데이터 바인딩</Col>
+          <Col id="MENU_URL">comp::TwoWayDataBinding.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2080</Col>
+          <Col id="MENU_NM">다양한 메뉴 표현</Col>
+          <Col id="MENU_URL">comp::menuList.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2090</Col>
+          <Col id="MENU_NM">nexacro Chart</Col>
+          <Col id="MENU_URL">comp::nexacroChart.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2100</Col>
+          <Col id="MENU_NM">리스트뷰</Col>
+          <Col id="MENU_URL">comp::ListView.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2110</Col>
+          <Col id="MENU_NM">Animation</Col>
+          <Col id="MENU_URL">comp::animation.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2111</Col>
+          <Col id="MENU_NM">피벗 </Col>
+          <Col id="MENU_URL">grid::pivot_poc.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2120</Col>
+          <Col id="MENU_NM">그리드 커서 이동</Col>
+          <Col id="MENU_URL">comp::gridCursorMove.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_NM">응용샘플</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MENU_ID">3000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">3000</Col>
+          <Col id="MENU_ID">3010</Col>
+          <Col id="MENU_NM">포틀릿 화면</Col>
+          <Col id="MENU_URL">example::portlet.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">3090</Col>
+          <Col id="MENU_NM">화면 개인화</Col>
+          <Col id="MENU_URL">example::Personalization.xfdl</Col>
+          <Col id="PARENT_MENU_ID">3000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_NM">외부 모듈 연동</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MENU_ID">4000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">4000</Col>
+          <Col id="MENU_ID">4060</Col>
+          <Col id="MENU_NM">Google Map</Col>
+          <Col id="MENU_URL">ext::GoogleMap.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">4070</Col>
+          <Col id="MENU_NM">알차트(rChart)</Col>
+          <Col id="MENU_URL">ext::rChart.xfdl</Col>
+          <Col id="PARENT_MENU_ID">4000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">4080</Col>
+          <Col id="MENU_NM">알차트(rChart) 연동</Col>
+          <Col id="MENU_URL">ext::rMateChart2.xfdl</Col>
+          <Col id="PARENT_MENU_ID">4000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">4090</Col>
+          <Col id="MENU_NM">Ubi Report 연동</Col>
+          <Col id="MENU_URL">ext::UbiReportMain.xfdl</Col>
+          <Col id="PARENT_MENU_ID">4000</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_ID">6000</Col>
+          <Col id="MENU_NM">Template</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">6001</Col>
+          <Col id="MENU_URL">template::form01.xfdl</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_NM">CRUD</Col>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">6002</Col>
+          <Col id="MENU_NM">조회화면</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_URL">template::Template01.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">6003</Col>
+          <Col id="MENU_NM">그리드+상세</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_URL">template::Template02.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">6004</Col>
+          <Col id="MENU_NM">디테일+마스터</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_URL">template::Template03.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">6005</Col>
+          <Col id="MENU_NM">그리드2+탭</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_URL">template::Template04.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_ID">7000</Col>
+          <Col id="MENU_NM">Guide</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MENU_URL"/>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">7001</Col>
+          <Col id="MENU_NM">Static,Edit,MaskEdit,TextArea</Col>
+          <Col id="PARENT_MENU_ID">7000</Col>
+          <Col id="MOBILE_YN">P</Col>
+          <Col id="MENU_URL">guide::Guide01.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">7002</Col>
+          <Col id="MENU_NM">Grid</Col>
+          <Col id="PARENT_MENU_ID">7000</Col>
+          <Col id="MENU_URL">guide::Guide02.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">7004</Col>
+          <Col id="MENU_NM">Tab,GroupBox,ProgressBar</Col>
+          <Col id="PARENT_MENU_ID">7000</Col>
+          <Col id="MENU_URL">guide::Guide03.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+    <Dataset id="gdsFavorite">
+      <ColumnInfo>
+        <Column id="MENU_LVL" type="INT" size="22"/>
+        <Column id="MENU_ID" type="STRING" size="10"/>
+        <Column id="MENU_NM" type="STRING" size="256"/>
+        <Column id="MENU_URL" type="STRING" size="256"/>
+        <Column id="PARENT_MENU_ID" type="STRING" size="10"/>
+        <Column id="MOBILE_YN" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1010</Col>
+          <Col id="MENU_NM">다양한 그리드 기능</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::Functions.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2010</Col>
+          <Col id="MENU_NM">다양한 컴포넌트</Col>
+          <Col id="MENU_URL">comp::Components.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2090</Col>
+          <Col id="MENU_NM">nexacro Chart</Col>
+          <Col id="MENU_URL">comp::nexacroChart.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+      </Rows>
+    </Dataset>
+    <Dataset id="gdsRecent">
+      <ColumnInfo>
+        <Column id="MENU_LVL" type="INT" size="22"/>
+        <Column id="MENU_ID" type="STRING" size="10"/>
+        <Column id="MENU_NM" type="STRING" size="256"/>
+        <Column id="MENU_URL" type="STRING" size="256"/>
+        <Column id="PARENT_MENU_ID" type="STRING" size="10"/>
+        <Column id="MOBILE_YN" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">1010</Col>
+          <Col id="MENU_NM">다양한 그리드 기능</Col>
+          <Col id="PARENT_MENU_ID">1000</Col>
+          <Col id="MENU_URL">grid::Functions.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MENU_ID">2010</Col>
+          <Col id="MENU_NM">다양한 컴포넌트</Col>
+          <Col id="MENU_URL">comp::Components.xfdl</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">2090</Col>
+          <Col id="MENU_NM">nexacro Chart</Col>
+          <Col id="MENU_URL">comp::nexacroChart.xfdl</Col>
+          <Col id="PARENT_MENU_ID">2000</Col>
+          <Col id="MOBILE_YN"/>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">6011</Col>
+          <Col id="MENU_NM">상세(1), 그리드(1)</Col>
+          <Col id="PARENT_MENU_ID">6000</Col>
+          <Col id="MENU_URL">template::11_Temp.xfdl</Col>
+          <Col id="MOBILE_YN">P</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+  </Datasets>
+  <Variables/>
+</AppVariables>

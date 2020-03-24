@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="LeftMenu" width="768" height="480" titletext="nexacro Chart Left 메뉴">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <Grid id="grdChartLilst" taborder="0" left="0" top="0" bottom="0" right="0" binddataset="dsMenu" autofittype="col" treeusecheckbox="false" oncellclick="grdChartLilst_oncellclick" treeinitstatus="expand,all">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="765"/>
+              </Columns>
+              <Rows>
+                <Row size="32"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:name" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="765"/>
+              </Columns>
+              <Rows>
+                <Row size="40"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:name" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsMenu">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="formurl" type="STRING" size="256"/>
+          <Column id="level" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">nexacro.BasicChart</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="name">Features Example</Col>
+            <Col id="level">1</Col>
+            <Col id="formurl">basicChart::FeatureExample.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Column Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Grouped Column</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::GroupedColumn.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Stacked Column</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::StackedColumn.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">100% Stacked Column</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::PercentStackedColumn.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Grouped Stack Column</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::GroupedStackColumn.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Layered Column</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::LayeredColumn.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Bar Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Grouped Bar</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::GroupedBar.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Stacked Bar</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::StackedBar.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">100% Stacked Bar</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::PercentStackedBar.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Grouped Stack Bar</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::GroupedStackBar.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Layered Bar</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::LayeredBar.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Line Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Segment Line</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::SegmentLine.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Step Line</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::StepLine.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Curve Line</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::CurveLine.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Area Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Simple Area</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::SimpleArea.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Stacked Area</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::StackedArea.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">100% Stack Area</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::PercentStackedArea.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Point Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Point Markers</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::PointMarkers.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Line with Markers</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::PointMarkers_withLine.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Mixed Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Column + Line</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::ColumnAndLine.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Line + Point</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::LineAndPoint.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Multi Axis</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">basicChart::BarAndLine_MultiAxis.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Data Type</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Negative Data</Col>
+            <Col id="formurl">basicChart::Data_Negative.xfdl</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="formurl">basicChart::Data_Divergent.xfdl</Col>
+            <Col id="level">2</Col>
+            <Col id="name">Divergent Data</Col>
+          </Row>
+          <Row>
+            <Col id="name">DateTime Axis</Col>
+            <Col id="formurl">basicChart::Data_TimeAxis.xfdl</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="name">nexacro.PieChart</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="name">Features Example</Col>
+            <Col id="formurl">pieChart::FeatureExample.xfdl</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Pie Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Simple Pie</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::SimplePie.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Select Pie</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::SelectPie.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Angular Pie</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::AngularPie.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Doughnut</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Simple Douhgnut</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::SimpleDoughnut.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Select Doughnut</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::SelectDoughnut.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Angular Doughnut</Col>
+            <Col id="level">2</Col>
+            <Col id="formurl">pieChart::AngularDoughnut.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">nexacro.BubbleChart</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="name">Scatter</Col>
+            <Col id="level">1</Col>
+            <Col id="formurl">bubbleChart::Scatter.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">Bubble</Col>
+            <Col id="level">1</Col>
+            <Col id="formurl">bubbleChart::SimpleBubble.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">nexacro.Gauge Chart</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="name">Gauge Chart_Basic</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="formurl">gaugeChart::GaugeChart_Basic_circular.xfdl</Col>
+            <Col id="level">2</Col>
+            <Col id="name">Circular</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="formurl">gaugeChart::GaugeChart_Basic_horizontal.xfdl</Col>
+            <Col id="name">Horizontal</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="formurl">gaugeChart::GaugeChart_Basic_vertical.xfdl</Col>
+            <Col id="name">Vertical</Col>
+          </Row>
+          <Row>
+            <Col id="name">Features Example</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">Sales</Col>
+            <Col id="formurl">gaugeChart::GaugeChart_Sales.xfdl</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="name">Speed</Col>
+            <Col id="formurl">gaugeChart::GaugeChart_speed.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="formurl">gaugeChart::GaugeChart_weather.xfdl</Col>
+            <Col id="name">Weather</Col>
+          </Row>
+          <Row>
+            <Col id="name">nexacro.Radar Chart</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="name">Radar Chart</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="name">Basic</Col>
+            <Col id="formurl">radarChart::RadarChart_Basic.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="name">Multi_Polygon</Col>
+            <Col id="formurl">radarChart::Multi Polygon Chart.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="name">MultiSeries</Col>
+            <Col id="formurl">radarChart::RadarChart_MultiSeries.xfdl</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="name">Dynamic</Col>
+            <Col id="formurl">radarChart::Dynamic_RadarChart.xfdl</Col>
+            <Col id="level">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    LeftMenu.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/17
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/17          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+ 
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 차트 리스트 선택
+*/
+this.grdChartLilst_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var formurl = this.dsMenu.getColumn(e.row, "formurl");
+	
+	var parent = this.parent;
+	while (parent instanceof nexacro.Div)
+		parent = parent.parent;
+	
+	parent.fnOpenForm(formurl);
+};
+
+]]></Script>
+  </Form>
+</FDL>

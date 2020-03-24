@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="ExtComponent" width="980" height="690" titletext="확장 컴포넌트" onload="ExtComponent_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static07" taborder="0" text="넥사크로플랫폼에서는 기본적으로 사용자들이 필요로 하는 컴포넌트를 제공하고 있습니다. 하지만 사용자 환경에 따라 특화된 기능을 필요로 하는 경우가 있습니다. 이럴 때는 투비소프트 파트너 개발사 또는 개발자가 작성한 사용자 컴포넌트를 적용하거나 직접 필요한 기능을 추가한 사용자 컴포넌트를 작성할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="96" wordWrap="char"/>
+        <Static id="Static10" taborder="2" cssclass="sta_cp_box01" left="0" top="116" height="90" width="47.96%"/>
+        <Static id="Static01" taborder="4" cssclass="sta_cp_box01" top="116" height="90" left="Static10:15" right="20"/>
+        <Static id="Static04" taborder="6" cssclass="sta_cp_box01" left="0" top="220" height="90" onclick="Static04_onclick" width="47.96%"/>
+        <Static id="Static09" taborder="1" text="Custom Calendar" cssclass="sta_cp_box02" left="0" top="116" height="41" width="47.96%"/>
+        <Static id="Static11" taborder="9" cssclass="sta_cp_box01" top="220" height="90" left="Static04:15" right="20"/>
+        <Static id="Static00" taborder="3" text="Multi Combo" cssclass="sta_cp_box02" top="116" height="41" left="Static09:15" right="20"/>
+        <Static id="Static03" taborder="5" cssclass="sta_cp_box02" left="0" top="220" height="41" text="From To Calendar" width="47.96%"/>
+        <Div id="Div00" taborder="7" left="20" top="271" width="28.57%" height="28" url="comm::commCalendarFromTo.xfdl" text=""/>
+        <Div id="Div01" taborder="8" url="comm::commListCombo.xfdl" left="Static04:35" top="271" width="23.16%" height="28"/>
+        <Static id="Static12" taborder="10" text="List Combo" cssclass="sta_cp_box02" top="220" height="41" left="Static03:15" right="20"/>
+        <Div id="Div02" taborder="11" text="Div00" left="20" top="166" height="28" url="comm::commCalendarCustom.xfdl" userBindDataset="Dataset00" userBindColumn="Column0" width="26.53%"/>
+        <MultiCombo id="MultiCombo00" taborder="12" left="Static10:35" top="166" width="23.16%" height="28" codecolumn="code" datacolumn="name" innerdataset="dsComboList" listcolinfo="name|100">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </MultiCombo>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsComboList">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="CHECKED" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="name">A타입</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="name">B타입</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="name">C타입</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsData">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">201607</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    component > 확장컴포넌트
+*  @FileName    ExtComponent.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/11
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/11          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.ExtComponent_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	var today = this.gfnGetDate().substr(0, 6);
+
+	this.dsData.setColumn(0, "Column0", today);
+};
+
+this.Static04_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>

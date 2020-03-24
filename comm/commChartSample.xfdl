@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="sample999" width="600" height="480" titletext="Canvas를 이용한 차트" onload="sample999_onload" ontimer="sample999_ontimer">
+    <Layouts>
+      <Layout>
+        <Div id="divChart1" taborder="0" left="8" top="8" width="584" height="463" text="Div00" border="1px solid rgba(128,128,128,1)">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_Chart01" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Label" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+          <Column id="Color" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Value">25</Col>
+            <Col id="Color">#f79900</Col>
+            <Col id="Label">test1</Col>
+          </Row>
+          <Row>
+            <Col id="Value">45</Col>
+            <Col id="Color">#f56e00</Col>
+            <Col id="Label">test2</Col>
+          </Row>
+          <Row>
+            <Col id="Value">70</Col>
+            <Col id="Color">#cf5127</Col>
+            <Col id="Label">test3</Col>
+          </Row>
+          <Row>
+            <Col id="Value">75</Col>
+            <Col id="Color">#a83e1b</Col>
+            <Col id="Label">test4</Col>
+          </Row>
+          <Row>
+            <Col id="Label">test5</Col>
+            <Col id="Value">60</Col>
+            <Col id="Color">#731212</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[// 애니메이션 효과를 주기위한 Index값
+this.nTimerIdx = 0;
+// 애니메이션 지속시간(duration)
+this.nTimerMax = 20;
+// 차트를 그리기 위한 Canvas
+this.objCanvas;
+
+this.sample999_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	// Chart 생성 함수
+	this.fn_createChart(this.divChart1);
+
+	// Chart Draw 함수
+	this.fn_drawChart(this.divChart1);
+};
+
+// Chart를 그리기 위한 Canvas 객체 생성 함수
+this.fn_createChart = function (obj)
+{
+	this.objCanvas = new nexacro.CanvasElement(obj.getElement());
+	this.objCanvas.create();
+	this.objCanvas.setElementPosition(0, 0);
+	this.objCanvas.setElementSize(obj.width, obj.width);
+	this.objCanvas._moveCanvas(0, 0, obj.width, obj.width);
+};
+
+// 기존에 생성된 Lable 삭제 함수
+this.fn_clearLable = function (obj)
+{
+	// 기존에 생성되어있는 객체가 있을 경우 삭제 처리
+	if (obj.components.length != 0) 
+	{
+		for (i = obj.components.length - 1; i >= 0; i--) 
+		{
+			objStatic = obj.components[i];
+			objStatic = obj.removeChild(objStatic.name);
+			objStatic.destroy();
+			objStatic = null;
+		}
+	}
+};
+
+// Lable 생성 함수
+this.fn_createLable = function (obj)
+{
+	var i;
+	var objStatic;
+
+	// Lable 및 Lable Line 생성
+	for (i = 0; i < this.ds_Chart01.rowcount; i++) 
+	{
+		objStatic = new Static("stLine" + (i + 1), "absolute", 0, 0, 0, 0, null, null);
+
+		obj.addChild(objStatic.name, objStatic);
+
+		objStatic.show();
+
+		objStatic = new Static("stLable" + (i + 1), "absolute", 0, 0, 50, 25, null, null);
+
+		obj.addChild(objStatic.name, objStatic);
+
+		objStatic.show();
+		objStatic.style.set_font("bold 15 Dotum");
+		objStatic.style.set_align("center middle");
+	}
+};
+
+// 차트 Draw 함수
+this.fn_drawChart = function (obj)
+{
+	// Lable 삭제
+	this.fn_clearLable(obj);
+
+	// Lable 생성
+	this.fn_createLable(obj);
+
+	// 차트 애니메이션 적용을 위한 Timer 실행
+	this.setTimer(1, 50);
+};
+
+this.sample999_ontimer = function (obj:Form, e:nexacro.TimerEventInfo)
+{
+	if (e.timerid == 1) 
+	{
+		// 타이머 Index 증가
+		this.nTimerIdx++;
+
+		var i;
+
+		// 1개의 원호 사이즈
+		var nLineSize = 20;
+
+		// 현재 애니메이션 값
+		var nValue;
+
+		// 최종 애니메이션 값
+		var nEndValue;
+
+		// 차트 영역의 중심좌표
+		var nLeft = this.divChart1.width / 2;
+
+		// 차트 영역의 중심좌표
+		var nTop = this.divChart1.height / 2;
+
+		// 차트 전체 사이즈
+		var nSize = this.divChart1.height / 2 - 70;
+
+		// 차트 Lable Line Left 좌표
+		var nLineLeft;
+
+		// 차트 Lable Line Top 좌표
+		var nLineTop;
+
+		// 차트 Lable Line Width
+		var nLineWidth = 120;
+
+		// 차트 Lable Line Height
+		var nLineHeight = 2;
+
+		// 현재 원호의 Size
+		var nPieSize;
+
+		// Lable Line 오브젝트
+		var objLine;
+
+		// Lable 오브젝트
+		var objLable;
+
+
+		for (i = 0; i < this.ds_Chart01.rowcount; i++) 
+		{
+			// 0~100 입력된 값을 360도의 %값으로 계산
+			// 예) 값 25 = 90도, 값 100 = 360
+			nEndValue = this.ds_Chart01.getColumn(i, "Value") * 360 * 0.01;
+
+			// 차트색 설정
+			nColor = this.ds_Chart01.getColumn(i, "Color");
+
+			// Lable Line 오브젝트 가져오기
+			objLine = this.divChart1.form.components["stLine" + (i + 1)];
+
+			// Lable 오브젝트 가져오기
+			objLable = this.divChart1.form.components["stLable" + (i + 1)];
+
+			// Lable Line Color 설정
+			objLine.style.set_border("1px solid " + nColor);
+
+			// Lable Color 설정
+			objLable.style.set_color(nColor);
+
+			// Lable Line Width 가져오기(애니메이션효과 적용)
+			nLineWidth = this.fn_move(this.nTimerIdx, 0, nLineWidth, this.nTimerMax);
+
+			// Lable 텍스트 설정(애니메이션효과 적용)
+			// 애니메이션 동작중 Random값이 표현됨
+			objLable.set_text((Math.round(Math.random() * 100)) + "%");
+
+			// 차트 Series 그리기 시작
+			this.objCanvas.beginPath();
+
+			// 차트 Series 굵기 설정
+			this.objCanvas.setElementLineWidth(nLineSize);
+
+			// 차트 Series Color 설정
+			this.objCanvas.setElementStrokeStyle(nexacro._getCachedStyleObj("color", nColor));
+
+			// 차트 Series의 값 설정(애니메이션 효과 적용)
+			// 애니메이션 동작중 0~실제값 까지 증가하며 표현됨
+			nValue = this.fn_move(this.nTimerIdx, 0, nEndValue, this.nTimerMax);
+
+			// 차트 Series의 원호의 크기 설정
+			nPieSize = (nSize) - (nLineSize * i);
+
+			// 차트 Series의 원호 그리기
+			this.objCanvas.arc(nLeft, nTop, nPieSize, 0, (Math.PI / 180) * nValue, false);
+			this.objCanvas.stroke();
+
+			// 차트 Lable 및 Lable Line 그리기
+			// 첫번째 Series는 시작점에 표시됨
+			if (i == 0) 
+			{
+				nLineLeft = nLeft + (Math.cos((Math.PI / 180) * 0) * nPieSize);
+				nLineTop = nTop + (Math.sin((Math.PI / 180) * 0) * nPieSize);
+
+				objLable.move(nLineLeft + nLineWidth - 50, nLineTop);
+				objLine.move(nLineLeft, nLineTop, nLineWidth, nLineHeight);
+			}
+			// 첫번째 Series가 아닐 경우 원호의 끝부분에 표시됨
+			else 
+			{
+				if (Math.floor(nEndValue / 90) == 1 || Math.floor(nEndValue / 90) == 2) 
+				{
+					nLineLeft = nLeft + (Math.cos((Math.PI / 180) * nEndValue) * nPieSize) - nexacro.toNumber(objLine.getOffsetWidth());
+					nLineTop = nTop + (Math.sin((Math.PI / 180) * nEndValue) * nPieSize);
+
+					objLable.move(nLineLeft, nLineTop);
+					objLine.move(nLineLeft, nLineTop, nLineWidth, nLineHeight);
+				}
+				else 
+				{
+					nLineLeft = nLeft + (Math.cos((Math.PI / 180) * nEndValue) * nPieSize);
+					nLineTop = nTop + (Math.sin((Math.PI / 180) * nEndValue) * nPieSize);
+
+					objLable.move(nLineLeft + nLineWidth - 50, nLineTop);
+					objLine.move(nLineLeft, nLineTop, nLineWidth, nLineHeight);
+				}
+			}
+		}
+
+		// 애니메이션 효과 종료시
+		if (this.nTimerIdx == this.nTimerMax) 
+		{
+			// 차트 Lable 에 값 표시
+			for (i = 0; i < this.ds_Chart01.rowcount; i++) 
+			{
+				objLable = this.divChart1.form.components["stLable" + (i + 1)];
+				objLable.set_text(this.ds_Chart01.getColumn(i, "Value") + "%");
+			}
+
+			this.divChart1.form.resetScroll();
+
+			this.nTimerIdx = 0;
+			this.killTimer(1);
+		}
+	}
+};
+
+// 애니메이션 효과 함수
+// http://www.gizma.com/easing/ 사이트 참조함
+this.fn_move = function (t, b, c, d)
+{
+	t /= d / 2;
+	if (t < 1) 
+	{
+		return Math.round(c / 2 * t * t + b);
+	}
+	t--;
+	return Math.round(-c / 2 * (t * (t - 2) - 1) + b);
+};]]></Script>
+  </Form>
+</FDL>

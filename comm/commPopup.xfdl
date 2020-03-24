@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commPopup" width="1000" height="622" titletext="창떼네기" onload="commPopup_onload">
+    <Layouts>
+      <Layout height="622" mobileorientation="landscape" width="1000">
+        <Div id="divWork" taborder="0" left="20" top="50" right="0" bottom="0" text="" async="false" onvscroll="divWork_onvscroll">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="divTitle" taborder="1" left="0" top="12" height="19" formscrollbartype="none none" formscrolltype="none" right="41">
+          <Layouts>
+            <Layout>
+              <Static id="staMenuTitle" taborder="1" left="20" top="1" height="19" fittocontents="none" right="43" cssclass="sta_WF_menuTitle" text=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btn_Popup" taborder="2" cssclass="btn_WF_newPopupR" top="12" height="28" onclick="btn_Popup_onclick" text="" width="28" right="20"/>
+        <Button id="btnFavorite" taborder="3" top="12" height="28" cssclass="btn_WF_Btitle" defaultbutton="true" tabstop="false" onclick="divTitle_btnFavorite_onclick" right="btn_Popup:0" width="28"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    comm > commPopup
+*  @FileName  commPopup.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.12.20
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.12.20      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.menuRow = -1; //열린화면의 MENU Row
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description onload 
+*/
+this.commPopup_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{	
+	this.strMenuId = this.parent.menuId;
+	this.strMenuNm = this.parent.menuNm;
+	this.strMenuUrl = this.parent.menuUrl;
+	this.nRow = this.parent.nRow;
+	this.comp = this.parent.comp;
+	this.divWork.set_url(this.strMenuUrl);
+	this.divTitle.form.staMenuTitle.set_text(this.strMenuNm);
+
+	//Div sync처리 때문에 지연처리 함.
+	nexacro._OnceCallbackTimer.callonce(this, function() {this.fnFormInit()}, 10); //20
+};
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+/**
+ * @description 팝업 공통화 구현
+*/
+this.fnFormInit = function()
+{
+	for(var i=0; i<this.comp.length; i++)
+	{			
+		if(this.divWork.form.all[i] == "[object Dataset]")
+		{
+			//Data Copy
+			this.divWork.form[this.divWork.form.all[i].name].assign(this.comp[i]);
+			
+			//Position Copy
+			this.divWork.form.all[i].set_rowposition(this.comp[i].rowposition);
+				
+			//Filter Copy
+			if(this.comp[i].filterstr.length > 0)
+			{
+				this.divWork.form[this.divWork.form.all[i].name].filter(this.comp[i].filterstr);
+			}
+		}
+		else if(this.divWork.form.all[i] == "[object Grid]")
+		{
+			//Grid Format Copy
+			this.divWork.form[this.divWork.form.all[i].name].set_formats(this.comp[i].getCurFormatString());
+			
+			//Grid Cell Pos Copy
+			this.divWork.form[this.divWork.form.all[i].name].setCellPos(this.comp[i].getCellPos());
+			
+			if(this.divWork.form.name == "CategoryGrid")
+			{
+				var fvForm = this.divWork.form;
+				var objDs = this.comp["dsGroupId"];
+				
+				var len = objDs.colcount;
+				var fv_arrColIdx = new Array();
+				
+				for(var j=1; j<len; j++)
+				{
+					if(objDs.getColumn(0, objDs.getColID(j)) > 0)
+					{
+						fvForm.fv_arrGroupId.push(objDs.getColID(j));
+						fv_arrColIdx.push(j);
+					}
+				}
+				
+				if(!this.gfnIsNull(fv_arrColIdx))
+				{	
+					for(var j=0; j<fv_arrColIdx.length; j++)
+					{
+						fvForm[this.divWork.form.all[i].name].setFormatColProperty(fv_arrColIdx[j], "size", 0);
+					}
+					
+					//카테고리그리드 초기화 작업
+					fvForm.fnSetGroup();
+					fvForm.fnSetTree();
+				}
+			}
+			
+			//트리 그리드의 유무에 따라 상태반환
+			var len = this.comp[i].getFormatColCount();
+			var arrTreeStatusCoIdx = new Array();
+			
+			for(var k=0; k<len; k++)
+			{
+				//그리드의 displaytype값이 treeitemcontrol인 경우 
+				if(this.comp[i].getCellProperty("Body", k, "displaytype") == "treeitemcontrol")
+				{
+					//Collapsed 상태값 전달
+					len = this.comp[i]._binddataset.rowcount;
+					
+					for(var j=0; j<len; j++)
+					{	
+						//자식 노드를 하나라도 갖고 있다면 아래의 로직을 수행
+						if(!this.comp[i].getTreeChildCount > 0) 
+							continue;
+							
+						if(this.comp[i].isTreeExpandedRow(j))
+							if(this.comp[i].isTreeCollapsedRow(j+1))
+								arrTreeStatusCoIdx.push(j);
+					}
+					
+					//트리는 인덱스를 내림차순으로 줘야 접힘(오름차순은 안됌)
+					for(var p=arrTreeStatusCoIdx.length-1; p>=0; p--)
+					{
+						this.divWork.form[this.divWork.form.all[i].name].setTreeStatus(arrTreeStatusCoIdx[p], false);
+					}
+					
+					break; //treeitemcontrol에 대한 처리 이후 반복문 break.
+				}
+			}
+		}
+		else if(this.divWork.form.all[i] == "[object ListView]")
+		{
+			this.divWork.form.all[i].set_formatid(this.comp[i].formatid);
+			this.divWork.form.all[i].showDetailBand(this.comp[this.comp[i].binddataset].rowposition);
+		}
+		else if(this.divWork.form.all[i] == "[object Edit]" || this.divWork.form.all[i] == "[object MaskEdit]" || this.divWork.form.all[i] == "[object Calendar]"
+		|| this.divWork.form.all[i] == "[object Combo]" || this.divWork.form.all[i] == "[object Spin]" || this.divWork.form.all[i] == "[object CheckBox]"
+		|| this.divWork.form.all[i] == "[object Radio]" || this.divWork.form.all[i] == "[object TextArea]")
+		{
+			this.divWork.form[this.divWork.form.all[i].name].set_value(this.comp[i].value);
+		}
+	}
+	
+	//공통화 작업이 안되는 화면은, 각 화면마다 별도의 설정 필요(화면 소스코드 일부수정 : Functions.xfdl, CategoryGrid.xfdl, Dynamic.xfdl, menuList.xfdl, Personalization.xfdl, LargeData.xfdl)
+	if(this.divWork.form.name == "Functions")
+	{
+		var vForm = this.divWork.form;
+		vForm.grdList.set_selecttype("row");
+		vForm.dsList.set_rowposition(0);
+		vForm.rdoSelectType.set_value("row");
+	}
+	else if(this.divWork.form.name == "DynamicComponent")
+	{
+		this.divWork.form.btnGenerate_onclick();
+	}
+	else if(this.divWork.form.name == "FitToContents")
+	{
+		var vForm = this.divWork.form;
+		vForm.gvLangCd = vForm.rdoLocale.value;
+		nexacro.getEnvironment().locale = null;
+		vForm.fnSetLocale(vForm.rdoLocale.value);
+		vForm.fnSetLanguage(vForm);
+		vForm.fnSetCompFitToContents();
+		vForm.grdMaster.set_locale(vForm.rdoLocale.value);
+	}
+	else if(this.divWork.form.name == "menuList")
+	{
+		eval("this.divWork.form.divMenu.form.btnMenu" + this.comp["dsButtonIdx"].getColumn(0, "Idx") + ".click();");
+	}
+	else if(this.divWork.form.name == "LargeData")
+	{
+		var vForm = this.divWork.form;
+		vForm.stSearchTimeOrg.set_text(this.comp["stSearchTimeOrg"].text);
+	}
+	
+	//즐겨찾기 표시
+	this.menuRow = nexacro.getApplication().gdsFavorite.findRow("MENU_ID", this.strMenuId);
+	
+	if(this.menuRow > -1)
+	{
+		this.btnFavorite.set_cssclass("btn_WF_BtitleOn");
+	}
+	else
+	{
+		this.btnFavorite.set_cssclass("btn_WF_Btitle");
+	}
+	
+	var pForm = nexacro.getApplication().mainframe.VFrameSet.Main.form
+	pForm["gfnCloseMenu"].call(pForm, this.strMenuId);
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ 
+/**
+ * @description 즐겨찾기 on/off
+*/
+
+this.divTitle_btnFavorite_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	switch(obj.cssclass)
+	{
+		case "btn_WF_BtitleOn"://즐겨찾기 제거
+			this.btnFavorite.set_cssclass("btn_WF_Btitle");
+			nexacro.getApplication().gdsFavorite.deleteRow(this.menuRow);
+			break;
+			
+		case "btn_WF_Btitle"://즐겨찾기 추가
+			this.btnFavorite.set_cssclass("btn_WF_BtitleOn");
+			this.menuRow = nexacro.getApplication().gdsFavorite.addRow();
+			nexacro.getApplication().gdsFavorite.copyRow(this.menuRow, nexacro.getApplication().gdsMenu, this.nRow);
+			break;
+	}
+};
+
+/**
+ * @description 
+*/
+this.btn_Popup_onclick = function(obj:nexacro.Button, e:nexacro.ClickEventInfo)
+{
+	var type = "comm";
+	//this.opener.gfnOpenMenu(this.strMenuId, type);
+	
+	var pForm = nexacro.getApplication().mainframe.VFrameSet.Main.form
+	pForm["gfnOpenMenu"].call(pForm, this.strMenuId, type, this.divWork.form.all);
+	
+	this.close();
+};]]></Script>
+  </Form>
+</FDL>

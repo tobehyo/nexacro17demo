@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Mobile_sub" width="480" height="2280" titletext="New Form" onload="Mobile_sub_onload" ontimer="Mobile_sub_ontimer">
+    <Layouts>
+      <Layout height="2280" mobileorientation="landscape" width="480">
+        <Div id="divBody" taborder="0" text="Div04" left="0" top="280" height="1600" cssclass="div_WF_mainContent" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="divMain01" taborder="0" text="Div" left="20" top="22" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Daily" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Div id="Div00" taborder="1" text="Div00" left="149" top="55" width="281" height="45" url="mainChart::Column01.xfdl"/>
+                    <Static id="staNumber" taborder="2" text="68" left="20" top="34" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="5.6%" left="21" top="89" width="89" height="23" cssclass="sta_WF_chartData02"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain02" taborder="1" text="Div" left="20" top="152" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Weekly" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Div id="Div00" taborder="1" text="Div00" left="149" top="55" width="281" height="45" url="mainChart::Column02.xfdl"/>
+                    <Static id="staNumber" taborder="2" text="394" left="20" top="34" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="6.8%" left="21" top="89" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain03" taborder="2" text="Div" left="20" top="282" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Total Views" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Div id="Div00" taborder="1" text="Div00" left="149" top="55" width="281" height="45" url="mainChart::Column03.xfdl"/>
+                    <Static id="staNumber" taborder="2" text="708" left="20" top="34" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="13.8%" left="21" top="89" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain04" taborder="3" left="20" top="412" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Average" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Div id="Div00" taborder="1" text="Div00" left="149" top="55" width="281" height="45" url="mainChart::Column04.xfdl"/>
+                    <Static id="staNumber" taborder="2" text="612" left="20" top="34" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" left="25" top="89" width="89" height="23" text="13.8%" cssclass="sta_WF_chartData02"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain05" taborder="4" text="Div" left="20" top="542" height="260" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Div id="divChart" taborder="1" left="0" top="30" url="mainChart::SimpleArea.xfdl" right="20" bottom="0"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain06" taborder="5" text="Div" top="812" background="#ffffff" height="250" left="20" right="20">
+                <Layouts>
+                  <Layout>
+                    <PieChart id="PieChart00" taborder="0" left="0" top="0" bottom="0" right="0" binddataset="dsCountryLitres" categorycolumn="bind:country" enableanimation="true">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": "60",
+			"valuecolumn": "bind:value",
+			"fillstyle": "#1abd9c,#1a85be,#1a67bf,#1a4cbf,#641ac0,#9a1ac0,#c2251b,#c2541b,#c2911d,#21c34d",
+			"itemtexttype": "text",
+			"selectindent": "20",
+			"selectcolumn": "bind:select",
+			"selectopacity": "1.0",
+			"itemtextguideopacity": "1",
+			"opacity": "0.8",
+			"linestyle": "1px solid white",
+			"selectlinestyle": "1px solid white",
+			"highlightfillstyle": "yellow",
+			"highlightopacity": "0.5",
+			"highlightvisible": "false",
+			"itemtextguidelineopacity": ""
+		}
+	]
+}]]></Contents>
+                    </PieChart>
+                    <Static id="Static00" taborder="1" text="Weekly Report" left="20" top="10" width="151" height="52" cssclass="sta_WF_chartText"/>
+                    <Div id="divChart" taborder="2" left="10" top="20" right="20" bottom="0" url="mainChart::SelectPie.xfdl" text=""/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <PieChart id="PieChart00" left="0" top="18" right="0" bottom="0"/>
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divMain07" taborder="6" text="Div" left="20" top="1072" height="240" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Div id="divChart" taborder="1" text="Div00" left="0" top="30" height="200" url="mainChart::StackedColumn.xfdl" right="20"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="Static07" taborder="7" text="Div" top="1322" height="250" background="#ffffff" left="20" right="20" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Capacity Usage" left="20" top="10" width="151" height="52" cssclass="sta_WF_chartText"/>
+                    <Div id="divChart" taborder="1" text="Div00" left="31" top="55" height="294" url="mainChart::GaugeChart.xfdl" right="43"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+            <Layout name="Layout0">
+              <Div id="Static05" left="30" top="762" height="450" right="30"/>
+              <Div id="Static03" left="Static02:10" top="162" height="130" right="30"/>
+              <Div id="Static02" left="30" top="162" width="44.71%" height="130"/>
+              <Div id="Static01" top="22" height="130" left="Static00:10" right="30"/>
+              <Div id="divMain07" left="30" top="1222" width="46.24%" height="350"/>
+              <Div id="Static07" left="Static06:12" top="1222" height="350" right="30"/>
+              <Div id="Static04" left="30" top="302" height="450" right="30"/>
+              <Div id="Static00" left="30" top="22" height="130" width="44.71%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Div id="Static01" left="20" top="152" height="120" maxwidth="" right="20"/>
+              <Div id="Static02" left="20" top="282" height="120" maxwidth="" right="20"/>
+              <Div id="Static03" text="" left="20" top="412" height="120" right="20" maxwidth=""/>
+              <Div id="Static05" left="20" top="812" height="250" right="20"/>
+              <Div id="Static07" left="20" top="1322" height="250" right="20"/>
+              <Div id="divMain07" height="240" left="20" top="1072" right="20"/>
+              <Div id="Static04" left="20" top="542" height="260" right="20"/>
+              <Div id="Static00" left="20" top="22" height="120" maxwidth="" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="1" text="Div03" left="0" height="310" top="1880" cssclass="div_WF_mainSite" right="0">
+          <Layouts>
+            <Layout>
+              <Button id="btnSupport" taborder="0" left="20" top="24" height="80" cssclass="btn_WF_mainSite01" text="" right="20" onclick="fnGoSite"/>
+              <Button id="btnPlaynexa" taborder="1" left="20" top="114" height="80" cssclass="btn_WF_mainSite02" right="20" onclick="fnGoSite"/>
+              <Button id="btnTobeTong" taborder="2" top="204" height="80" left="20" right="20" cssclass="btn_WF_mainSite03" onclick="fnGoSite"/>
+              <Static id="Static00" taborder="3" left="btnSupport:-56" top="52" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+              <Static id="Static01" taborder="4" left="btnPlaynexa:-56" top="142" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+              <Static id="Static02" taborder="5" left="btnTobeTong:-57" top="232" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" left="Button00:-32" top="88" width="15" height="25"/>
+              <Button id="btnPlaynexa" left="Button00:10" top="40" width="30.3%" height="120"/>
+              <Button id="btnTobeTong" text="Go to Website" left="Button01:10" top="40" height="120" width="30.3%"/>
+              <Button id="btnSupport" width="30.3%" left="30" top="40" height="120"/>
+              <Static id="Static01" left="Button01:-32" top="88" width="15" height="25"/>
+              <Static id="Static02" left="Button02:-32" top="88" width="15" height="25"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" left="Button00:-46" top="48" width="15" height="25"/>
+              <Button id="btnTobeTong" left="20" top="200" height="80" right="20"/>
+              <Static id="Static01" left="Button01:-46" top="138" width="15" height="25"/>
+              <Static id="Static02" left="Button02:-47" top="228" width="15" height="25"/>
+              <Button id="btnPlaynexa" left="20" top="110" height="80" right="20"/>
+              <Button id="btnSupport" height="80" left="20" top="20" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divMainVisual" taborder="2" left="0" top="0" height="280" cssclass="div_WF_mainVisual" right="0" url="mobile::Mobile_main_content_step.xfdl"/>
+        <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" height="90" cssclass="div_WF_mainFooter" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static02" taborder="1" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="30" top="15" height="62" cssclass="sta_WF_footerAddress" right="30"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" width="18.82%"/>
+              <Static id="Static01" width="18.82%"/>
+              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" width="0" left="40" top="18" height="0" visible="false"/>
+              <Static id="Static01" width="0" top="17" height="0" right="40" visible="false"/>
+              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Main
+*  @FileName  Main.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.fvStartNum1 = 0;
+this.fvStartNum2 = 0;
+this.fvStartNum3 = 0;
+this.fvStartNum4 = 0;
+
+this.fvDuration = 70;
+this.fvCnt=1;
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 스텝 애니메이션 생성
+*/
+this.Mobile_sub_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//스텝
+	this.setTimer(5555,3000);
+	
+	//애니메이션
+	this.divBody.form.divMain01.form.staNumber._orgNum = 63;
+	this.divBody.form.divMain02.form.staNumber._orgNum = this.divBody.form.divMain02.form.staNumber.text;
+	this.divBody.form.divMain03.form.staNumber._orgNum = this.divBody.form.divMain03.form.staNumber.text;
+	this.divBody.form.divMain04.form.staNumber._orgNum = this.divBody.form.divMain04.form.staNumber.text;
+	
+	this.setTimer(1,5);
+	this.setTimer(9999, 700);
+	
+
+};
+/**
+ * @description 스텝/차트애니메이션
+*/
+this.Mobile_sub_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if(e.timerid == 5555)
+	{
+		var stepIndex = this.divMainVisual.form.getStepIndex();
+		stepIndex = nexacro.toNumber(stepIndex) + 1;
+		
+		if(stepIndex > 2)
+		{
+			stepIndex = 0;
+		}
+		this.divMainVisual.form.setStepIndex(stepIndex);
+	}
+	
+	
+	if(e.timerid == 9999)
+	{
+		this.fvCnt++;
+		
+		this.setTimer(this.fvCnt,10);
+		
+		if(this.fvCnt > 3)
+		{
+			this.killTimer(9999);
+		}
+	}
+	
+	
+	if(e.timerid == 1)
+	{	
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum1, 0, this.divBody.form.divMain01.form.staNumber._orgNum, this.fvDuration));
+		if(nNum >  this.divBody.form.divMain01.form.staNumber._orgNum)
+		{
+			this.killTimer(1);
+			this.fvStartNum1 = 0;
+			return;
+		}
+		this.divBody.form.divMain01.form.staNumber.set_text(nNum);
+		this.fvStartNum1++;
+	}	
+	else if(e.timerid == 2)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum2, 0, this.divBody.form.divMain02.form.staNumber._orgNum, this.fvDuration));
+		if(nNum > this.divBody.form.divMain02.form.staNumber._orgNum)
+		{
+			this.killTimer(2);
+			this.fvStartNum2 = 0;
+			return;
+		}
+		this.divBody.form.divMain02.form.staNumber.set_text(nNum);
+		this.fvStartNum2++;
+	}
+	else if(e.timerid == 3)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum3, 0, this.divBody.form.divMain03.form.staNumber._orgNum, this.fvDuration));
+		if(nNum > this.divBody.form.divMain03.form.staNumber._orgNum)
+		{
+			this.killTimer(3);
+			this.fvStartNum3 = 0;
+		}
+		this.divBody.form.divMain03.form.staNumber.set_text(nNum);
+		this.fvStartNum3++;
+	}
+	else if(e.timerid == 4)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum4, 0, this.divBody.form.divMain04.form.staNumber._orgNum, this.fvDuration));
+		if( nNum == this.divBody.form.divMain04.form.staNumber._orgNum)
+		{
+			this.fvStartNum4 = 0;
+			this.killTimer(4,10);
+		}
+		this.divBody.form.divMain04.form.staNumber.set_text(nNum);
+		this.fvStartNum4++;
+	}
+};
+
+
+
+
+
+/**
+* fnMoveAnimation : 애니메이션 Interpolation 함수
+* @param {Number}  t	- Timer Index
+* @param {Number}  b	- 0
+* @param {Number}  c	- 초기값 ( 높이 )
+* @param {Number}  d	- Timer Max
+* @return : 위치값
+* @example :  
+*/
+this.fnMoveAnimation = function (t, b, c, d) 
+{
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t + b;
+	t -= 2;
+	return c/2*(t*t*t + 2) + b;
+};
+
+this.fnStartIncreaseNum = function()
+{	
+	this.setTimer(1,5);
+	this.fvCnt=1;
+	this.setTimer(9999, 700);
+		
+}
+
+/**
+ * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+*/
+this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//nexacro 브라우저에서 메소드 실행 시 시스템에 설정된 기본 브라우저가 아닌 인터넷 익스플로러가 실행됩니다
+	switch(obj.name)
+	{
+		case "btnSupport":
+			system.execBrowser("http://support.tobesoft.co.kr/Support/index.html");
+			break;
+			
+		case "btnPlaynexa":
+			system.execBrowser("https://www.playnexacro.com");
+			break;
+			
+		case "btnTobeTong":
+			system.execBrowser("http://tobetong.com/");
+			break;
+	}
+};]]></Script>
+  </Form>
+</FDL>

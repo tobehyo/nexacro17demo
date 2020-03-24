@@ -1,0 +1,1101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="work002" width="727" height="1000" titletext="조직도" onload="work002_onload">
+    <Layouts>
+      <Layout height="1000" mobileorientation="landscape" width="727">
+        <Static id="Static19" taborder="0" left="10" top="259" cssclass="sta_WF_box02" right="10" bottom="10"/>
+        <Static id="Static03" taborder="1" left="10" top="166" height="80" text="" right="10" background="#ffffff" border="1px solid silver"/>
+        <Static id="Static51" taborder="5" left="323" top="203" width="40" height="34" cssclass="sta_WF_search01"/>
+        <Edit id="edtSearch" taborder="3" left="31.36%" top="186" height="40" onkeydown="edtSearch_onkeydown" cssclass="ed_WF_search01" right="32.46%"/>
+        <Static id="Static50" taborder="2" text="진료과/의료진" top="187" height="38" cssclass="sta_WF_emptitle" right="edtSearch:12" width="116"/>
+        <Button id="btnSearch" taborder="4" text="검색" left="edtSearch:-3" top="186" width="70" height="40" cssclass="btn_WF_basic01" onclick="btnSearch_onclick"/>
+        <Div id="divOrgani" taborder="6" text="Div00" left="10" top="246" font="normal 500 14px &quot;나눔고딕&quot;" right="10" bottom="23"/>
+        <Button id="Button00" taborder="7" top="5" width="30" height="30" onclick="Button00_onclick" cssclass="btn_WF_height" right="45"/>
+        <Button id="Button01" taborder="8" top="5" width="30" height="30" onclick="Button01_onclick" cssclass="btn_WF_width" right="10"/>
+        <Static id="Static00" taborder="9" text="조직도" cssclass="sta_WF_title01" left="10" top="0" width="160" height="50"/>
+        <Static id="Static07" taborder="10" text="HTML5의 캔버스(Canvas)를 이용해서 조직도를 표현할 수 있습니다.&#13;&#10;가로 모드 및 세로 모드로 변경하여 확인할 수 있으며, &#13;&#10;캔버스(Canvas)를 활용하여 다양한 화면을 구성할 수 있습니다." cssclass="sta_WF_box03" left="10" top="50" right="10" height="96" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsOrg01">
+        <ColumnInfo>
+          <Column id="ORG_NUM" type="STRING" size="256"/>
+          <Column id="LEVEL" type="INT" size="256"/>
+          <Column id="ORG_NM" type="STRING" size="256"/>
+          <Column id="EMP_NM" type="STRING" size="256"/>
+          <Column id="UPER_ORG_NUM" type="STRING" size="256"/>
+          <Column id="IMG_URL" type="STRING" size="256"/>
+          <Column id="COLLAPSE" type="INT" size="256"/>
+          <Column id="JOB_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="LEVEL">0</Col>
+            <Col id="ORG_NUM">010000</Col>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="UPER_ORG_NUM">0</Col>
+            <Col id="COLLAPSE">0</Col>
+            <Col id="EMP_NM">내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">010300</Col>
+            <Col id="ORG_NM">김대원</Col>
+            <Col id="UPER_ORG_NUM">010000</Col>
+            <Col id="COLLAPSE">0</Col>
+            <Col id="EMP_NM">내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor10</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">010301</Col>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="UPER_ORG_NUM">010300</Col>
+            <Col id="COLLAPSE">0</Col>
+            <Col id="EMP_NM">내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">010200</Col>
+            <Col id="ORG_NM">정원식</Col>
+            <Col id="UPER_ORG_NUM">010000</Col>
+            <Col id="COLLAPSE">0</Col>
+            <Col id="EMP_NM">내분비과</Col>
+            <Col id="IMG_URL">sta_WF_doctor06</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">010201</Col>
+            <Col id="ORG_NM">심정은</Col>
+            <Col id="UPER_ORG_NUM">010200</Col>
+            <Col id="COLLAPSE">0</Col>
+            <Col id="EMP_NM">내분비과</Col>
+            <Col id="IMG_URL">sta_WF_doctor09</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NUM">010202</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="UPER_ORG_NUM">010200</Col>
+            <Col id="IMG_URL">sta_WF_doctor08</Col>
+            <Col id="ORG_NM">나성진</Col>
+            <Col id="EMP_NM">내분비과</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김차영</Col>
+            <Col id="EMP_NM">소화기내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">011200</Col>
+            <Col id="UPER_ORG_NUM">010000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">소화기내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor04</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">011201</Col>
+            <Col id="UPER_ORG_NUM">011200</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">한정훈</Col>
+            <Col id="EMP_NM">소화기내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor05</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">011202</Col>
+            <Col id="UPER_ORG_NUM">011200</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">나성진</Col>
+            <Col id="EMP_NM">심장내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor08</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">011400</Col>
+            <Col id="UPER_ORG_NUM">010000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">심장내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">011401</Col>
+            <Col id="UPER_ORG_NUM">011400</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김대원</Col>
+            <Col id="EMP_NM">심장내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor10</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">011402</Col>
+            <Col id="UPER_ORG_NUM">011400</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">혈액내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">012300</Col>
+            <Col id="UPER_ORG_NUM">010000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김차영</Col>
+            <Col id="EMP_NM">혈액내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">012301</Col>
+            <Col id="UPER_ORG_NUM">012300</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">혈액내과</Col>
+            <Col id="IMG_URL">sta_WF_doctor04</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">012302</Col>
+            <Col id="UPER_ORG_NUM">012300</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor04</Col>
+            <Col id="LEVEL">0</Col>
+            <Col id="ORG_NUM">020000</Col>
+            <Col id="UPER_ORG_NUM">0</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">한정훈</Col>
+            <Col id="EMP_NM">외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor05</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">021800</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">이윤선</Col>
+            <Col id="EMP_NM">외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor07</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">021801</Col>
+            <Col id="UPER_ORG_NUM">021800</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">하성원</Col>
+            <Col id="EMP_NM">대장항문외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor11</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">020400</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">이윤선</Col>
+            <Col id="EMP_NM">대장항문외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor04</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">020401</Col>
+            <Col id="UPER_ORG_NUM">020400</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">이창현</Col>
+            <Col id="EMP_NM">대장항문외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor12</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">020402</Col>
+            <Col id="UPER_ORG_NUM">020400</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김대원</Col>
+            <Col id="EMP_NM">비뇨기과</Col>
+            <Col id="IMG_URL">sta_WF_doctor10</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">020900</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">비뇨기과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">020901</Col>
+            <Col id="UPER_ORG_NUM">020900</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">하성원</Col>
+            <Col id="EMP_NM">비뇨기과</Col>
+            <Col id="IMG_URL">sta_WF_doctor11</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">020902</Col>
+            <Col id="UPER_ORG_NUM">020900</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">한상신</Col>
+            <Col id="EMP_NM">성형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor01</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">021100</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">고석률</Col>
+            <Col id="EMP_NM">성형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor01</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">021101</Col>
+            <Col id="UPER_ORG_NUM">021100</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">성형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">021102</Col>
+            <Col id="UPER_ORG_NUM">021100</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">고석률</Col>
+            <Col id="EMP_NM">이비인후과</Col>
+            <Col id="IMG_URL">sta_WF_doctor01</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">021700</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">이비인후과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">021701</Col>
+            <Col id="UPER_ORG_NUM">021700</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김차영</Col>
+            <Col id="EMP_NM">이비인후과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">021702</Col>
+            <Col id="UPER_ORG_NUM">021700</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">정형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">022000</Col>
+            <Col id="UPER_ORG_NUM">020000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김대원</Col>
+            <Col id="EMP_NM">정형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor10</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">022001</Col>
+            <Col id="UPER_ORG_NUM">022000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">정형외과</Col>
+            <Col id="IMG_URL">sta_WF_doctor02</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">022002</Col>
+            <Col id="UPER_ORG_NUM">022000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">고석률</Col>
+            <Col id="EMP_NM">건강의학과</Col>
+            <Col id="IMG_URL">sta_WF_doctor01</Col>
+            <Col id="LEVEL">0</Col>
+            <Col id="ORG_NUM">000000</Col>
+            <Col id="UPER_ORG_NUM">0</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">김지영</Col>
+            <Col id="EMP_NM">건강의학과</Col>
+            <Col id="IMG_URL">sta_WF_doctor04</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">000100</Col>
+            <Col id="UPER_ORG_NUM">000000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">한정훈</Col>
+            <Col id="EMP_NM">건강의학과</Col>
+            <Col id="IMG_URL">sta_WF_doctor05</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">000101</Col>
+            <Col id="UPER_ORG_NUM">000100</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">이윤선</Col>
+            <Col id="EMP_NM">건강의학과</Col>
+            <Col id="IMG_URL">sta_WF_doctor07</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">000102</Col>
+            <Col id="UPER_ORG_NUM">000100</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">심정은</Col>
+            <Col id="EMP_NM">병리과</Col>
+            <Col id="IMG_URL">sta_WF_doctor09</Col>
+            <Col id="LEVEL">1</Col>
+            <Col id="ORG_NUM">000800</Col>
+            <Col id="UPER_ORG_NUM">000000</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">나성진</Col>
+            <Col id="EMP_NM">병리과</Col>
+            <Col id="IMG_URL">sta_WF_doctor08</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">000801</Col>
+            <Col id="UPER_ORG_NUM">000800</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+          <Row>
+            <Col id="ORG_NM">주가현</Col>
+            <Col id="EMP_NM">병리과</Col>
+            <Col id="IMG_URL">sta_WF_doctor03</Col>
+            <Col id="LEVEL">2</Col>
+            <Col id="ORG_NUM">000802</Col>
+            <Col id="UPER_ORG_NUM">000800</Col>
+            <Col id="JOB_NM"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.work002_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//조직도 생성 함수
+	this.fn_initOrganization(this.divOrgani, this.dsOrg01, this);
+	
+	//조직도 Type 설정(horizontal/vertical)
+	this.divOrgani.type = "horizontal";
+	
+	//조직도 Show 함수
+	this.fn_drawOrganization(this.divOrgani);
+	
+	//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+	this.fn_setRootPos(this.divOrgani, "010000");
+};
+
+
+this.fn_initOrganization = function(objOrgani, objTargetDs, objOwnForm)
+{
+	//Canvas용 Div 변수 선언
+	var divCanvas;
+	
+	//Canvas에 그려질 각 노드에 대한 리스트 데이터셋
+	//(각 노드의 left, top, width, hegiht 값)
+	var objDsNodeList;
+	
+	//각 노드에 그려질 컨텐츠에 대한 리스트 데이터셋
+	//(타이틀, 이미지, 버튼 등의 left, top, width, height 값)
+	var objDsObjectList;
+	
+	objOrgani.form.set_scrollbartype("none");
+	objOrgani.form.set_scrolltype("none");
+	
+	//노드표현방식(horizontal/vertical)
+	objOrgani.type = "vertical";
+	//노드의 width값
+	objOrgani.tileWidth = 245;
+	//노드의 height값
+	objOrgani.tileHeight = 100;
+	//노드들 간의 width margin값
+	objOrgani.marginWidth = 40;
+	//노드들 간의 height margin값
+	objOrgani.marginHeight = 20;
+	//같은 level의 width, height 합계값
+	//(상위노드의 center를 구하기 위함)
+	objOrgani.arrPos = new Array(0, 0);
+	
+	//Canvas를 표현할 Div 생성
+	divCanvas = new Div("divCanvas", 0, 0, objOrgani.getOffsetWidth(), objOrgani.getOffsetHeight(), null, null);
+	objOrgani.form.addChild("divCanvas", divCanvas);
+	divCanvas.show();
+	
+	divCanvas.form.set_scrollbartype("none");
+	divCanvas.form.set_scrolltype("none");
+	
+	divComponent = new Div("divComponent", 0, 0, objOrgani.getOffsetWidth(), objOrgani.getOffsetHeight(), null, null);
+	objOrgani.form.addChild("divComponent", divComponent);
+	divComponent.show();
+	
+	divCanvas.form.set_scrollbartype("none");
+	divCanvas.form.set_scrolltype("none");
+	
+	//Div에 CanvasElement 생성
+	var control_elem = divCanvas.getElement();
+	var window = divCanvas._getWindow();
+	
+	if(control_elem)
+	{
+		objOrgani.targetCanvas = new nexacro.CanvasElement(control_elem);
+		
+		objOrgani.targetCanvas.create(window);
+		objOrgani.targetCanvas.setElementSize(divCanvas.getOffsetWidth(), divCanvas.getOffsetHeight());
+	}
+	
+	//노드리스트 데이터셋 생성
+	objDsNodeList = new Dataset;
+	objDsNodeList.addColumn("id", "string");
+	objDsNodeList.addColumn("up_id", "string");
+	objDsNodeList.addColumn("level", "string");
+	objDsNodeList.addColumn("left", "int");
+	objDsNodeList.addColumn("top", "int");
+	objDsNodeList.addColumn("width", "int");
+	objDsNodeList.addColumn("height", "int");
+	objDsNodeList.addColumn("childcount", "int");
+	
+	objOwnForm.addChild("ds"+objOrgani.name+"_NodeList", objDsNodeList);
+	
+	//컨텐츠리스트 데이터셋 생성
+	objDsObjectList = new Dataset;
+	objDsObjectList.addColumn("id", "string");
+	objDsObjectList.addColumn("type", "string");
+	objDsObjectList.addColumn("x1", "string");
+	objDsObjectList.addColumn("x2", "int");
+	objDsObjectList.addColumn("y1", "int");
+	objDsObjectList.addColumn("y2", "int");
+	
+	objOwnForm.addChild("ds"+objOrgani.name+"_ObjectList", objDsObjectList);
+	
+	//원본데이터셋, 노드데이터셋, 컨텐츠 데이터셋
+	//UserProperry로 설정
+	objOrgani.targetDs = objTargetDs;
+	objOrgani.targetNodeListDs = objDsNodeList;
+	objOrgani.targetObjectListDs = objDsObjectList;
+	
+	//이벤트 핸들러 생성
+	objOrgani.addEventHandler("ondrag", this.divOrgani_ondrag, objOwnForm);
+	objOrgani.addEventHandler("ondragmove", this.divOrgani_ondragmove, objOwnForm);
+	//objOrgani.addEventHandler("onmousewheel", this.divOrgani_onmousewheel, objOwnForm);
+	objOrgani.form.divCanvas.addEventHandler("onclick", this.divOrgani_divCanvas_onclick, objOwnForm);	
+}
+
+//조직도를 그리는 함수
+//param - objOrgani : 조직도를 표현할 Div Object
+this.fn_drawOrganization = function(objOrgani)
+{
+	//노드데이터셋 초기화
+	objOrgani.targetNodeListDs.clearData();
+	
+	//컨텐츠데이터셋 초기화
+	objOrgani.targetObjectListDs.clearData();
+	
+	//arrPos 초기화
+	objOrgani.arrPos = new Array(0, 0);
+	
+	//Canvas 초기화
+	objOrgani.targetCanvas.clearRect(0, 0, objOrgani.form.divCanvas.getOffsetWidth(), objOrgani.form.divCanvas.getOffsetHeight());
+	
+	for(i=objOrgani.form.divComponent.form.components.length-1;i>=0;i--)
+	{
+		objOrgani.form.divComponent.form.removeChild(objOrgani.form.divComponent.form.components[i].name);
+	}
+	
+	//원본데이터셋을 기준으로 노드데이터셋 생성함수
+	this.fn_makeOrganization(objOrgani, "0");
+	
+	//노드데이터셋을 기준으로 Canvas 그리기 함수
+	this.fn_loadOrganization(objOrgani);
+	
+	//스크롤바 갱신
+	objOrgani.form.resetScroll();
+}
+
+//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+this.fn_setRootPos = function(objOrgani, pvORG_NUM)
+{
+	var nLeft;
+	var nTop;
+	//canvas Div의 width값
+	var nWidth = objOrgani.getOffsetWidth();
+	//canvas Div의 height값
+	var nHeight = objOrgani.getOffsetHeight();
+	
+	var nZoom = objOrgani.form.divCanvas.form._getZoom()/100;
+	
+	var nRow = objOrgani.targetNodeListDs.findRow("id", pvORG_NUM);
+	//root 노드의 left값
+	var nNodeLeft = objOrgani.targetNodeListDs.getColumn(nRow, "left")*nZoom;
+	//root 노드의 top값
+	var nNodeTop = objOrgani.targetNodeListDs.getColumn(nRow, "top")*nZoom;
+	//root 노드의 width값
+	var nNodeWidth = objOrgani.targetNodeListDs.getColumn(nRow, "width")*nZoom;
+	//root 노드의 height값
+	var nNodeHeight = objOrgani.targetNodeListDs.getColumn(nRow, "height")*nZoom;
+	
+	if(objOrgani.type=="vertical")
+	{
+		//Canvas의 Top값 설정
+		nTop = -nNodeTop-(nNodeHeight/2)+(nHeight/2);
+		//Canvas의 Left값 설정
+		nLeft = 0;//-nNodeLeft;
+	}else
+	{
+		//Canvas의 Top값 설정
+		nTop = 0;//-nNodeTop;
+		
+		//Canvas의 Left값 설정
+		nLeft = -nNodeLeft-(nNodeWidth/2)+(nWidth/2);
+	}
+	
+	//Canvas의 좌표값을 root노드를 기준으로 center top에 맞도록 좌표값 move
+	objOrgani.form.divCanvas.move(nLeft, nTop);
+	objOrgani.form.divComponent.move(nLeft, nTop);
+}
+
+//canvas Div의 사이즈에 맞춰서 canvas를 zoomin/zoomout 처리하는 함수
+
+//원본데이터셋을 기준으로 노드데이터셋 생성함수
+this.fn_makeOrganization = function(objOrgani, pvORG_NUM)
+{
+	var i;
+	var nRow;
+	var nFindIdx = 0;
+	
+	var nCount;
+	var nChildCount=0;
+	
+	var sORG_NUM
+	var sLEVEL;
+	var sCOLLAPSE;
+	
+	var objParam = new Object();
+	var objChildParam;
+	
+	//현재 노드의 RowIndex 찾기
+	nRow = objOrgani.targetDs.findRow("ORG_NUM", pvORG_NUM);
+	
+	//Collapse 여부
+	sCOLLAPSE = objOrgani.targetDs.getColumn(nRow, "COLLAPSE");
+	
+	//callapse 일 경우 하위 노드 생성 안함
+	if(sCOLLAPSE==1)
+	{
+		nCount = 0;
+	}else
+	{
+		//하위노드의 갯수 
+		nCount = objOrgani.targetDs.getCaseCount("UPER_ORG_NUM=='"+pvORG_NUM+"'");
+	}
+	
+		
+	for(i=0;i<nCount;i++)
+	{
+		//첫번째 노드일 경우 시작 X좌표 설정
+		//상위노드에서 Center를 찾기 위함
+		if(i==0)
+		{
+			objParam.startX = objOrgani.arrPos[0];
+			objParam.startY = objOrgani.arrPos[1];
+		}
+				
+		//현재 노드의 자식노드 RowIndex 찾기
+		nRow = objOrgani.targetDs.findRow("UPER_ORG_NUM", pvORG_NUM, nFindIdx);
+		
+		//다음 For loop시 현재 찾은 Rowindex 다음부터 찾기 위함
+		nFindIdx = nRow+1;
+		
+		//자식노드의 ID값 가져오기
+		sORG_NUM = objOrgani.targetDs.getColumn(nRow, "ORG_NUM");
+		
+		//재귀함수 호출
+		objChildParam = this.fn_makeOrganization(objOrgani, sORG_NUM);
+		
+		//자식노드의 하위노드 갯수 확인
+		nChildCount = objChildParam.childcount;
+		
+		//자식노드의 level값 가져오기
+		sLEVEL = objOrgani.targetDs.getColumn(nRow, "LEVEL");
+		
+		//자식노드의 하위노드가 없을 경우
+		if(nChildCount==0)
+		{
+			if(objOrgani.type=="vertical")
+			{
+				nTop = objOrgani.arrPos[1];
+								
+				nLeft = nLeft = (objOrgani.tileWidth+(objOrgani.marginWidth*2)) * sLEVEL;
+			}else
+			{
+				//(타일height + topMargin + bottomMargin) * level
+				nTop = (objOrgani.tileHeight+(objOrgani.marginHeight*2)) * sLEVEL;
+				
+				//이전 노드의 right값
+				nLeft = objOrgani.arrPos[0];			
+			}
+			
+			//타일width + leftMargin + rightMargin
+			nWidth = objOrgani.tileWidth+(objOrgani.marginWidth*2);
+			
+			//타일height + topMargin + bottomMargin
+			nHeight = (objOrgani.tileHeight+(objOrgani.marginHeight*2));
+			
+			//노드데이터 생성 함수 호출
+			//return : 생성된 노드의 right, bottom 값 array
+			objOrgani.arrPos = this.fn_createTile(objOrgani, sORG_NUM, pvORG_NUM, sLEVEL, nChildCount, nLeft, nTop, nWidth, nHeight);
+		}else
+		{
+			if(objOrgani.type=="vertical")
+			{
+				nTop = objChildParam.startY;
+				
+				nLeft = (objOrgani.tileWidth+(objOrgani.marginWidth*2)) * sLEVEL;
+				
+				nWidth = (objOrgani.tileWidth+(objOrgani.marginWidth*2));
+				
+				nHeight = objChildParam.endY -objChildParam.startY;
+				
+			}else
+			{
+				//(타일height + topMargin + bottomMargin) * level
+				nTop = (objOrgani.tileHeight+(objOrgani.marginHeight*2)) * sLEVEL;
+				
+				//첫번째 하위노드의 Left 값
+				nLeft = objChildParam.startX;
+				
+				//마지막 하위노드의 right - 첫번째 하위노드의 Left값
+				nWidth = objChildParam.endX -objChildParam.startX;
+				
+				//타일height + topMargin + bottomMargin
+				nHeight = (objOrgani.tileHeight+(objOrgani.marginHeight*2));
+			}
+			
+			
+			//노드데이터 생성 함수 호출
+			//return : 생성된 노드의 right, bottom 값 array
+			this.fn_createTile(objOrgani, sORG_NUM, pvORG_NUM, sLEVEL, nChildCount, nLeft, nTop, nWidth, nHeight);
+		}
+		
+		//마지막 노드일 경우 종료 x 좌표값
+		//상위노드에서 Center를 찾기 위함
+		if(i==nCount-1)
+		{
+			objParam.endX = objOrgani.arrPos[0];
+			objParam.endY = objOrgani.arrPos[1];
+		}
+	}
+	
+	//자식노드의 갯수 설정
+	objParam.childcount = nCount;
+	
+	//리턴값 설정
+	//return - objParam.startX     : 시작 X좌표
+	//       - objParam.endX       : 종료 X좌표
+	//       - objParam.childcount : 식노드 갯수
+	return objParam;
+}
+
+//노드데이터 생성 함수
+this.fn_createTile = function(objOrgani, pvORG_NUM, pvUPER_ORG_NUM, pvLEVEL, pvChildCount, pvLeft, pvTop, pvWidth, pvHeight)
+{
+	var nRow;
+	var arrPos = new Array();
+	
+	//현재노드의 Right/Bottom값 
+	arrPos[0] = pvLeft+pvWidth;
+	arrPos[1] = pvTop+pvHeight;
+	
+	//노드데이터 생성
+	nRow = objOrgani.targetNodeListDs.addRow();
+	objOrgani.targetNodeListDs.setColumn(nRow, "id", pvORG_NUM);
+	objOrgani.targetNodeListDs.setColumn(nRow, "up_id", pvUPER_ORG_NUM);
+	objOrgani.targetNodeListDs.setColumn(nRow, "level", pvLEVEL);
+	objOrgani.targetNodeListDs.setColumn(nRow, "childcount", pvChildCount);
+	objOrgani.targetNodeListDs.setColumn(nRow, "left", pvLeft);
+	objOrgani.targetNodeListDs.setColumn(nRow, "top", pvTop);
+	objOrgani.targetNodeListDs.setColumn(nRow, "width", pvWidth);
+	objOrgani.targetNodeListDs.setColumn(nRow, "height", pvHeight);
+		
+	return arrPos;
+}
+
+//노드데이터셋을 기준으로 Canvas 그리기 함수
+this.fn_loadOrganization = function(objOrgani)
+{
+	var i;
+	var sId;
+	var sUp_Id;
+	var nLevel;
+	var nLeft;
+	var nTop;
+	var nWidth;
+	var nHeight;
+	var nChildCount;
+	
+	var nFRow;
+	var nX1;
+	var nX2;
+	var nY1;
+	var nY2;
+	
+	//Canvas의 Width/Height 설정
+	var nMaxWidth = objOrgani.targetNodeListDs.getMax("left+width");
+	var nMaxHeight = objOrgani.targetNodeListDs.getMax("top+height");
+	
+	objOrgani.targetCanvas._moveCanvas(0, 0, nMaxWidth, nMaxHeight);
+	objOrgani.form.divCanvas.setOffsetWidth(nMaxWidth);
+	objOrgani.form.divCanvas.setOffsetHeight(nMaxHeight);
+	
+	objOrgani.form.divComponent.setOffsetWidth(nMaxWidth);
+	objOrgani.form.divComponent.setOffsetHeight(nMaxHeight);
+	
+	//설정된 Width/Height값을 원본사이즈로 사용하기 위해 
+	//UserPorperty로 설정
+	objOrgani.form.divCanvas.orgWidth = nMaxWidth;
+	objOrgani.form.divCanvas.orgHeight = nMaxHeight;
+	
+	//노드데이터를 읽어 Canvas로 표현
+	for(i=0;i<objOrgani.targetNodeListDs.rowcount;i++)
+	{
+		//현재 노드 데이터 가져오기
+		sId = objOrgani.targetNodeListDs.getColumn(i, "id"); 
+		sUp_Id = objOrgani.targetNodeListDs.getColumn(i, "up_id"); 
+		nLevel = objOrgani.targetNodeListDs.getColumn(i, "level"); 
+		nLeft = objOrgani.targetNodeListDs.getColumn(i, "left"); 
+		nTop = objOrgani.targetNodeListDs.getColumn(i, "top"); 
+		nWidth = objOrgani.targetNodeListDs.getColumn(i, "width"); 
+		nHeight = objOrgani.targetNodeListDs.getColumn(i, "height"); 
+		nChildCount = objOrgani.targetNodeListDs.getColumn(i, "childcount"); 
+		
+		//노드 그리기 함수 호출
+		this.fn_setTile(objOrgani, sId, nLeft, nTop, nWidth, nHeight);
+		
+		//자식노드가 있을 경우
+		if(nChildCount!=0)
+		{
+			//하단라인 생성 함수 호출
+			this.fn_setLineBottom(objOrgani, nLeft, nTop, nWidth, nHeight);
+			
+			//자식노드리스트 확인을 위해 필터
+			objOrgani.targetNodeListDs.filter("up_id=='"+sId+"'");
+			
+			//마지막 자식노드의 RowIndex 찾기
+			nFRow = objOrgani.targetNodeListDs.rowcount-1;
+			
+			//Middle라인 좌표 구하기
+			if(objOrgani.type=="vertical")
+			{
+				nX1 = nLeft+nWidth;
+				nX2 = nX1;
+				
+				nY1 = objOrgani.targetNodeListDs.getColumn(0, "top") + (objOrgani.targetNodeListDs.getColumn(0, "height")/2);
+				
+				nY2 = objOrgani.targetNodeListDs.getColumn(nFRow, "top") + objOrgani.targetNodeListDs.getColumn(nFRow, "height");
+				nY2 = nY2 - (objOrgani.targetNodeListDs.getColumn(nFRow, "height")/2);
+			}else
+			{
+				//시작 X좌표 : 첫번째 자식 노드의 left + Width/2
+				//(첫번째 자식노드의 center 좌표값에서 라인을 그리기 위함)
+				nX1 = objOrgani.targetNodeListDs.getColumn(0, "left") + (objOrgani.targetNodeListDs.getColumn(0, "width")/2);
+				
+				//종료 X좌표 : 마지막자식노드의 left + width - width/2
+				//(마지막 자식노드의 center 좌표값까지 라인을 그리기 위함)
+				nX2 = objOrgani.targetNodeListDs.getColumn(nFRow, "left") + objOrgani.targetNodeListDs.getColumn(nFRow, "width");
+				nX2 = nX2 - (objOrgani.targetNodeListDs.getColumn(nFRow, "width")/2);
+				
+				//현재노드의 bottom값으로 Y좌표 설정
+				nY1 = nTop+nHeight;
+				nY2 = nY1;
+			}
+			
+			
+			//중간라인 생성 함수 호출
+			this.fn_setLineMiddle(objOrgani, nX1, nX2, nY1, nY2);
+			
+			//필터 해제
+			objOrgani.targetNodeListDs.filter("");
+		}
+		
+		//root노드가 아닐경우 상단라인 생성함수 호출
+		if(nLevel!=0)this.fn_setLineTop(objOrgani, nLeft, nTop, nWidth, nHeight);
+	}
+}
+
+//노드 그리기 함수
+//(노드 컨텐츠 변경 필요시 현재 함수를 수정하여 변경)
+this.fn_setTile = function(objOrgani, pvId, pvLeft, pvTop, pvWidth, pvHeight)
+{
+	var nRow;
+	var nFRow;
+	
+	var nLeft;
+	var nTop;
+	var nWidth;
+	var nHeight;
+	
+	var nTileLeft;
+	var nTileTop;
+	var nTileWidth;
+	var nTileHeight;
+	var objCanvas = objOrgani.targetCanvas;
+	var stButton;
+	
+	//현재 노드의 조직도 데이터  RowIndex 찾기
+	nFRow = objOrgani.targetDs.findRow("ORG_NUM", pvId);
+	
+	//조직도 데이터 가져오기
+	var sORG_NM = objOrgani.targetDs.getColumn(nFRow, "ORG_NM");
+	var sEMP_NM = objOrgani.targetDs.getColumn(nFRow, "EMP_NM");
+	var sJOB_NM = objOrgani.targetDs.getColumn(nFRow, "JOB_NM");
+	var sCOLLAPSE = objOrgani.targetDs.getColumn(nFRow, "COLLAPSE");
+	var sIMG_URL = objOrgani.targetDs.getColumn(nFRow, "IMG_URL");
+	
+	//현재 노드의 노드 데이터 RowIndex 찾기
+	nFRow = objOrgani.targetNodeListDs.findRow("id", pvId);
+	
+	//현재 노드의 자식 갯수 가져오기
+	var sChildCount = objOrgani.targetNodeListDs.getColumn(nFRow, "childcount");
+	
+	//타일 위치 및 사이즈 설정
+	if(objOrgani.type=="vertical")
+	{
+		nTileLeft = pvLeft+objOrgani.marginWidth;
+		nTileTop = pvTop+(pvHeight/2)-(objOrgani.tileHeight/2);
+	}else
+	{
+		nTileLeft = pvLeft+(pvWidth/2)-(objOrgani.tileWidth/2);
+		nTileTop = pvTop+objOrgani.marginHeight;
+	}
+	nTileWidth = objOrgani.tileWidth;
+	nTileHeight = objOrgani.tileHeight;
+	
+	var stTile = new Static("stTile"+pvId, nTileLeft+65, nTileTop+10, 180, 80, null, null);
+	objOrgani.form.divComponent.form.addChild(stTile.name, stTile);
+	stTile.show();
+	
+	stTile.set_cssclass("sta_WF_docScript01");
+	stTile.set_usedecorate(true);
+	stTile.set_text(sORG_NM+" 교수\n<fs v='11px'>"+sEMP_NM+"</fs>");
+	
+	//자식노드가 있거나 COLLAPSE 일 경우
+	if(sChildCount!=0||sCOLLAPSE==1)
+	{
+		if(objOrgani.type=="vertical")
+		{
+			stButton = new Static("stBtn"+pvId, nTileLeft+240, nTileTop+45, 10, 10, null, null);
+		}else
+		{
+			stButton = new Static("stBtn"+pvId, nTileLeft+118, nTileTop+85, 10, 10, null, null);
+		}
+		
+		objOrgani.form.divComponent.form.addChild(stButton.name, stButton);
+		stButton.show();
+		
+		stButton.objOrgani = objOrgani;
+		
+		//COLLAPSE일 경우 이미지 설정
+		if(sCOLLAPSE==1)stButton.set_background('url("imagerc::img_TreeCollapse.png") no-repeat');
+		else stButton.set_background('url("imagerc::img_TreeExpand.png") no-repeat');
+		
+		stButton.addEventHandler("onclick", this.btn_onclick, this);	
+	}
+	
+	var stImage = new Static("stImage"+pvId, nTileLeft, nTileTop, 100, 100, null, null);
+	objOrgani.form.divComponent.form.addChild(stImage.name, stImage);
+	stImage.show();
+	
+	stImage.set_cssclass(sIMG_URL);
+}
+
+//상단라인 생성 함수 호출
+this.fn_setLineTop = function(objOrgani, pvLeft, pvTop, pvWidth, pvHeight)
+{
+	if(objOrgani.type=="vertical")
+	{
+		nX1 = pvLeft;
+		nX2 = nX1 + objOrgani.marginWidth;
+		nY1 = pvTop + (pvHeight/2);
+		nY2 = pvTop + (pvHeight/2);
+	}else
+	{
+		nX1 = pvLeft + (pvWidth/2);
+		nX2 = pvLeft + (pvWidth/2);
+		nY1 = pvTop;
+		nY2 = nY1 + objOrgani.marginHeight+10;		
+	}
+	
+	//라인사이즈 설정
+	objOrgani.targetCanvas.setElementLineWidth(1);
+		
+	objOrgani.targetCanvas.drawStrokeLine(nX1, nY1, nX2, nY2);
+}
+
+//하단라인 생성 함수 호출
+this.fn_setLineBottom = function(objOrgani, pvLeft, pvTop, pvWidth, pvHeight)
+{
+	if(objOrgani.type=="vertical")
+	{
+		nX1 = pvLeft+pvWidth;
+		nX2 = nX1 - objOrgani.marginWidth;
+		nY1 = pvTop + (pvHeight/2);
+		nY2 = pvTop + (pvHeight/2); 
+	}else
+	{
+		nX1 = pvLeft + (pvWidth/2);
+		nX2 = pvLeft + (pvWidth/2);
+		nY1 = pvTop+pvHeight;
+		nY2 = nY1 - objOrgani.marginHeight-6;
+	}
+	
+	//라인사이즈 설정
+	objOrgani.targetCanvas.setElementLineWidth(1);
+		
+	objOrgani.targetCanvas.drawStrokeLine(nX1, nY1, nX2, nY2);
+}
+
+//중간라인 생성 함수 호출
+this.fn_setLineMiddle = function(objOrgani, nX1, nX2, nY1, nY2)
+{
+	//라인사이즈 설정
+	objOrgani.targetCanvas.setElementLineWidth(1);
+		
+	objOrgani.targetCanvas.drawStrokeLine(nX1, nY1, nX2, nY2);
+}
+
+//Drag이벤트 발생시
+this.divOrgani_ondrag = function(obj:Div, e:nexacro.DragEventInfo)
+{
+	//현재 Canvas Div의 위치값 UserProperty로 설정
+	//(DragMove시 이동거리를 계산하기 위함)
+	obj.form.divCanvas.orgLeft = obj.form.divCanvas.getOffsetLeft();
+	obj.form.divCanvas.orgTop = obj.form.divCanvas.getOffsetTop();
+	
+	//Drag 시작 좌표값 설정
+	//DragMove시 이동거리를 계산하기 위함)
+	obj.startX = e.screenx;
+	obj.startY = e.screeny;
+	
+	return true;
+}
+
+//DragMove 이벤트 발생시
+this.divOrgani_ondragmove = function(obj:Div, e:nexacro.DragEventInfo)
+{
+	//이동좌표값 구하기
+	var nCx = nexacro.toNumber(obj.form.divCanvas.orgLeft) + (e.screenx-obj.startX);
+	var nCY = nexacro.toNumber(obj.form.divCanvas.orgTop) + (e.screeny-obj.startY);
+	
+	//Canvas Div 좌표 이동
+	obj.form.divCanvas.move(nCx, nCY);
+	obj.form.divComponent.move(nCx, nCY);
+}
+
+//Click이벤트 발생시
+this.btn_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	var sId = obj.name.toString().replace("stBtn", "");
+	
+	var nFRow = obj.objOrgani.targetDs.findRow("ORG_NUM", sId);
+	
+	var sCOLLAPSE = obj.objOrgani.targetDs.getColumn(nFRow, "COLLAPSE");
+	
+	if(sCOLLAPSE==1)obj.objOrgani.targetDs.setColumn(nFRow, "COLLAPSE", 0);
+	else obj.objOrgani.targetDs.setColumn(nFRow, "COLLAPSE", 1);
+	
+	this.fn_drawOrganization(obj.objOrgani);
+	
+	//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+	this.fn_setRootPos(this.divOrgani, sId);
+}
+
+this.btnSearch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sSearchText = this.edtSearch.value;
+	var nFRow;
+	var sORG_NUM;
+	
+	if(this.gfnIsNull(sSearchText)==false)
+	{
+		nFRow = this.dsOrg01.findRowExpr("EMP_NM.toString().indexOf('"+sSearchText+"')>-1");
+		
+		if(nFRow==-1)
+		{
+			nFRow = this.dsOrg01.findRowExpr("ORG_NM.toString().indexOf('"+sSearchText+"')>-1");
+		}
+		
+		if(nFRow==-1)
+		{
+			alert("검색된 정보가 없습니다.");
+		}else
+		{
+			sORG_NUM = this.dsOrg01.getColumn(nFRow, "ORG_NUM");
+			//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+			this.fn_setRootPos(this.divOrgani, sORG_NUM);
+		}
+	}else
+	{
+		//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+		this.fn_setRootPos(this.divOrgani, "010000");
+	}
+};
+
+this.edtSearch_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode==13)
+	{
+		this.btnSearch.click();
+	}
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//조직도 Type 설정(horizontal/vertical)
+	this.divOrgani.type = "vertical";
+	
+	//조직도 Show 함수
+	this.fn_drawOrganization(this.divOrgani);
+	
+	//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+	this.fn_setRootPos(this.divOrgani, "010000");
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//조직도 Type 설정(horizontal/vertical)
+	this.divOrgani.type = "horizontal";
+	
+	//조직도 Show 함수
+	this.fn_drawOrganization(this.divOrgani);
+	
+	//Target 노드를 기준으로 center top/left middle으로 정렬시키는 함수
+	this.fn_setRootPos(this.divOrgani, "010000");
+};]]></Script>
+  </Form>
+</FDL>

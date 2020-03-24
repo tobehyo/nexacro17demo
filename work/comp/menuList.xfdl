@@ -1,0 +1,1528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="menuList" left="0" top="0" width="980" height="572" titletext="다양한 메뉴" onload="work013_onload" ontimer="work013_ontimer">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="9" left="0" top="0" bottom="0" right="0" onclick="Static00_onclick" text=""/>
+        <Menu id="mnuTop" taborder="0" left="0" top="107" height="38" innerdataset="dsMenu" idcolumn="id" levelcolumn="level" captioncolumn="caption" cssclass="gd_LT_menu" right="20"/>
+        <PopupMenu id="pmnuMenu" left="1020" top="148" width="220" height="132" innerdataset="dsMenu" idcolumn="id" levelcolumn="level" captioncolumn="caption"/>
+        <Static id="Static22" taborder="2" text="상단메뉴 컴포넌트" cssclass="sta_WF_title02" left="0" top="78" width="190" height="24"/>
+        <Button id="btnCall" taborder="4" text="메뉴호출" top="112" width="96" height="28" onclick="btnCall_onclick" right="25" cssclass="btn_WF_btnWhite"/>
+        <Static id="Static02" taborder="5" text="좌측메뉴 예시" cssclass="sta_WF_title02" left="0" top="170" width="190" height="24"/>
+        <Grid id="grdLeftMenu" cssclass="gd_LT_menu" taborder="6" binddataset="dsMenu" useinputpanel="false" autofittype="col" treeuseline="false" treeusecheckbox="false" treeuseimage="false" oncellclick="grdLeftMenu_oncellclick" left="0" top="204" width="182" treeinitstatus="expand,null" bottom="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="179"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="시스템목록"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:caption" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="divMenu" taborder="8" text="Div00" left="376" top="204" cssclass="div_basic01" bottom="20" right="20" style="background:#373c43ff;">
+          <Layouts>
+            <Layout>
+              <Grid id="grdHideMenu" cssclass="gd_LT_menu" taborder="0" binddataset="dsHideMenu" useinputpanel="false" useselcolor="false" left="0" top="0" right="0" scrollbars="none" style="background:#006ddd80;" autofittype="col" bottom="343" scrollbartype="none none">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell style="padding:5 5 5 5;" text="bind:caption"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="grdMenu" taborder="9" useinputpanel="false" left="192" top="204" width="174" binddataset="dsGridMenu" autofittype="col" treeusecheckbox="false" treeuseline="false" bottom="20" onmousemove="grdMenu_onmousemove" onmouseleave="grdMenu_onmouseleave" onkillfocus="grdMenu_onkillfocus" onmouseenter="grdMenu_onmousemove">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="162"/>
+              </Columns>
+              <Rows>
+                <Row size="30"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" text="bind:MENU_NM" treestartlevel="1" treelevel="bind:MENU_LVL"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static60" taborder="12" text="다양한 메뉴 표현으로 시스템 구성과 사용자 편의성을 고려하여 사용할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Div id="divMenu1" taborder="10" text="Div00" left="191" top="262" width="176" height="140" style="background:#ffffffff;border:2 solid #006dddff ;bordertype:round 10 10 ;" visible="false">
+          <Layouts>
+            <Layout>
+              <Grid id="grdMenu2" taborder="0" useinputpanel="false" left="5" top="5" right="5" bottom="5" binddataset="dsGridMenu2" autofittype="col" style="border:0 none #808080ff;" onmouseenter="divMenu1_grdMenu2_onmouseenter" onmousemove="divMenu1_grdMenu2_onmousemove" oncellclick="divMenu1_grdMenu2_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="body" style="border:0 none #808080ff ;selectline:0 none #808080ff ;cellline:0 none #808080ff ;">
+                      <Cell text="bind:MENU_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsMenu">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="status" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">010000</Col>
+            <Col id="caption">대메뉴1</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">010100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">010101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">010102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">010200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">010201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">010202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">010203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">020000</Col>
+            <Col id="caption">대메뉴2</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">020100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">020101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">020102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">020200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">020201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">020202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">020203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">030000</Col>
+            <Col id="caption">대메뉴3</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">030100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">030101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">030102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">030200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">030201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">030202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">030203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">040000</Col>
+            <Col id="caption">대메뉴4</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">040100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">040101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">040102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">040200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">040201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">040202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">040203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">050000</Col>
+            <Col id="caption">대메뉴5</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">050100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">050101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">050102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">050200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">050201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">050202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">050203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">060000</Col>
+            <Col id="caption">대메뉴6</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">060100</Col>
+            <Col id="caption">중메뉴1</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">060101</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">060102</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">060200</Col>
+            <Col id="caption">중메뉴2</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">060201</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">060202</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">060203</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsHideMenu">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="upid" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="status" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">010101</Col>
+            <Col id="upid">010000</Col>
+            <Col id="caption">소메뉴1</Col>
+            <Col id="level">1</Col>
+            <Col id="status">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="id">010102</Col>
+            <Col id="upid">010000</Col>
+            <Col id="caption">소메뉴2</Col>
+            <Col id="level">1</Col>
+            <Col id="status">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="id">010201</Col>
+            <Col id="upid">010000</Col>
+            <Col id="caption">소메뉴3</Col>
+            <Col id="level">1</Col>
+            <Col id="status">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="id">010202</Col>
+            <Col id="upid">010000</Col>
+            <Col id="caption">소메뉴4</Col>
+            <Col id="level">1</Col>
+            <Col id="status">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="id">010203</Col>
+            <Col id="upid">010000</Col>
+            <Col id="caption">소메뉴5</Col>
+            <Col id="level">1</Col>
+            <Col id="status">[Undefined]</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsGridMenu">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="8"/>
+          <Column id="UP_MENU_CD" type="STRING" size="8"/>
+          <Column id="MENU_NM" type="STRING" size="50"/>
+          <Column id="MENU_LVL" type="BIGDECIMAL" size="22"/>
+          <Column id="PGM_PATH" type="STRING" size="200"/>
+          <Column id="PGM_ID" type="STRING" size="200"/>
+          <Column id="SORT" type="BIGDECIMAL" size="22"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_CD">010100</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010200</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010300</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020100</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020200</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">퇴직연금신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020300</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">복리후생</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030100</Col>
+            <Col id="UP_MENU_CD">030000</Col>
+            <Col id="MENU_NM">근태신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030200</Col>
+            <Col id="UP_MENU_CD">030000</Col>
+            <Col id="MENU_NM">근태내역</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040100</Col>
+            <Col id="UP_MENU_CD">040000</Col>
+            <Col id="MENU_NM">경력개발</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040200</Col>
+            <Col id="UP_MENU_CD">040000</Col>
+            <Col id="MENU_NM">교육관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090100</Col>
+            <Col id="UP_MENU_CD">090000</Col>
+            <Col id="MENU_NM">요구기능시연</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090200</Col>
+            <Col id="UP_MENU_CD">090000</Col>
+            <Col id="MENU_NM">추가기능시연</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+            <Col id="PGM_PATH"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMenu1">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="8"/>
+          <Column id="UP_MENU_CD" type="STRING" size="8"/>
+          <Column id="MENU_NM" type="STRING" size="50"/>
+          <Column id="MENU_LVL" type="BIGDECIMAL" size="22"/>
+          <Column id="PGM_PATH" type="STRING" size="200"/>
+          <Column id="PGM_ID" type="STRING" size="200"/>
+          <Column id="SORT" type="BIGDECIMAL" size="22"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_CD">010000</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">인사정보</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010100</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010101</Col>
+            <Col id="UP_MENU_CD">010100</Col>
+            <Col id="MENU_NM">인사기본사항</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010102</Col>
+            <Col id="UP_MENU_CD">010100</Col>
+            <Col id="MENU_NM">자기신고(본인)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010200</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010201</Col>
+            <Col id="UP_MENU_CD">010200</Col>
+            <Col id="MENU_NM">자격증 신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010202</Col>
+            <Col id="UP_MENU_CD">010200</Col>
+            <Col id="MENU_NM">제증명 신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010203</Col>
+            <Col id="UP_MENU_CD">010200</Col>
+            <Col id="MENU_NM">사진변경 신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010300</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010301</Col>
+            <Col id="UP_MENU_CD">010300</Col>
+            <Col id="MENU_NM">다면평가수행(부하)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010302</Col>
+            <Col id="UP_MENU_CD">010300</Col>
+            <Col id="MENU_NM">다면평가수행(동료)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010303</Col>
+            <Col id="UP_MENU_CD">010300</Col>
+            <Col id="MENU_NM">다면평가수행(상사)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020000</Col>
+            <Col id="MENU_NM">노무정보</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="SORT">1</Col>
+            <Col id="UP_MENU_CD">0</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020100</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020101</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">계좌변경 신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020102</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">급여명세서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020103</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">퇴직금 예상액</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020104</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">연말정산 기초자료</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">4</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020105</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">갑근세 납세필 증명 신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">5</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020106</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">원천징수영수증 </Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">6</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020107</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">퇴직연금 관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">7</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020108</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">과세이연(IRA)자료</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">8</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020109</Col>
+            <Col id="UP_MENU_CD">020100</Col>
+            <Col id="MENU_NM">퇴직연금최초불입내역</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">9</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020200</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">퇴직연금신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020201</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">가입신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020202</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">제도변경신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020203</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">사업자변경신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020204</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">중도인출신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">4</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020205</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">담보대출신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">5</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020206</Col>
+            <Col id="UP_MENU_CD">020200</Col>
+            <Col id="MENU_NM">추가불입신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">6</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020300</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">복리후생</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020301</Col>
+            <Col id="UP_MENU_CD">020300</Col>
+            <Col id="MENU_NM">가족관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020302</Col>
+            <Col id="UP_MENU_CD">020300</Col>
+            <Col id="MENU_NM">사회보험 자격관리</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020303</Col>
+            <Col id="UP_MENU_CD">020300</Col>
+            <Col id="MENU_NM">대부신청(주택자금)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030000</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">근태관리</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030100</Col>
+            <Col id="UP_MENU_CD">030000</Col>
+            <Col id="MENU_NM">근태신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030101</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">휴가원 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030102</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">휴가원 취소</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030103</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">결근원 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030104</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">현장출근계 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">4</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030105</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">지참,조퇴계 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">5</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030106</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">대근원/변경원 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">6</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030107</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">대근원/변경원 취소</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">7</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030108</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">연차적치 신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">8</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030109</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">(사전,사후)초과근무신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">9</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030110</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">출장신청서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">10</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030111</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">출장결과보고서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">11</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030112</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">출장취소</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">12</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030113</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">여비불지급출장명령서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">13</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030114</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">국외출장명령서</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">14</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030115</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">항공마일리지입력</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">15</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030116</Col>
+            <Col id="UP_MENU_CD">030100</Col>
+            <Col id="MENU_NM">항공마일리지조회</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">16</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030200</Col>
+            <Col id="UP_MENU_CD">030000</Col>
+            <Col id="MENU_NM">근태내역</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030201</Col>
+            <Col id="UP_MENU_CD">030200</Col>
+            <Col id="MENU_NM">개인별 근무일정(조회)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030202</Col>
+            <Col id="UP_MENU_CD">030200</Col>
+            <Col id="MENU_NM">근무조별 근무일정</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">030203</Col>
+            <Col id="UP_MENU_CD">030200</Col>
+            <Col id="MENU_NM">근무변경조회(근무교대)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040000</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">KOSPO아카데미</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040100</Col>
+            <Col id="UP_MENU_CD">040000</Col>
+            <Col id="MENU_NM">경력개발</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040101</Col>
+            <Col id="UP_MENU_CD">040100</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="MENU_NM">로드맵조회</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040200</Col>
+            <Col id="UP_MENU_CD">040000</Col>
+            <Col id="MENU_NM">교육관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040201</Col>
+            <Col id="MENU_NM">연간교육계획</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040202</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_NM">직무역량대표교육과정</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040203</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_NM">직무별역량</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">3</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040204</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_NM">교육신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">4</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040205</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_NM">개인별교육현황</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">5</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">040206</Col>
+            <Col id="UP_MENU_CD">040200</Col>
+            <Col id="MENU_NM">어학성적등록신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">6</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090000</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_NM">기능시연</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090100</Col>
+            <Col id="UP_MENU_CD">090000</Col>
+            <Col id="MENU_NM">요구기능시연</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090101</Col>
+            <Col id="UP_MENU_CD">090100</Col>
+            <Col id="MENU_NM">자격증신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">1</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">poc01.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090102</Col>
+            <Col id="UP_MENU_CD">090100</Col>
+            <Col id="MENU_NM">휴가원신청</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="SORT">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">poc02.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090103</Col>
+            <Col id="UP_MENU_CD">090100</Col>
+            <Col id="SORT">3</Col>
+            <Col id="MENU_NM">원천징수영수증</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">poc03.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090200</Col>
+            <Col id="UP_MENU_CD">090000</Col>
+            <Col id="MENU_NM">추가기능시연</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+            <Col id="PGM_PATH"/>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090201</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">1</Col>
+            <Col id="MENU_NM">다양한그리드 기능 구현</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample01.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090202</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">2</Col>
+            <Col id="MENU_NM">트리그리드, 소계/합계</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample02.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090203</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">3</Col>
+            <Col id="MENU_NM">다양한그리드 표현</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample03.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090204</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">4</Col>
+            <Col id="MENU_NM">상세정보보기(오픈API연동)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample04.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090205</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">5</Col>
+            <Col id="MENU_NM">카테고리그리드</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample05.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090206</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">6</Col>
+            <Col id="MENU_NM">그리드 값계산</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample06.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090207</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="SORT">7</Col>
+            <Col id="MENU_NM">동적컴포넌트생성(일정관리)</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample07.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090208</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="MENU_NM">다양한 메뉴구성</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">sample08.xfdl</Col>
+            <Col id="SORT">8</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">090209</Col>
+            <Col id="UP_MENU_CD">090200</Col>
+            <Col id="MENU_NM">인재프로필</Col>
+            <Col id="MENU_LVL">2</Col>
+            <Col id="PGM_PATH">work</Col>
+            <Col id="PGM_ID">poc04.xfdl</Col>
+            <Col id="SORT">9</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100000</Col>
+            <Col id="UP_MENU_CD">0</Col>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_NM">Template</Col>
+            <Col id="SORT">1</Col>
+            <Col id="PGM_PATH"/>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100100</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_NM">Step</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">temp_step.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100200</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">2</Col>
+            <Col id="MENU_NM">ListDetail</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempListDetail.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100300</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">3</Col>
+            <Col id="MENU_NM">ListDetail_H</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempListDetail_H.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100400</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">4</Col>
+            <Col id="MENU_NM">MasterDetail</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempMasterDetail.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100500</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">5</Col>
+            <Col id="MENU_NM">MasterDetail_Tab</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempMasterDetail_tab.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100600</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">6</Col>
+            <Col id="MENU_NM">Suttle</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempShuttle.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">100700</Col>
+            <Col id="UP_MENU_CD">100000</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">7</Col>
+            <Col id="MENU_NM">SingleDetail</Col>
+            <Col id="PGM_PATH">template</Col>
+            <Col id="PGM_ID">tempSingleDetail.xfdl</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsGridMenu2">
+        <ColumnInfo>
+          <Column id="MENU_CD" type="STRING" size="8"/>
+          <Column id="UP_MENU_CD" type="STRING" size="8"/>
+          <Column id="MENU_NM" type="STRING" size="50"/>
+          <Column id="MENU_LVL" type="BIGDECIMAL" size="22"/>
+          <Column id="PGM_PATH" type="STRING" size="200"/>
+          <Column id="PGM_ID" type="STRING" size="200"/>
+          <Column id="SORT" type="BIGDECIMAL" size="22"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_CD">010100</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010200</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">010300</Col>
+            <Col id="UP_MENU_CD">010000</Col>
+            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="SORT">1</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_CD">020100</Col>
+            <Col id="UP_MENU_CD">020000</Col>
+            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="PGM_PATH"/>
+            <Col id="PGM_ID"/>
+            <Col id="SORT">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsButtonIdx">
+        <ColumnInfo>
+          <Column id="Idx" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Idx">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    menuList.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/02
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/02          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.fv_timerIdx = 0;
+this.fv_timerMax = 20;
+this.fv_pageHeight = 122;
+this.objTarget;
+this.objTarget_befor = "";
+this.fv_Row;
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.work013_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	/*
+	var nLevel;
+	for(i=0;i<this.Dataset00.rowcount;i++)
+	{
+		nLevel = this.Dataset00.getColumn(i, "level");
+		
+		if(nLevel!="0")
+		{
+			this.grdLeftMenu00.setRealRowSize(i, 0);
+		}
+	}
+	*/
+	
+	this.fnSetMenu();
+}
+
+
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.work013_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+	if(e.timerid==1)
+	{
+		var objTile;
+		var nValue = this.fv_pageHeight - this.fnMoveAni(this.fv_timerIdx, 0, this.fv_pageHeight, this.fv_timerMax);
+		var nTop;
+		
+		this.fv_timerIdx++;
+		
+		for(i=0;i<this.divMenu.form.components.length;i++)
+		{
+			objTile = this.divMenu.form.components[i];
+			
+			nTop = nexacro.toNumber(objTile.orgTop)
+			
+			if(objTile.orgTop>this.objTarget_befor.orgTop)
+			{
+				nTop = nTop + nValue;
+			}
+		
+			objTile.setOffsetTop(nTop);
+		}
+		
+		this.divMenu.form.grdHideMenu.setOffsetHeight(nValue);
+		
+		if(this.fv_timerIdx==this.fv_timerMax)
+		{
+			var nTop = this.objTarget.getOffsetBottom();
+			this.divMenu.form.grdHideMenu.move(5, nTop, null, 0, 5, null);
+			
+			this.fv_timerIdx = 0;
+						
+			this.killTimer(1);
+			this.setTimer(2, 10);
+		}
+	}
+	else if(e.timerid==2)
+	{
+		var objTile;
+		var nValue = this.fnMoveAni(this.fv_timerIdx, 0, this.fv_pageHeight, this.fv_timerMax);
+		var nTop;
+		
+		this.fv_timerIdx++;
+		
+		for(i=0;i<this.divMenu.form.components.length;i++)
+		{
+			objTile = this.divMenu.form.components[i];
+			
+			nTop = nexacro.toNumber(objTile.orgTop)
+			
+			if(objTile.orgTop>this.objTarget.orgTop)
+			{
+				nTop = nTop + nValue;
+				objTile.setOffsetTop(nTop);
+			}
+		}
+		this.divMenu.form.grdHideMenu.setOffsetHeight(nValue+2);
+		if(this.fv_timerIdx==this.fv_timerMax)
+		{
+			this.fv_timerIdx = 0;
+			
+			this.objTarget_befor = this.objTarget;
+			
+			this.killTimer(2);
+		}
+	}else if(e.timerid==3)
+	{
+		this.divMenu1.set_visible(false);
+		this.killTimer(3);
+	}
+}
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ 
+/**
+* fnMoveAni : 애니메이션 Interpolation 함수
+* @param {String}  menuId	- 메뉴 ID
+* @param {String}  menuNm	- 메뉴명
+* @return : N/A
+* @example :  
+*/
+this.fnMoveAni = function (t, b, c, d) 
+{
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t + b;
+	t -= 2;
+	return c/2*(t*t*t + 2) + b;
+};
+
+
+/**
+* fnSetMenu : 사용자 설정 이벤트
+* @param {String}  menuId	- 메뉴 ID
+* @param {String}  menuNm	- 메뉴명
+* @return : N/A
+* @example :  
+*/
+this.fnSetMenu = function()
+{
+	var i;
+	var objBtn;
+	var nTop = 0;
+	var sMenuNm;
+	
+	this.dsMenu.filter("level==0");
+	
+	for(i=0;i<this.dsMenu.rowcount;i++)
+	{
+		sMenuNm = this.dsMenu.getColumn(i, "caption");
+		
+		objBtn = new Button("btnMenu"+i, 0, nTop, null, 33, 0, null);
+		this.divMenu.addChild(objBtn.name, objBtn);
+		
+		objBtn.show();
+		
+		objBtn.set_cssclass("btn_cp_basic01");
+		objBtn.set_text(sMenuNm);
+		objBtn.orgTop = nTop;
+		
+		objBtn.addEventHandler("onclick", this.btnMenu_onclick, this);
+		nTop = objBtn.getOffsetBottom()+2;
+	}
+	this.dsMenu.filter("");
+	this.divMenu.form.btnMenu0.click();
+}
+
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 버튼 click이벤트
+*/
+this.btnMenu_onclick = function(obj, e)
+{
+	this.dsButtonIdx.setColumn(0, "Idx", obj.name.substr(obj.name.length-1));
+	
+	this.objTarget = obj;
+	var nTop = this.objTarget.getOffsetBottom();
+	
+	if(this.objTarget_befor!="")
+	{
+		this.setTimer(1, 10);
+	}else
+	{
+		this.divMenu.form.grdHideMenu.move(5, nTop, null, 0, 5, null);
+		this.setTimer(2, 10);
+	}
+}
+
+/**
+ * @description 메뉴호출 버튼
+*/
+this.btnCall_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.pmnuMenu.trackPopupByComponent(obj, 0, 26);
+}
+
+/**
+ * @description 그리드 마우스 move 이벤트
+*/
+this.grdMenu_onmousemove = function(obj:Grid, e:nexacro.GridMouseEventInfo)
+{
+	if(this.fv_Row!=e.row)
+	{
+		if(e.row<0)
+		{
+			this.divMenu1.set_visible(false);
+			return;
+		}
+
+		var nRowHeight = nexacro.toNumber(this.divMenu1.form.grdMenu2.getRealRowSize(0));
+		var nLeft = obj.getOffsetLeft()+obj.getOffsetWidth();
+		var nTop = obj.getOffsetTop()+(e.row*nRowHeight);
+		this.fv_Row = e.row;
+		this.divMenu1.set_visible(true);
+		this.divMenu1.move(nLeft-30, nTop);
+		sMENU_CD = this.dsGridMenu.getColumn(this.fv_Row, "MENU_CD");
+		this.dsMenu1.filter("UP_MENU_CD=='"+sMENU_CD+"'");
+		this.dsGridMenu2.copyData(this.dsMenu1, true);
+		this.dsMenu1.filter("");
+		
+		this.divMenu1.resize(this.divMenu1.getOffsetWidth(), this.divMenu1.form.grdMenu2.getRealRowFullSize() +13);
+		
+		this.Static00.bringToFront();
+		this.grdMenu.bringToFront();
+		this.divMenu1.bringToFront();
+//		obj.setFocus();
+// 		this.killTimer(3);
+// 		this.setTimer(3, 2000);
+// 		this.PopupDiv00.trackPopup(nLeft, nTop);
+	}
+}
+
+/**
+ * @description 그리드 마우스 killfocus 이벤트
+*/
+this.grdMenu_onkillfocus = function(obj:nexacro.Grid,e:nexacro.KillFocusEventInfo)
+{
+	//this.divMenu1.set_visible(false);
+// 	this.killTimer(3);
+// 	this.setTimer(3, 2000);
+};
+
+this.grdMenu_onmouseleave = function(obj:nexacro.Grid,e:nexacro.MouseEventInfo)
+{
+// 	if(this.getFocus().name != obj.name)
+// 	{
+// 		this.divMenu1.set_visible(false);			
+// 		this.killTimer(3);
+// 	}
+};
+
+
+this.Static00_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.divMenu1.set_visible(false);
+	this.Static00.sendToBack();
+};
+
+this.divMenu1_grdMenu2_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.divMenu1.set_visible(false);
+	this.Static00.sendToBack();
+	
+};]]></Script>
+  </Form>
+</FDL>

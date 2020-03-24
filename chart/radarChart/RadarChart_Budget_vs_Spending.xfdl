@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="RadarChart_polygon" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <RadarChart id="RadarChart00" taborder="1" left="0%" top="0%" right="0%" bottom="0%" binddataset="budget_vas_spending" categorycolumn="bind:title" radius="80" enableanimation="true">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Budget vs spending",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "15pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"labelgap": "5"
+	},
+	"valueaxes": [
+		{
+		"id": "valueaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"tickmax": "80000",
+		"labelmask": "##k",
+		"tickinterval": "20000",
+		"axislineindex": "5"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "Budget",
+			"linevisible": true,
+			"pointvisible": true,
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:value",
+			"pointsize": "8",
+			"linestyle": "3px solid deepskyblue",
+			"pointlinestyle": "3px solid deepskyblue",
+			"pointfillstyle": "deepskyblue",
+			"lineareafillstyle": "deepskyblue"
+		},
+		{
+			"id": "series1",
+			"titletext": "Spending",
+			"linevisible": true,
+			"pointvisible": true,
+			"pointshape": "diamond",
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:value2",
+			"pointsize": "8",
+			"linestyle": "3px solid black",
+			"pointlinestyle": "3px solid black",
+			"pointfillstyle": "black",
+			"lineareafillstyle": "black"
+		}
+	]
+}]]></Contents>
+        </RadarChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="budget_vas_spending">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="value" type="FLOAT" size="256"/>
+          <Column id="value2" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">Sales</Col>
+            <Col id="value">48000</Col>
+            <Col id="value2">50000</Col>
+          </Row>
+          <Row>
+            <Col id="title">Marketing</Col>
+            <Col id="value2">38000</Col>
+            <Col id="value">23000</Col>
+          </Row>
+          <Row>
+            <Col id="title">Development</Col>
+            <Col id="value">67000</Col>
+            <Col id="value2">41000</Col>
+          </Row>
+          <Row>
+            <Col id="title">CustomerSupport</Col>
+            <Col id="value">26500</Col>
+            <Col id="value2">27800</Col>
+          </Row>
+          <Row>
+            <Col id="title">InformationTechnology</Col>
+            <Col id="value">19500</Col>
+            <Col id="value2">25000</Col>
+          </Row>
+          <Row>
+            <Col id="title">Administration</Col>
+            <Col id="value">14000</Col>
+            <Col id="value2">16000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

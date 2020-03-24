@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GoogleMap" width="980" height="650" titletext="GoogleMap연계" onload="GoogleMap_onload">
+    <Layouts>
+      <Layout screenid="desktop">
+        <Static id="Static02" taborder="0" cssclass="sta_WF_box02" left="0" top="0" right="20" height="46"/>
+        <WebBrowser id="WebBrowser01" top="54" taborder="4" bottom="20" left="0" right="20" url="https://demo.nexacroplatform.com/nexacro-demo/service/googlemap.jsp"/>
+        <Edit id="Edit00" taborder="1" value="서울특별시 강남구 봉은사로 617" left="10" top="8" width="262" height="30"/>
+        <Edit id="Edit01" taborder="2" value="서울특별시 강남구 영동대로 513" left="277" top="8" width="273" height="30"/>
+        <Button id="Button02" taborder="3" text="멀티 주소셋팅" onclick="Button02_onclick" cssclass="btn_WF_basic01" top="8" right="30" width="142" height="30"/>
+      </Layout>
+      <Layout name="Layout0" screenid="mobile" width="480" height="840" mobileorientation="portrait">
+        <Static id="Static02" left="20" top="20" height="194" right="20"/>
+        <WebBrowser id="WebBrowser01" left="20" top="230" right="20" bottom="20"/>
+        <Edit id="Edit01" left="46" top="91" height="46" right="46"/>
+        <Button id="Button02" top="147" width="142" height="46" right="46"/>
+        <Edit id="Edit00" left="46" top="40" height="46" right="46"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  GoogleMap.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.25
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.25      presales                  스크립트 수정 
+*******************************************************************************
+*/
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+this.GoogleMap_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.WebBrowser01.set_url(nexacro.getProjectPath() + "../service/googlemap.jsp");
+};
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.Button02_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var strAddr1 = this.Edit00.value;
+	var strAddr2 = this.Edit01.value;
+
+	this.WebBrowser01.callMethod("codeAddress", strAddr1);
+	this.WebBrowser01.callMethod("codeAddress", strAddr2);
+};]]></Script>
+  </Form>
+</FDL>

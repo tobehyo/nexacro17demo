@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="SimpleArea" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="dsRainfall" categorycolumn="bind:name" bargrouping="false" enableanimation="true">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"boardlinestyle": "2px solid #d0d0d0",
+		"ticksize": "0",
+		"labelgap": "10",
+		"visible": true,
+		"axislinestyle": "2px solid #d0d0d0",
+		"ticklinestyle": "1px solid #d0d0d0",
+		"boardlineopacity": "1",
+		"axistype": "normal",
+		"axislineopacity": "1",
+		"tickstartgap": "6px",
+		"tickendgap": "0px"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis1",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "0px solid #d0d0d0",
+			"visible": "true",
+			"ticksize": "0",
+			"tickmax": "100",
+			"titlegap": "0",
+			"labelgap": ""
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "2px solid #1abd9c",
+			"barfillstyle": "#64cdfa",
+			"barvisible": "false",
+			"linevisible": "true",
+			"lineareavisible": "true",
+			"lineareaopacity": "0.5",
+			"lineopacity": "1",
+			"highlightbarvisible": "false",
+			"highlightlinevisible": "false",
+			"highlightpointvisible": "false",
+			"pointvisible": "true",
+			"lineareafillstyle": "#64cdfa",
+			"pointfillstyle": "#ffffff",
+			"pointlinestyle": "2px solid #64cdfa",
+			"linestyle": "2px solid #64cdfa"
+		},
+		{
+			"id": "series1",
+			"titletext": "mean",
+			"barvisible": "false",
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:mean",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #1a85be",
+			"barfillstyle": "#1a85be",
+			"linevisible": "true",
+			"lineareaopacity": "0.3",
+			"lineopacity": "1",
+			"lineareavisible": "true",
+			"pointvisible": "true",
+			"stacktype": "none",
+			"selecttype": "unselect",
+			"lineareafillstyle": "#5c7ed2",
+			"pointlinestyle": "2px solid #5c7ed2",
+			"linestyle": "2px solid #5c7ed2",
+			"pointfillstyle": "#ffffff"
+		}
+	],
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	}
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+      <Layout name="Layout0" width="480" height="250" mobileorientation="landscape"/>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsRainfall">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="rainfall" type="FLOAT" size="256"/>
+          <Column id="mean" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">69</Col>
+            <Col id="mean">50</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">10</Col>
+            <Col id="rainfall">49.6</Col>
+            <Col id="mean">60</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">94.1</Col>
+            <Col id="mean">68.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">30</Col>
+            <Col id="rainfall">78</Col>
+            <Col id="mean">51</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">11.2</Col>
+            <Col id="mean">59.1</Col>
+          </Row>
+          <Row>
+            <Col id="name">50</Col>
+            <Col id="rainfall">56</Col>
+            <Col id="mean">55.9</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">66.6</Col>
+            <Col id="mean">60.3</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">70</Col>
+            <Col id="rainfall">53.2</Col>
+            <Col id="mean">80</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">30</Col>
+            <Col id="mean">65.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">90</Col>
+            <Col id="rainfall">66</Col>
+            <Col id="mean">61.5</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">83.4</Col>
+            <Col id="mean">63.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">110</Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">65.5</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">36</Col>
+            <Col id="mean">45.3</Col>
+          </Row>
+          <Row>
+            <Col id="name">130</Col>
+            <Col id="rainfall">58.9</Col>
+            <Col id="mean">50.9</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">88</Col>
+            <Col id="mean">69.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">150</Col>
+            <Col id="rainfall">60</Col>
+            <Col id="mean">52.4</Col>
+          </Row>
+          <Row>
+            <Col id="name"></Col>
+            <Col id="rainfall">91.4</Col>
+            <Col id="mean">66.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">170</Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">43.6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.BasicChart00.runAnimation();
+};
+]]></Script>
+  </Form>
+</FDL>

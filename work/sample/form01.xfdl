@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="form01" classname="Work" inheritanceid="" titletext="기본샘플(조회,입력,저장,삭제)" left="0" width="1050" top="0" height="560" onload="form_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" left="0" top="60" right="20" binddataset="dsList" autofittype="col" no="true" bottom="60">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="POST_ID"/>
+                <Cell col="1" text="TITLE"/>
+                <Cell col="2" text="CONTENTS"/>
+                <Cell col="3" text="REG_DATE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:POST_ID"/>
+                <Cell col="1" text="bind:TITLE" edittype="normal"/>
+                <Cell col="2" text="bind:CONTENTS" edittype="normal"/>
+                <Cell col="3" text="bind:REG_DATE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="divSearch" taborder="1" text="" left="0" top="0" height="50" right="20" cssclass="div_WF_Search">
+          <Layouts>
+            <Layout>
+              <Button id="btnSearch" taborder="1" top="6" width="36" height="36" right="6" onclick="fnSearch" cssclass="btn_WF_SubAction, btn_WF_SearchIcon"/>
+              <Edit id="edtKeyword" taborder="0" left="188" top="7" width="200" height="34"/>
+              <Static id="Static01" taborder="2" text="검색조건" left="10" top="14" width="64" height="20" cssclass="sta_WF_SeaFieldLabel"/>
+              <Combo id="cboCondition" taborder="3" text="전체" left="86" top="7" width="100" height="34" value="" index="0" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn"/>
+                      <Col id="datacolumn">전체</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">TITLE</Col>
+                      <Col id="datacolumn">제목</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">CONTENTS</Col>
+                      <Col id="datacolumn">내용</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnAdd" taborder="2" text="추가" left="0" width="65" height="29" bottom="21" onclick="fnAdd"/>
+        <Button id="btnDel" taborder="2" text="삭제" left="72" width="65" height="29" bottom="21" onclick="fnDel"/>
+        <Button id="btnSave" taborder="2" text="저장" left="144" width="65" height="29" bottom="21" onclick="fnSave"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="POST_ID" type="int" size="4"/>
+          <Column id="HIT_COUNT" type="int" size="4"/>
+          <Column id="COMMUNITY_ID" type="string" size="32"/>
+          <Column id="REG_DATE" type="datetime" size="17"/>
+          <Column id="TITLE" type="string" size="32"/>
+          <Column id="CONTENTS" type="string" size="32"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsSearch">
+        <ColumnInfo>
+          <Column id="searchCondition" type="STRING" size="100"/>
+          <Column id="searchKeyword" type="STRING" size="100"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="searchKeyword"/>
+            <Col id="searchCondition"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.1"><![CDATA[/**
+ * @description Transaction CallBack 함수(선택)
+*/
+this.fnCallback = function(svcID,errorCode,errorMsg)
+{
+	// 에러 시 화면 처리 내역
+	if(errorCode != 0)
+	{
+		return;
+	}
+	
+	switch(svcID)
+	{
+		case "search":
+			trace(this.dsList.saveXML());
+			break;
+			
+		case "save":
+			// 저장 되었습니다.
+			this.gfnAlert("msg.save.success");	
+			break;
+	}
+};
+
+/**
+ * @description 조회
+*/
+this.fnSearch = function ()
+{
+	// 조회조건 설정
+ 	this.dsSearch.setColumn(0, "searchCondition", this.divSearch.form.cboCondition.value);
+	this.dsSearch.setColumn(0, "searchKeyword"  , this.divSearch.form.edtKeyword.value);
+	
+ 	var strSvcId    = "search";
+	var strSvcUrl   = "svcurl::selectDataListMap.do";
+	var inData      = "dsSearch=dsSearch";
+	var outData     = "dsList=output1";
+	var strArg      = "";
+	var callBackFnc = "fnCallback";
+	var isAsync   	= true;
+	
+	this.transaction(strSvcId , 		// transaction을 구분하기 위한 svc id값
+					strSvcUrl , 	// trabsaction을 요청할 주소
+					inData , 		// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
+					outData , 		// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
+					strArg, 		// 입력값으로 보낼 arguments, strFormData="20120607"
+					callBackFnc, 	// transaction의 결과를 받을 Function 이름
+					isAsync); 		// 비동기통신 여부 [생략가능]
+};
+
+/**
+ * @description 입력
+*/
+this.fnAdd = function()
+{
+	this.dsList.addRow();
+};
+
+/**
+ * @description 삭제
+*/
+this.fnDel = function()
+{
+	this.dsList.deleteRow(this.dsList.rowposition);
+};
+
+/**
+ * @description 저장
+*/
+this.fnSave = function()
+{
+// 	// 변경사항 체크
+// 	if (this.gfnDsIsUpdated(this.dsList) == false) {
+// 		alert("변경된 내역이 없습니다.");
+// 		return;
+// 	}
+
+	var strSvcUrl   = "svcurl::updateDataListMap.do";
+	var inData      = "input1=dsList:U";
+	var outData     = "";
+	
+	this.transaction("save", strSvcUrl, inData, outData);
+};
+]]></Script>
+  </Form>
+</FDL>

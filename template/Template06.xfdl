@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Functions" classname="Functions" left="0" top="0" width="980" height="760" titletext="다양한그리드기능" onload="Functions_onload" ontimer="Functions_ontimer">
+    <Layouts>
+      <Layout width="980" height="760">
+        <Grid id="grdList" taborder="0" useinputpanel="false" left="0" top="250" right="20" cellmovingtype="col" cellsizingtype="col" selecttype="cell" binddataset="ds_List" bottom="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="250"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="250"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="32"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" style="background: ;" checkboxsize="17"/>
+                <Cell col="1" style="background: ;" text="성명" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="2" style="background: ;" text="타입" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="3" style="background: ;" text="주소" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="4" style="background: ;" text="설정금액" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="5" style="background: ;" text="생성일" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="6" style="background: ;" text="확인금액" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+                <Cell col="7" text="기타" expandshow="show" expandimage="URL('imagerc::grd_sort.png')"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:chk" checkboxsize="17"/>
+                <Cell col="1" text="bind:Column0"/>
+                <Cell col="2" text="bind:Column1"/>
+                <Cell col="3" style="align:left;" text="bind:Column2" textAlign="left"/>
+                <Cell col="4" style="align:right;" text="bind:Column3" textAlign="right" displaytype="maskeditcontrol" maskeditformat="9,999"/>
+                <Cell col="5" displaytype="date" text="bind:Column4" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="6" style="align:right;" text="bind:Column5" calendardateformat="yyyy-MM-dd" textAlign="right"/>
+                <Cell col="7" style="align:left;" text="bind:Column6" textAlign="left" displaytype="normal"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static02" taborder="1" cssclass="sta_WF_box02" left="0" top="200" right="20" height="44"/>
+        <Button id="btn_Search" taborder="2" cssclass="btn_WF_search01" top="200" width="43" height="44" right="20" onclick="btn_Search_onclick"/>
+        <Static id="Static03" taborder="3" text="성명" cssclass="sta_WF_condition01" left="19" top="207" width="80" height="30"/>
+        <Edit id="edt_Search1" taborder="4" left="99" top="207" width="120" height="30" autoselect="true"/>
+        <Static id="Static04" taborder="5" text="생성일" cssclass="sta_WF_condition01" left="239" top="207" width="80" height="30"/>
+        <Calendar id="cal_search1" taborder="6" left="327" top="207" width="120" height="30" dateformat="yyyy-MM-dd" value="20180101" autoselect="true"/>
+        <Calendar id="cal_search2" taborder="7" left="478" top="207" width="120" height="30" dateformat="yyyy-MM-dd" value="20180101" autoselect="true"/>
+        <Static id="Static05" taborder="8" text="~" left="455" top="207" width="15" height="30"/>
+        <Static id="Static07" taborder="9" text="그리드 컴포넌트에서 주로 사용하는 기능을 확인할 수 있습니다. 헤더와 바디 영역에서 마우스 우클릭 해보세요.&#13;&#10;- 정렬, 다중정렬, 컬럼 숨기기, 필터&#13;&#10;- 엑셀 내보내기/가져오기, 틀고정(열고정/행고정), 스크롤타입, 개인화기능(포맷저장)&#13;&#10;&#13;&#10;※ 스크롤타입의 경우 메뉴에서 설정값을 변경 후 Grid 스크롤 TrackBar 로 스크롤 시 해당 기능이 활성화 됩니다." wordwrap="char" cssclass="sta_WF_box03" left="0" top="0" right="20" height="190" wordWrap="char"/>
+      </Layout>
+      <Layout name="mobile" screenid="mobile" width="480" height="768" mobileorientation="portrait">
+        <Static id="Static07" right="10" left="10" top="50" height="96"/>
+        <Grid id="grdList" left="10" top="250" right="10" bottom="10"/>
+        <Static id="Static02" left="10" top="166" height="74" right="10"/>
+        <Static id="Static04" left="29" top="206" width="80" height="24"/>
+        <Calendar id="cal_search1" left="108" top="206" width="105" height="24"/>
+        <Calendar id="cal_search2" left="229" top="206" width="105" height="24"/>
+        <Static id="Static05" left="217" top="206" width="10" height="24"/>
+        <Button id="btn_Search" top="166" width="43" height="44" right="10"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_List" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="chk" type="STRING" size="256"/>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="BIGDECIMAL" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="BIGDECIMAL" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column3">321458</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">321458</Col>
+            <Col id="Column0">강감찬</Col>
+            <Col id="Column2">서울특별시 중구 세종대로 40</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">고려시대 명장. 본관은 금주, 초명은 은천. 귀주대첩 승리</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">425862</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">425862</Col>
+            <Col id="Column0">김부식</Col>
+            <Col id="Column2">경상북도 경주시 불국로 873-243</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">고려시대 문신. 본관은 경주, 자는 입지, 시호는 문열</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">57786</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">57786</Col>
+            <Col id="Column0">정몽주</Col>
+            <Col id="Column2">경기도 수원시 장안구 연무동 190</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column6">고려 말 문신. 본관은 연일, 자는 달가. 시조 단심가를 지음</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">51651</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">51651</Col>
+            <Col id="Column0">김유신</Col>
+            <Col id="Column2">경상북도 영주시 부석사로 345</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column6">삼국통일을 이룩한 신라 장군. 본관은 김해. 가야국의 시조 김수로왕(金首露王)의 12대손. 흥무대왕으로 추존</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">216548</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">216548</Col>
+            <Col id="Column0">최무선</Col>
+            <Col id="Column2">충청남도 부여군 정림로 83</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">고려 말, 조선 초 발명가. 본관은 영주. 원나라에서 화포제작법을 배워 우리나라에서도 제작함</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">216218</Col>
+            <Col id="Column4">20171111</Col>
+            <Col id="Column5">216218</Col>
+            <Col id="Column0">정중부</Col>
+            <Col id="Column2">경기도 여주시 북내면 상교리 411-1</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">고려시대 무신. 본관은 해주. 무신의 난으로 정권을 잡음</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">954561</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">954561</Col>
+            <Col id="Column0">김부식</Col>
+            <Col id="Column2">서울특별시 종로구 종로 99</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column6">고려시대 문신. 본관은 경주, 자는 입지, 시호는 문열</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">2121684</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">2121684</Col>
+            <Col id="Column0">안중근</Col>
+            <Col id="Column2">경상북도 경주시 대경로 4859</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column6">한말의 독립운동가. 본관은 순흥. 1909년(융희 2년)에 만주 하얼빈에서 이토 히로부미를 죽임. 건국훈장 대한민국장을 수상</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">6549845</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">6549845</Col>
+            <Col id="Column0">안창호</Col>
+            <Col id="Column2">경기도 이천시 관고동 501-7</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">한말의 독립운동가·사상가. 호는 도산. 신민회를 조직. 《신한민보(新韓民報)》를 창간. 건국훈장 대한민국장을 수상함</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="Column3">65150</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">65150</Col>
+            <Col id="Column0">유관순</Col>
+            <Col id="Column2">충청남도 부여군 부여읍 동남리 산16-9</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">한말의 독립운동가. 충남 천안 출생. 1919년 아우내 장터에서 3000여 군중에게 태극기를 나눠 주며 시위를 지휘하다가 일본 헌병대에 체포. 1920년 옥사함. 건국훈장 독립장을 수상</Col>
+            <Col id="chk"/>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">이종무</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">전라북도 익산시 금마면 동고도리 1086</Col>
+            <Col id="Column3">158886</Col>
+            <Col id="Column4">20170429</Col>
+            <Col id="Column5">158886</Col>
+            <Col id="Column6">고려 말, 조선 초 무신. 본관은 장수. 일본 대마도를 정벌</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">한명회</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">부산광역시 연제구 경기장로 28</Col>
+            <Col id="Column3">258624</Col>
+            <Col id="Column4">20170111</Col>
+            <Col id="Column5">258624</Col>
+            <Col id="Column6">조선 전기의 문신. 본관은 청주, 자는 자준. 예종비 장순왕후와 성종비 공혜왕후의 부. 계유정난으로 정권을 받음. 세조 묘정에 배향</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">정몽주</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column2">제주특별자치도 제주시 일주동로 17</Col>
+            <Col id="Column3">4569985</Col>
+            <Col id="Column4">20170829</Col>
+            <Col id="Column5">4569985</Col>
+            <Col id="Column6">고려 말 문신. 본관은 연일, 자는 달가. 시조 단심가를 지음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">문익점</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column2">경상남도 합천군 가야면 해인사길 122</Col>
+            <Col id="Column3">1245568</Col>
+            <Col id="Column4">20170605</Col>
+            <Col id="Column5">1245568</Col>
+            <Col id="Column6">고려시대 학자. 본관은 남평, 자는 일신, 시호는 충선. 원에서 목화씨를 가져와 재배함</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">최영</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">서울특별시 종로구 훈정동 1</Col>
+            <Col id="Column3">336985</Col>
+            <Col id="Column4">20170614</Col>
+            <Col id="Column5">336985</Col>
+            <Col id="Column6">고려 말 무신. 시호는 무민. 본관은 동주. 위화도회군으로 정권을 잃음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">장영실</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">전라북도 남원시 산내면 대정리 975</Col>
+            <Col id="Column3">578962</Col>
+            <Col id="Column4">20170231</Col>
+            <Col id="Column5">578962</Col>
+            <Col id="Column6">조선 시대의 과학자. 본관은 아산. 기생의 아들. 해시계, 문시계, 측우기를 발명</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">곽재우</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column2">전라남도 구례군 마산면 화엄사로 539</Col>
+            <Col id="Column3">11235</Col>
+            <Col id="Column4">20170723</Col>
+            <Col id="Column5">11235</Col>
+            <Col id="Column6">조선 중기의 의병장. 본관은 현풍, 자는 계수. 임진왜란때 의병을 일으켜 왜군들을 무찌름. '망우집'을 지음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">김시민</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column2">경상북도 안동시 서후면 봉정사길 222</Col>
+            <Col id="Column3">569875</Col>
+            <Col id="Column4">20170406</Col>
+            <Col id="Column5">569875</Col>
+            <Col id="Column6">조선 중기의 무신. 본관은 안동, 자는 면오. 임진왜란때 왜군들과 싸워 전사함. 선무공신 2등에 추록. 상락부원군에 추증</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">정양용</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">경상북도 영천시 청통면 거조길 400-67</Col>
+            <Col id="Column3">5588966</Col>
+            <Col id="Column4">20170308</Col>
+            <Col id="Column5">5588966</Col>
+            <Col id="Column6">조선 후기의 학자.문신, 본관은 나주, 호는 다산, 여유당. 수원 화성을 계획함. 《정다산전서(丁茶山全書)》을 저술(목민심서 등)</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">윤동주</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">전라북도 익산시 금마면 기양리 97번지</Col>
+            <Col id="Column3">639996</Col>
+            <Col id="Column4">20171205</Col>
+            <Col id="Column5">639996</Col>
+            <Col id="Column6">시인. 북간도에서 충생. 《서시(序詩)》,《또 다른 고향》,《별 헤는 밤》을 지음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">이중섭</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">충청남도 보령시 성주면 성주리 80-4</Col>
+            <Col id="Column3">859648</Col>
+            <Col id="Column4">20170925</Col>
+            <Col id="Column5">859648</Col>
+            <Col id="Column6">한국의 서양화과. 호는 대향. 평양 출생. 작품으로 《소》《흰 소》등이 있음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">박문수</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">충청남도 천안시 서북구 성환읍 대홍리 319-8</Col>
+            <Col id="Column3">15698</Col>
+            <Col id="Column4">20170722</Col>
+            <Col id="Column5">15698</Col>
+            <Col id="Column6">조선 후기의 문신. 본관은 고령, 자는 성보. 영조때 정미환국으로 영남 엄행어사로 나가 부정관리들을 적발함</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">황진이</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column2">서울특별시 종로구 율곡로 99</Col>
+            <Col id="Column3">75489</Col>
+            <Col id="Column4">20170614</Col>
+            <Col id="Column5">75489</Col>
+            <Col id="Column6">조선시대 시인, 명기(기생). 기생명은 명월.  《만월대 회고시》《박연폭포시》《봉별소양곡시》를 지음</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">김정호</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column2">충청북도 충주시 중앙탑면 탑평리 11</Col>
+            <Col id="Column3">63963</Col>
+            <Col id="Column4">20170416</Col>
+            <Col id="Column5">63963</Col>
+            <Col id="Column6">조선 후기 지리학자. 본관은 청도, 자는 백원. 《대동여지도》를 만듬</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">홍길동</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">서울특별시 용산구 서빙고로 137</Col>
+            <Col id="Column3">668955</Col>
+            <Col id="Column4">20170814</Col>
+            <Col id="Column5">668955</Col>
+            <Col id="Column6">허균이 지은 '홍길동전'의 주인공. 실존인물</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">신숙주</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">인천광역시 강화군 길상면 전등사로 37-41</Col>
+            <Col id="Column3">754896</Col>
+            <Col id="Column4">20170517</Col>
+            <Col id="Column5">754896</Col>
+            <Col id="Column6">조선 초기의 문신. 본관은 고령, 자는 범옹. 세종의 총애를 가장 많이 받은 학자이자, 계유정난으로 정난공신에 등록됨. 성종 묘정에 배향</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">한석봉</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column2">경기도 안양시 만안구 예술공원로103번길 4</Col>
+            <Col id="Column3">1258963</Col>
+            <Col id="Column4">20170318</Col>
+            <Col id="Column5">1258963</Col>
+            <Col id="Column6">조선 중기의 서예가. 본관은 삼화, 호가 석봉이다. 왕희지, 안진경의 필법을 익혀 해.행.초 등 각 서체에 모두 뛰어남</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">전봉준</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column2">경상북도 봉화군 춘양면 서원촌길 8-14</Col>
+            <Col id="Column3">458962</Col>
+            <Col id="Column4">20170704</Col>
+            <Col id="Column5">458962</Col>
+            <Col id="Column6">조선 후기 동학농민운동의 지도자. 초명은 명숙, 별명이 녹두장군이다</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">김대건</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column2">경기도 여주시 북내면 상교리 419-3번지</Col>
+            <Col id="Column3">15756</Col>
+            <Col id="Column4">20170114</Col>
+            <Col id="Column5">15756</Col>
+            <Col id="Column6">조선 최초의 신부. 본관은 김해, 세례명은 안드레아. 조선 후기 박해사건으로 가족들을 모두 잃음. 후에 25세로 순교함</Col>
+          </Row>
+          <Row>
+            <Col id="chk"/>
+            <Col id="Column0">방정환</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column2">대구광역시 수성구 청호로 321</Col>
+            <Col id="Column3">25896</Col>
+            <Col id="Column4">20170326</Col>
+            <Col id="Column5">25896</Col>
+            <Col id="Column6">아동문학의 보급과 아동보호운동의 선구자인 아동문학가. 호는 소파. 어린이날을 공포</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_GridPopupMenu">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="icon" type="STRING" size="256"/>
+          <Column id="enable" type="STRING" size="256"/>
+          <Column id="type" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">chkAll</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">전체선택</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">chk</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">chkClear</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">선택취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">chk</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">hide</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">숨기기</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">unhide</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">숨기기취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">unhideAll</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">숨기기전체취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">none</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">--------------------------</Col>
+            <Col id="icon"/>
+            <Col id="enable">false</Col>
+            <Col id="type">head</Col>
+          </Row>
+          <Row>
+            <Col id="id">asc</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">오름차순</Col>
+            <Col id="icon"/>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+          </Row>
+          <Row>
+            <Col id="id">desc</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">내림차순</Col>
+            <Col id="icon"/>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+          </Row>
+          <Row>
+            <Col id="id">clear</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">정렬취소</Col>
+            <Col id="enable">false</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">multiSort</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">다중정렬</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">multiSortClear</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">다중정렬취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">head</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">filter</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">필터추가</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">filterClear</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">필터제거</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">none</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">--------------------------</Col>
+            <Col id="enable">false</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">EXCEL</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">EXCEL</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">export</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">내보내기</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">import</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">가져오기</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">none</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">--------------------------</Col>
+            <Col id="icon"/>
+            <Col id="enable">false</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">FIX</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">틀고정</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">shapeFix</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">열고정</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">shapeFree</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">열고정 취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">rowFix</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">행고정</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">rowFree</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">행고정 취소</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">fastvscrolltype</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">스크롤옵션</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">default</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">default</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">topdisplay</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">상단표시</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">centerdisplay</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">중앙표시</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">topbottomdisplay</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">상단,하단표시</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">topcenterbottomdisplay</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">상단,중앙,하단표시</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">trackbarfollow</Col>
+            <Col id="level">1</Col>
+            <Col id="caption">Row위치표시</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+          </Row>
+          <Row>
+            <Col id="id">gridFormat</Col>
+            <Col id="caption">설정저장</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="level">0</Col>
+            <Col id="icon"/>
+          </Row>
+          <Row>
+            <Col id="id">gridFormatOrg</Col>
+            <Col id="caption">원래대로</Col>
+            <Col id="enable">true</Col>
+            <Col id="type">body</Col>
+            <Col id="level">0</Col>
+            <Col id="icon"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

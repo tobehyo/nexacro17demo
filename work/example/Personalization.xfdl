@@ -1,0 +1,878 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Personalization" width="980" height="1000" titletext="개인화 처리" onload="Personalization_onload" ondrop="Personalization_ondrop" ondragmove="Personalization_ondragmove" onlbuttonup="Personalization_onlbuttonup" ontimer="Personalization_ontimer">
+    <Layouts>
+      <Layout height="1000" mobileorientation="landscape" width="980">
+        <Static id="Static07" taborder="0" text="메트로(Metro) UI 형태의 포틀릿(Portlet) 화면구성 및 위젯(Widget) 화면을 응용하여 화면구성을 저장할 수 있습니다.&#13;&#10;포틀릿(Portlet) 위치를 Drag&amp;Drop으로 변경 및 위젯(Widget)을 추가하여 저장 후 확인해 보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="90" wordWrap="char"/>
+        <Div id="Div01" taborder="1" left="0" top="160" width="475" height="346" ondrag="Port_ondrag" usePort="Y" border="1px solid #a1abba" portName="Week Schedule">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="0" top="0" height="70" right="0" cssclass="sta_WF_box03"/>
+              <Static id="Static01" taborder="1" left="6" top="7" width="57" height="57" cssclass="sta_WF_box04"/>
+              <Static id="Static02" taborder="2" left="6" top="7" width="57" height="57" cssclass="sta_WF_schTextRed" text="06"/>
+              <Static id="Static03" taborder="3" text="Monday" left="85" top="11" width="129" height="30" font="normal 700 16pt/normal &quot;Arial&quot;" color="#101010"/>
+              <Static id="Static04" taborder="4" text="January, 1 2020" left="85" top="31" width="129" height="30" color="#101010" font="normal 10pt/normal &quot;Arial&quot;"/>
+              <Static id="Static05" taborder="5" text="Today" left="0" top="69" height="40" cssclass="sta_WF_box03" right="0" textAlign="left"/>
+              <Static id="Static06" taborder="6" text="월" left="0" top="109" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static07" taborder="7" text="화" left="0" top="156" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static08" taborder="8" text="목" left="0" top="250" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static09" taborder="9" text="수" left="0" top="203" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static10" taborder="10" text="금" left="0" top="297" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static11" taborder="11" text="3층 바닥 왁싱[주의요망]" left="59" top="109" height="47" cssclass="sta_WF_weekDay02" right="0"/>
+              <Static id="Static12" taborder="12" text="응급실 소모 재료 발주[주사기/붕대]" left="59" top="156" height="47" cssclass="sta_WF_weekDay02" right="0"/>
+              <Static id="Static13" taborder="13" left="59" top="203" height="47" cssclass="sta_WF_weekDay02" right="0"/>
+              <Static id="Static14" taborder="14" text="4층 바닥 왁싱[주의요망]" left="59" top="250" height="47" cssclass="sta_WF_weekDay02" right="0"/>
+              <Static id="Static15" taborder="15" left="59" top="297" height="47" cssclass="sta_WF_weekDay02" right="0"/>
+              <Button id="btnClose" taborder="16" top="10" width="30" height="30" onclick="fn_comBtnOnClick" right="7" ondrag="Div00_btnClose_ondrag" background="url('imagerc::btn_close.png') no-repeat center center linear-gradient(to bottom,#fefefe 0%,#ecece5 100%) transparent" border="0px none"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="2" text="Div00" left="0" top="515" width="475" height="346" ondrag="Port_ondrag" usePort="Y" portName="게시판(업무)" formscrollbarsize="0" border="1px solid #a1abba">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="  게시판(업무)" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
+              <Grid id="Grid00" taborder="1" left="0" top="56" binddataset="Dataset02" autofittype="col" bottom="0" right="0">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="290"/>
+                      <Column size="70"/>
+                      <Column size="110"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="34"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:Column0" textAlign="left" border="1px solid #e6e7ea,0px none"/>
+                      <Cell col="1" text="bind:Column1" border="1px solid #e6e7ea,0px none" color="#b4b4b4"/>
+                      <Cell col="2" text="bind:Column2" border="1px solid #e6e7ea,0px none" color="#b4b4b4"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="Button08" taborder="2" top="34" height="21" cssclass="btn_MF_more" width="50" right="10" font="normal 12px/normal &quot;Malgun Gothic&quot;" text="more ▶" background="transparent" border="0px none"/>
+              <Button id="btnClose" taborder="3" top="10" width="30" height="30" onclick="fn_comBtnOnClick" right="7" ondrag="Div00_btnClose_ondrag" background="url('imagerc::btn_close.png') no-repeat center center linear-gradient(to bottom,#fefefe 0%,#ecece5 100%) transparent" border="0px none"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="3" text="Div00" left="485" top="515" ondrag="Port_ondrag" usePort="Y" portName="통합조회" formscrollbarsize="0" height="346" border="1px solid #a1abba" width="475">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="  통합조회" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
+              <Grid id="Grid00" taborder="1" left="0" top="56" binddataset="Dataset00" autofittype="col" bottom="0" right="0">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="290"/>
+                      <Column size="70"/>
+                      <Column size="110"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="34"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:Column0" textAlign="left" border="1px solid #e6e7ea,0px none"/>
+                      <Cell col="1" text="bind:Column1" border="1px solid #e6e7ea,0px none" color="#b4b4b4"/>
+                      <Cell col="2" text="bind:Column2" border="1px solid #e6e7ea,0px none" color="#b4b4b4"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="Button08" taborder="2" top="34" height="21" cssclass="btn_MF_more" width="50" right="10" font="normal 12px/normal &quot;Malgun Gothic&quot;" text="more ▶" background="transparent" border="0px none"/>
+              <Button id="btnClose" taborder="3" top="10" width="30" height="30" onclick="fn_comBtnOnClick" right="7" ondrag="Div00_btnClose_ondrag" background="url('imagerc::btn_close.png') no-repeat center center linear-gradient(to bottom,#fefefe 0%,#ecece5 100%) transparent" border="0px none"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="4" cssclass="sta_WF_box02" left="0" top="100" right="20" height="50"/>
+        <Static id="Static03" taborder="5" text="위젯(Widget) 메뉴" cssclass="sta_WF_condition01" left="10" top="110" width="130" height="30"/>
+        <Combo id="cbo_widget" taborder="6" left="160" top="110" width="170" height="30" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="" value="0">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="datacolumn">---선택---</Col>
+                <Col id="codecolumn">0</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">memo</Col>
+                <Col id="datacolumn">메모</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">calc</Col>
+                <Col id="datacolumn">계산기</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">watch</Col>
+                <Col id="datacolumn">시계</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="btn_widgetAdd" taborder="7" text="추가" cssclass="btn_cp_basic01" left="333" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Static id="staMove" taborder="8" left="10" top="1097" width="215" height="226" border="5px dashed silver" visible="false"/>
+        <Button id="btn_init" taborder="9" text="초기화" cssclass="btn_cp_basic02" left="417" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Button id="btn_save" taborder="10" text="저장" cssclass="btn_cp_basic03" left="501" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Div id="Div03" taborder="11" text="Div03" left="485" top="160" height="346" usePort="Y" ondrag="Port_ondrag" portName="Budget Report" formscrollbarsize="0" border="1px solid #a1abba" width="475">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" binddataset="Dataset03" useselcolor="false" border="0px none" bottom="0" autofittype="col" mouseovertype="cell" right="35.31%">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="60"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                      <Column size="70"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="50" band="head"/>
+                      <Row size="147"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="Type" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="1" text="금액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="2" text="매출액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="3" border="1px solid #c7c7c7,0px none,1px solid #c7c7c7,1px solid #c7c7c7" text="달성액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Type" autosizerow="default"/>
+                      <Cell col="1" text="bind:BudgetUSD" textAlign="right"/>
+                      <Cell col="2" text="bind:Allocated" textAlign="right"/>
+                      <Cell col="3" text="bind:Remaining" textAlign="right" border="1px solid #dbdee2,1px none #dbdee2,1px solid #dbdee2,1px solid #dbdee2"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static03" taborder="4" left="Grid00:0" top="0" cssclass="sta_WF_box03" bottom="0" width="35.31%"/>
+              <Static id="Static00" taborder="1" text="0 Errors&#13;&#10;0 Warnings" left="Grid00:24" top="26" height="60" wordSpacing="10px" right="20" color="#ea1313"/>
+              <Static id="Static01" taborder="2" text="Status" left="Grid00:24" top="126" height="34" usedecorate="false" right="23"/>
+              <Static id="Static02" taborder="3" text="Not started" left="Grid00:24" top="150" height="34" usedecorate="false" font="24px/normal &quot;Arial&quot;,&quot;Malgun Gothic&quot;,&quot;Gulim&quot;" right="23"/>
+              <Button id="btnClose" taborder="5" top="10" width="30" height="30" cssclass="btn_WF_noteDel" onclick="fn_comBtnOnClick" right="7" ondrag="Div00_btnClose_ondrag"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset03">
+        <ColumnInfo>
+          <Column id="Type" type="STRING" size="256"/>
+          <Column id="BudgetUSD" type="STRING" size="256"/>
+          <Column id="Allocated" type="STRING" size="256"/>
+          <Column id="Remaining" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Type">수출</Col>
+            <Col id="BudgetUSD">$6,000</Col>
+            <Col id="Allocated">$6,000</Col>
+            <Col id="Remaining">$0.00</Col>
+          </Row>
+          <Row>
+            <Col id="Type">수입</Col>
+            <Col id="BudgetUSD">$500</Col>
+            <Col id="Allocated">$100</Col>
+            <Col id="Remaining">$0.00</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset02">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">중복 유무 조회화면</Col>
+            <Col id="Column1">한채용</Col>
+            <Col id="Column2">2018-04-16</Col>
+          </Row>
+          <Row>
+            <Col id="Column0"> 부담금 신설됩니다.</Col>
+            <Col id="Column1">박정원</Col>
+            <Col id="Column2">2018-04-14</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">관련규칙 인정방법(사진 포함)</Col>
+            <Col id="Column1">이창열</Col>
+            <Col id="Column2">2018-04-12</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">일체불상건 관리 업무 매뉴얼</Col>
+            <Col id="Column1">심선영</Col>
+            <Col id="Column2">2018-04-10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">구상포기업무매뉴얼</Col>
+            <Col id="Column1">고지용</Col>
+            <Col id="Column2">2018-04-08</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">중복유무 조회화면</Col>
+            <Col id="Column1">한채용</Col>
+            <Col id="Column2">2018-04-06</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">사고 부담금 신설됩니다.</Col>
+            <Col id="Column1">박정원</Col>
+            <Col id="Column2">2018-04-04</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">관련규칙 인정방법(사진 포함)</Col>
+            <Col id="Column1">이창열</Col>
+            <Col id="Column2">2018-04-02</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">진료비 심사참고자료 등록률 현황</Col>
+            <Col id="Column1">한채용</Col>
+            <Col id="Column2">2018-04-16</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">업무량 감소를 위한 ‘심평원’</Col>
+            <Col id="Column1">박정원</Col>
+            <Col id="Column2">2018-04-14</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">조직별 구상캠페인 진도 현황</Col>
+            <Col id="Column1">이창열</Col>
+            <Col id="Column2">2018-04-12</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">V.O.B(Voice of Business)</Col>
+            <Col id="Column1">심선영</Col>
+            <Col id="Column2">2018-04-10</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">[공지]신체감정 업무 변경사항 </Col>
+            <Col id="Column1">고지용</Col>
+            <Col id="Column2">2018-04-08</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">진료비 심사참고자료 등록률 현황</Col>
+            <Col id="Column1">한채용</Col>
+            <Col id="Column2">2018-04-06</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">업무량 감소를 위한 ‘심평원’</Col>
+            <Col id="Column1">박정원</Col>
+            <Col id="Column2">2018-04-04</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">조직별 구상캠페인 진도 현황</Col>
+            <Col id="Column1">이창열</Col>
+            <Col id="Column2">2018-04-02</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_delPortList">
+        <ColumnInfo>
+          <Column id="compId" type="STRING" size="256"/>
+          <Column id="portName" type="STRING" size="256"/>
+          <Column id="left" type="STRING" size="256"/>
+          <Column id="top" type="STRING" size="256"/>
+          <Column id="width" type="STRING" size="256"/>
+          <Column id="height" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_WidgetList">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+          <Column id="left" type="STRING" size="256"/>
+          <Column id="top" type="STRING" size="256"/>
+          <Column id="width" type="STRING" size="256"/>
+          <Column id="height" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">memo</Col>
+            <Col id="left">10</Col>
+            <Col id="top">186</Col>
+            <Col id="width">250</Col>
+            <Col id="height">250</Col>
+            <Col id="url">comm::commMemo.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="id">watch</Col>
+            <Col id="left">10</Col>
+            <Col id="top">186</Col>
+            <Col id="width">284</Col>
+            <Col id="height">170</Col>
+            <Col id="url">comm::commWatch.xfdl</Col>
+          </Row>
+          <Row>
+            <Col id="id">calc</Col>
+            <Col id="left">10</Col>
+            <Col id="top">186</Col>
+            <Col id="width">271</Col>
+            <Col id="height">365</Col>
+            <Col id="url">comm::commCalc.xfdl</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_portInit">
+        <ColumnInfo>
+          <Column id="compId" type="STRING" size="256"/>
+          <Column id="left" type="STRING" size="256"/>
+          <Column id="top" type="STRING" size="256"/>
+          <Column id="width" type="STRING" size="256"/>
+          <Column id="height" type="STRING" size="256"/>
+          <Column id="portName" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  Personalization.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.25
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.25      presales                  스크립트 수정 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.bAni = false;
+this.fv_bDrag = false;
+this.fv_timerIdx = 0;
+this.fv_timerMax = 30;
+this.fv_objFrom;
+this.fv_objTo;
+this.fv_memocount = 1;
+
+this.arrMonth = ["", "Jaunary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+this.arrDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];	
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+this.Personalization_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//초기화 위해 현재 position 임시저장
+	var sComps = this.components;
+	var i;
+	var nRow;
+	
+	for (i = 0; i < sComps.length; i++)
+	{
+		if (sComps[i].usePort == "Y")
+		{
+			nRow = this.ds_portInit.addRow();
+			
+			this.ds_portInit.setColumn(nRow, "compId", sComps[i].name);
+			this.ds_portInit.setColumn(nRow, "portName", sComps[i].portName);
+			this.ds_portInit.setColumn(nRow, "left", sComps[i].getOffsetLeft());
+			this.ds_portInit.setColumn(nRow, "top", sComps[i].getOffsetTop());
+			this.ds_portInit.setColumn(nRow, "width", sComps[i].getOffsetWidth());
+			this.ds_portInit.setColumn(nRow, "height", sComps[i].getOffsetHeight());
+		}
+	}
+	
+	var xmlPortInfo = nexacro.getPrivateProfile("portInfo");
+	var sCompId;
+	var nLeft, nTop, nWidth, nHeight;
+	
+	if(xmlPortInfo) // 임시 저장된 포틀릿 위치 정보가 있을 경우
+	{
+		var portInfoDs = new Dataset();
+		portInfoDs.loadXML(xmlPortInfo);
+		
+		if (portInfoDs != null && portInfoDs.rowcount > 0)
+		{
+			for (i = 0; i < portInfoDs.rowcount; i++)
+			{
+				sCompId = portInfoDs.getColumn(i, "compId");
+				nLeft = portInfoDs.getColumn(i, "left");
+				nTop = portInfoDs.getColumn(i, "top");
+				nWidth = portInfoDs.getColumn(i, "width");
+				nHeight = portInfoDs.getColumn(i, "height");
+				
+				if (this.components[sCompId]) 
+				{
+					this.components[sCompId].setOffsetLeft(nexacro.toNumber(nLeft));
+					this.components[sCompId].setOffsetTop(nexacro.toNumber(nTop));
+					this.components[sCompId].setOffsetWidth(nexacro.toNumber(nWidth));
+					this.components[sCompId].setOffsetHeight(nexacro.toNumber(nHeight));
+				} 
+				else 
+				{
+					if (sCompId == "divTile_memo") {
+						this.fn_loadWidget(this.ds_WidgetList.findRow("id", "memo"));
+						
+						this.components[sCompId].setOffsetLeft(nexacro.toNumber(nLeft));
+						this.components[sCompId].setOffsetTop(nexacro.toNumber(nTop));
+						this.components[sCompId].setOffsetWidth(nexacro.toNumber(nWidth));
+						this.components[sCompId].setOffsetHeight(nexacro.toNumber(nHeight));
+						this.components[sCompId].form.fn_setTxt(portInfoDs.getColumn(i, "text"));
+					} else if(sCompId == "divTile_calc") {
+						this.fn_loadWidget(this.ds_WidgetList.findRow("id", "calc"));
+						
+						this.components[sCompId].setOffsetLeft(nexacro.toNumber(nLeft));
+						this.components[sCompId].setOffsetTop(nexacro.toNumber(nTop));
+						this.components[sCompId].setOffsetWidth(nexacro.toNumber(nWidth));
+						this.components[sCompId].setOffsetHeight(nexacro.toNumber(nHeight));
+					} else if(sCompId == "divTile_watch") {
+						this.fn_loadWidget(this.ds_WidgetList.findRow("id", "watch"));
+						
+						this.components[sCompId].setOffsetLeft(nexacro.toNumber(nLeft));
+						this.components[sCompId].setOffsetTop(nexacro.toNumber(nTop));
+						this.components[sCompId].setOffsetWidth(nexacro.toNumber(nWidth));
+						this.components[sCompId].setOffsetHeight(nexacro.toNumber(nHeight));
+					}					
+				}
+			}
+		}
+	}
+	
+	var xmlDelPortInfo = nexacro.getPrivateProfile("delPortInfo");
+	
+	if (xmlDelPortInfo != null && xmlDelPortInfo != "") { // 삭제된 포틀릿 위치 정보가 있을 경우
+		this.ds_delPortList.loadXML(xmlDelPortInfo);
+	}
+	
+	this.fnSetDate();
+};
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fnSetDate = function()
+{
+	var nDate = this.gfnGetDate();
+	var nYear = nDate.substr(0,4);
+	var nMonth = nDate.substr(4,2);
+	var nDay = nDate.substr(6,2);
+	
+	//월(영문), 일 년
+	this.Div01.form.Static04.set_text(this.arrMonth[parseInt(nMonth)] + ", " + nDay + " " + nYear);
+	//일(영문)
+	this.Div01.form.Static03.set_text(this.arrDay[this.gfnGetDay(this.gfnGetDate())]);
+	//일
+	this.Div01.form.Static02.set_text(nDay)
+};
+
+this.fn_closeMemo = function(obj)
+{
+	if (this.confirm("현재 메모를 삭제하시겠습니까?") == true) {
+		this.removeChild(obj.name);
+	}
+}
+
+this.fn_closeWidget = function(obj)
+{
+	switch (obj.name)
+	{
+		case "divTile_calc" :
+		case "divTile_watch" :
+			this.removeChild(obj.name);
+			break;
+	}
+}
+
+this.fn_addMemo = function(obj)
+{
+	var nLeft = obj.getOffsetLeft();
+	var nTop = obj.getOffsetTop()+30;
+	var nWidth = obj.getOffsetWidth();
+	var nHeight = obj.getOffsetHeight();
+	var j;
+	
+	var objTile = new Div("divTile_memo"+this.fv_memocount, nLeft, nTop, nWidth, nHeight);
+	this.addChild(objTile.name, objTile);
+	objTile.show();
+	objTile.set_async(false);
+	objTile.set_url("comm::commMemo.xfdl");
+	objTile.form.btnResize.addEventHandler("ondrag", this.fn_objTile_ondrag, this);
+	objTile.form.btnResize.addEventHandler("onlbuttonup", this.fn_objTile_onlbuttonup, this);
+	objTile.form.btnMove.addEventHandler("ondrag", this.fn_objTile_ondrag, this);
+	objTile.form.btnMove.addEventHandler("onlbuttonup", this.fn_objTile_onlbuttonup, this);	
+	
+	for (j = 0; j < objTile.form.components.length; j++)
+	{
+		objTile.form.components[j].targetDiv = objTile;
+		objTile.form.components[j].addEventHandler("onclick", this.fn_objTile_onclick, this);
+	}
+	
+	this.fv_memocount++;
+	this.fv_objNewMemo = objTile;
+	
+	this.setTimer(2, 10);
+}
+
+this.fn_loadWidget = function(i)
+{
+	var j;
+	var sId;
+	var sUrl;
+	var nLeft;
+	var nTop;
+	var nWidth;
+	var nHeight;
+	var objTile;
+	
+	this.fv_memocount = 1;
+	
+	sId = this.ds_WidgetList.getColumn(i, "id");
+	sUrl = this.ds_WidgetList.getColumn(i, "url");
+	nLeft = this.ds_WidgetList.getColumn(i, "left");
+	nTop = this.ds_WidgetList.getColumn(i, "top");
+	nWidth = this.ds_WidgetList.getColumn(i, "width");
+	nHeight = this.ds_WidgetList.getColumn(i, "height");
+	
+	objTile = new Div("divTile_"+sId, nLeft, nTop, nWidth, nHeight);
+	objTile.set_async(false);
+	objTile.set_url(sUrl);
+	objTile.portName = "위젯";
+	objTile.usePort = "Y";
+	
+	this.addChild(objTile.name, objTile);
+	objTile.show();
+
+	if (sId == "memo") {
+		objTile.form.btnResize.addEventHandler("ondrag", this.fn_objTile_ondrag, this);
+		objTile.form.btnResize.addEventHandler("onlbuttonup", this.fn_objTile_onlbuttonup, this);
+	}
+	
+	objTile.form.btnMove.addEventHandler("ondrag", this.fn_objTile_ondrag, this);
+	objTile.form.btnMove.addEventHandler("onlbuttonup", this.fn_objTile_onlbuttonup, this);
+	
+	for (j = 0; j < objTile.form.components.length; j++)
+	{
+		objTile.form.components[j].targetDiv = objTile;
+		objTile.form.components[j].addEventHandler("onclick", this.fn_objTile_onclick, this);
+	}
+};
+
+this.fn_getDragToObj = function(obj)
+{
+	if (obj.parent.parent.usePort == "Y") {
+		return obj.parent.parent;
+	} else {
+		return obj;	
+	}
+};
+
+this.fn_makeDragObj = function(obj)
+{
+	var nWidth = obj.getOffsetWidth();
+	var nHeight = obj.getOffsetHeight();
+	var sMemo = obj.text;
+	
+	this.staMove.setOffsetWidth(nWidth);
+	this.staMove.setOffsetHeight(nHeight);
+	this.staMove.set_visible(true);
+}
+
+this.fn_removeDragObj = function()
+{
+	this.staMove.set_visible(false);
+}
+
+this.fn_objTile_ondrag = function(obj, e:nexacro.DragEventInfo)
+{
+	this.bDrag = true;
+	this.fv_targetObj = obj.parent.parent;
+	this.fv_childObj = obj;
+	
+	var nX;
+	var nY;
+	
+	if (obj.name == "btnResize") {
+		nX = nexacro.toNumber(e.canvasx);
+		nY = nexacro.toNumber(e.canvasy);
+	} else if (obj.name == "btnMove") {
+		nX = nexacro.toNumber(obj.getOffsetLeft())+nexacro.toNumber(e.canvasx);
+		nY = nexacro.toNumber(obj.getOffsetTop())+nexacro.toNumber(e.canvasy);
+	}
+	
+	e.userdata = nX +"," + nY; 
+	
+	this.fv_targetObj.bringToFront();
+	
+	return true;
+}
+
+this.fn_moveAni = function (t, b, c, d) 
+{
+	t /= d/2;
+	
+	if (t < 1) {
+		return c/2*t*t*t + b;
+	}
+	
+	t -= 2;
+	
+	return c/2*(t*t*t + 2) + b;
+}
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.Personalization_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if (e.timerid == 1)
+	{
+		this.fv_timerIdx++;
+		
+		var nLeft1 = this.fn_moveAni(this.fv_timerIdx, this.fv_objFrom.orgLeft, this.fv_objTo.orgLeft-this.fv_objFrom.orgLeft, this.fv_timerMax);
+		var nTop1 = this.fn_moveAni(this.fv_timerIdx, this.fv_objFrom.orgTop, this.fv_objTo.orgTop-this.fv_objFrom.orgTop, this.fv_timerMax);
+		var nWidth1 = this.fn_moveAni(this.fv_timerIdx, this.fv_objFrom.orgWidth, this.fv_objTo.orgWidth-this.fv_objFrom.orgWidth, this.fv_timerMax);
+		var nHeight1 = this.fn_moveAni(this.fv_timerIdx, this.fv_objFrom.orgHeight, this.fv_objTo.orgHeight-this.fv_objFrom.orgHeight, this.fv_timerMax);
+		
+		var nLeft2 = this.fn_moveAni(this.fv_timerIdx, this.fv_objTo.orgLeft, this.fv_objFrom.orgLeft-this.fv_objTo.orgLeft, this.fv_timerMax);
+		var nTop2 = this.fn_moveAni(this.fv_timerIdx, this.fv_objTo.orgTop, this.fv_objFrom.orgTop-this.fv_objTo.orgTop, this.fv_timerMax);
+		var nWidth2 = this.fn_moveAni(this.fv_timerIdx, this.fv_objTo.orgWidth, this.fv_objFrom.orgWidth-this.fv_objTo.orgWidth, this.fv_timerMax);
+		var nHeight2 = this.fn_moveAni(this.fv_timerIdx, this.fv_objTo.orgHeight, this.fv_objFrom.orgHeight-this.fv_objTo.orgHeight, this.fv_timerMax);
+		
+		this.fv_objFrom.move(nLeft1, nTop1, nWidth1, nHeight1);
+		this.fv_objTo.move(nLeft2, nTop2, nWidth2, nHeight2);
+		
+		if (this.fv_timerIdx == this.fv_timerMax) {
+			this.bAni = false;
+ 			this.fv_timerIdx = 0;
+ 			this.killTimer(e.timerid);
+ 		}
+	}
+	else if (e.timerid == 2)
+	{
+		this.killTimer(2);
+		this.fv_objNewMemo.bringToFront();
+	}	
+};
+
+this.Personalization_onlbuttonup = function(obj:nexacro.Form,e:nexacro.MouseEventInfo)
+{
+	if (this.fv_bDrag == true) {
+		this.fv_bDrag = false;
+		
+		this.fn_removeDragObj();
+	}	
+};
+
+this.Personalization_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	if (e.sourceobject.usePort == "Y") {
+		this.staMove.move(e.clientx+10, e.clienty+10);
+	} else {	
+		var arrPoint = e.userdata.split(",");
+		var nLeft;
+		var nTop;
+		var nRight;
+		var nBottom;
+		var nWidth;
+		var nHeight;
+		
+		if (this.fv_childObj.name == "btnResize") {
+			nLeft = e.canvasx - this.getOffsetLeft()-this.fv_targetObj.getOffsetLeft()-arrPoint[0];
+			nTop = e.canvasy - this.getOffsetTop()-this.fv_targetObj.getOffsetTop()-arrPoint[1];
+			
+			if (nLeft < 100) {
+				nLeft = 100;
+			}
+			
+			if (nTop < 100) {
+				nTop = 100;
+			}
+			
+			this.fv_childObj.move(nLeft, nTop);
+			
+			nWidth = this.fv_childObj.getOffsetRight();
+			nHeight = this.fv_childObj.getOffsetBottom();
+		
+			this.fv_targetObj.setOffsetWidth(nWidth);
+			this.fv_targetObj.setOffsetHeight(nHeight);
+		
+		} else if (this.fv_childObj.name == "btnMove") {
+			nLeft = e.canvasx - this.getOffsetLeft()-arrPoint[0];
+			nTop = e.canvasy - this.getOffsetTop()-arrPoint[1];
+			nRight = nLeft + this.fv_targetObj.getOffsetWidth();
+			nBottom = nTop + this.fv_targetObj.getOffsetHeight();
+			
+			if (nLeft < 0) {
+				nLeft=0;
+			} else if (nRight > this.getOffsetWidth()) {
+				nLeft = this.getOffsetWidth() - this.fv_targetObj.getOffsetWidth();
+			}
+			
+			if (nTop < 0) {
+				nTop=0;
+			} else if (nBottom > this.getOffsetHeight()) {
+				nTop = this.getOffsetHeight() - this.fv_targetObj.getOffsetHeight();
+			}
+			
+			this.fv_targetObj.move(nLeft, nTop);
+		}
+	}	
+};
+
+this.Personalization_ondrop = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	if (this.bAni == false)
+	{
+		this.fv_objFrom = e.userdata;
+		this.fv_objTo = this.fn_getDragToObj(e.fromobject);
+
+		if (this.fv_objTo.usePort == "Y" && this.fv_objFrom instanceof Div)
+		{		
+			this.fv_objFrom.orgLeft = this.fv_objFrom.getOffsetLeft();
+			this.fv_objFrom.orgTop = this.fv_objFrom.getOffsetTop();
+			this.fv_objFrom.orgWidth = this.fv_objFrom.getOffsetWidth();
+			this.fv_objFrom.orgHeight = this.fv_objFrom.getOffsetHeight();
+			
+			this.fv_objTo.orgLeft = this.fv_objTo.getOffsetLeft();
+			this.fv_objTo.orgTop = this.fv_objTo.getOffsetTop();
+			this.fv_objTo.orgWidth = this.fv_objTo.getOffsetWidth();
+			this.fv_objTo.orgHeight = this.fv_objTo.getOffsetHeight();
+		
+			this.bAni = true;
+			this.setTimer(1, 10);
+		}
+	}	
+};
+
+this.Port_ondrag = function(obj ,e:nexacro.DragEventInfo)
+{
+	this.fv_bDrag = true;
+	e.userdata = obj;
+
+	this.fn_makeDragObj(obj);
+
+	return true;
+};
+
+this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch (obj.name)
+	{
+		case "btn_widgetAdd" :
+			var sTitle = this.cbo_widget.value;
+			if(sTitle == 0){
+				this.alert("추가할 위젯 종류를 설정해주세요");
+				return;
+			}else{
+				this.fn_loadWidget(this.ds_WidgetList.findRow("id", sTitle));
+			}
+			break;
+			
+		case "btnClose" :
+			var nRow = this.ds_delPortList.addRow();
+			
+			this.ds_delPortList.setColumn(nRow, "portName", obj.parent.parent.portName);
+			this.ds_delPortList.setColumn(nRow, "compId", obj.parent.parent.name);
+			this.ds_delPortList.setColumn(nRow, "left", obj.parent.parent.getOffsetLeft());
+			this.ds_delPortList.setColumn(nRow, "top", obj.parent.parent.getOffsetTop());
+			this.ds_delPortList.setColumn(nRow, "width", obj.parent.parent.getOffsetWidth());
+			this.ds_delPortList.setColumn(nRow, "height", obj.parent.parent.getOffsetHeight());
+
+			obj.parent.parent.setOffsetWidth(0);
+			obj.parent.parent.setOffsetHeight(0);			
+			break;
+			
+		case "btn_init" :
+			var i;
+			var sComId;
+			var nLeft, nTop, nWidth, nHeith;
+			
+			for (i = 0; i < this.ds_portInit.rowcount; i++)
+			{
+				sComId = this.ds_portInit.getColumn(i, "compId");
+				nLeft = this.ds_portInit.getColumn(i, "left");
+				nTop = this.ds_portInit.getColumn(i, "top");
+				nWidth = this.ds_portInit.getColumn(i, "width");
+				nHeith = this.ds_portInit.getColumn(i, "height");
+				
+				this.components[sComId].setOffsetLeft(nexacro.toNumber(nLeft));
+				this.components[sComId].setOffsetTop(nexacro.toNumber(nTop));
+				this.components[sComId].setOffsetWidth(nexacro.toNumber(nWidth));
+				this.components[sComId].setOffsetHeight(nexacro.toNumber(nHeith));
+			}
+
+			this.ds_delPortList.clearData();
+
+			nexacro.setPrivateProfile("portInfo", "");
+			nexacro.setPrivateProfile("delPortInfo", "");
+			
+			this.reload();		
+			break;
+			
+		case "btn_save" :
+			if (!this.confirm("저장하시겠습니까?")) {
+				return;
+			}
+			
+			var arrPortComp = [];
+			var tmpDs = new Dataset();
+			
+			tmpDs.addColumn("compId", "string");
+			tmpDs.addColumn("left", "string");
+			tmpDs.addColumn("top", "string");
+			tmpDs.addColumn("width", "string");
+			tmpDs.addColumn("height", "string");
+			tmpDs.addColumn("text", "string");
+			
+			var sComps = this.components;
+			var i;
+			var nRow;
+			
+			for (i = 0; i < sComps.length; i++)
+			{
+				if (sComps[i].usePort == "Y")
+				{
+					nRow = tmpDs.addRow();
+					
+					tmpDs.setColumn(nRow, "compId",  sComps[i].name);
+					tmpDs.setColumn(nRow, "left",  sComps[i].getOffsetLeft());
+					tmpDs.setColumn(nRow, "top",  sComps[i].getOffsetTop());
+					tmpDs.setColumn(nRow, "width",  sComps[i].getOffsetWidth());
+					tmpDs.setColumn(nRow, "height",  sComps[i].getOffsetHeight());
+					
+					if (sComps[i].name == "divTile_memo") {
+						tmpDs.setColumn(nRow, "text",  sComps[i].form.fn_getTxt());
+					}
+				}
+			}
+
+			nexacro.setPrivateProfile( "portInfo", tmpDs.saveXML());
+			tmpDs.destroy();
+			
+			if (this.ds_delPortList.rowcount > 0) {
+				nexacro.setPrivateProfile( "delPortInfo", this.ds_delPortList.saveXML());
+			}		
+			break;
+	}
+};
+
+this.fn_comBtnOnDrag = function(obj:nexacro.Button,e:nexacro.DragEventInfo)
+{
+	e.stopPropagation();
+};
+
+this.fn_objTile_onclick = function(obj, e)
+{
+	obj.targetDiv.bringToFront();
+}]]></Script>
+  </Form>
+</FDL>

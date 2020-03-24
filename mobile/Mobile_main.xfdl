@@ -1,0 +1,838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Mobile_main" width="480" height="768" titletext="New Form" onload="Mobile_main_onload" ondevicebuttonup="Mobile_main_ondevicebuttonup" onvscroll="Mobile_main_onvscroll">
+    <Layouts>
+      <Layout height="768" mobileorientation="landscape" width="480" screenid="mobile">
+        <Div id="divBody" taborder="0" left="0" top="88" right="0" url="mobile::Mobile_main_content.xfdl" height="2280" async="false" text="" onvscroll="divBody_onvscroll"/>
+        <Div id="divTop" taborder="2" text="Div00" left="0" top="0" height="88" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static02" taborder="1" left="0" top="0" height="88" right="0" cssclass="sta_MB_topBg" text=""/>
+              <Button id="btnMenu" taborder="0" left="0" top="0" width="85" height="88" onclick="btnMenu_onclick" cssclass="btn_MB_menu"/>
+              <Static id="staLogo" taborder="2" left="106" top="14" height="60" cssclass="sta_MB_titlelogo" text="" onclick="staLogo_onclick" right="105"/>
+              <Button id="btnHome" taborder="3" top="0" height="88" cssclass="btn_MB_home" width="85" right="0" onclick="divTop_btnHome_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divMenu" taborder="1" text="Div01" left="483" top="0" width="426" height="422" background="RGBA(0,0,0,0.53)" visible="false" onclick="div_menu_onclick">
+          <Layouts>
+            <Layout>
+              <Grid id="grdLeftMenu" taborder="0" left="0" top="0" binddataset="ds_menu" autofittype="col" treeusecheckbox="false" treeuseimage="false" treeuseline="false" autosizingtype="none" autoupdatetype="none" bottom="0" oncellclick="grdLeftMenu_oncellclick" right="70" treeusebutton="use" cssclass="grd_LF_TreeGrd" scrollbartype="none none">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="278"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="65"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NM" edittype="tree" displaytype="treeitemcontrol" treelevel="bind:MENU_LVL"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="btnClose" taborder="1" top="0" width="70" height="70" right="0" visible="false" onclick="divMenu_btnClose_onclick" cssclass="btn_MB_leftClose" text="" background="antiquewhite"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  Tab.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 메뉴설정을 해준다.
+*/
+this.Mobile_main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var objApp = nexacro.getApplication();
+	var objMenuDs 	= objApp.gdsMenu;
+	objMenuDs.filter("MOBILE_YN!='P'");//피씨전용화면이 아닌경우
+	this.ds_menu.copyData(objMenuDs, true);
+	objMenuDs.filter("");
+	
+	this.divMenu.set_left(0);
+	this.divMenu.set_right(0);
+	this.divMenu.set_height(this.divBody.getOffsetBottom());
+	
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 메뉴 열기
+*/
+this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMenu.set_visible(true);
+};
+
+
+/**
+ * @description 메뉴 닫기
+*/
+this.divMenu_btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.divMenu.set_visible(false);
+};
+
+/**
+ * @description 해당 메뉴 화면으로 이동
+*/
+this.grdLeftMenu_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var nRow = e.row;//dataset의 row 반환
+	var treeRow = obj.getTreeRow(nRow)//Grid의 row 반환
+
+	if(e.clickitem == "treeitembutton") return;
+	
+	//트리 말단인 경우 화면 open
+	if(obj.isTreeLeafRow(nRow))
+	{
+		//메뉴열기
+		var objMenuDs = obj.getBindDataset();
+		var sMenuId = objMenuDs.getColumn(e.row, "MENU_ID");
+		var args = [];
+		this.mgfn_openMenu(sMenuId, args);
+	}
+	else 
+	{	
+		if(obj.isTreeExpandedRow(nRow+1))//DataSet 의 Row 인덱스
+		{	
+			//트리가 열려있으면 닫아준다.
+			obj.setTreeStatus(treeRow, false);
+		}
+		else //if(obj.isTreeCollapsedRow(nRow))
+		{
+			//트리가 닫혀 있으면 열어준다.
+			obj.setTreeStatus(treeRow, true);
+		} 
+	}
+};
+
+/**
+ * @description 홈화면이동
+*/
+this.divTop_btnHome_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.mgfn_goMain();
+};
+
+/**
+ * @description 메뉴div 닫기
+*/
+this.divMenu_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
+{
+	this.divMenu.set_visible(false);
+};
+
+/**
+ * @description 메뉴div 닫기
+*/
+this.div_menu_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
+{
+	this.divMenu.set_visible(false);
+};
+
+
+/**
+ * @description 메인화면으로 이동
+*/
+this.staLogo_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.mgfn_goMain();
+};
+
+
+
+/************************************************************************************************
+ * 공통함수 
+ ************************************************************************************************/
+/**
+ * @description 해당 메뉴 화면으로 이동
+*/
+this.mgfn_goMain = function()
+{
+	//div_body,divMenu 높이조절
+	this.divBody.set_height(2280);
+	this.divMenu.set_height(2280);
+	this.resetScroll();
+	
+	this.divBody.set_url("mobile::Mobile_main_content.xfdl");
+}
+
+/**
+ * @description 해당 메뉴 화면으로 이동
+*/
+this.mgfn_openMenu = function(menuId, args)
+{	
+	//div_body,divMenu 높이조절
+	this.divBody.set_bottom(0);
+	this.divMenu.set_bottom(0);
+	this.resetScroll();
+	
+	
+	var nRow = this.ds_menu.findRow("MENU_ID", menuId);
+	var formUrl = this.ds_menu.getColumn(nRow, "MENU_URL");
+	
+	this.divBody.set_url(formUrl);
+	
+	//스크롤 조정 - 동기설정해주어야 해서 느림...
+	if(this.divBody.form.vscrollbar.max > 0)
+	{
+		//this.divWork.setOffsetHeight(this.divWork.getOffsetHeight() + this.divWork.form.vscrollbar.max + 20);
+		var staGap = new Static();
+			staGap.init("sta", 0,this.divBody.getOffsetHeight()+ this.divBody.form.vscrollbar.max, 100,20, null,null);
+		this.divBody.addChild("sta",staGap);
+		staGap.show();
+		
+		this.divBody.form.resetScroll();
+	}
+	
+	this.divMenu.set_visible(false);
+}
+
+
+this.Mobile_main_ondevicebuttonup = function(obj:nexacro.Form,e:nexacro.DeviceButtonEventInfo)
+{
+	// MENU(1) CANCEL(2) 
+	if (e.button == 2) 
+	{
+		// Android 취소키 제어
+		if (this.divMenu.visible)
+		{
+			this.divMenu.set_visible(false);
+		}
+		else if (this.div_firstmain.visible)
+		{
+			//홈화면에서 뒤로가기 눌렀을 경우
+			if(this.confirm("종료하시겠습니까?","FNC")){
+				nexacro.getApplication().exit();
+			}
+		}				
+		else
+		{
+			//메뉴화면인 경우에 뒤로가기
+			this.fnAction("HOME");
+		}		
+	}
+	return false;
+};
+
+
+
+/**
+ * @description 스크롤 위치에 따라 애니메이션
+*/
+this.Mobile_main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
+{	
+	if(e.pos > 0 && e.pos < 121)
+	{
+		this.divBody.form.fnStartIncreaseNum();
+	}
+	else if(e.pos > 480 && e.pos < 600)
+	{
+		this.divBody.form.divBody.form.divMain05.form.divChart.form.BasicChart00.runAnimation();
+	}
+	else if(e.pos > 1200 && e.pos < 1321)
+	{
+		this.divBody.form.divBody.form.divMain07.form.divChart.form.BasicChart00.runAnimation();
+	}
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_menu">
+        <ColumnInfo>
+          <Column id="MENU_LVL" type="STRING" size="256"/>
+          <Column id="MENU_ID" type="STRING" size="256"/>
+          <Column id="MENU_NM" type="STRING" size="256"/>
+          <Column id="MENU_URL" type="STRING" size="256"/>
+          <Column id="PARENT_MENU_ID" type="STRING" size="256"/>
+          <Column id="MOBILE_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">1000</Col>
+            <Col id="MENU_NM">Grid Component</Col>
+            <Col id="PARENT_MENU_ID">0</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1010</Col>
+            <Col id="MENU_NM">다양한 그리드 기능</Col>
+            <Col id="MENU_URL">grid::Functions.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1020</Col>
+            <Col id="MENU_NM">다양한 그리드 표현</Col>
+            <Col id="MENU_URL">grid::CellTypes.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1030</Col>
+            <Col id="MENU_NM">정렬</Col>
+            <Col id="MENU_URL">grid::Sort.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1040</Col>
+            <Col id="MENU_NM">필터</Col>
+            <Col id="MENU_URL">grid::Filter.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1050</Col>
+            <Col id="MENU_NM">엑셀 Import/Export</Col>
+            <Col id="MENU_URL">grid::Excel.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1060</Col>
+            <Col id="MENU_NM">엑셀수식 Import/Export</Col>
+            <Col id="MENU_URL">grid::ExcelFormula.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1070</Col>
+            <Col id="MENU_NM">개인화 설정</Col>
+            <Col id="MENU_URL">grid::Personalization.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1080</Col>
+            <Col id="MENU_NM">대용량 데이터 조회</Col>
+            <Col id="MENU_URL">grid::LargeData.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1090</Col>
+            <Col id="MENU_NM">동적 그리드</Col>
+            <Col id="MENU_URL">grid::Dynamic.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1100</Col>
+            <Col id="MENU_NM">트리 그리드</Col>
+            <Col id="MENU_URL">grid::TreeGrid.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1110</Col>
+            <Col id="MENU_NM">동적 트리 그리드</Col>
+            <Col id="MENU_URL">grid::DynamicTree.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1120</Col>
+            <Col id="MENU_NM">피벗 그리드</Col>
+            <Col id="MENU_URL">grid::PivotGrid.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">1130</Col>
+            <Col id="MENU_NM">카테고리 그리드</Col>
+            <Col id="MENU_URL">grid::CategoryGrid.xfdl</Col>
+            <Col id="PARENT_MENU_ID">1000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">2000</Col>
+            <Col id="MENU_NM">Component</Col>
+            <Col id="PARENT_MENU_ID">0</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2010</Col>
+            <Col id="MENU_NM">다양한 컴포넌트</Col>
+            <Col id="MENU_URL">comp::Components.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2020</Col>
+            <Col id="MENU_NM">컴포넌트 동적생성</Col>
+            <Col id="MENU_URL">comp::Dynamic.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2030</Col>
+            <Col id="MENU_NM">편리한 컴포넌트배치</Col>
+            <Col id="MENU_URL">comp::ComponentsArrange.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2040</Col>
+            <Col id="MENU_NM">Fit To Contents</Col>
+            <Col id="MENU_URL">comp::FitToContents.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2050</Col>
+            <Col id="MENU_NM">파일 업/다운로드</Col>
+            <Col id="MENU_URL">comp::FileUpDown.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2060</Col>
+            <Col id="MENU_NM">확장 컴포넌트</Col>
+            <Col id="MENU_URL">comp::ExtComponent.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2070</Col>
+            <Col id="MENU_NM">양방향 데이터 바인딩</Col>
+            <Col id="MENU_URL">comp::TwoWayDataBinding.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2080</Col>
+            <Col id="MENU_NM">다양한 메뉴 표현</Col>
+            <Col id="MENU_URL">comp::menuList.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2090</Col>
+            <Col id="MENU_NM">nexacro Chart</Col>
+            <Col id="MENU_URL">comp::nexacroChart.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2100</Col>
+            <Col id="MENU_NM">리스트뷰</Col>
+            <Col id="MENU_URL">comp::ListView.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2110</Col>
+            <Col id="MENU_NM">Animation</Col>
+            <Col id="MENU_URL">comp::animation.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2111</Col>
+            <Col id="MENU_NM">피벗 </Col>
+            <Col id="MENU_URL">sample::pivot_poc.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">2120</Col>
+            <Col id="MENU_NM">그리드 커서 이동</Col>
+            <Col id="MENU_URL">comp::gridCursorMove.xfdl</Col>
+            <Col id="PARENT_MENU_ID">2000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">3000</Col>
+            <Col id="MENU_NM">응용샘플</Col>
+            <Col id="PARENT_MENU_ID">0</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3010</Col>
+            <Col id="MENU_NM">포틀릿 화면</Col>
+            <Col id="MENU_URL">example::portlet.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3020</Col>
+            <Col id="MENU_NM">조직도</Col>
+            <Col id="MENU_URL">example::orgainzation.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3040</Col>
+            <Col id="MENU_NM">웹 뷰어</Col>
+            <Col id="MENU_URL">example::webviewer.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3050</Col>
+            <Col id="MENU_NM">댓글 기능</Col>
+            <Col id="MENU_URL">example::reply.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3060</Col>
+            <Col id="MENU_NM">다국어 처리</Col>
+            <Col id="MENU_URL">example::Localization.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3070</Col>
+            <Col id="MENU_NM">채팅(웹소켓)</Col>
+            <Col id="MENU_URL">example::webSocketChat.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3080</Col>
+            <Col id="MENU_NM">파일 업/다운로드</Col>
+            <Col id="MENU_URL">example::FileUpDownloadForHTML5.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">3090</Col>
+            <Col id="MENU_NM">화면 개인화</Col>
+            <Col id="MENU_URL">example::Personalization.xfdl</Col>
+            <Col id="PARENT_MENU_ID">3000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">4000</Col>
+            <Col id="MENU_NM">외부 모듈 연동</Col>
+            <Col id="PARENT_MENU_ID">0</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">4050</Col>
+            <Col id="MENU_NM">jQuery Pivottable</Col>
+            <Col id="MENU_URL">ext::PivotTable.xfdl</Col>
+            <Col id="PARENT_MENU_ID">4000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">4060</Col>
+            <Col id="MENU_NM">Google Map</Col>
+            <Col id="MENU_URL">ext::GoogleMap.xfdl</Col>
+            <Col id="PARENT_MENU_ID">4000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">4070</Col>
+            <Col id="MENU_NM">알차트(rChart)</Col>
+            <Col id="MENU_URL">ext::rChart.xfdl</Col>
+            <Col id="PARENT_MENU_ID">4000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">4080</Col>
+            <Col id="MENU_NM">알차트(rChart) 연동</Col>
+            <Col id="MENU_URL">ext::rMateChart2.xfdl</Col>
+            <Col id="PARENT_MENU_ID">4000</Col>
+            <Col id="MOBILE_YN">Y</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">4090</Col>
+            <Col id="MENU_NM">Ubi Report 연동</Col>
+            <Col id="MENU_URL">ext::UbiReportMain.xfdl</Col>
+            <Col id="PARENT_MENU_ID">4000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">5000</Col>
+            <Col id="MENU_NM">SAMPLE</Col>
+            <Col id="PARENT_MENU_ID">5000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">5001</Col>
+            <Col id="MENU_NM">CRUD</Col>
+            <Col id="MENU_URL">sample::form01.xfdl</Col>
+            <Col id="PARENT_MENU_ID">5000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">6000</Col>
+            <Col id="MENU_NM">Template</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6001</Col>
+            <Col id="MENU_NM">조회성그리드</Col>
+            <Col id="MENU_URL">template::01_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6002</Col>
+            <Col id="MENU_NM">CRUD그리드</Col>
+            <Col id="MENU_URL">template::02_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6003</Col>
+            <Col id="MENU_NM">CRUD그리드(가로2)</Col>
+            <Col id="MENU_URL">template::03_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6004</Col>
+            <Col id="MENU_NM">CRUD그리드(가로1)상세(가로1)</Col>
+            <Col id="MENU_URL">template::04_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6005</Col>
+            <Col id="MENU_NM">CRUD그리드(세로1)상세(1)</Col>
+            <Col id="MENU_URL">template::05_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6006</Col>
+            <Col id="MENU_NM">CRUD그리드(세로2)</Col>
+            <Col id="MENU_URL">template::06_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6007</Col>
+            <Col id="MENU_NM">그리드(3)_총무_신청기간등록</Col>
+            <Col id="MENU_URL">template::07_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6008</Col>
+            <Col id="MENU_NM">그리드(1),상세(상),그리드(하)_재무</Col>
+            <Col id="MENU_URL">template::08_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6009</Col>
+            <Col id="MENU_NM">그리드(3)_총무_전화번호생성</Col>
+            <Col id="MENU_URL">template::09_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6010</Col>
+            <Col id="MENU_NM">탭(1)</Col>
+            <Col id="MENU_URL">template::10_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6011</Col>
+            <Col id="MENU_NM">상세(1), 그리드(1)</Col>
+            <Col id="MENU_URL">template::11_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6012</Col>
+            <Col id="MENU_NM">그리드(1),상세(1)_재무_대금지급조건</Col>
+            <Col id="MENU_URL">template::12_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">6013</Col>
+            <Col id="MENU_NM">탭(1)</Col>
+            <Col id="MENU_URL">template::13_Temp.xfdl</Col>
+            <Col id="PARENT_MENU_ID">6000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">0</Col>
+            <Col id="MENU_ID">7000</Col>
+            <Col id="MENU_NM">Guide</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7001</Col>
+            <Col id="MENU_NM">Component기본</Col>
+            <Col id="MENU_URL">guide::01_Guide_component.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7002</Col>
+            <Col id="MENU_NM">버튼</Col>
+            <Col id="MENU_URL">guide::02_Guide_button.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7003</Col>
+            <Col id="MENU_NM">조회영역</Col>
+            <Col id="MENU_URL">guide::03_Guide_search.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7004</Col>
+            <Col id="MENU_NM">상세(Detail)영역</Col>
+            <Col id="MENU_URL">guide::04_Guide_detail.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7005</Col>
+            <Col id="MENU_NM">Grid(종류별)</Col>
+            <Col id="MENU_URL">guide::05_Guide_grid.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7006</Col>
+            <Col id="MENU_NM">Tab/GroupBox/ProgressBar</Col>
+            <Col id="MENU_URL">guide::06_Guide_tab.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7007</Col>
+            <Col id="MENU_NM">Static,주석,팝업Div</Col>
+            <Col id="MENU_URL">guide::07_Guide_static.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7008</Col>
+            <Col id="MENU_NM">공통팝업스킨</Col>
+            <Col id="MENU_URL">guide::08_Guide_popup.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7009</Col>
+            <Col id="MENU_NM">업무팝업스킨</Col>
+            <Col id="MENU_URL">guide::09_Guide_WF_popup.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7010</Col>
+            <Col id="MENU_NM">프로그램설치(팝업)</Col>
+            <Col id="MENU_URL">guide::10_Guide_install.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="MENU_LVL">1</Col>
+            <Col id="MENU_ID">7011</Col>
+            <Col id="MENU_NM">ErrorPage공통개발자용</Col>
+            <Col id="MENU_URL">guide::11_Guide_error.xfdl</Col>
+            <Col id="PARENT_MENU_ID">7000</Col>
+            <Col id="MOBILE_YN">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

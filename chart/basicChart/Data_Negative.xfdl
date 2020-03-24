@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Data_Negative" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="1" left="0" top="0" right="0" bottom="0" binddataset="dsTempo" categorycolumn="bind:month">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Basic Chart >Column Chart",
+		"text": "With Negative Data",
+		"subtextalign": "right",
+		"subtextcolor": "lightgray"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletext": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "valueaxis",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelmask": "##℃",
+			"labeltype": "text"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "c1",
+			"barvisible": true,
+			"barsize": "80",
+			"itemtextvisible": true,
+			"itemtextcolor": "white",
+			"itemtextfont": "8pt '맑은 고딕'",
+			"valuecolumn": "bind:c1",
+			"barlinestyle": "1px solid #1f77b4",
+			"barfillstyle": "#1f77b4",
+			"itemtextmask": "##℃",
+			"itemtext": "bind:c1",
+			"itemtexttype": "text",
+			"itemtextposition": "inside start"
+		},
+		{
+			"id": "series1",
+			"titletext": "c2",
+			"barvisible": true,
+			"barsize": "80",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "8pt '맑은 고딕'",
+			"valuecolumn": "bind:c2",
+			"barlinestyle": "1px solid #aec7e8",
+			"barfillstyle": "#aec7e8",
+			"itemtextmask": "##℃",
+			"itemtext": "bind:c2",
+			"itemtexttype": "text",
+			"itemtextposition": "inside start"
+		},
+		{
+			"id": "series2",
+			"titletext": "c3",
+			"barvisible": true,
+			"barsize": "80",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "8pt '맑은 고딕'",
+			"valuecolumn": "bind:c3",
+			"barlinestyle": "1px solid #ff7f0e",
+			"barfillstyle": "#ff7f0e",
+			"itemtextmask": "##℃",
+			"itemtext": "bind:c3",
+			"itemtexttype": "text",
+			"itemtextposition": "inside start"
+		},
+		{
+			"id": "series3",
+			"titletext": "c4",
+			"barvisible": true,
+			"barsize": "80",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "8pt '맑은 고딕'",
+			"valuecolumn": "bind:c4",
+			"barlinestyle": "1px solid #ffbb78",
+			"barfillstyle": "#ffbb78",
+			"itemtextmask": "##℃",
+			"itemtext": "bind:c4",
+			"itemtexttype": "text",
+			"itemtextposition": "inside start"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsTempo">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="c1" type="FLOAT" size="256"/>
+          <Column id="c2" type="FLOAT" size="256"/>
+          <Column id="c3" type="FLOAT" size="256"/>
+          <Column id="c4" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">1월</Col>
+            <Col id="c1">-7.5</Col>
+            <Col id="c2">-5.3</Col>
+            <Col id="c3">-4</Col>
+            <Col id="c4">-1.5</Col>
+          </Row>
+          <Row>
+            <Col id="month">2월</Col>
+            <Col id="c1">-3.2</Col>
+            <Col id="c2">-1.5</Col>
+            <Col id="c3">-3.2</Col>
+            <Col id="c4">0.2</Col>
+          </Row>
+          <Row>
+            <Col id="month">3월</Col>
+            <Col id="c1">2.5</Col>
+            <Col id="c2">5.3</Col>
+            <Col id="c3">3.5</Col>
+            <Col id="c4">5.6</Col>
+          </Row>
+          <Row>
+            <Col id="month">4월</Col>
+            <Col id="c1">7</Col>
+            <Col id="c2">9</Col>
+            <Col id="c3">10</Col>
+            <Col id="c4">7</Col>
+          </Row>
+          <Row>
+            <Col id="month">5월</Col>
+            <Col id="c1">8</Col>
+            <Col id="c2">9</Col>
+            <Col id="c3">8</Col>
+            <Col id="c4">10</Col>
+          </Row>
+          <Row>
+            <Col id="month">6월</Col>
+            <Col id="c1">12</Col>
+            <Col id="c2">11</Col>
+            <Col id="c3">9</Col>
+            <Col id="c4">11</Col>
+          </Row>
+          <Row>
+            <Col id="month">7월</Col>
+            <Col id="c1">19</Col>
+            <Col id="c2">21</Col>
+            <Col id="c3">18</Col>
+            <Col id="c4">20</Col>
+          </Row>
+          <Row>
+            <Col id="month">8월</Col>
+            <Col id="c1">25</Col>
+            <Col id="c2">27</Col>
+            <Col id="c3">26</Col>
+            <Col id="c4">22</Col>
+          </Row>
+          <Row>
+            <Col id="month">9월</Col>
+            <Col id="c1">20</Col>
+            <Col id="c2">20</Col>
+            <Col id="c3">22</Col>
+            <Col id="c4">18</Col>
+          </Row>
+          <Row>
+            <Col id="month">10월</Col>
+            <Col id="c1">15</Col>
+            <Col id="c2">13</Col>
+            <Col id="c3">12</Col>
+            <Col id="c4">17</Col>
+          </Row>
+          <Row>
+            <Col id="month">11월</Col>
+            <Col id="c1">8</Col>
+            <Col id="c2">9</Col>
+            <Col id="c3">7</Col>
+            <Col id="c4">7</Col>
+          </Row>
+          <Row>
+            <Col id="month">12월</Col>
+            <Col id="c1">-2</Col>
+            <Col id="c2">-4.5</Col>
+            <Col id="c3">-1.2</Col>
+            <Col id="c4">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Div00_BtnBarType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(true);
+		this.BasicChart00.seriesset[i].set_linevisible(false);
+		this.BasicChart00.seriesset[i].set_lineareavisible(false);
+		this.BasicChart00.seriesset[i].set_pointvisible(false);
+	}
+};
+
+this.Div00_BtnLineType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(false);
+		this.BasicChart00.seriesset[i].set_linevisible(true);
+		this.BasicChart00.seriesset[i].set_lineareavisible(false);
+		this.BasicChart00.seriesset[i].set_pointvisible(false);
+	}
+};
+
+this.Div00_BtnLineAreaType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(false);
+		this.BasicChart00.seriesset[i].set_linevisible(true);
+		this.BasicChart00.seriesset[i].set_lineareavisible(true);
+		this.BasicChart00.seriesset[i].set_pointvisible(false);
+	}
+};
+
+
+this.Div00_BtnLineBarType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(i==0 ? false : true);
+		this.BasicChart00.seriesset[i].set_linevisible(i==0 ? true : false);
+		this.BasicChart00.seriesset[i].set_lineareavisible(false);
+		this.BasicChart00.seriesset[i].set_pointvisible(false);
+	}
+};
+
+this.Div00_BtnLineAreaBarType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(i==0 ? false : true);
+		this.BasicChart00.seriesset[i].set_linevisible(i==0 ? true : false);
+		this.BasicChart00.seriesset[i].set_lineareavisible(i==0 ? true : false);
+		this.BasicChart00.seriesset[i].set_pointvisible(false);
+	}
+};
+
+this.Div00_BtnLinePointType_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(false);
+		this.BasicChart00.seriesset[i].set_linevisible(true);
+		this.BasicChart00.seriesset[i].set_lineareavisible(false);
+		this.BasicChart00.seriesset[i].set_pointvisible(true);
+	}
+};
+
+this.Div00_BtnRotate_onclick = function(obj,e)
+{
+	this.BasicChart00.set_rotateaxis(!this.BasicChart00.rotateaxis);
+};
+
+this.Div00_BtnGrouping_onclick = function(obj,e)
+{
+	this.BasicChart00.set_bargrouping(!this.BasicChart00.bargrouping);
+};
+
+this.Div00_BtnStack_onclick = function(obj,e)
+{
+	var type = this.BasicChart00.stacktype;
+	switch (type)
+	{
+	case "none":
+		this.BasicChart00.set_stacktype("normal");
+	break;
+	case "normal":
+		this.BasicChart00.set_stacktype("percent");
+	break;
+	case "percent":
+		this.BasicChart00.set_stacktype("none");
+	break;
+	}
+
+};
+
+this.Div00_BtnCategoryRotate_onclick = function(obj,e)
+{
+	var angle = this.BasicChart00.categoryaxis.labelrotate | 0;
+	angle -= 15;
+	this.BasicChart00.categoryaxis.set_labelrotate(angle);
+};
+
+this.Div00_BtnCategoryOpposite_onclick = function(obj,e)
+{
+	this.BasicChart00.categoryaxis.set_opposite(!this.BasicChart00.categoryaxis.opposite);
+};
+
+this.Div00_BtnLineShape_onclick = function(obj,e)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		if ( this.BasicChart00.seriesset[i].linevisible)
+		{
+			var type = this.BasicChart00.seriesset[i].linetype;
+			switch (type)
+			{
+				case "":
+				case "segment":
+					this.BasicChart00.seriesset[i].set_linetype("step");
+					break;
+
+				case "step":
+					this.BasicChart00.seriesset[i].set_linetype("curve");
+					break;
+
+				case "curve":
+					this.BasicChart00.seriesset[i].set_linetype("segment");
+					break;
+			}
+		}
+	}
+};
+
+var shape_pos = 0, same_shape = true;
+this.Div00_BtnPointShape_onclick = function(obj,e)
+{
+	shape_pos++;
+
+	var cnt = this.BasicChart00.seriesset.length;
+	if (same_shape && shape_pos >= 5 || !same_shape && shape_pos >= (6-cnt))
+	{
+		shape_pos = 0; same_shape = !same_shape;
+	}
+
+	var shapeset = ["circle", "square", "diamond", "triangle", "cross"];
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		if (same_shape)
+		{
+			this.BasicChart00.seriesset[i].set_pointshape(shapeset[shape_pos]);
+		}
+		else
+		{
+			this.BasicChart00.seriesset[i].set_pointshape(shapeset[shape_pos + i]);
+		}
+	}
+
+};
+
+this.Div00_BtnPointType_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var cnt = this.BasicChart00.seriesset.length;
+	for (var i=0;i<cnt;i++)
+	{
+		this.BasicChart00.seriesset[i].set_barvisible(false);
+		this.BasicChart00.seriesset[i].set_linevisible(false);
+		this.BasicChart00.seriesset[i].set_lineareavisible(false);
+		this.BasicChart00.seriesset[i].set_pointvisible(true);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

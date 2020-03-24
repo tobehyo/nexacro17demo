@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commListCombo" width="250" height="28" titletext="멀티콤보">
+    <Layouts>
+      <Layout>
+        <Edit id="edtCombo" taborder="0" left="0" top="0" right="27" bottom="0" readonly="true" border="1px solid rgba(156,156,156,1)"/>
+        <Button id="btnComboOpen" taborder="1" top="0" right="0" width="28" cssclass="btn_WF_multiCombo" bottom="0" onclick="btnComboOpen_onclick"/>
+        <PopupDiv id="pdivCombo" text="PopupDiv00" left="0" top="44" height="207" border="1px solid rgba(156,156,156,1)" formscrollbartype="none none" formscrolltype="none" right="0">
+          <Layouts>
+            <Layout>
+              <Grid id="grdListCombo" taborder="0" left="0" top="0" right="0" bottom="-1" binddataset="dsCombo" autofittype="col" border="0px none #808080" oncellclick="popdivCombo_grdCombo_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36" band="head"/>
+                      <Row size="34"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="코드"/>
+                      <Cell col="1" text="명칭"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Code"/>
+                      <Cell col="1" text="bind:Value"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCombo">
+        <ColumnInfo>
+          <Column id="Code" type="STRING" size="256"/>
+          <Column id="Value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Code">aa</Col>
+            <Col id="Value">사과</Col>
+          </Row>
+          <Row>
+            <Col id="Code">bb</Col>
+            <Col id="Value">바나나</Col>
+          </Row>
+          <Row>
+            <Col id="Code">cc</Col>
+            <Col id="Value">배</Col>
+          </Row>
+          <Row>
+            <Col id="Code">dd</Col>
+            <Col id="Value">포도</Col>
+          </Row>
+          <Row>
+            <Col id="Code">ee</Col>
+            <Col id="Value">수박</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    component > 확장컴포넌트 - 사용자 콤보 컴포넌트
+*  @FileName    commMultiCombo.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/14
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/14          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 버튼 click이벤트
+*/
+this.btnComboOpen_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.pdivCombo.trackPopupByComponent(this.edtCombo, 0, this.edtCombo.getOffsetHeight());
+};
+
+
+/**
+ * @description 아이템 선택 후 팝업 닫기
+*/
+this.popdivCombo_grdCombo_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var sCode = this.dsCombo.getColumn(e.row, "Code");
+	var sValue = this.dsCombo.getColumn(e.row, "Value");
+
+	this.edtCombo.set_value("[" + sCode + "] " + sValue);
+	this.pdivCombo.closePopup();
+};
+]]></Script>
+  </Form>
+</FDL>

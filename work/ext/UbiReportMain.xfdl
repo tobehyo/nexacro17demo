@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="UbiReportMain" width="1010" height="720" titletext="UbiReport Main화면" onload="UbiReportMain_onload">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1010">
+        <Button id="btnPrint" taborder="0" top="7" width="132" height="30" right="30" onclick="fn_comBtnOnClick" text="Ubi Reoprt 출력" cssclass="btn_WF_print"/>
+        <Div id="Tab_div" taborder="3" left="0" top="39" cssclass="div_WF_tabBox" right="10" bottom="110">
+          <Layouts>
+            <Layout>
+              <Grid id="grdList" taborder="0" left="0" top="5" right="20" binddataset="dsList" autofittype="col" cellmovingtype="col,band" cellsizingtype="col" formatid="format00" bottom="20">
+                <Formats>
+                  <Format id="format00">
+                    <Columns>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="32" band="head"/>
+                      <Row size="32"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="연도" textAlign="center"/>
+                      <Cell col="1" text="업종" textAlign="center"/>
+                      <Cell col="2" text="부채비율" textAlign="center"/>
+                      <Cell col="3" text="자기자본비율" textAlign="center"/>
+                      <Cell col="4" text="유동비율" textAlign="center"/>
+                      <Cell col="5" text="매출액영업이익률" textAlign="center"/>
+                      <Cell col="6" text="매출액증가율" textAlign="center"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Column0" textAlign="center"/>
+                      <Cell col="1" text="bind:Column1" suppress="0" textAlign="center"/>
+                      <Cell col="2" text="bind:Column2" textAlign="center"/>
+                      <Cell col="3" text="bind:Column3" textAlign="center"/>
+                      <Cell col="4" text="bind:Column4" textAlign="center"/>
+                      <Cell col="5" text="bind:Column5" textAlign="center"/>
+                      <Cell col="6" text="bind:Column6" textAlign="center"/>
+                    </Band>
+                  </Format>
+                  <Format id="format01">
+                    <Columns>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24" band="summ"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="연도" textAlign="center"/>
+                      <Cell col="1" text="업종" textAlign="center"/>
+                      <Cell col="2" text="부채비율" textAlign="center"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Column0" textAlign="center"/>
+                      <Cell col="1" text="bind:Column1" suppress="0" textAlign="center"/>
+                      <Cell col="2" text="bind:Column2" textAlign="center"/>
+                    </Band>
+                    <Band id="summary">
+                      <Cell colspan="2" text="합계"/>
+                      <Cell col="2" text="expr:dataset.getSum(&quot;Column2&quot;)"/>
+                    </Band>
+                  </Format>
+                  <Format id="format02">
+                    <Columns>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="연도" textAlign="center"/>
+                      <Cell col="1" text="업종" textAlign="center"/>
+                      <Cell col="2" colspan="5" text="부채비율 / 자기자본비율 / 유동비율 / 매출액영업이익률 / 매출액증가율" textAlign="center"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:Column0" textAlign="center"/>
+                      <Cell col="1" text="bind:Column1" textAlign="center"/>
+                      <Cell col="2" colspan="5" text="expr:dataset.getColumn(currow, &quot;Column2&quot;) + &quot; / &quot; + dataset.getColumn(currow, &quot;Column3&quot;) + &quot; / &quot; + dataset.getColumn(currow, &quot;Column4&quot;) + &quot; / &quot; + dataset.getColumn(currow, &quot;Column5&quot;) + &quot; / &quot; + dataset.getColumn(currow, &quot;Column6&quot;)" textAlign="center"/>
+                    </Band>
+                  </Format>
+                  <Format id="format03">
+                    <Columns>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                      <Column size="130"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell rowspan="2" text="연도" textAlign="center"/>
+                      <Cell col="1" rowspan="2" text="업종" textAlign="center"/>
+                      <Cell col="2" text="부채비율" textAlign="center"/>
+                      <Cell col="3" text="자기자본비율" textAlign="center"/>
+                      <Cell col="4" text="유동비율" textAlign="center"/>
+                      <Cell row="1" col="2" colspan="2" text="매출액영업이익률" textAlign="center"/>
+                      <Cell row="1" col="4" text="매출액증가율" textAlign="center"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell rowspan="2" text="bind:Column0" textAlign="center"/>
+                      <Cell col="1" rowspan="2" text="bind:Column1" suppress="0" textAlign="center"/>
+                      <Cell col="2" text="bind:Column2" textAlign="center"/>
+                      <Cell col="3" text="bind:Column3" textAlign="center"/>
+                      <Cell col="4" text="bind:Column4" textAlign="center"/>
+                      <Cell row="1" col="2" colspan="2" text="bind:Column5" textAlign="center"/>
+                      <Cell row="1" col="4" text="bind:Column6" textAlign="center"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnTab0" taborder="1" text="리포트1" left="0" top="6" width="120" height="32" cssclass="btn_WF_basic01" enable="false" onclick="fn_comBtnOnClick"/>
+        <Button id="btnTab1" taborder="2" text="리포트2" left="120" top="6" width="130" height="32" cssclass="btn_WF_basic01" onclick="fn_comBtnOnClick"/>
+        <Button id="btnTab2" taborder="4" text="리포트3" left="250" top="6" width="120" height="32" cssclass="btn_WF_basic01" onclick="fn_comBtnOnClick"/>
+        <Button id="btnTab3" taborder="5" text="리포트4" left="370" top="6" width="120" height="32" cssclass="btn_WF_basic01" onclick="fn_comBtnOnClick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="BIGDECIMAL" size="256"/>
+          <Column id="Column3" type="BIGDECIMAL" size="256"/>
+          <Column id="Column4" type="BIGDECIMAL" size="256"/>
+          <Column id="Column5" type="BIGDECIMAL" size="256"/>
+          <Column id="Column6" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">제조업</Col>
+            <Col id="Column2">134.53</Col>
+            <Col id="Column3">42.64</Col>
+            <Col id="Column4">129.57</Col>
+            <Col id="Column5">3.96</Col>
+            <Col id="Column6">1.26</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">수도사업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">건설업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">도소매업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">음식점업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">금융업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">임대업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">서비스업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">운수업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">제조업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">수도사업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">건설업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">도소매업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">음식점업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">금융업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">임대업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">서비스업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">운수업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">제조업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">수도사업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">건설업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">도소매업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">음식점업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">금융업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">임대업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">서비스업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">운수업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">제조업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">수도사업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">건설업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">도소매업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">음식점업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">금융업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">임대업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">서비스업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">운수업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2010</Col>
+            <Col id="Column1">제조업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2011</Col>
+            <Col id="Column1">수도사업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2012</Col>
+            <Col id="Column1">건설업</Col>
+            <Col id="Column2">85.52</Col>
+            <Col id="Column3">53.90</Col>
+            <Col id="Column4">135.18</Col>
+            <Col id="Column5">5.06</Col>
+            <Col id="Column6">-2.99</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2013</Col>
+            <Col id="Column1">도소매업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2014</Col>
+            <Col id="Column1">음식점업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2015</Col>
+            <Col id="Column1">금융업</Col>
+            <Col id="Column2">121.31</Col>
+            <Col id="Column3">45.18</Col>
+            <Col id="Column4">131.50</Col>
+            <Col id="Column5">5.45</Col>
+            <Col id="Column6">2.64</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2016</Col>
+            <Col id="Column1">임대업</Col>
+            <Col id="Column2">79.84</Col>
+            <Col id="Column3">55.61</Col>
+            <Col id="Column4">138.01</Col>
+            <Col id="Column5">6.00</Col>
+            <Col id="Column6">-0.47</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2017</Col>
+            <Col id="Column1">서비스업</Col>
+            <Col id="Column2">89.24</Col>
+            <Col id="Column3">52.84</Col>
+            <Col id="Column4">132.60</Col>
+            <Col id="Column5">4.21</Col>
+            <Col id="Column6">-1.59</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2018</Col>
+            <Col id="Column1">운수업</Col>
+            <Col id="Column2">128.50</Col>
+            <Col id="Column3">43.76</Col>
+            <Col id="Column4">130.42</Col>
+            <Col id="Column5">4.67</Col>
+            <Col id="Column6">0.29</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.app = null;
+
+this.UbiReportMain_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.app = nexacro.getApplication();
+};
+
+this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch (obj.name)
+	{
+		case "btnTab0" : // 리포트1
+			this.components["btnTab0"].set_enable(false);
+			this.components["btnTab1"].set_enable(true);
+			this.components["btnTab2"].set_enable(true);
+			this.components["btnTab3"].set_enable(true);
+			this.Tab_div.form.grdList.set_formatid("format00");		
+			break;
+			
+		case "btnTab1" : // 리포트2
+			this.components["btnTab0"].set_enable(true);
+			this.components["btnTab1"].set_enable(false);
+			this.components["btnTab2"].set_enable(true);
+			this.components["btnTab3"].set_enable(true);
+			this.Tab_div.form.grdList.set_formatid("format01");		
+			break;
+			
+		case "btnTab2" : // 리포트3
+			this.components["btnTab0"].set_enable(true);
+			this.components["btnTab1"].set_enable(true);
+			this.components["btnTab2"].set_enable(false);
+			this.components["btnTab3"].set_enable(true);
+			this.Tab_div.form.grdList.set_formatid("format02");		
+			break;
+			
+		case "btnTab3" : // 리포트4
+			this.components["btnTab0"].set_enable(true);
+			this.components["btnTab1"].set_enable(true);
+			this.components["btnTab2"].set_enable(true);
+			this.components["btnTab3"].set_enable(false);
+			this.Tab_div.form.grdList.set_formatid("format03");		
+			break;
+			
+		case "btnPrint" : // Ubi Report 출력
+			this.ubiArg = "arg1#Ubi Report (HTML5)#" + "arg2#리포트 종류#";
+			this.ubiKey = "Key2";
+
+			var argList = {ubiIsRuntime:true
+						   ,ubiReportFile:"horizontal.jrf"
+						   ,ubiSvcUrl:null
+						   ,ubiLocalDs:["dsList", this.dsList]
+						   ,ubiGridObj:this.Tab_div.form.grdList
+						   ,ubiArg:this.ubiArg
+						   ,ubiKey:this.ubiKey
+						   ,gubun:"gridAuto"};
+			
+			this.openPopup(this, "UbiReport", "ext::UbiReport2.xfdl", argList, "showtitlebar=true layered=true");		
+			break;
+	}
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// common popup
+/////////////////////////////////////////////////////////////////////////////////////////////////
+this.openPopup = function(form, frameId, formUrl, objArgList, options, sPopupCallback, bModeless)
+{
+	var nLeft = -1;
+	var nTop = -1;
+	var nWidth = 1;
+	var nHeight = 1;
+	var bShowTitle = true;
+	var bShowStatus = false;
+	var bLayered = false;
+	var nOpacity = 100;
+	var bAutoSize = true;
+	var bResizable = true;
+	var bRound = false;
+	var bReload = false; //열려진 화면 일 때 reload 처리 유무
+	var sDragMoveType = "all";
+	var sTitleText = "";
+	var objParentFrame = null;
+
+	if (form) {
+		objParentFrame = form.getOwnerFrame();
+	} else {
+		objParentFrame = this.app.mainframe;
+	}
+
+	options += "";
+	
+	var aVal = options.trim().split(" ");
+	var i;
+	var aVal2;
+	
+	for (i = 0; i < aVal.length; i++)
+	{
+		aVal2 = aVal[i].trim().split("=");
+		
+		switch (aVal2[0])
+		{
+			case "top":
+				nTop = parseInt(aVal2[1]);
+				break;
+			case "left":
+				nLeft = parseInt(aVal2[1]);
+				break;
+			case "width":
+				nWidth = parseInt(aVal2[1]);
+				break;
+			case "height":
+				nHeight = parseInt(aVal2[1]);
+				break;
+			case "title":
+			case "titlebar":
+			case "showtitlebar":
+				bShowTitle = aVal2[1];
+				break;
+			case "titletext":
+				sTitleText = aVal2[1];
+				break;
+			case "status":
+			case "statusbar":
+			case "showstatusbar":
+				bShowStatus = aVal2[1];
+				break;
+			case "layered":
+				bLayered = aVal2[1];
+				break;
+			case "opacity":
+				nOpacity = aVal2[1];
+				break;
+			case "autosize":
+				bAutoSize = aVal2[1];
+				break;
+			case "resizable":
+				bResizable = aVal2[1];
+				break;
+			case "round":
+				bRound = aVal2[1];
+				break;
+			case "reload":
+				bReload = aVal2[1];
+				break;
+		}
+	}
+	
+	var sOpenalign = "";
+	sOpenalign = "center middle";
+
+	if (nWidth == 1) nWidth = 600;
+	if (nHeight == 1) nHeight = 500;
+
+	if (nLeft == -1)
+	{
+		nLeft = (this.app.mainframe.width - nWidth) / 2;
+		if (bModeless) nLeft += system.clientToScreenX(this.app.mainframe, 0);
+	}
+	
+	if (nTop == -1)
+	{
+		nTop = (this.app.mainframe.height - nHeight) / 2;
+		if (bModeless) nTop += system.clientToScreenY(this.app.mainframe, 0);
+	}
+
+	if (bModeless)
+	{
+		//열린 modeless 팝업 화면이 존재하면 focus 처리 후 리턴.
+		var objPopFrams = this.app.popupframes;
+		var objPopFrame = objPopFrams[frameId];
+		var key;
+		
+		if (objPopFrame)
+		{
+			objPopFrame.setFocus();
+			
+			if (bReload == "true")
+			{
+				//arguments 셋팅
+				if (typeof(objArgList) != "undefined")
+				{
+					if (!objPopFrame.arguments) objPopFrame.arguments = {};
+
+					for (key in objArgList)
+					{
+						if (objArgList.hasOwnProperty(key)) {
+							objPopFrame.arguments[key] = objArgList[key];
+						}
+					}
+				}
+				
+				objPopFrame.form.reload();
+			}
+			
+			return;
+		}
+
+		//modeless callback 값 setting
+		objArgList._close_callback = sPopupCallback;
+
+		var sOpenStyle = "cssclass=Popup";
+
+		if (bShowTitle == "false") sOpenStyle += "showtitlebar=false";
+		if (bShowStatus == "true") sOpenStyle += " showstatusbar=true";
+		if (bAutoSize == "false") sOpenStyle += " autosize=false";
+		
+		if (bResizable == "false") {
+			sOpenStyle += " resizable=false";
+		} else {
+			sOpenStyle += " resizable=true";
+		}
+		
+		this.app.open(frameId, formUrl, objParentFrame, objArgList, sOpenStyle, nLeft, nTop, nWidth, nHeight, form);
+	}
+	else
+	{
+		newChild = new ChildFrame();
+		newChild.init(frameId, nLeft, nTop, nWidth, nHeight, null, null, formUrl);
+
+		newChild.set_background("transparent");
+		newChild.set_dragmovetype(sDragMoveType);
+		newChild.set_showtitlebar(bShowTitle);
+		newChild.set_autosize(bAutoSize);
+		newChild.set_resizable(bResizable);
+		newChild.set_titletext(sTitleText);
+		newChild.set_showstatusbar(bShowStatus);
+		newChild.set_openalign(sOpenalign);
+		newChild.set_layered(bLayered);
+		
+		//arguments 셋팅
+		var key;
+		
+		if (typeof(objArgList) != "undefined")
+		{
+			if (!newChild.arguments) newChild.arguments = {};
+			
+			for (key in objArgList)
+			{
+				if (objArgList.hasOwnProperty(key)) newChild.arguments[key] = objArgList[key];
+			}
+		}
+		
+		newChild.showModal(objParentFrame, objArgList, form, sPopupCallback);
+	}
+}]]></Script>
+  </Form>
+</FDL>

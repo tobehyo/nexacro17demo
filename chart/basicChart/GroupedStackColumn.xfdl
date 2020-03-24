@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GroupedStackColumn" width="768" height="480" titletext="StackbarGroup">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="gdsCostProfit" categorycolumn="bind:category">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Stackbar Grouping",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Basic Chart > Column Chart"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"itemautofit": "true"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labeltype": "currency"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "profit1",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt '맑은 고딕'",
+			"valuecolumn": "bind:profit",
+			"stacktype": "normal",
+			"stackbargroup": "profit",
+			"barlinestyle": "1px solid #1f77b4",
+			"barfillstyle": "#1f77b4",
+			"itemtextposition": "inside middle"
+		},
+		{
+			"id": "series1",
+			"titletext": "cost1",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt '맑은 고딕'",
+			"valuecolumn": "bind:cost",
+			"stacktype": "normal",
+			"stackbargroup": "cost",
+			"barlinestyle": "1px solid #aec7e8",
+			"barfillstyle": "#aec7e8",
+			"itemtextposition": "inside middle"
+		},
+		{
+			"id": "series3",
+			"titletext": "profit2",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt '맑은 고딕'",
+			"valuecolumn": "bind:profit1",
+			"stacktype": "normal",
+			"stackbargroup": "profit",
+			"barlinestyle": "1px solid #ff7f0e",
+			"barfillstyle": "#ff7f0e",
+			"itemtextposition": "inside middle"
+		},
+		{
+			"id": "series4",
+			"titletext": "cost2",
+			"barvisible": true,
+			"barsize": "65",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "10pt '맑은 고딕'",
+			"valuecolumn": "bind:cost1",
+			"stacktype": "normal",
+			"stackbargroup": "cost",
+			"barlinestyle": "1px solid #ffbb78",
+			"barfillstyle": "#ffbb78",
+			"itemtextposition": "inside middle"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

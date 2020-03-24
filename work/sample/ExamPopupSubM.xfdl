@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="ExamPopupSubM" width="480" height="800" titletext="팝업 서브(검색) 샘플" onload="form_onload">
+    <Layouts>
+      <Layout height="800" mobileorientation="portrait" width="480">
+        <Grid id="grd_list" taborder="0" left="0" top="150" right="0" bottom="0" binddataset="ds_list" autofittype="col" autosizingtype="none" oncellclick="grd_list_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="56"/>
+                <Column size="139"/>
+                <Column size="278"/>
+              </Columns>
+              <Rows>
+                <Row size="37" band="head"/>
+                <Row size="45"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="코드"/>
+                <Cell col="2" text="명칭"/>
+              </Band>
+              <Band id="body">
+                <Cell textAlign="center" text="expr:currow+1"/>
+                <Cell col="1" text="bind:CD_ID" wordWrap="none" textAlign="center"/>
+                <Cell col="2" text="bind:CD_NM" wordWrap="english"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="1" left="0" top="0" height="70" right="0" text="팝업서브샘플" background="aliceblue" cssclass="sta_WF_popupTitle"/>
+        <Button id="btn_popClose" taborder="2" top="10" width="50" height="50" right="5" onclick="btn_popClose_onclick" cssclass="btn_WF_popClose"/>
+        <Static id="Static00" taborder="3" text="명칭/코드" left="20" top="Static01:20" width="90" height="40" cssclass="sta_WF_SearchLabel"/>
+        <Button id="btn_srch" taborder="4" top="Static01:20" width="40" height="40" cssclass="btn_WF_search01" right="45" onclick="btn_srch_onclick"/>
+        <Edit id="edt_srchVal" taborder="5" left="110" top="Static01:20" height="40" right="85" text="이순신" readonly="true" displaynulltext="명칭 및 코드를 입력하세요"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="grd">
+        <ColumnInfo>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column1">8812345678901</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장 123</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678902</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장 456</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678903</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장 789</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678904</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678905</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678906</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678907</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">8812345678908</Col>
+            <Col id="Column2">고칼슘우유 200ml_국산, 우리아이냉장</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="CD_GRP_ID" type="string" size="20"/>
+          <Column id="CD_ID" type="string" size="20"/>
+          <Column id="CD_NM" type="string" size="100"/>
+          <Column id="CD_ID_NM" type="string" size="123"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/***************************************************************************
+ * Program ID    : ExamPopupSubM.xfdl
+ * Program Name  : 팝업 샘플페이지
+ * Author        : 양동주
+ * Created On    : 2019.07
+ * 개    요 	 :
+ *
+ * =========================================================================
+ * 변경일자     수정자    내    용
+ * =========================================================================
+
+ **************************************************************************/
+ /************************************************************************************************
+ * Form 변수 선언 영역
+ ************************************************************************************************/
+this.fv_cdGrpId;
+/************************************************************************************************
+ * Form 관련 스크립트 영역
+ ************************************************************************************************/
+/**
+ * 화면 Load 시 Event
+ */
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{//
+// 	this.gfn_formOnloadM(this);
+// 
+//     this.fv_cdGrpId	= this.gfn_getParam("cdGrpId");
+//     var sSrchValue	= this.gfn_getParam("srchValue");
+// 	
+// 	this.gfn_log("cdGrpId : " + this.fv_cdGrpId);
+// 	this.gfn_log("srchValue : " + sSrchValue);
+// 	
+// 	if(this.gfn_isNotNull(sSrchValue)) {
+// 		this.edt_srchVal.set_value(sSrchValue);
+// 	}
+// 	
+// 	// 조회
+// 	this.fn_search();
+};
+
+
+
+/************************************************************************************************
+* TRANSACTION 서비스 호출 처리
+************************************************************************************************/
+/**
+ * 조회
+ */
+this.fn_search = function()
+{
+	var svcId	= "fn_search";
+	var service	= "CMMD0010Service";
+	var method	= "cdList";
+	var inDs 	= "";
+	var outDs 	= "ds_list=gds_cdList";
+	var args 	= "cdGrpId=" + nexacro.wrapQuote(this.fv_cdGrpId);
+	var callBackFnc = "fn_callback";
+	
+	// 데이터 초기화
+	this.ds_list.clearData();
+		
+	this.gfn_transaction(svcId, service, method, inDs, outDs, args);
+	
+	
+};
+
+/**
+ * Callback 처리
+ * 
+ * @param {String} svcId : 서비스 ID
+ * @param {String} errCd : 오류 코드
+ * @param {String} errMsg : 오류 메시지
+*/
+this.fn_callback = function(svcId, errCd, errMsg)
+{
+	if (svcId == "search") {
+	
+	}
+};
+
+/************************************************************************************************
+ * 공통버튼 Function 영역
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ // 화면 닫기
+this.fn_closePop = function(nRow)
+{
+	var oRet = {
+		  CD_ID	: this.ds_list.getColumn(nRow, "CD_ID")
+		, CD_NM	: this.ds_list.getColumn(nRow, "CD_NM")
+		};
+		
+	this.gfn_closeM(JSON.stringify(oRet));
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ 
+this.btn_srch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.fn_search(); 
+};
+
+this.btn_popClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//this.gfn_closeM();
+	this.close();
+};
+
+this.grd_list_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.fn_closePop(e.row);
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

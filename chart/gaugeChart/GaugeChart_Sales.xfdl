@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_Sales" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart00" taborder="0" left="1.17%" top="1.88%" binddataset="ds_sales" categorycolumn="bind:Column0" gaugetype="vertical" right="77.08%" bottom="1.88%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Sales",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "100",
+			"tickmin": "0",
+			"tickinterval": "10",
+			"labelmask": "###%"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "white",
+			"itemtextfont": "bold 10pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"fillstyle": "slategray",
+			"barfillstyle": "maroon",
+			"barsize": "90",
+			"itemtextmask": "###%"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart01" taborder="1" left="22.92%" top="2.08%" binddataset="ds_sales" categorycolumn="bind:Column0" gaugetype="circular" right="1.04%" bottom="2.08%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Sales",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "false",
+		"image": "",
+		"size": "",
+		"indent": "",
+		"fillstyle": "white",
+		"linestyle": "1px solid black",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "100",
+			"tickmin": "0",
+			"tickinterval": "10",
+			"gap": "5",
+			"labelgap": "5",
+			"labelmask": "###%"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "maroon",
+			"itemtextfont": "bold 30pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"fillstyle": "slategray",
+			"barfillstyle": "maroon",
+			"radius": "100",
+			"innerradius": "50",
+			"barsize": "90",
+			"itemtextmask": "###%"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_sales">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">count</Col>
+            <Col id="Column1">60</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

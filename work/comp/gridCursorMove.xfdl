@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="gridCursorMove" width="980" height="720" titletext="그리드 커서 이동" onload="gridCursorMove_onload" cssclass="grid_WF_moveCell">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="980">
+        <Grid id="grdList" taborder="0" left="0" top="91" autoenter="key" onselectchanged="grdList_onselectchanged" onkeydown="grdList_onkeydown" selecttype="cell" cssclass="grid_WF_moveCell" onlbuttondown="grdList_onlbuttondown" onlbuttonup="grdList_onlbuttonup" bottom="50" right="20" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="105"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="34" band="head"/>
+                <Row size="34" band="head"/>
+                <Row size="34"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="제품코드"/>
+                <Cell col="1" rowspan="2" text="제품명"/>
+                <Cell col="2" colspan="3" text="홍대입구점"/>
+                <Cell col="5" colspan="3" text="신촌점"/>
+                <Cell col="8" colspan="3" text="코엑스점"/>
+                <Cell col="11" colspan="3" text="강남점"/>
+                <Cell col="14" colspan="3" text="인천공항점"/>
+                <Cell col="17" colspan="3" text="가로수길점"/>
+                <Cell row="1" col="2" text="출고"/>
+                <Cell row="1" col="3" text="판매"/>
+                <Cell row="1" col="4" text="재고" background="lightsteelblue"/>
+                <Cell row="1" col="5" text="출고"/>
+                <Cell row="1" col="6" text="판매"/>
+                <Cell row="1" col="7" text="재고" background="lightsteelblue"/>
+                <Cell row="1" col="8" text="출고"/>
+                <Cell row="1" col="9" text="판매"/>
+                <Cell row="1" col="10" text="재고" background="lightsteelblue"/>
+                <Cell row="1" col="11" text="출고"/>
+                <Cell row="1" col="12" text="판매"/>
+                <Cell row="1" col="13" text="재고" background="lightsteelblue"/>
+                <Cell row="1" col="14" text="출고"/>
+                <Cell row="1" col="15" text="판매"/>
+                <Cell row="1" col="16" text="재고" background="lightsteelblue"/>
+                <Cell row="1" col="17" text="출고"/>
+                <Cell row="1" col="18" text="판매"/>
+                <Cell row="1" col="19" text="재고" background="lightsteelblue"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:code" displaytype="normal" textAlign="center"/>
+                <Cell col="1" text="bind:name" cssclass="expr:currow == dataset.rowposition ? 'selected' : ''"/>
+                <Cell col="2" text="bind:val01" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="3" text="bind:val02" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="4" text="bind:val03" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+                <Cell col="5" text="bind:val11" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="6" text="bind:val12" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="7" text="bind:val13" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+                <Cell col="8" text="bind:val21" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="9" text="bind:val22" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="10" text="bind:val23" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+                <Cell col="11" text="bind:val31" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="12" text="bind:val32" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="13" text="bind:val33" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+                <Cell col="14" text="bind:val41" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="15" text="bind:val42" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="16" text="bind:val43" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+                <Cell col="17" text="bind:val51" cssclass="expr:comp.parent.getCellClass(currow, this.col+2)" textAlign="right"/>
+                <Cell col="18" text="bind:val52" cssclass="expr:comp.parent.getCellClass(currow, this.col+1)" textAlign="right"/>
+                <Cell col="19" text="bind:val53" edittype="normal" cssclass="expr:comp.parent.getCellClass(currow, this.col)" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnSetData" taborder="1" text="Set Dataset" top="55" width="120" height="30" onclick="btnSetData_onclick" cursor="pointer" right="20" visible="false"/>
+        <Static id="Static07" taborder="2" text="그리드에서 편집 된 영역의 색과 Seletce 되는 Cell 영역의 표시를 해줍니다. 키보드 방향키로 이동을 하며, 엔터키를 선택해 데이터 변경을 해보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="val01" type="STRING" size="256"/>
+          <Column id="val02" type="STRING" size="256"/>
+          <Column id="val03" type="STRING" size="256"/>
+          <Column id="val11" type="STRING" size="256"/>
+          <Column id="val12" type="STRING" size="256"/>
+          <Column id="val13" type="STRING" size="256"/>
+          <Column id="val21" type="STRING" size="256"/>
+          <Column id="val22" type="STRING" size="256"/>
+          <Column id="val23" type="STRING" size="256"/>
+          <Column id="val31" type="STRING" size="256"/>
+          <Column id="val32" type="STRING" size="256"/>
+          <Column id="val33" type="STRING" size="256"/>
+          <Column id="val41" type="STRING" size="256"/>
+          <Column id="val42" type="STRING" size="256"/>
+          <Column id="val43" type="STRING" size="256"/>
+          <Column id="val51" type="STRING" size="256"/>
+          <Column id="val52" type="STRING" size="256"/>
+          <Column id="val53" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">IAM</Col>
+            <Col id="name">아아</Col>
+            <Col id="val01">46</Col>
+            <Col id="val02">48</Col>
+            <Col id="val03">2</Col>
+            <Col id="val11">99</Col>
+            <Col id="val12">65</Col>
+            <Col id="val13">48</Col>
+            <Col id="val21">34</Col>
+            <Col id="val22">84</Col>
+            <Col id="val23">72</Col>
+            <Col id="val31">73</Col>
+            <Col id="val32">76</Col>
+            <Col id="val33">94</Col>
+            <Col id="val41">15</Col>
+            <Col id="val42">87</Col>
+            <Col id="val43">54</Col>
+            <Col id="val51">57</Col>
+            <Col id="val52">98</Col>
+            <Col id="val53">21</Col>
+          </Row>
+          <Row>
+            <Col id="code">LAT</Col>
+            <Col id="name">라떼</Col>
+            <Col id="val01">98</Col>
+            <Col id="val02">14</Col>
+            <Col id="val03">98</Col>
+            <Col id="val11">55</Col>
+            <Col id="val12">59</Col>
+            <Col id="val13">34</Col>
+            <Col id="val21">48</Col>
+            <Col id="val22">48</Col>
+            <Col id="val23">20</Col>
+            <Col id="val31">3</Col>
+            <Col id="val32">25</Col>
+            <Col id="val33">60</Col>
+            <Col id="val41">50</Col>
+            <Col id="val42">68</Col>
+            <Col id="val43">55</Col>
+            <Col id="val51">8</Col>
+            <Col id="val52">67</Col>
+            <Col id="val53">42</Col>
+          </Row>
+          <Row>
+            <Col id="code">VLA</Col>
+            <Col id="name">바닐라라떼</Col>
+            <Col id="val01">38</Col>
+            <Col id="val02">42</Col>
+            <Col id="val03">73</Col>
+            <Col id="val11">4</Col>
+            <Col id="val12">52</Col>
+            <Col id="val13">50</Col>
+            <Col id="val21">84</Col>
+            <Col id="val22">98</Col>
+            <Col id="val23">75</Col>
+            <Col id="val31">91</Col>
+            <Col id="val32">76</Col>
+            <Col id="val33">29</Col>
+            <Col id="val41">94</Col>
+            <Col id="val42">75</Col>
+            <Col id="val43">2</Col>
+            <Col id="val51">45</Col>
+            <Col id="val52">55</Col>
+            <Col id="val53">100</Col>
+          </Row>
+          <Row>
+            <Col id="code">DLA</Col>
+            <Col id="name">돌체라떼</Col>
+            <Col id="val01">7</Col>
+            <Col id="val02">16</Col>
+            <Col id="val03">34</Col>
+            <Col id="val11">32</Col>
+            <Col id="val12">70</Col>
+            <Col id="val13">24</Col>
+            <Col id="val21">53</Col>
+            <Col id="val22">56</Col>
+            <Col id="val23">59</Col>
+            <Col id="val31">38</Col>
+            <Col id="val32">20</Col>
+            <Col id="val33">52</Col>
+            <Col id="val41">9</Col>
+            <Col id="val42">73</Col>
+            <Col id="val43">3</Col>
+            <Col id="val51">96</Col>
+            <Col id="val52">47</Col>
+            <Col id="val53">3</Col>
+          </Row>
+          <Row>
+            <Col id="code">HIA</Col>
+            <Col id="name">헤이즐넛 아아</Col>
+            <Col id="val01">37</Col>
+            <Col id="val02">75</Col>
+            <Col id="val03">34</Col>
+            <Col id="val11">10</Col>
+            <Col id="val12">71</Col>
+            <Col id="val13">19</Col>
+            <Col id="val21">93</Col>
+            <Col id="val22">25</Col>
+            <Col id="val23">57</Col>
+            <Col id="val31">60</Col>
+            <Col id="val32">26</Col>
+            <Col id="val33">47</Col>
+            <Col id="val41">38</Col>
+            <Col id="val42">75</Col>
+            <Col id="val43">28</Col>
+            <Col id="val51">2</Col>
+            <Col id="val52">23</Col>
+            <Col id="val53">70</Col>
+          </Row>
+          <Row>
+            <Col id="code">CFC</Col>
+            <Col id="name">카푸치노</Col>
+            <Col id="val01">38</Col>
+            <Col id="val02">94</Col>
+            <Col id="val03">87</Col>
+            <Col id="val11">8</Col>
+            <Col id="val12">84</Col>
+            <Col id="val13">22</Col>
+            <Col id="val21">30</Col>
+            <Col id="val22">71</Col>
+            <Col id="val23">66</Col>
+            <Col id="val31">26</Col>
+            <Col id="val32">41</Col>
+            <Col id="val33">75</Col>
+            <Col id="val41">44</Col>
+            <Col id="val42">57</Col>
+            <Col id="val43">8</Col>
+            <Col id="val51">14</Col>
+            <Col id="val52">5</Col>
+            <Col id="val53">10</Col>
+          </Row>
+          <Row>
+            <Col id="code">CFM</Col>
+            <Col id="name">카페모카</Col>
+            <Col id="val01">26</Col>
+            <Col id="val02">11</Col>
+            <Col id="val03">80</Col>
+            <Col id="val11">91</Col>
+            <Col id="val12">23</Col>
+            <Col id="val13">67</Col>
+            <Col id="val21">58</Col>
+            <Col id="val22">32</Col>
+            <Col id="val23">13</Col>
+            <Col id="val31">58</Col>
+            <Col id="val32">70</Col>
+            <Col id="val33">70</Col>
+            <Col id="val41">84</Col>
+            <Col id="val42">15</Col>
+            <Col id="val43">78</Col>
+            <Col id="val51">97</Col>
+            <Col id="val52">73</Col>
+            <Col id="val53">9</Col>
+          </Row>
+          <Row>
+            <Col id="code">ESP</Col>
+            <Col id="name">에스프레소</Col>
+            <Col id="val01">35</Col>
+            <Col id="val02">38</Col>
+            <Col id="val03">14</Col>
+            <Col id="val11">46</Col>
+            <Col id="val12">78</Col>
+            <Col id="val13">13</Col>
+            <Col id="val21">77</Col>
+            <Col id="val22">76</Col>
+            <Col id="val23">84</Col>
+            <Col id="val31">96</Col>
+            <Col id="val32">70</Col>
+            <Col id="val33">30</Col>
+            <Col id="val41">63</Col>
+            <Col id="val42">5</Col>
+            <Col id="val43">31</Col>
+            <Col id="val51">58</Col>
+            <Col id="val52">66</Col>
+            <Col id="val53">6</Col>
+          </Row>
+          <Row>
+            <Col id="code">JAP</Col>
+            <Col id="name">자바칩프라푸치노</Col>
+            <Col id="val01">65</Col>
+            <Col id="val02">37</Col>
+            <Col id="val03">79</Col>
+            <Col id="val11">80</Col>
+            <Col id="val12">66</Col>
+            <Col id="val13">1</Col>
+            <Col id="val21">33</Col>
+            <Col id="val22">14</Col>
+            <Col id="val23">11</Col>
+            <Col id="val31">68</Col>
+            <Col id="val32">57</Col>
+            <Col id="val33">38</Col>
+            <Col id="val41">5</Col>
+            <Col id="val42">88</Col>
+            <Col id="val43">31</Col>
+            <Col id="val51">29</Col>
+            <Col id="val52">44</Col>
+            <Col id="val53">29</Col>
+          </Row>
+          <Row>
+            <Col id="code">GRA</Col>
+            <Col id="name">자몽에이드</Col>
+            <Col id="val01">63</Col>
+            <Col id="val02">18</Col>
+            <Col id="val03">25</Col>
+            <Col id="val11">62</Col>
+            <Col id="val12">24</Col>
+            <Col id="val13">81</Col>
+            <Col id="val21">38</Col>
+            <Col id="val22">30</Col>
+            <Col id="val23">55</Col>
+            <Col id="val31">9</Col>
+            <Col id="val32">75</Col>
+            <Col id="val33">20</Col>
+            <Col id="val41">18</Col>
+            <Col id="val42">13</Col>
+            <Col id="val43">7</Col>
+            <Col id="val51">28</Col>
+            <Col id="val52">68</Col>
+            <Col id="val53">82</Col>
+          </Row>
+          <Row>
+            <Col id="code">LMA</Col>
+            <Col id="name">레몬에이드</Col>
+            <Col id="val01">28</Col>
+            <Col id="val02">54</Col>
+            <Col id="val03">83</Col>
+            <Col id="val11">5</Col>
+            <Col id="val12">99</Col>
+            <Col id="val13">31</Col>
+            <Col id="val21">14</Col>
+            <Col id="val22">57</Col>
+            <Col id="val23">78</Col>
+            <Col id="val31">33</Col>
+            <Col id="val32">56</Col>
+            <Col id="val33">75</Col>
+            <Col id="val41">97</Col>
+            <Col id="val42">36</Col>
+            <Col id="val43">20</Col>
+            <Col id="val51">98</Col>
+            <Col id="val52">84</Col>
+            <Col id="val53">93</Col>
+          </Row>
+          <Row>
+            <Col id="code">SSM</Col>
+            <Col id="name">딸기스무디</Col>
+            <Col id="val01">17</Col>
+            <Col id="val02">75</Col>
+            <Col id="val03">67</Col>
+            <Col id="val11">63</Col>
+            <Col id="val12">51</Col>
+            <Col id="val13">81</Col>
+            <Col id="val21">70</Col>
+            <Col id="val22">5</Col>
+            <Col id="val23">42</Col>
+            <Col id="val31">69</Col>
+            <Col id="val32">95</Col>
+            <Col id="val33">59</Col>
+            <Col id="val41">14</Col>
+            <Col id="val42">88</Col>
+            <Col id="val43">36</Col>
+            <Col id="val51">90</Col>
+            <Col id="val52">70</Col>
+            <Col id="val53">68</Col>
+          </Row>
+          <Row>
+            <Col id="code">GLA</Col>
+            <Col id="name">녹차라떼</Col>
+            <Col id="val01">51</Col>
+            <Col id="val02">72</Col>
+            <Col id="val03">15</Col>
+            <Col id="val11">27</Col>
+            <Col id="val12">69</Col>
+            <Col id="val13">22</Col>
+            <Col id="val21">40</Col>
+            <Col id="val22">33</Col>
+            <Col id="val23">18</Col>
+            <Col id="val31">9</Col>
+            <Col id="val32">80</Col>
+            <Col id="val33">73</Col>
+            <Col id="val41">22</Col>
+            <Col id="val42">7</Col>
+            <Col id="val43">92</Col>
+            <Col id="val51">54</Col>
+            <Col id="val52">34</Col>
+            <Col id="val53">8</Col>
+          </Row>
+          <Row>
+            <Col id="code">CMA</Col>
+            <Col id="name">카라멜마끼야또</Col>
+            <Col id="val01">27</Col>
+            <Col id="val02">53</Col>
+            <Col id="val03">52</Col>
+            <Col id="val11">16</Col>
+            <Col id="val12">14</Col>
+            <Col id="val13">37</Col>
+            <Col id="val21">63</Col>
+            <Col id="val22">17</Col>
+            <Col id="val23">90</Col>
+            <Col id="val31">36</Col>
+            <Col id="val32">65</Col>
+            <Col id="val33">19</Col>
+            <Col id="val41">75</Col>
+            <Col id="val42">5</Col>
+            <Col id="val43">91</Col>
+            <Col id="val51">70</Col>
+            <Col id="val52">85</Col>
+            <Col id="val53">26</Col>
+          </Row>
+          <Row>
+            <Col id="code">YUJ</Col>
+            <Col id="name">유자차</Col>
+            <Col id="val01">84</Col>
+            <Col id="val02">30</Col>
+            <Col id="val03">78</Col>
+            <Col id="val11">51</Col>
+            <Col id="val12">6</Col>
+            <Col id="val13">60</Col>
+            <Col id="val21">14</Col>
+            <Col id="val22">65</Col>
+            <Col id="val23">15</Col>
+            <Col id="val31">37</Col>
+            <Col id="val32">85</Col>
+            <Col id="val33">19</Col>
+            <Col id="val41">20</Col>
+            <Col id="val42">9</Col>
+            <Col id="val43">97</Col>
+            <Col id="val51">78</Col>
+            <Col id="val52">14</Col>
+            <Col id="val53">58</Col>
+          </Row>
+          <Row>
+            <Col id="code">SHT</Col>
+            <Col id="name">쌍화탕</Col>
+            <Col id="val01">96</Col>
+            <Col id="val02">98</Col>
+            <Col id="val03">73</Col>
+            <Col id="val11">85</Col>
+            <Col id="val12">82</Col>
+            <Col id="val13">98</Col>
+            <Col id="val21">33</Col>
+            <Col id="val22">47</Col>
+            <Col id="val23">95</Col>
+            <Col id="val31">53</Col>
+            <Col id="val32">82</Col>
+            <Col id="val33">32</Col>
+            <Col id="val41">77</Col>
+            <Col id="val42">82</Col>
+            <Col id="val43">33</Col>
+            <Col id="val51">82</Col>
+            <Col id="val52">46</Col>
+            <Col id="val53">52</Col>
+          </Row>
+          <Row>
+            <Col id="code">FLA</Col>
+            <Col id="name">오곡라떼</Col>
+            <Col id="val01">62</Col>
+            <Col id="val02">77</Col>
+            <Col id="val03">89</Col>
+            <Col id="val11">85</Col>
+            <Col id="val12">13</Col>
+            <Col id="val13">2</Col>
+            <Col id="val21">34</Col>
+            <Col id="val22">30</Col>
+            <Col id="val23">96</Col>
+            <Col id="val31">3</Col>
+            <Col id="val32">30</Col>
+            <Col id="val33">54</Col>
+            <Col id="val41">69</Col>
+            <Col id="val42">85</Col>
+            <Col id="val43">6</Col>
+            <Col id="val51">8</Col>
+            <Col id="val52">43</Col>
+            <Col id="val53">2</Col>
+          </Row>
+          <Row>
+            <Col id="code">MSH</Col>
+            <Col id="name">밀크쉐이크</Col>
+            <Col id="val01">68</Col>
+            <Col id="val02">55</Col>
+            <Col id="val03">78</Col>
+            <Col id="val11">50</Col>
+            <Col id="val12">0</Col>
+            <Col id="val13">94</Col>
+            <Col id="val21">80</Col>
+            <Col id="val22">70</Col>
+            <Col id="val23">14</Col>
+            <Col id="val31">21</Col>
+            <Col id="val32">38</Col>
+            <Col id="val33">70</Col>
+            <Col id="val41">88</Col>
+            <Col id="val42">57</Col>
+            <Col id="val43">32</Col>
+            <Col id="val51">26</Col>
+            <Col id="val52">10</Col>
+            <Col id="val53">6</Col>
+          </Row>
+          <Row>
+            <Col id="code">MAX</Col>
+            <Col id="name">커피는맥심</Col>
+            <Col id="val01">88</Col>
+            <Col id="val02">7</Col>
+            <Col id="val03">99</Col>
+            <Col id="val11">22</Col>
+            <Col id="val12">24</Col>
+            <Col id="val13">44</Col>
+            <Col id="val21">14</Col>
+            <Col id="val22">83</Col>
+            <Col id="val23">81</Col>
+            <Col id="val31">4</Col>
+            <Col id="val32">42</Col>
+            <Col id="val33">36</Col>
+            <Col id="val41">76</Col>
+            <Col id="val42">28</Col>
+            <Col id="val43">44</Col>
+            <Col id="val51">93</Col>
+            <Col id="val52">29</Col>
+            <Col id="val53">71</Col>
+          </Row>
+          <Row>
+            <Col id="code">PBS</Col>
+            <Col id="name">팥빙수</Col>
+            <Col id="val01">17</Col>
+            <Col id="val02">84</Col>
+            <Col id="val03">2</Col>
+            <Col id="val11">100</Col>
+            <Col id="val12">47</Col>
+            <Col id="val13">12</Col>
+            <Col id="val21">98</Col>
+            <Col id="val22">19</Col>
+            <Col id="val23">60</Col>
+            <Col id="val31">39</Col>
+            <Col id="val32">61</Col>
+            <Col id="val33">46</Col>
+            <Col id="val41">57</Col>
+            <Col id="val42">42</Col>
+            <Col id="val43">38</Col>
+            <Col id="val51">43</Col>
+            <Col id="val52">67</Col>
+            <Col id="val53">24</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.sCellMoveFlag = true;
+
+/************************************************************************
+ * Form onload Event
+ ************************************************************************/
+this.gridCursorMove_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{	
+	this.grdList.set_enableevent(false);
+
+	this.grdList.set_binddataset("ds_data");
+	this.ds_data.set_rowposition(-1);
+	
+	this.grdList.selectCell(0, 4, true);
+	
+	this.grdList.set_enableevent(true);	
+	this.grdList.setFocus(true);
+};
+
+/************************************************************************
+ * Set Dataset Button onclick Event
+ ************************************************************************/
+// this.btnSetData_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+// {
+// 	this.grdList.set_enableevent(false);
+// 
+// 	this.grdList.set_binddataset("ds_data");
+// 	this.ds_data.set_rowposition(-1);
+// 	
+// 	this.grdList.selectCell(0, 4, true);
+// 	
+// 	this.grdList.set_enableevent(true);
+// };
+
+/************************************************************************
+ * getCellClass
+ * Custom function for grid's cell style
+ ************************************************************************/
+this.getCellClass = function(row, col)
+{
+	if (row == this.ds_data.rowposition && col == this.ds_data.getColIndex(this.grdList.getCellPos())) {
+		return "selected";
+	}
+	
+	if (this.ds_data.getOrgColumn(row, col) != this.ds_data.getColumn(row, col)) {
+		return "edited";
+	}
+	return "";
+}
+
+/************************************************************************
+ * 셀 선택시 이벤트
+ ************************************************************************/
+this.grdList_onselectchanged = function(obj:nexacro.Grid,e:nexacro.GridSelectEventInfo)
+{
+ 	this.grdList.set_enableevent(false);
+
+// 	trace("=====================================");
+// 	trace("e.oldcell             => " + e.oldcell);
+// 	trace("e.cell                => " + e.cell);
+// 	trace("e.oldcol              => " + e.oldcol);
+// 	trace("e.col                 => " + e.col);
+// 	trace("e.oldrow              => " + e.oldrow);
+// 	trace("e.row                 => " + e.row);
+// 	trace("");
+// 	trace("e.cell - e.oldcell = " + (e.cell - e.oldcell));
+// 	trace("e.col - e.oldcol = " + (e.col - e.oldcol));
+// 	trace("e.row - e.oldrow = " + (e.row - e.oldrow));
+// 	trace("=====================================");
+	
+	/************************************************************************
+	 * 방향키 Case
+	 ************************************************************************/
+	var cellCha = e.cell - e.oldcell;
+	var colCha  = e.col - e.oldcol;
+	var rowCha  = e.row - e.oldrow;
+	
+	// 위방향키
+	if (cellCha == 0 && rowCha == -1) {
+		// trace("단순 상이동");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 아래방향키
+	if (cellCha == 0 && rowCha == 1) {
+		// trace("단순 하이동");
+		obj.selectCell(e.row, e.cell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 좌방향키
+	if (cellCha == -1 && rowCha == 0 && e.oldcell != 4 && this.sCellMoveFlag == true) {
+	//if (cellCha == -1 && rowCha == 0 && e.oldcell != 4) {
+		//trace("단순 좌이동");
+		obj.selectCell(e.row, e.cell - 2, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 우방향키
+	if (cellCha == 1 && rowCha == 0) {
+		// trace("단순 우이동");
+		obj.selectCell(e.row, e.cell + 2, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 좌방향키 후 위아래방향키
+	if (cellCha == 2 && colCha == 0 && (rowCha == 1 || rowCha == -1)) {
+		// trace("좌방향키 후 위아래방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 우방향키 후 위아래방향키
+	if (cellCha == -2 && colCha == 0 && (rowCha == 1 || rowCha == -1)) {
+		// trace("우방향키 후 위아래방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 첫세트 좌방향키
+	if (cellCha == -1 && rowCha == 0 && e.oldcell == 4) {
+		// trace("첫세트 좌방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 첫세트 좌방향키 막힌 후 위아래방향키
+	if (cellCha == -1 && (rowCha == 1 || rowCha == -1)) {
+		// trace("첫세트 좌방향키 막힌 후 위아래방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 마지막세트 우방향키
+	if (cellCha == -19  && colCha != 0 && rowCha == 1) {
+		// trace("마지막세트 우방향키");
+		obj.selectCell(e.oldrow, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 마지막세트 우방향키 막힌 후 위아래방향키
+	if (cellCha == -19 && colCha == 0 && (rowCha == -1 || rowCha == 1)) {
+		// trace("마지막세트 우방향키 막힌 후 위아래방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 마우스로 불가셀 클릭 후 위아래방향키
+	if (cellCha <= -3 && colCha == 0 && (rowCha == 1 || rowCha == -1)) {
+		// trace("마우스로 불가셀 클릭 후 위아래방향키");
+		obj.selectCell(e.row, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	/************************************************************************
+	 * 마우스 Case
+	 ************************************************************************/
+	// 제품콛, 제품명 선택시
+	if (e.cell == 0 || e.cell == 1) {
+		// trace("제품코드, 제품명");
+		obj.selectCell(e.oldrow, e.oldcell, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 출고 선택시
+	if (e.cell % 3 == 2) {
+		// trace("출고 선택");
+		obj.selectCell(e.row, e.cell + 2, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+	// 판매 선택시
+	if (e.cell % 3 == 0) {
+		// trace("판매 선택");
+		obj.selectCell(e.row, e.cell + 1, true);
+		this.grdList.set_enableevent(true);
+		return;
+	}
+	
+  	this.grdList.set_enableevent(true);
+};
+
+this.grdList_onkeydown = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+	// 마지막세트 우방향키 막힌 후 다시 우방향키 입력시 row + 1 되는 현상 보정
+	if (e.keycode == 39 && obj.currentcell == 19) { // ▶
+		e.preventDefault();
+	}
+};
+
+
+//////////////////////////////////////////////////////////////////////////
+///////////////////////////이하 안쓰는 function///////////////////////////
+//////////////////////////////////////////////////////////////////////////
+/************************************************************************
+ * 셀 클릭시 이벤트
+ ************************************************************************/
+this.grdList_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+// 	if (e.cell == 0 || e.cell == 1) {
+// 		trace("Step-1");
+// 		obj.selectCell(e.oldrow, e.oldcell, true);
+// 		return;
+// 	}
+// 	
+// 	if (e.cell % 3 == 2) {
+// 		trace("Step-2");
+// 		obj.selectCell(e.row, e.cell + 2, true);
+// 		return;
+// 	}
+// 	
+// 	if (e.cell % 3 == 0) {
+// 		trace("Step-3");
+// 		obj.selectCell(e.row, e.cell + 1, true);
+// 		return;
+// 	}
+};
+
+this.grdList_onkeyup = function(obj:nexacro.Grid,e:nexacro.KeyEventInfo)
+{
+// 	var curcol = obj.currentcell; // 움직이기 전 col
+// 	var currow = obj.currentrow;  // 움직이기 전 row
+// 	
+// 	if (e.keycode == 38) { // ▲
+// 		if (currow == 0) {
+// 			e.preventDefault();
+// 			trace("조정 (위)");
+// 			obj.selectCell(0, curcol, true);
+// 			return;
+// 		}
+// 	}
+// 	
+// 	if (e.keycode == 40) { // ▼
+// 		if (currow == this.grdList.rowcount - 1) {
+// 			e.preventDefault();
+// 			trace("조정 (아래)");
+// 			obj.selectCell(currow, curcol, true);
+// 			return;
+// 		}
+// 	}
+};
+
+this.recycleCode = function()
+{
+// 	// 가장 끝
+// 	if (e.oldcell == 19) {
+// 		trace("마지막 컬럼");
+// 		if (e.cell == 0) {
+// 			// 우측 이동
+// 			trace("걸림");
+// 			obj.selectCell(e.oldrow, e.oldcell, true);
+// 			this.grdList.set_enableevent(true);
+// 			return;
+// 		}
+// 	}
+// 	
+// 	// 단순 상하이동
+// 	if ((e.row == e.oldrow + 1 || e.row == e.oldrow - 1) && (e.oldcell == e.cell) && (e.oldcell != 19)) {
+// 		trace("단순 상하이동");
+// 		obj.selectCell(e.row, e.oldcell, true);
+// 		this.grdList.set_enableevent(true);
+// 		return;
+// 	}
+// 	
+// 	// 첫번째 지점 선택시 좌측이동 막기
+// 	if (e.oldcell == 4) {
+// 		if (e.cell == 3 && e.row == e.oldrow) {
+// 			obj.selectCell(e.row, e.oldcell, true);
+// 			this.grdList.set_enableevent(true);
+// 			return;
+// 		}
+// 	} else
+// 	if (e.oldcell != 4 && e.oldcell % 3 == 1) {
+// 		
+// 	}
+// 
+// 	// 좌우 이동
+// 	if (e.oldcell % 3 == 1) {
+// 		if (e.oldcell == e.cell + 1 && e.cell % 3 == 0) {
+// 			trace("좌이동");
+// 			obj.selectCell(e.row, e.oldcell - 3, true);
+// 			this.grdList.set_enableevent(true);
+// 			return;
+// 		}
+// 	}
+// 	
+// 	// 출고 선택시
+// 	if (e.cell % 3 == 2) {
+// 		trace("출고 선택");
+// 		obj.selectCell(e.row, e.cell + 2, true);
+// 		this.grdList.set_enableevent(true);
+// 		return;
+// 	}
+// 	
+// 	// 판매 선택시
+// 	if (e.cell % 3 == 0) {
+// 		trace("판매 선택");
+// 		obj.selectCell(e.row, e.cell + 1, true);
+// 		this.grdList.set_enableevent(true);
+// 		return;
+// 	}
+// 	
+//  	trace("아무것도 안걸림");
+}
+this.grdList_onlbuttondown = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	this.sCellMoveFlag = false;
+};
+
+this.grdList_onlbuttonup = function(obj:nexacro.Grid,e:nexacro.GridMouseEventInfo)
+{
+	this.sCellMoveFlag = true;
+};]]></Script>
+  </Form>
+</FDL>

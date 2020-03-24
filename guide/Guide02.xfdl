@@ -1,0 +1,1366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Guide_04" width="990" height="2100" titletext="Grid(그리드종류별)">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid05" taborder="1" binddataset="da_grd" left="20" top="287" right="20" height="198" autoenter="select" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="35" band="left"/>
+                <Column size="40"/>
+                <Column size="45"/>
+                <Column size="45"/>
+                <Column size="450"/>
+                <Column size="140"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="103"/>
+                <Column size="70"/>
+                <Column size="70"/>
+                <Column size="70"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+                <Row size="28" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkbox" edittype="checkbox"/>
+                <Cell col="1" displaytype="checkbox" edittype="checkbox"/>
+                <Cell col="2" text="순번"/>
+                <Cell col="3" text="수출입&#13;&#10;순번"/>
+                <Cell col="4" text="제목(Left)"/>
+                <Cell col="5" text="단위(Right)"/>
+                <Cell col="6" text="작성자(비활성화)"/>
+                <Cell col="7" text="작성일(Center)"/>
+                <Cell col="8" text="코드(Center)"/>
+                <Cell col="9" text="첨부파일"/>
+                <Cell col="10" text="첨부파일"/>
+                <Cell col="11" text="첨부파일"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" edittype="checkbox" text="bind:Column0"/>
+                <Cell col="1" displaytype="checkbox" edittype="checkbox" text="bind:Column0"/>
+                <Cell col="2" text="bind:Column0"/>
+                <Cell col="3" displaytype="text" text="bind:Column0" font="bold 10pt Gulim"/>
+                <Cell col="4" displaytype="text" edittype="text" text="bind:Column2" textAlign="left" verticalAlign="middle"/>
+                <Cell col="5" displaytype="number" edittype="masknumber" text="bind:Column1" textAlign="right" verticalAlign="middle"/>
+                <Cell col="6" displaytype="text" text="bind:Column3" cssclass="cell_disable"/>
+                <Cell col="7" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell col="8" displaytype="combo" edittype="combo" text="bind:Column5"/>
+                <Cell col="9" displaytype="image" text="bind:Column7"/>
+                <Cell col="10" displaytype="button" edittype="button" text="  첨부" padding="2px 8px 2px 8px"/>
+                <Cell col="11" displaytype="button" edittype="button" text="  다운" padding="2px 8px 2px 8px"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3" colspan="2" text="합계(높이 28px)" textAlign="center" verticalAlign="middle"/>
+                <Cell col="5" text="123,456,789"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10"/>
+                <Cell col="11"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid00" taborder="2" binddataset="da_grd" top="585" height="198" autofittype="col" left="20" right="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="487"/>
+                <Column size="150"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="180"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+                <Row size="28" band="summ"/>
+                <Row size="28" band="summ"/>
+                <Row size="28" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="제목(Left)"/>
+                <Cell col="1" text="단위(Right)"/>
+                <Cell col="2" text="작성자(Center)"/>
+                <Cell col="3" text="작성일(Center)"/>
+                <Cell col="4" text="코드(Center)"/>
+                <Cell col="5" text="코드명"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column2" textAlign="left" verticalAlign="middle"/>
+                <Cell col="1" displaytype="number" text="bind:Column1" textAlign="right" verticalAlign="middle"/>
+                <Cell col="2" displaytype="text" text="bind:Column3"/>
+                <Cell col="3" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell col="4" text="bind:Column5"/>
+                <Cell col="5" text="bind:Column8" textAlign="left" verticalAlign="middle"/>
+              </Band>
+              <Band id="summary">
+                <Cell text="소계(2)" textAlign="center" verticalAlign="middle" cssclass="Cellgrd_WF_sum01"/>
+                <Cell col="1" text="43,843,145" cssclass="Cellgrd_WF_sum01"/>
+                <Cell col="2" cssclass="Cellgrd_WF_sum01"/>
+                <Cell col="3" cssclass="Cellgrd_WF_sum01"/>
+                <Cell col="4" cssclass="Cellgrd_WF_sum01"/>
+                <Cell col="5" cssclass="Cellgrd_WF_sum01"/>
+                <Cell row="1" text="소계(1)" textAlign="center" verticalAlign="middle" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="1" col="1" text="43,843,145" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="1" col="2" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="1" col="3" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="1" col="4" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="1" col="5" cssclass="Cellgrd_WF_sum02"/>
+                <Cell row="2" text="합계" textAlign="center" verticalAlign="middle"/>
+                <Cell row="2" col="1" text="123,456,789"/>
+                <Cell row="2" col="2"/>
+                <Cell row="2" col="3"/>
+                <Cell row="2" col="4"/>
+                <Cell row="2" col="5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="3" binddataset="da_grd02" left="20" top="1124" right="20" height="156" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30" band="left"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="90"/>
+              </Columns>
+              <Rows>
+                <Row size="42" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkbox" edittype="checkbox" text="Column0"/>
+                <Cell col="1" text="항목&#13;&#10;하위항목" wordWrap="true"/>
+                <Cell col="2" text="Double&#13;&#10;line" wordWrap="true"/>
+                <Cell col="3" text="Double&#13;&#10;line" wordWrap="true"/>
+                <Cell col="4" text="Double&#13;&#10;line" wordWrap="true"/>
+                <Cell col="5" text="Double&#13;&#10;line" wordWrap="true"/>
+                <Cell col="6" text="Date"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" edittype="checkbox" text="bind:Column0"/>
+                <Cell col="1" displaytype="text" text="bind:Column2"/>
+                <Cell col="2" displaytype="text" text="bind:Column3"/>
+                <Cell col="3" displaytype="text" text="bind:Column4"/>
+                <Cell col="4" displaytype="text" text="bind:Column5"/>
+                <Cell col="5" displaytype="text" text="bind:Column6"/>
+                <Cell col="6" displaytype="date" text="bind:Column7"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid04" taborder="4" binddataset="da_grd02" autofittype="col" left="20" top="919" right="20" height="138">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30" band="left"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="140"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="26" band="head"/>
+                <Row size="26" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" displaytype="checkbox" edittype="checkbox" text="Column0"/>
+                <Cell col="1" colspan="2" text="항목명1"/>
+                <Cell col="3" colspan="3" text="Column2"/>
+                <Cell col="6" rowspan="2" text="Date"/>
+                <Cell row="1" col="1" text="항목명1-1"/>
+                <Cell row="1" col="2" text="항목명1-2"/>
+                <Cell row="1" col="3" text="Column2-1"/>
+                <Cell row="1" col="4" text="Column2-2"/>
+                <Cell row="1" col="5" text="Column2-3"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkbox" edittype="checkbox" text="bind:Column0"/>
+                <Cell col="1" displaytype="text" text="bind:Column2"/>
+                <Cell col="2" displaytype="text" text="bind:Column3"/>
+                <Cell col="3" displaytype="text" text="bind:Column4"/>
+                <Cell col="4" displaytype="text" text="bind:Column5"/>
+                <Cell col="5" displaytype="text" text="bind:Column6"/>
+                <Cell col="6" displaytype="date" text="bind:Column7"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid03" taborder="5" binddataset="grd" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,null" left="20" top="1340" width="300" height="394">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="188"/>
+                <Column size="40"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Grid Tree"/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="treeitemcontrol" edittype="tree" text="bind:Column" treelevel="bind:Lev"/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static08" taborder="6" left="677" top="920" width="1" height="81" background="red"/>
+        <Static id="Static09" taborder="7" left="666" top="919" width="23" height="1" background="red"/>
+        <Static id="Static10" taborder="8" left="666" top="946" width="23" height="1" background="red"/>
+        <Static id="Static12" taborder="9" left="666" top="972" width="23" height="1" background="red"/>
+        <Static id="Static05" taborder="10" left="666" top="1000" width="23" height="1" background="red"/>
+        <Static id="Static13" taborder="11" text="H : 28" cssclass="sta_GID_txt" left="681" top="977" width="39" height="18"/>
+        <Static id="Static14" taborder="12" text="H : 26" cssclass="sta_GID_txt" left="681" top="952" width="39" height="18"/>
+        <Static id="Static15" taborder="13" text="H : 26" onclick="Static15_onclick" cssclass="sta_GID_txt" left="681" top="925" width="39" height="18"/>
+        <Static id="Static16" taborder="14" left="672" top="1124" width="23" height="1" background="red"/>
+        <Static id="Static17" taborder="15" left="672" top="1167" width="23" height="1" background="red"/>
+        <Static id="Static18" taborder="16" left="683" top="1124" width="1" height="72" background="red"/>
+        <Static id="Static19" taborder="17" text="H : 42" cssclass="sta_GID_txt" left="699" top="1137" width="39" height="18"/>
+        <Static id="Static25" taborder="18" text="class : &lt;b v='true'&gt;Cellgrd_WF_sum02&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt" left="775" top="839" width="203" height="18"/>
+        <Static id="Static34" taborder="19" left="906" top="712" width="1" height="131" background="red"/>
+        <Static id="Static39" taborder="20" left="665" top="782" width="23" height="1" background="red"/>
+        <Static id="Static42" taborder="21" left="676" top="699" width="1" height="83" background="red"/>
+        <Static id="Static43" taborder="22" left="665" top="754" width="23" height="1" background="red"/>
+        <Static id="Static45" taborder="23" left="665" top="726" width="23" height="1" background="red"/>
+        <Static id="Static46" taborder="24" left="665" top="698" width="23" height="1" background="red"/>
+        <Static id="Static47" taborder="25" text="H : 28" cssclass="sta_GID_txt" left="687" top="760" width="40" height="18"/>
+        <Static id="Static48" taborder="26" text="H : 28" cssclass="sta_GID_txt" left="687" top="732" width="40" height="18"/>
+        <Static id="Static49" taborder="27" text="H : 28" onclick="Static49_onclick" cssclass="sta_GID_txt" left="687" top="704" width="40" height="18"/>
+        <Static id="Static50" taborder="28" left="672" top="1195" width="23" height="1" background="red"/>
+        <Static id="Static51" taborder="29" text="H : 28" cssclass="sta_GID_txt" left="699" top="1172" width="39" height="18"/>
+        <Grid id="Grid02" taborder="30" binddataset="da_grd02" selecttype="cell" left="384" top="1340" right="20" height="198" autofittype="col" useselcolor="false">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="구분" wordWrap="true"/>
+                <Cell col="2" text="수도권" wordWrap="true"/>
+                <Cell col="3" text="광역시" wordWrap="true"/>
+                <Cell col="4" text="기타지방" wordWrap="true"/>
+                <Cell col="5" text="지방"/>
+                <Cell col="6" text="전체"/>
+              </Band>
+              <Band id="body">
+                <Cell colspan="2" displaytype="text" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell col="2" displaytype="text" text="00000000"/>
+                <Cell col="3" displaytype="text" text="00000000"/>
+                <Cell col="4" displaytype="text" text="00000000"/>
+                <Cell col="5" text="00000000"/>
+                <Cell col="6" text="00000000"/>
+                <Cell row="1" rowspan="3" text="본부부서" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="1" col="1" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="1" col="2" text="00000000"/>
+                <Cell row="1" col="3" text="00000000"/>
+                <Cell row="1" col="4" text="00000000"/>
+                <Cell row="1" col="5" text="00000000"/>
+                <Cell row="1" col="6" text="00000000"/>
+                <Cell row="2" col="1" text="본부" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="2" col="2" text="00000000"/>
+                <Cell row="2" col="3" text="00000000"/>
+                <Cell row="2" col="4" text="00000000"/>
+                <Cell row="2" col="5" text="00000000"/>
+                <Cell row="2" col="6" text="00000000"/>
+                <Cell row="3" col="1" text="지역본부" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="3" col="2" text="00000000"/>
+                <Cell row="3" col="3" text="00000000"/>
+                <Cell row="3" col="4" text="00000000"/>
+                <Cell row="3" col="5" text="00000000"/>
+                <Cell row="3" col="6" text="00000000"/>
+                <Cell row="4" rowspan="3" text="영업점" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="4" col="1" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="4" col="2" text="00000000"/>
+                <Cell row="4" col="3" text="00000000"/>
+                <Cell row="4" col="4" text="00000000"/>
+                <Cell row="4" col="5" text="00000000"/>
+                <Cell row="4" col="6" text="00000000"/>
+                <Cell row="5" col="1" text="국내" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="5" col="2" text="00000000"/>
+                <Cell row="5" col="3" text="00000000"/>
+                <Cell row="5" col="4" text="00000000"/>
+                <Cell row="5" col="5" text="00000000"/>
+                <Cell row="5" col="6" text="00000000"/>
+                <Cell row="6" col="1" text="해외" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="6" col="2" text="00000000"/>
+                <Cell row="6" col="3" text="00000000"/>
+                <Cell row="6" col="4" text="00000000"/>
+                <Cell row="6" col="5" text="00000000"/>
+                <Cell row="6" col="6" text="00000000"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static33" taborder="31" text="class : &lt;b v='true'&gt;Cellgrd_WF_sum01&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt" left="717" top="807" width="203" height="18"/>
+        <Static id="Static52" taborder="32" left="869" top="737" width="1" height="70" background="red"/>
+        <Grid id="Grid06" taborder="33" binddataset="da_grd02" selecttype="cell" useselcolor="false" left="384" top="1564" right="20" height="170" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="body">
+                <Cell colspan="2" displaytype="text" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell col="2" displaytype="text" text="00000000"/>
+                <Cell col="3" displaytype="text" text="00000000"/>
+                <Cell col="4" displaytype="text" text="00000000"/>
+                <Cell col="5" text="00000000"/>
+                <Cell col="6" text="00000000"/>
+                <Cell row="1" rowspan="3" text="본부부서" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="1" col="1" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="1" col="2" text="00000000"/>
+                <Cell row="1" col="3" text="00000000"/>
+                <Cell row="1" col="4" text="00000000"/>
+                <Cell row="1" col="5" text="00000000"/>
+                <Cell row="1" col="6" text="00000000"/>
+                <Cell row="2" col="1" text="본부" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="2" col="2" text="00000000"/>
+                <Cell row="2" col="3" text="00000000"/>
+                <Cell row="2" col="4" text="00000000"/>
+                <Cell row="2" col="5" text="00000000"/>
+                <Cell row="2" col="6" text="00000000"/>
+                <Cell row="3" col="1" text="지역본부" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="3" col="2" text="00000000"/>
+                <Cell row="3" col="3" text="00000000"/>
+                <Cell row="3" col="4" text="00000000"/>
+                <Cell row="3" col="5" text="00000000"/>
+                <Cell row="3" col="6" text="00000000"/>
+                <Cell row="4" rowspan="3" text="영업점" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="4" col="1" text="전체" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="4" col="2" text="00000000"/>
+                <Cell row="4" col="3" text="00000000"/>
+                <Cell row="4" col="4" text="00000000"/>
+                <Cell row="4" col="5" text="00000000"/>
+                <Cell row="4" col="6" text="00000000"/>
+                <Cell row="5" col="1" text="국내" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="5" col="2" text="00000000"/>
+                <Cell row="5" col="3" text="00000000"/>
+                <Cell row="5" col="4" text="00000000"/>
+                <Cell row="5" col="5" text="00000000"/>
+                <Cell row="5" col="6" text="00000000"/>
+                <Cell row="6" col="1" text="해외" cssclass="Cellgrd_WF_Head"/>
+                <Cell row="6" col="2" text="00000000"/>
+                <Cell row="6" col="3" text="00000000"/>
+                <Cell row="6" col="4" text="00000000"/>
+                <Cell row="6" col="5" text="00000000"/>
+                <Cell row="6" col="6" text="00000000"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static70" taborder="34" text="그리드 : 합계/소계 샘플" cssclass="sta_WF_title01" left="20" top="560" width="554" height="23"/>
+        <Static id="Static71" taborder="35" left="325" top="778" width="1" height="21" background="red"/>
+        <Static id="Static72" taborder="36" text="★★summary의 기본 정렬은 우측임&#13;&#10;합계, 소계 등 텍스트의 정렬은  &#13;&#10;align : center middle" onclick="Static63_onclick" cssclass="sta_GID_txt" left="311" top="800" width="235" height="45" background="rgba(255,255,128,1)" color="rgba(255,0,0,1)" textAlign="left" verticalAlign="top" font="bold 9pt Dotum"/>
+        <Static id="Static73" taborder="37" text="Multi Head 그리드 ==&gt;&gt;(해더 2줄 이상일 경우 26)" cssclass="sta_WF_title01" left="20" top="894" width="554" height="23" usedecorate="true"/>
+        <Static id="Static01" taborder="38" text="Head text가 두줄로 들어갈 경우 그리드" cssclass="sta_WF_title01" left="20" top="1099" width="554" height="23"/>
+        <Static id="Static07" taborder="39" text="Tree 그리드" cssclass="sta_WF_title01" left="20" top="1315" width="226" height="23"/>
+        <Static id="Static35" taborder="40" text="예외 그리드(롤이 고정인 그리드)" cssclass="sta_WF_title01" left="384" top="1315" width="266" height="23"/>
+        <Static id="Static41" taborder="41" left="708" top="1369" width="23" height="1" background="red"/>
+        <Static id="Static53" taborder="42" left="708" top="1397" width="23" height="1" background="red"/>
+        <Static id="Static58" taborder="43" text="H : 28" cssclass="sta_GID_txt" left="735" top="1346" width="40" height="18"/>
+        <Static id="Static66" taborder="44" text="H : 28" cssclass="sta_GID_txt" left="735" top="1375" width="40" height="18"/>
+        <Static id="Static69" taborder="45" left="719" top="1341" width="1" height="56" background="red"/>
+        <Static id="Static79" taborder="46" left="708" top="1340" width="23" height="1" background="red"/>
+        <Static id="Static81" taborder="47" left="716" top="1593" width="23" height="1" background="red"/>
+        <Static id="Static82" taborder="48" left="716" top="1621" width="23" height="1" background="red"/>
+        <Static id="Static83" taborder="49" text="H : 31" cssclass="sta_GID_txt" left="697" top="1567" width="40" height="18" color="rgba(255,255,255,1)"/>
+        <Static id="Static84" taborder="50" text="H : 28" cssclass="sta_GID_txt" left="682" top="1599" width="40" height="18"/>
+        <Static id="Static85" taborder="51" left="727" top="1566" width="1" height="55" background="red"/>
+        <Static id="Static86" taborder="52" left="716" top="1564" width="23" height="1" background="red"/>
+        <Static id="Static87" taborder="53" text="H : 28" cssclass="sta_GID_txt" left="682" top="1570" width="40" height="18"/>
+        <Static id="Static60" taborder="54" text="Grid Area" cssclass="sta_GID_Title" left="0" top="0" right="0" height="30"/>
+        <Static id="Static74" taborder="56" text="H : 28" cssclass="sta_GID_txt" left="416" top="293" width="40" height="17"/>
+        <Static id="Static02" taborder="57" left="398" top="287" width="23" height="1" background="red"/>
+        <Static id="Static04" taborder="58" left="409" top="288" width="1" height="56" background="red"/>
+        <Static id="Static11" taborder="59" text="H : 28" cssclass="sta_GID_txt" left="416" top="323" width="40" height="18"/>
+        <Static id="Static06" taborder="60" left="398" top="344" width="23" height="1" background="red"/>
+        <Static id="Static03" taborder="61" left="398" top="316" width="23" height="1" background="red"/>
+        <Static id="Static22" taborder="62" left="638" top="408" width="1" height="86" background="red"/>
+        <Static id="Static00" taborder="63" text="우측정렬 align : right middle" usedecorate="true" cssclass="sta_GID_txt" left="631" top="495" width="234" height="18" color="rgba(255,0,0,1)" font="bold 9pt Dotum"/>
+        <Static id="Static26" taborder="64" left="202" top="430" width="1" height="62" background="red"/>
+        <Static id="Static31" taborder="65" text="좌측정렬 align : left middle" usedecorate="true" cssclass="sta_GID_txt" left="184" top="495" width="186" height="18" color="rgba(255,0,0,1)" font="bold 9pt Dotum"/>
+        <Static id="Static91" taborder="66" left="344" top="1467" width="35" height="142" border="1px solid rgba(255,0,0,1), 0px solid rgba(255,0,0,1), 1px solid rgba(255,0,0,1), 1px solid rgba(255,0,0,1)"/>
+        <Static id="Static92" taborder="67" text="class : &#13;&#10;&lt;b v='true'&gt;Cellgrd_WF_Head&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt" left="327" top="1513" width="133" height="41" background="rgba(255,255,128,1)"/>
+        <Grid id="Grid07" taborder="0" autoenter="select" left="20" top="72" right="20" height="143" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="필수" cssclass="cell_P"/>
+                <Cell col="2" text="Column2"/>
+                <Cell col="3" text="Column3"/>
+                <Cell col="4" text="Column4"/>
+                <Cell col="5" text="Column5"/>
+                <Cell col="6" text="Column6"/>
+                <Cell col="7" text="Column7"/>
+                <Cell col="8" text="Column8"/>
+              </Band>
+              <Band id="body">
+                <Cell/>
+                <Cell col="1"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static44" taborder="68" text="w&#13;&#10;20" cssclass="sta_GID_box" visible="false" left="0" top="-294" width="20" height="2494"/>
+        <Static id="Static56" taborder="69" text="W&#13;&#10;35" cssclass="sta_GID_txt" left="30" top="442" width="25" height="42"/>
+        <Static id="Static67" taborder="70" left="20" top="430" width="1" height="24" background="red"/>
+        <Static id="Static68" taborder="71" text="W&#13;&#10;45" cssclass="sta_GID_txt" left="69" top="442" width="25" height="42"/>
+        <Static id="Static76" taborder="72" left="21" top="441" width="33" height="1" background="red"/>
+        <Static id="Static57" taborder="73" left="56" top="430" width="1" height="24" background="red"/>
+        <Static id="Static75" taborder="74" left="97" top="430" width="1" height="24" background="red"/>
+        <Static id="Static77" taborder="75" left="56" top="430" width="1" height="24" background="red"/>
+        <Static id="Static78" taborder="76" left="55" top="441" width="42" height="1" background="red"/>
+        <Static id="Static80" taborder="77" text="그리드타이틀&lt;fc v='#666666'&gt;&lt;fs v='9'&gt;&lt;ff v='굴림'&gt; ㅣ 00000건이 조회되었습니다.&lt;/ff&gt;&lt;/fs&gt;&lt;/fc&gt;" cssclass="sta_WF_title01" left="20" top="47" width="380" height="23" usedecorate="true" wordWrap="english"/>
+        <Static id="Static38" taborder="78" text="h7" visible="false" left="28" top="65" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static54" taborder="79" text="h7" visible="false" left="38" top="280" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static55" taborder="80" text="그리드타이틀(복사해서 사용하세요.)" usedecorate="true" cssclass="sta_WF_title01" left="30" top="262" width="380" height="23" wordWrap="english"/>
+        <Static id="Static37" taborder="81" left="73" top="364" width="1" height="158" background="red"/>
+        <Static id="Static23" taborder="55" left="177" top="100" width="1" height="58" background="red"/>
+        <Static id="Static59" taborder="82" text="class : &lt;b v='true'&gt;cell_P&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt" left="129" top="135" width="128" height="23" background="rgba(255,0,0,1)" color="rgba(255,255,255,1)" padding="1px 0px 0px 10px"/>
+        <Static id="Static89" taborder="83" text="h7" visible="false" left="41" top="578" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static90" taborder="84" text="h7" visible="false" left="71" top="1117" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static95" taborder="85" text="h7" visible="false" left="56" top="912" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static98" taborder="86" text="h7" visible="false" left="20" top="1333" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static99" taborder="87" text="h7" visible="false" left="384" top="1333" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static100" taborder="88" left="687" top="235" width="71" height="23" cssclass="sta_WF_title0104"/>
+        <Static id="Static138" taborder="89" text="그리드 &gt; body 영역 &gt; 수정할 수 없는 셀(비활성화)&#13;&#10;==&gt; cssclass=&quot;cell_disable&quot; " usedecorate="true" cssclass="sta_GID_txt" left="638" top="235" width="344" height="34" color="rgba(255,0,0,1)" textAlign="left" verticalAlign="top" font="bold 9pt Dotum"/>
+        <Static id="Static139" taborder="90" left="794" top="269" width="1" height="118" background="red"/>
+        <Grid id="Grid15" taborder="91" binddataset="da_grd" autoenter="select" selecttype="area" left="21" top="1795" height="275" autofittype="col" right="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="298"/>
+                <Column size="102"/>
+                <Column size="420"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="45"/>
+                <Row size="45"/>
+                <Row size="30"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="구분"/>
+                <Cell col="1" text="컬러 및 폰트"/>
+                <Cell col="2" text="스타일정보"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="text" text="셀을 강조할 경우" textAlign="left"/>
+                <Cell col="1" text="데이터내용" background="rgba(232,254,220,1)"/>
+                <Cell col="2" text="background / background2 / selectbackground:#e8fedcff" textAlign="left"/>
+                <Cell row="1" text="[구매]두개의 데이터값이 다를 경우 표시 컬러" textAlign="left"/>
+                <Cell row="1" col="1" text="데이터내용" background="rgba(255,249,205,1)" color="rgba(255,0,0,1)"/>
+                <Cell row="1" col="2" text="background / background2 / selectbackground : #fff9cdff&#13;&#10;color / color2 / selectcolor : #ff0000ff" textAlign="left"/>
+                <Cell row="2" text="[수출입] 데이터 구분 컬러" textAlign="left"/>
+                <Cell row="2" col="1" text="데이터내용" background="rgba(238,251,230,1)"/>
+                <Cell row="2" col="2" text="#eefbe6" textAlign="left"/>
+                <Cell row="3" text="[총무] 데이터 강조" textAlign="left"/>
+                <Cell row="3" col="1" text="데이터내용" color="rgba(6,75,147,1)" font="bold 10pt Gulim"/>
+                <Cell row="3" col="2" text="color / color2 / selectcolor = #064b93ff &#13;&#10;font / selectfont = bold 10 Gulim" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static140" taborder="92" text="그리드 셀 컬러(참조)" usedecorate="true" cssclass="sta_WF_title01" left="21" top="1770" width="400" height="23" wordWrap="english"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="da_grd" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+          <Column id="Column11" type="STRING" size="256"/>
+          <Column id="Column10" type="STRING" size="256"/>
+          <Column id="Column12" type="STRING" size="256"/>
+          <Column id="Column13" type="STRING" size="256"/>
+          <Column id="Column14" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">ABX12345</Col>
+            <Col id="Column7">URL('theme://images/ico_grd_file.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column9">URL('theme://images/img_WF_warning01.png')</Col>
+            <Col id="Column10">URL('theme://images/img_WF_warning01.png')</Col>
+            <Col id="Column11">URL('theme://images/img_WF_dot01.png')</Col>
+            <Col id="Column12">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column14">비활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">1,000,000,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">CSD12345</Col>
+            <Col id="Column7">URL('theme://images/ico_grd_file.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column9">URL('theme://images/img_WF_warning02.png')</Col>
+            <Col id="Column10">URL('theme://images/img_WF_warning02.png')</Col>
+            <Col id="Column11">URL('theme://images/img_WF_dot02.png')</Col>
+            <Col id="Column12">URL('theme://images/img_WF_sms_S.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms_S.png')</Col>
+            <Col id="Column14">활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">1,000,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">ERSA12345</Col>
+            <Col id="Column7">URL('theme://images/ico_grd_file.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0003</Col>
+            <Col id="Column9">URL('theme://images/img_WF_warning03.png')</Col>
+            <Col id="Column10">URL('theme://images/img_WF_warning03.png')</Col>
+            <Col id="Column11">URL('theme://images/img_WF_dot03.png')</Col>
+            <Col id="Column12">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column14">비활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">1,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">GFHS1234</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column7">URL('theme://images/ico_grd_file.png')</Col>
+            <Col id="Column9">URL('theme://images/img_WF_alram.png')</Col>
+            <Col id="Column10">URL('theme://images/img_WF_alram.png')</Col>
+            <Col id="Column11">URL('theme://images/img_WF_dot04.png')</Col>
+            <Col id="Column12">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column14">비활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">EWRWE123</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column10">[Undefined]</Col>
+            <Col id="Column9"/>
+            <Col id="Column12">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column14">비활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">SAD12345</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0003</Col>
+            <Col id="Column10">[Undefined]</Col>
+            <Col id="Column12">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column13">URL('theme://images/img_WF_sms.png')</Col>
+            <Col id="Column14">비활성화</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">YI1234500</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">8</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">DFGZ1234</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">ABX12345</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0003</Col>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">GJF123450</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8"/>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">999</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">RYGJ12345</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8"/>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column6">0</Col>
+            <Col id="Column8"/>
+            <Col id="Column10">[Undefined]</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_comp" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+          <Column id="Column10" type="STRING" size="256"/>
+          <Column id="Column11" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">URL('theme://images/grd_img01.png')</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">2</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">1</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">URL('theme://images/grd_img02.png')</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">2</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">URL('theme://images/grd_img03.png')</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">4</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">5</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">2</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">6</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">3</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">7</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">8</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">1</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">9</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">2</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">10</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">11</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">www.link.com</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">가나다라마바사</Col>
+            <Col id="Column8">123,456,789</Col>
+            <Col id="Column10">버튼</Col>
+            <Col id="Column9">URL('theme://images/btn_WF_Search.png')</Col>
+            <Col id="Column11">[Undefined]</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="grd" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Lev" type="STRING" size="256"/>
+          <Column id="Column" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Lev">0</Col>
+            <Col id="Column">1 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">0</Col>
+            <Col id="Column">1 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">0</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">1 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">1</Col>
+            <Col id="Column">2 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 01</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 02</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 03</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 04</Col>
+          </Row>
+          <Row>
+            <Col id="Lev">2</Col>
+            <Col id="Column">3 depth title 05</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="da_grd02" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">2</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">4</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">5</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">6</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">7</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">8</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">9</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">10</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">11</Col>
+            <Col id="Column2">내용</Col>
+            <Col id="Column3">내용</Col>
+            <Col id="Column4">내용</Col>
+            <Col id="Column5">내용</Col>
+            <Col id="Column6">내용</Col>
+            <Col id="Column7">20190101</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="da_grd00" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">ABX12345</Col>
+            <Col id="Column7">URL('theme://images/grd_img01.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column9">정상</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">1,000,000,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">CSD12345</Col>
+            <Col id="Column7">URL('theme://images/grd_img02.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column9">정상</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">1,000,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">ERSA12345</Col>
+            <Col id="Column7">URL('theme://images/grd_img03.png')</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0003</Col>
+            <Col id="Column9">정상</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">1,000</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">GFHS1234</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column9">정상</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">1</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">EWRWE123</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column9">실패</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">SAD12345</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0003</Col>
+            <Col id="Column9">실패</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">YI1234500</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column8">코드명0001</Col>
+            <Col id="Column9">실패</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">8</Col>
+            <Col id="Column1">1,000,000,000,001</Col>
+            <Col id="Column2">정확한 글자수제한은 시스템에 따라 달라질 수 있습니다.</Col>
+            <Col id="Column3">홍길동</Col>
+            <Col id="Column4">20190101</Col>
+            <Col id="Column5">DFGZ1234</Col>
+            <Col id="Column6">1</Col>
+            <Col id="Column8">코드명0002</Col>
+            <Col id="Column9">실패</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset03">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">25</Col>
+            <Col id="Column1">26</Col>
+            <Col id="Column2">27</Col>
+            <Col id="Column3">28</Col>
+            <Col id="Column4">29</Col>
+            <Col id="Column5">30</Col>
+            <Col id="Column6">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">3</Col>
+            <Col id="Column2">4</Col>
+            <Col id="Column3">5</Col>
+            <Col id="Column4">6</Col>
+            <Col id="Column5">7</Col>
+            <Col id="Column6">8</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">10</Col>
+            <Col id="Column2">11</Col>
+            <Col id="Column3">12</Col>
+            <Col id="Column4">13</Col>
+            <Col id="Column5">14</Col>
+            <Col id="Column6">15</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">16</Col>
+            <Col id="Column1">17</Col>
+            <Col id="Column2">18</Col>
+            <Col id="Column3">19</Col>
+            <Col id="Column4">20</Col>
+            <Col id="Column5">21</Col>
+            <Col id="Column6">22</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">23</Col>
+            <Col id="Column1">24</Col>
+            <Col id="Column2">25</Col>
+            <Col id="Column3">26</Col>
+            <Col id="Column4">27</Col>
+            <Col id="Column5">28</Col>
+            <Col id="Column6">29</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">30</Col>
+            <Col id="Column1">31</Col>
+            <Col id="Column2">1</Col>
+            <Col id="Column3">2</Col>
+            <Col id="Column4">3</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Static30_onclick = function (obj:Static, e:nexacro.ClickEventInfo)
+{
+};
+]]></Script>
+  </Form>
+</FDL>

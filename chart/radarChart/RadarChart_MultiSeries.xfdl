@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="RadarChartSales" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <RadarChart id="RadarChart00" taborder="1" left="0%" top="0%" right="0%" bottom="0%" binddataset="dsTempo" categorycolumn="bind:month" radius="80" visible="true" enableanimation="true">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Sales by Product Line",
+		"textfont": "bold 20pt/normal \"맑은 고딕\"",
+		"padding": "0px 0px 5px",
+		"textcolor": "cornflowerblue"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0"
+		
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "TVs",
+			"linevisible": true,
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:TVs",
+			"linestyle": "1px solid blue",
+			"lineareafillstyle": "blue",
+			"lineareaopacity": "0.3",
+			"pointfillstyle": "blue",
+			"selecttype": "unselect",
+			"selectlineareaopacity":"0.5",
+			"selectpointopacity":"0.5"
+		},
+		{
+			"id": "series1",
+			"titletext": "SmartPhones",
+			"linevisible": true,
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:SmartPhones",
+			"linestyle": "2px solid red",
+			"lineareafillstyle": "red",
+			"lineareaopacity": "0.3",
+			"lineareavisible": "true",
+			"pointfillstyle": "red",
+			"selecttype": "unselect",
+			"selectlineareaopacity":"0.5",
+			"selectpointopacity":"0.5"
+		},
+		{
+			"id": "series2",
+			"titletext": "Computers",
+			"linevisible": true,
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:Computers",
+			"linestyle": "1px solid orange",
+			"lineareafillstyle": "orange",
+			"lineareaopacity": "0.3",
+			"pointfillstyle": "orange",
+			"selecttype": "unselect",
+			"selectlineareaopacity":"0.5",
+			"selectpointopacity":"0.5"
+		},
+		{
+			"id": "series3",
+			"titletext": "Printers",
+			"linevisible": true,
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:Printers",
+			"linestyle": "1px solid green",
+			"lineareafillstyle": "green",
+			"lineareaopacity": "0.3",
+			"pointfillstyle": "green",
+			"selectlineareaopacity":"0.5",
+			"selectpointopacity":"0.5"
+		}
+	]
+}]]></Contents>
+        </RadarChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsTempo">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="TVs" type="FLOAT" size="256"/>
+          <Column id="SmartPhones" type="FLOAT" size="256"/>
+          <Column id="Computers" type="FLOAT" size="256"/>
+          <Column id="Printers" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">Jan</Col>
+            <Col id="TVs">85</Col>
+            <Col id="SmartPhones">50</Col>
+            <Col id="Computers">9</Col>
+            <Col id="Printers">16</Col>
+          </Row>
+          <Row>
+            <Col id="month">Feb</Col>
+            <Col id="TVs">54</Col>
+            <Col id="SmartPhones">76</Col>
+            <Col id="Computers">12</Col>
+            <Col id="Printers">15</Col>
+          </Row>
+          <Row>
+            <Col id="month">Mar</Col>
+            <Col id="TVs">57</Col>
+            <Col id="SmartPhones">48</Col>
+            <Col id="Computers">15</Col>
+            <Col id="Printers">25</Col>
+          </Row>
+          <Row>
+            <Col id="month">Apr</Col>
+            <Col id="TVs">55</Col>
+            <Col id="SmartPhones">34</Col>
+            <Col id="Computers">79</Col>
+            <Col id="Printers">17</Col>
+          </Row>
+          <Row>
+            <Col id="month">May</Col>
+            <Col id="TVs">120</Col>
+            <Col id="SmartPhones">56</Col>
+            <Col id="Computers">18</Col>
+            <Col id="Printers">10</Col>
+          </Row>
+          <Row>
+            <Col id="month">Jun</Col>
+            <Col id="TVs">140</Col>
+            <Col id="SmartPhones">34</Col>
+            <Col id="Computers">19</Col>
+            <Col id="Printers">11</Col>
+          </Row>
+          <Row>
+            <Col id="month">Jul</Col>
+            <Col id="TVs">57</Col>
+            <Col id="SmartPhones">33</Col>
+            <Col id="Computers">8</Col>
+            <Col id="Printers">20</Col>
+          </Row>
+          <Row>
+            <Col id="month">Aug</Col>
+            <Col id="TVs">61</Col>
+            <Col id="SmartPhones">42</Col>
+            <Col id="Computers">9</Col>
+            <Col id="Printers">22</Col>
+          </Row>
+          <Row>
+            <Col id="month">Sep</Col>
+            <Col id="TVs">48</Col>
+            <Col id="SmartPhones">35</Col>
+            <Col id="Computers">12</Col>
+            <Col id="Printers">18</Col>
+          </Row>
+          <Row>
+            <Col id="month">Oct</Col>
+            <Col id="TVs">117</Col>
+            <Col id="SmartPhones">47</Col>
+            <Col id="Computers">11</Col>
+            <Col id="Printers">17</Col>
+          </Row>
+          <Row>
+            <Col id="month">Nov</Col>
+            <Col id="TVs">110</Col>
+            <Col id="SmartPhones">21</Col>
+            <Col id="Computers">12</Col>
+            <Col id="Printers">21</Col>
+          </Row>
+          <Row>
+            <Col id="month">Dec</Col>
+            <Col id="TVs">120</Col>
+            <Col id="SmartPhones">34</Col>
+            <Col id="Computers">15</Col>
+            <Col id="Printers">14</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+]]></Script>
+  </Form>
+</FDL>

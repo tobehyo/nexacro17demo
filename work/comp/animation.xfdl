@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="animation" width="1010" height="768" titletext="애니메이션" onload="animation_onload">
+    <Layouts>
+      <Layout height="768" mobileorientation="landscape" width="1010">
+        <Button id="Button00" taborder="0" left="0" top="148" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button01" taborder="1" left="0" top="268" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button02" taborder="2" left="0" top="388" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button03" taborder="3" left="0" top="508" height="100" cssclass="btn_WF_animation" right="20" textAlign="left" font="normal 700 25px/normal &quot;맑은 고딕&quot;"/>
+        <Button id="Button04" taborder="4" left="0" top="628" height="100" cssclass="btn_WF_animation" right="20" textAlign="left" font="normal 700 25px/normal &quot;맑은 고딕&quot;"/>
+        <Static id="Static00" taborder="5" text="오늘의 주요 뉴스" left="34.46%" top="68" height="60" font="bold 40px/normal &quot;맑은 고딕&quot;" width="314"/>
+        <Static id="Static60" taborder="6" text="넥사크로 플랫폼은 아이템으로 등록된 컴포넌트에 애니메이션 효과를 적용하여 다양하게 표현할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsNews">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">특사단, 5일 방북 뒤 당일 귀환...'친서' 전달 가능성 커</Col>
+          </Row>
+          <Row>
+            <Col id="title">땅꺼짐 사고 후 "지반 안정, 귀가 가능"...주민 불안 계속</Col>
+          </Row>
+          <Row>
+            <Col id="title">"사죄의 말이라도..." 형제복지원사건, 다시 법정 설까</Col>
+          </Row>
+          <Row>
+            <Col id="title">인권운동가를 건설노동자로...'엉터리' 난민 면접조서 논란</Col>
+          </Row>
+          <Row>
+            <Col id="title">바른미래동 새 대표에 손학규...'중도개혁·민생정당' 강조</Col>
+          </Row>
+          <Row>
+            <Col id="title">"임대주택 등록제 세제혜택 과해"...1년도 안 돼 수술대</Col>
+          </Row>
+          <Row>
+            <Col id="title">경남서 교통사고 2건 잇따라...4명 숨지고 9명 부상</Col>
+          </Row>
+          <Row>
+            <Col id="title">뉴욕 도심서 연례행사처럼 '벌떼 진풍경'...무슨 사연?</Col>
+          </Row>
+          <Row>
+            <Col id="title">금메달보다 관심?'세계적 병역 면제'</Col>
+          </Row>
+          <Row>
+            <Col id="title">해마다 제각각...혼란 키운 '가계동향조사'</Col>
+          </Row>
+          <Row>
+            <Col id="title">한 달 새 또...이번엔 상하차 작업 중 50대 노동자 사망</Col>
+          </Row>
+          <Row>
+            <Col id="title">오늘부터 다시 비...중부·경북엔 최고 150㎜ 폭우 예상</Col>
+          </Row>
+          <Row>
+            <Col id="title">"9·9절 열병식 예상보다 작을 것...ICBM 징후 없어"</Col>
+          </Row>
+          <Row>
+            <Col id="title">정치개입·민간인사찰 금지...예외 규정엔 우려</Col>
+          </Row>
+          <Row>
+            <Col id="title">돈 벌려고 난민 신청? 거짓 조서로 엉터리 심사</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  animation.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.25
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.25      presales                  스크립트 수정 
+*******************************************************************************
+*/
+ 
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+ this.page = 1;
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+ 
+this.animation_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.initAni();
+};
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ /**
+ * @description 애니메이션 초기화 함수
+ * @param  
+ * @return 
+ */
+this.initAni = function()
+{
+	var anitimeObj = new nexacro.AnimationTimeline("anitime00", this);
+	this.addChild("anitime00", anitimeObj);
+	
+	anitimeObj.addEventHandler("oncomplete", this.anitime00_oncomplete, this);
+	
+	for (var i = 0, len = 5; i < len; i++)
+	{
+		var idx = new String(i).padLeft(2, '0');
+		var aniObj = new nexacro.Animation("ani" + idx, this);
+		aniObj.set_easing("easeinquad");
+		
+		this.addChild("ani" + idx, aniObj);
+		aniObj.addTarget("aniItem" + idx, this.components["Button" + idx], "height:100,opacity:[0,0,1]");
+		
+		this.anitime00.addTarget("anitimeItem" + idx, aniObj, 400);
+		
+		this.components["Button" + idx].set_height(0);
+		this.components["Button" + idx].set_opacity(0);
+		this.components["Button" + idx].set_visible(true);
+	}
+	
+	this.startAni();
+};
+ /**
+ * @description 애니메이션 적용 함수
+ * @param  
+ * @return 
+ */
+this.startAni = function()
+{
+	for (var i = 0, len = 5; i < len; i++)
+	{
+		var idx = new String(i).padLeft(2, '0');
+		this.components["Button" + idx].set_text(this.dsNews.getColumn(((this.page - 1) * 5 + i), "title"));
+	}
+	this.page++;
+	this.anitime00.play();
+};
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.anitime00_oncomplete = function(obj:nexacro.AnimationTimeline, e:nexacro.AnimationEventInfo)
+{
+	this.page = this.page > 3 ? 1 : this.page;
+	
+	nexacro._OnceCallbackTimer.callonce(this, this.startAni, 3000);
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Functions" width="727" height="600" titletext="크로스도메인 서비스통신 (CORS)" onload="Functions_onload" ontimer="Functions_ontimer">
+    <Layouts>
+      <Layout>
+        <Grid id="grdList" taborder="0" left="10" top="382" right="0" cellmovingtype="col" cellsizingtype="col" selecttype="cell" binddataset="dsList" height="210" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="ObjectName"/>
+                <Cell col="1" text="ObjectID"/>
+                <Cell col="2" text="TestType"/>
+                <Cell col="3" text="TestObject"/>
+                <Cell col="4" text="TestValue"/>
+                <Cell col="5" text="ResultValue"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:ObjectName"/>
+                <Cell col="1" text="bind:ObjectID"/>
+                <Cell col="2" text="bind:TestType"/>
+                <Cell col="3" text="bind:TestObject"/>
+                <Cell col="4" text="bind:TestValue"/>
+                <Cell col="5" text="bind:ResultValue"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static00" taborder="2" text="크로스도메인 서비스통신 (CORS)" cssclass="sta_WF_title01" left="10" top="0" width="421" height="50"/>
+        <Static id="Static02" taborder="3" cssclass="sta_WF_box02" left="10" top="166" right="0" height="44" text="사용자 PC 환경에서 Test 하기 위해서 하단의 Script 를 복사하여 조회 서비스를 작성 후  확인하시길 바랍니다."/>
+        <Button id="btn_Search" taborder="4" cssclass="btn_WF_search01" top="166" width="43" height="44" right="0" onclick="btn_Search_onclick"/>
+        <Static id="Static07" taborder="11" cssclass="sta_WF_box03" left="10" top="50" right="0" height="96" text="CORS는 브라우저와 서버가 교차 출격 요청을 허용하는 것이 안전한지 여부를 결정하기 위해 상호 작용할 수있는 방법을 정의하며, 순수하게 동일한 출처 요청보다 더 많은 자유와 기능을 허용하지만 모든 출처 교차 요청을 허용하는 것보다 안전한 W3C 의 권장 표준입니다.&#13;&#10;※ Internet Explorer 8과 9는 XDomainRequest 객체를 통해 CORS를 지원하고 있으나 전체 구현은 IE 10에서 제공되고 있습니다." wordWrap="char"/>
+        <TextArea id="txa_service" taborder="12" left="42.92%" top="230" right="0%" height="133"/>
+        <TextArea id="txa_dataset" taborder="13" left="10" top="230" height="133" right="58.18%" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="IDX" type="STRING" size="256"/>
+          <Column id="ObjectName" type="STRING" size="256"/>
+          <Column id="ObjectID" type="STRING" size="256"/>
+          <Column id="TestType" type="STRING" size="256"/>
+          <Column id="TestObject" type="STRING" size="256"/>
+          <Column id="TestValue" type="STRING" size="256"/>
+          <Column id="ResultValue" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.srvUrl = "http://14.63.224.112/";
+
+this.btn_Search_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var svcID = "MyService01";
+	var URL = this.srvUrl + "CORS/service/apitest.jsp";
+	var inDatasets = "";
+	var outDatasets = "dsList=output";
+	var argument = "";
+	var callbackFunc = "fn_callback";
+
+	var sService = "var svcId        = " + "\"" + svcID + "\";" + "\n"
+		 + "var URL          = " + "\"" + URL + "\";" + "\n"
+		 + "var inDatasets   = " + "\"" + inDatasets + "\";" + "\n"
+		 + "var outDatasets  = " + "\"" + outDatasets + "\";" + "\n"
+		 + "var argument     = " + "\"" + argument + "\";" + "\n"
+		 + "var callbackFunc = " + "\"" + callbackFunc + "\";" + "\n"
+		 + "this.transaction(svcID, URL, inDatasets, outDatasets, argument, callbackFunc);";
+
+	this.txa_service.set_value(sService);
+
+	this.txa_dataset.set_value(this.dsList.saveXML());
+
+	this.transaction(svcID, URL, inDatasets, outDatasets, argument, callbackFunc);
+};
+
+this.fn_callback = function (svcID, ErrCd, ErrMsg)
+{
+	if (ErrCd < 0) 
+	{
+		this.alert("ErrCd!!   " + ErrCd + " :: " + ErrMsg);
+		return false;
+	}
+
+	switch (svcID) 
+	{
+		case "MyService01":
+			alert("조회가 완료되었습니다.");
+			break;
+	}
+};]]></Script>
+  </Form>
+</FDL>

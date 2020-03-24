@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="MultiSeries_type2" width="840" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="840">
+        <RadarChart id="RadarChart00" taborder="0" left="0%" top="8%" right="0%" bottom="0%" binddataset="Dataset04" categorycolumn="bind:month" radius="80" border="1px solid black" enableanimation="true">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Polygon type Chart",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "click button"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"labelgap": "5"
+	},
+	"valueaxes": [
+		{
+		"id": "valueaxis",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "bold 10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"tickmax": "4000",
+		"tickinterval": "1000",
+		"labelmask": "#k"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"linevisible": true,
+			"lineareavisible": "true",
+			"pointvisible": "false",
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:sales",
+			"pointsize": "8",
+			"linestyle": "1px solid black",
+			"lineareafillstyle": "cornflowerblue"
+		},
+		{
+			"id": "series1",
+			"titletext": "series",
+			"linevisible": true,
+			"lineareavisible": "true",
+			"pointvisible": "false",
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:sales1",
+			"pointsize": "8",
+			"linestyle": "1px solid black",
+			"lineareafillstyle": "darkcyan"
+		},
+		{
+			"id": "series2",
+			"titletext": "series",
+			"linevisible": true,
+			"lineareavisible": "true",
+			"pointvisible": "false",
+			"itemtextvisible": false,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:sales2",
+			"pointsize": "8",
+			"linestyle": "1px solid black",
+			"lineareafillstyle": "forestgreen"
+		}
+	]
+}]]></Contents>
+        </RadarChart>
+        <Button id="BtnPolygonTest" taborder="1" text="Radar polygon test" left="1" top="5" width="116" height="30" onclick="Div00_BtnPolygonTest_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset01">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset02">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset03">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">2500</Col>
+            <Col id="month">F_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset04">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">2500</Col>
+            <Col id="month">F_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">800</Col>
+            <Col id="month">G_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">1500</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset05">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">2500</Col>
+            <Col id="month">F_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">800</Col>
+            <Col id="month">G_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">1500</Col>
+          </Row>
+          <Row>
+            <Col id="sales">900</Col>
+            <Col id="month">H_price</Col>
+            <Col id="sales1">800</Col>
+            <Col id="sales2">1800</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset06">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">2500</Col>
+            <Col id="month">F_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">800</Col>
+            <Col id="month">G_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">1500</Col>
+          </Row>
+          <Row>
+            <Col id="sales">900</Col>
+            <Col id="month">H_price</Col>
+            <Col id="sales1">800</Col>
+            <Col id="sales2">1800</Col>
+          </Row>
+          <Row>
+            <Col id="month">I_price</Col>
+            <Col id="sales">400</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">2800</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset07">
+        <ColumnInfo>
+          <Column id="month" type="STRING" size="256"/>
+          <Column id="sales" type="STRING" size="256"/>
+          <Column id="sales1" type="STRING" size="256"/>
+          <Column id="sales2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="month">A_price</Col>
+            <Col id="sales">3000</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="month">B_price</Col>
+            <Col id="sales">2000</Col>
+            <Col id="sales1">300</Col>
+            <Col id="sales2">200</Col>
+          </Row>
+          <Row>
+            <Col id="month">C_price</Col>
+            <Col id="sales">1700</Col>
+            <Col id="sales1">500</Col>
+            <Col id="sales2">300</Col>
+          </Row>
+          <Row>
+            <Col id="month">D_price</Col>
+            <Col id="sales">1800</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">400</Col>
+          </Row>
+          <Row>
+            <Col id="month">E_price</Col>
+            <Col id="sales">2500</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">2500</Col>
+            <Col id="month">F_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="sales">800</Col>
+            <Col id="month">G_price</Col>
+            <Col id="sales1">700</Col>
+            <Col id="sales2">1500</Col>
+          </Row>
+          <Row>
+            <Col id="sales">900</Col>
+            <Col id="month">H_price</Col>
+            <Col id="sales1">800</Col>
+            <Col id="sales2">1800</Col>
+          </Row>
+          <Row>
+            <Col id="month">I_price</Col>
+            <Col id="sales">400</Col>
+            <Col id="sales1">2000</Col>
+            <Col id="sales2">2800</Col>
+          </Row>
+          <Row>
+            <Col id="month">J_price</Col>
+            <Col id="sales">200</Col>
+            <Col id="sales1">2500</Col>
+            <Col id="sales2">700</Col>
+          </Row>
+          <Row>
+            <Col id="month">K_price</Col>
+            <Col id="sales">100</Col>
+            <Col id="sales1">3000</Col>
+            <Col id="sales2">600</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[var polygoncnt = 7;
+this.Div00_BtnPolygonTest_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.RadarChart00.set_enableredraw(false);
+	var serieslength = this.RadarChart00.seriesset.length;
+	polygoncnt++;
+	if(polygoncnt > 10)polygoncnt = 3;
+	var value = polygoncnt;
+	switch(value)
+	{
+		case 3:
+			this.RadarChart00.set_binddataset(this.Dataset00);
+		break;
+		case 4:
+			this.RadarChart00.set_binddataset(this.Dataset01);
+		break;
+		case 5:
+			this.RadarChart00.set_binddataset(this.Dataset02);
+		break;
+		case 6:
+			this.RadarChart00.set_binddataset(this.Dataset03);
+		break;
+		case 7:
+			this.RadarChart00.set_binddataset(this.Dataset04);
+		break;
+		case 8:
+			this.RadarChart00.set_binddataset(this.Dataset05);
+		break;
+		case 9:
+			this.RadarChart00.set_binddataset(this.Dataset06);
+		break;
+		case 10:
+			this.RadarChart00.set_binddataset(this.Dataset07);
+		break;
+		
+	}
+	for(var i = 0; i < serieslength;i++)
+	{
+		this.RadarChart00.seriesset[i].set_linevisible(true);
+		this.RadarChart00.seriesset[i].set_lineareavisible(true);
+		//this.RadarChart00.seriesset[i].set_pointvisible(true);
+	}
+	this.RadarChart00.set_enableredraw(true);
+};
+]]></Script>
+  </Form>
+</FDL>

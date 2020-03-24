@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="reply_e" width="1024" height="55" titletext="New Form" onload="reply_e_onload">
+    <Layouts>
+      <Layout>
+        <Edit id="edtReply" taborder="0" cssclass="ed_WF_reply" left="0" top="7" right="65" height="40" onkeydown="edtReply_onkeydown"/>
+        <Button id="btnReply" taborder="1" text="입력" cssclass="btn_WF_enterReply" top="7" right="20" width="40" height="40" onclick="btnReply_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.edtReply_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		this.btnReply.click();
+	}
+};
+
+this.btnReply_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.parent.parent.parent.parent.fn_Submit(this.parent);
+};
+
+this.reply_e_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.edtReply.setFocus();
+};
+]]></Script>
+  </Form>
+</FDL>

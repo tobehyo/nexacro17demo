@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commGraphicPopMenu" width="179" height="40" titletext="New Form" background="azure">
+    <Layouts>
+      <Layout>
+        <Combo id="cmbShape" taborder="6" left="3.54%" top="8" right="30.97%" height="22" codecolumn="code" datacolumn="name" index="-1" innerdataset="@ds_itemShape" cursor="hand"/>
+        <Button id="btn_applyMenu" taborder="7" text="적용" onclick="btn_applyMenu_onclick" left="131" top="8" width="40" height="20"/>
+        <Combo id="cmbColor" taborder="8" codecolumn="code" datacolumn="name" left="3.35%" top="8" right="30.73%" height="22" visible="false" innerdataset="@ds_itemColor" cursor="hand"/>
+        <Edit id="edtLabel" taborder="9" onsetfocus="edt_filter_onsetfocus" onkillfocus="edt_filter_onkillfocus" onkeydown="edt_filter_onkeydown" left="3.35%" top="8" right="30.73%" height="21" visible="false" background="rgba(255,255,255,1)" border="1px solid rgba(211,211,211,1)" borderRadius="0px"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_columnNotSelect" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cd" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="index" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_itemShape" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_item_oncolumnchanged" onrowposchanged="ds_item_onrowposchanged">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">circle</Col>
+            <Col id="name">원</Col>
+          </Row>
+          <Row>
+            <Col id="name">마름모</Col>
+            <Col id="code">diamond</Col>
+          </Row>
+          <Row>
+            <Col id="code">rect</Col>
+            <Col id="name">사각형</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_status" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cd" type="INT" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="cd">1</Col>
+            <Col id="nm">오름차순</Col>
+          </Row>
+          <Row>
+            <Col id="cd">2</Col>
+            <Col id="nm">내림차순</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_column" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_column_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="cd" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="index" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_itemColor" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_item_oncolumnchanged" onrowposchanged="ds_item_onrowposchanged">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">#ef3a3a</Col>
+            <Col id="name">빨강색</Col>
+          </Row>
+          <Row>
+            <Col id="code">#0390ec</Col>
+            <Col id="name">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="name">초록색</Col>
+            <Col id="code">#19A39C</Col>
+          </Row>
+          <Row>
+            <Col id="code">#ef8009</Col>
+            <Col id="name">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="name">노랑색</Col>
+            <Col id="code">#F2B100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+ * Grid Sort Sample at XPLATFORM
+ *
+ * Copyright (c) 2014 EcoSystem of TOBESOFT
+ * Licensed Free under XPLATFORM.
+ */
+
+/**
+ * oncolumnchanged event handler
+ * @param {Dataset} obj 이벤트가 발생한 Dataset
+ * @param {DSColChangeEventInfo} e DSColChangeEventInfo
+ */
+this.ds_item_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "column") 
+	{
+		this.ds_item.setColumn(e.row, "index", this.ds_column.lookup("cd", e.newvalue, "index"));
+	}
+};
+
+/**
+ * 소팅 정보를 화면에 표시
+ * @param {Grid} grid 소트 대상 Grid
+ * @param {array} cells Cell 별 소트 정보
+ */
+this.setSortInfo = function (grid, cells)
+{
+	var cellInfos = grid.cellInfos;
+	var sortItems = grid.sortItems;
+	var columnName,cellInfo,index,status,text,row,cell;
+
+	// 컬럼 정보 구성
+	this.ds_column.deleteAll();
+	for (var i = 0; i < cells.length; i++) 
+	{
+		cell = cells[i];
+		row = this.ds_column.addRow();
+		this.ds_column.setColumn(row, "cd", cell.column);
+		this.ds_column.setColumn(row, "nm", cell.text);
+		this.ds_column.setColumn(row, "index", cell.index);
+	}
+
+	// 현재 소팅 정보 표시
+	this.ds_item.deleteAll();
+	if (!this.gfnIsNull(sortItems)) 
+	{
+		for (var i = 0,len = sortItems.length; i < len; i++) 
+		{
+			columnName = sortItems[i];
+			cellInfo = cellInfos[columnName];
+			index = cellInfo.index;
+			status = cellInfo.status;
+			text = cellInfo.text;
+
+			if (status > 0) 
+			{
+				row = this.ds_item.addRow();
+				this.ds_item.setColumn(row, "column", columnName);
+				this.ds_item.setColumn(row, "status", status);
+				this.ds_item.setColumn(row, "index", index);
+			}
+		}
+	}
+};
+
+/**
+ * onclick Event Handler - 항목 추가
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_add_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.ds_item.addRow();
+};
+
+/**
+ * onclick Event Handler - 항목 삭제
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_delete_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.ds_item.deleteRow(this.ds_item.rowposition);
+};
+
+/**
+ * onclick Event Handler - 항목 위로 이동
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_up_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var rowposition = this.ds_item.rowposition;
+	if (rowposition > 0) 
+	{
+		this.ds_item.exchangeRow(rowposition, rowposition - 1);
+	}
+};
+
+/**
+ * onclick Event Handler - 항목 아래로 이동
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_down_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var rowposition = this.ds_item.rowposition;
+	if (rowposition < this.ds_item.rowcount - 1) 
+	{
+		this.ds_item.exchangeRow(rowposition, rowposition + 1);
+	}
+};
+
+/**
+ * onclick Event Handler - 소트 적용
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_apply_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var items = [],index,status;
+
+	for (var i = 0,len = this.ds_item.rowcount; i < len; i++) 
+	{
+		index = this.ds_item.getColumn(i, "index");
+		status = this.ds_item.getColumn(i, "status");
+
+		if (this.gfnIsNull(index) || this.gfnIsNull(status)) 
+		{
+			continue;
+		}
+
+		items.push({
+			index : index,
+			status : parseInt(status)
+		});
+	}
+	this.closePopup(items);
+};
+
+/**
+ * value의 Date 여부 반환.
+ * @param {date} value 확인할 value.
+ * @return {boolean} Date 여부.
+ * @example
+ * var a = new Date();
+ * trace(Base.isDate(a));	// output : true
+ *
+ * var a = "20130501";
+ * trace(Base.isDate(a));	// output : false
+ * @memberOf Base
+ */
+this.gfn_IsDate = function (value)
+{
+	// 아래내용을 9.2 Rumtiem 지원안함.
+	// 그리고 성능이슈가 발생할 수 있음(느림).
+	// 그런데 많은 곳에서 사용하고 있음.
+	// return toString.call(value) === '[object Date]';
+	// return Object.prototype.toString.call(value) === '[object Date]';
+	// typeof보다는 느리지만 아래처럼 사용하는것과는 대동소이?
+
+	if (typeof value == 'object' && value instanceof Date) 
+	{
+		return true;
+	}
+
+	return false;
+};
+
+
+
+// -------------------------------------------------------------------------------------------------//
+
+
+
+
+var fvUsrMenuId;
+var fvApplyDsObj;
+
+this.btn_applyMenu_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	if (fvUsrMenuId == 'shape') 
+	{
+		// this.parent.Dataset00.setColumn(this.nodeDsRow, "type", this.cmbShape.value);
+		fvApplyDsObj.setColumn(this.nodeDsRow, "type", this.cmbShape.value);
+	}
+	else if (fvUsrMenuId == 'color') 
+	{
+		// this.parent.Dataset00.setColumn(this.nodeDsRow, "nodeColor", this.cmbColor.value);
+		fvApplyDsObj.setColumn(this.nodeDsRow, "nodeColor", this.cmbColor.value);
+		fvApplyDsObj.setColumn(this.nodeDsRow, "color", this.cmbColor.text);
+	}
+	else if (fvUsrMenuId == 'label') 
+	{
+		// this.parent.Dataset00.setColumn(this.nodeDsRow, "text", this.edtLabel.value);
+		fvApplyDsObj.setColumn(this.nodeDsRow, "text", this.edtLabel.value);
+	}
+	fvApplyDsObj.set_rowposition(this.nodeDsRow);
+
+	this.parent.Button00_onclick();
+	this.closePopup('OK');
+};
+
+/**
+ * onPopupdivOpen Event Handler - 기본정보 셋팅
+ */
+this.fn_getInfo = function (tgtDsName)
+{
+	fvUsrMenuId = this.usrMenuId;
+	fvApplyDsObj = this.parent.objects[tgtDsName]; //변경되는 지식데이타셋
+
+	if (fvUsrMenuId == 'shape') 
+	{
+		this.cmbShape.visible = true;
+		this.cmbColor.visible = false;
+		this.edtLabel.visible = false;
+
+		this.ds_itemShape.filter("code != '" + this.usrType + "'");
+	}
+	else if (fvUsrMenuId == 'color') 
+	{
+		this.cmbShape.set_visible(false);
+		this.cmbColor.set_visible(true);
+		this.edtLabel.set_visible(false);
+
+		this.ds_itemColor.filter("code != '" + this.usrColor + "'");
+	}
+	else if (fvUsrMenuId == 'label') 
+	{
+		this.cmbShape.set_visible(false);
+		this.cmbColor.set_visible(false);
+		this.edtLabel.set_visible(true);
+		this.edtLabel.setFocus(true);
+	}
+}
+	
+;
+]]></Script>
+  </Form>
+</FDL>

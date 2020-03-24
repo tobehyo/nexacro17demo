@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Top" width="1280" height="64" titletext="New Form" onload="form_onload">
+    <Layouts>
+      <Layout height="64" mobileorientation="landscape" width="1280">
+        <Div id="div_top" taborder="0" left="0" top="0" height="64" right="0" maxwidth="" formscrollbartype="none none" formscrolltype="none" cssclass="div_TF_topBg">
+          <Layouts>
+            <Layout>
+              <Button id="btn_leftMenu" taborder="0" left="9" top="15" width="34" height="34" cssclass="btn_TF_LeftOpen" onclick="Common_onclick" text=""/>
+              <Button id="btn_sysConfig" taborder="1" top="17" width="30" height="30" cssclass="btn_TF_setting" right="60" visible="false"/>
+              <Button id="btn_sysConfig00" taborder="2" top="17" width="30" height="30" cssclass="btn_TF_userInfo" right="20" visible="false"/>
+              <Static id="Static00" taborder="3" left="64" top="7" width="150" height="50" cssclass="sta_TF_logo" onclick="home_onclick" cursor="pointer"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Top
+*  @FileName  Top.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description MegaMenu를 생성한다.
+*/
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfnCreateMegaMenu(obj);
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 메뉴 프레임을 열고/닫아준다.
+*/
+this.Common_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.gfnOpenMegaMenu(this);
+};
+
+/**
+ * @description 메인화면을 보여준다.
+*/
+this.home_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	nexacro.getApplication().mainframe.VFrameSet.set_separatesize("*, 0, 0");//메인, 탑, 업무
+};
+
+]]></Script>
+  </Form>
+</FDL>

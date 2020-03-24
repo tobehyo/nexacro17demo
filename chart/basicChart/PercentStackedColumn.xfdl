@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="PercentStackedColumn" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="gdsRainfall" categorycolumn="bind:name">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "100% Stacked Column",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Basic Chart > Column Chart",
+		"subtextcolor": "gray",
+		"subtextalign": "right",
+		"subtextfont": "italic 8/normal \"Arial\""
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"itemautofit": "true",
+		"align": "rightcenter",
+		"markertextgap": "5",
+		"verticalitemgap": "5"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5"
+		}
+	],
+	"hrangebar": {
+		"id": "hrangebar",
+		"trackbarpadding": "1px",
+		"background": "transparent",
+		"linestyle": "0px solid #d5d5d5",
+		"trackbarlinestyle": "0px none",
+		"trackbarfillstyle": "#c9c9c9",
+		"size": "1",
+		"visible": true
+	},
+	"vrangebar": {
+		"id": "vrangebar",
+		"trackbarpadding": "1px",
+		"background": "transparent",
+		"linestyle": "0px solid #d5d5d5",
+		"trackbarlinestyle": "0px none",
+		"trackbarfillstyle": "#c9c9c9",
+		"size": "1",
+		"visible": true
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"valuecolumn": "bind:rainfall",
+			"itemtextvisible": "false",
+			"barlinestyle": "1px solid #1f77b4",
+			"barfillstyle": "#1f77b4",
+			"stacktype": "percent"
+		},
+		{
+			"id": "series1",
+			"titletext": "mean",
+			"barvisible": true,
+			"barsize": "75",
+			"valuecolumn": "bind:mean",
+			"itemtextvisible": "false",
+			"barlinestyle": "1px solid #aec7e8",
+			"barfillstyle": "#aec7e8",
+			"stacktype": "percent"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

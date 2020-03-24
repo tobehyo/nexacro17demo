@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\_projects\nexacro\17.1\projects\demoUI\" generated="C:\_projects\nexacro\17.1\outputs\demo\">
+      <File url="environment.xml" checksum="20200205102942" errormsg=""/>
+      <File url="typedefinition.xml" checksum="20200205102950" errormsg=""/>
+      <File url="appvariables.xml" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_theme_\demo19_mobile\theme.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_theme_\demo19\theme.xcss" checksum="20200205102940" errormsg=""/>
+      <File url="_resource_\_xcss_\NxPivot.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_xcss_\component.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_xcss_\grid.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_xcss_\component_m.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="_resource_\_xcss_\organization.xcss" checksum="20200205102942" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200304154458" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200304154458" errormsg=""/>
+      <File url="_extlib_\extlibLoad.json" checksum="20200205102938" errormsg=""/>
+      <File url="App_Desktop.xadl" checksum="20200205102932" errormsg=""/>
+      <File url="App_Phone.xadl" checksum="20200205102932" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\NexacroLoad.json" checksum="20200324141627" errormsg=""/>
+    </Info>
+  </GenInfo>
+</root>

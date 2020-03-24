@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Pop_EmpSearch" width="300" height="270" titletext="WebWidgetPop03" onload="Form_onload">
+    <Layouts>
+      <Layout height="270" width="300">
+        <Button id="btn_search" taborder="1" text="" left="" top="0" width="30" height="30" right="0" bottom="" background="URL(&quot;Images::img_search2.png&quot;)" border="0px none #ffffff" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" onclick="btn_search_onclick"/>
+        <TextArea id="TextArea00" taborder="1" left="10" top="10" right="10" bottom="10" background="#f9d9a9" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Scatter" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BubbleChart id="BubbleChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="gdsCostProfit">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Scatter",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Bubble Chart",
+		"subtextalign": "right",
+		"subtextcolor": "gray",
+		"subtextfont": "italic 8pt \"Arial\""
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"markertype": "circle"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"itemtextvisible": "true",
+			"itemtextfont": "bold 8pt '맑은 고딕'",
+			"valuecolumn": "bind:profit",
+			"value2column": "bind:cost",
+			"value2axis": "costaxis",
+			"valueaxis": "profitaxis",
+			"itemtexttype": "number",
+			"itemtextmask": "99,99",
+			"selectcolumn": "bind:select",
+			"selectfillstyle": "yellow",
+			"selectopacity": "0.5",
+			"titletext": "revenue",
+			"linestyle": "1px solid #1f77b4",
+			"itemtext": "bind:revenue",
+			"itemtextposition": "left top",
+			"itemtextgap": "5",
+			"itemtextcolor": "#1f77b4"
+		},
+		{
+			"id": "series1",
+			"valuecolumn": "bind:profit1",
+			"value2column": "bind:cost1",
+			"itemtextmask": "99,99",
+			"itemtexttype": "number",
+			"itemtextvisible": "true",
+			"value2axis": "costaxis",
+			"valueaxis": "profitaxis",
+			"itemtextfont": "bold 8pt '맑은 고딕'",
+			"selectcolumn": "bind:select",
+			"selectopacity": "0.5",
+			"selectfillstyle": "lime",
+			"titletext": "revenue1",
+			"itemtext": "bind:revenue1",
+			"itemtextposition": "right bottom",
+			"itemtextgap": "-5",
+			"itemtextcolor": "#ff7f0e"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "profitaxis",
+			"titletext": "Profit",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px dotted #717a83",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"titlegap": "25",
+			"labeltype": "number",
+			"labelmask": "##,###",
+			"ticksize": "0",
+			"rangezoom": "true"
+		},
+		{
+			"id": "costaxis",
+			"titletext": "Cost",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px dotted #717a83",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "2px solid #717a83",
+			"axislinestyle": "1px solid #525252",
+			"labelmask": "##,###",
+			"labeltype": "number",
+			"titlegap": "25",
+			"ticksize": "5",
+			"tickmax": "2000",
+			"rangezoom": "true"
+		}
+	]
+}]]></Contents>
+        </BubbleChart>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

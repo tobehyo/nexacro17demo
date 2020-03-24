@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commCalendarCustom" left="0" top="0" width="225" height="28" titletext="Base1" onload="Calendar_Base_onload">
+    <Layouts>
+      <Layout>
+        <Button id="btnOpenPop" taborder="1" top="0" onclick="btnOpenPop_onclick" width="28" right="0" cssclass="btn_WF_multiCombo" bottom="0"/>
+        <MaskEdit id="makCal" taborder="2" left="0" top="0" right="24" type="string" maskchar=" " format="####-##-##" textAlign="left" bottom="0"/>
+        <PopupDiv id="pdivCal" left="2" top="37" height="220" async="false" onpopup="pdivCal_onpopup" text="달력" width="304" background="white" border="1px solid rgba(156,156,156,1)">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    component > 확장컴포넌트 - 사용자 달력 컴포넌트
+*  @FileName    np_Calendar_CustomBase1.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/14
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/14          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.Calendar_Base_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var sToDate = this.gfnGetDate();
+	
+	this.makCal.set_value(sToDate);
+	
+	if (this.userBindDataset && this.userBindColumn) {
+		var objBindItem = new BindItem();  
+		objBindItem.init("b1", "makCal", "value", this.userBindDataset, this.userBindColumn);
+		
+		this.addChild("b1", objBindItem); 
+		objBindItem.bind(); 
+	}
+}
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnClosePopup : 팝업창 닫을때 
+* @param {object}  obj	- 팝업 div
+* @param {String}  str	- Return 값
+* @return : N/A
+* @example :  
+*/
+this.fnClosePopup = function(obj, str)
+{
+	this.makCal.set_value(str);
+}
+
+ 
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 버튼 click이벤트 - 팝업창 open
+*/
+this.btnOpenPop_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.pdivCal.set_url("comm::commCalendarCustomPopDiv.xfdl");
+	this.pdivCal.trackPopupByComponent(this.makCal, 0, 30);
+}
+
+/**
+ * @description 팝업창 onload
+*/
+this.pdivCal_onpopup = function(obj:PopupDiv, e:nexacro.EventInfo)
+{
+	this.pdivCal.form.fnReSetCalendar(this.makCal.value);
+}
+]]></Script>
+  </Form>
+</FDL>

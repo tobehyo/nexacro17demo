@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="work003_content" width="1024" height="730" titletext="New Form" onload="work003_content_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="6" cssclass="sta_box01" left="0" top="0" right="0" bottom="0"/>
+        <Div id="divDetail" taborder="11" text="Div00" left="20" top="155" right="14" height="555" visible="false">
+          <Layouts>
+            <Layout>
+              <ExtReply id="ExtReply00" taborder="1" text="ExtReply00" left="0" top="365" right="0" height="141" cssclass="div_box01" onsize="ExtReply00_onsize"/>
+              <Div id="divInsertReply" taborder="2" left="0" top="509" right="0" height="42" cssclass="div_box02">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="15" cssclass="sta_pic03" left="20" top="10" width="20" height="20"/>
+                    <Edit id="edtReply" taborder="16" onkeydown="divInsertReply_edtReply_onkeydown" left="49" top="8" right="58" height="25" displaynulltext="의견을 입력하세요"/>
+                    <Button id="btnReply" taborder="17" text="입력" onclick="divInsertReply_btnReply_onclick" cssclass="btn_enter" top="8" right="14" width="40" height="25"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <WebBrowser id="wbCnt" left="0" top="0" right="0" height="352" taborder="3"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="stBookMark" taborder="0" left="22" top="11" width="26" height="25" onclick="stBookMark_onclick" background="url('img::icon_mailMark_off.png') no-repeat transparent"/>
+        <Static id="stTitle" taborder="1" text="모바일보안 APP 전산실 텟흐트 진행" left="61" top="14" height="20" onclick="stTitle_onclick" right="172" font="bold 10pt Dotum" cursor="hand"/>
+        <Static id="stPerson" taborder="2" left="12" top="43" width="45" height="45" background="url('img::profile_basic.png') no-repeat transparent"/>
+        <Static id="stPersonName" taborder="3" text="이재용사원IT보안팀" left="65" top="45" height="12" right="116" font="bold 9pt Dotum"/>
+        <Static id="stModDate" taborder="4" text="수정함-2016년 08월 19일(금) 07시 20분 06초" left="65" top="69" height="12" right="116" font="bold 9pt Dotum"/>
+        <Static id="stContentShort" taborder="5" left="17" top="101" height="44" right="14" font="bold 9pt Dotum" wordWrap="char"/>
+        <Static id="Static00" taborder="12" top="11" width="12" height="11" right="154" background="transparent" edge="url('img::icon_good.png') 0px 0px"/>
+        <Static id="stLike" taborder="13" text="0" top="7" width="16" height="20" right="132" font="bold 9pt Dotum"/>
+        <Static id="Static03" taborder="14" text="조회" top="7" width="32" height="20" right="68" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="Static04" taborder="15" text="의견" top="31" width="32" height="20" right="68" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="Static05" taborder="16" text="연관글" top="55" width="48" height="20" right="68" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="stRead" taborder="17" text="0" top="7" width="32" height="20" right="20" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="stCommant" taborder="18" text="0" top="31" width="32" height="20" right="20" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="stLink" taborder="19" text="0" top="55" width="32" height="20" right="20" textAlign="right" verticalAlign="middle" font="bold 9pt Dotum"/>
+        <Static id="stReplyImg" taborder="20" left="9" top="16" width="16" height="14" visible="false" background="url('img::replyMark.png') no-repeat transparent"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_Reply">
+        <ColumnInfo>
+          <Column id="DEPT_NM" type="string" size="32"/>
+          <Column id="GOOD_CNT" type="string" size="32"/>
+          <Column id="INPUT_DATETIME" type="string" size="32"/>
+          <Column id="LEV" type="string" size="32"/>
+          <Column id="NTT_CNTS" type="string" size="32"/>
+          <Column id="NTT_IPCR_YN" type="string" size="32"/>
+          <Column id="NTT_NO" type="string" size="32"/>
+          <Column id="NTT_TITLE" type="string" size="32"/>
+          <Column id="PSTN_NM" type="string" size="32"/>
+          <Column id="READ_CNT" type="string" size="32"/>
+          <Column id="REL_CNT" type="string" size="32"/>
+          <Column id="REPLY" type="string" size="32"/>
+          <Column id="REPLY_CNT" type="string" size="32"/>
+          <Column id="UP_NTT_NO" type="string" size="32"/>
+          <Column id="USER_NM" type="string" size="32"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="NTT_NO">0001</Col>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="NTT_NO">0001</Col>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0002</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0002</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0002</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0003</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0003</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0003</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0004</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0004</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0004</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0004</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0005</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0006</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0007</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0008</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0008</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0008</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0008</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0009</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0009</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0010</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0011</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0011</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0011</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0011</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0012</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0012</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0012</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0013</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트]
+안녕하세요. 댓글 입력 확인합니다.
+여러줄 입력시 자동 줄바꿈 처리되도록 구성되어있습니다.</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0013</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-08-19 07:57</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0013</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">이창현</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_NM">프리세일즈팀</Col>
+            <Col id="GOOD_CNT"/>
+            <Col id="INPUT_DATETIME">2016-09-01 15:44</Col>
+            <Col id="LEV"/>
+            <Col id="NTT_CNTS"/>
+            <Col id="NTT_IPCR_YN"/>
+            <Col id="NTT_NO">0013</Col>
+            <Col id="NTT_TITLE"/>
+            <Col id="PSTN_NM">책임</Col>
+            <Col id="READ_CNT"/>
+            <Col id="REL_CNT"/>
+            <Col id="REPLY">[댓글입력 테스트2]
+테스트
+테스트
+테스트1234s</Col>
+            <Col id="REPLY_CNT"/>
+            <Col id="UP_NTT_NO"/>
+            <Col id="USER_NM">김대원</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.fv_Content;
+
+this.work003_content_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+};
+
+this.stTitle_onclick = function (obj:Static, e:nexacro.ClickEventInfo)
+{
+	this.parent.parent.fn_TitleClick(this);
+};
+
+this.fn_setLev = function (lev)
+{
+	var nLeft = 9;
+	var nTop = 16;
+
+	var nLeftGap = 18;
+	var nLeftLineGap = 5;
+	var nLev = nexacro.toNumber(lev);
+	var objLine;
+
+	if (lev != "0") 
+	{
+		for (i = 0; i < nLev; i++) 
+		{
+			objLine = new Static("stLine" + i, "absolute", nLeft, nTop, 4, 17);
+			this.addChild(objLine.name, objLine);
+			objLine.show();
+
+			objLine.style.set_background("URL('imagerc::replyLine.png')");
+
+			objLine.move(nLeft, nTop);
+
+			nLeft = objLine.getOffsetLeft() + 5;
+		}
+
+		this.stReplyImg.set_visible(true);
+		this.stReplyImg.move(nLeft, nTop);
+
+		nLeft = this.stReplyImg.getOffsetRight() + 14;
+
+		objSNS.stBookMark.setOffsetLeft(nLeft, nTop);
+
+		nLeft = this.stBookMark.getOffsetRight() + 14;
+
+		objSNS.stTitle.setOffsetLeft(nLeft, nTop);
+	}
+};
+
+this.fn_readReply = function ()
+{
+	// this.ds_search.setColumn(0, "NTT_NO", this._NTT_NO);
+	// this.ds_search.setColumn(0, "NTT_NO", "00000000000000008761");
+	// var sId = "SEARCH";
+	// var sUrl = "was::nexacro-sample/selectKccBmtSns.do";
+	// var sInDs = "ds_search=ds_search";
+	// var sOutDs = "ds_Reply=output1";
+	// var sParam = "";
+	// var sCallback = "fn_Callback";
+	// this.transaction(sId, sUrl, sInDs, sOutDs, sParam, sCallback, false);
+	this.ds_Reply.filter("NTT_NO=='" + this._NTT_NO + "'");
+	this.fn_Callback("SEARCH", 0, "SCC");
+};
+
+this.fn_Callback = function (sId, nErrorCd, sErrorMsg)
+{
+	if (nErrorCd < 0) 
+	{
+		alert("[" + nErrorCd + "]" + sErrorMsg);
+	}
+	else 
+	{
+		if (sId == "SEARCH") 
+		{
+			this.divDetail.form.ExtReply00.initReply(this.ds_Reply, "홍길동");
+		}
+	}
+};
+
+this.fn_setContent = function (sContent)
+{
+	var sTemp;
+	var nStartIdx,nEndIdx;
+
+	this.fv_Content = sContent;
+
+	/*
+	 sContent = nexacro.replaceAll(sContent, "&nbsp;", "");
+	 
+	 while(1)
+	 {
+	 nStartIdx = sContent.indexOf("<");
+	 nEndIdx = sContent.indexOf(">")+1;
+	 
+	 if(nStartIdx==-1||nEndIdx==-1||nStartIdx>100)break;
+	 
+	 sTemp = sContent.substring(nStartIdx, nEndIdx);
+	 sContent = sContent.replace(sTemp, "");
+	 }
+	 
+	 sContent = sContent.substr(0, 100);
+	 */
+
+	var tmpStr = new RegExp();
+	tmpStr = /[<][^>]*[>]/gi;
+	sContent = sContent.replace(tmpStr, ""); //strText = bbcd
+
+	sContent = sContent.replace(/\&nbsp;/g, "");
+	sContent = sContent.replace(/\&#9312;/g, "");
+	sContent = sContent.replace(/\&#9313;/g, "");
+	sContent = sContent.replace(/\-&gt;/g, "");
+	sContent = sContent.substr(0, 40) + "...";
+	this.stContentShort.set_text(sContent);
+};
+
+this.fn_setWebB = function ()
+{
+	if (this.fv_readWeb == true) 
+	{
+	}
+	else 
+	{
+		var nTop;
+		var nHeight;
+		this.fv_readWeb = true;
+		var objDoc = this.divDetail.form.wbCnt.getProperty("document");
+		objDoc.callMethod("open");
+		objDoc.callMethod("write", '<meta http-equiv="X-UA-Compatible" content="IE=Edge" />' + this.fv_Content);
+		objDoc.callMethod("close");
+		var objBody = objDoc.getProperty("body");
+		nHeight = objBody.getProperty("scrollHeight");
+
+		this.divDetail.form.wbCnt.setOffsetHeight(nHeight);
+
+		var sOS = system.osversion;
+		if (sOS.indexOf("iOS") > -1 || sOS.indexOf("Android") > -1) 
+		{
+			this.divDetail.stbg.setOffsetHeight(nHeight);
+		}
+
+		nTop = this.divDetail.form.wbCnt.getOffsetTop() + nHeight + 16;
+		this.divDetail.form.ExtReply00.move(0, nTop, null, 141, 0, null);
+		this.fn_readReply();
+	}
+};
+
+this.divInsertReply_edtReply_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		this.fn_AddReply();
+	}
+};
+
+this.divInsertReply_btnReply_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.fn_AddReply();
+};
+
+this.fn_AddReply = function ()
+{
+	var sContent = this.divDetail.form.divInsertReply.form.edtReply.value;
+	this.divDetail.form.divInsertReply.form.edtReply.set_value("");
+
+	// this.ExtReply00.insert(sContent);
+};
+
+this.ExtReply00_onsize = function (obj:ExtReply, e:nexacro.SizeEventInfo)
+{
+	var nLeft = obj.getOffsetLeft();
+	var nTop = e.cy + nexacro.toNumber(obj.getOffsetTop()) + 10;
+
+	this.divDetail.form.divInsertReply.move(nLeft, nTop, null, 42, 0, null);
+
+	this.parent.parent.fn_setSize(this.divDetail);
+	// this.parent.parent.fn_setSize(this);
+};
+
+this.stBookMark_onclick = function (obj:Static, e:nexacro.ClickEventInfo)
+{
+	if (obj._bookmark == false) 
+	{
+		obj._bookmark = true;
+		obj.style.set_background("URL('imagerc::icon_mailMark_off.png')");
+	}
+	else 
+	{
+		obj._bookmark = false;
+		obj.style.set_background("URL('imagerc::icon_mailMark_on.png')");
+	}
+};
+
+this.Button00_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var objDoc = this.divDetail.form.wbCnt.getProperty("document");
+	var objBody = objDoc.getProperty("body");
+	trace(objBody.getProperty("scrollHeight"));
+	trace(objBody.getProperty("offsetHeight"));
+};
+]]></Script>
+  </Form>
+</FDL>

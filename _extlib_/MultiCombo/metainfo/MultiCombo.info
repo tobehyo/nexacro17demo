@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MetaInfo version="2.0">
+  <Object id="MultiCombo">
+    <ObjectInfo inheritance="nexacro.Div" classname="nexacro.MultiCombo" shorttypename="MultiCombo" csstypename="MultiCombo" csscontrolname="MultiComboControl" group="Component" subgroup="ContainerComponent" csspseudo="true" container="true" composit="" tabstop="true" cssstyle="true" contents="false" formats="false" contentseditor="auto" defaultwidth="150" defaultheight="20" registration="allow" edittype="container" useinitvalue="true" popup="false" edittypecomponent="" dblclickevent="onclick" requirement="IE8,IE9,IE10,IE11,Chrome,Safari,Firefox,Opera,Windows nexacro Browser,macOS nexacro Browser,Android nexacro Browser,iOS nexacro Browser,Android Default Web Browser,iOS Default Web Browser" description="여러 후보값중에서 복수의 값을 편리하게 선택하기위한 용도로 사용되는 컴포넌트입니다."/>
+    <PropertyInfo>
+      <Property name="codecolumn" edittype="InnerColumnID" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Binding" description="MultiCombo 의 아이템 리스트에서 코드값으로 사용될 Column을 설정하는 속성입니다."/>
+      <Property name="datacolumn" edittype="InnerColumnID" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Binding" description="MultiCombo 의 아이템 리스트에서 데이터값으로 사용될 Column을 설정하는 속성입니다."/>
+      <Property name="innerdataset" edittype="InnerDatasetID" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Binding" description="MultiCombo 의 아이템 리스트를 구성할 DataSet 의 ID를 설정하는 속성입니다."/>
+      <Property name="listcolinfo" edittype="String" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Action" description="MultiComboList의 표현될 컬럼정보를 설정하는 속성입니다."/>
+      <Property name="popupwidth" edittype="String" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Action" description="MultiComboList의 너비를 설정하는 속성입니다."/>
+      <Property name="popupheight" edittype="String" unused="false" readonly="false" initonly="false" hidden="false" control="false" style="false" expr="false" bind="false" deprecated="false" mandatory="false" group="Action" description="MultiComboList의 높이를 설정하는 속성입니다."/>
+    </PropertyInfo>
+    <CSSInfo>
+      <PropertyInfo/>
+    </CSSInfo>
+    <StatusInfo/>
+    <MethodInfo>
+      <Method name="getText" unused="false" async="false" usecontextmenu="false" deprecated="false" description="MultiCombo의 선택된 아이템의 데이터값을 반환하는 메소드입니다.">
+        <Syntax text="getText()">
+          <Return/>
+          <Arguments/>
+        </Syntax>
+      </Method>
+      <Method name="getCode" unused="false" async="false" usecontextmenu="false" deprecated="false" description="MultiCombo의 선택된 아이템의 코드값을 반환하는 메소드입니다.">
+        <Syntax text="getCode()">
+          <Return/>
+          <Arguments/>
+        </Syntax>
+      </Method>
+      <Method name="setCode" unused="false" async="false" usecontextmenu="false" deprecated="false" description="MultiCombo의 선택된 아이템의 코드값을 설정하는 메소드입니다.">
+        <Syntax text="setCode(v)">
+          <Return/>
+          <Arguments>
+            <Argument name="v" type="String" in="true" out="false" option="false" variable="false" description=""/>
+          </Arguments>
+        </Syntax>
+      </Method>
+    </MethodInfo>
+    <EventHandlerInfo>
+      <EventHandler name="onitemchanged" group="Event" unused="false" deprecated="false" description="MultiCombo 에서 아이템이 변경된 후 발생하는 이벤트입니다.">
+        <Syntax text="onitemchanged(obj:nexacro.MultiCombo, e:nexacro.ItemChangeEventInfo)">
+          <Return type="" description=""/>
+          <Arguments>
+            <Argument name="obj" type="nexacro.MultiCombo" in="true" out="false" option="false" variable="false" description=""/>
+            <Argument name="e" type="nexacro.ItemChangeEventInfo" in="true" out="false" option="false" variable="false" description=""/>
+          </Arguments>
+        </Syntax>
+      </EventHandler>
+    </EventHandlerInfo>
+  </Object>
+</MetaInfo>

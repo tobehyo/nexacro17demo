@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_Highlight" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart01" taborder="0" left="37.76%" top="2.08%" binddataset="ds_highlight00" categorycolumn="bind:Column0" gaugetype="vertical" right="37.5%" bottom="2.08%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "vertical",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "white",
+		"indicatorlinestyle": "1px solid black",
+		"indicatoropacity": "1",
+		"linestyle": "1px solid black",
+		"fillstyle": "white",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"tickinterval": "10",
+			"opposite": "true"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "white",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"highlightbarvisible": "true",
+			"highlightbarfillstyle": "white",
+			"barfillstyle": "#4de984",
+			"fillstyle": "#d8d8d8",
+			"opacity": "1",
+			"linestyle": "#d8d8d8",
+			"barlinestyle": "#4de984",
+			"barsize": "100"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart00" taborder="1" left="1.3%" top="2.08%" binddataset="ds_highlight" categorycolumn="bind:Column0" gaugetype="vertical" right="73.96%" bottom="2.08%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "vertical",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "white",
+		"indicatorlinestyle": "1px solid black",
+		"indicatoropacity": "1",
+		"linestyle": "1px solid black",
+		"fillstyle": "white",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"tickinterval": "10"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "white",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"highlightbarvisible": "true",
+			"highlightbarfillstyle": "white",
+			"barfillstyle": "#eaad4c",
+			"fillstyle": "#d8d8d8",
+			"barlinestyle": "#eaad4c",
+			"barsize": "100",
+			"opacity": "1",
+			"linestyle": "#d8d8d8"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart02" taborder="2" left="72.92%" top="2.08%" binddataset="ds_highlight01" categorycolumn="bind:Column0" gaugetype="vertical" right="2.34%" bottom="2.08%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "vertical",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "white",
+		"indicatorlinestyle": "1px solid black",
+		"indicatoropacity": "1",
+		"linestyle": "1px solid black",
+		"fillstyle": "white",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"tickinterval": "10"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "white",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"highlightbarvisible": "true",
+			"highlightbarfillstyle": "white",
+			"barfillstyle": "#165ee3",
+			"fillstyle": "#d8d8d8",
+			"barlinestyle": "#165ee3",
+			"barsize": "100",
+			"opacity": "1",
+			"linestyle": "#d8d8d8"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart03" taborder="3" left="190" top="279" width="193" height="206" binddataset="ds_highlight01" categorycolumn="bind:Column0">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title", 
+		"text": "Gauge Chart", 
+		"textfont": "20pt/normal '맑은 고딕'", 
+		"padding": "0px 0px 5px"
+	}, 
+	"legend": {
+		"id": "legend", 
+		"padding": "3px 10px 3px 10px", 
+		"itemtextfont": "9pt '맑은 고딕'", 
+		"itemtextcolor": "#4c4c4c"
+	}, 
+	"tooltip": {
+		"id": "tooltip", 
+		"background": "#4b4b4b", 
+		"linestyle": "0px none", 
+		"textcolor": "#ffffff", 
+		"textfont": "10pt/normal '맑은 고딕'", 
+		"padding": "5px"
+	}, 
+	"indicator": {
+		"id": "indicator", 
+		"visible": "true", 
+		"image": "", 
+		"size": "", 
+		"indent": "", 
+		"fillstyle": "#4b4b4b", 
+		"linestyle": "0px none", 
+		"opacity": "1"
+	}, 
+	"board": {
+		"id": "board"
+	}, 
+	"valueaxes": [
+	  {
+		"id": "valueaxis0", 
+		"labeltextcolor": "#6f6f6f", 
+		"labeltextfont": "10pt '맑은 고딕'", 
+		"axislinestyle": "1px solid #d0d0d0" 
+	  }
+	], 
+	"seriesset": [
+	  {
+		"id": "series0", 
+		"titletext": "series", 
+		"itemtextvisible": "true", 
+		"itemtextcolor": "#003860", 
+		"itemtextfont": "bold 12pt '맑은 고딕'", 
+		"valuecolumn": "bind:Column1"
+	  }
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_highlight">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">52</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_highlight00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">75</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_highlight01">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">24</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

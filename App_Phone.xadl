@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="App_Phone" screenid="mobile" onload="Application_onload" onerror="Application_onerror">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="480" height="768" showcascadetitletext="false" titletext="nexacro platform demo">
+        <ChildFrame id="ChildFrame" formurl="mobile::Mobile_main.xfdl" showtitlebar="false" showtitleicon="false"/>
+      </MainFrame>
+    </Layout>
+    <Style url="xcssrc::component_m.xcss"/>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[
+/************************************************************************************************
+ * Application Event 영역
+ ************************************************************************************************/
+/**
+ * Application onload
+ */
+this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventInfo)
+{
+
+	//접속 환경별 서비스 URL 셋팅
+	var objEnv = nexacro.getEnvironment();
+	var objSvcUrl = objEnv.services["svcurl"];
+	var urlPath;
+	
+	if (system.navigatorname == "nexacro")
+	{
+		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+		{
+			urlPath = "http://localhost:8080/nexacro-demo/";
+		}
+		else 
+		{
+			urlPath = objSvcUrl;
+		}
+	}
+	else
+	{
+		var sXadl = nexacro.getApplication().xadl;
+		
+		if(sXadl.indexOf("http://127.0.0.1/") > -1)
+		{
+			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+			{
+				urlPath = "http://localhost:8080/nexacro-demo/";
+			}
+			else 
+			{
+				urlPath = objSvcUrl;
+			}
+		}
+		else
+		{
+			urlPath = window.location.protocol + "//" + window.location.host + "/nexacro-demo/";
+		}
+	}
+	
+	objEnv.services["svcurl"].set_url(urlPath);
+};
+
+/**
+ * @description ESC 통신중단 방지
+*/
+this.Application_onerror = function(obj:nexacro.Application,e:nexacro.ErrorEventInfo)
+{
+	// 사용자가 ESC키를 눌렀을 경우 ESC통신 중단 방지처리
+	if (e.errorcode == -2147418039) {
+		return true;
+	}
+};]]></Script>
+</ADL>

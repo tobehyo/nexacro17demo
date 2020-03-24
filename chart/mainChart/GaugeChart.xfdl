@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_Basic" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart01" taborder="0" left="0" top="0" binddataset="dsSpeed" categorycolumn="bind:Column0" gaugetype="circular" right="0" bottom="0" enableanimation="true">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"opposite": "false",
+			"visible": "true",
+			"gap": "10",
+			"labelgap": "10",
+			"tickinterval": "10",
+			"labeltype": "normal"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextfont": "bold 25pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"radius": "100",
+			"innerradius": "55",
+			"startangle": "270",
+			"endangle": "180",
+			"baropacity": "0",
+			"itemtextmask": "##%",
+			"linestyle": "1px solid #1abd9c",
+			"opacity": "0.5",
+			"barsize": "100",
+			"barlinestyle": "#ff8273",
+			"barfillstyle": "#1abd9c",
+			"highlightbarvisible": "false",
+			"selecttype": "select",
+			"selectbarfillstyle": "#ff8273",
+			"selectbarlinestyle": "#ff8273",
+			"fillstyle": "#1a85be",
+			"highlightbarfillstyle": "#ff8273",
+			"highlightbarlinestyle": "#ff8273"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_speed">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">속도</Col>
+            <Col id="Column1">130</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsSpeed">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">속도</Col>
+            <Col id="Column1">22</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GaugeChart01.runAnimation();
+};
+]]></Script>
+  </Form>
+</FDL>

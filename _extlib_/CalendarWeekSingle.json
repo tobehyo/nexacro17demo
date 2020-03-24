@@ -1,0 +1,16 @@
+﻿{
+	"name": "CalendarWeekSingle",
+	"version": "0",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "CalendarWeekSingle/metainfo/CalendarWeekSingle.info"
+	],
+	"scripts": [
+    "CalendarWeekSingle/CalendarWeekSingle.js"
+	],
+	"designscripts": [
+    "CalendarWeekSingle/Design/DesignCalendarWeekSingle.js"
+	]
+}
+//# sourceURL=CalendarWeekSingle.json

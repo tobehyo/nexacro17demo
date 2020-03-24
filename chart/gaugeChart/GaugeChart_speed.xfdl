@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_Basic" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart01" taborder="1" left="0.52%" top="1.25%" binddataset="ds_speed" categorycolumn="bind:Column0" gaugetype="circular" right="48%" bottom="12.5%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Speed Gauge",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "40",
+		"indicatorfillstyle": "#4b4b4b",
+		"indicatorlinestyle": "0px none",
+		"indicatoropacity": "1",
+		"fillstyle": "#000000",
+		"indent": "30",
+		"linestyle": "1px solid black"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "200",
+			"opposite": "true",
+			"visible": "true",
+			"gap": "10",
+			"labelgap": "10",
+			"tickinterval": "10"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"radius": "100",
+			"innerradius": "80",
+			"startangle": "225",
+			"endangle": "270",
+			"fillstyle": "linear-gradient(#00ff00 0%,#ff0000 100%)",
+			"baropacity": "0",
+			"itemtextmask": "###km/h"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <Button id="Button00" taborder="1" text="runAnimation" left="83.33%" top="87.5%" onclick="Button00_onclick" right="1.04%" bottom="2.08%"/>
+        <GaugeChart id="GaugeChart00" taborder="2" left="52%" top="1.25%" binddataset="ds_speed" categorycolumn="bind:Column0" gaugetype="circular" right="1.04%" bottom="12.5%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Speed Gauge",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "0",
+		"indicatorfillstyle": "#4b4b4b",
+		"indicatorlinestyle": "0px none",
+		"indicatoropacity": "1",
+		"fillstyle": "black",
+		"linestyle": "black",
+		"indent": "30"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "200",
+			"opposite": "false",
+			"visible": "true",
+			"gap": "10",
+			"labelgap": "10",
+			"tickinterval": "10"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"radius": "100",
+			"innerradius": "80",
+			"startangle": "225",
+			"endangle": "270",
+			"fillstyle": "linear-gradient(#00ff00 0%,#ff0000 100%)",
+			"baropacity": "0",
+			"itemtextvgap": "130",
+			"itemtextmask": "###km/h"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_speed">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">속도</Col>
+            <Col id="Column1">130</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.GaugeChart00.runAnimation();
+	this.GaugeChart01.runAnimation();
+};
+]]></Script>
+  </Form>
+</FDL>

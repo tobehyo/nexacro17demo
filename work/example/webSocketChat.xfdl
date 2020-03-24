@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="webSocketChat" width="727" height="610" titletext="채팅-웹소켓" onload="webSocketChat_onload" onclose="webSocketChat_onclose">
+    <Layouts>
+      <Layout>
+        <ExtWebSocket id="wsChat" taborder="1" text="ExtWebSocket00" left="0.83%" top="2" right="93.12%" height="28" visible="false" onbroadcast="wsChat_onbroadcast"/>
+        <Static id="Static00" taborder="2" text="채팅 - 웹소켓" usedecorate="true" cssclass="sta_WF_title01" left="10" top="0" width="421" height="50"/>
+        <Static id="Static07" taborder="3" text="웹소켓 기능을 사용자 컴포넌트로 구성하여 사용이 가능합니다.&#13;&#10;본 예시는 웹소켓을 이용하여 간단한 채팅기능을 구현하였습니다." cssclass="sta_WF_box03" left="10" top="50" right="0" height="72" wordWrap="char"/>
+        <Static id="stPersonList" taborder="4" text="현재 참여자(3) |  &lt;b v='true'&gt;홍길동,한나나,이창연,주가열&lt;/b&gt;" usedecorate="true" cssclass="sta_WF_chatTitle" left="10" top="142" width="707" height="40"/>
+        <Static id="Static03" taborder="5" cssclass="sta_WF_chatBg02" left="527" top="182" width="190" height="340"/>
+        <Edit id="taMessage" taborder="6" cssclass="ed_WF_chartText" left="10" top="521" width="627" height="80" onkeydown="taMessage_onkeydown"/>
+        <Div id="divChatArea" taborder="7" left="10" top="182" width="517" height="340" cssclass="div_WF_chatBg01">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Static id="Static02" taborder="8" cssclass="sta_WF_chatBg03" left="636" top="521" width="81" height="80"/>
+        <Button id="btnSend" taborder="9" text="전송" cssclass="btn_WF_sendMsg" left="651" top="536" width="50" height="50" onclick="btnSend_onclick"/>
+        <Grid id="grdPersonList" cssclass="grd_WF_chatList" taborder="10" binddataset="dsPersonList" autofittype="col" left="537" top="192" width="170" height="320">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="30"/>
+                <Column size="140"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="imagecontrol" text="bind:img"/>
+                <Cell col="1" text="bind:name"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="11" text="#텍스트 크기 계산용" cssclass="btn_WF_tabButton" visible="false" top="0" right="-162" width="132" height="27" font="8pt Malgun Gothic"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsPersonList">
+        <ColumnInfo>
+          <Column id="img" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="img">imagerc::img_WF_chatIcon01.png</Col>
+            <Col id="name">김대원</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.fv_Name = "";
+this.fv_position = 10; 
+this.webSocketChat_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	var nRow;
+
+	this.fv_Name = "유저" + Math.round(Math.random() * 100);
+	// this.TextArea01.set_value("");
+
+	this.dsPersonList.clearData();
+	nRow = this.dsPersonList.addRow();
+
+	this.dsPersonList.setColumn(nRow, "img", "imagerc::img_WF_chatIcon01.png");
+	this.dsPersonList.setColumn(nRow, "name", this.fv_Name);
+
+	if (nexacro.Browser != "Runtime") 
+	{
+		this.wsChat.wsstart(this.fv_Name);
+	}
+};
+
+this.wsChat_onbroadcast = function (obj:ExtWebSocket, e:nexacro.EventInfo)
+{
+	var nRow;
+	var sMessage = e.message;
+	var arrMsg = sMessage.split(":");
+	var objTile;
+	var nIdx;
+	var nCount;
+	var sPerson;
+
+	// var sTemp = this.TextArea01.value;
+
+	if (arrMsg[0] == "LOGIN") 
+	{
+		// sTemp += arrMsg[1]+"님이 접속하셨습니다."+"\n";
+		this.wsChat.wsbroadcast("USER:" + this.fv_Name + ":");
+	}
+	else if (arrMsg[0] == "MSG") 
+	{
+		nIdx = this.divChatArea.form.components.length;
+
+		textSize = nexacro.getTextSize(arrMsg[2], this.Button00.font);
+		w = nexacro.round(textSize.nx) + 100;
+
+		// sTemp += arrMsg[1]+e.flag+arrMsg[2]+"\n";
+		if (e.flag == "<") 
+		{
+			objTile = new Div("divMsg" + nIdx, 10, this.fv_position, w, 31, null, null);
+			this.divChatArea.form.addChild(objTile.name, objTile);
+			objTile.show();
+			objTile.set_async(false);
+			objTile.set_url("sample::webSocketChat_Res.xfdl");
+			objTile.form.stImg.set_text(arrMsg[1]);
+			objTile.form.stMsg.set_text(arrMsg[2]);
+		}
+		else 
+		{
+			objTile = new Div("divMsg" + nIdx, null, this.fv_position, w, 31, 10, null);
+			this.divChatArea.form.addChild(objTile.name, objTile);
+			objTile.show();
+			objTile.set_async(false);
+			objTile.set_url("sample::webSocketChat_Req.xfdl");
+			objTile.form.stImg.set_text(arrMsg[1]);
+			objTile.form.stMsg.set_text(arrMsg[2]);
+		}
+
+		this.fv_position = this.fv_position + 40;
+	}
+	else if (arrMsg[0] == "CLOSE") 
+	{
+		// sTemp += arrMsg[1]+"님이 나가셨습니다."+"\n";
+		nRow = this.dsPersonList.findRow("name", arrMsg[1]);
+		this.dsPersonList.deleteRow(nRow);
+	}
+	else if (arrMsg[0] == "USER") 
+	{
+		if (this.dsPersonList.findRow("name", arrMsg[1]) == -1) 
+		{
+			nRow = this.dsPersonList.addRow();
+
+			this.dsPersonList.setColumn(nRow, "img", "imagerc::img_WF_chatIcon01.png");
+			this.dsPersonList.setColumn(nRow, "name", arrMsg[1]);
+		}
+
+		nCount = this.dsPersonList.rowcount;
+
+		for (i = 0; i < this.dsPersonList.rowcount; i++) 
+		{
+			if (i == 0) 
+			{
+				sPerson = this.dsPersonList.getColumn(i, "name");
+			}
+			else 
+			{
+				sPerson += "," + this.dsPersonList.getColumn(i, "name");
+			}
+		}
+
+		this.stPersonList.set_text("현재 참여자(" + nCount + ") |  <b v='true'>" + sPerson + "</b>");
+	}
+
+	// this.TextArea01.set_value(sTemp);
+};
+
+this.taMessage_onkeydown = function (obj:TextArea, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		var sMessage = "MSG:" + this.fv_Name + ":" + obj.value;
+		obj.set_value("");
+		if (nexacro.Browser != "Runtime") 
+		{
+			this.wsChat.wsbroadcast(sMessage);
+		}
+	}
+};
+
+this.webSocketChat_onclose = function (obj:Form, e:nexacro.CloseEventInfo)
+{
+	if (nexacro.Browser != "Runtime") 
+	{
+		this.wsChat.wsbroadcast("CLOSE:" + this.fv_Name + ":");
+	}
+};
+
+
+this.btnSend_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var sMessage = "MSG:" + this.fv_Name + ":" + this.taMessage.value;
+	this.taMessage.set_value("");
+	if (nexacro.Browser != "Runtime") 
+	{
+		this.wsChat.wsbroadcast(sMessage);
+	}
+};]]></Script>
+  </Form>
+</FDL>

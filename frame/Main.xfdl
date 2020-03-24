@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Main" width="1280" height="1830" titletext="New Form" onload="Main_onload" onhscroll="Main_onhscroll" onvscroll="Main_onvscroll" ontimer="Main_ontimer">
+    <Layouts>
+      <Layout height="1830" mobileorientation="landscape" width="1280">
+        <Div id="divMainVisual" taborder="0" left="0" top="0" height="450" right="0" cssclass="div_WF_mainVisual" formscrolltype="none" formscrollbartype="autoindicator none" url="frame::MainStep.xfdl" text=""/>
+        <Div id="Div01" taborder="1" text="Div01" left="0" top="450" width="100.00%" height="120" cssclass="div_WF_mainQuick">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="Quick Menu" left="0" top="0" width="20.23%" height="120" cssclass="sta_WF_mainQmenu"/>
+              <Button id="btn_1010" taborder="1" text="그리드" left="Static00:0" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn01" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1080" taborder="2" text="데이터셋" left="btn_1010:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn02" onclick="QuickMenu_onclick"/>
+              <Button id="btn_2090" taborder="3" text="차트" left="btn_1080:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn03" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1110" taborder="4" text="트리그리드/&#13;&#10;그룹핑" left="btn_2090:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn04" onclick="QuickMenu_onclick"/>
+              <Button id="btn_2040" taborder="5" text="다국어 지원" left="btn_1110:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn05" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1060" taborder="6" text="엑셀&#13;&#13;&#10;Import/Export" left="btn_2040:0" top="0" height="120" cssclass="btn_WF_mainQbtn06" right="7%" onclick="QuickMenu_onclick"/>
+            </Layout>
+            <Layout name="Layout0"/>
+            <Layout name="Layout1"/>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="2" text="Div02" left="0" width="100.00%" top="1750" height="80" cssclass="div_WF_mainFooter">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" left="40" top="18" width="160" height="43" cssclass="sta_WF_footerLogo01"/>
+              <Static id="Static01" taborder="1" top="17" width="160" height="43" right="40" cssclass="sta_WF_footerLogo02"/>
+              <Static id="Static02" taborder="2" text="서울시 강남구 봉은사로 617 | 대표이사: 조강희 | 사업자등록번호: 211-86-61993 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" cssclass="sta_WF_footerAddress" right="20.23%"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" width="18.82%"/>
+              <Static id="Static01" width="18.82%"/>
+              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" width="0" left="40" top="18" height="0" visible="false"/>
+              <Static id="Static01" width="0" top="17" height="0" right="40" visible="false"/>
+              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="3" text="Div03" left="0" width="100.00%" height="180" top="1570" cssclass="div_WF_mainSite" onhscroll="Div03_onhscroll">
+          <Layouts>
+            <Layout>
+              <Button id="btnSupport" taborder="0" left="40" top="40" width="30.47%" height="100" cssclass="btn_WF_mainSite01" onclick="fnGoSite"/>
+              <Button id="btnPlaynexa" taborder="1" left="btnSupport:15" top="40" width="30.47%" height="100" cssclass="btn_WF_mainSite02" onclick="fnGoSite"/>
+              <Button id="btnTobeTong" taborder="2" top="40" height="100" left="btnPlaynexa:15" right="40" cssclass="btn_WF_mainSite03" onclick="fnGoSite"/>
+              <Static id="Static00" taborder="3" left="btnSupport:-47" top="78" height="25" cssclass="sta_WF_mainSiteimg" text="" width="15"/>
+              <Static id="Static01" taborder="4" left="btnPlaynexa:-47" top="78" height="25" cssclass="sta_WF_mainSiteimg" text="" width="15"/>
+              <Static id="Static02" taborder="5" left="btnTobeTong:-47" top="78" height="25" cssclass="sta_WF_mainSiteimg" text="" width="15"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" left="btnSupport:-32" top="78" width="15" height="25"/>
+              <Button id="btnPlaynexa" left="btnSupport:10" top="40" width="30.3%" height="100"/>
+              <Button id="btnTobeTong" left="btnPlaynexa:10" top="40" height="100" width="30.3%"/>
+              <Button id="btnSupport" width="30.3%" left="30" top="40" height="100"/>
+              <Static id="Static01" left="btnPlaynexa:-32" top="78" width="15" height="25"/>
+              <Static id="Static02" left="btnTobeTong:-32" top="78" width="15" height="25"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" left="btnSupport:-46" top="48" width="15" height="25"/>
+              <Button id="btnTobeTong" left="20" top="200" height="80" right="20"/>
+              <Static id="Static01" left="btnPlaynexa:-46" top="138" width="15" height="25"/>
+              <Static id="Static02" left="btnTobeTong:-47" top="228" width="15" height="25"/>
+              <Button id="btnPlaynexa" left="20" top="110" height="80" right="20"/>
+              <Button id="btnSupport" height="80" left="20" top="20" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divBody" taborder="4" text="Div04" left="0" top="570" width="100.00%" height="1000" cssclass="div_WF_mainContent">
+          <Layouts>
+            <Layout>
+              <Div id="divMain01" taborder="0" text="Div" left="41" top="22" width="22.81%" height="130" background="#ffffff">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Daily" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="1" text="0" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="2" text="5.6%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData02"/>
+                    <Div id="divColunmChart" taborder="3" text="Div00" left="149" top="55" height="55" right="10"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain02" taborder="1" text="Div" left="divMain01:10" top="22" width="22.81%" height="130" background="#ffffff">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Weekly" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="1" text="394" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="2" text="6.8%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                    <Div id="divColunmChart" taborder="3" text="Div00" left="149" top="55" height="55" right="10"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain03" taborder="2" text="Div" left="divMain02:10" top="22" width="22.81%" height="130" background="#ffffff">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Total Views" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="1" text="708" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="2" text="13.8%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                    <Div id="divColunmChart" taborder="3" text="Div00" left="149" top="55" height="55" right="10"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain04" taborder="3" left="divMain03:10" top="22" height="130" background="#ffffff" right="40">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Average" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="1" text="612" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="2" left="25" top="94" width="89" height="23" text="13.8%"/>
+                    <Div id="divColunmChart" taborder="3" text="Div00" left="149" top="55" height="55" right="15"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain05" taborder="4" text="Div" left="41" top="162" width="60.94%" height="450" background="#ffffff">
+                <Layouts>
+                  <Layout>
+                    <Div id="divChart" taborder="1" left="12" top="54" height="376" right="38"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Div id="divChart" left="12" top="24" height="226" right="28"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divMain06" taborder="5" text="Div" top="162" background="#ffffff" height="450" left="divMain05:10" right="40">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="1" text="Weekly Report" left="20" top="20" width="151" height="52" cssclass="sta_WF_chartText"/>
+                    <Div id="divChart" taborder="1" left="0" top="0" right="0" bottom="0" text=""/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                    <Div id="divChart" left="0" top="30" right="0" bottom="0"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divMain07" taborder="6" text="Div" left="40" top="623" width="46.48%" height="350" background="#ffffff">
+                <Layouts>
+                  <Layout>
+                    <Div id="divChart" taborder="1" text="Div00" left="10" top="50" height="290" right="30"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Div id="divChart" left="10" top="20" height="210" right="30"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divMain08" taborder="7" text="Div" top="623" height="350" background="#ffffff" left="divMain07:10" right="40" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Capacity Usage" left="20" top="20" width="151" height="52" cssclass="sta_WF_chartText"/>
+                    <Div id="divChart" taborder="1" text="Div00" left="42" top="78" height="410" right="59"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                    <Div id="divChart" left="0" top="50" right="0" bottom="-110"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+            <Layout name="Layout0">
+              <Div id="divMain06" left="30" top="762" height="450" right="30"/>
+              <Div id="divMain04" left="divMain03:10" top="162" height="130" right="30"/>
+              <Div id="divMain03" left="30" top="162" width="44.71%" height="130"/>
+              <Div id="divMain02" top="22" height="130" left="divMain01:10" right="30"/>
+              <Div id="divMain07" left="30" top="1222" width="46.24%" height="350"/>
+              <Div id="divMain08" left="divMain07:12" top="1222" height="350" right="30"/>
+              <Div id="divMain05" left="30" top="302" height="450" right="30"/>
+              <Div id="divMain01" left="30" top="22" height="130" width="44.71%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Div id="divMain02" left="20" top="152" height="120" maxwidth="" right="20"/>
+              <Div id="divMain03" left="20" top="282" height="120" maxwidth="" right="20"/>
+              <Div id="divMain04" text="" left="20" top="412" height="120" right="20" maxwidth=""/>
+              <Div id="divMain06" left="20" top="812" height="250" right="20"/>
+              <Div id="divMain08" left="20" top="1322" height="250" right="20"/>
+              <Div id="divMain07" height="240" left="20" top="1072" right="20"/>
+              <Div id="divMain05" left="20" top="542" height="260" right="20"/>
+              <Div id="divMain01" left="20" top="22" height="120" maxwidth="" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btn_menu" taborder="5" left="20" top="20" width="80" height="80" cssclass="btn_WF_mainFloat" onclick="divMainVisual_btn_menu_onclick" text=""/>
+      </Layout>
+      <Layout name="Layout0" width="850" height="2430" mobileorientation="portrait">
+        <Div id="Div02" left="0" top="2350" width="100.00%" height="80"/>
+        <Div id="Div03" left="0" top="2170" width="100.00%" height="180"/>
+        <Div id="divBody" left="0" top="570" width="100.00%" height="1600"/>
+      </Layout>
+      <Layout name="Layout1" width="450" height="2270" mobileorientation="portrait">
+        <Div id="Div01" visible="true" height="0" left="0" top="280" width="100.00%"/>
+        <Div id="divBody" left="0" top="280" width="100.00%" height="1600" text="Div04"/>
+        <Div id="divMainVisual" height="280" left="0" top="0" right="0" text=""/>
+        <Div id="Div02" left="0" top="2180" width="100.00%" height="90"/>
+        <Div id="Div03" left="0" top="1880" width="100.00%" height="300"/>
+        <Button id="btn_menu" left="5" top="5" width="80" height="80"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Main
+*  @FileName  Main.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.fvStartNum1 = 0;
+this.fvStartNum2 = 0;
+this.fvStartNum3 = 0;
+this.fvStartNum4 = 0;
+
+this.fvDuration = 70;
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면로드 시 MegaMenu를 생성하고 애니메이션을 설정한다.
+*/
+this.Main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	nexacro._OnceCallbackTimer.callonce(this, function() {
+		//메인화면에 팝업 div를 생성해서 메가 메뉴를 보여준다.
+		this.gfnCreateMegaMenu(obj);
+		
+		//애니메이션
+		//this.fnCreateAnimation();
+		this.divBody.form.divMain01.form.staNumber._orgNum = 63;
+		this.divBody.form.divMain02.form.staNumber._orgNum = this.divBody.form.divMain02.form.staNumber.text;
+		this.divBody.form.divMain03.form.staNumber._orgNum = this.divBody.form.divMain03.form.staNumber.text;
+		this.divBody.form.divMain04.form.staNumber._orgNum = this.divBody.form.divMain04.form.staNumber.text;
+		
+		this.setTimer(1,5);
+		this.setTimer(9999, 700);
+		this.setTimer(6666,5000);
+	
+		this.divBody.form.divMain01.form.divColunmChart.set_url("mainChart::Column01.xfdl");
+		this.divBody.form.divMain02.form.divColunmChart.set_url("mainChart::Column02.xfdl");
+		this.divBody.form.divMain03.form.divColunmChart.set_url("mainChart::Column03.xfdl");
+		this.divBody.form.divMain04.form.divColunmChart.set_url("mainChart::Column04.xfdl");
+		this.divBody.form.divMain05.form.divChart.set_url("mainChart::SimpleArea.xfdl");
+		this.divBody.form.divMain06.form.divChart.set_url("mainChart::SelectPie.xfdl");
+		this.divBody.form.divMain07.form.divChart.set_url("mainChart::StackedColumn.xfdl");
+		this.divBody.form.divMain08.form.divChart.set_url("mainChart::GaugeChart.xfdl");
+		
+		nexacro.getApplication().mainframe.VFrameSet.Top.set_formurl("frame::Top.xfdl");
+		nexacro.getApplication().mainframe.VFrameSet.HFrameSet.Left.set_formurl("frame::Left.xfdl");
+		nexacro.getApplication().mainframe.VFrameSet.HFrameSet.VFrameSet00.Tab.set_formurl("frame::Tab.xfdl");
+		
+		if(system.navigatorname != "nexacro")
+		{
+			document.body.style.background="none";
+			hide();
+		}
+	}, 10);
+	//this.setTimer(7777,10);
+};
+
+
+/**
+* fnMoveAnimation : 애니메이션 Interpolation 함수
+* @param {Number}  t	- Timer Index
+* @param {Number}  b	- 0
+* @param {Number}  c	- 초기값 ( 높이 )
+* @param {Number}  d	- Timer Max
+* @return : 위치값
+* @example :  
+*/
+this.fnMoveAnimation = function (t, b, c, d) 
+{
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t + b;
+	t -= 2;
+	return c/2*(t*t*t + 2) + b;
+};
+
+/**
+ * @description MegaMenu를 생성한다.
+*/
+this.fvCnt=1;
+this.fvMainImgScrollPos = 0;
+this.Main_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	var nNum = 0;
+	
+	if(e.timerid == 6666)
+	{
+		var stepIndex = this.divMainVisual.form.getStepIndex();
+		stepIndex = nexacro.toNumber(stepIndex) + 1;
+		
+		if(stepIndex > 2)
+		{
+			stepIndex = 0;
+		}
+		this.divMainVisual.form.setStepIndex(stepIndex);
+	}
+	
+	if(e.timerid == 7777)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvMainImgScrollPos, 0, 1280, this.fvDuration));
+		this.divMainVisual.form.hscrollbar.set_pos(nNum);
+		this.fvMainImgScrollPos++;
+	}
+	
+	if(e.timerid == 9999)
+	{
+		this.fvCnt++;
+		
+		this.setTimer(this.fvCnt,10);
+		
+		if(this.fvCnt > 3)
+		{
+			this.killTimer(9999);
+		}
+	}
+	
+	if(e.timerid == 1)
+	{	
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum1, 0, this.divBody.form.divMain01.form.staNumber._orgNum, this.fvDuration));
+		if(nNum >  this.divBody.form.divMain01.form.staNumber._orgNum)
+		{
+			this.killTimer(1);
+			this.fvStartNum1 = 0;
+			return;
+		}
+		this.divBody.form.divMain01.form.staNumber.set_text(nNum);
+		this.fvStartNum1++;
+	}	
+	else if(e.timerid == 2)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum2, 0, this.divBody.form.divMain02.form.staNumber._orgNum, this.fvDuration));
+		if(nNum > this.divBody.form.divMain02.form.staNumber._orgNum)
+		{
+			this.killTimer(2);
+			this.fvStartNum2 = 0;
+			return;
+		}
+		this.divBody.form.divMain02.form.staNumber.set_text(nNum);
+		this.fvStartNum2++;
+	}
+	else if(e.timerid == 3)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum3, 0, this.divBody.form.divMain03.form.staNumber._orgNum, this.fvDuration));
+		if(nNum > this.divBody.form.divMain03.form.staNumber._orgNum)
+		{
+			this.killTimer(3);
+			this.fvStartNum3 = 0;
+		}
+		this.divBody.form.divMain03.form.staNumber.set_text(nNum);
+		this.fvStartNum3++;
+	}
+	else if(e.timerid == 4)
+	{
+		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum4, 0, this.divBody.form.divMain04.form.staNumber._orgNum, this.fvDuration));
+		if( nNum == this.divBody.form.divMain04.form.staNumber._orgNum)
+		{
+			this.fvStartNum4 = 0;
+			this.killTimer(4,10);
+		}
+		this.divBody.form.divMain04.form.staNumber.set_text(nNum);
+		this.fvStartNum4++;
+	}
+};
+
+/**
+ * @description MegaMenu를 생성한다.
+*/
+this.Main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
+{
+	if(e.pos > 0 && e.pos < 120)
+	{
+		this.setTimer(1,5);
+		this.fvCnt=1;
+		this.setTimer(9999, 700);
+	}
+	else if(e.pos > 480 && e.pos < 600)
+	{
+		this.divBody.form.divMain05.form.divChart.form.BasicChart00.runAnimation();
+		this.divBody.form.divMain06.form.divChart.form.PieChart00.runAnimation();
+	}
+	else if(e.pos > 840 && e.pos < 960)
+	{
+		this.divBody.form.divMain07.form.divChart.form.BasicChart00.runAnimation();
+		//this.divBody.form.divMain08.form.divChart.form.GaugeChart01.runAnimation();
+	}
+};
+
+
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.fnCreateAnimation = function()
+{
+	var sAniId = "mainAni01";
+	var	objAni = new nexacro.Animation( sAniId, this);
+		
+	this.addChild(sAniId, objAni);
+	
+	objAni.set_duration( 1000 );
+	objAni.set_easing( "easeinoutsine" );
+	objAni.addTarget(sAniId , this.divBody.form.divMain01.form.staNumber, "text:999");
+	objAni.setEventHandler("onrun", this.Ani_onrun, this);
+	//objAni.addEventHandler("oncomplete",this.Animation_oncomplete, this);
+	
+	objAni.play();
+}
+
+this.Ani_onrun = function(obj,e)
+{
+	this.divBody.form.divMain01.form.staNumber.set_text(nexacro.round(this.divBody.form.divMain01.form.staNumber.text));
+}
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 팝업메뉴를 띄어준다.
+*/
+this.divMainVisual_btn_menu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	this.gfnOpenMegaMenu(this);
+};
+
+
+/**
+ * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+*/
+this.QuickMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var menuId = String(obj.name).replace("btn_","");
+	var type = "Quick";
+	
+	this.gfnOpenMenu(menuId, type);
+};
+
+/**
+ * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+*/
+this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	//nexacro 브라우저에서 메소드 실행 시 시스템에 설정된 기본 브라우저가 아닌 인터넷 익스플로러가 실행됩니다
+	switch(obj.name)
+	{
+		case "btnSupport":
+			system.execBrowser("http://support.tobesoft.co.kr/Support/index.html");
+			break;
+			
+		case "btnPlaynexa":
+			system.execBrowser("https://www.playnexacro.com");
+			break;
+			
+		case "btnTobeTong":
+			system.execBrowser("http://tobetong.com/");
+			break;
+	}
+};]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

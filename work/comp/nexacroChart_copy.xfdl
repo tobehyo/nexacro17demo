@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="nexacroChart" width="980" height="720" titletext="nexacro Chart" stepshowtype="always" stepitemsize="0">
+    <Layouts>
+      <Layout stepcount="2" screenid="desktop" width="980" height="720">
+        <Div id="divMenu" taborder="0" text="menu" left="0" top="81" bottom="20" maxwidth="" url="comp::LeftMenu.xfdl" right="20"/>
+        <Div id="divChart" taborder="1" top="50" bottom="20" left="0" maxheight="" positionstep="1" right="20" async="false">
+          <Layouts>
+            <Layout/>
+            <Layout name="Layout0"/>
+          </Layouts>
+        </Div>
+        <Static id="Static60" taborder="3" text="별도 라이선스가 제공되는 nexacro17용 확장 차트 컴포넌트 입니다. Basic, Pie, Bubble 및 Radar, Gauge(지원예정) Chart를 제공합니다. Chart 메뉴를 선택하여 확인해 주세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Button id="btnMove" taborder="2" text="메뉴로 이동" left="0" top="0" width="85" height="30" cssclass="btn_cp_popMenu" positionstep="1" onclick="btnMove_onclick"/>
+      </Layout>
+      <Layout name="Layout0" width="480" height="1060" mobileorientation="landscape" screenid="mobile" stepcount="2">
+        <Div id="divMenu" left="20" top="181" right="20" bottom="20"/>
+        <Static id="Static60" left="20" top="20" height="140" right="20"/>
+        <Div id="divChart" positionstep="1" left="10" top="170" right="30" bottom="-40" text=""/>
+        <Button id="btnMove" positionstep="1" left="20" top="20" width="140" height="50"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    nexacroChart.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/17
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/17          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnOpenForm : 사용자 설정 이벤트
+* @param {String}  menuId	- 메뉴 ID
+* @param {String}  menuNm	- 메뉴명
+* @return : N/A
+* @example :  
+*/
+this.fnOpenForm = function (url)
+{
+	if ( url == null || url == "" ) 
+		return;
+	
+	if (this.getStepCount() > 0)
+	{
+		this.setStepIndex(1);
+	}
+	this.divChart.set_url(url);//여기서 화면이 죽어버린다..
+};
+
+ 
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 버튼 click이벤트
+*/
+this.btnMove_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.setStepIndex(0);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="gdsRainfall">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="rainfall" type="FLOAT" size="256"/>
+          <Column id="mean" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">ABBOTSFORD</Col>
+            <Col id="rainfall">69</Col>
+            <Col id="mean">66.2</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">CONCORD</Col>
+            <Col id="rainfall">49.6</Col>
+            <Col id="mean">48.6</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY BOTANIC GARDENS</Col>
+            <Col id="rainfall">94.1</Col>
+            <Col id="mean">68.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">CHATSWOOD BOWLING CLUB</Col>
+            <Col id="rainfall">78</Col>
+            <Col id="mean">51</Col>
+          </Row>
+          <Row>
+            <Col id="name">CONCORD GOLF CLUB</Col>
+            <Col id="rainfall">11.2</Col>
+            <Col id="mean">59.1</Col>
+          </Row>
+          <Row>
+            <Col id="name">MARRICKVILLE GOLF CLUB</Col>
+            <Col id="rainfall">56</Col>
+            <Col id="mean">55.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY AIRPORT AMO</Col>
+            <Col id="rainfall">66.6</Col>
+            <Col id="mean">60.3</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">PENNANT HILLS</Col>
+            <Col id="rainfall">53.2</Col>
+            <Col id="mean">56.8</Col>
+          </Row>
+          <Row>
+            <Col id="name">RANDWICK BOWLING CLUB</Col>
+            <Col id="rainfall">122.6</Col>
+            <Col id="mean">65.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SANS SOUCI</Col>
+            <Col id="rainfall">66</Col>
+            <Col id="mean">61.5</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">TERREY HILLS AWS</Col>
+            <Col id="rainfall">83.4</Col>
+            <Col id="mean">63.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY</Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">65.5</Col>
+          </Row>
+          <Row>
+            <Col id="name">STRATHFIELD GOLF CLUB</Col>
+            <Col id="rainfall">36</Col>
+            <Col id="mean">45.3</Col>
+          </Row>
+          <Row>
+            <Col id="name">LUCAS HEIGHTS</Col>
+            <Col id="rainfall">58.9</Col>
+            <Col id="mean">50.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">CASTLE COVE</Col>
+            <Col id="rainfall">101</Col>
+            <Col id="mean">69.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">PARRAMATTA NORTH</Col>
+            <Col id="rainfall">33.6</Col>
+            <Col id="mean">52.4</Col>
+          </Row>
+          <Row>
+            <Col id="name">COLLAROY</Col>
+            <Col id="rainfall">91.4</Col>
+            <Col id="mean">66.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">BANKSTOWN AIRPORT AWS</Col>
+            <Col id="rainfall">53.4</Col>
+            <Col id="mean">43.6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="gdsCountryLitres">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="value" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+          <Column id="valuedata" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">Czech Republic</Col>
+            <Col id="value">356.9</Col>
+            <Col id="select"/>
+            <Col id="data">test1</Col>
+            <Col id="valuedata">100</Col>
+          </Row>
+          <Row>
+            <Col id="country">Ireland</Col>
+            <Col id="value">54</Col>
+            <Col id="select"/>
+            <Col id="data">tes2</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Germany</Col>
+            <Col id="value">115.8</Col>
+            <Col id="data">test3</Col>
+            <Col id="valuedata">200.11</Col>
+          </Row>
+          <Row>
+            <Col id="country">Australia</Col>
+            <Col id="value">109.9</Col>
+            <Col id="select"/>
+            <Col id="data">test4</Col>
+            <Col id="valuedata">19.1</Col>
+          </Row>
+          <Row>
+            <Col id="country">Austria</Col>
+            <Col id="value">108.3</Col>
+            <Col id="select">1</Col>
+            <Col id="data">test5</Col>
+            <Col id="valuedata">30.12</Col>
+          </Row>
+          <Row>
+            <Col id="country">UK</Col>
+            <Col id="value">65</Col>
+            <Col id="select"/>
+            <Col id="data">test6</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Belgium</Col>
+            <Col id="value">110</Col>
+            <Col id="select"/>
+            <Col id="data">test7</Col>
+            <Col id="valuedata">19.100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="gdsCostProfit">
+        <ColumnInfo>
+          <Column id="category" type="STRING" size="256"/>
+          <Column id="profit" type="FLOAT" size="256"/>
+          <Column id="cost" type="FLOAT" size="256"/>
+          <Column id="revenue" type="FLOAT" size="256"/>
+          <Column id="profit1" type="FLOAT" size="256"/>
+          <Column id="cost1" type="FLOAT" size="256"/>
+          <Column id="revenue1" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="category">1</Col>
+            <Col id="profit">600</Col>
+            <Col id="cost">700</Col>
+            <Col id="revenue">9999</Col>
+            <Col id="profit1">400</Col>
+            <Col id="cost1">200</Col>
+            <Col id="revenue1">8000</Col>
+          </Row>
+          <Row>
+            <Col id="category">2</Col>
+            <Col id="profit">1000</Col>
+            <Col id="cost">1400</Col>
+            <Col id="revenue">5500</Col>
+            <Col id="profit1">2200</Col>
+            <Col id="cost1">4000</Col>
+            <Col id="revenue1">4040</Col>
+          </Row>
+          <Row>
+            <Col id="category">3</Col>
+            <Col id="profit">1500</Col>
+            <Col id="cost">1550</Col>
+            <Col id="revenue">2200</Col>
+            <Col id="profit1">1900</Col>
+            <Col id="cost1">2000</Col>
+            <Col id="revenue1">3000</Col>
+          </Row>
+          <Row>
+            <Col id="category">4</Col>
+            <Col id="profit">2200</Col>
+            <Col id="cost">1300</Col>
+            <Col id="revenue">1900</Col>
+            <Col id="profit1">50</Col>
+            <Col id="cost1">660</Col>
+            <Col id="revenue1">200</Col>
+          </Row>
+          <Row>
+            <Col id="category">5</Col>
+            <Col id="profit">1400</Col>
+            <Col id="cost">900</Col>
+            <Col id="revenue">9900</Col>
+            <Col id="profit1">3000</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">500</Col>
+          </Row>
+          <Row>
+            <Col id="category">6</Col>
+            <Col id="profit">2000</Col>
+            <Col id="cost">500</Col>
+            <Col id="revenue">27000</Col>
+            <Col id="profit1">80</Col>
+            <Col id="cost1">2900</Col>
+            <Col id="revenue1">3050</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="profit">1800</Col>
+            <Col id="category">7</Col>
+            <Col id="cost">1400</Col>
+            <Col id="revenue">8000</Col>
+            <Col id="profit1">2500</Col>
+            <Col id="cost1">800</Col>
+            <Col id="revenue1">2000</Col>
+          </Row>
+          <Row>
+            <Col id="category">8</Col>
+            <Col id="profit">2500</Col>
+            <Col id="cost">800</Col>
+            <Col id="revenue">5700</Col>
+            <Col id="profit1">3000</Col>
+            <Col id="cost1">1900</Col>
+            <Col id="revenue1">1900</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">9</Col>
+            <Col id="profit">2550</Col>
+            <Col id="cost">600</Col>
+            <Col id="revenue">3000</Col>
+            <Col id="profit1">1500</Col>
+            <Col id="cost1">1300</Col>
+            <Col id="revenue1">440</Col>
+          </Row>
+          <Row>
+            <Col id="category">10</Col>
+            <Col id="profit">1600</Col>
+            <Col id="cost">1200</Col>
+            <Col id="revenue">5000</Col>
+            <Col id="profit1">8989</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">200</Col>
+          </Row>
+          <Row>
+            <Col id="category">11</Col>
+            <Col id="profit">650</Col>
+            <Col id="cost">550</Col>
+            <Col id="revenue">3087</Col>
+            <Col id="profit1">2000</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">500</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

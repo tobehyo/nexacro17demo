@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="ExamPopupM" width="480" height="768" titletext="팝업 샘플" onload="form_onload">
+    <Layouts>
+      <Layout height="768" mobileorientation="portrait" width="480">
+        <Button id="btn_modal" taborder="0" text="모달 팝업" left="30" top="60" width="150" height="50" onclick="btn_modal_onclick"/>
+        <Button id="btn_modalFull" taborder="1" text="모달 풀팝업" left="30" top="120" width="150" height="50" onclick="btn_modalFull_onclick"/>
+        <Button id="btn_modaless" taborder="2" text="모달리스 팝업" left="30" top="180" width="150" height="50" onclick="btn_modaless_onclick"/>
+        <Button id="btn_sysAlert" taborder="3" text="System Alert" left="230" top="62" width="230" height="50" onclick="btn_sysAlert_onclick"/>
+        <Button id="btn_sysConfirm" taborder="4" text="System Confirm" left="230" top="117" width="230" height="50" onclick="btn_sysConfirm_onclick"/>
+        <Button id="btn_userAlert" taborder="5" text=" User Alert" left="230" top="187" width="230" height="50" onclick="btn_userAlert_onclick"/>
+        <Button id="btn_userConfirm" taborder="6" text="User Confirm" left="230" top="242" width="230" height="50" onclick="btn_userConfirm_onclick"/>
+        <TextArea id="txt_output" taborder="7" top="330" bottom="10" right="10" left="10"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/***************************************************************************
+ * Program ID    : PopupSample.xfdl
+ * Program Name  : 팝업 샘플페이지
+ * Author        : 양동주
+ * Created On    : 2019.07
+ * 개    요 	 :
+ *
+ * =========================================================================
+ * 변경일자     수정자    내    용
+ * =========================================================================
+
+ **************************************************************************/
+
+//**************************************************************************
+// [ PART 1 ] Form에서 Include 할 라이브러리(xjs)파일 정의
+//**************************************************************************
+//**************************************************************************
+// [ PART 2 ] Form에서 사용될 전역변수를 선언
+//**************************************************************************
+this.objApp = nexacro.getApplication();
+
+//**************************************************************************
+// [ PART 3 ] Form Event 정의
+//**************************************************************************
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	
+};
+/************************************************************************************************
+// [ PART 4 ] Transaction 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+// [ PART 5 ] 사용자 Function 영역
+ ************************************************************************************************/
+ this.fn_close = function()
+{
+    trace("fnClose 호출");
+}
+
+/**
+* fn_popupCallback : popup callback
+* @param  : strId		   - [string]popup id
+* @param  : strVal		   - [string]return val
+* @return : N/A
+*/
+
+ this.fn_popupCallback = function(strId, strVal)
+ {
+	//trace(" strId : " + strId + " strVal : " + strVal);
+	this.txt_output.insertText( "\n"+"fn_popupCallback() - "+"\n"+"팝업ID : " + strId + "\n" + "리턴값 : " + strVal);
+	
+	// json Object 리턴받는 예제
+	if (!this.gfnIsNull(strVal)) {
+		var objRet = JSON.parse(strVal);
+		
+		this.txt_output.insertText("\n" + " - CD_ID : " + objRet.CD_ID);
+		this.txt_output.insertText("\n" + " - CD_NM : " + objRet.CD_NM + "\n");
+	}
+ };
+ /************************************************************************************************
+// [ PART 6 ] Component Event 영역
+ ************************************************************************************************/
+
+this.btn_modal_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+
+	var sPopupId = "modalpopup"
+	var sUrl = "sample::ExamPopupSubM.xfdl";
+	var oArg = {paramTitle:"사용자구분"};
+	var oParam	= {cdGrpId : "3002", srchValue : "직원"};
+	var sPopupCallBack = "fn_popupCallback";
+	var oOption = {width:410,height:800};
+	this.gfn_openPopupM(sPopupId,sUrl,oArg,oParam,sPopupCallBack,oOption);
+
+};
+
+this.btn_modalFull_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+	var sPopupId = "modalfullpopup"
+	var sUrl = "sample::ExamPopupSubM.xfdl";
+	var oArg = {paramTitle:"사용자구분"};
+	var oParam	= {cdGrpId : "3002", srchValue : "직원"};
+	var sPopupCallBack = "fn_popupCallback";
+	var oOption = {};
+	this.gfn_openPopupM(sPopupId,sUrl,oArg,oParam,sPopupCallBack,oOption);
+	
+};
+
+this.btn_modaless_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objApp = nexacro.getApplication();
+	//모바일앱이면
+	/*
+    if (objApp.gvOs.indexOf("AND") > -1 || objApp.gvOs.indexOf("IOS") > -1 || system.navigatorname.indexOf("nexacro") > -1)
+    {
+        alert("현재 브라우저에서는 지원하지 않습니다");
+        return;
+    }
+	*/
+
+	var sPopupId = "modelessPopup"
+	var sUrl = "sample::ExamPopupSubM.xfdl";
+	var oArg = {paramTitle:"사용자구분"};
+	var oParam	= {cdGrpId : "3002", srchValue : ""};
+	var sPopupCallBack = "fn_popupCallback";
+	var oOption = {popupType:"modeless"};
+	this.gfn_openPopupM(sPopupId,sUrl,oArg,oParam,sPopupCallBack,oOption);
+};
+
+this.btn_sysAlert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.setEnvironmentVariable("evMessagePopup", "false");
+	this.alert("확인하세요");
+};
+
+this.btn_sysConfirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.setEnvironmentVariable("evMessagePopup", "false");
+	var application = nexacro.getApplication();
+	var bRtn = this.confirm("계속할까요?","타이틀테스트");
+	if(bRtn == true){
+		//alert(bRtn);
+		application.alert(bRtn,"FNC");
+	}else{
+		application.alert(bRtn,"FNC");
+		//this.alert(bRtn);
+	}
+		
+};
+
+this.btn_userAlert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.setEnvironmentVariable("evMessagePopup", "true");
+	this.gfn_alert("CM1000",["확인하세요."]);
+};
+
+this.btn_userConfirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	nexacro.setEnvironmentVariable("evMessagePopup", "true");
+	this.gfn_confirm("CM1000",["저장하시겠습니까 ?"]);	
+};
+
+
+
+
+/**
+ * @class 팝업오픈
+ * @param {String} sPopupId	- 팝업ID
+ * @param {String} sUrl	 - 팝업URL
+ * @param {String} [oArg] - 전달값
+ * @param {String} [sPopupCallBack] - 팝업콜백
+ * @param {Object} [oOption] - 팝업옵션 <br>
+ *	oOption.top : 상단 좌표 <br>
+ *	oOption.left : 좌측 좌표 <br>
+ *	oOption.width : 넓이 <br>
+ *	oOption.height : 높이 <br>
+ *	oOption.popuptype : 팝업종류(modal:showModal, modeless:application.open, modalsync:showModalSync, modalwindow:showModalWinddow) <br>
+ *	oOption.layered : 투명 윈도우 <br>
+ *	oOption.opacity : 투명도 <br>
+ *	oOption.autosize : autosize <br>
+ * @return N/A
+ * @example
+ * this.gfn_openPopupM(this);
+ */ 
+this.gfn_openPopupM = function ( sPopupId, sUrl, oArg, oParam, sPopupCallBack, oOption)
+{
+
+	if (this.gfnIsNull(oArg))     oArg = {};
+	
+	
+	var objApp  = nexacro.getApplication();
+	var nLeft = -1;
+	var nTop = -1;
+	var nWidth = -1;
+	var nHeight = -1;
+	var bShowTitle = false;	
+	var bShowStatus = false;	
+	var sPopupType = "modal";
+	var bLayered = false;
+
+	var bAutoSize = false;
+	var bResizable = false;
+	//var sPopupCallback = (this.gfnIsNull(sPopupCallback)) ? "fn_popupAfter" : sPopupCallback;
+	var sTitleText = "";
+	var sModalSize = "";	// "", full, center //가로 세로 onsize 발생시 사이즈 및 위치 변경을 위해 추가함.
+
+	for (var key in oOption) {
+       if (oOption.hasOwnProperty(key)) {
+            switch (key) 
+			{
+				case "top":				
+					nTop = parseInt(oOption[key]);
+					break;
+				case "left":
+					nLeft = parseInt(oOption[key]);
+					break;
+				case "width":
+					nWidth = parseInt(oOption[key]);
+					break;
+				case "height":
+					nHeight = parseInt(oOption[key]);
+					break;
+				case "popuptype":
+					sPopupType = oOption[key];
+					break;
+				case "layered":
+					bLayered = oOption[key];
+					break;
+				case "opacity":
+					nOpacity =oOption[key];
+					break;
+				case "autosize":
+					bAutoSize = oOption[key];
+					break;
+				case "titlebar":
+					if (""+oOption[key] == "true")	bShowTitle = true;		
+					break;
+				case "title":					
+					sTitleText = oOption[key];	
+					break;					
+			}	
+        }
+    }
+
+	var sOpenalign = "";
+	if(nLeft == -1 && nTop == -1) 
+	{		
+		sOpenalign = "center middle";
+		if (system.navigatorname == "nexacro") {
+			var bShowTitle = true; //개발을 위해 타이틀바 보이도록 임시설정
+// 			if(objApp.gvOs.indexOf("AND") > -1 || objApp.gvOs.indexOf("IOS") > -1) {
+// 				var bShowTitle = false;
+// 			}	
+			var curX = objApp.mainframe.left;
+			var curY = objApp.mainframe.top;
+		}else{
+			var curX = window.screenLeft;
+			var curY = window.screenTop;
+		}
+		
+        nLeft   =  curX + (objApp.mainframe.width / 2) - Math.round(nWidth / 2);
+	    nTop    = curY + (objApp.mainframe.height / 2) - Math.round(nHeight / 2) ;		
+		
+	}else{
+		nLeft   =  this.getOffsetLeft() + nLeft;
+		nTop   =  this.getOffsetTop() + nTop;
+	}
+		
+	if(nWidth == -1 || nHeight == -1)
+	{	    
+		if (nWidth == -1 && nHeight == -1) 	//l,t,w,h 모두 기입하지 않으면 full
+		{
+			sModalSize = "full";
+            if (nWidth == -1 || nWidth > nexacro.getApplication().mainframe.width)
+            {	
+                nWidth = nexacro.getApplication().mainframe.width;
+            }
+            
+            if (nHeight == -1 || nHeight > nexacro.getApplication().mainframe.height)
+            {
+                nHeight = nexacro.getApplication().mainframe.height;
+            }            
+		}
+		else 
+		{
+			bAutoSize = true;
+			sModalSize = "center";
+		}		
+	}
+	
+	var objParentFrame = this.getOwnerFrame();
+	
+	// modeless를 위해 팝업 Type 및 callBack함수 지정
+	if (this.gfnIsNull(oArg))			oArg = {};
+	if (this.gfnIsNull(oParam))		oParam = {};
+	
+	oArg["argParam"]		= oParam;
+	
+    if(sPopupType == "modeless")
+    {
+        var sOpenStyle= "showtitlebar=true showstatusbar=false showontaskbar=true showcascadetitletext=false resizable=true autosize="+bAutoSize+" titletext="+sTitleText;
+		var arrPopFrame = nexacro.getPopupFrames();
+
+		if (arrPopFrame[sPopupId]) {	
+			if (system.navigatorname == "nexacro") {
+				arrPopFrame[sPopupId].setFocus();
+			} else {	
+				arrPopFrame[sPopupId]._getWindowHandle().focus();
+			}
+		}
+		else {
+			nexacro.open(sPopupId,sUrl,objParentFrame,{"arguments" : oArg},sOpenStyle,nLeft, nTop, nWidth, nHeight, this);
+		}
+    }
+    else
+    {
+		if(bShowTitle == true) nHeight += 50;
+		newChild = new nexacro.ChildFrame;		
+		newChild.init(sPopupId, nLeft, nTop, nWidth, nHeight, null, null, sUrl);
+		
+		newChild._modaltype = sModalSize;
+		
+		newChild.set_dragmovetype("none");
+//		newChild.set_showcascadetitletext(false);
+		newChild.set_showtitlebar(bShowTitle);    //titlebar는 안보임
+		newChild.set_autosize(bAutoSize);	
+		newChild.set_resizable(bResizable);    //resizable 안됨
+		if(!this.gfnIsNull(sTitleText)) newChild.set_titletext(sTitleText);
+		newChild.set_showstatusbar(bShowStatus);    //statusbar는 안보임
+		newChild.set_openalign(sOpenalign);
+//		newChild.set_layered(bLayered);
+//		newChild.set_overlaycolor("RGBA(0, 0, 0, 0.2)");
+//		newChild.showModal(objParentFrame, oArg, this, this[sPopupCallback]);
+		newChild.showModal(sPopupId, objParentFrame, {"arguments" : oArg}, this, sPopupCallBack);
+//         newChild.showModal(objParentFrame, oArg, this, function(svcid, variant) {
+// 		trace("부모3? " + objParentFrame );
+//             if(!this.gfnIsNull(sPopupCallBack))	
+//             {
+//                 var p_variant = this.gfnIsNull(this._variant) ? variant : this._variant;
+//                 this._variant = "";
+//                 
+//                 if(typeof sPopupCallBack == "function" )
+//                 {
+//                     sPopupCallBack.call(this, sPopupId, p_variant);
+//                 }
+//                 else if(typeof sPopupCallBack == "string")
+//                 {
+//                     if(!this.gfnIsFunction(this[sPopupCallBack]))return;
+//                     this[sPopupCallBack].call(this, sPopupId, p_variant);
+//                 }
+//             }
+//         });	
+        
+		//newChild.titlebar.closebutton.set_visible(false);	//close버튼 visible false 처리
+		//newChild.style.set_border("2 solid #24322b");
+		//newChild.style.set_bordertype("round 10 10");
+		//newChild.style.set_background("white");    
+		//newChild.style.set_opacity(nOpacity);
+    }
+	
+};
+
+
+/**
+ * @class	팝업 닫기 close()는 string만 리턴 되므로 공통함수로 처리함
+ * @param	{object} variant : 부모 창으로 리턴되는 object
+ * @return	N/A
+ */
+this.gfn_closeM = function(variant)
+{
+	if(this.opener && typeof variant !="string")
+	{
+		variant = this.gfnIsNull(variant) ? "" : variant;
+		this.opener._variant = variant;
+		this.close();
+	}
+	else
+	{
+		this.close(variant);
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_emp" keystring="" cancolumnchange="ds_emp_cancolumnchange" onrowsetchanged="ds_emp_onrowsetchanged" onrowposchanged="ds_emp_onrowposchanged">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="10"/>
+          <Column id="FULL_NAME" type="STRING" size="50"/>
+          <Column id="DEPT_CD" type="STRING" size="10"/>
+          <Column id="POS_CD" type="STRING" size="10"/>
+          <Column id="HIRE_DATE" type="DATE" size="10"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="GENDER" type="STRING" size="10"/>
+          <Column id="MARRIED" type="STRING" size="10"/>
+          <Column id="MEMO" type="STRING" size="10"/>
+          <Column id="CHK" type="STRING" size="1"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">Olivia</Col>
+            <Col id="DEPT_CD">01</Col>
+            <Col id="POS_CD">03</Col>
+            <Col id="HIRE_DATE">20101003</Col>
+            <Col id="SALARY">83000</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">true</Col>
+            <Col id="MEMO">ivory</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">AA002</Col>
+            <Col id="FULL_NAME"/>
+            <Col id="DEPT_CD">02</Col>
+            <Col id="POS_CD">04</Col>
+            <Col id="HIRE_DATE">20051011</Col>
+            <Col id="SALARY">76000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">false</Col>
+            <Col id="MEMO">greenyellow</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID"/>
+            <Col id="FULL_NAME">Jackson</Col>
+            <Col id="DEPT_CD">03</Col>
+            <Col id="POS_CD">03</Col>
+            <Col id="HIRE_DATE">20070206</Col>
+            <Col id="SALARY">95000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">true</Col>
+            <Col id="MEMO">aliceblue</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB0</Col>
+            <Col id="FULL_NAME">Maia</Col>
+            <Col id="DEPT_CD">04</Col>
+            <Col id="POS_CD">02</Col>
+            <Col id="HIRE_DATE">20090512</Col>
+            <Col id="SALARY">60000</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">false</Col>
+            <Col id="MEMO">ivory</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="FULL_NAME">Adam</Col>
+            <Col id="DEPT_CD">01</Col>
+            <Col id="POS_CD">04</Col>
+            <Col id="HIRE_DATE">20010109</Col>
+            <Col id="SALARY">88000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">true</Col>
+            <Col id="MEMO">greenyellow</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">Ray</Col>
+            <Col id="DEPT_CD">02</Col>
+            <Col id="POS_CD">03</Col>
+            <Col id="HIRE_DATE">20160202</Col>
+            <Col id="SALARY">60000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">true</Col>
+            <Col id="MEMO">lightpink</Col>
+            <Col id="CHK">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

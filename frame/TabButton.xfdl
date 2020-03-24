@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="TabButton" width="200" height="31" titletext="New Form" onload="form_onload">
+    <Layouts>
+      <Layout height="31" mobileorientation="landscape" width="200">
+        <Button id="btnTab" taborder="0" text="메뉴명" left="0" top="0" right="0" bottom="0" cssclass="btn_MDI_TabFix" enable="true" visible="true" onclick="btnTab_onclick"/>
+        <Button id="staClose" taborder="1" top="0" width="28" cssclass="btn_MDI_TabClose" right="0" bottom="0" onclick="staClose_onclick" text=""/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > TabButton
+*  @FileName  Tab.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 onload시 처리내역(필수)
+*/
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var tabNm = String(this.parent.titletext);
+	
+	if(tabNm.length > 13)
+	{
+		tabNm = tabNm.substr(0,13) + "...";
+	}
+	
+	this.btnTab.set_text(tabNm);
+	this.btnTab.set_cssclass("btn_MDI_TabFix");
+}
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+
+/**
+ * @description 탭을 선택하면 해당 메뉴를 열어준다.
+*/
+this.btnTab_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	//WorkFrame선택
+	var objApp = nexacro.getApplication();
+	objApp.mainframe.VFrameSet.HFrameSet.VFrameSet00.Tab.form.fnInitTab();
+	this.btnTab.set_cssclass("btn_MDI_TabFix");
+	
+	var menuId = String(this.parent.name).replace("div", "");
+	
+	//화면이 있을경우 - 예외처리(frame있는데 tab버튼이 없어지는 경우 대비)
+	this.gfnOpenMenu(menuId);
+}
+
+
+/**
+ * @description 탭을 선택하면 해당 메뉴를 열어준다.
+*/
+this.staClose_onclick = function(obj:Static, e:nexacro.ClickEventInfo)
+{
+	var sMenuId = String(this.parent.name).replace("div","");
+	this.gfnCloseMenu(sMenuId);
+}]]></Script>
+  </Form>
+</FDL>

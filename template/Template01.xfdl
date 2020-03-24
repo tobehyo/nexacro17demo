@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="PMPPPO04" width="980" height="700" titletext="조회">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="0" text="h20" visible="false" left="0" right="0" height="20" bottom="0" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static00" taborder="1" text="w&#13;&#10;20" visible="false" top="0" width="20" height="699" right="0" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static12" taborder="2" text="h 45" visible="false" left="561" top="94" width="40" height="45" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static80" taborder="3" text="제조의뢰대비 제품생산현황 조회목록" usedecorate="true" cssclass="sta_WF_title01" left="0" top="110" width="400" height="23" wordWrap="english"/>
+        <Static id="Static54" taborder="4" text="h10" visible="false" left="32" top="129" width="102" height="10" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Grid id="Grid07" taborder="5" autoenter="select" left="0" top="139" right="20" bottom="20">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="150"/>
+                <Column size="120"/>
+                <Column size="150"/>
+                <Column size="254"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="200"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="28" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="normal" edittype="none" text="제조의뢰번호"/>
+                <Cell col="1" text="공장"/>
+                <Cell col="2" text="ITEM 코드"/>
+                <Cell col="3" text="ITEM 명"/>
+                <Cell col="4" text="단위"/>
+                <Cell col="5" text="의뢰수량"/>
+                <Cell col="6" text="실적수량"/>
+                <Cell col="7" text="차이량"/>
+                <Cell col="8" text="납기일자"/>
+                <Cell col="9" text="담당자"/>
+                <Cell col="10" text="특이사항"/>
+                <Cell col="11" text="수량준수"/>
+                <Cell col="12" text="실적단위"/>
+                <Cell col="13" text="상태"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="normal" edittype="none" text="99999999999-9"/>
+                <Cell col="1" text="포장1공장"/>
+                <Cell col="2" text="YDA99999999"/>
+                <Cell col="3" text="CU 카라멜맛팝콘60g(999999)"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+                <Cell col="10" text="제조의뢰 특이사항"/>
+                <Cell col="11"/>
+                <Cell col="12"/>
+                <Cell col="13"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Div id="div_Search00" taborder="6" left="0" top="0" right="20" height="94" cssclass="div_WF_SearchBg">
+          <Layouts>
+            <Layout>
+              <Static id="Static34" taborder="0" text="16" visible="false" left="0" top="6" width="16" height="34" background="rgba(251,123,123,0.47843137254901963)"/>
+              <Static id="Button00" taborder="1" text="사업" cssclass="sta_WF_SearchLabel_P" left="16" top="12" width="86" height="30" wordWrap="char"/>
+              <Static id="Button04" taborder="2" text="담당자" cssclass="sta_WF_SearchLabel" left="16" top="49" width="86" height="30" wordWrap="char"/>
+              <Combo id="Combo03" taborder="3" value="1" text="선택1" codecolumn="codecolumn" datacolumn="datacolumn" index="0" left="92" top="12" width="190" height="30" innerdataset="innerdataset">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">선택1</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">2</Col>
+                      <Col id="datacolumn">선택2</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3</Col>
+                      <Col id="datacolumn">선택3</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Static id="Button01" taborder="4" text="제조의뢰일자" cssclass="sta_WF_SearchLabel_P" left="336" top="12" width="90" height="30" wordWrap="char" onclick="div_Search00_Button01_onclick"/>
+              <Static id="Button02" taborder="5" text="제조의뢰번호" cssclass="sta_WF_SearchLabel" left="336" top="49" width="90" height="30" wordWrap="char"/>
+              <Static id="Button06" taborder="6" text="납기일자" cssclass="sta_WF_SearchLabel" left="699" top="12" width="90" height="30" wordWrap="char"/>
+              <Button id="btn_ptnr03" taborder="7" onclick="div_condition1_btn_ptnr_onclick" cssclass="btn_WF_SearchSmall" left="252" top="49" width="30" height="30"/>
+              <Edit id="ed_mtrlCd04" taborder="8" value="00000000000000000" left="451" top="49" width="150" height="30"/>
+              <Button id="btn_ptnr05" taborder="9" onclick="div_condition1_btn_ptnr_onclick" cssclass="btn_WF_SearchSmall" left="603" top="49" width="30" height="30"/>
+              <Edit id="ed_mtrlNm02" taborder="10" left="635" top="49" width="100" height="30" cssclass="readonly" readonly="true"/>
+              <Edit id="ed_mtrlCd01" taborder="11" left="92" top="49" width="158" height="30"/>
+              <Calendar id="Calendar00" taborder="12" left="798" top="12" width="150" height="30"/>
+              <Calendar id="Calendar00_00" taborder="13" left="451" top="12" width="150" height="30"/>
+              <Button id="Button00_01" taborder="14" cssclass="btn_WF_SubAction" right="10" width="80" top="49" height="30" text="조회"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="Button58" taborder="7" text="행추가" cssclass="btn_WF_add" top="104" right="98" width="75" height="30" wordWrap="char"/>
+        <Button id="Button68" taborder="8" text="업로드" cssclass="btn_WF_upload" top="104" right="270" width="79" height="30" wordWrap="char"/>
+        <Button id="Button73" taborder="9" text="다운로드" cssclass="btn_WF_download" top="104" right="176" width="91" height="30" wordWrap="char"/>
+        <Button id="Button82" taborder="10" text="행삭제" cssclass="btn_WF_delete" top="104" right="20" width="75" height="30" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.div_Search00_Button01_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>

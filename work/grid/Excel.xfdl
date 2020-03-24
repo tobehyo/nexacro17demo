@@ -1,0 +1,1337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Excel" width="727" height="1100" titletext="엑셀Import/Export" onload="Excel_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid02" cssclass="grd_excel" taborder="2" binddataset="dsOut" treeuseline="false" treeusecheckbox="false" treeuseimage="false" treeinitstatus="collapse,all" left="10" top="161" right="0" height="402" cellsizingtype="col" selecttype="area">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="40"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="구분"/>
+                <Cell col="1" rowspan="2" text="주차"/>
+                <Cell col="2" colspan="3" text="총매출"/>
+                <Cell col="5" colspan="3" text="순매출"/>
+                <Cell col="8" colspan="3" text="할인율"/>
+                <Cell col="11" colspan="3" text="증감율"/>
+                <Cell row="1" col="2" text="실적"/>
+                <Cell row="1" col="3" text="예산"/>
+                <Cell row="1" col="4" text="전년"/>
+                <Cell row="1" col="5" text="실적"/>
+                <Cell row="1" col="6" text="예산"/>
+                <Cell row="1" col="7" text="전년"/>
+                <Cell row="1" col="8" text="실적"/>
+                <Cell row="1" col="9" text="예산"/>
+                <Cell row="1" col="10" text="전년"/>
+                <Cell row="1" col="11" text="진도율"/>
+                <Cell row="1" col="12" text="예산비"/>
+                <Cell row="1" col="13" text="전년비"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="normal" edittype="none" text="bind:Column0" suppress="1" treelevel="bind:T_LVL" background="rgba(238,231,243,1)"/>
+                <Cell col="1" text="bind:Column1" background="rgba(238,231,243,1)"/>
+                <Cell col="2" displaytype="number" edittype="none" editfilter="number" text="bind:Column2" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="3" displaytype="number" editfilter="number" text="bind:Column3" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="4" displaytype="number" editfilter="number" text="bind:Column4" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="5" displaytype="number" editfilter="number" text="bind:Column5" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="6" displaytype="number" editfilter="number" text="bind:Column6" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="7" displaytype="number" editfilter="number" text="bind:Column7" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="8" displaytype="number" editfilter="number" text="bind:Column8" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="9" displaytype="number" editfilter="number" text="bind:Column9" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="10" displaytype="number" editfilter="number" text="bind:Column10" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="11" displaytype="number" editfilter="number" text="bind:Column11" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="12" displaytype="number" editfilter="number" text="bind:Column12" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="13" displaytype="number" editfilter="number" text="bind:Column13" textAlign="right" background="rgba(254,245,243,1)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static07" taborder="6" text="그리드 Format 및 데이타를 엑셀/한셀에서 가져오기(Import), 엑셀/한셀에서 내보내기(Export) 처리가 가능합니다." cssclass="sta_WF_box03" left="10" top="50" right="0" height="51" wordWrap="char"/>
+        <Static id="Static02" taborder="7" text="엑셀" cssclass="sta_WF_excel" left="10" top="111" width="431" height="50"/>
+        <Button id="btn_import" taborder="0" text="가져오기" top="121" height="30" width="90" cssclass="btn_WF_excelInput" right="95" onclick="fn_comBtn"/>
+        <Button id="btn_export" taborder="1" text="내보내기" top="121" width="90" height="30" cssclass="btn_WF_excelOutput" right="0" onclick="fn_comBtn"/>
+        <Grid id="Grid01" taborder="5" binddataset="dsOut02" selecttype="area" cellsizingtype="col" treeuseline="false" treeusecheckbox="false" treeuseimage="false" treeinitstatus="collapse,all" left="10" top="633" right="0" height="402" cssclass="grd_excel">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="40"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="구분"/>
+                <Cell col="1" rowspan="2" text="주차"/>
+                <Cell col="2" colspan="3" text="총매출"/>
+                <Cell col="5" colspan="3" text="순매출"/>
+                <Cell col="8" colspan="3" text="할인율"/>
+                <Cell col="11" colspan="3" text="증감율"/>
+                <Cell row="1" col="2" text="실적"/>
+                <Cell row="1" col="3" text="예산"/>
+                <Cell row="1" col="4" text="전년"/>
+                <Cell row="1" col="5" text="실적"/>
+                <Cell row="1" col="6" text="예산"/>
+                <Cell row="1" col="7" text="전년"/>
+                <Cell row="1" col="8" text="실적"/>
+                <Cell row="1" col="9" text="예산"/>
+                <Cell row="1" col="10" text="전년"/>
+                <Cell row="1" col="11" text="진도율"/>
+                <Cell row="1" col="12" text="예산비"/>
+                <Cell row="1" col="13" text="전년비"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="normal" edittype="none" text="bind:Column0" suppress="1" treelevel="bind:T_LVL" background="rgba(238,231,243,1)"/>
+                <Cell col="1" text="bind:Column1" background="rgba(238,231,243,1)"/>
+                <Cell col="2" displaytype="number" edittype="none" editfilter="number" text="bind:Column2" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="3" displaytype="number" editfilter="number" text="bind:Column3" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="4" displaytype="number" editfilter="number" text="bind:Column4" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="5" displaytype="number" editfilter="number" text="bind:Column5" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="6" displaytype="number" editfilter="number" text="bind:Column6" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="7" displaytype="number" editfilter="number" text="bind:Column7" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="8" displaytype="number" editfilter="number" text="bind:Column8" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="9" displaytype="number" editfilter="number" text="bind:Column9" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="10" displaytype="number" editfilter="number" text="bind:Column10" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="11" displaytype="number" editfilter="number" text="bind:Column11" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="12" displaytype="number" editfilter="number" text="bind:Column12" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="13" displaytype="number" editfilter="number" text="bind:Column13" textAlign="right" background="rgba(254,245,243,1)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="8" text="한셀 2014" cssclass="sta_WF_hancel" left="10" top="583" width="431" height="50"/>
+        <Button id="btn_hanImport" taborder="3" text="가져오기" top="593" width="90" height="30" cssclass="btn_WF_hancelInput" right="95" onclick="fn_comBtn"/>
+        <Button id="btn_hanExport" taborder="4" text="내보내기" top="593" width="90" height="30" cssclass="btn_WF_hancelOutput" right="0" onclick="fn_comBtn"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsOut" firefirstcount="0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="FLOAT" size="256"/>
+          <Column id="Column3" type="FLOAT" size="256"/>
+          <Column id="Column4" type="FLOAT" size="256"/>
+          <Column id="Column5" type="FLOAT" size="256"/>
+          <Column id="Column6" type="FLOAT" size="256"/>
+          <Column id="Column7" type="FLOAT" size="256"/>
+          <Column id="Column8" type="FLOAT" size="256"/>
+          <Column id="Column9" type="FLOAT" size="256"/>
+          <Column id="Column10" type="FLOAT" size="256"/>
+          <Column id="Column11" type="FLOAT" size="256"/>
+          <Column id="Column12" type="FLOAT" size="256"/>
+          <Column id="Column13" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">10</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">11</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">11</Col>
+            <Col id="Column12">110000</Col>
+            <Col id="Column13">55000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">22</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">11</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">37</Col>
+            <Col id="Column12">370000</Col>
+            <Col id="Column13">185000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">27</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">21</Col>
+            <Col id="Column9">210000</Col>
+            <Col id="Column10">105000</Col>
+            <Col id="Column11">66</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">18</Col>
+            <Col id="Column3">180000</Col>
+            <Col id="Column4">90000</Col>
+            <Col id="Column5">13</Col>
+            <Col id="Column6">130000</Col>
+            <Col id="Column7">65000</Col>
+            <Col id="Column8">14</Col>
+            <Col id="Column9">140000</Col>
+            <Col id="Column10">70000</Col>
+            <Col id="Column11">86</Col>
+            <Col id="Column12">860000</Col>
+            <Col id="Column13">430000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">3</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">97</Col>
+            <Col id="Column12">970000</Col>
+            <Col id="Column13">485000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">92</Col>
+            <Col id="Column12">920000</Col>
+            <Col id="Column13">460000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">1</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">15</Col>
+            <Col id="Column9">150000</Col>
+            <Col id="Column10">75000</Col>
+            <Col id="Column11">7</Col>
+            <Col id="Column12">700000</Col>
+            <Col id="Column13">350000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">4</Col>
+            <Col id="Column3">400000</Col>
+            <Col id="Column4">200000</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">28</Col>
+            <Col id="Column12">280000</Col>
+            <Col id="Column13">140000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">6</Col>
+            <Col id="Column3">500000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">5</Col>
+            <Col id="Column6">500000</Col>
+            <Col id="Column7">250000</Col>
+            <Col id="Column8">19</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">57</Col>
+            <Col id="Column12">570000</Col>
+            <Col id="Column13">285000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">5</Col>
+            <Col id="Column3">500000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">19</Col>
+            <Col id="Column9">160000</Col>
+            <Col id="Column10">80000</Col>
+            <Col id="Column11">81</Col>
+            <Col id="Column12">810000</Col>
+            <Col id="Column13">405000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">14</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">15</Col>
+            <Col id="Column3">150000</Col>
+            <Col id="Column4">75000</Col>
+            <Col id="Column5">17</Col>
+            <Col id="Column6">170000</Col>
+            <Col id="Column7">85000</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">43</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">24</Col>
+            <Col id="Column3">240000</Col>
+            <Col id="Column4">120000</Col>
+            <Col id="Column5">23</Col>
+            <Col id="Column6">230000</Col>
+            <Col id="Column7">115000</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">22</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">19</Col>
+            <Col id="Column6">190000</Col>
+            <Col id="Column7">95000</Col>
+            <Col id="Column8">51</Col>
+            <Col id="Column9">510000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">16</Col>
+            <Col id="Column12">160000</Col>
+            <Col id="Column13">80000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">13</Col>
+            <Col id="Column3">130000</Col>
+            <Col id="Column4">65000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">3</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">15</Col>
+            <Col id="Column12">150000</Col>
+            <Col id="Column13">75000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">33</Col>
+            <Col id="Column3">330000</Col>
+            <Col id="Column4">165000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">42</Col>
+            <Col id="Column12">420000</Col>
+            <Col id="Column13">210000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">27</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">17</Col>
+            <Col id="Column3">170000</Col>
+            <Col id="Column4">85000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">52</Col>
+            <Col id="Column9">520000</Col>
+            <Col id="Column10">260000</Col>
+            <Col id="Column11">88</Col>
+            <Col id="Column12">880000</Col>
+            <Col id="Column13">440000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">12</Col>
+            <Col id="Column3">120000</Col>
+            <Col id="Column4">60000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">43</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">7</Col>
+            <Col id="Column3">700000</Col>
+            <Col id="Column4">350000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">1</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">33</Col>
+            <Col id="Column12">330000</Col>
+            <Col id="Column13">165000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">3</Col>
+            <Col id="Column3">300000</Col>
+            <Col id="Column4">150000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">14</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">2</Col>
+            <Col id="Column3">200000</Col>
+            <Col id="Column4">100000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">42</Col>
+            <Col id="Column12">420000</Col>
+            <Col id="Column13">210000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">1</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">17</Col>
+            <Col id="Column3">170000</Col>
+            <Col id="Column4">85000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">51</Col>
+            <Col id="Column9">510000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">88</Col>
+            <Col id="Column12">880000</Col>
+            <Col id="Column13">440000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">19</Col>
+            <Col id="Column3">190000</Col>
+            <Col id="Column4">95000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">66</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">29</Col>
+            <Col id="Column3">290000</Col>
+            <Col id="Column4">145000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">77</Col>
+            <Col id="Column12">770000</Col>
+            <Col id="Column13">385000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsOut02" firefirstcount="0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="FLOAT" size="256"/>
+          <Column id="Column3" type="FLOAT" size="256"/>
+          <Column id="Column4" type="FLOAT" size="256"/>
+          <Column id="Column5" type="FLOAT" size="256"/>
+          <Column id="Column6" type="FLOAT" size="256"/>
+          <Column id="Column7" type="FLOAT" size="256"/>
+          <Column id="Column8" type="FLOAT" size="256"/>
+          <Column id="Column9" type="FLOAT" size="256"/>
+          <Column id="Column10" type="FLOAT" size="256"/>
+          <Column id="Column11" type="FLOAT" size="256"/>
+          <Column id="Column12" type="FLOAT" size="256"/>
+          <Column id="Column13" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">10</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">11</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">11</Col>
+            <Col id="Column12">110000</Col>
+            <Col id="Column13">55000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">22</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">11</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">37</Col>
+            <Col id="Column12">370000</Col>
+            <Col id="Column13">185000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">27</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">21</Col>
+            <Col id="Column9">210000</Col>
+            <Col id="Column10">105000</Col>
+            <Col id="Column11">66</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">18</Col>
+            <Col id="Column3">180000</Col>
+            <Col id="Column4">90000</Col>
+            <Col id="Column5">13</Col>
+            <Col id="Column6">130000</Col>
+            <Col id="Column7">65000</Col>
+            <Col id="Column8">14</Col>
+            <Col id="Column9">140000</Col>
+            <Col id="Column10">70000</Col>
+            <Col id="Column11">86</Col>
+            <Col id="Column12">860000</Col>
+            <Col id="Column13">430000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">3</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">97</Col>
+            <Col id="Column12">970000</Col>
+            <Col id="Column13">485000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서울</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">92</Col>
+            <Col id="Column12">920000</Col>
+            <Col id="Column13">460000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">1</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">15</Col>
+            <Col id="Column9">150000</Col>
+            <Col id="Column10">75000</Col>
+            <Col id="Column11">7</Col>
+            <Col id="Column12">700000</Col>
+            <Col id="Column13">350000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">4</Col>
+            <Col id="Column3">400000</Col>
+            <Col id="Column4">200000</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">18</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">28</Col>
+            <Col id="Column12">280000</Col>
+            <Col id="Column13">140000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">6</Col>
+            <Col id="Column3">500000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">5</Col>
+            <Col id="Column6">500000</Col>
+            <Col id="Column7">250000</Col>
+            <Col id="Column8">19</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">57</Col>
+            <Col id="Column12">570000</Col>
+            <Col id="Column13">285000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">5</Col>
+            <Col id="Column3">500000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">4</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">19</Col>
+            <Col id="Column9">160000</Col>
+            <Col id="Column10">80000</Col>
+            <Col id="Column11">81</Col>
+            <Col id="Column12">810000</Col>
+            <Col id="Column13">405000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">영등포</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">14</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">15</Col>
+            <Col id="Column3">150000</Col>
+            <Col id="Column4">75000</Col>
+            <Col id="Column5">17</Col>
+            <Col id="Column6">170000</Col>
+            <Col id="Column7">85000</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">43</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">24</Col>
+            <Col id="Column3">240000</Col>
+            <Col id="Column4">120000</Col>
+            <Col id="Column5">23</Col>
+            <Col id="Column6">230000</Col>
+            <Col id="Column7">115000</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">22</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">19</Col>
+            <Col id="Column6">190000</Col>
+            <Col id="Column7">95000</Col>
+            <Col id="Column8">51</Col>
+            <Col id="Column9">510000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">16</Col>
+            <Col id="Column12">160000</Col>
+            <Col id="Column13">80000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">13</Col>
+            <Col id="Column3">130000</Col>
+            <Col id="Column4">65000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">잠실</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">3</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">1</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">15</Col>
+            <Col id="Column12">150000</Col>
+            <Col id="Column13">75000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">33</Col>
+            <Col id="Column3">330000</Col>
+            <Col id="Column4">165000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">42</Col>
+            <Col id="Column12">420000</Col>
+            <Col id="Column13">210000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">27</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">17</Col>
+            <Col id="Column3">170000</Col>
+            <Col id="Column4">85000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">52</Col>
+            <Col id="Column9">520000</Col>
+            <Col id="Column10">260000</Col>
+            <Col id="Column11">88</Col>
+            <Col id="Column12">880000</Col>
+            <Col id="Column13">440000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">12</Col>
+            <Col id="Column3">120000</Col>
+            <Col id="Column4">60000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">43</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여의도</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">7</Col>
+            <Col id="Column3">700000</Col>
+            <Col id="Column4">350000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">1</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">33</Col>
+            <Col id="Column12">330000</Col>
+            <Col id="Column13">165000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">1주</Col>
+            <Col id="Column2">3</Col>
+            <Col id="Column3">300000</Col>
+            <Col id="Column4">150000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">14</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">2주</Col>
+            <Col id="Column2">2</Col>
+            <Col id="Column3">200000</Col>
+            <Col id="Column4">100000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">42</Col>
+            <Col id="Column12">420000</Col>
+            <Col id="Column13">210000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">3주</Col>
+            <Col id="Column2">1</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">49</Col>
+            <Col id="Column9">490000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">69</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">4주</Col>
+            <Col id="Column2">17</Col>
+            <Col id="Column3">170000</Col>
+            <Col id="Column4">85000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">51</Col>
+            <Col id="Column9">510000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">88</Col>
+            <Col id="Column12">880000</Col>
+            <Col id="Column13">440000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">5주</Col>
+            <Col id="Column2">19</Col>
+            <Col id="Column3">190000</Col>
+            <Col id="Column4">95000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">66</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">서초</Col>
+            <Col id="Column1">6주</Col>
+            <Col id="Column2">29</Col>
+            <Col id="Column3">290000</Col>
+            <Col id="Column4">145000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">77</Col>
+            <Col id="Column12">770000</Col>
+            <Col id="Column13">385000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * 전역변수 영역
+ *************************************************************************************************/
+//this.exportUrl = "xeni::XExportImport"; //export URL
+//this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost:8080/nexacro-demo/XImport";		// import URL
+
+this.exportUrl = "xeni::XExportImport"; //export URL
+this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost:8080/nexacro-demo/XImport"		// import URL /nexacro-xeni/XImport";
+
+this.exportType; //Grid 속성 selecttype 변경을 위함
+
+/************************************************************************************************
+ * Function Name: Excel_onload
+ * Description  : Form onload
+ * Arguments    :
+ * Return       :
+ *************************************************************************************************/
+this.Excel_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+};
+
+/************************************************************************************************
+ * Function Name: fn_comBtn
+ * Description  : Button onclick Event
+ * Arguments    :
+ * Return       :
+ *************************************************************************************************/
+this.fn_comBtn = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	switch (obj.name) 
+	{
+		case "btn_export":
+			this.exportType = "Excel";
+			/* Export 시 selecttype 이 area, multiarea, treecell 일 경우 Header 정보는
+			 표현안됨 (selecttype 을 "row" 로 변경 후 처리)*/
+			this.Grid02.set_selecttype("row");
+
+			var arrObjGrid = new Array(this.Grid02);
+
+			this.fn_exportExcel(arrObjGrid, this.exportType);
+			break;
+		case "btn_import":
+			this.fn_importExcel("Sheet1", "A3", "dsOut", "Excel");
+			break;
+		case "btn_hanExport":
+			this.exportType = "Hancell";
+
+			/* Export 시 selecttype 이 area, multiarea, treecell 일 경우 Header 정보는
+			 표현안됨 (selecttype 을 "row" 로 변경 후 처리)*/
+			this.Grid01.set_selecttype("row");
+
+			var arrObjGrid = new Array(this.Grid01);
+
+			this.fn_exportExcel(arrObjGrid, this.exportType);
+			break;
+		case "btn_hanImport":
+			this.fn_importExcel("Sheet1", "A3", "dsOut02", "Hancell");
+			break;
+	}
+};
+
+/************************************************************************************************
+ * Function Name: fn_exportExcel
+ * Description  : Excel Export
+ * Arguments    : arrObjGrid - Grid Object 가 들어있는 배열
+ strType    - Excel Type (Excel / 한셀)
+ * Return       :
+ *************************************************************************************************/
+this.fn_exportExcel = function (arrObjGrid, strType)
+{
+	var exportObj;
+
+	exportObj = new ExcelExportObject("Export00", this); //ExcelExport 객체 생성
+	// 내보내기 할 엑셀 형식 지정
+	if (strType == "Excel") 
+	{
+		exportObj.set_exporttype(nexacro.ExportTypes.EXCEL2007);
+	}
+	else 
+	{
+		exportObj.set_exporttype(nexacro.ExportTypes.HANCELL2014);
+	}
+
+	exportObj.addEventHandler("onsuccess", this.Export00_onsuccess, this); //onsuccess 이벤트 연결
+	exportObj.addEventHandler("onerror", this.Export00_onerror, this); //onerror 이벤트 연결
+
+	// 하나의 파일에 여러 시트 출력
+	var objGrid;
+	var i,nMax;
+	var strSheetName;
+
+	nMax = arrObjGrid.length;
+
+	for (i = 0; i < nMax; i++) 
+	{
+		objGrid = arrObjGrid[i];
+		strSheetName = "Sheet" + (i + 1);
+
+		exportObj.addExportItem(nexacro.ExportItemTypes.GRID, objGrid, strSheetName + "!A1", "allband", "", "merge");
+	}
+
+	exportObj.set_exportfilename("ExportData");
+	exportObj.set_exporturl(this.exportUrl);
+	exportObj.exportData();
+	// exportObj = null;
+};
+
+this.Export00_onsuccess = function (obj:ExcelExportObject, e:nexacro.ExcelExportEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+	// trace("\ne.eventid/e.fromobject/e.fromreferenceobject/e.url: " + e.eventid+"/"+e.fromobject+"/"+e.fromreferenceobject+"/"+e.url);
+	if (this.exportType == "Excel") 
+	{
+		this.Grid02.set_selecttype("area");
+	}
+	else 
+	{
+		this.Grid01.set_selecttype("area");
+	}
+};
+
+this.Export00_onerror = function (obj:ExcelExportObject, e:nexacro.ExcelExportErrorEventInfo)
+{
+// 	 trace(obj.name + ":" + e.eventid);
+// 	 trace("\ne.eventid: " + "e.eventID : " + e.eventid);
+// 	 trace("\ne.fromobject: " + e.fromobject);
+// 	 trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+// 	 trace("\ne.errorcode: " +  e.errorcode);
+// 	 trace("\ne.errormsg: " + e.errormsg);
+};
+
+/************************************************************************************************
+ * Function Name: fn_importExcel
+ * Description  : Excel Import
+ * Arguments    : strSheetName - Sheet 명
+ strSheetArea - Sheet 정보
+ strDsName    - Dataset Object
+ strType      - Excel Type (Excel / 한셀)
+ * Return       :
+ *************************************************************************************************/
+this.fn_importExcel = function (strSheetName, strSheetArea, strDsName, strType)
+{
+	var importObjExcel,importObjHancell;
+
+	var param2 = strSheetName + "!" + strSheetArea;
+	var param3 = strDsName + "=output1";
+
+	if (strType == "Excel") 
+	{
+		importObjExcel = new ExcelImportObject("Import00", this);
+		importObjExcel.set_importurl(this.importUrl);
+
+		importObjExcel.set_importtype(nexacro.ImportTypes.EXCEL2007);
+
+		importObjExcel.addEventHandler("onsuccess", this.fn_ImportOnSuccess, this);
+		importObjExcel.addEventHandler("onerror", this.fn_ImportOnError, this);
+
+		importObjExcel.set_importfilemode("local");
+		importObjExcel.importData("", param2, param3);
+
+		importObjExcel = null;
+	}
+	else 
+	{
+		importObjHancell = new ExcelImportObject("Import01", this);
+		importObjHancell.set_importurl(this.importUrl);
+
+		importObjHancell.set_importtype(nexacro.ImportTypes.HANCELL2014);
+
+		importObjHancell.addEventHandler("onsuccess", this.fn_ImportOnSuccess, this);
+		importObjHancell.addEventHandler("onerror", this.fn_ImportOnError, this);
+
+		importObjHancell.set_importfilemode("local");
+		importObjHancell.importData("", param2, param3);
+
+		importObjHancell = null;
+	}
+};
+
+this.fn_ImportOnSuccess = function (obj:ExcelImportObject, e:nexacro.ExcelImportEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+};
+
+this.fn_ImportOnError = function (obj:ExcelImportObject, e:nexacro.ExcelImportErrorEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+	// trace("\ne.fromobject: " + e.fromobject);
+	// trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+	// trace("\ne.errorcode: " +  e.errorcode);
+	// trace("\ne.errormsg: " + e.errormsg);
+};]]></Script>
+  </Form>
+</FDL>

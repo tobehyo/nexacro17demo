@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Data_Divergent" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="1" left="0" top="0" right="0" bottom="0" binddataset="dsSurvey" categorycolumn="bind:category" rotateaxis="true" bargrouping="false">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Basic Chart > Bar Chart",
+		"subtextcolor": "lightgray",
+		"subtextalign": "right",
+		"text": "Divergent Data"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"align": "topcenter"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "bold 12pt '맑은 고딕'",
+		"ticklinestyle": "0px solid",
+		"boardlinestyle": "0px solid",
+		"gap": "20",
+		"axislinestyle": "0px solid"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "Protect",
+			"barvisible": true,
+			"barsize": "60",
+			"itemtextvisible": true,
+			"itemtextcolor": "darkorange",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Protect",
+			"itemtexttype": "text",
+			"itemtextmask": "##%"
+		},
+		{
+			"id": "series1",
+			"titletext": "Embrace",
+			"barvisible": true,
+			"barsize": "60",
+			"itemtextvisible": true,
+			"itemtextcolor": "royalblue",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Embrace",
+			"itemtexttype": "text",
+			"itemtextmask": "##%",
+			"itemtextposition": "insde start"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"visible": "false",
+			"ticks": "1",
+			"gap": "20"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsSurvey">
+        <ColumnInfo>
+          <Column id="category" type="STRING" size="256"/>
+          <Column id="Protect" type="INT" size="256"/>
+          <Column id="Embrace" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="category">France</Col>
+            <Col id="Protect">-54</Col>
+            <Col id="Embrace">46</Col>
+          </Row>
+          <Row>
+            <Col id="category">Germany</Col>
+            <Col id="Protect">-54</Col>
+            <Col id="Embrace">46</Col>
+          </Row>
+          <Row>
+            <Col id="category">Italy</Col>
+            <Col id="Protect">-50</Col>
+            <Col id="Embrace">50</Col>
+          </Row>
+          <Row>
+            <Col id="category">Poland</Col>
+            <Col id="Protect">-55</Col>
+            <Col id="Embrace">45</Col>
+          </Row>
+          <Row>
+            <Col id="category">Spain</Col>
+            <Col id="Protect">-30</Col>
+            <Col id="Embrace">70</Col>
+          </Row>
+          <Row>
+            <Col id="category">UK</Col>
+            <Col id="Protect">-41</Col>
+            <Col id="Embrace">59</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Div00_BtnBarType_onclick = function(obj,e)
+{
+	var rows = this.dsSurvey.getRowCount();
+	for (var i=0;i<rows;i++)
+	{
+		var val = this.dsSurvey.getColumn(i, "Protect");
+		if (val < 0)
+		{
+			this.dsSurvey.setColumn(i, "Protect", -val);
+		}
+	}
+	
+	this.BasicChart00.set_bargrouping(true);
+	this.BasicChart00.valueaxes[0].set_boardlinevisible(false);
+};
+
+this.Div00_BtnDivergent_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var rows = this.dsSurvey.getRowCount();
+	for (var i=0;i<rows;i++)
+	{
+		var val = this.dsSurvey.getColumn(i, "Protect");
+		if (val > 0)
+		{
+			this.dsSurvey.setColumn(i, "Protect", -val);
+		}
+	}
+
+	this.BasicChart00.set_bargrouping(false);
+	this.BasicChart00.valueaxes[0].set_boardlinevisible(true);
+};
+]]></Script>
+  </Form>
+</FDL>
