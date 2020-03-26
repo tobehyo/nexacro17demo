@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="component" width="980" height="2805" titletext="다양한 컴포넌트" onload="component_onload" visible="true">
     <Layouts>
       <Layout screenid="desktop">
@@ -100,9 +100,9 @@
         <Static id="Static68" taborder="31" cssclass="sta_cp_box01" left="Static66:20" top="527" height="221" right="20"/>
         <Static id="Static65" taborder="32" text="MaskEdit" cssclass="sta_cp_box01" left="Static63:20" top="527" width="31.33%" height="51"/>
         <Static id="Static67" taborder="33" text="Spin" cssclass="sta_cp_box01" left="Static65:20" top="527" height="51" right="20"/>
-        <Edit id="Edit01" taborder="34" top="598" height="32" displaynulltext="넥사크로" value="넥사크로" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01"/>
-        <Edit id="Edit02" taborder="35" top="647" height="32" displaynulltext="넥사크로" value="넥사크로" cssclass="ed_basic02" width="18.98%" left="Static64:-80.13%"/>
-        <Edit id="Edit03" taborder="36" top="696" height="32" displaynulltext="넥사크로" value="넥사크로" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01" enable="false"/>
+        <Edit id="Edit01" taborder="34" top="598" height="32" displaynulltext="Nexacro" value="Nexacro" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01" text="Nexacro"/>
+        <Edit id="Edit02" taborder="35" top="647" height="32" displaynulltext="Nexacro" value="Nexacro" cssclass="ed_basic02" width="18.98%" left="Static64:-80.13%" text="Nexacro"/>
+        <Edit id="Edit03" taborder="36" top="696" height="32" displaynulltext="Nexacro" value="Nexacro" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01" enable="false" text="Nexacro"/>
         <MaskEdit id="MaskEdit02" taborder="37" top="598" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" mask="#,##0.00" canchange="MaskEdit02_canchange"/>
         <MaskEdit id="MaskEdit03" taborder="38" top="647" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic02" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
         <MaskEdit id="MaskEdit04" taborder="39" top="696" height="32" enable="false" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
@@ -125,8 +125,8 @@
         <Static id="Static09" taborder="56" text="Static09" left="Static03:-77.20%" top="1474" width="16.94%" height="60" background="#7b69d6" color="rgba(255,255,255,1)" textAlign="center" verticalAlign="middle" font="10pt Malgun gothic,Arial"/>
         <Static id="Static10" taborder="57" left="Static03:-77.2%" top="1534" width="8.47%" height="30" background="#a17fe7"/>
         <Static id="Static11" taborder="58" left="Static10:0" top="1534" width="8.47%" height="30" background="rgba(161,103,209,1)"/>
-        <Static id="Static73" taborder="59" text="&lt;b v='true'&gt;동해물&lt;/b&gt;과 &lt;fc v='red'&gt;백두산&lt;/fc&gt;이 마르고..." left="Static03:-76.55%" top="1572" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
-        <Static id="Static74" taborder="60" text="&lt;u v='true'&gt;동해물&lt;/u&gt;과 &lt;s v='true'&gt;백두산&lt;/s&gt;이 마르고..." left="Static03:-76.55%" top="1603" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Static id="Static73" taborder="59" text="&lt;b v='true'&gt;Apple&lt;/b&gt; is &lt;fc v='red'&gt;Good&lt;/fc&gt; or not..." left="Static03:-76.55%" top="1572" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Static id="Static74" taborder="60" text="&lt;u v='true'&gt;Apple&lt;/u&gt; is &lt;s v='true'&gt;Good&lt;/s&gt; or not" left="Static03:-76.55%" top="1603" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
         <Div id="Div02" taborder="61" text="DIV" left="Static03:30.94%" top="1474" width="16.94%" height="156" cssclass="div_basic01"/>
         <GroupBox id="GroupBox01" text="Group" taborder="62" left="Static06:31.92%" top="1473" width="16.94%" height="156" cssclass="grb_basic01"/>
         <Menu id="Menu01" taborder="63" left="130" top="1671" height="49" right="22" levelcolumn="level" innerdataset="@dsMenu01" idcolumn="id" captioncolumn="caption" cssclass="menu_basic01" fittocontents="width" onmenuclick="Menu01_onmenuclick"/>
@@ -138,7 +138,7 @@
         <Calendar id="Calendar04" taborder="100" type="spin" cssclass="cal_basic01" left="Static69:-88.3%" top="1299" width="13.27%" height="30" enable="false"/>
         <PopupMenu id="PopupMenu01" left="1024" top="218" width="185" height="100" visible="false" cssclass="pm_basic01"/>
         <Static id="Static00" taborder="101" text="Static00" top="19" width="20" height="153" background="aqua" visible="false" right="0"/>
-        <Static id="Static60" taborder="101" text="넥사크로 플랫폼은 약 40여가지의 컴포넌트를 제공함으로써 사용자에게 편리한 툴 환경을 제공합니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Static id="Static60" taborder="101" text="The Nexacro Platform provides a convenient tool environment for users by providing about 40 components." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
         <Static id="Static14" taborder="0" left="0" top="1752" height="34" cssclass="sta_menu_bg" right="20"/>
         <Tab id="Tab00" taborder="6" left="0" top="1751" height="175" tabindex="0" scrollbars="autoboth" right="20" cssclass="tab_basic01" showextrabutton="true" tabbuttonheight="32">
           <Tabpages>
@@ -245,9 +245,9 @@
         <Combo id="Combo03" top="713" height="32" left="Static21:15" width="120"/>
         <Static id="Static64" left="20" top="1129" height="259" right="20"/>
         <Static id="Static63" left="20" top="1129" height="51" right="20"/>
-        <Edit id="Edit01" left="23.13%" top="1200" width="53.13%" height="50"/>
-        <Edit id="Edit02" left="23.13%" top="1255" width="53.13%" height="50"/>
-        <Edit id="Edit03" left="23.13%" top="1310" width="53.13%" height="50"/>
+        <Edit id="Edit01" left="23.13%" top="1200" width="53.13%" height="50" text="Nexacro"/>
+        <Edit id="Edit02" left="23.13%" top="1255" width="53.13%" height="50" text="Nexacro"/>
+        <Edit id="Edit03" left="23.13%" top="1310" width="53.13%" height="50" text="Nexacro"/>
         <Static id="Static69" left="20" top="2288" height="285" right="20"/>
         <Static id="Static70" left="20" top="2288" height="51" right="20"/>
         <Static id="Static03" left="20" top="2878" height="297" right="20"/>
@@ -295,19 +295,19 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="label">영업부</Col>
+            <Col id="label">Sales Team</Col>
             <Col id="value">1</Col>
           </Row>
           <Row>
-            <Col id="label">연구소</Col>
+            <Col id="label">Laboratory</Col>
             <Col id="value">2</Col>
           </Row>
           <Row>
-            <Col id="label">기술지원팀</Col>
+            <Col id="label">Technical Support Team</Col>
             <Col id="value">3</Col>
           </Row>
           <Row>
-            <Col id="label">개발팀</Col>
+            <Col id="label">Development Team</Col>
             <Col id="value">4</Col>
           </Row>
         </Rows>
@@ -323,62 +323,62 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170101</Col>
             <Col id="Column3"/>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170202</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170303</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170404</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170505</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170606</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170707</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170808</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20170909</Col>
           </Row>
           <Row>
-            <Col id="Column4">가나다라마바사</Col>
+            <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
             <Col id="Column1">20171010</Col>
@@ -395,32 +395,32 @@
           <Row>
             <Col id="level">0</Col>
             <Col id="id">1000</Col>
-            <Col id="caption">대메뉴1</Col>
+            <Col id="caption">Main Menu1</Col>
           </Row>
           <Row>
             <Col id="level">1</Col>
             <Col id="id">1100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">Sub Menu 1</Col>
           </Row>
           <Row>
             <Col id="level">2</Col>
             <Col id="id">1110</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">Sub2 Menu 1</Col>
           </Row>
           <Row>
             <Col id="level">2</Col>
             <Col id="id">1120</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">Sub2 Menu 2</Col>
           </Row>
           <Row>
             <Col id="level">1</Col>
             <Col id="id">1200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">Sub Menu 2</Col>
           </Row>
           <Row>
             <Col id="level">0</Col>
             <Col id="id">2000</Col>
-            <Col id="caption">대메뉴2</Col>
+            <Col id="caption">Main Menu 2</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -438,42 +438,42 @@
           </Row>
           <Row>
             <Col id="id">1100</Col>
-            <Col id="caption">중메뉴01</Col>
+            <Col id="caption">Sub Menu01</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">1110</Col>
-            <Col id="caption">소메뉴01</Col>
+            <Col id="caption">Sub2 Menu01</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">1120</Col>
-            <Col id="caption">소메뉴02</Col>
+            <Col id="caption">Sub2 Menu02</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">1130</Col>
-            <Col id="caption">소메뉴03</Col>
+            <Col id="caption">Sub2 Menu03</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">1140</Col>
-            <Col id="caption">소메뉴04</Col>
+            <Col id="caption">Sub2 Menu04</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">1150</Col>
-            <Col id="caption">소메뉴05</Col>
+            <Col id="caption">Sub2 Menu05</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">1200</Col>
-            <Col id="caption">중메뉴02</Col>
+            <Col id="caption">Sub Menu02</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">1300</Col>
-            <Col id="caption">중메뉴03</Col>
+            <Col id="caption">Sub Menu03</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
@@ -484,12 +484,12 @@
           <Row>
             <Col id="level">1</Col>
             <Col id="id">1210</Col>
-            <Col id="caption">중메뉴04</Col>
+            <Col id="caption">Sub Menu04</Col>
           </Row>
           <Row>
             <Col id="level">1</Col>
             <Col id="id">1220</Col>
-            <Col id="caption">중메뉴05</Col>
+            <Col id="caption">Sub Menu05</Col>
           </Row>
           <Row>
             <Col id="id">3000</Col>
@@ -542,7 +542,7 @@
             <Col id="DATE">20220104</Col>
             <Col id="COLOR">blue</Col>
             <Col id="BKCOLOR">pink</Col>
-            <Col id="BORDER"></Col>
+            <Col id="BORDER"/>
           </Row>
           <Row>
             <Col id="DATE">20220107</Col>
@@ -565,8 +565,8 @@
           <Row>
             <Col id="DATE">20220125</Col>
             <Col id="COLOR">#EE6B67</Col>
-            <Col id="BKCOLOR"></Col>
-            <Col id="BORDER"></Col>
+            <Col id="BKCOLOR"/>
+            <Col id="BORDER"/>
           </Row>
           <Row>
             <Col id="DATE">20220131</Col>
@@ -583,30 +583,7 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
-*  @FileName    Components.xfdl
-*  @Creator     presales
-*  @CreateDate  2019/10/10
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019/10/10          presales                  최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
-
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
- ************************************************************************************************/
-/**
- * @description 화면 load시 초기설정 event
-*/
+    <Script type="xscript5.1"><![CDATA[
 this.component_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
 	var today = this.gfnGetDate();
@@ -621,41 +598,17 @@ this.component_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 	this.calToday.set_value(today);
 	this.calToday01.set_value(today);
 	this.calToday03.set_value(today);
-	this.webNotify.set_url(nexacro.getProjectPath() + "../service/Sample.html");
+	this.webNotify.set_url(nexacro.getProjectPath() + "./html/usernotify.html");
+	
 };
 
 this.getRandomIntInclusive = function (min, max) 
 {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //최댓값도 포함, 최솟값도 포함
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-/************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
- ************************************************************************************************/
- 
- /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
- ************************************************************************************************/
-
-/************************************************************************************************
- * 사용자 FUNCTION 영역
- ************************************************************************************************/
-/**
-* fnSearch : 사용자 설정 이벤트
-* @param {String}  menuId	- 메뉴 ID
-* @param {String}  menuNm	- 메뉴명
-* @return : N/A
-* @example :  
-*/
- 
-/************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
- ************************************************************************************************/
-/**
- * @description 버튼 클릭 이벤트 - 팝업 div, 팝업 menu open
-*/
 this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	switch (obj.name)
@@ -678,17 +631,13 @@ this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	} 
 };
 
-/**
- * @description 그리드 셀 클릭 이벤트
-*/
-
 this.grdObj_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
 	var nRow = e.row + 1;
 
 	if (e.col == 5) 
 	{
-		alert(nRow + "번째 Row Button Event 호출!");
+		alert(nRow + "Row Button Event!");
 	}
 	else if(e.col == 1) //calender
 	{
@@ -700,30 +649,16 @@ this.grdObj_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo
 	}
 };
 
-/**
- * @description 웹브라으저 컴포넌트 notify
-*/
 this.webNotify_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
 {
-	//넥사크로는 동일한 값이 두번 나오므로 제거..
 	if (system.navigatorname != "nexacro")
 	{
-		alert(e.userdata);
+		trace(e.userdata);
 	}
 	else
 	{
 		trace(e.userdata);
 	}
-};
-
-this.PopupMenu00_onmenuclick = function(obj:nexacro.PopupMenu,e:nexacro.MenuClickEventInfo)
-{
-	
-};
-
-this.MaskEdit02_canchange = function(obj:nexacro.MaskEdit,e:nexacro.ChangeEventInfo)
-{
-};
-]]></Script>
+};]]></Script>
   </Form>
 </FDL>

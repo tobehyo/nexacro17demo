@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="sampleListView" width="980" height="600" titletext="리스트뷰" onload="Form_onload">
     <Layouts>
       <Layout height="600" width="980" screenid="desktop">
@@ -12,9 +12,9 @@
               </Band>
               <Band id="detail" left="0" width="100%" top="0" height="180">
                 <Cell id="Cell00" left="10" top="10" width="90" displaytype="imagecontrol" text="bind:IMG_URL" bottom="10"/>
-                <Cell id="Cell01" left="110" top="10" width="80" height="40" text="성명 :" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
+                <Cell id="Cell01" left="110" top="10" width="80" height="40" text="Name :" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
                 <Cell id="Cell02" left="197" top="10" width="257" height="40" text="bind:EMP_NM" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
-                <Cell id="Cell03" left="110" top="49" width="80" height="40" text="직위 :" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
+                <Cell id="Cell03" left="110" top="49" width="80" height="40" text="Position :" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
                 <Cell id="Cell04" left="197" top="49" width="257" height="40" text="bind:JOB_NM" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
                 <Cell id="Cell05" left="110" top="88" width="80" height="40" text="Tel :" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
                 <Cell id="Cell06" left="197" top="88" width="257" height="40" text="bind:TEL_NO" font="normal 11pt &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
@@ -23,28 +23,28 @@
               </Band>
             </Format>
             <Format id="cross">
-              <Band id="body" left="0" width="50%" top="0" height="210" border="0px none,1px solid #dbdee2,1px solid #dbdee2,0px none">
+              <Band id="body" left="0" width="100%" top="0" height="150" border="0px none,1px solid #dbdee2,1px solid #dbdee2,0px none">
                 <Cell id="Cell00" left="113" top="10" height="35" text="bind:ORG_NM" right="10"/>
                 <Cell id="Cell02" left="10" top="10" width="90" displaytype="imagecontrol" text="bind:IMG_URL" height="95"/>
-                <Cell id="Cell06" left="113" top="41" height="25" text="bind:JOB_NM" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;" width="110"/>
-                <Cell id="Cell04" left="123" top="60" height="35" text="bind:EMP_NM" right="10"/>
-                <Cell id="Cell07" left="10" top="94" width="68" height="35" text="Tel."/>
-                <Cell id="Cell08" left="10" top="117" height="35" text="bind:TEL_NO" right="5" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
-                <Cell id="Cell09" left="10" top="150" width="68" height="35" text="E-mail :"/>
-                <Cell id="Cell10" left="10" top="173" height="35" text="bind:EMAIL" right="5" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
+                <Cell id="Cell06" left="113" top="41" height="25" text="bind:JOB_NM" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;" right="107"/>
+                <Cell id="Cell04" left="113" top="60" height="35" text="bind:EMP_NM" right="20"/>
+                <Cell id="Cell07" left="30" top="94" width="68" height="35" text="Tel."/>
+                <Cell id="Cell08" left="30" top="117" height="35" text="bind:TEL_NO" right="218" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
+                <Cell id="Cell09" left="219" top="94" width="68" height="35" text="E-mail :"/>
+                <Cell id="Cell10" left="219" top="117" height="35" text="bind:EMAIL" right="0" font="bold 10pt/normal &quot;맑은 고딕&quot;,&quot;Noto Sans KR&quot;,&quot;Helvetica&quot;"/>
               </Band>
             </Format>
           </Formats>
         </ListView>
         <Button id="btnList" taborder="1" top="81" width="40" height="40" onclick="btnList_onclick" right="63" cssclass="btn_WF_listviewList"/>
         <Button id="btnCross" taborder="2" top="81" height="40" right="20" width="40" cssclass="btn_WF_listviewCross" onclick="btnCross_onclick"/>
-        <Static id="Static07" taborder="3" text="넥사크로는 List View 컴포넌트를 활용하여 데이터를 아이템 단위로 표현할 수 있습니다. Dataset을 바인딩하여 사용하며, Contents Editor를 통해서 디자인한 Body, Detail 밴드를 통하여 Dataset의 한 레코드를 보기 쉽게 구성하여 사용할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="Static07" taborder="3" text="Nexacro can use ListView component to express data in units of items. Dataset is used by binding, and one record of Dataset can be easily configured and used through Body and Detail bands designed through Contents Editor." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
       </Layout>
       <Layout name="Layout0" width="480" height="860" mobileorientation="landscape" screenid="mobile">
         <ListView id="lstList" left="20" top="286" right="20" bottom="24"/>
         <Button id="btnList" top="220" width="50" height="50" right="75"/>
         <Button id="btnCross" top="220" width="50" height="50" right="20"/>
-        <Static id="Static07" left="20" top="20" height="180" right="20" text="넥사크로는 List View 컴포넌트를 활용하여 데이터를 아이템 단위로 표현할 수 있습니다. Dataset을 바인딩하여 사용하며, Contents Editor를 통해서 디자인한 Body, Detail 밴드를 통하여 Dataset의 한 레코드를 보기 쉽게 구성하여 사용할 수 있습니다."/>
+        <Static id="Static07" left="20" top="20" height="180" right="20"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -62,127 +62,93 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="ORG_NM">투비소프트</Col>
-            <Col id="EMP_NM">홍길동</Col>
+            <Col id="ORG_NM">TOBESOFT</Col>
+            <Col id="EMP_NM">Gildong Hong</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi01.png</Col>
-            <Col id="JOB_NM">대표이사</Col>
+            <Col id="JOB_NM">CEO</Col>
             <Col id="EMP_NO">01070101</Col>
             <Col id="TEL_NO">010-1111-1234</Col>
             <Col id="EMAIL">ceo@tobesoft.com</Col>
             <Col id="BRITHDAY">19650105</Col>
-            <Col id="REMARK">비고1</Col>
+            <Col id="REMARK">Note 1</Col>
           </Row>
           <Row>
-            <Col id="ORG_NM">연구소</Col>
-            <Col id="EMP_NM">김철수</Col>
+            <Col id="ORG_NM">Laboratory</Col>
+            <Col id="EMP_NM">Cheolsoo Kim</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi02.png</Col>
-            <Col id="JOB_NM">소장</Col>
+            <Col id="JOB_NM">Intestine</Col>
             <Col id="EMP_NO">01070102</Col>
             <Col id="TEL_NO">010-2222-2345</Col>
             <Col id="EMAIL">CheolsuKim@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고2</Col>
+            <Col id="REMARK">Note 2</Col>
           </Row>
           <Row>
-            <Col id="ORG_NM">기획부</Col>
-            <Col id="EMP_NM">김영희</Col>
+            <Col id="ORG_NM">Planning Department</Col>
+            <Col id="EMP_NM">Younghee Kim</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi03.png</Col>
-            <Col id="JOB_NM">부서장</Col>
+            <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070103</Col>
             <Col id="TEL_NO">010-3333-4567</Col>
             <Col id="EMAIL">YeonghuiKim@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고3</Col>
+            <Col id="REMARK">Note 3</Col>
           </Row>
           <Row>
-            <Col id="ORG_NM">구현부</Col>
-            <Col id="EMP_NM">박길동</Col>
+            <Col id="ORG_NM">Implementation</Col>
+            <Col id="EMP_NM">Park Gil-dong</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi04.png</Col>
-            <Col id="JOB_NM">부서장</Col>
+            <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070104</Col>
             <Col id="TEL_NO">010-4444-5555</Col>
             <Col id="EMAIL">GildongPark@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고4</Col>
+            <Col id="REMARK">Note 4</Col>
           </Row>
           <Row>
-            <Col id="ORG_NM">지원부</Col>
-            <Col id="EMP_NM">강철수</Col>
+            <Col id="ORG_NM">Support</Col>
+            <Col id="EMP_NM">Steel number</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi05.png</Col>
-            <Col id="JOB_NM">부서장</Col>
+            <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070105</Col>
             <Col id="TEL_NO">010-5555-9874</Col>
             <Col id="EMAIL">Cheolsu@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고5</Col>
+            <Col id="REMARK">Note 5</Col>
           </Row>
           <Row>
             <Col id="IMG_URL">imagerc::img_WF_organi06.png</Col>
-            <Col id="ORG_NM">관리본부</Col>
-            <Col id="EMP_NM">김관리</Col>
-            <Col id="JOB_NM">본부장</Col>
+            <Col id="ORG_NM">Management headquarters</Col>
+            <Col id="EMP_NM">Kim management</Col>
+            <Col id="JOB_NM">General manager</Col>
             <Col id="EMP_NO">01070106</Col>
             <Col id="TEL_NO">010-6666-9632</Col>
             <Col id="EMAIL">Gwanri@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고6</Col>
+            <Col id="REMARK">Note 6</Col>
           </Row>
           <Row>
             <Col id="IMG_URL">imagerc::img_WF_organi07.png</Col>
-            <Col id="ORG_NM">인사팀</Col>
-            <Col id="EMP_NM">김인사</Col>
-            <Col id="JOB_NM">팀장</Col>
+            <Col id="ORG_NM">HR Team</Col>
+            <Col id="EMP_NM">Insa Kim</Col>
+            <Col id="JOB_NM">Team Leader</Col>
             <Col id="EMP_NO">01070107</Col>
             <Col id="TEL_NO">010-7777-0258</Col>
             <Col id="EMAIL">KimInsa@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
-            <Col id="REMARK">비고7</Col>
+            <Col id="REMARK">Note 7</Col>
           </Row>
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/**
-*  컨설팅 표준화 작업
-*  @MenuPath    샘플모바일 > MLM
-*  @FileName 	sampleMLM.xfdl 
-*  @Creator 	mobile_consulting
-*  @CreateDate 	2018.08.09
-*  @Desction    아코디언
-************** 소스 수정 이력 ***********************************************
-*  date          		Modifier                Description
-*******************************************************************************
-*  2018.08.09     	mobile_consulting 	        최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
-this.fvExpandRow = -1;
-/***********************************************************************************************
-* FORM EVENT 영역(onload)
-/***********************************************************************************************/
-this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
-{
-	//this.gfnFormOnLoadM(obj);
-};
-
+    <Script type="xscript5.1"><![CDATA[
 this.lstList_oncellclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
 {
-	// 셀 클릭시 expand/collapse 되도록 설정. 왜 getDetailBandStatus()함수가 없는걸까...
-	if (this.fvExpandRow == e.row) {
-		this.lstList.hideDetailBand(e.row);
+	var bBandExpand = obj.getBandExpandStatus(e.row);
+	if (bBandExpand) {
+		obj.hideDetailBand(e.row);
 	} else {
-		this.lstList.showDetailBand(e.row);
-	}
-};
-
-this.lstList_onbandstatuschanged = function(obj:nexacro.ListView,e:nexacro.ListViewBandStatusEventInfo)
-{
-	if (e.bandstatus == "expand") {
-		this.fvExpandRow = e.row;
-	} else {
-		if (this.fvExpandRow == e.row)	this.fvExpandRow = -1;
+		obj.showDetailBand(e.row);
 	}
 };
 

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="CellTypes" width="980" height="1190" titletext="다양한그리드표현">
     <Layouts>
       <Layout screenid="desktop">
-        <Static id="staTitle01" taborder="6" text="다양한 셀표현" cssclass="sta_WF_title02" left="0" top="99" width="421" height="30"/>
+        <Static id="staTitle01" taborder="6" text="Various cell expression" cssclass="sta_WF_title02" left="0" top="99" width="421" height="30"/>
         <Grid id="grdList02" taborder="0" left="0" top="staTitle01:8" binddataset="dsList2" right="20" autofittype="col" cssclass="grd_black" autoenter="select" oncellclick="grdList02_oncellclick" height="355" formatid="default" autoupdatetype="itemselect">
           <Formats>
             <Format id="default">
@@ -74,7 +74,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle02" taborder="4" text="멀티 라인" cssclass="sta_WF_title02" left="0" top="grdList02:18" width="421" height="30"/>
+        <Static id="staTitle02" taborder="4" text="MutiLine" cssclass="sta_WF_title02" left="0" top="grdList02:18" width="421" height="30"/>
         <Grid id="grdList01" taborder="2" binddataset="dsList" autoenter="select" autoupdatetype="comboselect" autofittype="col" left="0" top="548" right="20" height="387" onheadclick="grdList01_onheadclick" formatid="default">
           <Formats>
             <Format id="default">
@@ -95,11 +95,11 @@
               <Band id="head">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
                 <Cell col="1"/>
-                <Cell col="2" text="그룹"/>
-                <Cell col="3" text="성명"/>
-                <Cell col="4" displaytype="normal" text="책정비용"/>
-                <Cell col="5" text="생성일"/>
-                <Cell row="1" colspan="6" text="주소"/>
+                <Cell col="2" text="Group"/>
+                <Cell col="3" text="Name"/>
+                <Cell col="4" displaytype="normal" text="Pricing"/>
+                <Cell col="5" text="Created Date"/>
+                <Cell row="1" colspan="6" text="Address"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Chk"/>
@@ -114,9 +114,9 @@
             <Format id="mobile">
               <Columns>
                 <Column size="40"/>
-                <Column size="48"/>
-                <Column size="54"/>
-                <Column size="116"/>
+                <Column size="33"/>
+                <Column size="93"/>
+                <Column size="120"/>
                 <Column size="99"/>
                 <Column size="109"/>
               </Columns>
@@ -129,11 +129,11 @@
               <Band id="head">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
                 <Cell col="1"/>
-                <Cell col="2" text="그룹"/>
-                <Cell col="3" text="성명"/>
-                <Cell col="4" displaytype="normal" text="책정비용"/>
-                <Cell col="5" text="생성일"/>
-                <Cell row="1" colspan="6" text="주소"/>
+                <Cell col="2" text="GROUP"/>
+                <Cell col="3" text="NAME"/>
+                <Cell col="4" displaytype="normal" text="Pricing"/>
+                <Cell col="5" text="Created Date"/>
+                <Cell row="1" colspan="6" text="ADDRESS"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Chk"/>
@@ -162,10 +162,10 @@
                 <Row size="32"/>
               </Rows>
               <Band id="head">
-                <Cell text="설정금액"/>
-                <Cell col="1" text="연산자"/>
-                <Cell col="2" text="요율"/>
-                <Cell col="3" text="결과"/>
+                <Cell text="Amount"/>
+                <Cell col="1" text="Operator"/>
+                <Cell col="2" text="Rate"/>
+                <Cell col="3" text="Result"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="number" edittype="normal" text="bind:Column3" mask="#,###" editautoselect="true" textAlign="right"/>
@@ -177,7 +177,7 @@
             <Format id="mobile">
               <Columns>
                 <Column size="108"/>
-                <Column size="53"/>
+                <Column size="95"/>
                 <Column size="58"/>
                 <Column size="99"/>
               </Columns>
@@ -186,10 +186,10 @@
                 <Row size="40"/>
               </Rows>
               <Band id="head">
-                <Cell text="설정금액"/>
-                <Cell col="1" text="연산자"/>
-                <Cell col="2" text="요율"/>
-                <Cell col="3" text="결과"/>
+                <Cell text="Amount"/>
+                <Cell col="1" text="Operator"/>
+                <Cell col="2" text="Rate"/>
+                <Cell col="3" text="Result"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="number" edittype="normal" text="bind:Column3" mask="#,###" editautoselect="true" textAlign="right"/>
@@ -200,12 +200,12 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staInfo" taborder="3" text="그리드의 셀 별로 달력, 콤보, 마스크 등과 같이 다양한 형태로 데이타 표현을 할 수 있습니다.&#13;&#10;또한 셀병합, 멀티라인, Expression을 통해 그리드에서 다양한 표현을 할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staInfo" taborder="3" text="Grid cells can express data in various types such as calendars, combos, and masks." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
       </Layout>
       <Layout name="Layout1" width="480" height="1530" mobileorientation="landscape" screenid="mobile">
         <Grid id="grdList02" left="20" top="237" height="443" right="20" formatid="mobile" autofittype="none"/>
         <Grid id="grdList00" left="20" top="staTitle03:8" height="243" right="20" formatid="mobile"/>
-        <Grid id="grdList01" left="20" top="staTitle02:8" height="483" right="20" formatid="mobile"/>
+        <Grid id="grdList01" left="20" top="staTitle02:8" height="483" right="20" formatid="mobile" autofittype="none"/>
         <Static id="staTitle02" left="20" top="grdList02:19" width="421" height="30"/>
         <Static id="staTitle03" left="20" top="grdList01:16" width="421" height="30"/>
         <Static id="staTitle01" left="20" top="199" width="421" height="30"/>
@@ -258,7 +258,7 @@
         <Rows>
           <Row>
             <Col id="Column2">8508301</Col>
-            <Col id="Column1">God 소속 손호영 입니다.</Col>
+            <Col id="Column1">This is Son Ho-young from God.</Col>
             <Col id="Column3">20170101</Col>
             <Col id="Column4">E5</Col>
             <Col id="Column6">8508300</Col>
@@ -266,7 +266,7 @@
           </Row>
           <Row>
             <Col id="Column2">8303301</Col>
-            <Col id="Column1">God 소속 윤계상 입니다.</Col>
+            <Col id="Column1">This is Yoon Gye-sang from God.</Col>
             <Col id="Column3">20170202</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">8303300</Col>
@@ -274,7 +274,7 @@
           </Row>
           <Row>
             <Col id="Column2">8902022</Col>
-            <Col id="Column1">영화배우 김사랑 입니다.</Col>
+            <Col id="Column1">I am a movie star, Kim Sarang.</Col>
             <Col id="Column3">20170303</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8902020</Col>
@@ -282,7 +282,7 @@
           </Row>
           <Row>
             <Col id="Column2">9201012</Col>
-            <Col id="Column1">영화배우 손예진 입니다.</Col>
+            <Col id="Column1">I am Son Ye-jin, a movie star.</Col>
             <Col id="Column3">20170404</Col>
             <Col id="Column4">A1</Col>
             <Col id="Column6">9201010</Col>
@@ -290,7 +290,7 @@
           </Row>
           <Row>
             <Col id="Column2">8702022</Col>
-            <Col id="Column1">영화배우 송지효 입니다.</Col>
+            <Col id="Column1">I'm Song Ji-hyo, a movie star.</Col>
             <Col id="Column3">20170505</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8702020</Col>
@@ -298,7 +298,7 @@
           </Row>
           <Row>
             <Col id="Column2">8801012</Col>
-            <Col id="Column1">에이핑크 소속 정은지 입니다.</Col>
+            <Col id="Column1">This is Jeong Eun-ji from Apink.</Col>
             <Col id="Column3">20170606</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8801010</Col>
@@ -306,7 +306,7 @@
           </Row>
           <Row>
             <Col id="Column2">9008301</Col>
-            <Col id="Column1">하이라이트 소속 윤두준 입니다.</Col>
+            <Col id="Column1">My name is Doojun Yoon.</Col>
             <Col id="Column3">20170707</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">9008300</Col>
@@ -314,7 +314,7 @@
           </Row>
           <Row>
             <Col id="Column2">9103301</Col>
-            <Col id="Column1">블락비 소속 박경 입니다.</Col>
+            <Col id="Column1">I'm Park Kyung from Block B.</Col>
             <Col id="Column3">20170808</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">9103300</Col>
@@ -322,7 +322,7 @@
           </Row>
           <Row>
             <Col id="Column2">9205052</Col>
-            <Col id="Column1">AOA 소속 설현 입니다.</Col>
+            <Col id="Column1">I am Seolhyun from AOA.</Col>
             <Col id="Column3">20170909</Col>
             <Col id="Column4">A1</Col>
             <Col id="Column6">9205050</Col>
@@ -330,7 +330,7 @@
           </Row>
           <Row>
             <Col id="Column2">9208302</Col>
-            <Col id="Column1">에이핑크 소속 손나은 입니다.</Col>
+            <Col id="Column1">This is Son Na-eun from Apink.</Col>
             <Col id="Column3">20171010</Col>
             <Col id="Column4">B2</Col>
             <Col id="Column6">9208300</Col>
@@ -356,8 +356,8 @@
             <Col id="Column4">20170101</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">이승환</Col>
-            <Col id="Column2">인천시 서구 가좌동 118</Col>
+            <Col id="Column0">Lee Seung-hwan</Col>
+            <Col id="Column2">118 Gajwa-dong, Seo-gu, Incheon</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -367,8 +367,8 @@
             <Col id="Column4">20170201</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">이승한</Col>
-            <Col id="Column2">경기도 시흥시 정왕동 104 (2가)</Col>
+            <Col id="Column0">Lee Seung-han</Col>
+            <Col id="Column2">2nd Street, 104, Jeongwang-dong, Siheung-si, Gyeonggi-do</Col>
             <Col id="Column6">*</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -378,8 +378,8 @@
             <Col id="Column4">20170601</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">이철우</Col>
-            <Col id="Column2">경기도 이천시 관고동 501-7</Col>
+            <Col id="Column0">Lee Cheol-woo</Col>
+            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
             <Col id="Column6">+</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -389,8 +389,8 @@
             <Col id="Column4">20170931</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">강순희</Col>
-            <Col id="Column2">서울특별시 영등포구 여의도동 1</Col>
+            <Col id="Column0">Kang Soon-hee</Col>
+            <Col id="Column2">Yeouido-dong, Yeongdeungpo-gu, Seoul 1</Col>
             <Col id="Column6">-</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -400,8 +400,8 @@
             <Col id="Column4">20171005</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">C</Col>
-            <Col id="Column0">배재현</Col>
-            <Col id="Column2">서울특별시 강서구 화곡동 98-252</Col>
+            <Col id="Column0">Bae Jae-hyun</Col>
+            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column6">%</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -409,49 +409,36 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    grid > CellTypes
-*  @FileName  CellTypes.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.10.14      presales                  최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * FORM variable
  ************************************************************************************************/
 this.chkFlag = "0";
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT (onload)
  ************************************************************************************************/
  
  /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK (Transaction, Popup)
  ************************************************************************************************/
 
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * TRANSACTION 
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION
  ************************************************************************************************/
 
 /**
- * 그리드 전체 선택
- * @param {Grid} objGrid 해당 grid
+ * Grid check all
+ * @param {Grid} Grid object
  */
 this.fnBlockChk = function (objGrid)
 {
 	var i;
-	var objDs = eval("this." + objGrid.binddataset);
+	//var objDs = eval("this." + objGrid.binddataset);
+	var objDs = this[objGrid.binddataset];
 
 	for (i = 0; i <= objDs.rowcount; i++) 
 	{
@@ -462,13 +449,13 @@ this.fnBlockChk = function (objGrid)
 };
 
 /**
- * 그리드 전체 해제
- * @param {Grid} objGrid 해당 grid
+ * Grid uncheck all
+ * @param {Grid object} objGrid
  */
 this.fn_BlockUnChk = function (objGrid)
 {
 	var i;
-	var objDs = eval("this." + objGrid.binddataset);
+	var objDs = this[objGrid.binddataset];
 
 	for (var i = 0; i <= objDs.rowcount; i++) 
 	{
@@ -478,13 +465,13 @@ this.fn_BlockUnChk = function (objGrid)
 	objGrid.setCellProperty("Head", 0, "text", "0");
 };
 
-//라디오 버튼 기능동작 함수
+//Radio button
 this.fnRadioListClick = function(grid, ds, col, row)
 {
-	//Dataset의 ColID값을 불어옴.
+	//get Dataset Column ID
 	var strColId = ds.getColID(grid.getBindCellIndex("body", grid.getCellProperty("body", col, "text").split(":")[1]));
 	
-	//Loop 최적화를 위해서 이벤트 활성화 off
+	// Dataset Event OFF then ON before Loop statement for performance
 	ds.set_enableevent(false);
 	for(var i=0; i<ds.rowcount; i++)
 	{
@@ -496,21 +483,21 @@ this.fnRadioListClick = function(grid, ds, col, row)
 	ds.set_enableevent(true);
 };
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * Each COMPONENT EVENT
  ************************************************************************************************/
 /**
  * @description oncellclick 
 */
 this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
-	//라디오기능 추가구현 시 적용예정.
+	
 	if(e.col == 0)
 	{
 		//this.fnRadioListClick(obj, this.ds_list, e.col, e.row);
 	}
 	else if(e.col == 5) 
 	{
-		alert("버튼 Click Event 호출!");
+		alert("Call button click event!");
 	}
 	else if(e.col ==3) //calender
 	{

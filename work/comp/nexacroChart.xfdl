@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="nexacroChart" width="980" height="720" titletext="nexacro Chart" stepshowtype="always" stepitemsize="0">
     <Layouts>
       <Layout stepcount="2" screenid="desktop" width="980" height="720">
@@ -9,9 +9,9 @@
             <Layout name="Layout0"/>
           </Layouts>
         </Div>
-        <Static id="Static60" taborder="2" text="별도 라이선스가 제공되는 nexacro17용 확장 차트 컴포넌트 입니다. Basic, Pie, Bubble 및 Radar, Gauge(지원예정) Chart를 제공합니다. Chart 메뉴를 선택하여 확인해 주세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
-        <Button id="btnMove" taborder="1" text="메뉴로 이동" left="0" top="0" width="85" height="30" cssclass="btn_cp_popMenu" positionstep="1" onclick="btnMove_onclick"/>
-        <Grid id="grdChartLilst" taborder="3" left="0" top="81" bottom="20" right="20" binddataset="dsMenu" autofittype="col" treeusecheckbox="false" oncellclick="grdChartLilst_oncellclick" treeinitstatus="expand,all">
+        <Static id="Static60" taborder="2" text="This is an extended chart component for nexacro17, which is separately licensed. Basic, Pie, Bubble and Radar, Gauge (supported) charts are provided. Select the Chart menu to see sample." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Button id="btnMove" taborder="1" text="Go to Menu" left="0" top="0" width="85" height="30" cssclass="btn_cp_popMenu" positionstep="1" onclick="btnMove_onclick"/>
+        <Grid id="grdChartLilst" taborder="3" left="0" top="81" bottom="20" right="20" binddataset="dsMenu" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,all" oncellclick="grdChartLilst_oncellclick">
           <Formats>
             <Format id="default">
               <Columns>
@@ -45,49 +45,7 @@
         <Grid id="grdChartLilst" left="20" top="180" right="20" bottom="20"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
-*  @FileName    nexacroChart.xfdl
-*  @Creator     presales
-*  @CreateDate  2019/10/17
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019/10/17          presales                  최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
-
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
- ************************************************************************************************/
-/**
- * @description 화면 load시 초기설정 event
-*/
-/************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
- ************************************************************************************************/
-
- 
- /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
- ************************************************************************************************/
-
-/************************************************************************************************
- * 사용자 FUNCTION 영역
- ************************************************************************************************/
-/**
-* fnOpenForm : 사용자 설정 이벤트
-* @param {String}  menuId	- 메뉴 ID
-* @param {String}  menuNm	- 메뉴명
-* @return : N/A
-* @example :  
-*/
+    <Script type="xscript5.1"><![CDATA[
 this.fnOpenForm = function (url)
 {
 	if ( url == null || url == "" ) 
@@ -101,21 +59,11 @@ this.fnOpenForm = function (url)
 	this.divChart.form.addEventHandler("onclose", this.nexacroChart_onclose, this);
 };
 
- 
-/************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
- ************************************************************************************************/
-/**
- * @description 버튼 click이벤트
-*/
 this.btnMove_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.setStepIndex(0);
 };
 
-/**
- * @description 그리드클릭
-*/
 this.grdChartLilst_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
 	var formurl = this.dsMenu.getColumn(e.row, "formurl");
@@ -123,14 +71,10 @@ this.grdChartLilst_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEv
 	this.fnOpenForm(formurl);
 };
 
-/**
- * @description 그리드클릭
-*/
 this.nexacroChart_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
 {
 	e.stopPropagation();
-};
-]]></Script>
+};]]></Script>
     <Objects>
       <Dataset id="gdsRainfall">
         <ColumnInfo>
