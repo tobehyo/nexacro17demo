@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Main" width="1280" height="1830" titletext="New Form" onload="Main_onload" onhscroll="Main_onhscroll" onvscroll="Main_onvscroll" ontimer="Main_ontimer">
     <Layouts>
       <Layout height="1830" mobileorientation="landscape" width="1280">
@@ -8,12 +8,12 @@
           <Layouts>
             <Layout>
               <Static id="Static00" taborder="0" text="Quick Menu" left="0" top="0" width="20.23%" height="120" cssclass="sta_WF_mainQmenu"/>
-              <Button id="btn_1010" taborder="1" text="그리드" left="Static00:0" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn01" onclick="QuickMenu_onclick"/>
-              <Button id="btn_1080" taborder="2" text="데이터셋" left="btn_1010:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn02" onclick="QuickMenu_onclick"/>
-              <Button id="btn_2090" taborder="3" text="차트" left="btn_1080:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn03" onclick="QuickMenu_onclick"/>
-              <Button id="btn_1110" taborder="4" text="트리그리드/&#13;&#10;그룹핑" left="btn_2090:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn04" onclick="QuickMenu_onclick"/>
-              <Button id="btn_2040" taborder="5" text="다국어 지원" left="btn_1110:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn05" onclick="QuickMenu_onclick"/>
-              <Button id="btn_1060" taborder="6" text="엑셀&#13;&#13;&#10;Import/Export" left="btn_2040:0" top="0" height="120" cssclass="btn_WF_mainQbtn06" right="7%" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1010" taborder="1" text="Grid" left="Static00:0" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn01" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1080" taborder="2" text="Dataset" left="btn_1010:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn02" onclick="QuickMenu_onclick"/>
+              <Button id="btn_2090" taborder="3" text="Chart" left="btn_1080:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn03" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1110" taborder="4" text="TreeGrid/&#13;&#10;Grouping" left="btn_2090:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn04" onclick="QuickMenu_onclick"/>
+              <Button id="btn_2040" taborder="5" text="Support&#13;&#10;Multilingual" left="btn_1110:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn05" onclick="QuickMenu_onclick"/>
+              <Button id="btn_1060" taborder="6" text="Excel&#13;&#13;&#10;Import/Export" left="btn_2040:0" top="0" height="120" cssclass="btn_WF_mainQbtn06" right="7%" onclick="QuickMenu_onclick"/>
             </Layout>
             <Layout name="Layout0"/>
             <Layout name="Layout1"/>
@@ -24,17 +24,17 @@
             <Layout>
               <Static id="Static00" taborder="0" left="40" top="18" width="160" height="43" cssclass="sta_WF_footerLogo01"/>
               <Static id="Static01" taborder="1" top="17" width="160" height="43" right="40" cssclass="sta_WF_footerLogo02"/>
-              <Static id="Static02" taborder="2" text="서울시 강남구 봉은사로 617 | 대표이사: 조강희 | 사업자등록번호: 211-86-61993 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" cssclass="sta_WF_footerAddress" right="20.23%"/>
+              <Static id="Static02" taborder="2" text="Intops Building, 617, Bongeunsa-ro, Gangnam-gu, Seoul, Korea | TEL: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" cssclass="sta_WF_footerAddress" right="20.23%"/>
             </Layout>
             <Layout name="Layout0">
               <Static id="Static00" width="18.82%"/>
               <Static id="Static01" width="18.82%"/>
-              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
+              <Static id="Static02" left="20.23%" top="18" height="43" right="20.23%"/>
             </Layout>
             <Layout name="Layout1">
               <Static id="Static00" width="0" left="40" top="18" height="0" visible="false"/>
               <Static id="Static01" width="0" top="17" height="0" right="40" visible="false"/>
-              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
+              <Static id="Static02" left="30" top="14" height="62" right="30"/>
             </Layout>
           </Layouts>
         </Div>
@@ -73,7 +73,7 @@
                 <Layouts>
                   <Layout>
                     <Static id="Static00" taborder="0" text="Daily" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
-                    <Static id="staNumber" taborder="1" text="0" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="staNumber" taborder="1" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum" text="63"/>
                     <Static id="Static02" taborder="2" text="5.6%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData02"/>
                     <Div id="divColunmChart" taborder="3" text="Div00" left="149" top="55" height="55" right="10"/>
                   </Layout>
@@ -210,45 +210,33 @@
 *  @FileName  Main.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.09.23      presales                  최초 생성 
+*  2019.09.23      presales                  First created 
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM varibale
  ************************************************************************************************/
-this.fvStartNum1 = 0;
-this.fvStartNum2 = 0;
-this.fvStartNum3 = 0;
-this.fvStartNum4 = 0;
 
-this.fvDuration = 70;
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT (onload)
  ************************************************************************************************/
 /**
- * @description 화면로드 시 MegaMenu를 생성하고 애니메이션을 설정한다.
+ * @description Create MegaMenu and set animation on screen load
 */
 this.Main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
-	nexacro._OnceCallbackTimer.callonce(this, function() {
-		//메인화면에 팝업 div를 생성해서 메가 메뉴를 보여준다.
+	//nexacro._OnceCallbackTimer.callonce(this, function() {
+		//Create a popup div on the main screen to show the mega menu
 		this.gfnCreateMegaMenu(obj);
 		
-		//애니메이션
-		//this.fnCreateAnimation();
-		this.divBody.form.divMain01.form.staNumber._orgNum = 63;
-		this.divBody.form.divMain02.form.staNumber._orgNum = this.divBody.form.divMain02.form.staNumber.text;
-		this.divBody.form.divMain03.form.staNumber._orgNum = this.divBody.form.divMain03.form.staNumber.text;
-		this.divBody.form.divMain04.form.staNumber._orgNum = this.divBody.form.divMain04.form.staNumber.text;
-		
-		this.setTimer(1,5);
-		this.setTimer(9999, 700);
-		this.setTimer(6666,5000);
+		//Animation
+		this.fnCreateNumberAnimation();
+ 		this.setTimer(6666,5000);
 	
 		this.divBody.form.divMain01.form.divColunmChart.set_url("mainChart::Column01.xfdl");
 		this.divBody.form.divMain02.form.divColunmChart.set_url("mainChart::Column02.xfdl");
@@ -261,40 +249,20 @@ this.Main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 		
 		nexacro.getApplication().mainframe.VFrameSet.Top.set_formurl("frame::Top.xfdl");
 		nexacro.getApplication().mainframe.VFrameSet.HFrameSet.Left.set_formurl("frame::Left.xfdl");
-		nexacro.getApplication().mainframe.VFrameSet.HFrameSet.VFrameSet00.Tab.set_formurl("frame::Tab.xfdl");
+ 		nexacro.getApplication().mainframe.VFrameSet.HFrameSet.VFrameSet00.Tab.set_formurl("frame::Tab.xfdl");
 		
-		if(system.navigatorname != "nexacro")
-		{
-			document.body.style.background="none";
-			hide();
-		}
-	}, 10);
-	//this.setTimer(7777,10);
-};
-
-
-/**
-* fnMoveAnimation : 애니메이션 Interpolation 함수
-* @param {Number}  t	- Timer Index
-* @param {Number}  b	- 0
-* @param {Number}  c	- 초기값 ( 높이 )
-* @param {Number}  d	- Timer Max
-* @return : 위치값
-* @example :  
-*/
-this.fnMoveAnimation = function (t, b, c, d) 
-{
-	t /= d/2;
-	if (t < 1) return c/2*t*t*t + b;
-	t -= 2;
-	return c/2*(t*t*t + 2) + b;
+// 		if(system.navigatorname != "nexacro")
+// 		{
+// 			document.body.style.background="none";
+// 			hide();
+// 		}
+	//}, 10);
 };
 
 /**
- * @description MegaMenu를 생성한다.
+ * @description set animation for step using ontimer event
 */
-this.fvCnt=1;
-this.fvMainImgScrollPos = 0;
+
 this.Main_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 {
 	var nNum = 0;
@@ -310,84 +278,17 @@ this.Main_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 		}
 		this.divMainVisual.form.setStepIndex(stepIndex);
 	}
-	
-	if(e.timerid == 7777)
-	{
-		nNum = Math.round( this.fnMoveAnimation(this.fvMainImgScrollPos, 0, 1280, this.fvDuration));
-		this.divMainVisual.form.hscrollbar.set_pos(nNum);
-		this.fvMainImgScrollPos++;
-	}
-	
-	if(e.timerid == 9999)
-	{
-		this.fvCnt++;
-		
-		this.setTimer(this.fvCnt,10);
-		
-		if(this.fvCnt > 3)
-		{
-			this.killTimer(9999);
-		}
-	}
-	
-	if(e.timerid == 1)
-	{	
-		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum1, 0, this.divBody.form.divMain01.form.staNumber._orgNum, this.fvDuration));
-		if(nNum >  this.divBody.form.divMain01.form.staNumber._orgNum)
-		{
-			this.killTimer(1);
-			this.fvStartNum1 = 0;
-			return;
-		}
-		this.divBody.form.divMain01.form.staNumber.set_text(nNum);
-		this.fvStartNum1++;
-	}	
-	else if(e.timerid == 2)
-	{
-		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum2, 0, this.divBody.form.divMain02.form.staNumber._orgNum, this.fvDuration));
-		if(nNum > this.divBody.form.divMain02.form.staNumber._orgNum)
-		{
-			this.killTimer(2);
-			this.fvStartNum2 = 0;
-			return;
-		}
-		this.divBody.form.divMain02.form.staNumber.set_text(nNum);
-		this.fvStartNum2++;
-	}
-	else if(e.timerid == 3)
-	{
-		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum3, 0, this.divBody.form.divMain03.form.staNumber._orgNum, this.fvDuration));
-		if(nNum > this.divBody.form.divMain03.form.staNumber._orgNum)
-		{
-			this.killTimer(3);
-			this.fvStartNum3 = 0;
-		}
-		this.divBody.form.divMain03.form.staNumber.set_text(nNum);
-		this.fvStartNum3++;
-	}
-	else if(e.timerid == 4)
-	{
-		nNum = Math.round( this.fnMoveAnimation(this.fvStartNum4, 0, this.divBody.form.divMain04.form.staNumber._orgNum, this.fvDuration));
-		if( nNum == this.divBody.form.divMain04.form.staNumber._orgNum)
-		{
-			this.fvStartNum4 = 0;
-			this.killTimer(4,10);
-		}
-		this.divBody.form.divMain04.form.staNumber.set_text(nNum);
-		this.fvStartNum4++;
-	}
+
 };
 
 /**
- * @description MegaMenu를 생성한다.
+ * @description repeat animation
 */
 this.Main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
 {
 	if(e.pos > 0 && e.pos < 120)
 	{
-		this.setTimer(1,5);
-		this.fvCnt=1;
-		this.setTimer(9999, 700);
+		this.fnCreateNumberAnimation();
 	}
 	else if(e.pos > 480 && e.pos < 600)
 	{
@@ -404,42 +305,70 @@ this.Main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
 
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK (Transaction, Popup)
  ************************************************************************************************/
 
  
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION services
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION
  ************************************************************************************************/
-this.fnCreateAnimation = function()
+this.fnCreateNumberAnimation = function()
 {
-	var sAniId = "mainAni01";
-	var	objAni = new nexacro.Animation( sAniId, this);
+	var arrNumberAnimation = [ 
+		this.divBody.form.divMain01.form.staNumber,
+		this.divBody.form.divMain02.form.staNumber,
+		this.divBody.form.divMain03.form.staNumber,
+		this.divBody.form.divMain04.form.staNumber 
+	];
+	
+	// delay each animation
+	var delayAnimation = function(idx, objAni, pThis,nodelay) {
+		if(nodelay) return objAni.play();
+		nexacro._OnceCallbackTimer.callonce(pThis, function() {
+			objAni.play();
+		},idx*300);
+	}	
+	var cnt = arrNumberAnimation.length;
+	for(var i=0; i<cnt; i++) {
+		var sAniId = arrNumberAnimation[i]._unique_id;
+		if(this[sAniId]) {
+			delayAnimation(i, this[sAniId], this, true);
+			continue;
+		}
+		var targetObj = arrNumberAnimation[i];
+		var aniValue = arrNumberAnimation[i].text;
+		var itemName = "AniItem00";
+		var	objAni = new nexacro.Animation(sAniId, this);
+		this.addChild(sAniId, objAni);
 		
-	this.addChild(sAniId, objAni);
-	
-	objAni.set_duration( 1000 );
-	objAni.set_easing( "easeinoutsine" );
-	objAni.addTarget(sAniId , this.divBody.form.divMain01.form.staNumber, "text:999");
-	objAni.setEventHandler("onrun", this.Ani_onrun, this);
-	//objAni.addEventHandler("oncomplete",this.Animation_oncomplete, this);
-	
-	objAni.play();
+		objAni.set_duration(1000);
+		objAni.set_easing("easeinoutsine");
+		objAni.addTarget(itemName , targetObj, "text:[0,"+aniValue+"]");
+		objAni.setEventHandler("onrun", this.Animation_onrun, this);
+		objAni.addEventHandler("oncomplete",this.Animation_oncomplete, this);
+					
+		delayAnimation(i, objAni, this);
+	}
 }
 
-this.Ani_onrun = function(obj,e)
+this.Animation_onrun = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)
 {
-	this.divBody.form.divMain01.form.staNumber.set_text(nexacro.round(this.divBody.form.divMain01.form.staNumber.text));
-}
+	//trace(obj.id);
+};
+
+this.Animation_oncomplete = function(obj:nexacro.Animation,e:nexacro.AnimationEventInfo)
+{
+	// TODO trace(obj.id);
+};
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * Each COMPONENT EVENT
  ************************************************************************************************/
 /**
- * @description 팝업메뉴를 띄어준다.
+ * @description open Popup menu
 */
 this.divMainVisual_btn_menu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {	
@@ -448,7 +377,7 @@ this.divMainVisual_btn_menu_onclick = function(obj:nexacro.Button,e:nexacro.Clic
 
 
 /**
- * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+ * @description open menu when click Quick menu
 */
 this.QuickMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -459,11 +388,11 @@ this.QuickMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+ * @description go to link.
 */
 this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	//nexacro 브라우저에서 메소드 실행 시 시스템에 설정된 기본 브라우저가 아닌 인터넷 익스플로러가 실행됩니다
+	//run Internet explorer not default browser on NRE Desktop
 	switch(obj.name)
 	{
 		case "btnSupport":
