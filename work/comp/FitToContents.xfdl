@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="FitToContents" width="980" height="830" titletext="Fit To Contents" onload="FitToContents_onload" onbeforeclose="FitToContents_onbeforeclose">
     <Layouts>
-      <Layout>
+      <Layout stepcount="0" screenid="">
         <Radio id="rdoLocale" taborder="0" left="8" top="64" height="266" innerdataset="@dsLocale" codecolumn="code" datacolumn="name" onitemchanged="rdoLocale_onitemchanged" columncount="4" direction="horizontal" width="852"/>
         <Static id="Static07" taborder="1" text="넥사크로는 컴포넌트 속성으로 별도의 코딩없이 텍스트 길이에 맞게 자동으로 컴포넌트 사이즈를 조정할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
         <Static id="Static08" taborder="2" left="59" top="86" width="60" height="83" cssclass="sta_WF_iconKorea" text="Korea"/>
@@ -14,7 +14,7 @@
         <Static id="Static15" taborder="8" text="Czech" cssclass="sta_WF_iconCzech" left="59" top="225" width="60" height="83"/>
         <Static id="Static16" taborder="9" left="265" top="304" width="95" height="20" text="(Switzerland)"/>
         <Static id="Static17" taborder="10" text="(Spain)" left="494" top="304" width="64" height="20"/>
-        <Grid id="grdMaster" taborder="11" left="0" top="349" height="200" binddataset="dsList" autofittype="col" width="50.00%">
+        <Grid id="grdMaster" taborder="11" left="0" top="349" height="200" binddataset="dsList" autofittype="none" width="50.00%" autosizingtype="col" autosizebandtype="allband">
           <Formats>
             <Format id="default">
               <Columns>
@@ -30,12 +30,12 @@
                 <Row size="36"/>
               </Rows>
               <Band id="head">
-                <Cell text="성명"/>
-                <Cell col="1" text="출생년도"/>
-                <Cell col="2" text="키"/>
-                <Cell col="3" text="몸무게"/>
-                <Cell col="4" text="소속"/>
-                <Cell col="5" text="포지션"/>
+                <Cell text="성명" autosizecol="limitmin"/>
+                <Cell col="1" text="출생년도" autosizecol="limitmin"/>
+                <Cell col="2" text="키" autosizecol="limitmin"/>
+                <Cell col="3" text="몸무게" autosizecol="limitmin"/>
+                <Cell col="4" text="소속" autosizecol="limitmin"/>
+                <Cell col="5" text="포지션" autosizecol="limitmin"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:Column0"/>
@@ -65,15 +65,16 @@
         <Static id="Static00_00" taborder="26" text="Static00" left="28" width="485" height="20" background="aqua" visible="false" bottom="0"/>
         <Static id="Static00" taborder="27" text="Static00" top="7" width="20" height="153" background="aqua" visible="false" right="0"/>
         <GroupBox id="GroupBox00" text="날짜 형식" taborder="28" left="0" top="562" height="200" width="50.00%" visible="true" msgCd="L0007" cssclass="grb_basic01"/>
-        <Static id="Static00_01" taborder="29" text="간단한 날짜 " left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009"/>
+        <Static id="Static00_01" taborder="29" text="간단한 날짜 " left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009" fittocontents="width"/>
         <Calendar id="Calendar00" taborder="30" left="Static00_01:10" top="603" height="32" dateformat="SHORTDATE" editformat="SHORTDATE" value="20160401" width="215" visible="true" cssclass="cal_basic01"/>
-        <Static id="Static01" taborder="31" text="자세한 날짜 " left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010"/>
-        <Calendar id="Calendar01" taborder="32" dateformat="LONGDATE" editformat="LONGDATE" left="Static01:10" top="645" height="32" value="20160401" width="215" visible="true" cssclass="cal_basic01"/>
+        <Static id="Static01" taborder="31" text="자세한 날짜 " left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010" fittocontents="width"/>
+        <Calendar id="Calendar01" taborder="32" left="Static01:10" top="645" height="32" width="215" visible="true" cssclass="cal_basic01" dateformat="LONGDATE" editformat="LONGDATE"/>
         <GroupBox id="GroupBox01" text="숫자 형식" taborder="33" left="GroupBox00:4" top="562" height="200" visible="true" msgCd="L0008" right="4" cssclass="grb_basic01"/>
-        <Static id="Static02" taborder="34" text="양수" left="GroupBox00:28" top="603" height="32" width="90" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R"/>
+        <Static id="Static02" taborder="34" text="양수" left="GroupBox00:28" top="603" height="32" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R" width="90"/>
         <Static id="Static03" taborder="35" text="음수" left="GroupBox00:28" top="645" height="32" width="90" visible="true" cssclass="sta_WF_cell01R" msgCd="L00012"/>
         <MaskEdit id="MaskEdit00" taborder="36" left="Static02:50" top="603" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="123456789.00"/>
         <MaskEdit id="MaskEdit01" taborder="37" left="Static03:50" top="645" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="-123456789.00"/>
+        <Button id="Button00" taborder="38" text="text size" left="518" top="701" width="136" height="49" onclick="Button00_onclick" visible="true"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -670,21 +671,19 @@
           </Row>
         </Rows>
       </Dataset>
+      <Dataset id="ds_calendar">
+        <ColumnInfo>
+          <Column id="shortdate" type="STRING" size="256"/>
+          <Column id="longdate" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="shortdate">20191127</Col>
+            <Col id="longdate">20191127</Col>
+          </Row>
+        </Rows>
+      </Dataset>
     </Objects>
-    <Bind>
-      <BindItem id="item0" compid="rdoLocale" propid="value" datasetid="gdsLocale" columnid="locale"/>
-      <BindItem id="item1" compid="img_image" propid="image" datasetid="dsList" columnid="Column6"/>
-      <BindItem id="item2" compid="sta01" propid="text" datasetid="dsList" columnid="Column0"/>
-      <BindItem id="item3" compid="st_title01" propid="text" datasetid="dsList" columnid="Column1"/>
-      <BindItem id="item4" compid="st_title02" propid="text" datasetid="dsList" columnid="Column2"/>
-      <BindItem id="item5" compid="st_title03" propid="text" datasetid="dsList" columnid="Column3"/>
-      <BindItem id="item6" compid="st_title04" propid="text" datasetid="dsList" columnid="Column4"/>
-      <BindItem id="item7" compid="st_title05" propid="text" datasetid="dsList" columnid="Column5"/>
-      <BindItem id="item8" compid="Calendar00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
-      <BindItem id="item10" compid="Calendar01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
-      <BindItem id="item12" compid="MaskEdit00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
-      <BindItem id="item14" compid="MaskEdit01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
-    </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
 *  @MenuPath    대메뉴 > 소메뉴
@@ -779,7 +778,6 @@ this.fnSetCompFitToContents = function()
 	this.staWeight.set_fittocontents("width");
 	this.staTeam.set_fittocontents("width");
 	this.staPosition.set_fittocontents("width");
-	
 	this.resetScroll();
 }
 
@@ -926,6 +924,38 @@ this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInf
 	this.fnSetCompFitToContents();
 	this.grdMaster.set_locale(e.postvalue);
 };
-]]></Script>
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Static02.set_minwidth(90);
+	this.Static03.set_minwidth(90);
+	this.Static02.set_fittocontents("width");
+	this.Static03.set_fittocontents("width");
+	this.resetScroll();
+	return;
+
+	// comp._cssselector
+	// get font from css
+	var strFont = this.Static02._getCurrentStyleInheritValue("font");
+	var strText = this.Static02.text;
+	var objSize = nexacro.getTextSize( strText, strFont );
+	trace("nx:" + objSize.nx + " ny: " +objSize.ny);
+	this.Static02.set_minwidth(objSize.nx);
+};]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="rdoLocale" propid="value" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item1" compid="img_image" propid="image" datasetid="dsList" columnid="Column6"/>
+      <BindItem id="item2" compid="sta01" propid="text" datasetid="dsList" columnid="Column0"/>
+      <BindItem id="item3" compid="st_title01" propid="text" datasetid="dsList" columnid="Column1"/>
+      <BindItem id="item4" compid="st_title02" propid="text" datasetid="dsList" columnid="Column2"/>
+      <BindItem id="item5" compid="st_title03" propid="text" datasetid="dsList" columnid="Column3"/>
+      <BindItem id="item6" compid="st_title04" propid="text" datasetid="dsList" columnid="Column4"/>
+      <BindItem id="item7" compid="st_title05" propid="text" datasetid="dsList" columnid="Column5"/>
+      <BindItem id="item8" compid="Calendar00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item12" compid="MaskEdit00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item14" compid="MaskEdit01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item9" compid="Calendar00" propid="value" datasetid="ds_calendar" columnid="shortdate"/>
+      <BindItem id="item10" compid="Calendar01" propid="value" datasetid="ds_calendar" columnid="longdate"/>
+    </Bind>
   </Form>
 </FDL>
