@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Mobile_main" width="480" height="768" titletext="New Form" onload="Mobile_main_onload" ondevicebuttonup="Mobile_main_ondevicebuttonup" onvscroll="Mobile_main_onvscroll">
     <Layouts>
       <Layout height="768" mobileorientation="landscape" width="480" screenid="mobile">
@@ -39,35 +39,39 @@
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    Frame > Tab
-*  @FileName  Tab.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.09.23      presales                  최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
-
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
- ************************************************************************************************/
+ * This method is get all Column data
+ * @param {String} colName - Dataset Column Name
+ * @param {String} strCondition - Dataset filter condition `"Column_Name==Value"`
+ * @param {Dataset} objData - Dataset object
+ * @returns {Array} Returns `array`.
+ * @example
+ *
+ */
+this.getColumnDataAll = function(colName, strCondition, objData) {
+	var arrRows = objData.extractRows(strCondition);
+	var temp = [];
+	for(var i=0; i<arrRows.length; i++) {
+		temp.push(objData.getColumn(arrRows[i], colName));
+	}
+	return temp;
+}
 /**
- * @description 메뉴설정을 해준다.
+ * @description set Menu
 */
 this.Mobile_main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
+/**
+ * @description filter mobile menu
+ * MenuList : grid::CellTypes.xfdl,comp::Components.xfdl,comp::nexacroChart.xfdl,comp::ListView.xfdl,ext::GoogleMap.xfdl
+**/
 	var objApp = nexacro.getApplication();
 	var objMenuDs 	= objApp.gdsMenu;
-	objMenuDs.filter("MOBILE_YN!='P'");//피씨전용화면이 아닌경우
+	//objMenuDs.filter("MOBILE_YN!='P'"); // P is only for Desktop
+	objMenuDs.filter("MOBILE_YN!='P' && MENU_ID!=4080 && MENU_ID!='1080' && MENU_ID!='2050'");
 	this.ds_menu.copyData(objMenuDs, true);
+	// check menu list
+	//trace(this.getColumnDataAll("MENU_URL", "MENU_LVL > 0", this.ds_menu));
+
 	objMenuDs.filter("");
 	
 	this.divMenu.set_left(0);
@@ -77,19 +81,20 @@ this.Mobile_main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * Each COMPONENT EVENT
  ************************************************************************************************/
 /**
- * @description 메뉴 열기
+ * @description oepn menu
 */
 this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.divMenu.set_visible(true);
+	this.divMenu.bringToFront();
 };
 
 
 /**
- * @description 메뉴 닫기
+ * @description close menu
 */
 this.divMenu_btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -97,19 +102,19 @@ this.divMenu_btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEvent
 };
 
 /**
- * @description 해당 메뉴 화면으로 이동
+ * @description go to menu
 */
 this.grdLeftMenu_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
-	var nRow = e.row;//dataset의 row 반환
-	var treeRow = obj.getTreeRow(nRow)//Grid의 row 반환
+	var nRow = e.row; //return dataset row index
+	var treeRow = obj.getTreeRow(nRow) // return Grid row
 
 	if(e.clickitem == "treeitembutton") return;
 	
-	//트리 말단인 경우 화면 open
+	// if it's tree leaf open menu
 	if(obj.isTreeLeafRow(nRow))
 	{
-		//메뉴열기
+		//open menu
 		var objMenuDs = obj.getBindDataset();
 		var sMenuId = objMenuDs.getColumn(e.row, "MENU_ID");
 		var args = [];
@@ -117,21 +122,21 @@ this.grdLeftMenu_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEven
 	}
 	else 
 	{	
-		if(obj.isTreeExpandedRow(nRow+1))//DataSet 의 Row 인덱스
+		if(obj.isTreeExpandedRow(nRow+1)) //DataSet Row index
 		{	
-			//트리가 열려있으면 닫아준다.
+			// Collapse if tree is expanded
 			obj.setTreeStatus(treeRow, false);
 		}
 		else //if(obj.isTreeCollapsedRow(nRow))
 		{
-			//트리가 닫혀 있으면 열어준다.
+			// Expand if tree is collapsed
 			obj.setTreeStatus(treeRow, true);
 		} 
 	}
 };
 
 /**
- * @description 홈화면이동
+ * @description go to home screen
 */
 this.divTop_btnHome_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -139,15 +144,7 @@ this.divTop_btnHome_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventIn
 };
 
 /**
- * @description 메뉴div 닫기
-*/
-this.divMenu_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
-{
-	this.divMenu.set_visible(false);
-};
-
-/**
- * @description 메뉴div 닫기
+ * @description close menu Div
 */
 this.div_menu_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
 {
@@ -156,7 +153,7 @@ this.div_menu_onclick = function(obj:nexacro.Div,e:nexacro.ClickEventInfo)
 
 
 /**
- * @description 메인화면으로 이동
+ * @description go to home screen
 */
 this.staLogo_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
 {
@@ -166,14 +163,14 @@ this.staLogo_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
 
 
 /************************************************************************************************
- * 공통함수 
+ * User function
  ************************************************************************************************/
 /**
- * @description 해당 메뉴 화면으로 이동
+ * @description go to home screen
 */
 this.mgfn_goMain = function()
 {
-	//div_body,divMenu 높이조절
+	//div_body,divMenu set height
 	this.divBody.set_height(2280);
 	this.divMenu.set_height(2280);
 	this.resetScroll();
@@ -182,11 +179,11 @@ this.mgfn_goMain = function()
 }
 
 /**
- * @description 해당 메뉴 화면으로 이동
+ * @description go to menu screen
 */
 this.mgfn_openMenu = function(menuId, args)
 {	
-	//div_body,divMenu 높이조절
+	//div_body,divMenu set height
 	this.divBody.set_bottom(0);
 	this.divMenu.set_bottom(0);
 	this.resetScroll();
@@ -197,7 +194,7 @@ this.mgfn_openMenu = function(menuId, args)
 	
 	this.divBody.set_url(formUrl);
 	
-	//스크롤 조정 - 동기설정해주어야 해서 느림...
+	// reset scroll hide area
 	if(this.divBody.form.vscrollbar.max > 0)
 	{
 		//this.divWork.setOffsetHeight(this.divWork.getOffsetHeight() + this.divWork.form.vscrollbar.max + 20);
@@ -216,33 +213,33 @@ this.mgfn_openMenu = function(menuId, args)
 this.Mobile_main_ondevicebuttonup = function(obj:nexacro.Form,e:nexacro.DeviceButtonEventInfo)
 {
 	// MENU(1) CANCEL(2) 
+	trace("e.button : " + e.button, " this.divMenu : " + this.divMenu.visible, this.divBody.form.name);
 	if (e.button == 2) 
 	{
-		// Android 취소키 제어
+		// Android back key
 		if (this.divMenu.visible)
 		{
 			this.divMenu.set_visible(false);
 		}
-		else if (this.div_firstmain.visible)
+		else if (this.divBody.form.name === "Mobile_sub")
 		{
-			//홈화면에서 뒤로가기 눌렀을 경우
-			if(this.confirm("종료하시겠습니까?","FNC")){
+			// press android back key when it's home screen
+			if(this.confirm("Are you sure you want to quit?","FNC")){
 				nexacro.getApplication().exit();
 			}
 		}				
 		else
 		{
-			//메뉴화면인 경우에 뒤로가기
-			this.fnAction("HOME");
+			// if it's menu screen go to home screen
+			this.mgfn_goMain();
 		}		
 	}
 	return false;
 };
 
 
-
 /**
- * @description 스크롤 위치에 따라 애니메이션
+ * @description Animation based on scroll position
 */
 this.Mobile_main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
 {	
@@ -280,7 +277,7 @@ this.Mobile_main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo
           <Row>
             <Col id="MENU_LVL">1</Col>
             <Col id="MENU_ID">1010</Col>
-            <Col id="MENU_NM">다양한 그리드 기능</Col>
+            <Col id="MENU_NM">Various grid functions</Col>
             <Col id="MENU_URL">grid::Functions.xfdl</Col>
             <Col id="PARENT_MENU_ID">1000</Col>
             <Col id="MOBILE_YN">N</Col>
@@ -288,7 +285,7 @@ this.Mobile_main_onvscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo
           <Row>
             <Col id="MENU_LVL">1</Col>
             <Col id="MENU_ID">1020</Col>
-            <Col id="MENU_NM">다양한 그리드 표현</Col>
+            <Col id="MENU_NM">Various grid expressions</Col>
             <Col id="MENU_URL">grid::CellTypes.xfdl</Col>
             <Col id="PARENT_MENU_ID">1000</Col>
             <Col id="MOBILE_YN">Y</Col>

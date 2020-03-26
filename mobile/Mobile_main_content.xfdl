@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Mobile_sub" width="480" height="2280" titletext="New Form" onload="Mobile_sub_onload" ontimer="Mobile_sub_ontimer">
     <Layouts>
       <Layout height="2280" mobileorientation="landscape" width="480">
@@ -180,7 +180,7 @@
         <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" height="90" cssclass="div_WF_mainFooter" right="0">
           <Layouts>
             <Layout>
-              <Static id="Static02" taborder="1" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="30" top="15" height="62" cssclass="sta_WF_footerAddress" right="30"/>
+              <Static id="Static02" taborder="1" text="Intops Building, 617, Bongeunsa-ro, Gangnam-gu, Seoul, Korea | TEL: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="0" top="15" height="62" cssclass="sta_WF_footerAddress" right="0"/>
             </Layout>
             <Layout name="Layout0">
               <Static id="Static00" width="18.82%"/>
@@ -203,16 +203,16 @@
 *  @FileName  Main.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.09.23      presales                  최초 생성 
+*  2019.09.23      presales                  First created 
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM varibale
  ************************************************************************************************/
 this.fvStartNum1 = 0;
 this.fvStartNum2 = 0;
@@ -222,17 +222,17 @@ this.fvStartNum4 = 0;
 this.fvDuration = 70;
 this.fvCnt=1;
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT (onload)
  ************************************************************************************************/
 /**
- * @description 스텝 애니메이션 생성
+ * @description stemp animation and nubmer animation
 */
 this.Mobile_sub_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
-	//스텝
+	// step
 	this.setTimer(5555,3000);
 	
-	//애니메이션
+	// animation
 	this.divBody.form.divMain01.form.staNumber._orgNum = 63;
 	this.divBody.form.divMain02.form.staNumber._orgNum = this.divBody.form.divMain02.form.staNumber.text;
 	this.divBody.form.divMain03.form.staNumber._orgNum = this.divBody.form.divMain03.form.staNumber.text;
@@ -244,10 +244,11 @@ this.Mobile_sub_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 
 };
 /**
- * @description 스텝/차트애니메이션
+ * @description step/number animation
 */
 this.Mobile_sub_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 {
+	// step
 	if(e.timerid == 5555)
 	{
 		var stepIndex = this.divMainVisual.form.getStepIndex();
@@ -260,7 +261,7 @@ this.Mobile_sub_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 		this.divMainVisual.form.setStepIndex(stepIndex);
 	}
 	
-	
+	// number animation
 	if(e.timerid == 9999)
 	{
 		this.fvCnt++;
@@ -327,12 +328,12 @@ this.Mobile_sub_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 
 
 /**
-* fnMoveAnimation : 애니메이션 Interpolation 함수
+* fnMoveAnimation : animation Interpolation function
 * @param {Number}  t	- Timer Index
 * @param {Number}  b	- 0
-* @param {Number}  c	- 초기값 ( 높이 )
+* @param {Number}  c	- init value
 * @param {Number}  d	- Timer Max
-* @return : 위치값
+* @return : Number
 * @example :  
 */
 this.fnMoveAnimation = function (t, b, c, d) 
@@ -352,11 +353,11 @@ this.fnStartIncreaseNum = function()
 }
 
 /**
- * @description 퀵베뉴 선택시 해당 화면으로 이동한다.
+ * @description go to link
 */
 this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	//nexacro 브라우저에서 메소드 실행 시 시스템에 설정된 기본 브라우저가 아닌 인터넷 익스플로러가 실행됩니다
+	//run Internet explorer not default browser on NRE Desktop [ refer help ]
 	switch(obj.name)
 	{
 		case "btnSupport":
