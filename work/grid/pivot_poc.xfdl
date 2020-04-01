@@ -1,206 +1,206 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="pivot_comp" width="980" height="820" titletext="New Form" onload="pivot_comp_onload">
     <Layouts>
       <Layout height="820" mobileorientation="landscape" width="980">
         <Static id="Static02" taborder="0" left="0" top="10" right="20" height="44" text="" cssclass="sta_WF_box02"/>
-        <Static id="Static03" taborder="2" text="조회건수" cssclass="sta_WF_condition01" left="20" top="20" width="66" height="24"/>
-        <Static id="Static09" taborder="4" text="조회시간" top="20" width="63" height="25" cssclass="sta_cm_text12R" right="351"/>
+        <Static id="Static03" taborder="2" text="Views" cssclass="sta_WF_condition01" left="20" top="20" width="66" height="24"/>
+        <Static id="Static09" taborder="4" text="Inquiry time" top="20" width="83" height="25" cssclass="sta_cm_text12R" right="391"/>
         <Combo id="cmbCount" taborder="3" text="30,000건" top="17" height="30" innerdataset="dsCnt" codecolumn="cnt" datacolumn="text" index="0" value="30000" left="115" padding="0px 0px 0px 5px" width="150"/>
-        <Static id="stTranTime" taborder="5" text="0초" top="20" width="63" height="25" cssclass="sta_cm_text12R" right="271"/>
-        <Static id="Static10" taborder="6" text="피벗 렌더시간" top="20" width="95" height="25" cssclass="sta_cm_text12R" right="161"/>
-        <Static id="stRenderTime" taborder="7" text="0초" top="20" width="63" height="25" cssclass="sta_cm_text12R" right="81"/>
+        <Static id="stTranTime" taborder="5" text="0 seconds" top="20" width="73" height="25" cssclass="sta_cm_text12R" right="301"/>
+        <Static id="Static10" taborder="6" text="Pivot render time" top="20" width="115" height="25" cssclass="sta_cm_text12R" right="171"/>
+        <Static id="stRenderTime" taborder="7" text="0 seconds" top="20" width="73" height="25" cssclass="sta_cm_text12R" right="81"/>
         <Button id="search" taborder="1" cssclass="btn_WF_search01" top="10" width="43" height="44" right="20" onclick="Button00_onclick" text=""/>
         <NxPivot id="NxPivot00" taborder="8" left="0" top="64" right="20" bottom="20" onrender="NxPivot00_onrender" binddataset="dsList" text="">
           <Contents><![CDATA[{"config":{
-		"fields": [],
-		"colAxis": [
-			{
-				"id": "col1",
-				"itemText": "년월일",
-				"type": "date",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "CNT"
+	"fields": [],
+	"colAxis": [
+		{
+			"id": "col1",
+			"itemText": "Y M D",
+			"type": "date",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "CNT"
+		},
+		{
+			"id": "col9",
+			"itemText": "Channel name",
+			"type": "string",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "CNT"
+		}
+	],
+	"rowAxis": [
+		{
+			"id": "col3",
+			"itemText": "Sales department",
+			"type": "string",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "CNT"
+		},
+		{
+			"id": "col5",
+			"itemText": "Department",
+			"type": "string",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "CNT"
+		}
+	],
+	"values": [
+		{
+			"id": "col12",
+			"itemText": "Total sales",
+			"type": "number",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "SUM"
+		},
+		{
+			"id": "col13",
+			"itemText": "Total Return Sales",
+			"type": "number",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "SUM"
+		},
+		{
+			"id": "col14",
+			"itemText": "Discount amount",
+			"type": "number",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "SUM"
+		},
+		{
+			"id": "col15",
+			"itemText": "Promotion amount",
+			"type": "number",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "SUM"
+		},
+		{
+			"id": "col16",
+			"itemText": "Net sales",
+			"type": "number",
+			"itemWidth": "100",
+			"sort": "ASC",
+			"aggregator": "SUM"
+		}
+	],
+	"filters": []
+},
+"panel":{
+	"toolbar": {
+		"size": "28",
+		"padding": "3 3 3 3",
+		"gap": "2",
+		"buttonsize": "20",
+		"cssclass": "NxPivot_toolbarArea",
+		"lbuttons": {
+			"9d5d6862-9a9f-dc4f-383a-ebaacda08ec1": {
+				"type": "rowsstatus",
+				"id": "addnew",
+				"toggle": "1",
+				"togglevalue": "0",
+				"tooltip": "전체 row 펼치기,전체 row 접기",
+				"cssclass": "NxPivot_toolbarButton_rowstatus_expand,NxPivot_toolbarButton_rowstatus_collapse",
+				"align": "left"
 			},
-			{
-				"id": "col9",
-				"itemText": "채널명",
-				"type": "string",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "CNT"
-			}
-		],
-		"rowAxis": [
-			{
-				"id": "col3",
-				"itemText": "영업부명",
-				"type": "string",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "CNT"
-			},
-			{
-				"id": "col5",
-				"itemText": "부서명",
-				"type": "string",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "CNT"
-			}
-		],
-		"values": [
-			{
-				"id": "col12",
-				"itemText": "총매출액",
-				"type": "number",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "SUM"
-			},
-			{
-				"id": "col13",
-				"itemText": "반품총매출액",
-				"type": "number",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "SUM"
-			},
-			{
-				"id": "col14",
-				"itemText": "에누리금액",
-				"type": "number",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "SUM"
-			},
-			{
-				"id": "col15",
-				"itemText": "프로모션금액",
-				"type": "number",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "SUM"
-			},
-			{
-				"id": "col16",
-				"itemText": "순매출액",
-				"type": "number",
-				"itemWidth": "100",
-				"sort": "ASC",
-				"aggregator": "SUM"
-			}
-		],
-		"filters": []
-	},
-	"panel":{
-		"toolbar": {
-			"size": "28",
-			"padding": "3 3 3 3",
-			"gap": "2",
-			"buttonsize": "20",
-			"cssclass": "NxPivot_toolbarArea",
-			"lbuttons": {
-				"9d5d6862-9a9f-dc4f-383a-ebaacda08ec1": {
-					"type": "rowsstatus",
-					"id": "addnew",
-					"toggle": "1",
-					"togglevalue": "0",
-					"tooltip": "전체 row 펼치기,전체 row 접기",
-					"cssclass": "NxPivot_toolbarButton_rowstatus_expand,NxPivot_toolbarButton_rowstatus_collapse",
-					"align": "left"
-				},
-				"e98d42fb-8763-cba2-08f8-ebaad54eb13a": {
-					"type": "columnsstatus",
-					"id": "addnew",
-					"toggle": "1",
-					"togglevalue": "0",
-					"tooltip": "전체 column 펼치기, 전체 column 접기",
-					"cssclass": "NxPivot_toolbarButton_colstatus_expand,NxPivot_toolbarButton_colstatus_collapse",
-					"align": "left"
-				}
-			},
-			"rbuttons": {
-				"d5aa4f21-94f5-083d-4197-ebaadcae1c59": {
-					"type": "toolbarstatus",
-					"id": "addnew",
-					"toggle": "1",
-					"togglevalue": "0",
-					"tooltip": "패널접기, 패널 펼치기",
-					"cssclass": "NxPivot_toolbarButton_show, NxPivot_toolbarButton_hide",
-					"align": "right"
-				},
-				"938f5595-2cda-51f5-409a-ebaae39fd6e3": {
-					"type": "execute",
-					"id": "addnew",
-					"toggle": "0",
-					"tooltip": "실행",
-					"cssclass": "NxPivot_toolbarButton_execute",
-					"align": "right"
-				},
-				"7a5dea33-a3ce-7e3d-57fb-ebaaeafedc2d": {
-					"type": "initialization",
-					"id": "addnew",
-					"toggle": "0",
-					"tooltip": "초기화",
-					"cssclass": "NxPivot_toolbarButton_init",
-					"align": "right"
-				},
-				"9c1d7a87-78a8-8c26-3789-ebaaf28e5bd1": {
-					"type": "autoexecute",
-					"id": "addnew",
-					"toggle": "1",
-					"togglevalue": "0",
-					"tooltip": "자동 실행 중지,자동 실행 사용",
-					"cssclass": "NxPivot_toolbarButton_manual,NxPivot_toolbarButton_auto",
-					"align": "right"
-				}
+			"e98d42fb-8763-cba2-08f8-ebaad54eb13a": {
+				"type": "columnsstatus",
+				"id": "addnew",
+				"toggle": "1",
+				"togglevalue": "0",
+				"tooltip": "전체 column 펼치기, 전체 column 접기",
+				"cssclass": "NxPivot_toolbarButton_colstatus_expand,NxPivot_toolbarButton_colstatus_collapse",
+				"align": "left"
 			}
 		},
-		"items": {
-			"size": "120",
-			"cssclass1": "NxPivot_axisArea1",
-			"cssclass2": "NxPivot_axisArea2",
-			"padding": "5 5 5 5",
-			"gap": "3",
-			"titlebarsize": "20",
-			"titlebarcssclass": "NxPivot_axisArea_title",
-			"indicatorwidth": "16",
-			"indicatorheight": "42",
-			"indicatorcssclass": "NxPivot_drag_indicator",
-			"item": {
-				"width": "150",
-				"height": "35",
-				"padding": "6 6 6 6",
-				"gap": "4",
-				"cssclass": "NxPivot_axisArea_item",
-				"sortasccssclass": "NxPivot_axisArea_item_asc",
-				"sortdesccssclass": "NxPivot_axisArea_item_desc",
-				"filtercssclass": "NxPivot_axisArea_item_filter",
-				"aggregatorcssclass": "NxPivot_axisArea_item_aggregator",
-				"settingcssclass": "NxPivot_axisArea_item_setting",
-				"namecssclass": "NxPivot_axisArea_item_name",
-				"sortsize": "14",
-				"filtersize": "14",
-				"aggregatorsize": "20",
-				"buttonsize": "14"
+		"rbuttons": {
+			"d5aa4f21-94f5-083d-4197-ebaadcae1c59": {
+				"type": "toolbarstatus",
+				"id": "addnew",
+				"toggle": "1",
+				"togglevalue": "0",
+				"tooltip": "패널접기, 패널 펼치기",
+				"cssclass": "NxPivot_toolbarButton_show, NxPivot_toolbarButton_hide",
+				"align": "right"
+			},
+			"938f5595-2cda-51f5-409a-ebaae39fd6e3": {
+				"type": "execute",
+				"id": "addnew",
+				"toggle": "0",
+				"tooltip": "실행",
+				"cssclass": "NxPivot_toolbarButton_execute",
+				"align": "right"
+			},
+			"7a5dea33-a3ce-7e3d-57fb-ebaaeafedc2d": {
+				"type": "initialization",
+				"id": "addnew",
+				"toggle": "0",
+				"tooltip": "초기화",
+				"cssclass": "NxPivot_toolbarButton_init",
+				"align": "right"
+			},
+			"9c1d7a87-78a8-8c26-3789-ebaaf28e5bd1": {
+				"type": "autoexecute",
+				"id": "addnew",
+				"toggle": "1",
+				"togglevalue": "0",
+				"tooltip": "자동 실행 중지,자동 실행 사용",
+				"cssclass": "NxPivot_toolbarButton_manual,NxPivot_toolbarButton_auto",
+				"align": "right"
 			}
 		}
 	},
-	"settingpopup":{
-		"cssclass": "NxPivot_popup",
-		"width": "200",
-		"height": "200",
-		"padding": "10 10 10 10",
-		"buttonwidth": "50",
-		"buttonheight": "25",
-		"buttonalign": "center",
-		"okbuttoncssclass": "NxPivot_popup_submit",
-		"cancelbuttoncssclass": "NxPivot_popup_close",
-		"labelcssclass": "NxPivot_popup_subtitle",
-		"dateformat": "yyyy-MM-dd"
-	}}]]></Contents>
+	"items": {
+		"size": "120",
+		"cssclass1": "NxPivot_axisArea1",
+		"cssclass2": "NxPivot_axisArea2",
+		"padding": "5 5 5 5",
+		"gap": "3",
+		"titlebarsize": "20",
+		"titlebarcssclass": "NxPivot_axisArea_title",
+		"indicatorwidth": "16",
+		"indicatorheight": "42",
+		"indicatorcssclass": "NxPivot_drag_indicator",
+		"item": {
+			"width": "150",
+			"height": "35",
+			"padding": "6 6 6 6",
+			"gap": "4",
+			"cssclass": "NxPivot_axisArea_item",
+			"sortasccssclass": "NxPivot_axisArea_item_asc",
+			"sortdesccssclass": "NxPivot_axisArea_item_desc",
+			"filtercssclass": "NxPivot_axisArea_item_filter",
+			"aggregatorcssclass": "NxPivot_axisArea_item_aggregator",
+			"settingcssclass": "NxPivot_axisArea_item_setting",
+			"namecssclass": "NxPivot_axisArea_item_name",
+			"sortsize": "14",
+			"filtersize": "14",
+			"aggregatorsize": "20",
+			"buttonsize": "14"
+		}
+	}
+},
+"settingpopup":{
+	"cssclass": "NxPivot_popup",
+	"width": "200",
+	"height": "200",
+	"padding": "10 10 10 10",
+	"buttonwidth": "50",
+	"buttonheight": "25",
+	"buttonalign": "center",
+	"okbuttoncssclass": "NxPivot_popup_submit",
+	"cancelbuttoncssclass": "NxPivot_popup_close",
+	"labelcssclass": "NxPivot_popup_subtitle",
+	"dateformat": "yyyy-MM-dd"
+}}]]></Contents>
         </NxPivot>
       </Layout>
     </Layouts>
@@ -232,20 +232,20 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="text">30,000건</Col>
+            <Col id="text">30,000 cases</Col>
             <Col id="cnt">30000</Col>
           </Row>
           <Row>
-            <Col id="text">100,000건</Col>
+            <Col id="text">100,000 cases</Col>
             <Col id="cnt">100000</Col>
           </Row>
           <Row>
-            <Col id="text">200,000건</Col>
+            <Col id="text">200,000 cases</Col>
             <Col id="cnt">200000</Col>
           </Row>
           <Row>
             <Col id="cnt">400000</Col>
-            <Col id="text">400,000건</Col>
+            <Col id="text">400,000 cases</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -262,7 +262,7 @@ this.pivot_comp_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var sId = "SEARCH";
-	var sURL = "svcurl::service/PivotssvRead.jsp?rowcount="+this.cmbCount.value;
+	var sURL = "svcurl::services/PivotssvRead.jsp?rowcount="+this.cmbCount.value;
 	var sInDs = "";
 	var sOutDs = "dsList=output";
 	var sParam = "";

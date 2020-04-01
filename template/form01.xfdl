@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="form01" classname="Work" inheritanceid="" titletext="기본샘플(조회,입력,저장,삭제)" left="0" width="1050" top="0" height="550" onload="form_onload">
     <Layouts>
       <Layout>
@@ -35,9 +35,9 @@
           <Layouts>
             <Layout>
               <Button id="btnSearch" taborder="1" top="0" height="47" onclick="fnSearch" cssclass="btn_WF_search01" right="0" width="47"/>
-              <Edit id="edtKeyword" taborder="0" left="155" top="12" width="150" height="23"/>
-              <Static id="Static01" taborder="2" text="검색조건" left="10" top="12" width="64" height="23" cssclass="sta_WF_SeaFieldLabel"/>
-              <Combo id="cboCondition" taborder="3" text="전체" left="86" top="12" width="67" height="23" value="" index="0" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+              <Edit id="edtKeyword" taborder="0" left="225" top="12" width="150" height="23"/>
+              <Static id="Static01" taborder="2" text="Search condition" left="10" top="12" width="124" height="23" cssclass="sta_WF_SeaFieldLabel"/>
+              <Combo id="cboCondition" taborder="3" text="전체" left="156" top="12" width="67" height="23" value="" index="0" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
                 <Dataset id="innerdataset">
                   <ColumnInfo>
                     <Column id="codecolumn" size="256"/>
@@ -46,15 +46,15 @@
                   <Rows>
                     <Row>
                       <Col id="codecolumn"/>
-                      <Col id="datacolumn">전체</Col>
+                      <Col id="datacolumn">ALL</Col>
                     </Row>
                     <Row>
                       <Col id="codecolumn">TITLE</Col>
-                      <Col id="datacolumn">제목</Col>
+                      <Col id="datacolumn">Title</Col>
                     </Row>
                     <Row>
                       <Col id="codecolumn">CONTENTS</Col>
-                      <Col id="datacolumn">내용</Col>
+                      <Col id="datacolumn">Contens</Col>
                     </Row>
                   </Rows>
                 </Dataset>
@@ -62,9 +62,9 @@
             </Layout>
           </Layouts>
         </Div>
-        <Button id="btnAdd" taborder="4" text="추가" left="0" width="65" height="29" bottom="20" onclick="fnAdd"/>
-        <Button id="btnDel" taborder="2" text="삭제" left="72" width="65" height="29" bottom="20" onclick="fnDel"/>
-        <Button id="btnSave" taborder="3" text="저장" left="144" width="65" height="29" bottom="20" onclick="fnSave"/>
+        <Button id="btnAdd" taborder="4" text="ADD" left="0" width="65" height="29" bottom="20" onclick="fnAdd"/>
+        <Button id="btnDel" taborder="2" text="DELETE" left="72" width="65" height="29" bottom="20" onclick="fnDel"/>
+        <Button id="btnSave" taborder="3" text="SAVE" left="144" width="65" height="29" bottom="20" onclick="fnSave"/>
         <Static id="Static01" taborder="5" text="." visible="false" left="8" right="62" height="20" bottom="0" background="rgba(251,123,123,0.47843137254901963)"/>
         <Static id="Static02" taborder="6" text="h 38" visible="false" left="200" top="492" width="40" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
         <Static id="Static54" taborder="7" text="h10" visible="false" left="89" top="49" width="102" height="10" background="rgba(251,123,123,0.47843137254901963)"/>

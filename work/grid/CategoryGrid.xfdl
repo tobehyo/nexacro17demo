@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="CategoryGrid" width="980" height="770" titletext="카테고리 그리드" onload="CategoryGrid_onload" ondragmove="CategoryGrid_ondragmove" ondrop="CategoryGrid_ondrop">
     <Layouts>
       <Layout>
         <Div id="divCategory" taborder="0" left="0" top="89" right="20" height="50" ondrop="divCategory_ondrop" cssclass="div_cellMoveBox"/>
-        <Grid id="grdMain" taborder="1" binddataset="dsGrid" treeusecheckbox="false" treeinitstatus="expand,null" ondrag="grdMain_ondrag" left="0" top="145" right="20" cssclass="grd_cellMove" autofittype="col" treeuseimage="false" bottom="20">
+        <Grid id="grdMain" taborder="1" treeusecheckbox="false" treeinitstatus="expand,null" ondrag="grdMain_ondrag" left="0" top="145" right="20" cssclass="grd_cellMove" autofittype="col" treeuseimage="false" bottom="20" binddataset="dsGrid">
           <Formats>
             <Format id="default">
               <Columns>
@@ -22,12 +22,12 @@
               </Rows>
               <Band id="head">
                 <Cell/>
-                <Cell col="1" text="사업부" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
-                <Cell col="2" text="사원" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
-                <Cell col="3" text="교재명" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
-                <Cell col="4" text="수량" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
-                <Cell col="5" text="단가" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
-                <Cell col="6" text="총액" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="1" text="Business department " background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="2" text="Employee" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="3" text="Textbook name " background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="4" text="Quantity" background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="5" text="Unit price " background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
+                <Cell col="6" text="Total amount " background="url('file://C:/Users/user/Documents/nexacro/17/outputs/demo/_resource_/_theme_/demo19/../../../_resource_/_images_/img_grd_cellMove.png') no-repeat left top #6e8cbc"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="treeitemcontrol" edittype="tree" text="expr:dataset.parent.fnSetSubSumText(currow)" treelevel="expr:dataset.parent.fv_arrGroupId.length&gt;0?dataset.parent.fv_arrGroupId.length-dataset.getRowLevel(currow):&quot;&quot;"/>
@@ -43,7 +43,7 @@
         </Grid>
         <Static id="stDragImg" taborder="2" visible="false" left="870" top="845" width="110" height="30" cssclass="sta_grd_move"/>
         <Static id="stDragImg2" taborder="3" visible="false" left="870" top="881" width="50" height="25" cssclass="sta_grd_move"/>
-        <Static id="staInfo" taborder="4" text="Grid Header Column을 위의 Category Box에 Drag&amp;Drop하여 Category 형식의 그리드로 배치할 수 있습니다.&#13;&#10;반대로 Category Box 에 배치시킨 Column을 Grid에 Drag&amp;Drop하여 재배치가 가능합니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staInfo" taborder="4" text="Drag and drop the Grid Header Column onto the Category Box above to place it in a grid of category type.&#13;&#10;Conversely, it is possible to rearrange the columns placed in the Category Box by dragging and dropping them on the Grid." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -59,1296 +59,1296 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">강남길</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gangnam-gil</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">37</Col>
             <Col id="price">22000</Col>
             <Col id="sal_sum">814000</Col>
             <Col id="list_date">20031213</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">강남길</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gangnam-gil</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">2</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">66000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">강남길</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gangnam-gil</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">3</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">99000</Col>
             <Col id="list_date">20031213</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김길동</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">15000</Col>
             <Col id="sal_sum">300000</Col>
             <Col id="list_date">20050622</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김길동</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">2</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">68000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김길동</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">14000</Col>
             <Col id="sal_sum">420000</Col>
             <Col id="list_date">20050608</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김재동</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">575000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김재동</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">575000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">김재동</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">575000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">박수용</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">1</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">23000</Col>
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">박수용</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">3</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">69000</Col>
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">박수용</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">4</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">92000</Col>
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">박수용</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">9</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">207000</Col>
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">박수용</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">23</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">529000</Col>
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">이수진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Sujin Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">300000</Col>
             <Col id="list_date">20050713</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">이수진</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Sujin Lee</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1485000</Col>
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">이순신</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Admiral Yi</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">66</Col>
             <Col id="price">5000</Col>
             <Col id="sal_sum">330000</Col>
             <Col id="list_date">20050518</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">이순신</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Admiral Yi</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">55</Col>
             <Col id="price">15000</Col>
             <Col id="sal_sum">825000</Col>
             <Col id="list_date">20050705</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">조승우</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Seung Woo Cho</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">120</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">3240000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강남사업부</Col>
-            <Col id="sal_nm">조승우</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangnam Division</Col>
+            <Col id="sal_nm">Seung Woo Cho</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">19</Col>
             <Col id="price">400000</Col>
             <Col id="sal_sum">7600000</Col>
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">강민규</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Min Kyu Kang</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">22000</Col>
             <Col id="sal_sum">440000</Col>
             <Col id="list_date">20031212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">강민규</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Min Kyu Kang</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">10</Col>
             <Col id="price">14000</Col>
             <Col id="sal_sum">140000</Col>
             <Col id="list_date">20050705</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김영길</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Younggil Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">680000</Col>
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김인하</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Inha Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">14000</Col>
             <Col id="sal_sum">1400000</Col>
             <Col id="list_date">20050622</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김인하</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Inha Kim</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1360000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김종오</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Kim Jong-oh</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">13000</Col>
             <Col id="sal_sum">520000</Col>
             <Col id="list_date">20050628</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김종오</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Kim Jong-oh</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20031224</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김진석</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김진석</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">김진석</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">박수진</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Sujin Park</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">77</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">2618000</Col>
             <Col id="list_date">20031117</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">박수진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Sujin Park</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">77</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">2618000</Col>
             <Col id="list_date">20031117</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">박운석</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Park Un-Seok</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">1530000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">박운석</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Park Un-Seok</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">35</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1155000</Col>
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">안재원</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jaewon Ahn</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">782000</Col>
             <Col id="list_date">20030815</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">안재원</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jaewon Ahn</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">안재원</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Jaewon Ahn</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">12</Col>
             <Col id="price">60000</Col>
             <Col id="sal_sum">720000</Col>
             <Col id="list_date">20030916</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">이수영</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">이수영</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1122000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">이수영</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">2640000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">장강훈</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Kang Hoon Jang</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">22000</Col>
             <Col id="sal_sum">440000</Col>
             <Col id="list_date">20031212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">조승우</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Seung Woo Cho</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">3444</Col>
             <Col id="sal_sum">117096</Col>
             <Col id="list_date">20050610</Col>
           </Row>
           <Row>
-            <Col id="pro_id">강서사업부</Col>
-            <Col id="sal_nm">황명희</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="sal_nm">Hwang Myeong-hee</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">460000</Col>
             <Col id="list_date">20031205</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">김호연</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Hoyeon Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031203</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">민병철</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Byeongcheol Min</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">340</Col>
             <Col id="price">24000</Col>
             <Col id="sal_sum">8160000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">이금형</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Lee Mold</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">3300000</Col>
             <Col id="list_date">20031112</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">이나영</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Lee Na-young</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">38</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1254000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">이승헌</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Seungheon Lee</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">4500000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">이승헌</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Seungheon Lee</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1287000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">군자사업부</Col>
-            <Col id="sal_nm">이승헌</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Gunja Business Division</Col>
+            <Col id="sal_nm">Seungheon Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">13500</Col>
             <Col id="sal_sum">337500</Col>
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">김기수</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Kisu Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">35</Col>
             <Col id="price">35000</Col>
             <Col id="sal_sum">1225000</Col>
             <Col id="list_date">20031202</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">송인용</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Song In-yong</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">신태영</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Taeyoung Shin</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20040204</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">이기자</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Selfish</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1600000</Col>
             <Col id="list_date">20031204</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">지진희</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Earthquake</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1122000</Col>
             <Col id="list_date">20030918</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대구사업부</Col>
-            <Col id="sal_nm">지진희</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Daegu Division</Col>
+            <Col id="sal_nm">Earthquake</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1122000</Col>
             <Col id="list_date">20030918</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">김정훈</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Kim Jung Hoon</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">390000</Col>
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">김정훈</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Kim Jung Hoon</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">810000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">이동범</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Lee Dong-beom</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">1000</Col>
             <Col id="sal_sum">100000</Col>
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">이동범</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Lee Dong-beom</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">이창진</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Changjin Lee</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">135000</Col>
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">대전사업부</Col>
-            <Col id="sal_nm">이창진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Daejeon Division</Col>
+            <Col id="sal_nm">Changjin Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">15000</Col>
             <Col id="sal_sum">750000</Col>
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">김이규</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Lee Kyu Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1875000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">김이규</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Lee Kyu Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">이광섭</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Kwang Sub Lee</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">900000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">이광섭</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Kwang Sub Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1848000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">이종훈</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Jonghoon Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">782000</Col>
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">마포사업부</Col>
-            <Col id="sal_nm">이종훈</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Mapo Division</Col>
+            <Col id="sal_nm">Jonghoon Lee</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">1035000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">강상진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20050504</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">강상진</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">강상진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20050504</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">강상진</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">문정주</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Moon Jeong-joo</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">20000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20030702</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">문정주</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Moon Jeong-joo</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">20000</Col>
             <Col id="sal_sum">900000</Col>
             <Col id="list_date">20030702</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">박인식</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Park Insik</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">690000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">부산사업부</Col>
-            <Col id="sal_nm">박인식</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Busan Business Department</Col>
+            <Col id="sal_nm">Park Insik</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">690000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">고선경</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Go Sunkyung</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">540000</Col>
             <Col id="list_date">20030806</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">고선경</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Go Sunkyung</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">30000</Col>
             <Col id="sal_sum">2400000</Col>
             <Col id="list_date">20030925</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">김기원</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Kiwon Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">540000</Col>
             <Col id="list_date">20030806</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">김기원</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Kiwon Kim</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">30000</Col>
             <Col id="sal_sum">2400000</Col>
             <Col id="list_date">20030925</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">김홍철</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Hongcheol Kim</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1980000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">김홍철</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Hongcheol Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">230</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">7590000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">우온식</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Wooonsik</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">1215000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">임진경</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Jinkyung Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">1000</Col>
             <Col id="sal_sum">36000</Col>
             <Col id="list_date">20030804</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">임진경</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Jinkyung Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">1000</Col>
             <Col id="sal_sum">36000</Col>
             <Col id="list_date">20030804</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성동사업부</Col>
-            <Col id="sal_nm">황인수</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Seongdong Division</Col>
+            <Col id="sal_nm">Hwang In-soo</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">1215000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">강인중</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Strong</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">20000</Col>
             <Col id="sal_sum">2000000</Col>
             <Col id="list_date">20040128</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">강인중</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Strong</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">20000</Col>
             <Col id="sal_sum">2000000</Col>
             <Col id="list_date">20040128</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">목진철</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Mok Jin-cheol</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">4000</Col>
             <Col id="sal_sum">120000</Col>
             <Col id="list_date">20040212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">목진철</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Mok Jin-cheol</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">4900</Col>
             <Col id="sal_sum">245000</Col>
             <Col id="list_date">20040212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">박제준</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Park Je-jun</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">박제준</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Park Je-jun</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">안영희</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">15000</Col>
             <Col id="sal_sum">1350000</Col>
             <Col id="list_date">20031121</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">안영희</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">750000</Col>
             <Col id="list_date">20031121</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">안영희</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">66000</Col>
             <Col id="sal_sum">3960000</Col>
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">안영희</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">66000</Col>
             <Col id="sal_sum">3960000</Col>
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">이미숙</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Misook Lee</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">이미숙</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Misook Lee</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">이미숙</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Misook Lee</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">임수근</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1530000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">임수근</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1530000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">성수사업부</Col>
-            <Col id="sal_nm">임수근</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Seongsu Division</Col>
+            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1530000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">곽희정</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">곽희정</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">곽희정</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">권미자</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kwon Mija</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">권미자</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kwon Mija</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길영</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">5000</Col>
             <Col id="sal_sum">100000</Col>
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길영</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">200</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">600000</Col>
             <Col id="list_date">20030711</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길영</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">200</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">600000</Col>
             <Col id="list_date">20030711</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길영</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">5000</Col>
             <Col id="sal_sum">100000</Col>
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길자</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilja Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">1215000</Col>
             <Col id="list_date">20031007</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김길자</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Gilja Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">1215000</Col>
             <Col id="list_date">20031007</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김홍길</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kim Gil-gil</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">70</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">2310000</Col>
             <Col id="list_date">20031023</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">김홍길</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Kim Gil-gil</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">660000</Col>
             <Col id="list_date">20031023</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">박수인</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Park Soo-in</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1600000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">박수인</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Park Soo-in</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
             <Col id="sal_sum">1600000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">배인덕</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Indeok Bae</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">29000</Col>
             <Col id="sal_sum">986000</Col>
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">배인덕</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Indeok Bae</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">29000</Col>
             <Col id="sal_sum">986000</Col>
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">심영수</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Youngsoo Sim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">수유사업부</Col>
-            <Col id="sal_nm">심영수</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Lactating Business Division</Col>
+            <Col id="sal_nm">Youngsoo Sim</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">15800</Col>
             <Col id="sal_sum">1580000</Col>
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">방수진</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Waterproof</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">810000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">방수진</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Waterproof</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">810000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">유영락</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Yoo Young-rak</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">400000</Col>
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">유영락</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Yoo Young-rak</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">500000</Col>
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">이미자</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Already</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">60000</Col>
             <Col id="sal_sum">2700000</Col>
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">영동사업부</Col>
-            <Col id="sal_nm">이미자</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Yeongdong Division</Col>
+            <Col id="sal_nm">Already</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">50000</Col>
             <Col id="sal_sum">1500000</Col>
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">김도준</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Do-jun Kim</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">135000</Col>
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">김도준</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Do-jun Kim</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">135000</Col>
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">김인현</Col>
-            <Col id="list_id">불어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Inhyun Kim</Col>
+            <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">782000</Col>
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">김인현</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Inhyun Kim</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">782000</Col>
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">박인수</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1848000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">박인수</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">1035000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">박인수</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1848000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">박인수</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">1035000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이진영</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Jinyoung Lee</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">2250000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이진영</Col>
-            <Col id="list_id">한문교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Jinyoung Lee</Col>
+            <Col id="list_id">Chinese textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이창희</Col>
-            <Col id="list_id">영어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Changhee Lee</Col>
+            <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이창희</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Changhee Lee</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1156000</Col>
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이화룡</Col>
-            <Col id="list_id">일어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Lee Hwa-ryong</Col>
+            <Col id="list_id">Japanese textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1875000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">이화룡</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Lee Hwa-ryong</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1875000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">정인호</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Inho Jeong</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">975000</Col>
             <Col id="list_date">20040207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">정인호</Col>
-            <Col id="list_id">국어교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Inho Jeong</Col>
+            <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">975000</Col>
             <Col id="list_date">20040207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">울산사업부</Col>
-            <Col id="sal_nm">최수정</Col>
-            <Col id="list_id">과학교재</Col>
+            <Col id="pro_id">Ulsan Division</Col>
+            <Col id="sal_nm">Soojung Choi</Col>
+            <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">4500000</Col>

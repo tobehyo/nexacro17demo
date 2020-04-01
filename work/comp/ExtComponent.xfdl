@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="ExtComponent" width="980" height="690" titletext="확장 컴포넌트" onload="ExtComponent_onload">
     <Layouts>
       <Layout>
-        <Static id="Static07" taborder="0" text="넥사크로플랫폼에서는 기본적으로 사용자들이 필요로 하는 컴포넌트를 제공하고 있습니다. 하지만 사용자 환경에 따라 특화된 기능을 필요로 하는 경우가 있습니다. 이럴 때는 투비소프트 파트너 개발사 또는 개발자가 작성한 사용자 컴포넌트를 적용하거나 직접 필요한 기능을 추가한 사용자 컴포넌트를 작성할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="96" wordWrap="char"/>
+        <Static id="Static07" taborder="0" text="Nexacro Platform basically provides the components that users need. However, there may be cases where specialized functions are required depending on the user environment. In this case, you can apply custom components created by TOBESOFT partner developers or developers, or create custom components that add the necessary functions yourself." cssclass="sta_WF_box03" left="0" top="0" right="20" height="96" wordWrap="char"/>
         <Static id="Static10" taborder="2" cssclass="sta_cp_box01" left="0" top="116" height="90" width="47.96%"/>
         <Static id="Static01" taborder="4" cssclass="sta_cp_box01" top="116" height="90" left="Static10:15" right="20"/>
         <Static id="Static04" taborder="6" cssclass="sta_cp_box01" left="0" top="220" height="90" onclick="Static04_onclick" width="47.96%"/>
@@ -32,15 +32,15 @@
         <Rows>
           <Row>
             <Col id="code">1</Col>
-            <Col id="name">A타입</Col>
+            <Col id="name">A Type</Col>
           </Row>
           <Row>
             <Col id="code">2</Col>
-            <Col id="name">B타입</Col>
+            <Col id="name">B Type</Col>
           </Row>
           <Row>
             <Col id="code">3</Col>
-            <Col id="name">C타입</Col>
+            <Col id="name">C Type</Col>
           </Row>
         </Rows>
       </Dataset>

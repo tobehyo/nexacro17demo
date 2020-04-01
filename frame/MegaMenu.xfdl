@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="MegaMenu" width="1280" height="560" titletext="New Form" background="#ffffff" onload="form_onload" onsize="MegaMenu_onsize" onhscroll="MegaMenu_onhscroll">
     <Layouts>
       <Layout height="560" mobileorientation="landscape" width="1280">
-        <Static id="Static02" taborder="5" left="0" top="80" bottom="0" right="0" cssclass="sta_megaMenu_bg"/>
+        <Static id="Static02" taborder="5" left="0" top="80" bottom="0" right="0" cssclass="sta_megaMenu_bg" text=""/>
         <Static id="Static00" taborder="4" left="0" top="0" height="80" cssclass="sta_megaMenu_head" right="0"/>
         <Static id="staTopMenuSample" taborder="1" text="Grid Component" left="36" top="0" width="194" height="80" visible="false" cssclass="sta_WF_navTitle" onsetfocus="staTopMenuSample_onsetfocus" onmouseenter="staTopMenuSample_onmouseenter" onmouseleave="staTopMenuSample_onmouseleave"/>
         <Static id="staMenuSample" taborder="2" text="다양한 그리드 기능" left="36" top="105" width="339" height="31" visible="false" cssclass="sta_WF_navText"/>
@@ -11,43 +11,24 @@
         <Button id="btnClosePopup" taborder="0" top="27" width="24" height="24" right="20" cssclass="btn_WF_navClose" onclick="btnClosePopup_onclick"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    Frame > Main
-*  @FileName  Main.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.09.23      presales                  최초 생성 
-*******************************************************************************
-*/
-
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
-
-
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * FORM EVENT (onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 팝업의 메뉴들을 동적으로 생성해준다.
+ * @description create menu
 */
 this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	var objApp = nexacro.getApplication();
 	var objMenuDs 	= objApp.gdsMenu;
-	objMenuDs.filter("MOBILE_YN!='M'");//모바일전용화면이 아닌경우
+	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
 	this.dsMenu.copyData(objApp.gdsMenu,true);
 	objMenuDs.filter("");
 	this.fnDrawMenu();
 };
 
 /**
- * @description 화면사이즈가 변경될 때 메뉴 크기를 조정해준다.
+ * @description Adjust the menu size when the screen size changes
 */
 this.MegaMenu_onsize = function(obj:nexacro.Form,e:nexacro.SizeEventInfo)
 {
@@ -55,27 +36,18 @@ this.MegaMenu_onsize = function(obj:nexacro.Form,e:nexacro.SizeEventInfo)
 };
 
 /**
- * @description 화면사이즈가 변경될 때 메뉴 크기를 조정해준다.
+ * @description Adjust the button position when the scroll changes
 */
 this.MegaMenu_onhscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
 {
-	this.btnClosePopup.setOffset(this.btnClosePopup.getOffsetLeft() + e.pos);
+	//this.btnClosePopup.setOffsetWidth(this.btnClosePopup.getOffsetLeft() + e.pos);
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
- ************************************************************************************************/
-
- 
- /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
- ************************************************************************************************/
-
-/************************************************************************************************
- * 사용자 FUNCTION 영역
+ * FUNCTION
  ************************************************************************************************/
 /**
- * fnDrawMenu : 팝업div의 메뉴버튼을 생성해준다.
+ * fnDrawMenu : Create popup Div menu
  * @return : N/A
  * @example :  
  */
@@ -83,20 +55,20 @@ this.fnDrawMenu = function()
 {
 	if(this.dsMenu.rowcount < 1) return;
 	
-	//1.레벨0이 세로 한줄
+	// Level 0 is one vertical line
 	var columnCnt = this.dsMenu.getCaseCount("MENU_LVL=='0'");
 	var dsCnt = this.dsMenu.rowcount;
 	var menuId = "";
 	
-	//동적으로 Static을 구한다.
+	// init variable for static
 	var objStatic;
 	var nLeft = 36;
 	var nTop = 24;
 	var nHeight = 30;
 	var nGap = 15;
-	var nWidth;//동적으로 계산해서 변경해줌
+	var nWidth;// Dynamically calculated and changed
 	
-	//화면 사이즈
+	// Screen size - width
 	var nScreenSize = this.getOffsetWidth();
 	
 	if(nScreenSize >  1500)
@@ -108,21 +80,22 @@ this.fnDrawMenu = function()
 		//nScreenSize = 1000;
 	}
 	
-	//nWidth를 계산한다. pdiv넓이를 구해서 n등분, 화면이 좁아지면,,, 세로로 나열,, 가로줄 넣어줌...
-	nWidth = Math.floor((nScreenSize - 72)/columnCnt) - nGap ;//36*2 = 72가 여백, 10은 버튼간 간격
+	// calculated nWidth. 
+	// Find the popupDiv width and divide it into n equal parts, if the screen becomes narrower, put them vertically, and put horizontal lines ...
+	nWidth = Math.floor((nScreenSize - 72)/columnCnt) - nGap ;// 36*2 = 72 is space
 		
 	for(var i = 0 ; i < dsCnt ; i++)
 	{
 		objId = "sta" + this.dsMenu.getColumn(i, "MENU_ID");
 		
-		if(this.dsMenu.getColumn(i,"MENU_LVL") == '0')//대메뉴
+		if(this.dsMenu.getColumn(i,"MENU_LVL") == '0')// main menu
 		{
 			objId = "L_" + objId;
 			nTop = 0;
 			nHeight = 80;
-			if(i !=0 ) nLeft = nLeft + nWidth + nGap ;//10은 버튼 간격
+			if(i !=0 ) nLeft = nLeft + nWidth + nGap ;
 		}
-		else if(this.dsMenu.getColumn((i-1),"MENU_LVL") == '0')//leaf메뉴 첫번째
+		else if(this.dsMenu.getColumn((i-1),"MENU_LVL") == '0')// first leaf menu
 		{
 			nTop = 105;
 			nHeight = 30;
@@ -135,7 +108,7 @@ this.fnDrawMenu = function()
 		
 		objStatic = this.components[objId];
 		
-		//기존에 있으면 위치만 변경
+		// Change position
 		if(objStatic)
 		{
 			objStatic.move(nLeft, nTop);
@@ -143,7 +116,7 @@ this.fnDrawMenu = function()
 		}
 		else
 		{
-			//버튼생성
+			// create button
 			objStatic = new Static(objId, nLeft, nTop, nWidth, nHeight);  
 			objStatic.set_text(this.dsMenu.getColumn(i, "MENU_NM"));
 			
@@ -171,7 +144,7 @@ this.fnDrawMenu = function()
 
 
 /**
- * @description 메뉴버튼 클릭 : 해당 메뉴를 Open해준다.
+ * @description Click menu button : open menu
 */
 this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {	
@@ -185,7 +158,7 @@ this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description 메가메뉴를 닫아준다.
+ * @description close mega menu
 */
 this.btnClosePopup_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -194,11 +167,11 @@ this.btnClosePopup_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInf
 
 
 /**
- * @description 대메뉴에 포커스 없애줌
+ * @description change css for set focus
 */
 this.staTopMenuSample_onmouseenter = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
 {
-	var staObj;//L_ 가 들어간..L_sta1000
+	var staObj; // prefix for flag is L_
 	
 	for(var objSta in this.components)
 	{
@@ -211,7 +184,7 @@ this.staTopMenuSample_onmouseenter = function(obj:nexacro.Static,e:nexacro.Mouse
 };
 
 /**
- * @description 마지막 대메뉴 포커스 줌
+ * @description change css for remove focus
 */
 this.staTopMenuSample_onmouseleave = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
 {

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <TypeDefinition url="..\default_typedef.xml"/>
   <Form id="DynamicTree" classname="work004" left="0" top="0" width="980" height="960" titletext="트리그리드Drag&amp;Drop" onload="DynamicTree_onload" ondrop="DynamicTree_ondrop" ondragmove="DynamicTree_ondragmove" ondragenter="DynamicTree_ondragenter">
     <Layouts>
       <Layout>
-        <Static id="staInfo" taborder="0" text="트리 그리드 컬럼을 동적으로 생성합니다.&#13;&#10;왼쪽의 카테고리를 오른쪽의 그리드로 drag&amp;drop 할 경우 컬럼이 동적으로 생성되며, 다양하게 활용할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
-        <Static id="staTitle01" taborder="1" text="트리 -&gt; 트리" cssclass="sta_WF_title02" left="0" top="98" width="200" height="30"/>
+        <Static id="staInfo" taborder="0" text="Create tree grid columns dynamically.&#13;&#10;If you drag &amp; drop the category on the left to the grid on the right, the column is dynamically created and can be used in various ways." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staTitle01" taborder="1" text="Tree -&gt; Tree" cssclass="sta_WF_title02" left="0" top="98" width="200" height="30"/>
         <Grid id="grdTree" taborder="2" binddataset="dsMenuOrg" useinputpanel="false" selecttype="area" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,null" ondrag="fnOndrag" ondragleave="fnOndragleave" left="0" top="128" onlbuttondown="gd_onlbuttondown" onlbuttonup="gd_onlbuttonup" height="240" right="50.92%">
           <Formats>
             <Format id="default">
@@ -25,7 +25,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Grid id="grdList" taborder="3" binddataset="dsMenuTarget" useinputpanel="false" autofittype="col" nodatatext="Tree 를 Drag 해서 Drop 하세요" treeusecheckbox="false" treeinitstatus="expand,all" ondrop="fnOndrop" left="50.00%" top="128" style="align:center middle;" height="240" right="20">
+        <Grid id="grdList" taborder="3" binddataset="dsMenuTarget" useinputpanel="false" autofittype="col" nodatatext="Drag the tree and drop it " treeusecheckbox="false" treeinitstatus="expand,all" ondrop="fnOndrop" left="50.00%" top="128" style="align:center middle;" height="240" right="20">
           <Formats>
             <Format id="default">
               <Columns>
@@ -44,7 +44,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle02" taborder="4" text="트리 -&gt; 그리드" cssclass="sta_WF_title02" left="0" top="383" width="200" height="30"/>
+        <Static id="staTitle02" taborder="4" text="Tree -&gt; Grid" cssclass="sta_WF_title02" left="0" top="383" width="200" height="30"/>
         <Grid id="grdTree2" taborder="5" useinputpanel="false" left="0" top="413" binddataset="dsMenuOrg2" autofittype="col" treeinitstatus="expand,null" treeusecheckbox="false" ondrag="fnOndrag" ondragleave="fnOndragleave" onlbuttondown="gd_onlbuttondown" onlbuttonup="gd_onlbuttonup" height="240" right="50.92%">
           <Formats>
             <Format id="default">
@@ -64,7 +64,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Grid id="grdList2" taborder="6" useinputpanel="false" left="49.90%" top="413" nodatatext="Tree 를 Drag 해서 Drop 하세요" binddataset="dsTreetoGrid" autofittype="col" ondrop="fnOndrop" height="240" right="20">
+        <Grid id="grdList2" taborder="6" useinputpanel="false" left="49.90%" top="413" nodatatext="Drag the tree and drop it" binddataset="dsTreetoGrid" autofittype="col" ondrop="fnOndrop" height="240" right="20">
           <Formats>
             <Format id="default">
               <Columns>
@@ -86,7 +86,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle03" taborder="7" text="트리 → 그리드 (특정 컬럼에 drag&amp;drop)" cssclass="sta_WF_title02" left="0" top="668" width="410" height="30"/>
+        <Static id="staTitle03" taborder="7" text="Tree → Grid (drag&amp;drop specific column)" cssclass="sta_WF_title02" left="0" top="668" width="410" height="30"/>
         <Grid id="grdTree3" taborder="8" binddataset="dsMenuOrg4" useinputpanel="false" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,null" ondrag="fnOndrag" ondragleave="fnOndragleave" left="0" top="698" onlbuttondown="gd_onlbuttondown" onlbuttonup="gd_onlbuttonup" height="240" right="50.92%">
           <Formats>
             <Format id="default">
@@ -145,103 +145,103 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="NAME">투비소프트</Col>
+            <Col id="NAME">TOBESOFT</Col>
             <Col id="LEVEL">0</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업본부</Col>
+            <Col id="NAME">Business headquarters</Col>
             <Col id="LEVEL">1</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업그룹</Col>
+            <Col id="NAME">Business group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업1팀(제조)</Col>
+            <Col id="NAME">Business Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업2팀(공공)</Col>
+            <Col id="NAME">Business Team 2 (Public)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업3팀(금융)</Col>
+            <Col id="NAME">Business 3 Team (Finance)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업4팀(전략)</Col>
+            <Col id="NAME">Business Team 4 (Strategy)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합그룹</Col>
+            <Col id="NAME">Technology Convergence Group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">프리세일즈팀</Col>
+            <Col id="NAME">Presales Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합팀</Col>
+            <Col id="NAME">Technology Convergence Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">교육서비스팀</Col>
+            <Col id="NAME">Education Service Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기획마케팅팀</Col>
+            <Col id="NAME">Planning Marketing Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원본부</Col>
+            <Col id="NAME">Technical Support Headquarters</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">UX컨설팅팀</Col>
+            <Col id="NAME">UX Consulting Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">디자인팀</Col>
+            <Col id="NAME">Design Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅1팀(제조)</Col>
+            <Col id="NAME">Product Consulting Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅2팀(공공)</Col>
+            <Col id="NAME">Product Consulting Team 2 (Public)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅3팀(금융)</Col>
+            <Col id="NAME">Product Consulting Team 3 (Finance)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원그룹</Col>
+            <Col id="NAME">Technical Support Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원팀</Col>
+            <Col id="NAME">Technical Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">테크솔루션팀</Col>
+            <Col id="NAME">Tech Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">일본사업지원팀</Col>
+            <Col id="NAME">Japan Business Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">서버솔루션팀</Col>
+            <Col id="NAME">Server Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
         </Rows>
@@ -259,103 +259,103 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="NAME">투비소프트</Col>
+            <Col id="NAME">TOBESOFT</Col>
             <Col id="LEVEL">0</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업본부</Col>
+            <Col id="NAME">Business headquarters</Col>
             <Col id="LEVEL">1</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업그룹</Col>
+            <Col id="NAME">Business group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업1팀(제조)</Col>
+            <Col id="NAME">Business Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업2팀(공공)</Col>
+            <Col id="NAME">Business Team 2 (Public)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업3팀(금융)</Col>
+            <Col id="NAME">Business 3 Team (Finance)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업4팀(전략)</Col>
+            <Col id="NAME">Business Team 4 (Strategy)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합그룹</Col>
+            <Col id="NAME">Technology Convergence Group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">프리세일즈팀</Col>
+            <Col id="NAME">Presales Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합팀</Col>
+            <Col id="NAME">Technology Convergence Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">교육서비스팀</Col>
+            <Col id="NAME">Education Service Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기획마케팅팀</Col>
+            <Col id="NAME">Planning Marketing Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원본부</Col>
+            <Col id="NAME">Technical Support Headquarters</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">UX컨설팅팀</Col>
+            <Col id="NAME">UX Consulting Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">디자인팀</Col>
+            <Col id="NAME">Design Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅1팀(제조)</Col>
+            <Col id="NAME">Product Consulting Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅2팀(공공)</Col>
+            <Col id="NAME">Product Consulting Team 2 (Public)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅3팀(금융)</Col>
+            <Col id="NAME">Product Consulting Team 3 (Finance)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원그룹</Col>
+            <Col id="NAME">Technical Support Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원팀</Col>
+            <Col id="NAME">Technical Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">테크솔루션팀</Col>
+            <Col id="NAME">Tech Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">일본사업지원팀</Col>
+            <Col id="NAME">Japan Business Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">서버솔루션팀</Col>
+            <Col id="NAME">Server Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
         </Rows>
@@ -382,103 +382,103 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="NAME">투비소프트</Col>
+            <Col id="NAME">TOBESOFT</Col>
             <Col id="LEVEL">0</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업본부</Col>
+            <Col id="NAME">Business headquarters</Col>
             <Col id="LEVEL">1</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업그룹</Col>
+            <Col id="NAME">Business group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업1팀(제조)</Col>
+            <Col id="NAME">Business Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업2팀(공공)</Col>
+            <Col id="NAME">Business Team 2 (Public)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업3팀(금융)</Col>
+            <Col id="NAME">Business 3 Team (Finance)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">사업4팀(전략)</Col>
+            <Col id="NAME">Business Team 4 (Strategy)</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합그룹</Col>
+            <Col id="NAME">Technology Convergence Group</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">프리세일즈팀</Col>
+            <Col id="NAME">Presales Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술융합팀</Col>
+            <Col id="NAME">Technology Convergence Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">교육서비스팀</Col>
+            <Col id="NAME">Education Service Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기획마케팅팀</Col>
+            <Col id="NAME">Planning Marketing Team</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원본부</Col>
+            <Col id="NAME">Technical Support Headquarters</Col>
             <Col id="LEVEL">2</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">3</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅그룹</Col>
+            <Col id="NAME">Product Consulting Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">UX컨설팅팀</Col>
+            <Col id="NAME">UX Consulting Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">디자인팀</Col>
+            <Col id="NAME">Design Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅1팀(제조)</Col>
+            <Col id="NAME">Product Consulting Team 1 (Manufacturing)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅2팀(공공)</Col>
+            <Col id="NAME">Product Consulting Team 2 (Public)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">제품컨설팅3팀(금융)</Col>
+            <Col id="NAME">Product Consulting Team 3 (Finance)</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원그룹</Col>
+            <Col id="NAME">Technical Support Group</Col>
             <Col id="LEVEL">4</Col>
           </Row>
           <Row>
-            <Col id="NAME">기술지원팀</Col>
+            <Col id="NAME">Technical Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">테크솔루션팀</Col>
+            <Col id="NAME">Tech Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">일본사업지원팀</Col>
+            <Col id="NAME">Japan Business Support Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
           <Row>
-            <Col id="NAME">서버솔루션팀</Col>
+            <Col id="NAME">Server Solution Team</Col>
             <Col id="LEVEL">5</Col>
           </Row>
         </Rows>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <TypeDefinition url="..\default_typedef.xml"/>
   <Form id="Functions" classname="Functions" left="0" top="0" width="980" height="770" titletext="다양한그리드기능" onload="Functions_onload" ontimer="Functions_ontimer">
     <Layouts>
@@ -14,7 +14,7 @@
                 <Column size="250"/>
                 <Column size="80"/>
                 <Column size="80"/>
-                <Column size="80"/>
+                <Column size="98"/>
                 <Column size="250"/>
               </Columns>
               <Rows>
@@ -23,13 +23,13 @@
               </Rows>
               <Band id="head">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" style="background: ;" checkboxsize="17" background="#f3f7f7"/>
-                <Cell col="1" style="background: ;" text="성명" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="2" style="background: ;" text="타입" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="3" style="background: ;" text="주소" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="4" style="background: ;" text="설정금액" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="5" style="background: ;" text="생성일" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="6" style="background: ;" text="확인금액" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
-                <Cell col="7" text="기타" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="1" style="background: ;" text="NAME" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="2" style="background: ;" text="TYPE" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="3" style="background: ;" text="ADDRESS" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="4" style="background: ;" text="SET&#13;&#10;AMOUNT" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="5" style="background: ;" text="CREATE&#13;&#10;DATE" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="6" style="background: ;" text="CONFIRMED&#13;&#10;AMOUNT" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
+                <Cell col="7" text="ETC" expandshow="show" expandimage="URL('imagerc::grd_sort.png')" background="#f3f7f7"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:chk" checkboxsize="17"/>
@@ -45,14 +45,14 @@
           </Formats>
         </Grid>
         <Static id="staLabel" taborder="1" cssclass="sta_WF_box02" left="0" top="143" right="20" height="50" text=""/>
-        <Static id="staName" taborder="2" text="성명" cssclass="sta_WF_condition01" left="10" top="153" width="64" height="30"/>
-        <Edit id="edtSearch" taborder="3" left="82" top="153" width="128" height="30" autoselect="true" onkeydown="edt_Search_onkeydown" onkeyup="edt_Search_onkeyup"/>
-        <Static id="staDate" taborder="4" text="생성일" cssclass="sta_WF_condition01" left="217" top="153" width="88" height="30"/>
-        <Calendar id="calFrom" taborder="5" left="313" top="153" width="120" height="30" dateformat="yyyy-MM-dd" value="20180101" autoselect="true"/>
-        <Calendar id="calTo" taborder="6" left="459" top="153" width="120" height="30" dateformat="yyyy-MM-dd" value="20191231" autoselect="true"/>
+        <Static id="staName" taborder="2" text="Name" cssclass="sta_WF_condition01" left="10" top="153" width="64" height="30"/>
+        <Edit id="edtSearch" taborder="3" left="62" top="153" width="128" height="30" autoselect="true" onkeydown="edt_Search_onkeydown" onkeyup="edt_Search_onkeyup"/>
+        <Static id="staDate" taborder="4" text="Created Date" cssclass="sta_WF_condition01" left="197" top="153" width="108" height="30"/>
+        <Calendar id="calFrom" taborder="5" left="313" top="153" width="120" height="30" dateformat="SHORTDATE" value="20180101" autoselect="true" editformat="SHORTDATE"/>
+        <Calendar id="calTo" taborder="6" left="459" top="153" width="120" height="30" dateformat="SHORTDATE" value="20191231" autoselect="true" editformat="SHORTDATE"/>
         <Static id="Static05" taborder="7" text="~" left="438" top="153" width="16" height="30" textAlign="center"/>
-        <Static id="staInfo" taborder="8" text="그리드 컴포넌트에서 주로 사용하는 기능을 확인할 수 있습니다. 헤더와 바디 영역에서 마우스 우클릭 해보세요.&#13;&#10;- 정렬, 다중정렬, 컬럼 숨기기, 필터&#13;&#10;- 엑셀 내보내기/가져오기, 틀고정(열고정/행고정), 스크롤타입, 개인화기능(포맷저장)&#13;&#10;&#13;&#10;※ 스크롤타입의 경우 메뉴에서 설정값을 변경 후 Grid 스크롤 TrackBar 로 스크롤 시 해당 기능이 활성화 됩니다." wordwrap="char" cssclass="sta_WF_box03" left="0" top="0" right="20" height="130"/>
-        <Static id="stcSelectType" taborder="9" text="선택타입" cssclass="sta_WF_condition01" left="587" top="153" width="88" height="30"/>
+        <Static id="staInfo" taborder="8" text="You can check the functions mainly used in the grid component. Right-click in the header and body area.&#13;&#10;-Sort, multi-sort, column hide, filter&#13;&#10;-Excel export / import, frame fixation (Column / Row), scroll type, personalization function (format storage)&#13;&#10;&#13;&#10;※ In the case of the scroll type, the function is activated when changing the setting value in the menu and scrolling with the Grid scroll TrackBar." wordwrap="char" cssclass="sta_WF_box03" left="0" top="0" right="20" height="130"/>
+        <Static id="stcSelectType" taborder="9" text="Select Type" cssclass="sta_WF_condition01" left="587" top="153" width="88" height="30"/>
         <Radio id="rdoSelectType" taborder="10" left="683" top="148" width="254" height="40" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" rowcount="2" onitemchanged="fnCommChange" value="row" text="row" index="0">
           <Dataset id="innerdataset">
             <ColumnInfo>
@@ -62,23 +62,23 @@
             <Rows>
               <Row>
                 <Col id="codecolumn">row</Col>
-                <Col id="datacolumn">행</Col>
+                <Col id="datacolumn">Row</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">multirow</Col>
-                <Col id="datacolumn">다중행</Col>
+                <Col id="datacolumn">Multirow</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">area</Col>
-                <Col id="datacolumn">영역</Col>
+                <Col id="datacolumn">Area</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">multiarea</Col>
-                <Col id="datacolumn">다중영역</Col>
+                <Col id="datacolumn">Multiarea</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">cell</Col>
-                <Col id="datacolumn">셀</Col>
+                <Col id="datacolumn">Cell</Col>
               </Row>
             </Rows>
           </Dataset>
@@ -92,6 +92,7 @@
         <Calendar id="calFrom" left="108" top="206" width="105" height="24"/>
         <Calendar id="calTo" left="229" top="206" width="105" height="24"/>
         <Static id="Static05" left="217" top="206" width="10" height="24"/>
+        <Radio id="rdoSelectType" left="683" top="148" width="254" height="40"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -111,301 +112,301 @@
             <Col id="Column3">321458</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">321458</Col>
-            <Col id="Column0">강감찬</Col>
-            <Col id="Column2">서울특별시 중구 세종대로 40</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column6">고려시대 명장. 본관은 금주, 초명은 은천. 귀주대첩 승리</Col>
+            <Col id="Column0">Kang Gam-chan</Col>
+            <Col id="Column2">40, Sejong-daero, Jung-gu, Seoul</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column6">Master of the Goryeo Dynasty. The main building is Geumju, and the first name is Euncheon. Victorious</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">425862</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">425862</Col>
-            <Col id="Column0">김부식</Col>
-            <Col id="Column2">경상북도 경주시 불국로 873-243</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column6">고려시대 문신. 본관은 경주, 자는 입지, 시호는 문열</Col>
+            <Col id="Column0">Kimsik</Col>
+            <Col id="Column2">873-243, Bulguk-ro, Gyeongju-si, Gyeongsangbuk-do</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column6">Koryo era tattoo. Main building is Gyeongju, sleeping, Shiho is open</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">57786</Col>
             <Col id="Column4">20170601</Col>
             <Col id="Column5">57786</Col>
-            <Col id="Column0">정몽주</Col>
-            <Col id="Column2">경기도 수원시 장안구 연무동 190</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column6">고려 말 문신. 본관은 연일, 자는 달가. 시조 단심가를 지음</Col>
+            <Col id="Column0">Jung Mong Joo</Col>
+            <Col id="Column2">190 Yeonmu-dong, Jangan-gu, Suwon-si, Gyeonggi-do</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column6">Consider horse tattoo. The main building is open every day, and the moon goes to bed. Eponymous</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">51651</Col>
             <Col id="Column4">20170931</Col>
             <Col id="Column5">51651</Col>
-            <Col id="Column0">김유신</Col>
-            <Col id="Column2">경상북도 영주시 부석사로 345</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column6">삼국통일을 이룩한 신라 장군. 본관은 김해. 가야국의 시조 김수로왕(金首露王)의 12대손. 흥무대왕으로 추존</Col>
+            <Col id="Column0">Yushin Kim</Col>
+            <Col id="Column2">345, Buseoksa-ro, Yeongju-si, Gyeongsangbuk-do</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column6">General Silla achieved the unification of the Three Kingdoms. The main building is Gimhae. The 12th generation of King Kim Su-ro of the founder of Gaya-guk. He is admired as King Heungmu</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">216548</Col>
             <Col id="Column4">20171005</Col>
             <Col id="Column5">216548</Col>
-            <Col id="Column0">최무선</Col>
-            <Col id="Column2">충청남도 부여군 정림로 83</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column6">고려 말, 조선 초 발명가. 본관은 영주. 원나라에서 화포제작법을 배워 우리나라에서도 제작함</Col>
+            <Col id="Column0">Choi Wireless</Col>
+            <Col id="Column2">83, Jeongrim-ro, Buyeo-gun, Chungcheongnam-do</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column6">At the end of Goryeo, the early inventor of Chosun. The main building is Yeongju. Learned how to make canvas in the Won Dynasty and produced it in Korea</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">216218</Col>
             <Col id="Column4">20171111</Col>
             <Col id="Column5">216218</Col>
-            <Col id="Column0">정중부</Col>
-            <Col id="Column2">경기도 여주시 북내면 상교리 411-1</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column6">고려시대 무신. 본관은 해주. 무신의 난으로 정권을 잡음</Col>
+            <Col id="Column0">Central</Col>
+            <Col id="Column2">411-1 Sanggyo-ri, Buknae-myeon, Yeoju-si, Gyeonggi-do</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column6">Goryeo Dynasty. The main building is Haeju. Dominate the powers of disbelief</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">954561</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">954561</Col>
-            <Col id="Column0">김부식</Col>
-            <Col id="Column2">서울특별시 종로구 종로 99</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column6">고려시대 문신. 본관은 경주, 자는 입지, 시호는 문열</Col>
+            <Col id="Column0">Kimsik</Col>
+            <Col id="Column2">99 Jongro, Jongno-gu, Seoul</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column6">Koryo era tattoo. Main building is Gyeongju, sleeping, Shiho is open</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">2121684</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">2121684</Col>
-            <Col id="Column0">안중근</Col>
-            <Col id="Column2">경상북도 경주시 대경로 4859</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column6">한말의 독립운동가. 본관은 순흥. 1909년(융희 2년)에 만주 하얼빈에서 이토 히로부미를 죽임. 건국훈장 대한민국장을 수상</Col>
+            <Col id="Column0">Joong-Geun Ahn</Col>
+            <Col id="Column2">4859, Daegyeong-ro, Gyeongju-si, Gyeongsangbuk-do</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column6">A Korean independence activist. The main building is Soonheung. In 1909 (Yonghee 2 years), Ito Hirobumi was killed in Harbin, Manchuria. Won the National Medal of Merit from the Republic of Korea</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">6549845</Col>
             <Col id="Column4">20170601</Col>
             <Col id="Column5">6549845</Col>
-            <Col id="Column0">안창호</Col>
-            <Col id="Column2">경기도 이천시 관고동 501-7</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column6">한말의 독립운동가·사상가. 호는 도산. 신민회를 조직. 《신한민보(新韓民報)》를 창간. 건국훈장 대한민국장을 수상함</Col>
+            <Col id="Column0">Changho Ahn</Col>
+            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column6">Independent activist and thinker in Korean. No. Dosan. Organized the New People's Association. 《Shinhan Minbo》 was published. Won the National Medal of Merit from the Republic of Korea</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="Column3">65150</Col>
             <Col id="Column4">20170931</Col>
             <Col id="Column5">65150</Col>
-            <Col id="Column0">유관순</Col>
-            <Col id="Column2">충청남도 부여군 부여읍 동남리 산16-9</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column6">한말의 독립운동가. 충남 천안 출생. 1919년 아우내 장터에서 3000여 군중에게 태극기를 나눠 주며 시위를 지휘하다가 일본 헌병대에 체포. 1920년 옥사함. 건국훈장 독립장을 수상</Col>
+            <Col id="Column0">Yoo Kwan-soon</Col>
+            <Col id="Column2">16-9, Dongnam-ri, Buyeo-eup, Buyeo-gun, Chungcheongnam-do</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column6">A Korean independence activist. Born in Cheonan, Chungnam. In 1919, he was arrested by the Japanese military police while conducting protests by handing out Taegeukgi to over 3,000 crowds at the marketplace of his brother. He died in 1920. Awarded the Independence Medal</Col>
             <Col id="chk"/>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">이종무</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">전라북도 익산시 금마면 동고도리 1086</Col>
+            <Col id="Column0">Jongmu Lee</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">1086, Donggo-dori, Geumma-myeon, Iksan-si, Jeollabuk-do</Col>
             <Col id="Column3">158886</Col>
             <Col id="Column4">20170429</Col>
             <Col id="Column5">158886</Col>
-            <Col id="Column6">고려 말, 조선 초 무신. 본관은 장수. 일본 대마도를 정벌</Col>
+            <Col id="Column6">At the end of the Goryeo Dynasty, the early Chosun dynasty. The main building is longevity. Conquer Japanese Tsushima</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">한명회</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">부산광역시 연제구 경기장로 28</Col>
+            <Col id="Column0">Hanmyeonghoe</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">28, Gyeonggi-ro, Yeonje-gu, Busan</Col>
             <Col id="Column3">258624</Col>
             <Col id="Column4">20170111</Col>
             <Col id="Column5">258624</Col>
-            <Col id="Column6">조선 전기의 문신. 본관은 청주, 자는 자준. 예종비 장순왕후와 성종비 공혜왕후의 부. 계유정난으로 정권을 받음. 세조 묘정에 배향</Col>
+            <Col id="Column6">Tattoo of the early Joseon Dynasty. The main building is Cheongju and sleeping is Jo-Jun. Queen Yejongbi's wealth, Queen Jangsun and Queen Seongjongbi's Konghye. He was in power due to the inheritance. Oriented to King Sejo</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">정몽주</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column2">제주특별자치도 제주시 일주동로 17</Col>
+            <Col id="Column0">Jung Mong Joo</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column2">17, Ilju-dong-ro, Jeju-si, Jeju Special Self-Governing Province</Col>
             <Col id="Column3">4569985</Col>
             <Col id="Column4">20170829</Col>
             <Col id="Column5">4569985</Col>
-            <Col id="Column6">고려 말 문신. 본관은 연일, 자는 달가. 시조 단심가를 지음</Col>
+            <Col id="Column6">Consider horse tattoo. The main building is open every day, and the moon goes to bed. Eponymous</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">문익점</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column2">경상남도 합천군 가야면 해인사길 122</Col>
+            <Col id="Column0">Moonik Branch</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column2">122, Haeinsa-gil, Gaya-myeon, Hapcheon-gun, Gyeongsangnam-do</Col>
             <Col id="Column3">1245568</Col>
             <Col id="Column4">20170605</Col>
             <Col id="Column5">1245568</Col>
-            <Col id="Column6">고려시대 학자. 본관은 남평, 자는 일신, 시호는 충선. 원에서 목화씨를 가져와 재배함</Col>
+            <Col id="Column6">Goryeo Dynasty scholar. Main building is Nampyeong, Sleeping Ilshin, and Shiho is Chosun. Cultivated cotton seeds from garden</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">최영</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">서울특별시 종로구 훈정동 1</Col>
+            <Col id="Column0">Choi Young</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">1 Hunjeong-dong, Jongno-gu, Seoul</Col>
             <Col id="Column3">336985</Col>
             <Col id="Column4">20170614</Col>
             <Col id="Column5">336985</Col>
-            <Col id="Column6">고려 말 무신. 시호는 무민. 본관은 동주. 위화도회군으로 정권을 잃음</Col>
+            <Col id="Column6">Goryeo horse godless. Siho is Moomin. The main building is Dongju. Lost power as a widow's army</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">장영실</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">전라북도 남원시 산내면 대정리 975</Col>
+            <Col id="Column0">Youngsil Jang</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">975, Daejeong-ri, Sannae-myeon, Namwon-si, Jeollabuk-do</Col>
             <Col id="Column3">578962</Col>
             <Col id="Column4">20170231</Col>
             <Col id="Column5">578962</Col>
-            <Col id="Column6">조선 시대의 과학자. 본관은 아산. 기생의 아들. 해시계, 문시계, 측우기를 발명</Col>
+            <Col id="Column6">Scientists of the Joseon Dynasty. The main building is Asan. The son of a parasitic. Invent sundial, moon clock, and rain gauge</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">곽재우</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column2">전라남도 구례군 마산면 화엄사로 539</Col>
+            <Col id="Column0">Kwak Jae Woo</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column2">539, Hwaeomsa-ro, Masan-myeon, Gurye-gun, Jeollanam-do</Col>
             <Col id="Column3">11235</Col>
             <Col id="Column4">20170723</Col>
             <Col id="Column5">11235</Col>
-            <Col id="Column6">조선 중기의 의병장. 본관은 현풍, 자는 계수. 임진왜란때 의병을 일으켜 왜군들을 무찌름. '망우집'을 지음</Col>
+            <Col id="Column6">Medical center in the middle of Chosun. Main building is Hyunpung, sleeping count. During the Imjin War, defeated the Japanese soldiers by causing a disease. 'Mangwoojip'</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">김시민</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column2">경상북도 안동시 서후면 봉정사길 222</Col>
+            <Col id="Column0">Kim Si-min</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column2">222 Bongjeongsa-gil, Seohu-myeon, Andong-si, Gyeongsangbuk-do</Col>
             <Col id="Column3">569875</Col>
             <Col id="Column4">20170406</Col>
             <Col id="Column5">569875</Col>
-            <Col id="Column6">조선 중기의 무신. 본관은 안동, 자는 면오. 임진왜란때 왜군들과 싸워 전사함. 선무공신 2등에 추록. 상락부원군에 추증</Col>
+            <Col id="Column6">The middle of the Joseon Dynasty. The main building is Andong, and sleeps. During the Imjin War, the soldiers fought and died. Addendum to the 2nd place in Sunmu Communications. Committed to Sangnakbu-gun</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">정양용</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">경상북도 영천시 청통면 거조길 400-67</Col>
+            <Col id="Column0">Yang yong yong</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">400-67 Geojo-gil, Cheongtong-myeon, Yeongcheon-si, Gyeongsangbuk-do</Col>
             <Col id="Column3">5588966</Col>
             <Col id="Column4">20170308</Col>
             <Col id="Column5">5588966</Col>
-            <Col id="Column6">조선 후기의 학자.문신, 본관은 나주, 호는 다산, 여유당. 수원 화성을 계획함. 《정다산전서(丁茶山全書)》을 저술(목민심서 등)</Col>
+            <Col id="Column6">Late Joseon scholar, tattoo, main building is Naju, Ho is Dasan, and Sukdang. Planning Suwon Hwaseong Fortress. Writing 《Jungdasan Jeonseo (丁 茶山 全書)》</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">윤동주</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">전라북도 익산시 금마면 기양리 97번지</Col>
+            <Col id="Column0">Dong-ju Yoon</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">97, Giyang-ri, Geumma-myeon, Iksan-si, Jeollabuk-do</Col>
             <Col id="Column3">639996</Col>
             <Col id="Column4">20171205</Col>
             <Col id="Column5">639996</Col>
-            <Col id="Column6">시인. 북간도에서 충생. 《서시(序詩)》,《또 다른 고향》,《별 헤는 밤》을 지음</Col>
+            <Col id="Column6">poet. Born in North Gando. He wrote 《The Poem》, 《Another Hometown》, 《The Starry Night》</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">이중섭</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">충청남도 보령시 성주면 성주리 80-4</Col>
+            <Col id="Column0">Lee Joong Seop</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">80-4 Seongju-ri, Seongju-myeon, Boryeong-si, Chungcheongnam-do</Col>
             <Col id="Column3">859648</Col>
             <Col id="Column4">20170925</Col>
             <Col id="Column5">859648</Col>
-            <Col id="Column6">한국의 서양화과. 호는 대향. 평양 출생. 작품으로 《소》《흰 소》등이 있음</Col>
+            <Col id="Column6">Korean Western Painting. Ho is the opposite. Born in Pyongyang. Works include 《cow》 《white cow》</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">박문수</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">충청남도 천안시 서북구 성환읍 대홍리 319-8</Col>
+            <Col id="Column0">Moonsoo Park</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">319-8 Daehong-ri, Seonghwan-eup, Seobuk-gu, Cheonan-si, Chungcheongnam-do</Col>
             <Col id="Column3">15698</Col>
             <Col id="Column4">20170722</Col>
             <Col id="Column5">15698</Col>
-            <Col id="Column6">조선 후기의 문신. 본관은 고령, 자는 성보. 영조때 정미환국으로 영남 엄행어사로 나가 부정관리들을 적발함</Col>
+            <Col id="Column6">Tattoo from the late Joseon Dynasty. The main building is old and sleeping. During the reign of Yeongjo, he went to Yeongnam Eomcheongsa and caught illegal officials.</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">황진이</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column2">서울특별시 종로구 율곡로 99</Col>
+            <Col id="Column0">Hwang Jin-i</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column2">99 Yulgok-ro, Jongno-gu, Seoul</Col>
             <Col id="Column3">75489</Col>
             <Col id="Column4">20170614</Col>
             <Col id="Column5">75489</Col>
-            <Col id="Column6">조선시대 시인, 명기(기생). 기생명은 명월.  《만월대 회고시》《박연폭포시》《봉별소양곡시》를 지음</Col>
+            <Col id="Column6">Poet of Joseon Dynasty, Myeonggi (parasitic). The parasitic life is Myeongwol. 《Mannwol University Retrospective City》 《Pakyeon Falls Poem》 《Bongbyul Soyanggok City》</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">김정호</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column2">충청북도 충주시 중앙탑면 탑평리 11</Col>
+            <Col id="Column0">Jungho Kim</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column2">11, Toppyeong-ri, Jungangtap-myeon, Chungju-si, Chungcheongbuk-do</Col>
             <Col id="Column3">63963</Col>
             <Col id="Column4">20170416</Col>
             <Col id="Column5">63963</Col>
-            <Col id="Column6">조선 후기 지리학자. 본관은 청도, 자는 백원. 《대동여지도》를 만듬</Col>
+            <Col id="Column6">Geographer of the late Joseon Dynasty. The main building is Qingdao, and Baekyuan is sleeping. Create 《Daedong Yeojido》</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">홍길동</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">서울특별시 용산구 서빙고로 137</Col>
+            <Col id="Column0">Hong Gil Dong</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">137 Seobinggo-ro, Yongsan-gu, Seoul</Col>
             <Col id="Column3">668955</Col>
             <Col id="Column4">20170814</Col>
             <Col id="Column5">668955</Col>
-            <Col id="Column6">허균이 지은 '홍길동전'의 주인공. 실존인물</Col>
+            <Col id="Column6">The main character of 'Hong Gil-dong' by Heo Kyun. Real people</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">신숙주</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">인천광역시 강화군 길상면 전등사로 37-41</Col>
+            <Col id="Column0">Sook Joo Shin</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">37-41 Jeondeungsa-ro, Gilsang-myeon, Ganghwa-gun, Incheon</Col>
             <Col id="Column3">754896</Col>
             <Col id="Column4">20170517</Col>
             <Col id="Column5">754896</Col>
-            <Col id="Column6">조선 초기의 문신. 본관은 고령, 자는 범옹. 세종의 총애를 가장 많이 받은 학자이자, 계유정난으로 정난공신에 등록됨. 성종 묘정에 배향</Col>
+            <Col id="Column6">Early Joseon tattoo. The main building is old and sleeping. Sejong's most favored scholar and registered as a public official due to his mischief. Orientation to Seongjong Tomb</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">한석봉</Col>
-            <Col id="Column1">수정</Col>
-            <Col id="Column2">경기도 안양시 만안구 예술공원로103번길 4</Col>
+            <Col id="Column0">Han Seok-bong</Col>
+            <Col id="Column1">modify</Col>
+            <Col id="Column2">4, Art Park-ro 103beon-gil, Manan-gu, Anyang-si, Gyeonggi-do</Col>
             <Col id="Column3">1258963</Col>
             <Col id="Column4">20170318</Col>
             <Col id="Column5">1258963</Col>
-            <Col id="Column6">조선 중기의 서예가. 본관은 삼화, 호가 석봉이다. 왕희지, 안진경의 필법을 익혀 해.행.초 등 각 서체에 모두 뛰어남</Col>
+            <Col id="Column6">Calligrapher in the mid Joseon Dynasty. The main building is Samhwa and Hoga Seokbong. Mastering the techniques of Wang Hee-ji and Ahn Jin-kyung, they excel in each typeface, such as Hang, Hang, and Cho.</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">전봉준</Col>
-            <Col id="Column1">삭제</Col>
-            <Col id="Column2">경상북도 봉화군 춘양면 서원촌길 8-14</Col>
+            <Col id="Column0">Bongjun Jeon</Col>
+            <Col id="Column1">delete</Col>
+            <Col id="Column2">8-14 Seowonchon-gil, Chunyang-myeon, Bonghwa-gun, Gyeongsangbuk-do</Col>
             <Col id="Column3">458962</Col>
             <Col id="Column4">20170704</Col>
             <Col id="Column5">458962</Col>
-            <Col id="Column6">조선 후기 동학농민운동의 지도자. 초명은 명숙, 별명이 녹두장군이다</Col>
+            <Col id="Column6">Leader of the Donghak Peasant Movement in the late Joseon Dynasty. The first name is Myeongsook, and the nickname is Mungdu general.</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">김대건</Col>
-            <Col id="Column1">조회</Col>
-            <Col id="Column2">경기도 여주시 북내면 상교리 419-3번지</Col>
+            <Col id="Column0">Kim Dae-geon</Col>
+            <Col id="Column1">inquiry</Col>
+            <Col id="Column2">419-3 Sanggyo-ri, Buknae-myeon, Yeoju-si, Gyeonggi-do</Col>
             <Col id="Column3">15756</Col>
             <Col id="Column4">20170114</Col>
             <Col id="Column5">15756</Col>
-            <Col id="Column6">조선 최초의 신부. 본관은 김해, 세례명은 안드레아. 조선 후기 박해사건으로 가족들을 모두 잃음. 후에 25세로 순교함</Col>
+            <Col id="Column6">The first bride in Joseon. The main building is Gimhae, and the name of the baptism is Andrea. All family members were lost due to persecution in the late Joseon Dynasty. Later martyrdom at age 25</Col>
           </Row>
           <Row>
             <Col id="chk"/>
-            <Col id="Column0">방정환</Col>
-            <Col id="Column1">입력</Col>
-            <Col id="Column2">대구광역시 수성구 청호로 321</Col>
+            <Col id="Column0">Bang Jeong-hwan</Col>
+            <Col id="Column1">input</Col>
+            <Col id="Column2">321 Cheongho-ro, Suseong-gu, Daegu Metropolitan City</Col>
             <Col id="Column3">25896</Col>
             <Col id="Column4">20170326</Col>
             <Col id="Column5">25896</Col>
-            <Col id="Column6">아동문학의 보급과 아동보호운동의 선구자인 아동문학가. 호는 소파. 어린이날을 공포</Col>
+            <Col id="Column6">A child literary who is a pioneer in the spread of child literature and the protection of children. Ho is a sofa. Fear children's day</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -422,7 +423,7 @@
           <Row>
             <Col id="id">chkAll</Col>
             <Col id="level">0</Col>
-            <Col id="caption">전체선택</Col>
+            <Col id="caption">Select All</Col>
             <Col id="enable">true</Col>
             <Col id="type">chk</Col>
             <Col id="icon"/>
@@ -430,7 +431,7 @@
           <Row>
             <Col id="id">chkClear</Col>
             <Col id="level">0</Col>
-            <Col id="caption">선택취소</Col>
+            <Col id="caption">Cancel selection</Col>
             <Col id="enable">true</Col>
             <Col id="type">chk</Col>
             <Col id="icon"/>
@@ -438,7 +439,7 @@
           <Row>
             <Col id="id">hide</Col>
             <Col id="level">0</Col>
-            <Col id="caption">숨기기</Col>
+            <Col id="caption">Hide</Col>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -446,7 +447,7 @@
           <Row>
             <Col id="id">unhide</Col>
             <Col id="level">0</Col>
-            <Col id="caption">숨기기취소</Col>
+            <Col id="caption">Unhide</Col>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -454,7 +455,7 @@
           <Row>
             <Col id="id">unhideAll</Col>
             <Col id="level">0</Col>
-            <Col id="caption">숨기기전체취소</Col>
+            <Col id="caption">Unhide All</Col>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -470,7 +471,7 @@
           <Row>
             <Col id="id">asc</Col>
             <Col id="level">0</Col>
-            <Col id="caption">오름차순</Col>
+            <Col id="caption">Ascending</Col>
             <Col id="icon"/>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
@@ -478,7 +479,7 @@
           <Row>
             <Col id="id">desc</Col>
             <Col id="level">0</Col>
-            <Col id="caption">내림차순</Col>
+            <Col id="caption">Descending</Col>
             <Col id="icon"/>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
@@ -486,7 +487,7 @@
           <Row>
             <Col id="id">clear</Col>
             <Col id="level">0</Col>
-            <Col id="caption">정렬취소</Col>
+            <Col id="caption">Cancel Sort</Col>
             <Col id="enable">false</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -494,7 +495,7 @@
           <Row>
             <Col id="id">multiSort</Col>
             <Col id="level">0</Col>
-            <Col id="caption">다중정렬</Col>
+            <Col id="caption">Multiple sort</Col>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -502,7 +503,7 @@
           <Row>
             <Col id="id">multiSortClear</Col>
             <Col id="level">0</Col>
-            <Col id="caption">다중정렬취소</Col>
+            <Col id="caption">Cancel Multiple Sort</Col>
             <Col id="enable">true</Col>
             <Col id="type">head</Col>
             <Col id="icon"/>
@@ -510,7 +511,7 @@
           <Row>
             <Col id="id">filter</Col>
             <Col id="level">0</Col>
-            <Col id="caption">필터추가</Col>
+            <Col id="caption">Add filter</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -518,7 +519,7 @@
           <Row>
             <Col id="id">filterClear</Col>
             <Col id="level">0</Col>
-            <Col id="caption">필터제거</Col>
+            <Col id="caption">Remove filter</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -542,7 +543,7 @@
           <Row>
             <Col id="id">export</Col>
             <Col id="level">1</Col>
-            <Col id="caption">내보내기</Col>
+            <Col id="caption">Export</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -550,7 +551,7 @@
           <Row>
             <Col id="id">import</Col>
             <Col id="level">1</Col>
-            <Col id="caption">가져오기</Col>
+            <Col id="caption">Import</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -566,14 +567,14 @@
           <Row>
             <Col id="id">FIX</Col>
             <Col id="level">0</Col>
-            <Col id="caption">틀고정</Col>
+            <Col id="caption">Freame fixation</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">shapeFix</Col>
             <Col id="level">1</Col>
-            <Col id="caption">열고정</Col>
+            <Col id="caption">Fixed column</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -581,7 +582,7 @@
           <Row>
             <Col id="id">shapeFree</Col>
             <Col id="level">1</Col>
-            <Col id="caption">열고정 취소</Col>
+            <Col id="caption">Cancel fixed column</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="icon"/>
@@ -589,21 +590,21 @@
           <Row>
             <Col id="id">rowFix</Col>
             <Col id="level">1</Col>
-            <Col id="caption">행고정</Col>
+            <Col id="caption">Fixed row</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">rowFree</Col>
             <Col id="level">1</Col>
-            <Col id="caption">행고정 취소</Col>
+            <Col id="caption">Cancel Fixed row</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">fastvscrolltype</Col>
             <Col id="level">0</Col>
-            <Col id="caption">스크롤옵션</Col>
+            <Col id="caption">Scroll Options</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
@@ -617,41 +618,41 @@
           <Row>
             <Col id="id">topdisplay</Col>
             <Col id="level">1</Col>
-            <Col id="caption">상단표시</Col>
+            <Col id="caption">Display top</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">centerdisplay</Col>
             <Col id="level">1</Col>
-            <Col id="caption">중앙표시</Col>
+            <Col id="caption">Display center</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">topbottomdisplay</Col>
             <Col id="level">1</Col>
-            <Col id="caption">상단,하단표시</Col>
+            <Col id="caption">Display top and bottom</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">topcenterbottomdisplay</Col>
             <Col id="level">1</Col>
-            <Col id="caption">상단,중앙,하단표시</Col>
+            <Col id="caption">Display top, center, bottom</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">trackbarfollow</Col>
             <Col id="level">1</Col>
-            <Col id="caption">Row위치표시</Col>
+            <Col id="caption">Display row position</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
           </Row>
           <Row>
             <Col id="id">gridFormat</Col>
-            <Col id="caption">설정저장</Col>
+            <Col id="caption">Save settings</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="level">0</Col>
@@ -659,7 +660,7 @@
           </Row>
           <Row>
             <Col id="id">gridFormatOrg</Col>
-            <Col id="caption">원래대로</Col>
+            <Col id="caption">Default</Col>
             <Col id="enable">true</Col>
             <Col id="type">body</Col>
             <Col id="level">0</Col>

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="etc_04_Temp" width="980" height="720" titletext="그리드(2),탭(1)">
     <Layouts>
       <Layout>
         <Static id="Static01" taborder="0" text="h20" visible="false" left="0" right="0" height="20" bottom="0" background="rgba(251,123,123,0.47843137254901963)"/>
         <Static id="Static00" taborder="1" text="w20" visible="false" top="0" width="20" right="0" background="rgba(251,123,123,0.47843137254901963)" bottom="0"/>
-        <Tab id="Tab01" taborder="2" left="0" bottom="20" tabindex="0" scrollbars="autoboth" height="349" width="470">
+        <Tab id="Tab01" taborder="2" left="0" bottom="20" tabindex="0" scrollbars="autoboth" height="349" width="470" onchanged="Tab01_onchanged">
           <Tabpages>
-            <Tabpage id="tabpage" text="인적용역">
+            <Tabpage id="tabpage" text="TAB A Title">
               <Layouts>
                 <Layout>
                   <Grid id="Grid07" taborder="99" autoenter="select" left="12" top="38" right="12" bottom="12" autofittype="col">
@@ -49,9 +49,9 @@
                   </Grid>
                   <Static id="Static80" taborder="100" text="용역비 산정 기준" usedecorate="true" cssclass="sta_WF_title01" left="12" top="13" width="400" height="23" wordWrap="english"/>
                   <Static id="Static54" taborder="101" text="h7" visible="false" left="34" top="31" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
-                  <Button id="Button58" taborder="103" text="행추가" cssclass="btn_WF_add" top="8" right="77" width="62" height="23" wordWrap="char"/>
-                  <Button id="Button82" taborder="104" text="행삭제" cssclass="btn_WF_delete" top="8" right="12" width="62" height="23" wordWrap="char"/>
-                  <Static id="Static12" taborder="106" text="h 38" visible="false" left="266" top="0" width="40" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
+                  <Button id="Button58" taborder="103" text="ADD ROW" cssclass="btn_WF_add" top="8" right="100" width="82" height="23" wordWrap="char"/>
+                  <Button id="Button82" taborder="104" text="DELETE ROW" cssclass="btn_WF_delete" top="8" right="17" width="82" height="23" wordWrap="char"/>
+                  <Static id="Static12" taborder="106" text="h 38" visible="false" left="236" top="0" width="40" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
                   <Static id="Static05" taborder="115" text="12" visible="false" top="0" width="12" right="0" background="rgba(251,123,123,0.47843137254901963)" bottom="0"/>
                   <Static id="Static06" taborder="116" text="12" visible="false" left="0" top="0" width="12" background="rgba(251,123,123,0.47843137254901963)" bottom="0"/>
                   <Static id="Static07" taborder="117" text="h12" visible="false" left="12" right="12" bottom="0" height="12" background="rgba(251,123,123,0.47843137254901963)"/>
@@ -59,10 +59,10 @@
                 </Layout>
               </Layouts>
             </Tabpage>
-            <Tabpage id="tabpage2" text="차량용역"/>
+            <Tabpage id="tabpage2" text="TAB B Title"/>
           </Tabpages>
         </Tab>
-        <Static id="Static80" taborder="3" text="계약목록" usedecorate="true" cssclass="sta_WF_title01" left="0" top="69" width="400" height="23" wordWrap="english"/>
+        <Static id="Static80" taborder="3" text="LIST" usedecorate="true" cssclass="sta_WF_title01" left="0" top="69" width="400" height="23" wordWrap="english"/>
         <Static id="Static54" taborder="4" text="h7" visible="false" left="22" top="87" width="102" height="7" background="rgba(251,123,123,0.47843137254901963)"/>
         <Grid id="Grid07" taborder="5" autoenter="select" left="0" top="94" right="20" bottom="385" autofittype="col">
           <Formats>
@@ -83,14 +83,14 @@
                 <Row size="28"/>
               </Rows>
               <Band id="head">
-                <Cell text="용역구분"/>
-                <Cell col="1" text="계약명"/>
-                <Cell col="2" text="계약시작일자"/>
-                <Cell col="3" text="계약종료일자"/>
-                <Cell col="4" colspan="2" text="용역업체"/>
-                <Cell col="6" text="대금지급방법"/>
-                <Cell col="7" text="비고"/>
-                <Cell col="8" text="첨부파일"/>
+                <Cell text="TITLE A"/>
+                <Cell col="1" text="TITLE B"/>
+                <Cell col="2" text="TITLE C"/>
+                <Cell col="3" text="TITLE D"/>
+                <Cell col="4" colspan="2" text="TITLE E"/>
+                <Cell col="6" text="TITLE F"/>
+                <Cell col="7" text="TITLE G"/>
+                <Cell col="8" text="TITLE H"/>
               </Band>
               <Band id="body">
                 <Cell/>
@@ -106,18 +106,18 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="Button58" taborder="6" text="행추가" cssclass="btn_WF_add" top="60" right="85" width="62" height="30" wordWrap="char"/>
-        <Button id="Button82" taborder="7" text="행삭제" cssclass="btn_WF_delete" top="60" right="20" width="62" height="30" wordWrap="char"/>
+        <Button id="Button58" taborder="6" text="ADD ROW" cssclass="btn_WF_add" top="60" right="115" width="92" height="30" wordWrap="char"/>
+        <Button id="Button82" taborder="7" text="DELETE ROW" cssclass="btn_WF_delete" top="60" right="21" width="92" height="30" wordWrap="char"/>
         <Static id="Static03" taborder="8" text="h 5" visible="false" left="1727" top="89" width="78" height="5" background="rgba(251,123,123,0.47843137254901963)"/>
-        <Static id="Static02" taborder="9" text="h 45" visible="false" left="708" top="49" width="40" height="45" background="rgba(251,123,123,0.47843137254901963)"/>
+        <Static id="Static02" taborder="9" text="h 45" visible="false" left="628" top="49" width="40" height="45" background="rgba(251,123,123,0.47843137254901963)"/>
         <Div id="div_Search" taborder="10" left="0" top="0" right="20" height="49" cssclass="div_WF_SearchBg">
           <Layouts>
             <Layout>
               <Static id="Static34" taborder="0" text="16" visible="false" left="0" top="6" width="16" height="34" background="rgba(251,123,123,0.47843137254901963)"/>
-              <Static id="Static98" taborder="2" text="계약일자" cssclass="sta_WF_SearchLabel" left="16" top="7" width="100" height="33" wordWrap="char"/>
+              <Static id="Static98" taborder="2" text="DATE" cssclass="sta_WF_SearchLabel" left="16" top="7" width="100" height="33" wordWrap="char"/>
               <Static id="Static00" taborder="3" text="8" visible="false" left="115" top="3" width="8" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
               <Static id="Static01" taborder="4" text="15" visible="false" left="273" top="6" width="15" height="34" background="rgba(251,123,123,0.47843137254901963)"/>
-              <Static id="Static99" taborder="90" text="용역구분" cssclass="sta_WF_SearchLabel" left="293" top="7" width="100" height="33" wordWrap="char"/>
+              <Static id="Static99" taborder="90" text="TEXT" cssclass="sta_WF_SearchLabel" left="293" top="7" width="100" height="33" wordWrap="char"/>
               <Static id="Static02" taborder="5" text="8" visible="false" left="399" top="3" width="8" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
               <Static id="Static09" taborder="6" text="12" visible="false" left="123" top="0" width="120" height="12" background="rgba(251,123,123,0.47843137254901963)" textAlign="center" verticalAlign="middle" font="9pt Gulim"/>
               <Static id="Static10" taborder="7" text="12" visible="false" left="123" top="35" width="120" height="12" background="rgba(251,123,123,0.47843137254901963)" textAlign="center" verticalAlign="middle" font="9pt Gulim"/>
@@ -144,7 +144,7 @@
                 </Dataset>
               </Combo>
               <Static id="Static03" taborder="9" text="15" visible="false" left="557" top="6" width="15" height="34" background="rgba(251,123,123,0.47843137254901963)"/>
-              <Static id="Button02" taborder="10" text="용역업체" cssclass="sta_WF_SearchLabel" left="573" top="7" width="100" height="33" wordWrap="char"/>
+              <Static id="Button02" taborder="10" text="STATUS" cssclass="sta_WF_SearchLabel" left="573" top="7" width="100" height="33" wordWrap="char"/>
               <Static id="Static04" taborder="11" text="8" visible="false" left="702" top="3" width="8" height="38" background="rgba(251,123,123,0.47843137254901963)"/>
               <Edit id="ed_mtrlCd" taborder="12" left="710" top="12" width="150" height="23"/>
               <Button id="btn_ptnr" taborder="13" onclick="div_condition1_btn_ptnr_onclick" cssclass="btn_WF_SearchSmall" left="862" top="12" width="23" height="23"/>
@@ -153,7 +153,7 @@
           </Layouts>
         </Div>
         <Static id="Static12" taborder="11" text="h 40" visible="false" left="812" top="399" width="69" height="40" background="rgba(251,123,123,0.47843137254901963)"/>
-        <Button id="Button73" taborder="12" text="행복사" cssclass="btn_WF_Module" top="60" right="150" width="64" height="30" wordWrap="char"/>
+        <Button id="Button73" taborder="12" text="COPY ROW" cssclass="btn_WF_Module" top="60" right="209" width="94" height="30" wordWrap="char"/>
         <Grid id="Grid00" taborder="13" autoenter="select" right="20" bottom="19" height="321" width="470" autofittype="col">
           <Formats>
             <Format id="default">
@@ -169,11 +169,11 @@
                 <Row size="28"/>
               </Rows>
               <Band id="head">
-                <Cell text="지급일자"/>
-                <Cell col="1" text="금액"/>
-                <Cell col="2" text="적요"/>
-                <Cell col="3" text="전표번호"/>
-                <Cell col="4" text="마감여부"/>
+                <Cell text="TITLE A"/>
+                <Cell col="1" text="TITLE B"/>
+                <Cell col="2" text="TITLE C"/>
+                <Cell col="3" text="TITLE D"/>
+                <Cell col="4" text="TITLE E"/>
               </Band>
               <Band id="body">
                 <Cell/>
@@ -185,12 +185,18 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="Button00" taborder="14" text="자동생성" cssclass="btn_WF_Module" right="150" width="76" height="30" bottom="344" wordWrap="char"/>
-        <Button id="Button01" taborder="15" text="행추가" cssclass="btn_WF_add" right="85" width="62" height="30" bottom="344" wordWrap="char"/>
-        <Button id="Button02" taborder="16" text="행삭제" cssclass="btn_WF_delete" right="20" width="62" height="30" bottom="344" wordWrap="char"/>
+        <Button id="Button00" taborder="14" text="AUTO" cssclass="btn_WF_Module" right="189" width="96" height="30" bottom="344" wordWrap="char"/>
+        <Button id="Button01" taborder="15" text="ADD ROW" cssclass="btn_WF_add" right="105" width="82" height="30" bottom="344" wordWrap="char"/>
+        <Button id="Button02" taborder="16" text="DELETE ROW" cssclass="btn_WF_delete" right="21" width="82" height="30" bottom="344" wordWrap="char"/>
         <Static id="Static06" taborder="17" text="h 5" visible="false" left="1727" top="439" width="78" height="5" background="rgba(251,123,123,0.47843137254901963)"/>
-        <Static id="Static07" taborder="18" text="용역비" usedecorate="true" cssclass="sta_WF_title01" width="206" height="23" bottom="347" right="284" wordWrap="english"/>
+        <Static id="Static07" taborder="18" text="TITLE" usedecorate="true" cssclass="sta_WF_title01" width="206" height="23" bottom="347" right="284" wordWrap="english"/>
       </Layout>
     </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Tab01_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventInfo)
+{
+	
+};
+]]></Script>
   </Form>
 </FDL>

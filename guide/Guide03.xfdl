@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Guide_tab" width="980" height="1130" titletext="Tab / GroupBox / ProgressBar">
     <Layouts>
       <Layout>
         <Tab id="Tab00" taborder="0" left="186" top="78" width="600" height="190" tabindex="0" scrollbars="autoboth" tabbuttonheight="32">
           <Tabpages>
-            <Tabpage id="tabpage" text="탭페이지">
+            <Tabpage id="tabpage" text="tabpage1">
               <Layouts>
                 <Layout/>
               </Layouts>
             </Tabpage>
-            <Tabpage id="tabpage2" text="탭페이지2">
+            <Tabpage id="tabpage2" text="tabpage2">
               <Layouts>
                 <Layout/>
               </Layouts>
             </Tabpage>
-            <Tabpage id="tabpage3" text="탭페이지3">
+            <Tabpage id="tabpage3" text="tabpage3">
               <Layouts>
                 <Layout/>
               </Layouts>
             </Tabpage>
-            <Tabpage id="tabpage4" text="탭페이지4"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
             <Tabpage id="tabpage5" text="tabpage5"/>
             <Tabpage id="tabpage6" text="tabpage6"/>
           </Tabpages>
@@ -51,8 +51,8 @@
         <Static id="Static23" taborder="2" text="showextrabutton = &lt;b v='true'&gt;true&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt02" left="186" top="304" width="210" height="18"/>
         <Static id="Static00" taborder="3" text="showextrabutton = &lt;b v='true'&gt;None&lt;/b&gt;" usedecorate="true" cssclass="sta_GID_txt02" left="186" top="53" width="210" height="18"/>
         <Static id="Static60" taborder="4" text="Tab" cssclass="sta_GID_Title" left="0" top="0" height="30" right="0"/>
-        <GroupBox id="GroupBox00" text="그룹박스" taborder="5" left="25" top="980" width="205" height="115"/>
-        <GroupBox id="GroupBox01" text="그룹박스" taborder="6" enable="false" left="261" top="980" width="205" height="115"/>
+        <GroupBox id="GroupBox00" text="Gropbox" taborder="5" left="25" top="980" width="205" height="115"/>
+        <GroupBox id="GroupBox01" text="Groupbox" taborder="6" enable="false" left="261" top="980" width="205" height="115"/>
         <Static id="Static02" taborder="7" text="GroupBox" cssclass="sta_GID_Title" left="0" top="886" width="510" height="30"/>
         <Static id="Static13" taborder="8" text="enabled" cssclass="sta_GID_txt02" left="25" top="943" width="62" height="18"/>
         <Static id="Static32" taborder="9" text="disabled" cssclass="sta_GID_txt02" left="261" top="943" width="65" height="18"/>
@@ -68,15 +68,15 @@
         <Button id="Button02" taborder="19" text="Progress Test " left="842" top="1063" width="112" height="24"/>
         <Tab id="Tab02" taborder="20" left="186" top="614" width="600" height="158" tabindex="0" scrollbars="autoboth" cssclass="tab_2depth" tabbuttonheight="32">
           <Tabpages>
-            <Tabpage id="tabpage" text="탭페이지"/>
-            <Tabpage id="tabpage2" text="탭페이지2"/>
-            <Tabpage id="tabpage3" text="탭페이지3"/>
-            <Tabpage id="tabpage4" text="탭페이지4"/>
+            <Tabpage id="tabpage" text="tabpage1"/>
+            <Tabpage id="tabpage2" text="tabpage2"/>
+            <Tabpage id="tabpage3" text="tabpage3"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
             <Tabpage id="tabpage5" text="tabpage5"/>
             <Tabpage id="tabpage6" text="tabpage6"/>
           </Tabpages>
         </Tab>
-        <Static id="Static05" taborder="21" text="탭 안에 탭" usedecorate="true" cssclass="sta_GID_txt02" left="186" top="568" width="210" height="18" font="bold 10pt Gulim"/>
+        <Static id="Static05" taborder="21" text="Tab in Tab" usedecorate="true" cssclass="sta_GID_txt02" left="186" top="568" width="210" height="18" font="bold 10pt Gulim"/>
       </Layout>
     </Layouts>
     <Objects>

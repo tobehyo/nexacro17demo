@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Dynamic" width="980" height="790" titletext="동적 그리드" onload="Dynamic_onload" ondragmove="Dynamic_ondragmove" ondrop="Dynamic_ondrop">
     <Layouts>
       <Layout>
-        <Grid id="grdList02" taborder="6" binddataset="dsList02" cellmovingtype="col" ondrop="fnOndrop" left="127" top="477" right="20" height="290" nodatatext="데이터가 없습니다.">
+        <Grid id="grdList02" taborder="6" binddataset="dsList02" cellmovingtype="col" ondrop="fnOndrop" left="127" top="477" right="20" height="290" nodatatext="NO DATA">
           <Formats>
             <Format id="default">
               <Columns>
@@ -18,7 +18,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Grid id="grdList01" taborder="2" binddataset="dsList01" cellmovingtype="col" ondrop="fnOndrop" left="129" top="133" height="216" right="20" nodatatext="데이터가 없습니다." visible="true">
+        <Grid id="grdList01" taborder="2" binddataset="dsList01" cellmovingtype="col" ondrop="fnOndrop" left="129" top="133" height="216" right="20" nodatatext="NO DATA" visible="true">
           <Formats>
             <Format id="default">
               <Columns>
@@ -33,7 +33,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="stDragImg" taborder="0" visible="false" left="830" top="46" width="100" height="30" cssclass="sta_grd_move"/>
+        <Static id="stDragImg" taborder="0" visible="false" left="710" top="96" width="100" height="30" cssclass="sta_grd_move"/>
         <Grid id="grdColumn" taborder="1" binddataset="dsColumn" autofittype="col" ondrag="fnOndrag" left="0" top="133" width="120" height="217" cssclass="grd_dynamic">
           <Formats>
             <Format id="default">
@@ -75,1175 +75,1175 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle01" taborder="4" text="단건 처리" cssclass="sta_WF_title02" left="0" top="95" width="200" height="30"/>
-        <Static id="staTitle02" taborder="5" text="멀티 처리" cssclass="sta_WF_title02" left="0" top="442" width="200" height="30"/>
-        <Button id="btnInit02" taborder="7" text="초기화" onclick="fnComBtn" top="439" right="20" width="80" height="30" cssclass="btn_WF_reset"/>
-        <Button id="btnInit01" taborder="8" text="초기화" onclick="fnComBtn" top="96" right="20" width="80" height="30" cssclass="btn_WF_reset"/>
-        <Static id="staInfo" taborder="9" text="그리드 컬럼을 동적으로 생성합니다.&#13;&#10;왼쪽의 카테고리를 오른쪽의 그리드로 drag&amp;drop 할 경우 컬럼이 동적으로 생성되며, 단건/다건 처리가 가능합니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staTitle01" taborder="4" text="Single" cssclass="sta_WF_title02" left="0" top="95" width="200" height="30"/>
+        <Static id="staTitle02" taborder="5" text="Multi" cssclass="sta_WF_title02" left="0" top="442" width="200" height="30"/>
+        <Button id="btnInit02" taborder="7" text="RESET" onclick="fnComBtn" top="439" right="20" width="80" height="30" cssclass="btn_WF_reset"/>
+        <Button id="btnInit01" taborder="8" text="RESET" onclick="fnComBtn" top="96" right="20" width="80" height="30" cssclass="btn_WF_reset"/>
+        <Static id="staInfo" taborder="9" text="Create grid columns dynamically.&#13;&#10;If you drag &amp; drop the category on the left to the grid on the right, the column is created dynamically, and single / multi processing is possible." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
       </Layout>
     </Layouts>
     <Objects>
       <Dataset id="dsGrid" reversesubsum="true">
         <ColumnInfo>
-          <Column id="사업부" type="STRING" size="256"/>
-          <Column id="사원" type="STRING" size="256"/>
-          <Column id="교재명" type="STRING" size="256"/>
-          <Column id="수량" type="INT" size="256"/>
-          <Column id="단가" type="INT" size="256"/>
-          <Column id="총액" type="INT" size="256"/>
+          <Column id="businessdepartment" type="STRING" size="256"/>
+          <Column id="employee" type="STRING" size="256"/>
+          <Column id="textbookname" type="STRING" size="256"/>
+          <Column id="quantity" type="INT" size="256"/>
+          <Column id="unitprice" type="INT" size="256"/>
+          <Column id="totalamount" type="INT" size="256"/>
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">강남길</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">37</Col>
-            <Col id="단가">22000</Col>
-            <Col id="총액">814000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">강남길</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">2</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">66000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">강남길</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">3</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">99000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김길동</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">15000</Col>
-            <Col id="총액">300000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김길동</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">2</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">68000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김길동</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">14000</Col>
-            <Col id="총액">420000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김재동</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">25</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">575000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김재동</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">25</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">575000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">김재동</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">25</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">575000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">박수용</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">1</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">23000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">박수용</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">3</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">69000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">박수용</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">4</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">92000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">박수용</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">9</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">207000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gangnam-gil</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">37</Col>
+            <Col id="unitprice">22000</Col>
+            <Col id="totalamount">814000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gangnam-gil</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">2</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">66000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gangnam-gil</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">3</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">99000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gildong Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">15000</Col>
+            <Col id="totalamount">300000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gildong Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">2</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">68000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Gildong Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">14000</Col>
+            <Col id="totalamount">420000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Jaedong Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">25</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">575000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Jaedong Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">25</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">575000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Jaedong Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">25</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">575000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Park Soo-yong</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">1</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">23000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Park Soo-yong</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">3</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">69000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Park Soo-yong</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">4</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">92000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Park Soo-yong</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">9</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">207000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">박수용</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">23</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">529000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Park Soo-yong</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">23</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">529000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">이수진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">10000</Col>
-            <Col id="총액">300000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Sujin Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">10000</Col>
+            <Col id="totalamount">300000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">이수진</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1485000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Sujin Lee</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1485000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">이순신</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">66</Col>
-            <Col id="단가">5000</Col>
-            <Col id="총액">330000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Admiral Yi</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">66</Col>
+            <Col id="unitprice">5000</Col>
+            <Col id="totalamount">330000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">이순신</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">55</Col>
-            <Col id="단가">15000</Col>
-            <Col id="총액">825000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Admiral Yi</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">55</Col>
+            <Col id="unitprice">15000</Col>
+            <Col id="totalamount">825000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">조승우</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">120</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">3240000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Seung Woo Cho</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">120</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">3240000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강남사업부</Col>
-            <Col id="사원">조승우</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">19</Col>
-            <Col id="단가">400000</Col>
-            <Col id="총액">7600000</Col>
+            <Col id="businessdepartment">Gangnam Division</Col>
+            <Col id="employee">Seung Woo Cho</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">19</Col>
+            <Col id="unitprice">400000</Col>
+            <Col id="totalamount">7600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">강민규</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">22000</Col>
-            <Col id="총액">440000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Min Kyu Kang</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">22000</Col>
+            <Col id="totalamount">440000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">강민규</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">10</Col>
-            <Col id="단가">14000</Col>
-            <Col id="총액">140000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Min Kyu Kang</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">10</Col>
+            <Col id="unitprice">14000</Col>
+            <Col id="totalamount">140000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김영길</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">680000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Younggil Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">680000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김인하</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">14000</Col>
-            <Col id="총액">1400000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Inha Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">14000</Col>
+            <Col id="totalamount">1400000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김인하</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1360000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Inha Kim</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1360000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김종오</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">13000</Col>
-            <Col id="총액">520000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Kim Jong-oh</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">13000</Col>
+            <Col id="totalamount">520000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김종오</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Kim Jong-oh</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김진석</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jinsuk Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김진석</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jinsuk Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">김진석</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jinsuk Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">박수진</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">77</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">2618000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Sujin Park</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">77</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">2618000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">박수진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">77</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">2618000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Sujin Park</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">77</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">2618000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">박운석</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">1530000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Park Un-Seok</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">1530000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">박운석</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">35</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1155000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Park Un-Seok</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">35</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1155000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">안재원</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">782000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jaewon Ahn</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">782000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">안재원</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jaewon Ahn</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">안재원</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">12</Col>
-            <Col id="단가">60000</Col>
-            <Col id="총액">720000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Jaewon Ahn</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">12</Col>
+            <Col id="unitprice">60000</Col>
+            <Col id="totalamount">720000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">이수영</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Sooyoung Lee</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">이수영</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1122000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Sooyoung Lee</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1122000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">이수영</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">80</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">2640000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Sooyoung Lee</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">80</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">2640000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">장강훈</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">22000</Col>
-            <Col id="총액">440000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Kang Hoon Jang</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">22000</Col>
+            <Col id="totalamount">440000</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">조승우</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">3444</Col>
-            <Col id="총액">117096</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Seung Woo Cho</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">3444</Col>
+            <Col id="totalamount">117096</Col>
           </Row>
           <Row>
-            <Col id="사업부">강서사업부</Col>
-            <Col id="사원">황명희</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">460000</Col>
+            <Col id="businessdepartment">Gangseo Division</Col>
+            <Col id="employee">Hwang Myeong-hee</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">460000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">김호연</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Hoyeon Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">민병철</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">340</Col>
-            <Col id="단가">24000</Col>
-            <Col id="총액">8160000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Byeongcheol Min</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">340</Col>
+            <Col id="unitprice">24000</Col>
+            <Col id="totalamount">8160000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">이금형</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">3300000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Lee Mold</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">3300000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">이나영</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">38</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1254000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Lee Na-young</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">38</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1254000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">이승헌</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">4500000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Seungheon Lee</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">4500000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">이승헌</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">39</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1287000</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Seungheon Lee</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">39</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1287000</Col>
           </Row>
           <Row>
-            <Col id="사업부">군자사업부</Col>
-            <Col id="사원">이승헌</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">25</Col>
-            <Col id="단가">13500</Col>
-            <Col id="총액">337500</Col>
+            <Col id="businessdepartment">Gunja Business Division</Col>
+            <Col id="employee">Seungheon Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">25</Col>
+            <Col id="unitprice">13500</Col>
+            <Col id="totalamount">337500</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">김기수</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">35</Col>
-            <Col id="단가">35000</Col>
-            <Col id="총액">1225000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Kisu Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">35</Col>
+            <Col id="unitprice">35000</Col>
+            <Col id="totalamount">1225000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">송인용</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Song In-yong</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">신태영</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Taeyoung Shin</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">이기자</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1600000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Selfish</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">지진희</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1122000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Earthquake</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1122000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대구사업부</Col>
-            <Col id="사원">지진희</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1122000</Col>
+            <Col id="businessdepartment">Daegu Division</Col>
+            <Col id="employee">Earthquake</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1122000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">김정훈</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">39</Col>
-            <Col id="단가">10000</Col>
-            <Col id="총액">390000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Kim Jung Hoon</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">39</Col>
+            <Col id="unitprice">10000</Col>
+            <Col id="totalamount">390000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">김정훈</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">810000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Kim Jung Hoon</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">810000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">이동범</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">1000</Col>
-            <Col id="총액">100000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Lee Dong-beom</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">1000</Col>
+            <Col id="totalamount">100000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">이동범</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1000000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Lee Dong-beom</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">이창진</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">3000</Col>
-            <Col id="총액">135000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Changjin Lee</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">3000</Col>
+            <Col id="totalamount">135000</Col>
           </Row>
           <Row>
-            <Col id="사업부">대전사업부</Col>
-            <Col id="사원">이창진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">50</Col>
-            <Col id="단가">15000</Col>
-            <Col id="총액">750000</Col>
+            <Col id="businessdepartment">Daejeon Division</Col>
+            <Col id="employee">Changjin Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">50</Col>
+            <Col id="unitprice">15000</Col>
+            <Col id="totalamount">750000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">김이규</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">75</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1875000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Lee Kyu Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">75</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1875000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">김이규</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Lee Kyu Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">이광섭</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">36</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">900000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Kwang Sub Lee</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">36</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">900000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">이광섭</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">56</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1848000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Kwang Sub Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">56</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1848000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">이종훈</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">782000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Jonghoon Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">782000</Col>
           </Row>
           <Row>
-            <Col id="사업부">마포사업부</Col>
-            <Col id="사원">이종훈</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">1035000</Col>
+            <Col id="businessdepartment">Mapo Division</Col>
+            <Col id="employee">Jonghoon Lee</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">1035000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">강상진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Sangjin Kang</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">강상진</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Sangjin Kang</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">강상진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Sangjin Kang</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">강상진</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Sangjin Kang</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">문정주</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">90</Col>
-            <Col id="단가">20000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Moon Jeong-joo</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">90</Col>
+            <Col id="unitprice">20000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">문정주</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">20000</Col>
-            <Col id="총액">900000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Moon Jeong-joo</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">20000</Col>
+            <Col id="totalamount">900000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">박인식</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">690000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Park Insik</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">690000</Col>
           </Row>
           <Row>
-            <Col id="사업부">부산사업부</Col>
-            <Col id="사원">박인식</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">690000</Col>
+            <Col id="businessdepartment">Busan Business Department</Col>
+            <Col id="employee">Park Insik</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">690000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">고선경</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">540000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Go Sunkyung</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">540000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">고선경</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">80</Col>
-            <Col id="단가">30000</Col>
-            <Col id="총액">2400000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Go Sunkyung</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">80</Col>
+            <Col id="unitprice">30000</Col>
+            <Col id="totalamount">2400000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">김기원</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">540000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Kiwon Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">540000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">김기원</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">80</Col>
-            <Col id="단가">30000</Col>
-            <Col id="총액">2400000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Kiwon Kim</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">80</Col>
+            <Col id="unitprice">30000</Col>
+            <Col id="totalamount">2400000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">김홍철</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">60</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1980000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Hongcheol Kim</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">60</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1980000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">김홍철</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">230</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">7590000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Hongcheol Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">230</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">7590000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">우온식</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">1215000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Wooonsik</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">1215000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">임진경</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">36</Col>
-            <Col id="단가">1000</Col>
-            <Col id="총액">36000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Jinkyung Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">36</Col>
+            <Col id="unitprice">1000</Col>
+            <Col id="totalamount">36000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">임진경</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">36</Col>
-            <Col id="단가">1000</Col>
-            <Col id="총액">36000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Jinkyung Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">36</Col>
+            <Col id="unitprice">1000</Col>
+            <Col id="totalamount">36000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성동사업부</Col>
-            <Col id="사원">황인수</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">1215000</Col>
+            <Col id="businessdepartment">Seongdong Division</Col>
+            <Col id="employee">Hwang In-soo</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">1215000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">강인중</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">20000</Col>
-            <Col id="총액">2000000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Strong</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">20000</Col>
+            <Col id="totalamount">2000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">강인중</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">20000</Col>
-            <Col id="총액">2000000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Strong</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">20000</Col>
+            <Col id="totalamount">2000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">목진철</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">4000</Col>
-            <Col id="총액">120000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Mok Jin-cheol</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">4000</Col>
+            <Col id="totalamount">120000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">목진철</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">50</Col>
-            <Col id="단가">4900</Col>
-            <Col id="총액">245000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Mok Jin-cheol</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">50</Col>
+            <Col id="unitprice">4900</Col>
+            <Col id="totalamount">245000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">박제준</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Park Je-jun</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">박제준</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Park Je-jun</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">안영희</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">90</Col>
-            <Col id="단가">15000</Col>
-            <Col id="총액">1350000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Younghee Ahn</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">90</Col>
+            <Col id="unitprice">15000</Col>
+            <Col id="totalamount">1350000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">안영희</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">750000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Younghee Ahn</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">750000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">안영희</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">60</Col>
-            <Col id="단가">66000</Col>
-            <Col id="총액">3960000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Younghee Ahn</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">60</Col>
+            <Col id="unitprice">66000</Col>
+            <Col id="totalamount">3960000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">안영희</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">60</Col>
-            <Col id="단가">66000</Col>
-            <Col id="총액">3960000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Younghee Ahn</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">60</Col>
+            <Col id="unitprice">66000</Col>
+            <Col id="totalamount">3960000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">이미숙</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Misook Lee</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">이미숙</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Misook Lee</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">이미숙</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">990000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Misook Lee</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">990000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">임수근</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1530000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Lim Su-geun</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1530000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">임수근</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1530000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Lim Su-geun</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1530000</Col>
           </Row>
           <Row>
-            <Col id="사업부">성수사업부</Col>
-            <Col id="사원">임수근</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1530000</Col>
+            <Col id="businessdepartment">Seongsu Division</Col>
+            <Col id="employee">Lim Su-geun</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1530000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">곽희정</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kwak Heejung</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">곽희정</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kwak Heejung</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">곽희정</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">1800000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kwak Heejung</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">1800000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">권미자</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1000000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kwon Mija</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">권미자</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1000000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kwon Mija</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길영</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">5000</Col>
-            <Col id="총액">100000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilyoung Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">5000</Col>
+            <Col id="totalamount">100000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길영</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">200</Col>
-            <Col id="단가">3000</Col>
-            <Col id="총액">600000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilyoung Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">200</Col>
+            <Col id="unitprice">3000</Col>
+            <Col id="totalamount">600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길영</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">200</Col>
-            <Col id="단가">3000</Col>
-            <Col id="총액">600000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilyoung Kim</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">200</Col>
+            <Col id="unitprice">3000</Col>
+            <Col id="totalamount">600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길영</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">5000</Col>
-            <Col id="총액">100000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilyoung Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">5000</Col>
+            <Col id="totalamount">100000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길자</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">1215000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilja Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">1215000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김길자</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">1215000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Gilja Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">1215000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김홍길</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">70</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">2310000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kim Gil-gil</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">70</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">2310000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">김홍길</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">20</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">660000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Kim Gil-gil</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">20</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">660000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">박수인</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1600000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Park Soo-in</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">박수인</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">40000</Col>
-            <Col id="총액">1600000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Park Soo-in</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">40000</Col>
+            <Col id="totalamount">1600000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">배인덕</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">29000</Col>
-            <Col id="총액">986000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Indeok Bae</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">29000</Col>
+            <Col id="totalamount">986000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">배인덕</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">29000</Col>
-            <Col id="총액">986000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Indeok Bae</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">29000</Col>
+            <Col id="totalamount">986000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">심영수</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">10000</Col>
-            <Col id="총액">1000000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Youngsoo Sim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">10000</Col>
+            <Col id="totalamount">1000000</Col>
           </Row>
           <Row>
-            <Col id="사업부">수유사업부</Col>
-            <Col id="사원">심영수</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">15800</Col>
-            <Col id="총액">1580000</Col>
+            <Col id="businessdepartment">Lactating Business Division</Col>
+            <Col id="employee">Youngsoo Sim</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">15800</Col>
+            <Col id="totalamount">1580000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">방수진</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">810000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Waterproof</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">810000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">방수진</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">27000</Col>
-            <Col id="총액">810000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Waterproof</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">27000</Col>
+            <Col id="totalamount">810000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">유영락</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">10000</Col>
-            <Col id="총액">400000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Yoo Young-rak</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">10000</Col>
+            <Col id="totalamount">400000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">유영락</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">50</Col>
-            <Col id="단가">10000</Col>
-            <Col id="총액">500000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Yoo Young-rak</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">50</Col>
+            <Col id="unitprice">10000</Col>
+            <Col id="totalamount">500000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">이미자</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">60000</Col>
-            <Col id="총액">2700000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Already</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">60000</Col>
+            <Col id="totalamount">2700000</Col>
           </Row>
           <Row>
-            <Col id="사업부">영동사업부</Col>
-            <Col id="사원">이미자</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">30</Col>
-            <Col id="단가">50000</Col>
-            <Col id="총액">1500000</Col>
+            <Col id="businessdepartment">Yeongdong Division</Col>
+            <Col id="employee">Already</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">30</Col>
+            <Col id="unitprice">50000</Col>
+            <Col id="totalamount">1500000</Col>
           </Row>
           <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">김도준</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">3000</Col>
-            <Col id="총액">135000</Col>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Do-jun Kim</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">3000</Col>
+            <Col id="totalamount">135000</Col>
           </Row>
           <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">김도준</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">3000</Col>
-            <Col id="총액">135000</Col>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Do-jun Kim</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">3000</Col>
+            <Col id="totalamount">135000</Col>
           </Row>
           <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">김인현</Col>
-            <Col id="교재명">불어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">782000</Col>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Inhyun Kim</Col>
+            <Col id="textbookname">French textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">782000</Col>
           </Row>
           <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">김인현</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">782000</Col>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Inhyun Kim</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">782000</Col>
           </Row>
           <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">박인수</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">56</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1848000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">박인수</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">1035000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">박인수</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">56</Col>
-            <Col id="단가">33000</Col>
-            <Col id="총액">1848000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">박인수</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">45</Col>
-            <Col id="단가">23000</Col>
-            <Col id="총액">1035000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이진영</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">90</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">2250000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이진영</Col>
-            <Col id="교재명">한문교재</Col>
-            <Col id="수량">40</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1000000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이창희</Col>
-            <Col id="교재명">영어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이창희</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">34</Col>
-            <Col id="단가">34000</Col>
-            <Col id="총액">1156000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이화룡</Col>
-            <Col id="교재명">일어교재</Col>
-            <Col id="수량">75</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1875000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">이화룡</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">75</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">1875000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">정인호</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">39</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">975000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">정인호</Col>
-            <Col id="교재명">국어교재</Col>
-            <Col id="수량">39</Col>
-            <Col id="단가">25000</Col>
-            <Col id="총액">975000</Col>
-          </Row>
-          <Row>
-            <Col id="사업부">울산사업부</Col>
-            <Col id="사원">최수정</Col>
-            <Col id="교재명">과학교재</Col>
-            <Col id="수량">100</Col>
-            <Col id="단가">45000</Col>
-            <Col id="총액">4500000</Col>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Insoo Park</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">56</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1848000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Insoo Park</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">1035000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Insoo Park</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">56</Col>
+            <Col id="unitprice">33000</Col>
+            <Col id="totalamount">1848000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Insoo Park</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">45</Col>
+            <Col id="unitprice">23000</Col>
+            <Col id="totalamount">1035000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Jinyoung Lee</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">90</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">2250000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Jinyoung Lee</Col>
+            <Col id="textbookname">Chinese textbooks</Col>
+            <Col id="quantity">40</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1000000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Changhee Lee</Col>
+            <Col id="textbookname">English textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Changhee Lee</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">34</Col>
+            <Col id="unitprice">34000</Col>
+            <Col id="totalamount">1156000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Lee Hwa-ryong</Col>
+            <Col id="textbookname">Japanese textbook</Col>
+            <Col id="quantity">75</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1875000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Lee Hwa-ryong</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">75</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">1875000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Inho Jeong</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">39</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">975000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Inho Jeong</Col>
+            <Col id="textbookname">Korean textbook</Col>
+            <Col id="quantity">39</Col>
+            <Col id="unitprice">25000</Col>
+            <Col id="totalamount">975000</Col>
+          </Row>
+          <Row>
+            <Col id="businessdepartment">Ulsan Division</Col>
+            <Col id="employee">Soojung Choi</Col>
+            <Col id="textbookname">Science textbook</Col>
+            <Col id="quantity">100</Col>
+            <Col id="unitprice">45000</Col>
+            <Col id="totalamount">4500000</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -1253,22 +1253,22 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="column">사업부</Col>
+            <Col id="column">Business department</Col>
           </Row>
           <Row>
-            <Col id="column">사원</Col>
+            <Col id="column">Employee</Col>
           </Row>
           <Row>
-            <Col id="column">교재명</Col>
+            <Col id="column">Textbook name</Col>
           </Row>
           <Row>
-            <Col id="column">수량</Col>
+            <Col id="column">Quantity</Col>
           </Row>
           <Row>
-            <Col id="column">단가</Col>
+            <Col id="column">Unit price</Col>
           </Row>
           <Row>
-            <Col id="column">총액</Col>
+            <Col id="column">Total amount</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -1280,27 +1280,27 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="column">사업부</Col>
+            <Col id="column">Business department</Col>
             <Col id="chk">0</Col>
           </Row>
           <Row>
-            <Col id="column">사원</Col>
+            <Col id="column">Employee</Col>
             <Col id="chk">0</Col>
           </Row>
           <Row>
-            <Col id="column">교재명</Col>
+            <Col id="column">Textbook name</Col>
             <Col id="chk">0</Col>
           </Row>
           <Row>
-            <Col id="column">수량</Col>
+            <Col id="column">Quantity</Col>
             <Col id="chk">0</Col>
           </Row>
           <Row>
-            <Col id="column">단가</Col>
+            <Col id="column">Unit price</Col>
             <Col id="chk">0</Col>
           </Row>
           <Row>
-            <Col id="column">총액</Col>
+            <Col id="column">Total amount</Col>
             <Col id="chk">0</Col>
           </Row>
         </Rows>
@@ -1400,13 +1400,13 @@ this.fnComBtn = function(obj:Button, e:nexacro.ClickEventInfo)
 			// 초기화
 			this.dropFlag = 0;
 			this.grdList01.set_formats(this.fv_formats1);
-			this.grdList01.set_nodatatext("데이터가 없습니다.");
+			this.grdList01.set_nodatatext("NO DATA");
 			this.dsList01.clearData();
 			break;
 		case "btnInit02":
 			// 초기화
 			this.grdList02.set_formats(this.fv_formats2);
-			this.grdList02.set_nodatatext("데이터가 없습니다.");
+			this.grdList02.set_nodatatext("NO DATA");
 			this.dsList02.clearData();
 			break;
 	}
@@ -1428,7 +1428,7 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 				return;
 			}
 
-			this.fv_dropFlag = "단일";
+			this.fv_dropFlag = "single";
 			this.stDragImg.set_text(obj.getCellText(e.row, e.cell));
 			this.stDragImg.selcol = e.col;
 			this.stDragImg.set_visible(true);
@@ -1459,7 +1459,7 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 			break;
 		case "grdMultiColumn":
 			// 멀티 Column 이동
-			this.fv_dropFlag = "멀티";
+			this.fv_dropFlag = "multi";
 
 			var sColId = this.dsMulticolumn.getColID(e.col);
 
@@ -1505,7 +1505,10 @@ this.dropFlag = 0;
 this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 {
 	var objDs = obj.getBindDataset();
-	if (this.fv_dropFlag == "단일") 
+	// for performance turn off grid redraw event dataset event and turn it on end of script
+	obj.set_enableredraw(false);
+	objDs.set_enableevent(false);
+	if (this.fv_dropFlag == "single") 
 	{
 		var nColIdx;
 		var nCellCnt;
@@ -1528,24 +1531,26 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 			{
 				nColIdx -= 1;
 			}
-		
 		sCol = this.stDragImg.text;
-		objColumnInfo = this.dsGrid.getColumnInfo(sCol);
-		objDs.addColumn(sCol, objColumnInfo.type, objColumnInfo.size);
-		
+		var colInfo = sCol.toLowerCase().replace(/ /g,"");
+		objColumnInfo = this.dsGrid.getColumnInfo(colInfo);
+		objDs.addColumn(colInfo, objColumnInfo.type, objColumnInfo.size);
 		for (var i = 0; i < nRowCnt1; i++) 
 		{
-			var sColData = this.dsGrid.getColumn(i, sCol);
+			var sColData = this.dsGrid.getColumn(i, colInfo);
 
 			if (nRowCnt2 == 0) 
 			{
 				objDs.addRow();
 			}
-			objDs.setColumn(i, sCol, sColData);
+			objDs.setColumn(i, colInfo, sColData);
 		}
 		obj.setCellProperty("head", nColIdx, "text", sCol);
-		obj.setCellProperty("body", nColIdx, "text", "bind:" + sCol);
-		obj.setFormatColProperty(nColIdx, "size", 120);
+		obj.setCellProperty("body", nColIdx, "text", "bind:" + colInfo);
+		var strFont = obj._getCurrentStyleInheritValue("font");
+		var strText = sCol;
+		var objFontSize = nexacro.getTextSize( strText, strFont );	
+		obj.setFormatColProperty(nColIdx, "size", objFontSize.nx + 50);
 
 		//this.grdList01.setRealRowSize(-1, 30);
 		/* Grid Formats 생성 - End   */
@@ -1585,30 +1590,32 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 			else 
 			{
 				obj.appendContentsCol();
-				trace("nColIdx : " + nColIdx);
+				//trace("nColIdx : " + nColIdx);
 				nColIdx += 1;
 			}
+			var colInfo = this.fv_sTextVal[i].toLowerCase().replace(/ /g,"");
+			objColumnInfo = this.dsGrid.getColumnInfo(colInfo);
 
-			objColumnInfo = this.dsGrid.getColumnInfo(this.fv_sTextVal[i]);
-
-			objDs.addColumn(this.fv_sTextVal[i], objColumnInfo.type, objColumnInfo.size);
-
+			objDs.addColumn(colInfo, objColumnInfo.type, objColumnInfo.size);
+			
 			for (var j = 0; j < nRowCnt1; j++) 
 			{
-				var sColData = this.dsGrid.getColumn(j, this.fv_sTextVal[i]);
+				var sColData = this.dsGrid.getColumn(j, colInfo);
 				var nRowCnt2 = objDs.rowcount;
 
 				if (i == 0) 
 				{
 					objDs.addRow();
 				}
-
-				objDs.setColumn(j, this.fv_sTextVal[i], sColData);
+				objDs.setColumn(j, colInfo, sColData);
 			}
 
 			obj.setCellProperty("head", nColIdx, "text", this.fv_sTextVal[i]);
-			obj.setCellProperty("body", nColIdx, "text", "bind:" + this.fv_sTextVal[i]);
-			obj.setFormatColProperty(nColIdx, "size", 120);
+			obj.setCellProperty("body", nColIdx, "text", "bind:" + colInfo);
+			var strFont = obj._getCurrentStyleInheritValue("font");
+			var strText = this.fv_sTextVal[i];
+			var objFontSize = nexacro.getTextSize( strText, strFont );			
+			obj.setFormatColProperty(nColIdx, "size", objFontSize.nx + 50);
 		}
 
 		obj.setRealRowSize(-1, 30);
@@ -1618,7 +1625,8 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 		obj.setFocus();
 		objDs.set_rowposition(0);
 	}
-
+	objDs.set_enableevent(true);
+	obj.set_enableredraw(true);
 	this.fnDragImgClear();
 };
 

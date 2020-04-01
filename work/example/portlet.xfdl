@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="portlet" width="980" height="950" titletext="포틀릿화면" ondragmove="portlet_ondragmove" onlbuttonup="portlet_onlbuttonup" ondrop="portlet_ondrop" ontimer="portlet_ontimer">
     <Layouts>
       <Layout>
-        <Static id="Static07" taborder="0" text="메트로(Metro) UI 형태의 포틀릿(Portlet) 화면을 구성할 수 있습니다.&#13;&#10;포틀릿을 드래그(Drag) &amp; 드롭(Drop)해서 위치를 바꿔보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="Static07" taborder="0" text="You can configure a portlet screen in the form of Metro UI.&#13;&#10;Drag and drop to change positions." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
         <Div id="divTile1" taborder="1" top="101" width="180" height="510" cssclass="div_WF_portBox" left="0">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" left="0" top="0" cssclass="btn_WF_portBg01" right="0" bottom="0" text="자세히 보아야 예쁘다&#13;&#10;오래 보아야 사랑스럽다&#13;&#10;너도 그렇다&#13;&#10;&#13;&#10;-풀꽃-" ondrag="Button_ondrag" tabstop="false"/>
+              <Button id="stMemo" taborder="0" left="0" top="0" cssclass="btn_WF_portBg01" right="0" bottom="0" text="It is pretty to see closely&#13;&#10;It is lovely to see for a long time&#13;&#10;So do you&#13;&#10;&#13;&#10;-Flower-" ondrag="Button_ondrag" tabstop="false"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" right="0" bottom="0" ondrag="Button_ondrag" height="20" width="20" background="url('imagerc::icon_WF_move.png') no-repeat center center"/>
             </Layout>
           </Layouts>
@@ -15,7 +15,7 @@
         <Div id="divTile2" taborder="2" text="Div01" top="101" cssclass="div_WF_portBox" left="190" height="250" width="249">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" cssclass="btn_WF_portBg02" ondrag="Button_ondrag" text="'이 길이 맞는 걸까?'&#13;&#10;너는 물었다.&#13;&#10;&#13;&#10;나는 대답했다.&#13;&#10;'가보지 않고는 알 수 없는 거겠지'&#13;&#10;&#13;&#10;-거기, 우리가 있었다-" left="0" top="0" bottom="0" right="0"/>
+              <Button id="stMemo" taborder="0" cssclass="btn_WF_portBg02" ondrag="Button_ondrag" text="'Is this the right way?'&#13;&#10;You asked.&#13;&#10;&#13;&#10;I replied.&#13;&#10;'You can't know without going'&#13;&#10;&#13;&#10;-There, we were-" left="0" top="0" bottom="0" right="0"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" width="20" height="20" top="0" right="0" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -23,7 +23,7 @@
         <Div id="divTile3" taborder="3" top="101" cssclass="div_WF_portBox" text="div_WF_portBox" left="449" height="250" width="252">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" text="이름을 알고 나면 이웃이 되고&#13;&#10;색깔을 알고 나면 친구가 되고&#13;&#10;모양까지 알고 나면 연인이 된다&#13;&#10;아, 이것은 비밀.&#13;&#10;&#13;&#10;-풀꽃2-" left="0" top="0" cssclass="btn_WF_portBg03" ondrag="Button_ondrag" onclick="divTile3_stMemo_onclick" bottom="0" right="0"/>
+              <Button id="stMemo" taborder="0" text="Once you know the name, you become a neighbor&#13;&#10;Once you know the color, you become a friend&#13;&#10;Once you know the shape, you become a lover&#13;&#10;Oh, this is a secret.&#13;&#10;&#13;&#10;-Flower 2-" left="0" top="0" cssclass="btn_WF_portBg03" ondrag="Button_ondrag" onclick="divTile3_stMemo_onclick" bottom="0" right="0"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" width="20" height="20" top="0" right="0" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -31,7 +31,7 @@
         <Div id="divTile4" taborder="4" left="711" top="101" cssclass="div_WF_portBox" height="250" width="249">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" cssclass="btn_WF_portBg04" text="기죽지 말고 살아봐&#13;&#10;꽃 피워봐&#13;&#10;참 좋아&#13;&#10;&#13;&#10;-풀꽃3-" ondrag="Button_ondrag" left="0" top="0" bottom="0" right="0"/>
+              <Button id="stMemo" taborder="0" cssclass="btn_WF_portBg04" text="Don't be discouraged. Live&#13;&#10;Make a flower.&#13;&#10;That's great.&#13;&#10;&#13;&#10;-Full Flower 3-" ondrag="Button_ondrag" left="0" top="0" bottom="0" right="0"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" top="0" right="0" width="20" height="20" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -39,7 +39,7 @@
         <Div id="divTile5" taborder="5" left="190" top="361" height="250" cssclass="div_WF_portBox" width="354">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" text="과거를 팔아 오늘을 살지 말 것&#13;&#10;현실이 미래를 잡아먹지 말 것&#13;&#10;&#13;&#10;미래를 말하며 과거를 묻어버리거나&#13;&#10;미래를 내세워 오늘 할 일을 흐리지 말 것&#13;&#10;&#13;&#10;-경계-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg05" ondrag="Button_ondrag"/>
+              <Button id="stMemo" taborder="0" text="Do not sell the past and live today&#13;&#10;Reality should not eat the future&#13;&#10;&#13;&#10;Talking about the future and burying the past&#13;&#10;Do not blur your future work&#13;&#10;&#13;&#10;-boundary-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg05" ondrag="Button_ondrag"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" height="20" width="20" right="0" bottom="0" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -47,7 +47,7 @@
         <Div id="divTile6" taborder="6" left="554" top="361" height="250" cssclass="div_WF_portBox" width="406">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" text="세잎클로버에 한 잎이 더해져,&#13;&#10;네잎클로버가 되는 것처럼&#13;&#10;오늘의 행복한 순간이 더해져&#13;&#10;내일의 행운까지 만날 수 있다.&#13;&#10;&#13;&#10;오늘이 빛나야 내일이 빛난다.&#13;&#10;&#13;&#10;-울지마, 당신-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg06" ondrag="Button_ondrag"/>
+              <Button id="stMemo" taborder="0" text="One leaf is added to the three-leaf clover,&#13;&#10;Like being a four-leaf clover&#13;&#10;Today's happy moments are added&#13;&#10;You can even meet the luck of tomorrow.&#13;&#10;&#13;&#10;Today shines, and tomorrow shines.&#13;&#10;&#13;&#10;-Don't cry, you-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg06" ondrag="Button_ondrag"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" width="20" height="20" right="0" bottom="0" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -55,7 +55,7 @@
         <Div id="divTile7" taborder="7" left="0" top="621" height="250" cssclass="div_WF_portBox" width="471">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" left="0" top="0" cssclass="btn_WF_portBg07" right="0" bottom="0" ondrag="Button_ondrag" text="흔들리지 않고 피는 꽃이 어디 있으랴&#13;&#10;이 세상 그 어떤 아름다운 꽃들도&#13;&#10;다 흔들리며 피었나니&#13;&#10;흔들리면서 줄기를 곧게 세웠나니&#13;&#10;흔들리지 않고 가는 사랑 어디 있으랴&#13;&#10;&#13;&#10;-흔들리며 피는 꽃-"/>
+              <Button id="stMemo" taborder="0" left="0" top="0" cssclass="btn_WF_portBg07" right="0" bottom="0" ondrag="Button_ondrag" text="Where are the flowers that bloom without shaking&#13;&#10;Any beautiful flowers in this world&#13;&#10;Did everything bloom shaking?&#13;&#10;Did you stand upright while shaking?&#13;&#10;Where is the love that goes without shaking&#13;&#10;&#13;&#10;-Shaking flowers-"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" top="0" right="0" width="20" height="20" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>
@@ -63,7 +63,7 @@
         <Div id="divTile8" taborder="8" left="481" top="621" height="250" cssclass="div_WF_portBox" width="479">
           <Layouts>
             <Layout>
-              <Button id="stMemo" taborder="0" text="봄비가 내리면 세상 풍경이 달라지고&#13;&#10;생기가 돌기 시작한다.&#13;&#10;&#13;&#10;내 마음에도 흠뻑&#13;&#10;봄비를 맞고 싶다.&#13;&#10;내 마음 속 간절한 소망을&#13;&#10;꽃으로 피워내고 싶다.&#13;&#10;&#13;&#10;-봄비-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg08" ondrag="Button_ondrag"/>
+              <Button id="stMemo" taborder="0" text="When the spring rain falls, the world landscape changes&#13;&#10;Vitality begins to develop.&#13;&#10;&#13;&#10;Soaked in my heart&#13;&#10;I want to meet the spring rain.&#13;&#10;I hope for my heart&#13;&#10;I want to bloom with flowers.&#13;&#10;&#13;&#10;-Spring rain-" left="0" top="0" right="0" bottom="0" cssclass="btn_WF_portBg08" ondrag="Button_ondrag"/>
               <Button id="btnMove" taborder="1" cssclass="btn_WF_portMove" top="0" right="0" width="20" height="20" ondrag="Button_ondrag"/>
             </Layout>
           </Layouts>

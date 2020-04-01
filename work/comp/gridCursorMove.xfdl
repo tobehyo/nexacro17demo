@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="gridCursorMove" width="980" height="720" titletext="그리드 커서 이동" onload="gridCursorMove_onload" cssclass="grid_WF_moveCell">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="980">
@@ -34,32 +34,32 @@
                 <Row size="34"/>
               </Rows>
               <Band id="head">
-                <Cell rowspan="2" text="제품코드"/>
-                <Cell col="1" rowspan="2" text="제품명"/>
-                <Cell col="2" colspan="3" text="홍대입구점"/>
-                <Cell col="5" colspan="3" text="신촌점"/>
-                <Cell col="8" colspan="3" text="코엑스점"/>
-                <Cell col="11" colspan="3" text="강남점"/>
-                <Cell col="14" colspan="3" text="인천공항점"/>
-                <Cell col="17" colspan="3" text="가로수길점"/>
-                <Cell row="1" col="2" text="출고"/>
-                <Cell row="1" col="3" text="판매"/>
-                <Cell row="1" col="4" text="재고" background="lightsteelblue"/>
-                <Cell row="1" col="5" text="출고"/>
-                <Cell row="1" col="6" text="판매"/>
-                <Cell row="1" col="7" text="재고" background="lightsteelblue"/>
-                <Cell row="1" col="8" text="출고"/>
-                <Cell row="1" col="9" text="판매"/>
-                <Cell row="1" col="10" text="재고" background="lightsteelblue"/>
-                <Cell row="1" col="11" text="출고"/>
-                <Cell row="1" col="12" text="판매"/>
-                <Cell row="1" col="13" text="재고" background="lightsteelblue"/>
-                <Cell row="1" col="14" text="출고"/>
-                <Cell row="1" col="15" text="판매"/>
-                <Cell row="1" col="16" text="재고" background="lightsteelblue"/>
-                <Cell row="1" col="17" text="출고"/>
-                <Cell row="1" col="18" text="판매"/>
-                <Cell row="1" col="19" text="재고" background="lightsteelblue"/>
+                <Cell rowspan="2" text="Product Code"/>
+                <Cell col="1" rowspan="2" text="Product Name"/>
+                <Cell col="2" colspan="3" text="Hongik Branch"/>
+                <Cell col="5" colspan="3" text="Sinchon Branch"/>
+                <Cell col="8" colspan="3" text="COEX Branch"/>
+                <Cell col="11" colspan="3" text="Gangnam Branch"/>
+                <Cell col="14" colspan="3" text="Incheon Airport Branch"/>
+                <Cell col="17" colspan="3" text="Garosu-gil Branch"/>
+                <Cell row="1" col="2" text="Release"/>
+                <Cell row="1" col="3" text="Sale"/>
+                <Cell row="1" col="4" text="Stock" background="lightsteelblue"/>
+                <Cell row="1" col="5" text="Release"/>
+                <Cell row="1" col="6" text="Sale"/>
+                <Cell row="1" col="7" text="Stock" background="lightsteelblue"/>
+                <Cell row="1" col="8" text="Release"/>
+                <Cell row="1" col="9" text="Sale"/>
+                <Cell row="1" col="10" text="Stock" background="lightsteelblue"/>
+                <Cell row="1" col="11" text="Release"/>
+                <Cell row="1" col="12" text="Sale"/>
+                <Cell row="1" col="13" text="Stock" background="lightsteelblue"/>
+                <Cell row="1" col="14" text="Release"/>
+                <Cell row="1" col="15" text="Sale"/>
+                <Cell row="1" col="16" text="Stock" background="lightsteelblue"/>
+                <Cell row="1" col="17" text="Release"/>
+                <Cell row="1" col="18" text="Sale"/>
+                <Cell row="1" col="19" text="Stock" background="lightsteelblue"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:code" displaytype="normal" textAlign="center"/>
@@ -87,7 +87,7 @@
           </Formats>
         </Grid>
         <Button id="btnSetData" taborder="1" text="Set Dataset" top="55" width="120" height="30" onclick="btnSetData_onclick" cursor="pointer" right="20" visible="false"/>
-        <Static id="Static07" taborder="2" text="그리드에서 편집 된 영역의 색과 Seletce 되는 Cell 영역의 표시를 해줍니다. 키보드 방향키로 이동을 하며, 엔터키를 선택해 데이터 변경을 해보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="Static07" taborder="2" text="It displays the color of the edited area in the grid and the selected cell area. Move with the keyboard arrow keys, and select Enter to change the data." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -117,7 +117,7 @@
         <Rows>
           <Row>
             <Col id="code">IAM</Col>
-            <Col id="name">아아</Col>
+            <Col id="name">Alas</Col>
             <Col id="val01">46</Col>
             <Col id="val02">48</Col>
             <Col id="val03">2</Col>
@@ -139,7 +139,7 @@
           </Row>
           <Row>
             <Col id="code">LAT</Col>
-            <Col id="name">라떼</Col>
+            <Col id="name">Latte</Col>
             <Col id="val01">98</Col>
             <Col id="val02">14</Col>
             <Col id="val03">98</Col>
@@ -161,7 +161,7 @@
           </Row>
           <Row>
             <Col id="code">VLA</Col>
-            <Col id="name">바닐라라떼</Col>
+            <Col id="name">Vanilla latte</Col>
             <Col id="val01">38</Col>
             <Col id="val02">42</Col>
             <Col id="val03">73</Col>
@@ -183,7 +183,7 @@
           </Row>
           <Row>
             <Col id="code">DLA</Col>
-            <Col id="name">돌체라떼</Col>
+            <Col id="name">Dolce Latte</Col>
             <Col id="val01">7</Col>
             <Col id="val02">16</Col>
             <Col id="val03">34</Col>
@@ -205,7 +205,7 @@
           </Row>
           <Row>
             <Col id="code">HIA</Col>
-            <Col id="name">헤이즐넛 아아</Col>
+            <Col id="name">Hazelnut ah</Col>
             <Col id="val01">37</Col>
             <Col id="val02">75</Col>
             <Col id="val03">34</Col>
@@ -227,7 +227,7 @@
           </Row>
           <Row>
             <Col id="code">CFC</Col>
-            <Col id="name">카푸치노</Col>
+            <Col id="name">cappuccino</Col>
             <Col id="val01">38</Col>
             <Col id="val02">94</Col>
             <Col id="val03">87</Col>
@@ -249,7 +249,7 @@
           </Row>
           <Row>
             <Col id="code">CFM</Col>
-            <Col id="name">카페모카</Col>
+            <Col id="name">Cafe Mocha</Col>
             <Col id="val01">26</Col>
             <Col id="val02">11</Col>
             <Col id="val03">80</Col>
@@ -271,7 +271,7 @@
           </Row>
           <Row>
             <Col id="code">ESP</Col>
-            <Col id="name">에스프레소</Col>
+            <Col id="name">Espresso</Col>
             <Col id="val01">35</Col>
             <Col id="val02">38</Col>
             <Col id="val03">14</Col>
@@ -293,7 +293,7 @@
           </Row>
           <Row>
             <Col id="code">JAP</Col>
-            <Col id="name">자바칩프라푸치노</Col>
+            <Col id="name">Java Chip Frappuccino</Col>
             <Col id="val01">65</Col>
             <Col id="val02">37</Col>
             <Col id="val03">79</Col>
@@ -315,7 +315,7 @@
           </Row>
           <Row>
             <Col id="code">GRA</Col>
-            <Col id="name">자몽에이드</Col>
+            <Col id="name">Grapefruit aid</Col>
             <Col id="val01">63</Col>
             <Col id="val02">18</Col>
             <Col id="val03">25</Col>
@@ -337,7 +337,7 @@
           </Row>
           <Row>
             <Col id="code">LMA</Col>
-            <Col id="name">레몬에이드</Col>
+            <Col id="name">Lemonade</Col>
             <Col id="val01">28</Col>
             <Col id="val02">54</Col>
             <Col id="val03">83</Col>
@@ -359,7 +359,7 @@
           </Row>
           <Row>
             <Col id="code">SSM</Col>
-            <Col id="name">딸기스무디</Col>
+            <Col id="name">Strawberry smoothie</Col>
             <Col id="val01">17</Col>
             <Col id="val02">75</Col>
             <Col id="val03">67</Col>
@@ -381,7 +381,7 @@
           </Row>
           <Row>
             <Col id="code">GLA</Col>
-            <Col id="name">녹차라떼</Col>
+            <Col id="name">Green Tea Latte</Col>
             <Col id="val01">51</Col>
             <Col id="val02">72</Col>
             <Col id="val03">15</Col>
@@ -403,7 +403,7 @@
           </Row>
           <Row>
             <Col id="code">CMA</Col>
-            <Col id="name">카라멜마끼야또</Col>
+            <Col id="name">Caramel Macchiato</Col>
             <Col id="val01">27</Col>
             <Col id="val02">53</Col>
             <Col id="val03">52</Col>
@@ -425,7 +425,7 @@
           </Row>
           <Row>
             <Col id="code">YUJ</Col>
-            <Col id="name">유자차</Col>
+            <Col id="name">Yuza-tea</Col>
             <Col id="val01">84</Col>
             <Col id="val02">30</Col>
             <Col id="val03">78</Col>
@@ -447,7 +447,7 @@
           </Row>
           <Row>
             <Col id="code">SHT</Col>
-            <Col id="name">쌍화탕</Col>
+            <Col id="name">Ssanghwatang</Col>
             <Col id="val01">96</Col>
             <Col id="val02">98</Col>
             <Col id="val03">73</Col>
@@ -469,7 +469,7 @@
           </Row>
           <Row>
             <Col id="code">FLA</Col>
-            <Col id="name">오곡라떼</Col>
+            <Col id="name">Ogok Latte</Col>
             <Col id="val01">62</Col>
             <Col id="val02">77</Col>
             <Col id="val03">89</Col>
@@ -491,7 +491,7 @@
           </Row>
           <Row>
             <Col id="code">MSH</Col>
-            <Col id="name">밀크쉐이크</Col>
+            <Col id="name">Milk shake</Col>
             <Col id="val01">68</Col>
             <Col id="val02">55</Col>
             <Col id="val03">78</Col>
@@ -513,7 +513,7 @@
           </Row>
           <Row>
             <Col id="code">MAX</Col>
-            <Col id="name">커피는맥심</Col>
+            <Col id="name">Coffee is Maxim</Col>
             <Col id="val01">88</Col>
             <Col id="val02">7</Col>
             <Col id="val03">99</Col>
@@ -535,7 +535,7 @@
           </Row>
           <Row>
             <Col id="code">PBS</Col>
-            <Col id="name">팥빙수</Col>
+            <Col id="name">Red bean shaved ice</Col>
             <Col id="val01">17</Col>
             <Col id="val02">84</Col>
             <Col id="val03">2</Col>

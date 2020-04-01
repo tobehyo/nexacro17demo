@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <TypeDefinition url="..\default_typedef.xml"/>
   <Form id="menuList" left="0" top="0" width="980" height="572" titletext="다양한 메뉴" onload="work013_onload" ontimer="work013_ontimer">
     <Layouts>
@@ -7,9 +7,9 @@
         <Static id="Static00" taborder="9" left="0" top="0" bottom="0" right="0" onclick="Static00_onclick" text=""/>
         <Menu id="mnuTop" taborder="0" left="0" top="107" height="38" innerdataset="dsMenu" idcolumn="id" levelcolumn="level" captioncolumn="caption" cssclass="gd_LT_menu" right="20"/>
         <PopupMenu id="pmnuMenu" left="1020" top="148" width="220" height="132" innerdataset="dsMenu" idcolumn="id" levelcolumn="level" captioncolumn="caption"/>
-        <Static id="Static22" taborder="2" text="상단메뉴 컴포넌트" cssclass="sta_WF_title02" left="0" top="78" width="190" height="24"/>
-        <Button id="btnCall" taborder="4" text="메뉴호출" top="112" width="96" height="28" onclick="btnCall_onclick" right="25" cssclass="btn_WF_btnWhite"/>
-        <Static id="Static02" taborder="5" text="좌측메뉴 예시" cssclass="sta_WF_title02" left="0" top="170" width="190" height="24"/>
+        <Static id="Static22" taborder="2" text="Top menu component" cssclass="sta_WF_title02" left="0" top="78" width="190" height="24"/>
+        <Button id="btnCall" taborder="4" text="Call Menu" top="112" width="96" height="28" onclick="btnCall_onclick" right="25" cssclass="btn_WF_btnWhite"/>
+        <Static id="Static02" taborder="5" text="Left menu" cssclass="sta_WF_title02" left="0" top="170" width="190" height="24"/>
         <Grid id="grdLeftMenu" cssclass="gd_LT_menu" taborder="6" binddataset="dsMenu" useinputpanel="false" autofittype="col" treeuseline="false" treeusecheckbox="false" treeuseimage="false" oncellclick="grdLeftMenu_oncellclick" left="0" top="204" width="182" treeinitstatus="expand,null" bottom="20">
           <Formats>
             <Format id="default">
@@ -65,15 +65,15 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="Static60" taborder="12" text="다양한 메뉴 표현으로 시스템 구성과 사용자 편의성을 고려하여 사용할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
-        <Div id="divMenu1" taborder="10" text="Div00" left="191" top="262" width="176" height="140" style="background:#ffffffff;border:2 solid #006dddff ;bordertype:round 10 10 ;" visible="false">
+        <Static id="Static60" taborder="12" text="Various menu expressions can be used considering system configuration and user convenience." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Div id="divMenu1" taborder="10" text="Div00" left="191" top="262" width="250" height="140" style="background:#ffffffff;border:2 solid #006dddff ;bordertype:round 10 10 ;" visible="false">
           <Layouts>
             <Layout>
-              <Grid id="grdMenu2" taborder="0" useinputpanel="false" left="5" top="5" right="5" bottom="5" binddataset="dsGridMenu2" autofittype="col" style="border:0 none #808080ff;" onmouseenter="divMenu1_grdMenu2_onmouseenter" onmousemove="divMenu1_grdMenu2_onmousemove" oncellclick="divMenu1_grdMenu2_oncellclick">
+              <Grid id="grdMenu2" taborder="0" useinputpanel="false" left="5" top="5" right="5" bottom="5" binddataset="dsGridMenu2" style="border:0 none #808080ff;" onmouseenter="divMenu1_grdMenu2_onmouseenter" onmousemove="divMenu1_grdMenu2_onmousemove" oncellclick="divMenu1_grdMenu2_oncellclick" autofittype="col">
                 <Formats>
                   <Format id="default">
                     <Columns>
-                      <Column size="40"/>
+                      <Column size="165"/>
                     </Columns>
                     <Rows>
                       <Row size="30"/>
@@ -100,242 +100,242 @@
         <Rows>
           <Row>
             <Col id="id">010000</Col>
-            <Col id="caption">대메뉴1</Col>
+            <Col id="caption">A Menu1</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">010100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">010101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">010102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">010200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">010201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">010202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">010203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">020000</Col>
-            <Col id="caption">대메뉴2</Col>
+            <Col id="caption">A Menu2</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">020100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">020101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">020102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">020200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">020201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">020202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">020203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">030000</Col>
-            <Col id="caption">대메뉴3</Col>
+            <Col id="caption">A Menu3</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">030100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">030101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">030102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">030200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">030201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">030202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">030203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">040000</Col>
-            <Col id="caption">대메뉴4</Col>
+            <Col id="caption">A Menu4</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">040100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">040101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">040102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">040200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">040201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">040202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">040203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">050000</Col>
-            <Col id="caption">대메뉴5</Col>
+            <Col id="caption">A Menu5</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">050100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">050101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">050102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">050200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">050201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">050202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">050203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">060000</Col>
-            <Col id="caption">대메뉴6</Col>
+            <Col id="caption">A Menu6</Col>
             <Col id="level">0</Col>
           </Row>
           <Row>
             <Col id="id">060100</Col>
-            <Col id="caption">중메뉴1</Col>
+            <Col id="caption">B Menu1</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">060101</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">060102</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">060200</Col>
-            <Col id="caption">중메뉴2</Col>
+            <Col id="caption">B Menu2</Col>
             <Col id="level">1</Col>
           </Row>
           <Row>
             <Col id="id">060201</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">060202</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">2</Col>
           </Row>
           <Row>
             <Col id="id">060203</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">2</Col>
           </Row>
         </Rows>
@@ -352,35 +352,35 @@
           <Row>
             <Col id="id">010101</Col>
             <Col id="upid">010000</Col>
-            <Col id="caption">소메뉴1</Col>
+            <Col id="caption">C Menu1</Col>
             <Col id="level">1</Col>
             <Col id="status">[Undefined]</Col>
           </Row>
           <Row>
             <Col id="id">010102</Col>
             <Col id="upid">010000</Col>
-            <Col id="caption">소메뉴2</Col>
+            <Col id="caption">C Menu2</Col>
             <Col id="level">1</Col>
             <Col id="status">[Undefined]</Col>
           </Row>
           <Row>
             <Col id="id">010201</Col>
             <Col id="upid">010000</Col>
-            <Col id="caption">소메뉴3</Col>
+            <Col id="caption">C Menu3</Col>
             <Col id="level">1</Col>
             <Col id="status">[Undefined]</Col>
           </Row>
           <Row>
             <Col id="id">010202</Col>
             <Col id="upid">010000</Col>
-            <Col id="caption">소메뉴4</Col>
+            <Col id="caption">C Menu4</Col>
             <Col id="level">1</Col>
             <Col id="status">[Undefined]</Col>
           </Row>
           <Row>
             <Col id="id">010203</Col>
             <Col id="upid">010000</Col>
-            <Col id="caption">소메뉴5</Col>
+            <Col id="caption">C Menu5</Col>
             <Col id="level">1</Col>
             <Col id="status">[Undefined]</Col>
           </Row>
@@ -400,7 +400,7 @@
           <Row>
             <Col id="MENU_CD">010100</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_NM">Personnel Basics</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -409,21 +409,21 @@
           <Row>
             <Col id="MENU_CD">010200</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_NM">Personnel application</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010300</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020100</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_NM">Payroll management</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -432,56 +432,56 @@
           <Row>
             <Col id="MENU_CD">020200</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">퇴직연금신청</Col>
+            <Col id="MENU_NM">Retirement pension application</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020300</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">복리후생</Col>
+            <Col id="MENU_NM">Welfare benefits</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030100</Col>
             <Col id="UP_MENU_CD">030000</Col>
-            <Col id="MENU_NM">근태신청</Col>
+            <Col id="MENU_NM">Time and Attendance</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030200</Col>
             <Col id="UP_MENU_CD">030000</Col>
-            <Col id="MENU_NM">근태내역</Col>
+            <Col id="MENU_NM">Time and attendance</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040100</Col>
             <Col id="UP_MENU_CD">040000</Col>
-            <Col id="MENU_NM">경력개발</Col>
+            <Col id="MENU_NM">Career development</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040200</Col>
             <Col id="UP_MENU_CD">040000</Col>
-            <Col id="MENU_NM">교육관리</Col>
+            <Col id="MENU_NM">Education Management</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">090100</Col>
             <Col id="UP_MENU_CD">090000</Col>
-            <Col id="MENU_NM">요구기능시연</Col>
+            <Col id="MENU_NM">Demonstration of required functions</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">090200</Col>
             <Col id="UP_MENU_CD">090000</Col>
-            <Col id="MENU_NM">추가기능시연</Col>
+            <Col id="MENU_NM">Demonstration of additional functions</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
             <Col id="PGM_PATH"/>
@@ -502,7 +502,7 @@
           <Row>
             <Col id="MENU_CD">010000</Col>
             <Col id="UP_MENU_CD">0</Col>
-            <Col id="MENU_NM">인사정보</Col>
+            <Col id="MENU_NM">Personnel Information</Col>
             <Col id="MENU_LVL">0</Col>
             <Col id="PGM_PATH"/>
             <Col id="SORT">1</Col>
@@ -510,7 +510,7 @@
           <Row>
             <Col id="MENU_CD">010100</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_NM">Personnel Basics</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -519,7 +519,7 @@
           <Row>
             <Col id="MENU_CD">010101</Col>
             <Col id="UP_MENU_CD">010100</Col>
-            <Col id="MENU_NM">인사기본사항</Col>
+            <Col id="MENU_NM">Personnel Basics</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -528,7 +528,7 @@
           <Row>
             <Col id="MENU_CD">010102</Col>
             <Col id="UP_MENU_CD">010100</Col>
-            <Col id="MENU_NM">자기신고(본인)</Col>
+            <Col id="MENU_NM">Self-report (person)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -537,62 +537,62 @@
           <Row>
             <Col id="MENU_CD">010200</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_NM">Personnel application</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010201</Col>
             <Col id="UP_MENU_CD">010200</Col>
-            <Col id="MENU_NM">자격증 신청</Col>
+            <Col id="MENU_NM">Apply for a license</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010202</Col>
             <Col id="UP_MENU_CD">010200</Col>
-            <Col id="MENU_NM">제증명 신청</Col>
+            <Col id="MENU_NM">Application for proof</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010203</Col>
             <Col id="UP_MENU_CD">010200</Col>
-            <Col id="MENU_NM">사진변경 신청</Col>
+            <Col id="MENU_NM">Application for photo change</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010300</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010301</Col>
             <Col id="UP_MENU_CD">010300</Col>
-            <Col id="MENU_NM">다면평가수행(부하)</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation (load)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010302</Col>
             <Col id="UP_MENU_CD">010300</Col>
-            <Col id="MENU_NM">다면평가수행(동료)</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation (colleagues)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010303</Col>
             <Col id="UP_MENU_CD">010300</Col>
-            <Col id="MENU_NM">다면평가수행(상사)</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation (boss)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020000</Col>
-            <Col id="MENU_NM">노무정보</Col>
+            <Col id="MENU_NM">Labor Information</Col>
             <Col id="MENU_LVL">0</Col>
             <Col id="PGM_PATH"/>
             <Col id="SORT">1</Col>
@@ -601,7 +601,7 @@
           <Row>
             <Col id="MENU_CD">020100</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_NM">Payroll management</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -610,7 +610,7 @@
           <Row>
             <Col id="MENU_CD">020101</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">계좌변경 신청</Col>
+            <Col id="MENU_NM">Application for account change</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -619,7 +619,7 @@
           <Row>
             <Col id="MENU_CD">020102</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">급여명세서</Col>
+            <Col id="MENU_NM">Pay stub</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -628,294 +628,294 @@
           <Row>
             <Col id="MENU_CD">020103</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">퇴직금 예상액</Col>
+            <Col id="MENU_NM">Estimated severance pay</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020104</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">연말정산 기초자료</Col>
+            <Col id="MENU_NM">Basic data for year-end settlement</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">4</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020105</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">갑근세 납세필 증명 신청</Col>
+            <Col id="MENU_NM">Apply for proof of sudden tax payment</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">5</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020106</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">원천징수영수증 </Col>
+            <Col id="MENU_NM">Withholding receipt</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">6</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020107</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">퇴직연금 관리</Col>
+            <Col id="MENU_NM">Retirement Pension Management</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">7</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020108</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">과세이연(IRA)자료</Col>
+            <Col id="MENU_NM">Sesayyeon (IRA) data</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">8</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020109</Col>
             <Col id="UP_MENU_CD">020100</Col>
-            <Col id="MENU_NM">퇴직연금최초불입내역</Col>
+            <Col id="MENU_NM">First retirement pension</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">9</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020200</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">퇴직연금신청</Col>
+            <Col id="MENU_NM">Retirement pension application</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020201</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">가입신청</Col>
+            <Col id="MENU_NM">Subscription application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020202</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">제도변경신청</Col>
+            <Col id="MENU_NM">Application for system change</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020203</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">사업자변경신청</Col>
+            <Col id="MENU_NM">Business change request</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020204</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">중도인출신청</Col>
+            <Col id="MENU_NM">Midway withdrawal request</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">4</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020205</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">담보대출신청</Col>
+            <Col id="MENU_NM">Mortgage loan application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">5</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020206</Col>
             <Col id="UP_MENU_CD">020200</Col>
-            <Col id="MENU_NM">추가불입신청</Col>
+            <Col id="MENU_NM">Application for additional payment</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">6</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020300</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">복리후생</Col>
+            <Col id="MENU_NM">Welfare benefits</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020301</Col>
             <Col id="UP_MENU_CD">020300</Col>
-            <Col id="MENU_NM">가족관리</Col>
+            <Col id="MENU_NM">Family management</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020302</Col>
             <Col id="UP_MENU_CD">020300</Col>
-            <Col id="MENU_NM">사회보험 자격관리</Col>
+            <Col id="MENU_NM">Social insurance qualification management</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020303</Col>
             <Col id="UP_MENU_CD">020300</Col>
-            <Col id="MENU_NM">대부신청(주택자금)</Col>
+            <Col id="MENU_NM">Loan Application (Housing Fund)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030000</Col>
             <Col id="UP_MENU_CD">0</Col>
-            <Col id="MENU_NM">근태관리</Col>
+            <Col id="MENU_NM">Time and attendance management</Col>
             <Col id="MENU_LVL">0</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030100</Col>
             <Col id="UP_MENU_CD">030000</Col>
-            <Col id="MENU_NM">근태신청</Col>
+            <Col id="MENU_NM">Time and Attendance</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030101</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">휴가원 신청서</Col>
+            <Col id="MENU_NM">Application for leave</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030102</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">휴가원 취소</Col>
+            <Col id="MENU_NM">Leave canceled</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030103</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">결근원 신청서</Col>
+            <Col id="MENU_NM">Absence application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030104</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">현장출근계 신청서</Col>
+            <Col id="MENU_NM">Field attendance application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">4</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030105</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">지참,조퇴계 신청서</Col>
+            <Col id="MENU_NM">Application for bringing, early bird count</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">5</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030106</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">대근원/변경원 신청서</Col>
+            <Col id="MENU_NM">Application for Dae-Geun Won / Change</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">6</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030107</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">대근원/변경원 취소</Col>
+            <Col id="MENU_NM">Cancellation</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">7</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030108</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">연차적치 신청서</Col>
+            <Col id="MENU_NM">Annual deposit application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">8</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030109</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">(사전,사후)초과근무신청서</Col>
+            <Col id="MENU_NM">(Pre and Post) Overtime Application Form</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">9</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030110</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">출장신청서</Col>
+            <Col id="MENU_NM">Application for business trip</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">10</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030111</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">출장결과보고서</Col>
+            <Col id="MENU_NM">Business Result Report</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">11</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030112</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">출장취소</Col>
+            <Col id="MENU_NM">Cancellation</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">12</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030113</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">여비불지급출장명령서</Col>
+            <Col id="MENU_NM">Travel expense payment order</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">13</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030114</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">국외출장명령서</Col>
+            <Col id="MENU_NM">Overseas business order</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">14</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030115</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">항공마일리지입력</Col>
+            <Col id="MENU_NM">Aviation mileage input</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">15</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030116</Col>
             <Col id="UP_MENU_CD">030100</Col>
-            <Col id="MENU_NM">항공마일리지조회</Col>
+            <Col id="MENU_NM">Flight mileage inquiry</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">16</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030200</Col>
             <Col id="UP_MENU_CD">030000</Col>
-            <Col id="MENU_NM">근태내역</Col>
+            <Col id="MENU_NM">Time and attendance</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030201</Col>
             <Col id="UP_MENU_CD">030200</Col>
-            <Col id="MENU_NM">개인별 근무일정(조회)</Col>
+            <Col id="MENU_NM">Individual work schedule (query)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030202</Col>
             <Col id="UP_MENU_CD">030200</Col>
-            <Col id="MENU_NM">근무조별 근무일정</Col>
+            <Col id="MENU_NM">Working Schedule by Working Group</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">030203</Col>
             <Col id="UP_MENU_CD">030200</Col>
-            <Col id="MENU_NM">근무변경조회(근무교대)</Col>
+            <Col id="MENU_NM">Work change inquiry (work shift)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040000</Col>
             <Col id="UP_MENU_CD">0</Col>
-            <Col id="MENU_NM">KOSPO아카데미</Col>
+            <Col id="MENU_NM">KOSPO Academy</Col>
             <Col id="MENU_LVL">0</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040100</Col>
             <Col id="UP_MENU_CD">040000</Col>
-            <Col id="MENU_NM">경력개발</Col>
+            <Col id="MENU_NM">Career development</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
@@ -923,19 +923,19 @@
             <Col id="MENU_CD">040101</Col>
             <Col id="UP_MENU_CD">040100</Col>
             <Col id="MENU_LVL">2</Col>
-            <Col id="MENU_NM">로드맵조회</Col>
+            <Col id="MENU_NM">Road map inquiry</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040200</Col>
             <Col id="UP_MENU_CD">040000</Col>
-            <Col id="MENU_NM">교육관리</Col>
+            <Col id="MENU_NM">Education Management</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040201</Col>
-            <Col id="MENU_NM">연간교육계획</Col>
+            <Col id="MENU_NM">Annual Education Plan</Col>
             <Col id="UP_MENU_CD">040200</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
@@ -943,56 +943,56 @@
           <Row>
             <Col id="MENU_CD">040202</Col>
             <Col id="UP_MENU_CD">040200</Col>
-            <Col id="MENU_NM">직무역량대표교육과정</Col>
+            <Col id="MENU_NM">Job competency representative training course</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040203</Col>
             <Col id="UP_MENU_CD">040200</Col>
-            <Col id="MENU_NM">직무별역량</Col>
+            <Col id="MENU_NM">Job competency</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">3</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040204</Col>
             <Col id="UP_MENU_CD">040200</Col>
-            <Col id="MENU_NM">교육신청</Col>
+            <Col id="MENU_NM">Education Application</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">4</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040205</Col>
             <Col id="UP_MENU_CD">040200</Col>
-            <Col id="MENU_NM">개인별교육현황</Col>
+            <Col id="MENU_NM">Individual Education Status</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">5</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">040206</Col>
             <Col id="UP_MENU_CD">040200</Col>
-            <Col id="MENU_NM">어학성적등록신청</Col>
+            <Col id="MENU_NM">Application for language score registration</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">6</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">090000</Col>
             <Col id="UP_MENU_CD">0</Col>
-            <Col id="MENU_NM">기능시연</Col>
+            <Col id="MENU_NM">Function demonstration</Col>
             <Col id="MENU_LVL">0</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">090100</Col>
             <Col id="UP_MENU_CD">090000</Col>
-            <Col id="MENU_NM">요구기능시연</Col>
+            <Col id="MENU_NM">Demonstration of required functions</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">090101</Col>
             <Col id="UP_MENU_CD">090100</Col>
-            <Col id="MENU_NM">자격증신청</Col>
+            <Col id="MENU_NM">Application for certification</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">1</Col>
             <Col id="PGM_PATH">work</Col>
@@ -1001,7 +1001,7 @@
           <Row>
             <Col id="MENU_CD">090102</Col>
             <Col id="UP_MENU_CD">090100</Col>
-            <Col id="MENU_NM">휴가원신청</Col>
+            <Col id="MENU_NM">Application for leave</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="SORT">2</Col>
             <Col id="PGM_PATH">work</Col>
@@ -1011,7 +1011,7 @@
             <Col id="MENU_CD">090103</Col>
             <Col id="UP_MENU_CD">090100</Col>
             <Col id="SORT">3</Col>
-            <Col id="MENU_NM">원천징수영수증</Col>
+            <Col id="MENU_NM">Withholding receipt</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">poc03.xfdl</Col>
@@ -1019,7 +1019,7 @@
           <Row>
             <Col id="MENU_CD">090200</Col>
             <Col id="UP_MENU_CD">090000</Col>
-            <Col id="MENU_NM">추가기능시연</Col>
+            <Col id="MENU_NM">Demonstration of additional functions</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
             <Col id="PGM_PATH"/>
@@ -1028,7 +1028,7 @@
             <Col id="MENU_CD">090201</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">1</Col>
-            <Col id="MENU_NM">다양한그리드 기능 구현</Col>
+            <Col id="MENU_NM">Implementation of various grid functions</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample01.xfdl</Col>
@@ -1037,7 +1037,7 @@
             <Col id="MENU_CD">090202</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">2</Col>
-            <Col id="MENU_NM">트리그리드, 소계/합계</Col>
+            <Col id="MENU_NM">Trigrid, Subtotal / Total</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample02.xfdl</Col>
@@ -1046,7 +1046,7 @@
             <Col id="MENU_CD">090203</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">3</Col>
-            <Col id="MENU_NM">다양한그리드 표현</Col>
+            <Col id="MENU_NM">Various grid expressions</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample03.xfdl</Col>
@@ -1055,7 +1055,7 @@
             <Col id="MENU_CD">090204</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">4</Col>
-            <Col id="MENU_NM">상세정보보기(오픈API연동)</Col>
+            <Col id="MENU_NM">View details (open API linkage)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample04.xfdl</Col>
@@ -1064,7 +1064,7 @@
             <Col id="MENU_CD">090205</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">5</Col>
-            <Col id="MENU_NM">카테고리그리드</Col>
+            <Col id="MENU_NM">Category grid</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample05.xfdl</Col>
@@ -1073,7 +1073,7 @@
             <Col id="MENU_CD">090206</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">6</Col>
-            <Col id="MENU_NM">그리드 값계산</Col>
+            <Col id="MENU_NM">Grid value calculation</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample06.xfdl</Col>
@@ -1082,7 +1082,7 @@
             <Col id="MENU_CD">090207</Col>
             <Col id="UP_MENU_CD">090200</Col>
             <Col id="SORT">7</Col>
-            <Col id="MENU_NM">동적컴포넌트생성(일정관리)</Col>
+            <Col id="MENU_NM">Dynamic component creation (schedule management)</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample07.xfdl</Col>
@@ -1090,7 +1090,7 @@
           <Row>
             <Col id="MENU_CD">090208</Col>
             <Col id="UP_MENU_CD">090200</Col>
-            <Col id="MENU_NM">다양한 메뉴구성</Col>
+            <Col id="MENU_NM">Various menu composition</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">sample08.xfdl</Col>
@@ -1099,7 +1099,7 @@
           <Row>
             <Col id="MENU_CD">090209</Col>
             <Col id="UP_MENU_CD">090200</Col>
-            <Col id="MENU_NM">인재프로필</Col>
+            <Col id="MENU_NM">Talent Profile</Col>
             <Col id="MENU_LVL">2</Col>
             <Col id="PGM_PATH">work</Col>
             <Col id="PGM_ID">poc04.xfdl</Col>
@@ -1192,7 +1192,7 @@
           <Row>
             <Col id="MENU_CD">010100</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사기본</Col>
+            <Col id="MENU_NM">Personnel Basics</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>
@@ -1201,21 +1201,21 @@
           <Row>
             <Col id="MENU_CD">010200</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">인사신청</Col>
+            <Col id="MENU_NM">Personnel application</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">010300</Col>
             <Col id="UP_MENU_CD">010000</Col>
-            <Col id="MENU_NM">다면평가</Col>
+            <Col id="MENU_NM">Multi-faceted evaluation</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="SORT">1</Col>
           </Row>
           <Row>
             <Col id="MENU_CD">020100</Col>
             <Col id="UP_MENU_CD">020000</Col>
-            <Col id="MENU_NM">급여관리</Col>
+            <Col id="MENU_NM">Payroll management</Col>
             <Col id="MENU_LVL">1</Col>
             <Col id="PGM_PATH"/>
             <Col id="PGM_ID"/>

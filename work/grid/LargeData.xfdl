@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="LargeData" width="980" height="700" titletext="대용량 데이터 조회">
     <Layouts>
       <Layout screenid="desktop">
@@ -13,20 +13,20 @@
             <Rows>
               <Row>
                 <Col id="codecolumn">10000</Col>
-                <Col id="datacolumn">10,000건</Col>
+                <Col id="datacolumn">10,000 cases</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">50000</Col>
-                <Col id="datacolumn">50,000건</Col>
+                <Col id="datacolumn">50,000 cases</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">100000</Col>
-                <Col id="datacolumn">100,000건</Col>
+                <Col id="datacolumn">100,000 cases</Col>
               </Row>
             </Rows>
           </Dataset>
         </Combo>
-        <Static id="stSearchTimeOrg" taborder="3" text="서버/네트워크시간 &lt;fc v='#d7381e'&gt;0&lt;/fc&gt; 초, 렌더링시간 &lt;fc v='#d7381e'&gt;0&lt;/fc&gt; 초, 조회건수 &lt;fc v='#d7381e'&gt;0&lt;/fc&gt; 건" usedecorate="true" top="133" right="20" width="457" height="21" textAlign="right" verticalAlign="middle" font="bold 14px/20px &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Static id="stSearchTimeOrg" taborder="3" text="Server/network time &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; seconds, rendering time &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; seconds, views &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; cases" usedecorate="true" top="133" height="21" textAlign="right" verticalAlign="middle" font="bold 14px/20px &quot;Malgun Gothic&quot;,&quot;Arial&quot;" width="900" fittocontents="none" right="20"/>
         <MaskEdit id="mskTemp" taborder="7" top="-1" width="90" height="20" visible="false" format="###,###,###,###" right="0" onchanged="mskTemp_onchanged"/>
         <Button id="btnSearch" taborder="2" top="59" right="20" width="44" height="44" cssclass="btn_WF_search01" onclick="btnSearch_onclick" text=""/>
         <Grid id="grdList" taborder="0" cellsizingtype="col" cellmovingtype="col" left="0" top="160" right="20" binddataset="dsList" border="1px solid rgba(156,156,156,1)" bottom="17" autofittype="col" formatid="default">
@@ -123,7 +123,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staInfo" taborder="4" cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" text="대용량 데이터 처리 관련하여 네트워크시간, 렌더링시간, 조회건수를 확인할 수 있습니다." wordWrap="char"/>
+        <Static id="staInfo" taborder="4" cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" text="You can check the network time, rendering time, and the number of queries related to large data processing." wordWrap="char"/>
         <Static id="staTitle01" taborder="6" text="조회건수" cssclass="sta_WF_condition01" left="8" top="66" width="90" height="30"/>
       </Layout>
       <Layout name="Layout1" width="480" height="720" mobileorientation="landscape" screenid="mobile">
@@ -139,35 +139,8 @@
     <Objects>
       <Dataset id="dsList" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
-*  @MenuPath    grid > LargeData
-*  @FileName  LargeData.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.10.14      presales                  최초 생성 
-*******************************************************************************
-*/
- 
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
- 
- 
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
- ************************************************************************************************/
- 
-/**
- * @description 
-*/
- 
-/************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * CALLBACK (Transaction, Popup)
  ************************************************************************************************/
 this.fnCallback = function(svcId, errCode, errMsg, elapsedTime)
 {
@@ -185,19 +158,19 @@ this.fnCallback = function(svcId, errCode, errMsg, elapsedTime)
 			
 			var nRowCount = this.dsList.rowcount;
 			
-			this.stSearchTimeOrg.set_text("서버/네트워크시간 <fc v='#d7381e'>" + elapsedTime + "</fc> 초, 렌더링시간 <fc v='#d7381e'>" + nexacro.round(totaltime - elapsedTime, 3) + "</fc> 초, 조회건수 <fc v='#d7381e'>" +  this.gfnAppendComma(this.dsList.rowcount) + "</fc>" + " 건");
+			this.stSearchTimeOrg.set_text("Server/Network time <fc v='#d7381e'>" + elapsedTime + "</fc> seconds, rendering time <fc v='#d7381e'>" + nexacro.round(totaltime - elapsedTime, 3) + "</fc> seconds, views <fc v='#d7381e'>" +  this.gfnAppendComma(this.dsList.rowcount) + "</fc> cases");
 		}
 	}
 }
  
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * TRANSACTION service
  ************************************************************************************************/
 this.btnSearch_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 {
 	this.dsList.clearData();
  
-	this.stSearchTimeOrg.set_text("서버/네트워크시간 <fc v='#d7381e'>0</fc> 초, 렌더링시간 <fc v='#d7381e'>0</fc> 초, 조회건수 <fc v='#d7381e'>0</fc> 건");
+	this.stSearchTimeOrg.set_text("Server/network time <fc v='#d7381e'> 0 </fc> seconds, rendering time <fc v='#d7381e'> 0 </fc> seconds, views <fc v='#d7381e'> 0 </fc> cases");
 //	var sURL = "svcurl::";
 	
 // 	var oDatas = {
@@ -207,32 +180,25 @@ this.btnSearch_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 // 			"dsList=output"
 // 		]
 // 	};
-	
+
 	var strSvcId    = "search";
-	var strSvcUrl   = "svcurl::LargeDataAction.do?rowcount=" + this.cboRowCnt.value;
+	var strSvcUrl   = "svcurl::services/ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
 	var inData      = "";
 	var outData     = "dsList=output";
 	var strArg      = "";
 	var callBackFnc = "fnCallback";
 	var isAsync   	= true;
-	
 	this.starttime = new Date();
-	this.transaction(strSvcId , 	// transaction을 구분하기 위한 svc id값
-					strSvcUrl , 	// trabsaction을 요청할 주소
-					inData , 		// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
-					outData , 		// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
-					strArg, 		// 입력값으로 보낼 arguments, strFormData="20120607"
-					callBackFnc, 	// transaction의 결과를 받을 Function 이름
-					isAsync); 		// 비동기통신 여부 [생략가능]
+	
+	// [ Refer Nexacro17 Reference Guide ] Help > help > Nexacro17 Reference Guide { press F1 key }
+	this.transaction(strSvcId , 	// A string representing an ID to distinguish transactions
+					strSvcUrl , 	// A string representing an address to request a transaction
+					inData , 		// A string representing the ID of a Dataset sent to the server for a data transaction
+					outData , 		// A string representing the ID of a Dataset for receiving data from the server for a data transaction
+					strArg, 		// A string representing the information sent to the server page
+					callBackFnc, 	// Callback function name
+					isAsync); 		// It specifies whether the transaction is asynchronous.
 }
- 
-/************************************************************************************************
- * 사용자 FUNCTION 영역
- ************************************************************************************************/
- 
- 
-/************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
- ************************************************************************************************/]]></Script>
+ ]]></Script>
   </Form>
 </FDL>

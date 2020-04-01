@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="TwoWayDataBinding" titletext="양방향 데이타 바인딩" width="980" height="630">
     <Layouts>
       <Layout>
-        <Static id="Static60" taborder="0" text="하나의 데이타셋을 그리드와 컴포넌트에 바인딩이 되어 있어서 값을 변경하게 되면 양쪽이 동시에 반영이 됩니다.&#13;&#10;그리드와 상세정보영역에서 내용을 변경해 보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="Static60" taborder="0" text="One dataset is bound to the grid and components, so if you change the value, both are reflected simultaneously.&#13;&#10;Try changing the content in the grid and detail area." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
         <Static id="Static04" taborder="2" cssclass="sta_WF_box04" left="115" top="354" height="34" right="20"/>
         <Grid id="Grid00" taborder="1" binddataset="Dataset00" autoenter="select" autofittype="col" left="0" top="96" right="20" height="204" autoupdatetype="itemselect">
           <Formats>
@@ -20,11 +20,11 @@
                 <Row size="34"/>
               </Rows>
               <Band id="head">
-                <Cell text="이름"/>
-                <Cell col="1" text="성별"/>
-                <Cell col="2" text="생년월일"/>
-                <Cell col="3" text="결혼여부"/>
-                <Cell col="4" text="비고"/>
+                <Cell text="Name"/>
+                <Cell col="1" text="Gender"/>
+                <Cell col="2" text="Date of birth"/>
+                <Cell col="3" text="Married"/>
+                <Cell col="4" text="Etc"/>
               </Band>
               <Band id="body">
                 <Cell edittype="normal" text="bind:Column0" editautoselect="true" editdisplay="display" displaytype="editcontrol" verticalAlign="middle"/>
@@ -43,12 +43,12 @@
         <Calendar id="Calendar00" taborder="7" dateformat="yyyy-MM-dd" left="126" top="392" width="135" height="24"/>
         <CheckBox id="CheckBox00" taborder="8" left="401" top="392" width="130" height="24"/>
         <TextArea id="TextArea00" taborder="9" left="126" top="426" height="174" autoselect="true" wordWrap="char" right="30"/>
-        <Static id="Static07" taborder="10" text="생년월일" cssclass="sta_WF_box02" left="0" top="387" width="116" height="34"/>
-        <Static id="Static09" taborder="11" text="결혼여부" cssclass="sta_WF_box02" left="270" top="387" width="116" height="34"/>
-        <Static id="Static11" taborder="12" text="비고" cssclass="sta_WF_box02" left="0" top="420" width="116" height="186"/>
-        <Static id="Static01" taborder="13" text="이름" cssclass="sta_WF_box02" left="0" top="354" width="116" height="34"/>
-        <Static id="Static05" taborder="14" text="성별" cssclass="sta_WF_box02" left="270" top="354" width="116" height="34"/>
-        <Static id="Static14" taborder="15" text="상세정보" cssclass="sta_WF_title02" left="0" top="314" width="411" height="40"/>
+        <Static id="Static07" taborder="10" text="Date of birth" cssclass="sta_WF_box02" left="0" top="387" width="116" height="34"/>
+        <Static id="Static09" taborder="11" text="Married" cssclass="sta_WF_box02" left="270" top="387" width="116" height="34"/>
+        <Static id="Static11" taborder="12" text="Etc" cssclass="sta_WF_box02" left="0" top="420" width="116" height="186"/>
+        <Static id="Static01" taborder="13" text="Name" cssclass="sta_WF_box02" left="0" top="354" width="116" height="34"/>
+        <Static id="Static05" taborder="14" text="Gender" cssclass="sta_WF_box02" left="270" top="354" width="116" height="34"/>
+        <Static id="Static14" taborder="15" text="Detail" cssclass="sta_WF_title02" left="0" top="314" width="411" height="40"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -60,11 +60,11 @@
         <Rows>
           <Row>
             <Col id="code">M</Col>
-            <Col id="data">남자</Col>
+            <Col id="data">Male</Col>
           </Row>
           <Row>
             <Col id="code">F</Col>
-            <Col id="data">여자</Col>
+            <Col id="data">Female</Col>
           </Row>
         </Rows>
       </Dataset>
@@ -78,39 +78,39 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">김갑돌</Col>
+            <Col id="Column0">Kim Gapdol</Col>
             <Col id="Column1">M</Col>
             <Col id="Column2">19851128</Col>
             <Col id="Column3">0</Col>
-            <Col id="Column4">김갑돌 입니다.</Col>
+            <Col id="Column4">This is Kim Gapdol.</Col>
           </Row>
           <Row>
-            <Col id="Column0">나갑순</Col>
+            <Col id="Column0">Gap-soon Na</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">1980331</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">나갑순 입니다.</Col>
+            <Col id="Column4">This is Na Gap-soon.</Col>
           </Row>
           <Row>
-            <Col id="Column0">홍길동</Col>
+            <Col id="Column0">Hong Gil Dong</Col>
             <Col id="Column1">M</Col>
             <Col id="Column2">19770105</Col>
             <Col id="Column3">0</Col>
-            <Col id="Column4">홍길동 입니다.</Col>
+            <Col id="Column4">This is Hong Gil-dong.</Col>
           </Row>
           <Row>
-            <Col id="Column0">나문희</Col>
+            <Col id="Column0">Moon-hee Na</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">19911005</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">나익희 입니다.</Col>
+            <Col id="Column4">This is Naik Hee.</Col>
           </Row>
           <Row>
-            <Col id="Column0">이복례</Col>
+            <Col id="Column0">Lee Bok</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">19880420</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">이복 입니다.</Col>
+            <Col id="Column4">This is Lee Bok</Col>
           </Row>
         </Rows>
       </Dataset>

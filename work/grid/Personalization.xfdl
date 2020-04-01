@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Personalization" width="980" height="850" titletext="개인화기능" onload="Personalization_onload">
     <Layouts>
       <Layout>
-        <Button id="btnSave" taborder="1" text="현재포맷저장" onclick="btnSave_onclick" top="119" right="20" height="30" width="98" cursor="hand"/>
+        <Button id="btnSave" taborder="1" text="Save current format" onclick="btnSave_onclick" top="119" right="20" height="30" width="120" cursor="hand"/>
         <Grid id="grdListUnique" taborder="0" binddataset="dsList" left="0" top="156" right="20" autoenter="select" cellmovingtype="col" cellsizingtype="col" selecttype="cell" cssclass="grd_cellMove" autofittype="col" onheadclick="grdListUnique_onheadclick" bottom="20">
           <Formats>
             <Format id="default">
@@ -21,11 +21,11 @@
               </Rows>
               <Band id="head">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
-                <Cell col="1" text="그룹"/>
-                <Cell col="2" text="성명"/>
-                <Cell col="3" text="주소"/>
-                <Cell col="4" displaytype="normal" text="책정비용"/>
-                <Cell col="5" text="생성일"/>
+                <Cell col="1" text="GROUP"/>
+                <Cell col="2" text="NAME"/>
+                <Cell col="3" text="ADDRESS"/>
+                <Cell col="4" displaytype="normal" text="Pricing"/>
+                <Cell col="5" text="Created Date"/>
               </Band>
               <Band id="body">
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Chk"/>
@@ -38,8 +38,8 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="btnInit" taborder="2" text="그리드 초기화" onclick="btnInit_onclick" top="119" right="126" height="30" width="99" cursor="hand"/>
-        <Static id="staInfo" taborder="3" text="Grid Header Column을 Drag&amp;Drop 으로 위치를 변경 후 현재포맷을 저장하면 변경 된 포맷 정보가 유지되는 것을 확인할 수 있습니다.&#13;&#10;그리드 초기화를 실행하였을 경우 Grid 포맷을 초기값으로 되돌려 줍니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="96" wordWrap="char"/>
+        <Button id="btnInit" taborder="2" text="Grid Initialization" onclick="btnInit_onclick" top="119" right="146" height="30" width="120" cursor="hand"/>
+        <Static id="staInfo" taborder="3" text="If you change the position of the Grid Header Column by Drag &amp; Drop and save the current format, you can see that the changed format information is saved.&#13;&#10;When grid initialization is executed, the grid format is returned to the default value." cssclass="sta_WF_box03" left="0" top="0" right="20" height="96" wordWrap="char"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -65,8 +65,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">3000</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">이승환</Col>
-            <Col id="Column2">인천시 서구 가좌동 118</Col>
+            <Col id="Column0">Seunghwan Lee</Col>
+            <Col id="Column2">118 Gajwa-dong, Seo-gu, Incheon</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120101</Col>
@@ -78,8 +78,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">4000</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">이승한</Col>
-            <Col id="Column2">경기도 시흥시 정왕동 104 (2가)</Col>
+            <Col id="Column0">Lee Seung-han</Col>
+            <Col id="Column2">104, Jeongwang-dong, Siheung-si, Gyeonggi-do (2nd Street)</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120201</Col>
@@ -91,8 +91,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">50000</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">이철우</Col>
-            <Col id="Column2">경기도 이천시 관고동 501-7</Col>
+            <Col id="Column0">Chulwoo Lee</Col>
+            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120601</Col>
@@ -104,8 +104,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">51651</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">강순희</Col>
-            <Col id="Column2">서울특별시 영등포구 여의도동 1</Col>
+            <Col id="Column0">Soonhee Kang</Col>
+            <Col id="Column2">Yeouido-dong, Yeongdeungpo-gu, Seoul 1</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120931</Col>
@@ -117,8 +117,8 @@
             <Col id="Column5">12</Col>
             <Col id="Column9">216548</Col>
             <Col id="Column8">C</Col>
-            <Col id="Column0">배재현</Col>
-            <Col id="Column2">서울특별시 강서구 화곡동 98-252</Col>
+            <Col id="Column0">Jaehyun Bae</Col>
+            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20121005</Col>
@@ -130,8 +130,8 @@
             <Col id="Column5">15</Col>
             <Col id="Column9">216218</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">강공작</Col>
-            <Col id="Column2">서울특별시 강동구 명일동 257</Col>
+            <Col id="Column0">Strong work</Col>
+            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20121111</Col>
@@ -143,8 +143,8 @@
             <Col id="Column5">12</Col>
             <Col id="Column9">954561</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">김명기</Col>
-            <Col id="Column2">서울특별시 강서구 등촌동 631-6</Col>
+            <Col id="Column0">Myeongki Kim</Col>
+            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120101</Col>
@@ -156,8 +156,8 @@
             <Col id="Column5">13</Col>
             <Col id="Column9">2121684</Col>
             <Col id="Column8">D</Col>
-            <Col id="Column0">변길용</Col>
-            <Col id="Column2">경기도 광명시 옥길동 370</Col>
+            <Col id="Column0">Byeon Gil Yong</Col>
+            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120201</Col>
@@ -169,8 +169,8 @@
             <Col id="Column5">14</Col>
             <Col id="Column9">6549845</Col>
             <Col id="Column8">D</Col>
-            <Col id="Column0">설동옥</Col>
-            <Col id="Column2">서울특별시 영등포구 신길동 116-15 지하</Col>
+            <Col id="Column0">Seol Dong-ok</Col>
+            <Col id="Column2">116-15, Singil-dong, Yeongdeungpo-gu, Seoul</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120601</Col>
@@ -182,8 +182,8 @@
             <Col id="Column5">19</Col>
             <Col id="Column9">65150</Col>
             <Col id="Column8">F</Col>
-            <Col id="Column0">허승조</Col>
-            <Col id="Column2">서울특별시 성북구 돈암동 636</Col>
+            <Col id="Column0">Seungho Cho</Col>
+            <Col id="Column2">636 Donam-dong, Seongbuk-gu, Seoul</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120931</Col>
@@ -191,8 +191,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">배재현</Col>
-            <Col id="Column2">서울특별시 강서구 화곡동 98-252</Col>
+            <Col id="Column0">Jaehyun Bae</Col>
+            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column3">216548</Col>
             <Col id="Column4">20171005</Col>
             <Col id="Column5">12</Col>
@@ -205,8 +205,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">강공작</Col>
-            <Col id="Column2">서울특별시 강동구 명일동 257</Col>
+            <Col id="Column0">Strong work</Col>
+            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
             <Col id="Column3">216218</Col>
             <Col id="Column4">20171111</Col>
             <Col id="Column5">15</Col>
@@ -219,8 +219,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">김명기</Col>
-            <Col id="Column2">서울특별시 강서구 등촌동 631-6</Col>
+            <Col id="Column0">Myeongki Kim</Col>
+            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column3">954561</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">12</Col>
@@ -233,8 +233,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">변길용</Col>
-            <Col id="Column2">경기도 광명시 옥길동 370</Col>
+            <Col id="Column0">Byeon Gil Yong</Col>
+            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
             <Col id="Column3">2121684</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">13</Col>
@@ -247,8 +247,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">강공작</Col>
-            <Col id="Column2">서울특별시 강동구 명일동 257</Col>
+            <Col id="Column0">Strong work</Col>
+            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
             <Col id="Column3">216218</Col>
             <Col id="Column4">20171111</Col>
             <Col id="Column5">15</Col>
@@ -261,8 +261,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">김명기</Col>
-            <Col id="Column2">서울특별시 강서구 등촌동 631-6</Col>
+            <Col id="Column0">Myeongki Kim</Col>
+            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
             <Col id="Column3">954561</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">12</Col>
@@ -275,8 +275,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">변길용</Col>
-            <Col id="Column2">경기도 광명시 옥길동 370</Col>
+            <Col id="Column0">Byeon Gil Yong</Col>
+            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
             <Col id="Column3">2121684</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">13</Col>
@@ -289,8 +289,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">설동옥</Col>
-            <Col id="Column2">서울특별시 영등포구 신길동 116-15 지하</Col>
+            <Col id="Column0">Seol Dong-ok</Col>
+            <Col id="Column2">116-15, Singil-dong, Yeongdeungpo-gu, Seoul</Col>
             <Col id="Column3">6549845</Col>
             <Col id="Column4">20170601</Col>
             <Col id="Column5">14</Col>
@@ -433,6 +433,11 @@ this.grdListUnique_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInf
 			this.chkFlag = "1";
 		}
 	}
-};]]></Script>
+};
+this.staInfo_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
   </Form>
 </FDL>

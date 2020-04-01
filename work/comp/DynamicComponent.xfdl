@@ -1,34 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="DynamicComponent" width="980" height="572" titletext="컴포넌트 동적생성" onload="form_onload">
     <Layouts>
       <Layout>
-        <Static id="stc_cond00" taborder="15" cssclass="sta_WF_box02" left="0" top="111" height="133" width="32.76%"/>
-        <Static id="stc_cond" taborder="0" left="0" top="81" cssclass="sta_WF_box02C" width="32.76%" text="컴포넌트 선택" height="31"/>
+        <Static id="stc_cond00" taborder="15" cssclass="sta_WF_box02" left="0" top="111" height="133" width="28.37%" text=""/>
+        <Static id="stc_cond" taborder="0" left="0" top="81" cssclass="sta_WF_box02C" width="28.37%" text="Select Components" height="31"/>
         <Div id="divCanvas" taborder="11" left="0" top="286" right="20" cssclass="div_WF_box01" bottom="20">
           <Layouts>
             <Layout/>
           </Layouts>
         </Div>
-        <Static id="Static07" taborder="14" text="넥사크로 플랫폼은 동적으로 컴포넌트 생성 하는 기능을 쉽게 구현할 수 있습니다.&#13;&#10;동적으로 생성될 컴포넌트를 선택 후 원하는 생성 옵션 값을 설정하여 생성 시 소요되는 시간을 측정합니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
-        <Static id="stc_cond01" taborder="16" cssclass="sta_WF_box02" left="stc_cond00:-1" top="111" width="32.76%" height="133"/>
-        <Static id="stc_cond02" taborder="17" cssclass="sta_WF_box02C" top="81" width="32.76%" text="컴포넌트 생성 옵션" left="stc_cond00:-1" height="31"/>
-        <Static id="stc_cond03" taborder="18" cssclass="sta_WF_box02C" left="stc_cond01:-1" top="81" height="31" right="20" text="생성 소요시간"/>
+        <Static id="Static07" taborder="14" text="Nexacro platform can easily implement the function of dynamically creating components.&#13;&#10;Select the component to be dynamically generated and set the desired creation option value to measure the time required for creation." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="stc_cond01" taborder="16" cssclass="sta_WF_box02" left="stc_cond00:-1" top="111" width="40.10%" height="133"/>
+        <Static id="stc_cond02" taborder="17" cssclass="sta_WF_box02C" top="81" width="40.10%" text="Option Creating Components" left="stc_cond00:-1" height="31"/>
+        <Static id="stc_cond03" taborder="18" cssclass="sta_WF_box02C" left="stc_cond01:-1" top="81" height="31" right="20" text="Creation time"/>
         <Static id="stc_cond04" taborder="19" cssclass="sta_WF_box02" left="stc_cond01:-1" top="111" height="133" right="20" text=""/>
         <CheckBox id="chkCal" taborder="2" text="Calendar" left="30" top="161" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
         <CheckBox id="chkStc" taborder="3" text="Static" left="30" top="190" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
         <CheckBox id="chkImg" taborder="4" text="Images" left="151" top="132" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
         <CheckBox id="chkEdt" taborder="5" text="Edit" left="151" top="161" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
-        <Static id="stc_stTime02" taborder="6" left="stc_cond00:13" top="122" width="137" height="23" text="컴퍼넌트 수" cssclass="sta_WF_condition01"/>
-        <Edit id="edt_eclipse" taborder="12" top="161" height="32" textAlign="right" width="28.47%" left="stc_cond01:20"/>
+        <Static id="stc_stTime02" taborder="6" left="stc_cond00:13" top="122" width="199" height="23" text="Number of components" cssclass="sta_WF_condition01"/>
+        <Edit id="edt_eclipse" taborder="12" top="161" height="32" textAlign="right" width="25.61%" left="stc_cond01:20"/>
         <CheckBox id="chkBtn" taborder="1" text="Button" left="30" top="132" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
-        <Static id="stc_stTime01" taborder="20" text="한 라인 표시 갯수" left="stc_cond00:13" top="151" width="137" height="23" cssclass="sta_WF_condition01"/>
-        <Static id="stc_stTime03" taborder="21" text="총 컴포넌트 갯수" left="stc_cond00:13" top="209" width="137" height="23" cssclass="sta_WF_condition01"/>
-        <Static id="stc_stTime04" taborder="22" text="라인 수" left="stc_cond00:13" top="180" width="137" height="23" cssclass="sta_WF_condition01"/>
-        <Edit id="edtLineCnt" taborder="9" left="stc_stTime04:14" top="180" height="23" inputtype="number" autoselect="true" value="20" textAlign="right" width="stc_cond01:42.06%"/>
-        <Edit id="edtTotCnt" taborder="13" inputtype="number" autoselect="true" left="stc_stTime03:14" top="209" width="stc_cond01:42.06%" height="23" value="100" readonly="true" textAlign="right"/>
-        <Edit id="edtCountComp" taborder="7" left="stc_stTime02:14" top="122" height="23" inputtype="number" readonly="true" visible="true" value="5" textAlign="right" width="stc_cond01:42.06%"/>
-        <Edit id="edtLinePerCnt" taborder="8" left="stc_stTime01:14" top="151" height="23" inputtype="number" autoselect="true" value="1" textAlign="right" width="stc_cond01:42.06%"/>
+        <Static id="stc_stTime01" taborder="20" text="Number of &quot;Number of Components&quot;" left="stc_cond00:13" top="151" width="291" height="23" cssclass="sta_WF_condition01"/>
+        <Static id="stc_stTime03" taborder="21" text="Total number of components" left="stc_cond00:13" top="209" width="199" height="23" cssclass="sta_WF_condition01"/>
+        <Static id="stc_stTime04" taborder="22" text="Number of lines" left="stc_cond00:13" top="180" width="199" height="23" cssclass="sta_WF_condition01"/>
+        <Edit id="edtLineCnt" taborder="9" left="stc_stTime04:14" top="180" height="23" inputtype="number" autoselect="true" value="20" textAlign="right" width="stc_cond01:40%"/>
+        <Edit id="edtTotCnt" taborder="13" inputtype="number" autoselect="true" left="stc_stTime03:14" top="209" width="stc_cond01:40%" height="23" value="100" readonly="true" textAlign="right"/>
+        <Edit id="edtCountComp" taborder="7" left="stc_stTime02:14" top="122" height="23" inputtype="number" readonly="true" visible="true" value="5" textAlign="right" width="stc_cond01:40%"/>
+        <Edit id="edtLinePerCnt" taborder="8" left="stc_stTime01:15" top="151" height="23" inputtype="number" autoselect="true" value="1" textAlign="right" width="stc_cond01:15.82%"/>
         <Button id="Button00" taborder="23" text="버튼 동적 생성" left="1012" top="236" width="100" height="30" cssclass="btn_WF_basic02" visible="false"/>
         <Calendar id="Calendar00" taborder="24" cssclass="cal_basic01" left="1122" top="236" width="130" height="30" visible="false"/>
         <Static id="Static00" taborder="25" left="993" top="236" width="120" height="30" cssclass="sta_cp_static" visible="false"/>

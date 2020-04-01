@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Personalization" width="980" height="1000" titletext="개인화 처리" onload="Personalization_onload" ondrop="Personalization_ondrop" ondragmove="Personalization_ondragmove" onlbuttonup="Personalization_onlbuttonup" ontimer="Personalization_ontimer">
     <Layouts>
       <Layout height="1000" mobileorientation="landscape" width="980">
-        <Static id="Static07" taborder="0" text="메트로(Metro) UI 형태의 포틀릿(Portlet) 화면구성 및 위젯(Widget) 화면을 응용하여 화면구성을 저장할 수 있습니다.&#13;&#10;포틀릿(Portlet) 위치를 Drag&amp;Drop으로 변경 및 위젯(Widget)을 추가하여 저장 후 확인해 보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="90" wordWrap="char"/>
+        <Static id="Static07" taborder="0" text="You can save the screen configuration by applying the portlet screen composition and widget screen in the form of Metro UI.&#13;&#10;Change the portlet location to Drag &amp; Drop and add a widget to save and check." cssclass="sta_WF_box03" left="0" top="0" right="20" height="90" wordWrap="char"/>
         <Div id="Div01" taborder="1" left="0" top="160" width="475" height="346" ondrag="Port_ondrag" usePort="Y" border="1px solid #a1abba" portName="Week Schedule">
           <Layouts>
             <Layout>
@@ -13,11 +13,11 @@
               <Static id="Static03" taborder="3" text="Monday" left="85" top="11" width="129" height="30" font="normal 700 16pt/normal &quot;Arial&quot;" color="#101010"/>
               <Static id="Static04" taborder="4" text="January, 1 2020" left="85" top="31" width="129" height="30" color="#101010" font="normal 10pt/normal &quot;Arial&quot;"/>
               <Static id="Static05" taborder="5" text="Today" left="0" top="69" height="40" cssclass="sta_WF_box03" right="0" textAlign="left"/>
-              <Static id="Static06" taborder="6" text="월" left="0" top="109" width="60" height="47" cssclass="sta_WF_weekDay01"/>
-              <Static id="Static07" taborder="7" text="화" left="0" top="156" width="60" height="47" cssclass="sta_WF_weekDay01"/>
-              <Static id="Static08" taborder="8" text="목" left="0" top="250" width="60" height="47" cssclass="sta_WF_weekDay01"/>
-              <Static id="Static09" taborder="9" text="수" left="0" top="203" width="60" height="47" cssclass="sta_WF_weekDay01"/>
-              <Static id="Static10" taborder="10" text="금" left="0" top="297" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static06" taborder="6" text="MON" left="0" top="109" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static07" taborder="7" text="TUE" left="0" top="156" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static08" taborder="8" text="THU" left="0" top="250" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static09" taborder="9" text="WED" left="0" top="203" width="60" height="47" cssclass="sta_WF_weekDay01"/>
+              <Static id="Static10" taborder="10" text="FRI" left="0" top="297" width="60" height="47" cssclass="sta_WF_weekDay01"/>
               <Static id="Static11" taborder="11" text="3층 바닥 왁싱[주의요망]" left="59" top="109" height="47" cssclass="sta_WF_weekDay02" right="0"/>
               <Static id="Static12" taborder="12" text="응급실 소모 재료 발주[주사기/붕대]" left="59" top="156" height="47" cssclass="sta_WF_weekDay02" right="0"/>
               <Static id="Static13" taborder="13" left="59" top="203" height="47" cssclass="sta_WF_weekDay02" right="0"/>
@@ -30,7 +30,7 @@
         <Div id="Div02" taborder="2" text="Div00" left="0" top="515" width="475" height="346" ondrag="Port_ondrag" usePort="Y" portName="게시판(업무)" formscrollbarsize="0" border="1px solid #a1abba">
           <Layouts>
             <Layout>
-              <Static id="Static00" taborder="0" text="  게시판(업무)" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
+              <Static id="Static00" taborder="0" text="Bulletin board (task)" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
               <Grid id="Grid00" taborder="1" left="0" top="56" binddataset="Dataset02" autofittype="col" bottom="0" right="0">
                 <Formats>
                   <Format id="default">
@@ -58,7 +58,7 @@
         <Div id="Div00" taborder="3" text="Div00" left="485" top="515" ondrag="Port_ondrag" usePort="Y" portName="통합조회" formscrollbarsize="0" height="346" border="1px solid #a1abba" width="475">
           <Layouts>
             <Layout>
-              <Static id="Static00" taborder="0" text="  통합조회" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
+              <Static id="Static00" taborder="0" text="Integrated inquiry" left="0" top="0" right="0" height="60" font="bold 20px &quot;Malgun Gothic&quot;" cssclass="sta_WF_box03"/>
               <Grid id="Grid00" taborder="1" left="0" top="56" binddataset="Dataset00" autofittype="col" bottom="0" right="0">
                 <Formats>
                   <Format id="default">
@@ -84,7 +84,7 @@
           </Layouts>
         </Div>
         <Static id="Static00" taborder="4" cssclass="sta_WF_box02" left="0" top="100" right="20" height="50"/>
-        <Static id="Static03" taborder="5" text="위젯(Widget) 메뉴" cssclass="sta_WF_condition01" left="10" top="110" width="130" height="30"/>
+        <Static id="Static03" taborder="5" text="Widget Menu" cssclass="sta_WF_condition01" left="10" top="110" width="130" height="30"/>
         <Combo id="cbo_widget" taborder="6" left="160" top="110" width="170" height="30" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" index="0" text="" value="0">
           <Dataset id="innerdataset">
             <ColumnInfo>
@@ -93,32 +93,32 @@
             </ColumnInfo>
             <Rows>
               <Row>
-                <Col id="datacolumn">---선택---</Col>
+                <Col id="datacolumn">---Select---</Col>
                 <Col id="codecolumn">0</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">memo</Col>
-                <Col id="datacolumn">메모</Col>
+                <Col id="datacolumn">Memo</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">calc</Col>
-                <Col id="datacolumn">계산기</Col>
+                <Col id="datacolumn">Calculator</Col>
               </Row>
               <Row>
                 <Col id="codecolumn">watch</Col>
-                <Col id="datacolumn">시계</Col>
+                <Col id="datacolumn">Clock</Col>
               </Row>
             </Rows>
           </Dataset>
         </Combo>
-        <Button id="btn_widgetAdd" taborder="7" text="추가" cssclass="btn_cp_basic01" left="333" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Button id="btn_widgetAdd" taborder="7" text="ADD" cssclass="btn_cp_basic01" left="333" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
         <Static id="staMove" taborder="8" left="10" top="1097" width="215" height="226" border="5px dashed silver" visible="false"/>
-        <Button id="btn_init" taborder="9" text="초기화" cssclass="btn_cp_basic02" left="417" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
-        <Button id="btn_save" taborder="10" text="저장" cssclass="btn_cp_basic03" left="501" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Button id="btn_init" taborder="9" text="RESET" cssclass="btn_cp_basic02" left="417" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
+        <Button id="btn_save" taborder="10" text="SAVE" cssclass="btn_cp_basic03" left="501" top="110" width="80" height="30" onclick="fn_comBtnOnClick"/>
         <Div id="Div03" taborder="11" text="Div03" left="485" top="160" height="346" usePort="Y" ondrag="Port_ondrag" portName="Budget Report" formscrollbarsize="0" border="1px solid #a1abba" width="475">
           <Layouts>
             <Layout>
-              <Grid id="Grid00" taborder="0" left="0" top="0" binddataset="Dataset03" useselcolor="false" border="0px none" bottom="0" autofittype="col" mouseovertype="cell" right="35.31%">
+              <Grid id="Grid00" taborder="0" left="0" top="0" binddataset="Dataset03" useselcolor="false" border="0px none" bottom="0" autofittype="col" mouseovertype="cell" right="31.50%">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -133,9 +133,9 @@
                     </Rows>
                     <Band id="head">
                       <Cell text="Type" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
-                      <Cell col="1" text="금액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
-                      <Cell col="2" text="매출액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
-                      <Cell col="3" border="1px solid #c7c7c7,0px none,1px solid #c7c7c7,1px solid #c7c7c7" text="달성액" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="1" text="Price" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="2" text="Sales" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+                      <Cell col="3" border="1px solid #c7c7c7,0px none,1px solid #c7c7c7,1px solid #c7c7c7" text="Achievement" font="bold 12px/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
                     </Band>
                     <Band id="body">
                       <Cell text="bind:Type" autosizerow="default"/>
@@ -166,13 +166,13 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Type">수출</Col>
+            <Col id="Type">Export</Col>
             <Col id="BudgetUSD">$6,000</Col>
             <Col id="Allocated">$6,000</Col>
             <Col id="Remaining">$0.00</Col>
           </Row>
           <Row>
-            <Col id="Type">수입</Col>
+            <Col id="Type">Import</Col>
             <Col id="BudgetUSD">$500</Col>
             <Col id="Allocated">$100</Col>
             <Col id="Remaining">$0.00</Col>
@@ -187,43 +187,43 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">중복 유무 조회화면</Col>
-            <Col id="Column1">한채용</Col>
+            <Col id="Column0">Duplicate status inquiry screen</Col>
+            <Col id="Column1">Han Chae-yong</Col>
             <Col id="Column2">2018-04-16</Col>
           </Row>
           <Row>
-            <Col id="Column0"> 부담금 신설됩니다.</Col>
-            <Col id="Column1">박정원</Col>
+            <Col id="Column0">A new levy will be made.</Col>
+            <Col id="Column1">Park Jung Won</Col>
             <Col id="Column2">2018-04-14</Col>
           </Row>
           <Row>
-            <Col id="Column0">관련규칙 인정방법(사진 포함)</Col>
-            <Col id="Column1">이창열</Col>
+            <Col id="Column0">Approving the relevant rules (including photos)</Col>
+            <Col id="Column1">Lee Chang-yeol</Col>
             <Col id="Column2">2018-04-12</Col>
           </Row>
           <Row>
-            <Col id="Column0">일체불상건 관리 업무 매뉴얼</Col>
-            <Col id="Column1">심선영</Col>
+            <Col id="Column0">All-in-one accident management manual</Col>
+            <Col id="Column1">Shim Sun-young</Col>
             <Col id="Column2">2018-04-10</Col>
           </Row>
           <Row>
-            <Col id="Column0">구상포기업무매뉴얼</Col>
-            <Col id="Column1">고지용</Col>
+            <Col id="Column0">Planpo Enterprise Non-Manual</Col>
+            <Col id="Column1">Go Ji-yong</Col>
             <Col id="Column2">2018-04-08</Col>
           </Row>
           <Row>
-            <Col id="Column0">중복유무 조회화면</Col>
-            <Col id="Column1">한채용</Col>
+            <Col id="Column0">Duplicate status inquiry screen</Col>
+            <Col id="Column1">Han Chae-yong</Col>
             <Col id="Column2">2018-04-06</Col>
           </Row>
           <Row>
-            <Col id="Column0">사고 부담금 신설됩니다.</Col>
-            <Col id="Column1">박정원</Col>
+            <Col id="Column0">Accidental charges will be established.</Col>
+            <Col id="Column1">Park Jung Won</Col>
             <Col id="Column2">2018-04-04</Col>
           </Row>
           <Row>
-            <Col id="Column0">관련규칙 인정방법(사진 포함)</Col>
-            <Col id="Column1">이창열</Col>
+            <Col id="Column0">Approving the relevant rules (including photos)</Col>
+            <Col id="Column1">Lee Chang-yeol</Col>
             <Col id="Column2">2018-04-02</Col>
           </Row>
         </Rows>
@@ -236,43 +236,43 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">진료비 심사참고자료 등록률 현황</Col>
-            <Col id="Column1">한채용</Col>
+            <Col id="Column0">Current status of medical expenses review data registration rate</Col>
+            <Col id="Column1">Han Chae-yong</Col>
             <Col id="Column2">2018-04-16</Col>
           </Row>
           <Row>
-            <Col id="Column0">업무량 감소를 위한 ‘심평원’</Col>
-            <Col id="Column1">박정원</Col>
+            <Col id="Column0">'Shimpyeongwon' to reduce workload</Col>
+            <Col id="Column1">Park Jung Won</Col>
             <Col id="Column2">2018-04-14</Col>
           </Row>
           <Row>
-            <Col id="Column0">조직별 구상캠페인 진도 현황</Col>
-            <Col id="Column1">이창열</Col>
+            <Col id="Column0">Progress of the organization's planning campaigns</Col>
+            <Col id="Column1">Lee Chang-yeol</Col>
             <Col id="Column2">2018-04-12</Col>
           </Row>
           <Row>
-            <Col id="Column0">V.O.B(Voice of Business)</Col>
-            <Col id="Column1">심선영</Col>
+            <Col id="Column0">Voice of Business (V.O.B)</Col>
+            <Col id="Column1">Shim Sun-young</Col>
             <Col id="Column2">2018-04-10</Col>
           </Row>
           <Row>
-            <Col id="Column0">[공지]신체감정 업무 변경사항 </Col>
-            <Col id="Column1">고지용</Col>
+            <Col id="Column0">Changes in Body Appraisal Task </Col>
+            <Col id="Column1">Go Ji-yong</Col>
             <Col id="Column2">2018-04-08</Col>
           </Row>
           <Row>
-            <Col id="Column0">진료비 심사참고자료 등록률 현황</Col>
-            <Col id="Column1">한채용</Col>
+            <Col id="Column0">Current status of medical expenses review data registration rate</Col>
+            <Col id="Column1">Han Chae-yong</Col>
             <Col id="Column2">2018-04-06</Col>
           </Row>
           <Row>
-            <Col id="Column0">업무량 감소를 위한 ‘심평원’</Col>
-            <Col id="Column1">박정원</Col>
+            <Col id="Column0">'Shimpyeongwon' to reduce workload</Col>
+            <Col id="Column1">Park Jung Won</Col>
             <Col id="Column2">2018-04-04</Col>
           </Row>
           <Row>
-            <Col id="Column0">조직별 구상캠페인 진도 현황</Col>
-            <Col id="Column1">이창열</Col>
+            <Col id="Column0">Progress of the organization's planning campaigns</Col>
+            <Col id="Column1">Lee Chang-yeol</Col>
             <Col id="Column2">2018-04-02</Col>
           </Row>
         </Rows>

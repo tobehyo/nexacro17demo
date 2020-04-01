@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Left" width="280" height="720" titletext="New Form" onload="Left_onload" ontimer="Left_ontimer">
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="280">
@@ -64,26 +64,26 @@
 *  @FileName  Left.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
+*  @Desction    Define script standards and annotation standards
 ************** 소스 수정 이력 ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.09.23      presales                  최초 생성 
+*  2019.09.23      presales                   First created  
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM variable
  ************************************************************************************************/
 this.fv_timerMax = 50;
 
-this.fvTopDivHeight = 50;//고정값
-this.fvButtonHeight = 46;//고정값
+this.fvTopDivHeight = 50; // const value
+this.fvButtonHeight = 46; // const value
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT (onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 즐겨찾기 div 위치이동 및 아코디언 메뉴 동적생성
+ * @description Move favorite div and dynamically create accordion menu
 */
 this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -92,7 +92,7 @@ this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	
 	var objApp = nexacro.getApplication();
 	var objMenuDs 	= objApp.gdsMenu;
-	objMenuDs.filter("MOBILE_YN!='M'"); //모바일전용화면이 아닌경우
+	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
 	this.dsMenu.copyData(objMenuDs, true);
 	objMenuDs.filter("");
 	
@@ -100,7 +100,7 @@ this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 };
 
 /**
- * @description 메뉴 애니메이션 적용
+ * @description apply menu animation
 */
 this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 {
@@ -108,14 +108,14 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 	var sMenuId = String(e.timerid).substr(4,4);
 	var objDiv = this.divLeft.form.components["div" + sMenuId];
 	
-	if(sTimerId==1111)//닫아준다.
+	if(sTimerId==1111) // close
 	{
 		var objTile;
 		var nValue = this.fnMoveAnimation(objDiv.curtime, 0, objDiv.pageHeight, this.fv_timerMax);
 		var nTop;
 		var nHeight;
 	
-		//첫번째는 높이
+		// height
 		objDiv.curtime = nexacro.toNumber(objDiv.curtime) + 1;
 		nHeight = this.fvTopDivHeight + objDiv.pageHeight - nValue;
 		
@@ -124,7 +124,7 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 		
 		objDiv._bOpened = false;
 		
-		//두번째부터는 top 조절
+		// top position
 		var nextObjDiv = this.divLeft.form.components[objDiv.nextDivId];
 		while(nextObjDiv)
 		{
@@ -140,7 +140,7 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 			this.killTimer(e.timerid);
 		}
 	}
-	else if(sTimerId==2222)//열어준다.
+	else if(sTimerId==2222) // open
 	{
 		var nValue = this.fnMoveAnimation(objDiv.curtime, 0, objDiv.pageHeight, this.fv_timerMax);
 		var nTop;
@@ -148,14 +148,14 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 		
 		objDiv.curtime = nexacro.toNumber(objDiv.curtime) + 1;
 		
-		//첫번째는 높이
+		// height
 		nHeight =  this.fvTopDivHeight + nValue;
 		objDiv.setOffsetHeight(nHeight);
 		nTop = objDiv.getOffsetTop() + objDiv.getOffsetHeight();
 		
 		objDiv._bOpened = true;
 		
-		//두번째부터는 top 조절
+		// top position
 		var nextObjDiv = this.divLeft.form.components[objDiv.nextDivId];
 		while(nextObjDiv)
 		{
@@ -168,7 +168,7 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 		{
 			objDiv.curtime = 0;
 			this.divLeft.form.resetScroll();
-			//마지막 메뉴만 스크롤 조정해준다.
+			
 			//this.divLeft.form.vscrollbar.set_pos(this.divLeft.form.vscrollbar.max);
 			this.killTimer(e.timerid);	
 		}
@@ -176,21 +176,12 @@ this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
- ************************************************************************************************/
-
- 
- /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
- ************************************************************************************************/
-
-/************************************************************************************************
- * 사용자 FUNCTION 영역
+ * FUNCTION
  ************************************************************************************************/
 /**
-* fnDrawAccordionMenu : gdsMenu를 이용해서 아코디언메뉴를 동적으로 생성한다.
-* @param {String}  menuId	- 메뉴 ID
-* @param {String}  menuNm	- 메뉴명
+* fnDrawAccordionMenu : create accordion using dsMenu dataset 
+* @param {String}  menuId	- Menu ID
+* @param {String}  menuNm	- Menu Name
 * @return : N/A
 * @example :  
 */
@@ -219,21 +210,20 @@ this.fnDrawAccordionMenu = function()
 		if(objDs.getColumn(i, "MENU_LVL") == '0')
 		{
 			/***********************************************
-			*** 0레벨인 경우에 Div를 생성하여 group을 만들어준다.
+			*** if level is 0 create div and grouping
 			************************************************/
 			sDivId = "div" + menuId;
 			objMenuDiv = new Div();
-			//앞에 있는 div에 상대좌표를 걸어준다.
+			//create div
 			//objMenuDiv.init(sDivId, 0, preDivId+":0", null, this.fvTopDivHeight, 0);
 			objMenuDiv.init(sDivId, 0, nDivTop, null, this.fvTopDivHeight, 0);
 			objMenuDiv.set_formscrolltype("none");
 			objMenuDiv.set_formscrollbartype("none");
+			// value for animation - curtime, startValue, pageHeight
+			objMenuDiv.curtime = 0;
+			objMenuDiv.startValue = 0;
+			objMenuDiv.pageHeight = this.fvTopDivHeight;
 			
-			objMenuDiv.curtime = 0;//애니메이션에서 사용
-			objMenuDiv.startValue = 0;//애니메이션에서사용
-			objMenuDiv.pageHeight = this.fvTopDivHeight;//애니메이션에서사용
-			
-			//화면에 추가하고 보여준다.
 			this.divLeft.addChild(sDivId, objMenuDiv);
 			objMenuDiv.show();
 			
@@ -244,7 +234,7 @@ this.fnDrawAccordionMenu = function()
 			}
 			
 			/***********************************************
-			*** top menu 버튼 생성
+			*** create top menu button
 			************************************************/
 			sBtnId = "btn" + menuId;
 			
@@ -253,29 +243,28 @@ this.fnDrawAccordionMenu = function()
 			objMenuButton.set_text(objDs.getColumn(i, "MENU_NM"));
 			objMenuButton.set_cssclass("btn_LF_menuD1");
 			
-			//화면에 추가하고 보여준다.
 			objMenuDiv.addChild(sBtnId, objMenuButton);
 			objMenuButton.show();
 			
-			//버튼 클릭이벤트 - 하위메뉴 열어주기
+			// open sub menu
 			objMenuButton.addEventHandler("onclick", this.fnTopMenuOnclick, this);
 			
 			/***********************************************
-			*** 다음 컴포넌트 준비
+			*** prepare next component
 			************************************************/
-			//다음 위치 지정
+			// next position
 			nDivTop = nDivTop + this.fvTopDivHeight;
 			
-			//버튼 위치 초기
+			// init button top position
 			nButtonTop = this.fvTopDivHeight;
 			
-			//바로 앞 div ID 저장
+			//set previous div id
 			preDivId = sDivId;
 		}
 		//Leaf Menu
 		else
 		{
-			//부모가 될 div를 선정해준다.
+			// set parent Div
 			objMenuDiv = this.divLeft.form.components["div" + objDs.getColumn(i, "PARENT_MENU_ID")];
 			sBtnId = "btn" + objDs.getColumn(i, "MENU_ID");
 			
@@ -284,33 +273,26 @@ this.fnDrawAccordionMenu = function()
 			objMenuButton.set_text(objDs.getColumn(i, "MENU_NM"));
 			objMenuButton.set_cssclass("btn_LF_menuD2");
 			
-			//화면에 추가하고 보여준다.
+			// add objMenuButton to parent menu div 
 			objMenuDiv.addChild(sBtnId, objMenuButton);
 			objMenuButton.show();
 			
-			//이벤트 추가
+			// add onclick event
 			objMenuButton.addEventHandler("onclick", this.fnMenuOnclick, this);
 			
-			//다음 버튼 위치 지정
+			// set next button position
 			nButtonTop = nButtonTop + this.fvButtonHeight;
 		}
 	}
 }
 
 
-/**
-* fnDrawAccordionMenu : gdsMenu를 이용해서 아코디언메뉴를 동적으로 생성한다.
-* @param {String}  menuId	- 메뉴 ID
-* @param {String}  menuNm	- 메뉴명
-* @return : N/A
-* @example :  
-*/
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * Each COMPONENT EVENT
  ************************************************************************************************/
  
 /**
- * @description 메뉴를 Open한다.
+ * @description open menu
 */
 this.fnMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -323,12 +305,12 @@ this.fnMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
  
  
 /**
- * @description 메뉴 선택시 애니메이션을 추가해준다.
+ * @description add animation when choose menu item
 */
 this.fnTopMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var menuId = String(obj.name).replace("btn", "");
-	var objDiv = obj.parent.parent;//메뉴묶음
+	var objDiv = obj.parent.parent; //menu group
 	
 	var sAniId;
 	var objAni;
@@ -352,7 +334,7 @@ this.fnTopMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	}
 	objDiv.setOffsetHeight(objDiv.pageHeight);
 	
-	//두번째부터는 top 조절
+	// top position
 	nTop =  objDiv.getOffsetTop() + objDiv.getOffsetHeight();
 	objDiv = this.divLeft.form.components[objDiv.nextDivId];
 	while(objDiv)
@@ -390,7 +372,7 @@ this.fnTopMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 
 /**
- * @description 메뉴탭 또는 즐겨찾기 탭을 선택한다.
+ * @description select menu tab or favorite tab
 */
 this.Button_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -414,12 +396,12 @@ this.Button_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 
 /**
-* fnMoveAnimation : 애니메이션 Interpolation 함수
+* fnMoveAnimation : animation Interpolation function
 * @param {Number}  t	- current time(time or frame)
 * @param {Number}  b	- start value
 * @param {Number}  c	- change between the beginning and destination of the property
 * @param {Number}  d	- duration (time or frame)
-* @return : 위치값
+* @return : position value
 * @example :  
 */
 this.fnMoveAnimation = function (t, b, c, d) 
@@ -432,7 +414,7 @@ this.fnMoveAnimation = function (t, b, c, d)
 
 
 /**
- * @description 메뉴를 Open한다.
+ * @description open menu
 */ 
 this.grdMenuOnclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
