@@ -1263,7 +1263,6 @@
 {
 	-nexa-border 			: 2px solid #113367, 1px solid #d3d3d3 1px solid #d3d3d3, 1px solid #d3d3d3;
 	-nexa-edge 			: ;
-	-nexa-padding 			: ;
 	background 			: #ffffff;
 	border-radius 			: ;
 	color 				: ;
@@ -3063,7 +3062,7 @@
 
 /************ StepControl *****************/
 .StepControl,
-.StepControl[status=mouseover],.StepControl[status=focused],
+.StepControl[status=mouseover],
 .StepControl[status=disabled]
 {
 	-nexa-border 			: 0px none;
