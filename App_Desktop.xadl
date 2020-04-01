@@ -30,14 +30,14 @@
   </Application>
   <Script type="xscript5.1"><![CDATA[
 /************************************************************************************************
- * Application Event 영역
+ * Application Event 
  ************************************************************************************************/
 /**
  * Application onload
  */
 this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventInfo)
 {
-	//접속 환경별 서비스 URL 셋팅
+	// set service URL 
 	var objEnv = nexacro.getEnvironment();
 	var objSvcUrl = objEnv.services["svcurl"];
 	var urlPath;
@@ -46,7 +46,7 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 	{
 		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
 		{
-			urlPath = "http://localhost:8080/nexacro-demo/";
+			urlPath = "http://localhost/";
 		}
 		else 
 		{
@@ -61,7 +61,7 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 		{
 			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
 			{
-				urlPath = "http://localhost:8080/nexacro-demo/";
+				urlPath = "http://localhost/";
 			}
 			else 
 			{
@@ -70,7 +70,7 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 		}
 		else
 		{
-			urlPath = window.location.protocol + "//" + window.location.host + "/nexacro-demo/";
+			urlPath = window.location.protocol + "//" + window.location.host + "/";
 		}
 	}
 	
@@ -79,11 +79,11 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 };
 
 /**
- * @description ESC 통신중단 방지
+ * @description prevent communication interruption processing by ESC key
 */
 this.Application_onerror = function(obj:nexacro.Application,e:nexacro.ErrorEventInfo)
 {
-	// 사용자가 ESC키를 눌렀을 경우 ESC통신 중단 방지처리
+	// Prevents communication from being interrupted when the user presses the ESC key
 	if (e.errorcode == -2147418039) {
 		return true;
 	}
