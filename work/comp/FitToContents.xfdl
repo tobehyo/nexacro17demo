@@ -4,7 +4,7 @@
     <Layouts>
       <Layout stepcount="0" screenid="">
         <Radio id="rdoLocale" taborder="0" left="8" top="64" height="266" innerdataset="@dsLocale" codecolumn="code" datacolumn="name" onitemchanged="rdoLocale_onitemchanged" columncount="4" direction="horizontal" width="852"/>
-        <Static id="Static07" taborder="1" text="넥사크로는 컴포넌트 속성으로 별도의 코딩없이 텍스트 길이에 맞게 자동으로 컴포넌트 사이즈를 조정할 수 있습니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Static id="Static07" taborder="1" text="Nexacro uses component properties to automatically adjust the component size to fit the text length without coding." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
         <Static id="Static08" taborder="2" left="59" top="86" width="60" height="83" cssclass="sta_WF_iconKorea" text="Korea"/>
         <Static id="Static09" taborder="3" text="USA" cssclass="sta_WF_iconUSA" left="278" top="86" width="60" height="83"/>
         <Static id="Static10" taborder="4" text="China" cssclass="sta_WF_iconChina" left="493" top="86" width="60" height="83"/>
@@ -30,12 +30,12 @@
                 <Row size="36"/>
               </Rows>
               <Band id="head">
-                <Cell text="성명" autosizecol="limitmin"/>
-                <Cell col="1" text="출생년도" autosizecol="limitmin"/>
-                <Cell col="2" text="키" autosizecol="limitmin"/>
-                <Cell col="3" text="몸무게" autosizecol="limitmin"/>
-                <Cell col="4" text="소속" autosizecol="limitmin"/>
-                <Cell col="5" text="포지션" autosizecol="limitmin"/>
+                <Cell text="Name" autosizecol="limitmin"/>
+                <Cell col="1" text="Birth year" autosizecol="limitmin"/>
+                <Cell col="2" text="Height" autosizecol="limitmin"/>
+                <Cell col="3" text="Weight" autosizecol="limitmin"/>
+                <Cell col="4" text="Team" autosizecol="limitmin"/>
+                <Cell col="5" text="Position" autosizecol="limitmin"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:Column0"/>
@@ -60,21 +60,21 @@
         <Static id="st_title03" taborder="21" left="staWeight:15" top="450" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
         <Static id="staTeam" taborder="22" left="img_image:20" width="50" height="20" top="480" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0005" textAlign="left" verticalAlign="middle" text="소속" fittocontents="width"/>
         <Static id="staPosition" taborder="23" left="img_image:20" width="50" height="20" top="510" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0006" textAlign="left" verticalAlign="middle" text="포지션" fittocontents="width"/>
-        <Static id="st_title04" taborder="24" left="staTeam:15" top="480" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="st_title04" taborder="24" left="staTeam:15" top="480" width="214" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
         <Static id="st_title05" taborder="25" left="staPosition:15" top="510" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
         <Static id="Static00_00" taborder="26" text="Static00" left="28" width="485" height="20" background="aqua" visible="false" bottom="0"/>
         <Static id="Static00" taborder="27" text="Static00" top="7" width="20" height="153" background="aqua" visible="false" right="0"/>
         <GroupBox id="GroupBox00" text="날짜 형식" taborder="28" left="0" top="562" height="200" width="50.00%" visible="true" msgCd="L0007" cssclass="grb_basic01"/>
-        <Static id="Static00_01" taborder="29" text="간단한 날짜 " left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009" fittocontents="width"/>
+        <Static id="Static00_01" taborder="29" text="Short Date" left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009" fittocontents="width"/>
         <Calendar id="Calendar00" taborder="30" left="Static00_01:10" top="603" height="32" dateformat="SHORTDATE" editformat="SHORTDATE" value="20160401" width="215" visible="true" cssclass="cal_basic01"/>
-        <Static id="Static01" taborder="31" text="자세한 날짜 " left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010" fittocontents="width"/>
+        <Static id="Static01" taborder="31" text="Long Date" left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010" fittocontents="width"/>
         <Calendar id="Calendar01" taborder="32" left="Static01:10" top="645" height="32" width="215" visible="true" cssclass="cal_basic01" dateformat="LONGDATE" editformat="LONGDATE"/>
         <GroupBox id="GroupBox01" text="숫자 형식" taborder="33" left="GroupBox00:4" top="562" height="200" visible="true" msgCd="L0008" right="4" cssclass="grb_basic01"/>
-        <Static id="Static02" taborder="34" text="양수" left="GroupBox00:28" top="603" height="32" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R" width="90"/>
-        <Static id="Static03" taborder="35" text="음수" left="GroupBox00:28" top="645" height="32" width="90" visible="true" cssclass="sta_WF_cell01R" msgCd="L00012"/>
-        <MaskEdit id="MaskEdit00" taborder="36" left="Static02:50" top="603" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="123456789.00"/>
-        <MaskEdit id="MaskEdit01" taborder="37" left="Static03:50" top="645" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="-123456789.00"/>
-        <Button id="Button00" taborder="38" text="text size" left="518" top="701" width="136" height="49" onclick="Button00_onclick" visible="true"/>
+        <Static id="Static02" taborder="34" text="Positive numbers" left="GroupBox00:28" top="603" height="32" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R" width="130" fittocontents="width"/>
+        <Static id="Static03" taborder="35" text="Negative numbers" left="GroupBox00:28" top="645" height="32" width="130" visible="true" cssclass="sta_WF_cell01R" msgCd="L00012" fittocontents="width"/>
+        <MaskEdit id="MaskEdit00" taborder="36" left="Static02:20" top="603" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="123456789.00"/>
+        <MaskEdit id="MaskEdit01" taborder="37" left="Static03:20" top="645" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="-123456789.00"/>
+        <Button id="Button00" taborder="38" text="text size" left="518" top="701" width="136" height="49" onclick="Button00_onclick" visible="false"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -126,48 +126,48 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">손흥민</Col>
+            <Col id="Column0">Son Heung-min</Col>
             <Col id="Column1">1992</Col>
             <Col id="Column2">183</Col>
             <Col id="Column3">77</Col>
-            <Col id="Column4">토트넘 훗스퍼 FC</Col>
-            <Col id="Column5">FW 공격수</Col>
+            <Col id="Column4">Tottenham Hotspur FC</Col>
+            <Col id="Column5">FW forward</Col>
             <Col id="Column6">imagerc::FW01.jpg</Col>
           </Row>
           <Row>
-            <Col id="Column0">이승우</Col>
+            <Col id="Column0">Lee Seung-woo</Col>
             <Col id="Column1">1998</Col>
             <Col id="Column2">173</Col>
             <Col id="Column3">63</Col>
-            <Col id="Column4">헬라스 베로나 FC</Col>
-            <Col id="Column5">FW 공격수</Col>
+            <Col id="Column4">Hellas Verona FC</Col>
+            <Col id="Column5">FW forward</Col>
             <Col id="Column6">imagerc::FW02.jpg</Col>
           </Row>
           <Row>
-            <Col id="Column0">황희찬</Col>
+            <Col id="Column0">Hwang Hee-chan</Col>
             <Col id="Column1">1996</Col>
             <Col id="Column2">177</Col>
             <Col id="Column3">77</Col>
-            <Col id="Column4">FC 레드불 잘츠부르크</Col>
-            <Col id="Column5">FW 공격수</Col>
+            <Col id="Column4">FC Red Bull Salzburg</Col>
+            <Col id="Column5">FW forward</Col>
             <Col id="Column6">imagerc::FW03.jpg</Col>
           </Row>
           <Row>
-            <Col id="Column0">황희조</Col>
+            <Col id="Column0">Hwang Hee-jo </Col>
             <Col id="Column1">1992</Col>
             <Col id="Column2">184</Col>
             <Col id="Column3">73</Col>
-            <Col id="Column4">감바 오사카</Col>
-            <Col id="Column5">FW 공격수</Col>
+            <Col id="Column4">Gamba Osaka</Col>
+            <Col id="Column5">FW forward</Col>
             <Col id="Column6">imagerc::FW04.jpg</Col>
           </Row>
           <Row>
-            <Col id="Column0">조현우</Col>
+            <Col id="Column0">Cho Hyun-woo</Col>
             <Col id="Column1">1991</Col>
             <Col id="Column2">189</Col>
             <Col id="Column3">76</Col>
-            <Col id="Column4">대구 FC</Col>
-            <Col id="Column5">GK 골키퍼</Col>
+            <Col id="Column4">Daegu FC</Col>
+            <Col id="Column5">GK goalkeeper</Col>
             <Col id="Column6">imagerc::GK.jpg</Col>
           </Row>
         </Rows>
@@ -292,7 +292,7 @@
           <Row>
             <Col id="msgCd">L0003</Col>
             <Col id="langCd">en_US</Col>
-            <Col id="msgSbc">Stature</Col>
+            <Col id="msgSbc">Height</Col>
           </Row>
           <Row>
             <Col id="msgCd">L0004</Col>
@@ -302,7 +302,7 @@
           <Row>
             <Col id="msgCd">L0005</Col>
             <Col id="langCd">en_US</Col>
-            <Col id="msgSbc">Belong</Col>
+            <Col id="msgSbc">Team</Col>
           </Row>
           <Row>
             <Col id="msgCd">L0006</Col>
@@ -332,12 +332,12 @@
           <Row>
             <Col id="msgCd">L00011</Col>
             <Col id="langCd">en_US</Col>
-            <Col id="msgSbc">Positive</Col>
+            <Col id="msgSbc">Positive numbers</Col>
           </Row>
           <Row>
             <Col id="msgCd">L00012</Col>
             <Col id="langCd">en_US</Col>
-            <Col id="msgSbc">Negative</Col>
+            <Col id="msgSbc">Negative numbers</Col>
           </Row>
           <Row>
             <Col id="msgCd">L0001</Col>
@@ -927,12 +927,12 @@ this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInf
 
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	this.Static02.set_minwidth(90);
-	this.Static03.set_minwidth(90);
-	this.Static02.set_fittocontents("width");
-	this.Static03.set_fittocontents("width");
-	this.resetScroll();
-	return;
+// 	this.Static02.set_minwidth(90);
+// 	this.Static03.set_minwidth(90);
+// 	this.Static02.set_fittocontents("width");
+// 	this.Static03.set_fittocontents("width");
+// 	this.resetScroll();
+// 	return;
 
 	// comp._cssselector
 	// get font from css
@@ -940,7 +940,6 @@ this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	var strText = this.Static02.text;
 	var objSize = nexacro.getTextSize( strText, strFont );
 	trace("nx:" + objSize.nx + " ny: " +objSize.ny);
-	this.Static02.set_minwidth(objSize.nx);
 };]]></Script>
     <Bind>
       <BindItem id="item0" compid="rdoLocale" propid="value" datasetid="gdsLocale" columnid="locale"/>
