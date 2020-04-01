@@ -323,7 +323,8 @@
 }
 .Grid.grd_tree .body .row .cell .celltreeitem .treeitembutton[userstatus=collapse]
 {
-	-nexa-icon		: URL('imagerc::img_TreeCollapse.png');
+	/*-nexa-icon		: URL('imagerc::img_TreeCollapse.png');*/
+	-nexa-icon		: URL('imagerc::img_TreeExpand.png');
 }
 .Grid.grd_tree .body .row .cell .celltreeitem .treeitemimage[userstatus=collapse]
 {
@@ -339,6 +340,7 @@
 }
 .Grid.grd_tree .body .row .cell .celltreeitem .treeitembutton[userstatus=expand]
 {
-	-nexa-icon		: URL('imagerc::img_TreeExpand.png');
+	/*-nexa-icon		: URL('imagerc::img_TreeExpand.png');*/
+	-nexa-icon		: URL('imagerc::img_TreeCollapse.png');
 }
 ]]></XCSS>
