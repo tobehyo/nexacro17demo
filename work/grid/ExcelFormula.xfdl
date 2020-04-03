@@ -743,7 +743,7 @@
  * FORM 변수 선언 영역
  ************************************************************************************************/
 this.exportUrl = "xeni::XExportImport"; //export URL
-this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost/nexacro-xeni/XImport";		// import URL
+this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost/nexacroXeni/XImport";		// import URL
 this.exportType; //Grid 속성 selecttype 변경을 위함
 
 /************************************************************************************************
