@@ -180,9 +180,9 @@ this.btnSearch_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 // 			"dsList=output"
 // 		]
 // 	};
-
 	var strSvcId    = "search";
-	var strSvcUrl   = "svcurl::services/ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
+	//var strSvcUrl   = "svcurl::services/ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
+	var strSvcUrl   = "svcurl::services/ssvRead.do?rowcount=" + this.cboRowCnt.value;
 	var inData      = "";
 	var outData     = "dsList=output";
 	var strArg      = "";

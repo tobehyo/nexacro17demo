@@ -204,7 +204,7 @@ this.fnSave = function()
 // 		return;
 // 	}
 
-	var strSvcUrl   = "svcurl::updateDataListMap.do";
+	var strSvcUrl   = "svcurl::services/updateDataListMap.do";
 	var inData      = "input1=dsList:U";
 	var outData     = "";
 	

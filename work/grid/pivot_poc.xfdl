@@ -262,7 +262,8 @@ this.pivot_comp_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var sId = "SEARCH";
-	var sURL = "svcurl::services/PivotssvRead.jsp?rowcount="+this.cmbCount.value;
+	//var sURL = "svcurl::services/PivotssvRead.jsp?rowcount="+this.cmbCount.value;
+	var sURL = "svcurl::services/ssvPivotDataRead.do?rowcount="+this.cmbCount.value;
 	var sInDs = "";
 	var sOutDs = "dsList=output";
 	var sParam = "";

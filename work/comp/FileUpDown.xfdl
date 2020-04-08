@@ -151,7 +151,8 @@ this.fnAddFileList = function(filelists)
 this.fnUploadFile = function()
 {
 	//file upload
-	var uploadUrl = this.saveUrl +"services/fileUpload_postdatatest.jsp?filefolder=" + this.folderName;
+	//var uploadUrl = this.saveUrl +"services/fileUpload_postdatatest.jsp?filefolder=" + this.folderName;
+	var uploadUrl = this.saveUrl +"services/uploadFile.do?filefolder=" + this.folderName;
 	this.fileUpTrans.upload(uploadUrl);
 }
 
@@ -177,7 +178,8 @@ this.fnDownloadFile = function(i)
 		"filefolder",
 		"fileSample"
 	);
-	var downloadUrl = this.saveUrl + "services/fileDownload_postdatatest.jsp";
+	//var downloadUrl = this.saveUrl + "services/fileDownload_postdatatest.jsp";
+	var downloadUrl = this.saveUrl + "services/downloadFile.do";
 	this.fileDownTrans.download(downloadUrl);
 }
 
@@ -212,7 +214,8 @@ this.fnDownloadFileAll = function()
 		arrNameList
 	);
 	
-	this.fileDownTrans.download(this.saveUrl + "services/fileDownload_postdatatestAll.jsp");
+	//this.fileDownTrans.download(this.saveUrl + "services/fileDownload_postdatatestAll.jsp");
+	this.fileDownTrans.download(this.saveUrl + "services/downloadFileAll.do");
 }
 
 /**
@@ -313,7 +316,7 @@ this.btnDel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 */
 this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	this.setWaitCursor(true);
+	//this.setWaitCursor(true);
 	this.fnUploadFile();
 };
 
@@ -323,7 +326,8 @@ this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 this.btnSearch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//search attach file list
-	this.transaction("list", this.saveUrl + "services/fileDownload_servlet_list_XML.jsp", "", "dsDownload=dsList", "filefolder="+this.folderName, "fnCallbackTransaction", "false", "0")
+	//this.transaction("list", this.saveUrl + "services/fileDownload_servlet_list_XML.jsp", "", "dsDownload=dsList", "filefolder="+this.folderName, "fnCallbackTransaction", "false", "0");
+	this.transaction("list", this.saveUrl + "services/downloadFileList.do", "", "dsDownload=dsList", "filefolder="+this.folderName, "fnCallbackTransaction", "false", "0");
 };
 
 
@@ -442,12 +446,17 @@ this.fileUpTrans_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileU
 {
 	this.setWaitCursor(false);
 	var objCallDs = e.datasets[0];
-
+	
+	if(objCallDs && objCallDs.getColumn(0, "ErrorCode")<0) {
+		alert("ERROR :: " + objCallDs.getColumn(1, "ErrorMsg"));
+		return;
+	}
+	
 	for(var i=0; i<objCallDs.getRowCount(); i++)
 	{
 		this.dsUpload.setColumn(i, "FILE_URL",objCallDs.getColumn(i,"savePath"));
 	}
-	
+
 	alert("Success");	
 };
 
