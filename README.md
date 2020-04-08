@@ -4,3 +4,6 @@
 3. go to unzip folder  
 4. open demo.xprj with Nexacro Studio 17.1
 ## "sevices" folder is for JSP service
+
+## download nexacro spring boot project
+https://github.com/tobehyo/nexacro17srpingboot
