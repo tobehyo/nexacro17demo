@@ -53,7 +53,7 @@
             </Layout>
           </Layouts>
         </Div>
-        <Button id="btnAllClose" taborder="4" text="모두닫기" left="692" top="53" width="128" height="24" onclick="divLeft_btnAllClose_onclick" cssclass="btn_LF_menuClose" visible="false"/>
+        <Button id="btnAllClose" taborder="4" text="Collapase All" left="692" top="53" width="128" height="24" onclick="divLeft_btnAllClose_onclick" cssclass="btn_LF_menuClose" visible="false"/>
         <Button id="btnMenu00" taborder="5" left="330" top="0" width="140" height="40" cssclass="btn_LF_SelectMenu_D" tabstop="false" onclick="Button_onclick" text="MENU" visible="false"/>
         <Button id="btnFavorite00" taborder="6" top="0" width="140" height="40" tabstop="false" onclick="Button_onclick" right="-330" cssclass="btn_LF_BookMark_S" text="" visible="false"/>
       </Layout>
