@@ -8,10 +8,10 @@
         <Div id="divLeft" taborder="2" top="40" right="0" bottom="0" formscrollbartype="autoindicator autoindicator" formscrolltype="both" maxheight="" left="0" cssclass="div_LF_menuBg">
           <Layouts>
             <Layout>
-              <Button id="btnAllOpen" taborder="0" text="모두열기" left="0" top="13" height="24" onclick="divLeft_btnAllOpen_onclick" cssclass="btn_LF_menuOpen" enable="true" right="0"/>
+              <Button id="btnAllOpen" taborder="0" text="Expand All" left="0" top="13" height="24" onclick="divLeft_btnAllOpen_onclick" cssclass="btn_LF_menuOpen" enable="true" right="0"/>
               <Button id="Button00" taborder="1" text="Grid Component" left="0" top="75" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
-              <Button id="Button00_00" taborder="2" text="다양한 그리드 기능" left="0" top="125" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
-              <Button id="Button00_00_00" taborder="3" text="다양한 그리드 기능" left="0" top="171" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_00" taborder="2" text="Grid Functions" left="0" top="125" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_00_00" taborder="3" text="Grid Functions" left="0" top="171" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
               <Button id="Button00_01" taborder="4" text="Component" left="0" top="217" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
             </Layout>
           </Layouts>
