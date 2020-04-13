@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commMemo" width="568" height="238" titletext="메모장" onload="commMemo_onload">
+    <Layouts>
+      <Layout height="238" mobileorientation="landscape" width="568">
+        <Static id="Static00" taborder="" left="0" top="0" cssclass="sta_WF_notepad" right="0" bottom="0"/>
+        <Button id="btnMove" taborder="5" left="0" top="0" height="30" cssclass="btn_WF_noteHead" right="0"/>
+        <Button id="btnAdd" taborder="1" left="5" top="0" width="30" height="30" onclick="fn_comBtnOnClick" cssclass="btn_WF_noteAdd"/>
+        <Button id="btnClose" taborder="2" top="0" width="30" height="30" cssclass="btn_WF_noteDel" onclick="fn_comBtnOnClick" right="5"/>
+        <TextArea id="TextArea00" taborder="3" left="10" top="35" cssclass="txa_WF_notepad" onsetfocus="TextArea00_onsetfocus" bottom="20" right="6" wordWrap="char"/>
+        <Button id="btnResize" taborder="4" width="15" height="15" cssclass="btn_WF_widgetMove02" right="2" bottom="1"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.commMemo_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+};
+
+this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch (obj.name)
+	{
+		case "btnClose" :
+			this.parent.parent.fn_closeMemo(this.parent);
+			break;
+			
+		case "btnAdd" :
+			this.parent.parent.fn_addMemo(this.parent);
+			break;
+	}
+};
+
+this.TextArea00_onsetfocus = function(obj:nexacro.TextArea,e:nexacro.SetFocusEventInfo)
+{
+	this.parent.bringToFront();
+};
+
+this.fn_setTxt = function(arg)
+{
+	this.TextArea00.set_value(arg);
+}
+
+this.fn_getTxt = function()
+{
+	return this.TextArea00.value;
+}]]></Script>
+  </Form>
+</FDL>

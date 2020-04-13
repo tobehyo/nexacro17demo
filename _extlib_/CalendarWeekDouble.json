@@ -1,0 +1,16 @@
+﻿{
+	"name": "CalendarWeekDouble",
+	"version": "0",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "CalendarWeekDouble/metainfo/CalendarWeekDouble.info"
+	],
+	"scripts": [
+    "CalendarWeekDouble/CalendarWeekDouble.js"
+	],
+	"designscripts": [
+    "CalendarWeekDouble/Design/DesignCalendarWeekDouble.js"
+	]
+}
+//# sourceURL=CalendarWeekDouble.json

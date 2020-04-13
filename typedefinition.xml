@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TypeDefinition version="2.3">
+  <Modules>
+    <Module url="CompBase.json"/>
+    <Module url="ComComp.json"/>
+    <Module url="Grid.json"/>
+    <Module url="ListView.json"/>
+    <Module url="DeviceAPI.json"/>
+    <Module url="extlib::extlibLoad.json"/>
+  </Modules>
+  <Components>
+    <Component type="JavaScript" id="Static" classname="nexacro.Static"/>
+    <Component type="JavaScript" id="Button" classname="nexacro.Button"/>
+    <Component type="JavaScript" id="CheckBox" classname="nexacro.CheckBox"/>
+    <Component type="JavaScript" id="Edit" classname="nexacro.Edit"/>
+    <Component type="JavaScript" id="Div" classname="nexacro.Div"/>
+    <Component type="JavaScript" id="PopupDiv" classname="nexacro.PopupDiv"/>
+    <Component type="JavaScript" id="Tab" classname="nexacro.Tab"/>
+    <Component type="JavaScript" id="ListBox" classname="nexacro.ListBox"/>
+    <Component type="JavaScript" id="Combo" classname="nexacro.Combo"/>
+    <Component type="JavaScript" id="FileDialog" classname="nexacro.FileDialog"/>
+    <Component type="JavaScript" id="FileDownload" classname="nexacro.FileDownload"/>
+    <Component type="JavaScript" id="FileDownTransfer" classname="nexacro.FileDownTransfer"/>
+    <Component type="JavaScript" id="FileUpload" classname="nexacro.FileUpload"/>
+    <Component type="JavaScript" id="FileUpTransfer" classname="nexacro.FileUpTransfer"/>
+    <Component type="JavaScript" id="GroupBox" classname="nexacro.GroupBox"/>
+    <Component type="JavaScript" id="ImageViewer" classname="nexacro.ImageViewer"/>
+    <Component type="JavaScript" id="MaskEdit" classname="nexacro.MaskEdit"/>
+    <Component type="JavaScript" id="Menu" classname="nexacro.Menu"/>
+    <Component type="JavaScript" id="PopupMenu" classname="nexacro.PopupMenu"/>
+    <Component type="JavaScript" id="ProgressBar" classname="nexacro.ProgressBar"/>
+    <Component type="JavaScript" id="Radio" classname="nexacro.Radio"/>
+    <Component type="JavaScript" id="Spin" classname="nexacro.Spin"/>
+    <Component type="JavaScript" id="TextArea" classname="nexacro.TextArea"/>
+    <Component type="JavaScript" id="WebBrowser" classname="nexacro.WebBrowser"/>
+    <Component type="JavaScript" id="Calendar" classname="nexacro.Calendar"/>
+    <Component type="JavaScript" id="Dataset" classname="nexacro.NormalDataset"/>
+    <Component type="JavaScript" id="Plugin" classname="nexacro.Plugin"/>
+    <Component type="JavaScript" id="Grid" classname="nexacro.Grid"/>
+    <Component type="JavaScript" id="ListView" classname="nexacro.ListView"/>
+    <Component type="JavaScript" id="BasicChart" classname="nexacro.BasicChart"/>
+    <Component type="JavaScript" id="BubbleChart" classname="nexacro.BubbleChart"/>
+    <Component type="JavaScript" id="PieChart" classname="nexacro.PieChart"/>
+    <Component type="JavaScript" id="RadarChart" classname="nexacro.RadarChart"/>
+    <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart"/>
+    <Component type="JavaScript" id="MultiCombo" classname="nexacro.MultiCombo"/>
+    <Component type="JavaScript" id="NxPivot" classname="nexacro.NxPivot"/>
+  </Components>
+  <Services>
+    <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
+    <Service prefixid="initvalue" type="resource" url="./_resource_/_initvalue_/" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="xcssrc" type="resource" url="./_resource_/_xcss_/" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="imagerc" type="resource" url="./_resource_/_images_/" cachelevel="session" include_subdir="true"/>
+    <Service prefixid="font" type="resource" url="./_resource_/_font_/" version="0" communicationversion="0" cachelevel="session" include_subdir="false"/>
+    <Service prefixid="svcurl" type="JSP" cachelevel="none" url="http://localhost/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="xeni" type="JSP" cachelevel="none" url="http://localhost/nexacroXeni/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="Demo19Lib" type="js" cachelevel="session" url="./_extlib_/Demo19Lib/" include_subdir="true" version="0" communicationversion="0"/>
+    <Service prefixid="lib" type="js" cachelevel="session" url="./lib/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="frame" type="form" url="./frame/" cachelevel="session" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="mobile" type="form" cachelevel="session" url="./mobile/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="template" type="form" cachelevel="session" url="./template/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="guide" type="form" cachelevel="session" url="./guide/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="comm" type="form" cachelevel="session" url="./comm/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="grid" type="form" cachelevel="session" url="./work/grid/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="comp" type="form" cachelevel="session" url="./work/comp/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="ext" type="form" cachelevel="session" url="./work/ext/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="example" type="form" cachelevel="session" url="./work/example/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="sample" type="form" cachelevel="session" url="./work/sample/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="basicChart" type="form" cachelevel="session" url="./chart/basicChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="bubbleChart" type="form" cachelevel="session" url="./chart/bubbleChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="pieChart" type="form" cachelevel="session" url="./chart/pieChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="gaugeChart" type="form" cachelevel="session" url="./chart/gaugeChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="radarChart" type="form" cachelevel="session" url="./chart/radarChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="mainChart" type="form" cachelevel="session" url="./chart/mainChart/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="html" type="file" url="./html/" version="0" cachelevel="dynamic" include_subdir="true" communicationversion="0"/>
+  </Services>
+  <Protocols/>
+  <Update>
+    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server"/>
+    <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+      <Version name="common">
+        <Resource type="Engine" file="nexacrodemo.apk" version="2020.03.13.01" targetpath="./"/>
+        <Resource type="Module" file="nexacro17lib.zip" version="1.0.0" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="1.0.12" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="1.0.0" targetpath="./" description=""/>
+      </Version>
+    </Os>
+    <Os name="iOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+      <Version name="common">
+        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20200316122932" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="1.0.0" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
+        <Resource type="Engine" file="https://cacao.tobesoft.co.kr/~nexacro/appbuilder/tops//923/app.plist" version="2020.03.13.01" targetpath="./"/>
+      </Version>
+    </Os>
+  </Update>
+  <Deploy>
+    <Os name="Windows"/>
+    <Os name="Android"/>
+    <Os name="iOS"/>
+  </Deploy>
+</TypeDefinition>

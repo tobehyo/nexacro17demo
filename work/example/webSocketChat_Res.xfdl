@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="webSocketChat_Req" width="500" height="31" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Static id="stImg" taborder="0" text="홍길동" cssclass="sta_WF_chatIcon02" left="0" top="0" width="40" height="31"/>
+        <Static id="stMsg" taborder="1" text="오늘도 넌 나를 피해~" cssclass="sta_WF_chatBox01" left="45" top="1" height="29" right="1"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

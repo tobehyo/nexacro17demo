@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="SelectPie" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <PieChart id="PieChart00" taborder="0" left="0" top="0" bottom="0" right="0" binddataset="dsCountryLitres" categorycolumn="bind:country" enableanimation="true">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": "60",
+			"itemtextvisible": true,
+			"itemtextfont": "bold 10pt \"맑은 고딕\"",
+			"valuecolumn": "bind:value",
+			"fillstyle": "#1abd9c,#1a85be,#1a67bf,#1a4cbf,#641ac0,#9a1ac0,#c2251b,#c2541b,#c2911d,#21c34d",
+			"itemtexttype": "text",
+			"selectindent": "20",
+			"selectcolumn": "bind:select",
+			"selectopacity": "0.7",
+			"itemtextguidelinestyle": "1px solid darkgray",
+			"itemtextguideopacity": "1",
+			"itemtextguidesize": "20",
+			"itemtext": "expr: (value/dataset.getSum(\"value\")*100).toFixed(2) + \"%\"",
+			"opacity": "0.8",
+			"linestyle": "1px solid white",
+			"selectlinestyle": "1px solid white",
+			"highlightfillstyle": "yellow",
+			"highlightopacity": "0.5",
+			"highlightvisible": "false",
+			"selecttype": "bind",
+			"itemtextcolor": "#4c4c4c"
+		}
+	],
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	}
+}]]></Contents>
+        </PieChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCountryLitres">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="value" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+          <Column id="valuedata" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">Ireland</Col>
+            <Col id="value">120</Col>
+            <Col id="select"/>
+            <Col id="data">tes2</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Austria</Col>
+            <Col id="value">120</Col>
+            <Col id="select">1</Col>
+            <Col id="data">test5</Col>
+            <Col id="valuedata">30.12</Col>
+          </Row>
+          <Row>
+            <Col id="country">UK</Col>
+            <Col id="value">65</Col>
+            <Col id="select"/>
+            <Col id="data">test6</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Belgium</Col>
+            <Col id="value">110</Col>
+            <Col id="select"/>
+            <Col id="data">test7</Col>
+            <Col id="valuedata">19.100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

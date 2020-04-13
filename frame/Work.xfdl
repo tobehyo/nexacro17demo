@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Work" width="1000" height="622" titletext="New Form" onload="form_onload" onsize="form_onsize" onactivate="Work_onactivate" onclose="Work_onclose" ontimer="Work_ontimer">
+    <Layouts>
+      <Layout height="622" mobileorientation="landscape" width="1000">
+        <Div id="divWork" taborder="0" left="20" top="50" right="0" bottom="0" text="" async="false" onvscroll="divWork_onvscroll">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Div id="divTitle" taborder="1" left="20" top="12" height="19" formscrollbartype="none none" formscrolltype="none" right="21">
+          <Layouts>
+            <Layout>
+              <Static id="staMenuTitle" taborder="1" left="0" top="1" height="19" fittocontents="none" right="43" cssclass="sta_WF_menuTitle" text=""/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnMenuToggle" taborder="2" left="0" top="6" width="14" height="60" onclick="btnMenuToggle_onclick" cssclass="btn_WF_menuClose" text=""/>
+        <Button id="Button00_00" taborder="3" left="0" top="76" width="14" height="60" cssclass="btn_WF_menuOpen" visible="false"/>
+        <Button id="btn_Popup" taborder="4" cssclass="btn_WF_newPopup" top="12" height="28" onclick="btn_Popup_onclick" text="" width="28" right="20"/>
+        <Button id="btnFavorite" taborder="5" top="12" height="28" cssclass="btn_WF_Btitle" defaultbutton="true" tabstop="false" width="28" onclick="divTitle_btnFavorite_onclick" right="btn_Popup:0"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Work
+*  @FileName  Work.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.menuRow = -1; //열린화면의 MENU Row
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description divWork에 해당화면을 Open해준다.
+*/
+this.form_onload = function(obj:nexacro.Form, e:nexacro.LoadEventInfo)
+{
+	this.divWork.set_url(this.getOwnerFrame().arguments["MENU_URL"]);
+	this.divTitle.form.staMenuTitle.set_text(this.getOwnerFrame().arguments["MENU_NM"]);
+	
+	if(!this.gfnIsNull(this.getOwnerFrame().arguments["FORM_ARGS_COMP"]))
+	{	
+		this.comp = this.getOwnerFrame().arguments["FORM_ARGS_COMP"];
+		
+		for(var i=0; i<this.comp.length; i++)
+		{	
+			if(this.divWork.form.all[i] == "[object Dataset]")
+			{
+				//Data Copy
+				this.divWork.form[this.divWork.form.all[i].name].assign(this.comp[i]);
+				
+				//Position Copy
+				this.divWork.form.all[i].set_rowposition(this.comp[i].rowposition);
+				
+				//Filter Copy
+				if(this.comp[i].filterstr.length > 0)
+				{
+					this.divWork.form[this.divWork.form.all[i].name].filter(this.comp[i].filterstr);
+				}
+			}
+			else if(this.divWork.form.all[i] == "[object Grid]")
+			{
+				//Grid Format Copy
+				this.divWork.form[this.divWork.form.all[i].name].set_formats(this.comp[i].getCurFormatString());
+				
+				//Grid Cell Pos Copy
+				this.divWork.form[this.divWork.form.all[i].name].setCellPos(this.comp[i].getCellPos());
+				
+				if(this.divWork.form.name == "CategoryGrid")
+				{
+					var fvForm = this.divWork.form;
+					var objDs = this.comp["dsGroupId"];
+					
+					var len = objDs.colcount;
+					var fv_arrColIdx = new Array();
+					
+					for(var j=1; j<len; j++)
+					{
+						if(objDs.getColumn(0, objDs.getColID(j)) > 0)
+						{
+							fvForm.fv_arrGroupId.push(objDs.getColID(j));
+							fv_arrColIdx.push(j);
+						}
+					}
+					
+					if(!this.gfnIsNull(fv_arrColIdx))
+					{	
+						for(var j=0; j<fv_arrColIdx.length; j++)
+						{
+							fvForm[this.divWork.form.all[i].name].setFormatColProperty(fv_arrColIdx[j], "size", 0);
+						}
+						
+						//카테고리그리드 초기화 작업
+						fvForm.fnSetGroup();
+						fvForm.fnSetTree();
+					}
+				}
+			
+				//트리 그리드의 유무에 따라 상태반환
+				var len = this.comp[i].getFormatColCount();
+				var arrTreeStatusCoIdx = new Array();
+				
+				//트리그리드의 유무에 따라 상태반환
+				for(var k=0; k<len; k++)
+				{
+					//그리드의 displaytype값이 treeitemcontrol인 경우(트리그리드의 유무 파악)
+					if(this.comp[i].getCellProperty("Body", k, "displaytype") == "treeitemcontrol")
+					{
+						//Collapsed 상태 값 전달
+						len = this.comp[i]._binddataset.rowcount;
+						
+						for(var j=0; j<len; j++)
+						{	
+							//자식 노드를 하나라도 갖고 있다면 아래의 로직을 수행
+							if(!this.comp[i].getTreeChildCount > 0) 
+								continue;
+								
+							if(this.comp[i].isTreeExpandedRow(j))
+								if(this.comp[i].isTreeCollapsedRow(j+1))
+									arrTreeStatusCoIdx.push(j);
+						}
+						
+						//트리는 인덱스를 내림차순으로 줘야 접힘(오름차순은 안됌)
+						for(var p=arrTreeStatusCoIdx.length-1; p>=0; p--)
+						{
+							this.divWork.form[this.divWork.form.all[i].name].setTreeStatus(arrTreeStatusCoIdx[p], false);
+						}
+						
+						break; //treeitemcontrol에 대한 처리 이후 반복문 break.
+					}
+				}
+			}
+			else if(this.divWork.form.all[i] == "[object ListView]")
+			{
+				this.divWork.form.all[i].set_formatid(this.comp[i].formatid);
+				this.nIdx = this.comp[this.comp[i].binddataset].rowposition;
+				this.setTimer(1000, 10);
+			}
+			else if(this.divWork.form.all[i] == "[object Edit]" || this.divWork.form.all[i] == "[object MaskEdit]" || this.divWork.form.all[i] == "[object Calendar]"
+			|| this.divWork.form.all[i] == "[object Combo]" || this.divWork.form.all[i] == "[object Spin]" || this.divWork.form.all[i] == "[object CheckBox]"
+			|| this.divWork.form.all[i] == "[object Radio]" || this.divWork.form.all[i] == "[object TextArea]")
+			{
+				this.divWork.form[this.divWork.form.all[i].name].set_value(this.comp[i].value);
+			}
+		}
+		
+		if(this.divWork.form.name == "Functions")
+		{
+			var vForm = this.divWork.form;
+			vForm.grdList.set_selecttype("row");
+			vForm.dsList.set_rowposition(0);
+			vForm.rdoSelectType.set_value("row");
+		}
+		else if(this.divWork.form.name == "DynamicComponent")
+		{
+			this.divWork.form.btnGenerate_onclick();
+		}
+		else if(this.divWork.form.name == "FitToContents")
+		{
+			var vForm = this.divWork.form;
+			vForm.gvLangCd = vForm.rdoLocale.value;
+			nexacro.getEnvironment().locale = null;
+			vForm.fnSetLocale(vForm.rdoLocale.value);
+			vForm.fnSetLanguage(vForm);
+			vForm.fnSetCompFitToContents();
+			vForm.grdMaster.set_locale(vForm.rdoLocale.value);
+		}
+		else if(this.divWork.form.name == "menuList")
+		{
+			eval("this.divWork.form.divMenu.form.btnMenu" + this.comp["dsButtonIdx"].getColumn(0, "Idx") + ".click();");
+		}
+		else if(this.divWork.form.name == "LargeData")
+		{
+			var vForm = this.divWork.form;
+			vForm.stSearchTimeOrg.set_text(this.comp["stSearchTimeOrg"].text);
+		}
+	}
+	
+	//즐겨찾기 표시
+	this.menuRow = nexacro.getApplication().gdsFavorite.findRow("MENU_ID",this.getOwnerFrame().arguments["MENU_ID"]);
+	
+	if(this.menuRow > -1)
+	{
+		this.btnFavorite.set_cssclass("btn_WF_BtitleOn");
+	}
+	else
+	{
+		this.btnFavorite.set_cssclass("btn_WF_Btitle");
+	}
+		
+	this.setTimer(1,100);
+};
+
+/**
+ * @description div onload가 끝나고 스크롤 처리 해준다.
+*/
+this.Work_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	this.killTimer(e.timerid);
+	
+	if(e.timerid == 1)
+	{
+		//세로 스크롤 조정
+		if(this.divWork.form.vscrollbar.max > 0)
+		{
+			var nFormHeight = this.divWork.getOffsetHeight() + this.divWork.form.vscrollbar.max;
+			this.divWork.__nFormHeight = nFormHeight;
+			//this.divWork.setOffsetHeight(this.divWork.getOffsetHeight() + this.divWork.form.vscrollbar.max + 20);
+			var staGap = new Static();
+				staGap.init("sta", 0, nFormHeight, 100,0, null,null);
+			this.divWork.addChild("sta",staGap);
+			//staGap.set_background("blue");
+			staGap.show();
+			staGap.bringToFront();
+			
+			this.divWork.form.resetScroll();	
+		}
+		
+		var hFrameset = nexacro.getApplication().mainframe.VFrameSet.HFrameSet;	
+		if(hFrameset.separatesize == "0,*")
+		{
+			this.btnMenuToggle.set_cssclass("btn_WF_menuOpen");
+		}
+		this.form_onsize();	
+	}
+	else if(e.timerid == 1000)
+	{
+		this.divWork.form.all["lstList"].showDetailBand(this.nIdx);
+	}
+};
+
+/**
+ * @description 화면 사이즈가 변경될때 사이즈 조절을 해준다.
+*/
+this.form_onsize = function(obj:Form, e:nexacro.SizeEventInfo)
+{
+	//기준 사이즈 1000 * 622
+	//기준사이즈 보다 작아지면 폼에 스크롤을 생성하고 레프트 프레임을 닫아준다.
+	var nCurWidth = this.getOffsetWidth();
+	var nCurHeight = this.getOffsetHeight();
+	var nFormHeight = this.divWork.__nFormHeight;
+		
+	//세로사이즈
+	if(nCurHeight < 622)//100px정도 여유..
+	{
+		//스크롤설정
+		if(nFormHeight)
+		{
+			//this.divWork.form.setOffsetHeight(nFormHeight);
+			this.divWork.setOffsetHeight(nFormHeight + 20);
+		}
+		else
+		{
+			this.divWork.setOffsetHeight(622);
+		}
+		this.divWork.form.resetScroll();
+	}
+	else
+	{	
+// 		if(nFormHeight)
+// 		{
+// 			this.divWork.form.setOffsetHeight(nFormHeight + 20);
+// 			this.divWork.form.resetScroll();
+// 		}
+		this.divWork.set_bottom(0);
+	}
+	
+	//가로사이즈 	
+	if(nCurWidth < 1000)//100px정도 여유..
+	{
+		//기준사이즈보다 작아지면 leftframe을 접어준다.
+		var hFrameset = nexacro.getApplication().mainframe.VFrameSet.HFrameSet;	
+		
+		this.btnMenuToggle.set_cssclass("btn_WF_menuOpen");
+		hFrameset.set_separatesize("0,*");
+		
+		//div_work 세로 스크롤이 있는데 가로 스크롤이 생길경우, 세로 스크롤 설정을 다시 해준다.
+		if(nFormHeight)
+		{
+			//this.divWork.form.setOffsetHeight(nFormHeight);
+			this.divWork.setOffsetHeight(nFormHeight + 20);
+		}
+		
+		//스크롤설정
+		this.divWork.setOffsetWidth(1000);
+	}
+	else
+	{
+		this.divWork.set_right(0);
+	}
+	
+	this.resetScroll();
+}
+
+/**
+ * @description work화면이 종료될때 MDI탭 버튼도 삭제해준다.
+*/
+this.Work_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	this.gfnCloseMenu(obj.getOwnerFrame().name);
+}
+
+/**
+ * @description 화면이 활성화되면 MDI탭  버튼에 포커스를 준다.
+*/
+this.Work_onactivate = function(obj:nexacro.Form,e:nexacro.ActivateEventInfo)
+{
+	nexacro.getApplication().mainframe.VFrameSet.HFrameSet.VFrameSet00.Tab.form.fnSetTabFocus("div" + this.getOwnerFrame().arguments["MENU_ID"]);
+	this.divWork.form.vscrollbar.set_pos(0);//포커스가 입력가능한 컴포넌트(ex그리드)쪽으로 이동해서 스크롤이 움직이는것 조정
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 즐겨찾기 on/off
+*/
+this.divTitle_btnFavorite_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch(obj.cssclass)
+	{
+		case "btn_WF_BtitleOn"://즐겨찾기 제거
+			this.btnFavorite.set_cssclass("btn_WF_Btitle");
+			nexacro.getApplication().gdsFavorite.deleteRow(this.menuRow);
+			break;
+			
+		case "btn_WF_Btitle"://즐겨찾기 추가
+			this.btnFavorite.set_cssclass("btn_WF_BtitleOn");
+			this.menuRow = nexacro.getApplication().gdsFavorite.addRow();
+			nexacro.getApplication().gdsFavorite.copyRow(this.menuRow, nexacro.getApplication().gdsMenu,this.getOwnerFrame().arguments["MENU_ROW"]);
+			break;
+	}
+};
+
+/**
+ * @description LeftMenu를 열고 닫아준다.
+*/
+this.btnMenuToggle_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var hFrameset = nexacro.getApplication().mainframe.VFrameSet.HFrameSet;
+	
+	this.set_enableevent(false);
+	if(hFrameset.separatesize == "0,*")
+	{
+		obj.set_cssclass("btn_WF_menuClose");
+		hFrameset.set_separatesize("280,*");
+	}
+	else
+	{
+		obj.set_cssclass("btn_WF_menuOpen");
+		hFrameset.set_separatesize("0,*");
+	}	
+	this.set_enableevent(true);
+};
+
+/**
+ * @description 창떼내기 구현
+*/
+this.btn_Popup_onclick = function(obj:nexacro.Button, e:nexacro.ClickEventInfo)
+{
+	var strMenuId = this.getOwnerFrame().arguments["MENU_ID"];
+	var strMenuNm = this.getOwnerFrame().arguments["MENU_NM"];
+	var strMenuUrl = this.getOwnerFrame().arguments["MENU_URL"];
+	var nRow = this.getOwnerFrame().arguments["MENU_ROW"];
+	var comp = this.divWork.form.all;
+	
+	var strChildFrameName = "Menu_" + strMenuId;
+	var objParentFrame = nexacro.getApplication().mainframe.VFrameSet.Main;		
+	
+	var strArgument = {
+						 menuId : strMenuId
+						,menuNm : strMenuNm
+						,menuUrl : strMenuUrl
+						,nRow : nRow
+						,comp : comp
+					  }
+	//popup Open
+	nexacro.open(strChildFrameName, "comm::commPopup.xfdl", objParentFrame, strArgument, null, -1, -1, 0, 0, this);
+	
+	//popup Close
+	//this.gfnCloseMenu(strMenuId);
+};]]></Script>
+  </Form>
+</FDL>

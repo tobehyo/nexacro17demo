@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ExcelFormula" width="980" height="570" titletext="엑셀수식Export" onload="ExcelFormula_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="grdExcel" cssclass="grd_excel" taborder="2" binddataset="dsOut" treeuseline="false" treeusecheckbox="false" treeuseimage="false" treeinitstatus="collapse,all" left="0" top="147" right="20" height="400" cellsizingtype="col" selecttype="area" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="60"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30" band="head"/>
+                <Row size="34"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2" text="GROUP"/>
+                <Cell col="1" rowspan="2" text="TEAM"/>
+                <Cell col="2" colspan="12" text="Monthly sales"/>
+                <Cell col="14" rowspan="2" text="Gross sales"/>
+                <Cell row="1" col="2" text="1"/>
+                <Cell row="1" col="3" text="2"/>
+                <Cell row="1" col="4" text="3"/>
+                <Cell row="1" col="5" text="4"/>
+                <Cell row="1" col="6" text="5"/>
+                <Cell row="1" col="7" text="6"/>
+                <Cell row="1" col="8" text="7"/>
+                <Cell row="1" col="9" text="8"/>
+                <Cell row="1" col="10" text="9"/>
+                <Cell row="1" col="11" text="10"/>
+                <Cell row="1" col="12" text="11"/>
+                <Cell row="1" col="13" text="12"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="normal" edittype="none" text="bind:Column0" suppress="1" treelevel="bind:T_LVL" background="#e2e9f5"/>
+                <Cell col="1" text="bind:Column1" background="#e2e9f5"/>
+                <Cell col="2" displaytype="number" edittype="none" editfilter="number" text="bind:Column2" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="3" displaytype="number" editfilter="number" text="bind:Column3" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="4" displaytype="number" editfilter="number" text="bind:Column4" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="5" displaytype="number" editfilter="number" text="bind:Column5" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="6" displaytype="number" editfilter="number" text="bind:Column6" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="7" displaytype="number" editfilter="number" text="bind:Column7" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="8" displaytype="number" editfilter="number" text="bind:Column8" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="9" displaytype="number" editfilter="number" text="bind:Column9" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="10" displaytype="number" editfilter="number" text="bind:Column10" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="11" displaytype="number" editfilter="number" text="bind:Column11" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="12" displaytype="number" editfilter="number" text="bind:Column12" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="13" displaytype="number" editfilter="number" text="bind:Column13" textAlign="right" background="rgba(254,245,243,1)"/>
+                <Cell col="14" displaytype="normal" background="RGBA(244,145,122,1)" text="expr:&quot;=SUM(C&quot;+(currow+3)+&quot;:N&quot;+(currow+3)+&quot;)&quot;" textAlign="right"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staInfo" taborder="4" text="Grid format and data can be imported and exported using Excel functions. (SUM, IF, AND, OR, MATCH, SEARCH, etc.)" cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staTitle01" taborder="5" text="EXEL" cssclass="sta_WF_excel" left="0" top="109" width="431" height="30"/>
+        <Button id="btnImport" taborder="0" text="IMPORT" top="109" height="30" width="90" cssclass="btn_WF_excelInput" right="113" onclick="fnComBtn"/>
+        <Button id="btnExport" taborder="1" text="EXPORT" top="109" width="90" height="30" cssclass="btn_WF_excelOutput" right="20" onclick="fnComBtn"/>
+        <Combo id="cboRowCnt" taborder="3" codecolumn="codecolumn" datacolumn="datacolumn" top="109" width="200" height="30" index="0" value="[ 수식을 선택하세요. ]" innerdataset="innerdataset" text="" onitemchanged="fn_comCboOnItemChanged" right="206">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">expr:"=SUM(C"+(currow+3)+":N"+(currow+3)+")"</Col>
+                <Col id="datacolumn">SUM</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">=IF(AND(C3&lt;100,J3&gt;100),TRUE,FALSE)</Col>
+                <Col id="datacolumn">IF</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">=AND(C3&lt;100,J3&gt;100)</Col>
+                <Col id="datacolumn">AND</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">=OR(C3&lt;100,J3&gt;100)</Col>
+                <Col id="datacolumn">OR</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">=MATCH(C3,C3:C19,0)</Col>
+                <Col id="datacolumn">MATCH</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">=SEARCH(C3,C3)</Col>
+                <Col id="datacolumn">SEARCH</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsOut" firefirstcount="0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="FLOAT" size="256"/>
+          <Column id="Column3" type="FLOAT" size="256"/>
+          <Column id="Column4" type="FLOAT" size="256"/>
+          <Column id="Column5" type="FLOAT" size="256"/>
+          <Column id="Column6" type="FLOAT" size="256"/>
+          <Column id="Column7" type="FLOAT" size="256"/>
+          <Column id="Column8" type="FLOAT" size="256"/>
+          <Column id="Column9" type="FLOAT" size="256"/>
+          <Column id="Column10" type="FLOAT" size="256"/>
+          <Column id="Column11" type="FLOAT" size="256"/>
+          <Column id="Column12" type="FLOAT" size="256"/>
+          <Column id="Column13" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-A team</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">100000</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">110000</Col>
+            <Col id="Column13">55000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-B team</Col>
+            <Col id="Column2">110000</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">100000</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">370000</Col>
+            <Col id="Column13">185000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-C team</Col>
+            <Col id="Column2">135000</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">65000</Col>
+            <Col id="Column9">210000</Col>
+            <Col id="Column10">105000</Col>
+            <Col id="Column11">920000</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-D team</Col>
+            <Col id="Column2">500000</Col>
+            <Col id="Column3">180000</Col>
+            <Col id="Column4">90000</Col>
+            <Col id="Column5">250000</Col>
+            <Col id="Column6">130000</Col>
+            <Col id="Column7">65000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">140000</Col>
+            <Col id="Column10">70000</Col>
+            <Col id="Column11">280000</Col>
+            <Col id="Column12">860000</Col>
+            <Col id="Column13">430000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-E Team</Col>
+            <Col id="Column2">400000</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">970000</Col>
+            <Col id="Column13">485000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT A Group</Col>
+            <Col id="Column1">A-F team</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">200000</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">570000</Col>
+            <Col id="Column12">920000</Col>
+            <Col id="Column13">460000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-A team</Col>
+            <Col id="Column2">1000</Col>
+            <Col id="Column3">500</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">5000</Col>
+            <Col id="Column9">150000</Col>
+            <Col id="Column10">75000</Col>
+            <Col id="Column11">7</Col>
+            <Col id="Column12">700000</Col>
+            <Col id="Column13">350000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-B team</Col>
+            <Col id="Column2">500</Col>
+            <Col id="Column3">50</Col>
+            <Col id="Column4">200000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">100000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">28</Col>
+            <Col id="Column12">280000</Col>
+            <Col id="Column13">140000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-C team</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">500000</Col>
+            <Col id="Column7">250000</Col>
+            <Col id="Column8">150000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">57</Col>
+            <Col id="Column12">570000</Col>
+            <Col id="Column13">285000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-D team</Col>
+            <Col id="Column2">100</Col>
+            <Col id="Column3">1000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">100000</Col>
+            <Col id="Column9">160000</Col>
+            <Col id="Column10">80000</Col>
+            <Col id="Column11">81</Col>
+            <Col id="Column12">810000</Col>
+            <Col id="Column13">405000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-E team</Col>
+            <Col id="Column2">4500</Col>
+            <Col id="Column3">14000</Col>
+            <Col id="Column4">15000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">25000</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-F team</Col>
+            <Col id="Column2">9900</Col>
+            <Col id="Column3">20000</Col>
+            <Col id="Column4">10000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">25000</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-A team</Col>
+            <Col id="Column2">900</Col>
+            <Col id="Column3">1000</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-B team</Col>
+            <Col id="Column2">700</Col>
+            <Col id="Column3">800</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">4500</Col>
+            <Col id="Column7">9500</Col>
+            <Col id="Column8">10000</Col>
+            <Col id="Column9">17000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-C team</Col>
+            <Col id="Column2">300</Col>
+            <Col id="Column3">400</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">5500</Col>
+            <Col id="Column7">7500</Col>
+            <Col id="Column8">8000</Col>
+            <Col id="Column9">9000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-D team</Col>
+            <Col id="Column2">600</Col>
+            <Col id="Column3">500</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">3500</Col>
+            <Col id="Column7">8500</Col>
+            <Col id="Column8">8000</Col>
+            <Col id="Column9">7000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">160000</Col>
+            <Col id="Column13">80000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-E team</Col>
+            <Col id="Column2">100</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">2500</Col>
+            <Col id="Column7">6500</Col>
+            <Col id="Column8">9000</Col>
+            <Col id="Column9">4000</Col>
+            <Col id="Column10">350000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">90000</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">TOBESOFT Group C</Col>
+            <Col id="Column1">C-F team</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">200</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">1500</Col>
+            <Col id="Column7">3500</Col>
+            <Col id="Column8">4000</Col>
+            <Col id="Column9">10000</Col>
+            <Col id="Column10">150000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">75000</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsOut02" firefirstcount="0">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="FLOAT" size="256"/>
+          <Column id="Column3" type="FLOAT" size="256"/>
+          <Column id="Column4" type="FLOAT" size="256"/>
+          <Column id="Column5" type="FLOAT" size="256"/>
+          <Column id="Column6" type="FLOAT" size="256"/>
+          <Column id="Column7" type="FLOAT" size="256"/>
+          <Column id="Column8" type="FLOAT" size="256"/>
+          <Column id="Column9" type="FLOAT" size="256"/>
+          <Column id="Column10" type="FLOAT" size="256"/>
+          <Column id="Column11" type="FLOAT" size="256"/>
+          <Column id="Column12" type="FLOAT" size="256"/>
+          <Column id="Column13" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-A 팀</Col>
+            <Col id="Column2">100000</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">100000</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">110000</Col>
+            <Col id="Column13">55000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-B 팀</Col>
+            <Col id="Column2">110000</Col>
+            <Col id="Column3">220000</Col>
+            <Col id="Column4">110000</Col>
+            <Col id="Column5">100000</Col>
+            <Col id="Column6">110000</Col>
+            <Col id="Column7">55000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">370000</Col>
+            <Col id="Column13">185000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-C 팀</Col>
+            <Col id="Column2">135000</Col>
+            <Col id="Column3">270000</Col>
+            <Col id="Column4">135000</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">65000</Col>
+            <Col id="Column9">210000</Col>
+            <Col id="Column10">105000</Col>
+            <Col id="Column11">920000</Col>
+            <Col id="Column12">660000</Col>
+            <Col id="Column13">330000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-D 팀</Col>
+            <Col id="Column2">500000</Col>
+            <Col id="Column3">180000</Col>
+            <Col id="Column4">90000</Col>
+            <Col id="Column5">250000</Col>
+            <Col id="Column6">130000</Col>
+            <Col id="Column7">65000</Col>
+            <Col id="Column8">180000</Col>
+            <Col id="Column9">140000</Col>
+            <Col id="Column10">70000</Col>
+            <Col id="Column11">280000</Col>
+            <Col id="Column12">860000</Col>
+            <Col id="Column13">430000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-E 팀</Col>
+            <Col id="Column2">400000</Col>
+            <Col id="Column3">100000</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">300000</Col>
+            <Col id="Column7">150000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">90000</Col>
+            <Col id="Column12">970000</Col>
+            <Col id="Column13">485000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 A 그룹</Col>
+            <Col id="Column1">A-F 팀</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">200000</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">0</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">570000</Col>
+            <Col id="Column12">920000</Col>
+            <Col id="Column13">460000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-A 팀</Col>
+            <Col id="Column2">1000</Col>
+            <Col id="Column3">500</Col>
+            <Col id="Column4">50000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">5000</Col>
+            <Col id="Column9">150000</Col>
+            <Col id="Column10">75000</Col>
+            <Col id="Column11">7</Col>
+            <Col id="Column12">700000</Col>
+            <Col id="Column13">350000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-B 팀</Col>
+            <Col id="Column2">500</Col>
+            <Col id="Column3">50</Col>
+            <Col id="Column4">200000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">100000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">28</Col>
+            <Col id="Column12">280000</Col>
+            <Col id="Column13">140000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-C 팀</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">500000</Col>
+            <Col id="Column7">250000</Col>
+            <Col id="Column8">150000</Col>
+            <Col id="Column9">180000</Col>
+            <Col id="Column10">90000</Col>
+            <Col id="Column11">57</Col>
+            <Col id="Column12">570000</Col>
+            <Col id="Column13">285000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-D 팀</Col>
+            <Col id="Column2">100</Col>
+            <Col id="Column3">1000</Col>
+            <Col id="Column4">250000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">400000</Col>
+            <Col id="Column7">200000</Col>
+            <Col id="Column8">100000</Col>
+            <Col id="Column9">160000</Col>
+            <Col id="Column10">80000</Col>
+            <Col id="Column11">81</Col>
+            <Col id="Column12">810000</Col>
+            <Col id="Column13">405000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-E 팀</Col>
+            <Col id="Column2">4500</Col>
+            <Col id="Column3">14000</Col>
+            <Col id="Column4">15000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">25000</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 B 그룹</Col>
+            <Col id="Column1">B-F 팀</Col>
+            <Col id="Column2">9900</Col>
+            <Col id="Column3">20000</Col>
+            <Col id="Column4">10000</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">100000</Col>
+            <Col id="Column7">50000</Col>
+            <Col id="Column8">25000</Col>
+            <Col id="Column9">0</Col>
+            <Col id="Column10">0</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">0</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-A 팀</Col>
+            <Col id="Column2">900</Col>
+            <Col id="Column3">1000</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">0</Col>
+            <Col id="Column7">0</Col>
+            <Col id="Column8">48</Col>
+            <Col id="Column9">480000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">140000</Col>
+            <Col id="Column13">70000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-B 팀</Col>
+            <Col id="Column2">700</Col>
+            <Col id="Column3">800</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">4500</Col>
+            <Col id="Column7">9500</Col>
+            <Col id="Column8">10000</Col>
+            <Col id="Column9">17000</Col>
+            <Col id="Column10">240000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">430000</Col>
+            <Col id="Column13">215000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-C 팀</Col>
+            <Col id="Column2">300</Col>
+            <Col id="Column3">400</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">5500</Col>
+            <Col id="Column7">7500</Col>
+            <Col id="Column8">8000</Col>
+            <Col id="Column9">9000</Col>
+            <Col id="Column10">245000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">690000</Col>
+            <Col id="Column13">345000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-D 팀</Col>
+            <Col id="Column2">600</Col>
+            <Col id="Column3">500</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">3500</Col>
+            <Col id="Column7">8500</Col>
+            <Col id="Column8">8000</Col>
+            <Col id="Column9">7000</Col>
+            <Col id="Column10">255000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">160000</Col>
+            <Col id="Column13">80000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-E 팀</Col>
+            <Col id="Column2">100</Col>
+            <Col id="Column3">0</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">2500</Col>
+            <Col id="Column7">6500</Col>
+            <Col id="Column8">9000</Col>
+            <Col id="Column9">4000</Col>
+            <Col id="Column10">350000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">90000</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">투비소프트 C 그룹</Col>
+            <Col id="Column1">C-F 팀</Col>
+            <Col id="Column2">0</Col>
+            <Col id="Column3">200</Col>
+            <Col id="Column4">0</Col>
+            <Col id="Column5">0</Col>
+            <Col id="Column6">1500</Col>
+            <Col id="Column7">3500</Col>
+            <Col id="Column8">4000</Col>
+            <Col id="Column9">10000</Col>
+            <Col id="Column10">150000</Col>
+            <Col id="Column11">0</Col>
+            <Col id="Column12">75000</Col>
+            <Col id="Column13">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    grid > ExcelFormula
+*  @FileName  ExcelFormula.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.14
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.14      presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.exportUrl = "xeni::XExportImport"; //export URL
+this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost/nexacro-xeni/XImport";		// import URL
+this.exportType; //Grid 속성 selecttype 변경을 위함
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+ 
+/**
+ * @description Form onload
+*/
+
+this.ExcelFormula_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	
+};
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+
+/**
+ * @description 사용자 버튼 클릭 이벤트
+ */
+ 
+this.fnComBtn = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	switch (obj.name) 
+	{
+		case "btnExport":
+			this.exportType = "Excel";
+			// Header information is not displayed when selecttype is area, multiarea, or treecell when exporting (selecttype needs to be changed to "row")
+			this.grdExcel.set_selecttype("row");
+
+			var arrObjGrid = new Array(this.grdExcel);
+			var objComboData = this.cboRowCnt.text;
+			
+			this.fn_exportExcel(arrObjGrid, this.exportType, objComboData);
+			break;
+		case "btnImport":
+			this.fn_importExcel("Sheet1", "A3", "dsOut", "Excel");
+			break;
+	}
+};
+
+/**
+ * @description 콤보 컴포넌트 변경 이벤트
+ */
+ 
+this.fn_comCboOnItemChanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	var objGrid = "";
+	
+	switch (obj.name)
+	{
+		case "cboRowCnt" :
+			objGrid = this.grdExcel;
+			break;
+	}
+	
+	objGrid.setCellProperty("body", 14 ,"text", e.postvalue);
+};
+
+
+/**
+ * Excel Export
+ * @param {arrObjGrid} Export 할 Grid가 들어있는 배열
+ * @param {strType} Excel Type (Excel / 한셀)
+ * @param {strComboData} 선택된 수식값
+ */
+this.fn_exportExcel = function (arrObjGrid, strType, strComboData)
+{
+	var exportObj;
+
+	exportObj = new ExcelExportObject("Export00", this); //ExcelExport 객체 생성
+	
+	// 내보내기 할 엑셀 형식 지정
+	if (strType == "Excel") {
+		exportObj.set_exporttype(nexacro.ExportTypes.EXCEL2007);
+	}
+
+	exportObj.addEventHandler("onsuccess", this.Export00_onsuccess, this); //onsuccess 이벤트 연결
+	exportObj.addEventHandler("onerror", this.Export00_onerror, this); //onerror 이벤트 연결
+
+	// 하나의 파일에 여러 시트 출력
+	var objGrid;
+	var i, nMax;
+	var strSheetName;
+	var strFileName = "ExportData(" + strComboData + ")";
+
+	nMax = arrObjGrid.length;
+
+	for (i = 0; i < nMax; i++) 
+	{
+		objGrid = arrObjGrid[i];
+		strSheetName = "Sheet" + (i + 1);
+
+		exportObj.addExportItem(nexacro.ExportItemTypes.GRID, objGrid, strSheetName + "!A1", "allband", "", "merge");
+	}
+
+	exportObj.set_exportfilename(strFileName);
+	exportObj.set_exporturl(this.exportUrl);
+	exportObj.exportData();
+	// exportObj = null;
+};
+
+this.Export00_onsuccess = function (obj:ExcelExportObject, e:nexacro.ExcelExportEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+	// trace("\ne.eventid/e.fromobject/e.fromreferenceobject/e.url: " + e.eventid+"/"+e.fromobject+"/"+e.fromreferenceobject+"/"+e.url);
+
+	if (this.exportType == "Excel") 
+	{
+		this.grdExcel.set_selecttype("area");
+	}
+};
+
+this.Export00_onerror = function (obj:ExcelExportObject, e:nexacro.ExcelExportErrorEventInfo)
+{
+// 	 trace(obj.name + ":" + e.eventid);
+// 	 trace("\ne.eventid: " + "e.eventID : " + e.eventid);
+// 	 trace("\ne.fromobject: " + e.fromobject);
+// 	 trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+// 	 trace("\ne.errorcode: " +  e.errorcode);
+// 	 trace("\ne.errormsg: " + e.errormsg);
+};
+
+/**
+ * Excel Import
+ * @param {strSheetName} Sheet 명
+ * @param {strSheetArea} Sheet 정보
+ * @param {strDsName} Dataset Object
+ * @param {strType} Excel Type (Excel / 한셀)
+ */
+this.fn_importExcel = function (strSheetName, strSheetArea, strDsName, strType)
+{
+	var importObjExcel;
+
+	var param2 = strSheetName + "!" + strSheetArea;
+	var param3 = strDsName + "=output1";
+
+	if (strType == "Excel") 
+	{
+		importObjExcel = new ExcelImportObject("Import00", this);
+		importObjExcel.set_importurl(this.importUrl);
+
+		importObjExcel.set_importtype(nexacro.ImportTypes.EXCEL2007);
+
+		importObjExcel.addEventHandler("onsuccess", this.fn_ImportOnSuccess, this);
+		importObjExcel.addEventHandler("onerror", this.fn_ImportOnError, this);
+
+		importObjExcel.set_importfilemode("local");
+		importObjExcel.importData("", param2, param3);
+
+		importObjExcel = null;
+	}
+};
+
+this.fn_ImportOnSuccess = function (obj:ExcelImportObject, e:nexacro.ExcelImportEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+};
+
+this.fn_ImportOnError = function (obj:ExcelImportObject, e:nexacro.ExcelImportErrorEventInfo)
+{
+	// trace(obj.name + ":" + e.eventid);
+	// trace("\ne.fromobject: " + e.fromobject);
+	// trace("\ne.fromreferenceobject: " + e.fromreferenceobject);
+	// trace("\ne.errorcode: " +  e.errorcode);
+	// trace("\ne.errormsg: " + e.errormsg);
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+ ]]></Script>
+  </Form>
+</FDL>

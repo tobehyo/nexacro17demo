@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ComponentsArrange" width="980" height="680" titletext="Position&amp;Arrangement" ondragmove="ComponentsArrange_ondragmove" ontimer="ComponentsArrange_ontimer" onload="ComponentsArrange_onload">
+    <Layouts>
+      <Layout height="680" mobileorientation="landscape" width="980">
+        <ImageViewer id="img_grip" taborder="8" left="408" top="283" width="12" height="12" image="URL(&quot;theme://images/img_grip.png&quot;)" cursor="nw-resize" ondrag="img_grip_ondrag" onlbuttondown="img_grip_onlbuttondown" onlbuttonup="img_grip_onlbuttonup"/>
+        <Static id="Static03" taborder="0" text="Component Position - Anchor" left="0" top="81" width="250" height="24" cssclass="sta_WF_title02"/>
+        <Div id="div_base" taborder="1" text="Div00" left="0" top="115" right="img_grip:-4" bottom="img_grip:-7" border="3px solid #ff5151">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="10" top="10" width="100" height="30" border="1px solid crimson, 1px dashed, 1px dashed, 1px solid crimson" enable="true" readonly="true" value="Left Top" text="Left Top" textAlign="center"/>
+              <Edit id="Edit01" taborder="1" top="10" height="30" border="1px solid crimson, 1px solid crimson, 1px dashed, 1px dashed crimson" enable="true" readonly="true" value="Right Top" text="Right Top" textAlign="center" right="10" width="100"/>
+              <Edit id="Edit02" taborder="2" left="10" width="100" height="30" border="1px dashed, 1px dashed, 1px solid crimson, 1px solid crimson" enable="true" readonly="true" value="Left Bottom" text="Left Bottom" textAlign="center" bottom="10"/>
+              <Edit id="Edit03" taborder="3" width="100" height="30" border="1px dashed, 1px solid crimson, 1px solid crimson, 1px dashed" enable="true" readonly="true" value="Right Bottom" text="Right Bottom" textAlign="center" right="10" bottom="10"/>
+              <Edit id="Edit04" taborder="4" left="10" top="50" border="1px solid crimson" enable="true" readonly="true" value="Left Top Right Bottom" text="Left Top Right Bottom" textAlign="center" right="10" bottom="50"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static60" taborder="2" text="The Nexacro Platform provides an environment where component positions can be easily placed by providing properties and position editors without coding. You can adjust the size of the component with Drag &amp; Drop, and check the function with the Play button and Stop button." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="Static01" taborder="3" text="Arrangement Position" left="0" top="img_grip:15" width="250" height="24" cssclass="sta_WF_title02"/>
+        <Button id="btnStart" taborder="4" left="170" top="img_grip:17" width="20" height="20" text="▶" onclick="fn_comBtnOnClick" font="normal 10px/normal &quot;Verdana&quot;"/>
+        <Button id="btnStop" taborder="5" left="193" top="img_grip:17" width="20" height="20" text="■" onclick="fn_comBtnOnClick" font="normal 10px/normal &quot;Verdana&quot;"/>
+        <Div id="div_ver" taborder="6" text="Div00" top="Static01:10" ondragmove="div_arrange_ondragmove" left="0" width="34.69%" cssclass="div_WF_box01" height="297" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Button id="btn_baseB" taborder="0" font="normal normal 10pt &quot;Verdana&quot;" left="15" top="120" width="90" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" cssclass="btn_WF_arrange03" border="1px solid #9c9c9c"/>
+              <Button id="Button17" taborder="1" width="90" positionstep="0" text="Move" left="15" bottom="btn_baseB:10" height="30" cssclass="btn_WF_arrange01"/>
+              <Button id="Button18" taborder="2" top="35" positionstep="0" left="15" text="Resize" maxheight="" width="90" bottom="btn_baseB:50" cssclass="btn_WF_arrange01"/>
+              <Button id="btn_baseT" taborder="3" font="normal normal 10pt &quot;Verdana&quot;" top="140" width="90" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" border="1px solid #9c9c9c , 1px solid #9c9c9c , 2px solid red" cssclass="btn_WF_arrange03" right="14"/>
+              <Button id="Button19" taborder="4" top="btn_baseT:50" positionstep="0" text="Resize" bottom="40" cssclass="btn_WF_arrange02" width="90" right="14"/>
+              <Button id="Button20" taborder="5" top="btn_baseT:10" positionstep="0" text="Move" maxheight="" height="30" cssclass="btn_WF_arrange02" width="90" right="14"/>
+              <Static id="Static02" taborder="6" text="☞ Bottom position based on BASE Top" left="10" top="10" width="263" height="24" wordWrap="none" font="normal 700 9pt/normal &quot;gothic&quot;,&quot;Gulim&quot;"/>
+              <Static id="Static00" taborder="7" text="☞ Top position based on BASE Bottom" width="263" wordWrap="none" textAlign="right" font="bold 9pt/normal &quot;gothic&quot;,&quot;Gulim&quot;" right="16" bottom="10" height="27"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divHor" taborder="7" text="Div00" top="Static01:10" ondragmove="div_arrange_ondragmove" cssclass="div_WF_box01" right="30" left="div_ver:10" height="297" formscrolltype="none">
+          <Layouts>
+            <Layout>
+              <Button id="btn_baseR" taborder="0" font="normal normal 10pt &quot;Verdana&quot;" top="35" width="80" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" border="1px solid #9c9c9c , 1px solid #9c9c9c , 1px solid #9c9c9c , 2px solid red" left="200" cssclass="btn_WF_arrange03"/>
+              <Button id="Button00" taborder="1" top="35" height="30" positionstep="0" text="Move" right="btn_baseR:10" width="80" cssclass="btn_WF_arrange01"/>
+              <Button id="Button01" taborder="2" top="35" height="30" positionstep="0" left="20" text="Resize" maxwidth="" right="btn_baseR:100" cssclass="btn_WF_arrange01"/>
+              <Static id="Static02" taborder="3" text="☞ Right position based on BASE Left" left="15" top="5" width="396" height="24" font="bold 9pt/normal &quot;gothic&quot;,&quot;Gulim&quot;"/>
+              <Button id="btn_baseL" taborder="4" font="normal normal 10pt &quot;Verdana&quot;" left="320" top="226" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" width="80" border="1px solid #9c9c9c , 2px solid red , 1px solid #9c9c9c , 1px solid #9c9c9c" cssclass="btn_WF_arrange03"/>
+              <Button id="Button22" taborder="6" top="226" width="80" height="30" positionstep="0" text="Move" left="btn_baseL:10" cssclass="btn_WF_arrange02"/>
+              <Button id="Button21" taborder="5" top="226" height="30" positionstep="0" left="Button22:10" text="Resize" minwidth="" maxwidth="" right="10" cssclass="btn_WF_arrange02"/>
+              <Static id="Static00" taborder="7" text="☞ Left position based on BASE Right" width="396" height="24" textAlign="right" font="bold 9pt/normal &quot;gothic&quot;,&quot;Gulim&quot;" right="10" bottom="8"/>
+              <Button id="btn_baseR01" taborder="10" font="normal normal 10pt &quot;Verdana&quot;" top="75" width="80" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" border="1px solid #9c9c9c , 1px solid #9c9c9c , 1px solid #9c9c9c , 2px solid red" left="200" cssclass="btn_WF_arrange03"/>
+              <Button id="Button03" taborder="9" top="75" height="30" positionstep="0" text="Move" right="btn_baseR01:10" width="80" cssclass="btn_WF_arrange01"/>
+              <Button id="Button02" taborder="8" top="75" height="30" positionstep="0" left="20" text="Resize" maxwidth="" right="Button03:10" cssclass="btn_WF_arrange01"/>
+              <Button id="btn_baseR02" taborder="13" font="normal normal 10pt &quot;Verdana&quot;" top="115" width="80" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" border="1px solid #9c9c9c , 1px solid #9c9c9c , 1px solid #9c9c9c , 2px solid red" left="200" cssclass="btn_WF_arrange03"/>
+              <Button id="Button05" taborder="12" top="115" height="30" positionstep="0" text="Move" right="btn_baseR02:10" width="80" cssclass="btn_WF_arrange01"/>
+              <Button id="Button04" taborder="11" top="115" height="30" positionstep="0" left="20" text="Resize" maxwidth="" right="Button05:10" cssclass="btn_WF_arrange01"/>
+              <Button id="btn_baseL01" taborder="14" font="normal normal 10pt &quot;Verdana&quot;" left="320" top="186" height="30" positionstep="0" text="BASE" ondrag="obj_ondrag" onlbuttondown="obj_onlbuttondown" width="80" border="1px solid #9c9c9c , 2px solid red , 1px solid #9c9c9c , 1px solid #9c9c9c" cssclass="btn_WF_arrange03"/>
+              <Button id="Button06" taborder="15" top="186" width="80" height="30" positionstep="0" text="Move" left="btn_baseL01:10" cssclass="btn_WF_arrange02"/>
+              <Button id="Button07" taborder="16" top="186" height="30" positionstep="0" left="Button06:10" text="Resize" minwidth="" maxwidth="" right="10" cssclass="btn_WF_arrange02"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btn_init" taborder="9" top="71" height="24" onclick="fn_comBtnOnClick" background="url('imagerc::img_b_select.png') no-repeat center center linear-gradient(to bottom,#fefefe 0%,#ecece5 100%) transparent" border="0px none" width="24" right="30" visible="false" text=""/>
+        <Static id="Static00" taborder="10" left="623" top="divHor:0" width="207" height="20"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    ComponentsArrange.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/11
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/11          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.nCnt = 0;
+this.sFlag = "A";
+this.arrPos = new Array();
+this.nMousePointer;
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.ComponentsArrange_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.arrPos[0] = this.img_grip.left;
+	this.arrPos[1] = this.img_grip.top;
+	this.arrPos[2] = this.img_grip.width;
+	this.arrPos[3] = this.img_grip.height;
+}
+
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.ComponentsArrange_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if (e.timerid == 1) {
+		var arrObj = new Array();
+		arrObj[0] = this.divHor.form.btn_baseR;
+		arrObj[1] = this.divHor.form.btn_baseR01;
+		arrObj[2] = this.divHor.form.btn_baseR02;
+		arrObj[3] = this.divHor.form.btn_baseL;
+		arrObj[4] = this.divHor.form.btn_baseL01;
+		arrObj[5] = this.div_ver.form.btn_baseB;
+		arrObj[6] = this.div_ver.form.btn_baseT;		
+		
+		this.fnMove(arrObj);
+	}
+};
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnMove : 사용자 설정 이벤트
+* @param {array}  arrObj - component array 
+* @return : N/A
+* @example :  
+*/
+this.fnMove = function(arrObj)
+{
+	if (this.nCnt == 100) {
+		this.sFlag = "B";
+	} else if (this.nCnt == 0) {
+		this.sFlag = "A";
+	}
+	
+	if (this.sFlag == "A") {
+		arrObj[0].move(parseInt(arrObj[0].left) + 1, parseInt(arrObj[0].top));
+		arrObj[1].move(parseInt(arrObj[1].left) + 1, parseInt(arrObj[1].top));
+		arrObj[2].move(parseInt(arrObj[2].left) + 1, parseInt(arrObj[2].top));
+		arrObj[3].move(parseInt(arrObj[3].left) - 1, parseInt(arrObj[3].top));
+		arrObj[4].move(parseInt(arrObj[4].left) - 1, parseInt(arrObj[4].top));
+		arrObj[5].move(parseInt(arrObj[5].left), parseInt(arrObj[5].top) + 1);
+		arrObj[6].set_top(parseInt(arrObj[6].top) - 1);//right 포지션 유지하기 위해 변경
+		//arrObj[6].move(parseInt(arrObj[6].getOffsetLeft()), parseInt(arrObj[6].top) - 1);
+		
+		this.nCnt ++;
+	} else {
+		arrObj[0].move(parseInt(arrObj[0].left) - 1, parseInt(arrObj[0].top));
+		arrObj[1].move(parseInt(arrObj[1].left) - 1, parseInt(arrObj[1].top));
+		arrObj[2].move(parseInt(arrObj[2].left) - 1, parseInt(arrObj[2].top));
+		arrObj[3].move(parseInt(arrObj[3].left) + 1, parseInt(arrObj[3].top));
+		arrObj[4].move(parseInt(arrObj[4].left) + 1, parseInt(arrObj[4].top));
+		arrObj[5].move(parseInt(arrObj[5].left), parseInt(arrObj[5].top) - 1);
+		arrObj[6].set_top(parseInt(arrObj[6].top) + 1);//right 포지션 유지하기 위해 변경
+		
+		this.nCnt--;
+	}
+	
+	this.divHor.form.resetScroll();
+	this.div_ver.form.resetScroll();
+}
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description component position size 조절
+*/
+this.ComponentsArrange_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
+{
+	e.sourceobject.move(e.clientx-e.sourceobject.nX, e.clienty-e.sourceobject.nY);
+	this.resetScroll();
+};
+
+/**
+ * @description ondrag이벤트 - 상위컴포넌트로 이벤트 전파
+*/
+this.img_grip_ondrag = function(obj:nexacro.ImageViewer,e:nexacro.DragEventInfo)
+{
+	return true;
+};
+
+/**
+ * @description drag시작
+*/
+this.img_grip_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	obj.nX = e.clientx;
+	obj.nY = e.clienty;	
+
+	this.nMousePointer = obj.nY;
+};
+
+/**
+ * @description drag끝
+*/
+this.img_grip_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
+{
+	this.parent.parent.divWork.setOffsetHeight(this.divHor.getOffsetBottom() + 10);
+	this.parent.parent.parent.setOffsetHeight(this.parent.parent.divWork.getOffsetHeight() + 189);
+	
+	this.resetScroll();
+	//trace("this.nMousePointer = " + this.nMousePointer);
+	if (this.nMousePointer != 2 || this.nMousePointer == 2) {		
+		this.parent.parent.parent.parent.scrollTo(0, 0);
+	}
+	
+	this.parent.parent.resetScroll();
+	//this.parent.parent.parent.parent.resetScroll();	
+};
+
+/**
+ * @description 재생버튼 정지버튼 클릭 이벤트
+*/
+this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch (obj.name)
+	{
+		case "btnStart" :
+			this.setTimer(1, 50);
+			break;
+			
+		case "btnStop" :
+			this.killTimer(1);
+			break;
+			
+// 		case "btn_init" :
+// 			this.img_grip.set_left(this.arrPos[0]);
+// 			this.img_grip.set_top(this.arrPos[1]);
+// 			this.img_grip.set_width(this.arrPos[2]);
+// 			this.img_grip.set_height(this.arrPos[3]);
+// 			
+// 			this.killTimer(1);
+// 			
+// 			this.resetScroll();			
+// 			break;
+	}
+};]]></Script>
+    <Objects/>
+  </Form>
+</FDL>

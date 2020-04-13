@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="commHighLight" width="400" height="300" titletext="New Form" onload="commHighLight_onload">
+    <Layouts>
+      <Layout>
+        <Div id="divEditor" taborder="0" text="Div00" left="0" top="0" right="0" bottom="0" background="rgba(255,255,255,1)">
+          <Layouts>
+            <Layout>
+              <Div id="divMirror" taborder="3" left="10" top="0" right="3" bottom="0" formscrollbartype="default default">
+                <Layouts>
+                  <Layout>
+                    <Static id="stDecorate" taborder="0" usedecorate="true" left="0" top="0" right="0" bottom="0" padding="5px 5px 5px 5px" textAlign="left" verticalAlign="top" font="bold 9pt Arial,Gulim"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <TextArea id="taEditor" taborder="4" usecontextmenu="false" onkillfocus="divEditor_taEditor_onkillfocus" onkeydown="taEditor_onkeydown" onhscroll="taEditor_onhscroll" onvscroll="taEditor_onvscroll" cssclass="txx_script" left="10" top="0" right="3" bottom="0" value="입력된 문자열 중에 특정 문자가 포함될 경우 색이 변경되어 표현되는 입력 컴포넌트 입니다.&#13;&#10;&#13;&#10;예약어예시 : 빨강(Red), 파랑(Blue), 노랑(Yellow)" background="transparent" border="0px none rgba(156,156,156,1)" color="transparent" font="bold 9pt Arial,Gulim"/>
+              <Static id="Static06" taborder="5" cssclass="sta_WF_taBg01" left="0" top="0" bottom="0" width="10"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.yellow = /(노랑|yellow|Yellow|YELLOW)/gi;
+this.red = /(빨강|red|Red|RED)/gi;
+this.blue = /(파랑|blue|Blue|BLUE)/gi;
+
+this.commHighLight_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	var sString = this.fn_setDecorate(this.divEditor.form.taEditor.value);
+	this.divEditor.form.divMirror.form.stDecorate.set_text(sString);
+};
+
+this.taEditor_ontextchange = function (obj:TextArea, e:nexacro.TextChangeEventInfo)
+{
+	// 문자열입력시 마다 Assist Popup 보이도록 하려면 주석 해제
+	// this.fn_viewAssistPop(obj, e.posttext);
+	var sValue = e.posttext;
+
+	var sString = this.fn_setDecorate(sValue);
+	this.divEditor.form.divMirror.form.stDecorate.set_text(sString);
+
+	return true;
+};
+
+// SQL Highlight 기능 설정함수
+this.fn_setDecorate = function (strText)
+{
+	var i = 0;
+
+	// 문자열이 없을 경우 리턴
+	if (this.gfnIsNull(strText) == true) 
+	{
+		return "";
+	}
+
+	// Keyword 예약어 색상 설정
+	strText = strText.toString().replace(this.yellow, "<fc v='yellow'>" + "$&" + "</fc>");
+	strText = strText.toString().replace(this.red, "<fc v='red'>" + "$&" + "</fc>");
+	strText = strText.toString().replace(this.blue, "<fc v='blue'>" + "$&" + "</fc>");
+
+	return strText;
+};
+
+// ///////////////////스크롤바 동기화 START///////////////////////////////////////
+this.taEditor_onvscroll = function (obj:TextArea, e:nexacro.ScrollEventInfo)
+{
+	// taEditor 스크롤바 변경시 stDecorate도 동일하게 표현되도록 하기위한
+	// 함수 호출
+	this.fn_setMirrorSize();
+};
+
+this.taEditor_onhscroll = function (obj:TextArea, e:nexacro.ScrollEventInfo)
+{
+	// taEditor 스크롤바 변경시 stDecorate도 동일하게 표현되도록 하기위한
+	// 함수 호출
+	this.fn_setMirrorSize();
+};
+
+// taEditor 스크롤바 변경시 stDecorate도 동일하게 표현되도록 하기위한 함수
+this.fn_setMirrorSize = function ()
+{
+	// taEditor의 전체 사이즈 구하기
+	var nHeight = this.divEditor.form.taEditor.vscrollbar.height + this.divEditor.form.taEditor.vscrollbar.max;
+	var nWidth = this.divEditor.form.taEditor.hscrollbar.width + this.divEditor.form.taEditor.hscrollbar.max;
+
+	// taEditor와 divMirror의 사이즈를 동일하게 맞추기
+	this.divEditor.form.divMirror.form.stDecorate.setOffsetHeight(this.divEditor.form.taEditor.vscrollbar.view + this.divEditor.form.taEditor.vscrollbar.max);
+
+	this.divEditor.form.divMirror.form.stDecorate.setOffsetWidth(this.divEditor.form.taEditor.hscrollbar.view + this.divEditor.form.taEditor.hscrollbar.max);
+
+	// 스크롤바 갱신
+	this.divEditor.form.divMirror.form.resetScroll();
+
+	// taEditor와 divMirror의 Scrollbar pos 맞추기
+	this.divEditor.form.divMirror.scrollTo(this.divEditor.form.divMirror.vscrollbar.getVScrollPos(), this.divEditor.form.taEditor.getVScrollPos());
+	this.divEditor.form.divMirror.scrollTo(this.divEditor.form.taEditor.getHScrollPos(), this.divEditor.form.divMirror.hscrollbar.getVScrollPos());
+};
+// ///////////////////스크롤바 동기화 END///////////////////////////////////////
+
+/*****************************************************************************
+ 함 수 명 칭 : gfnIsNull
+ 함 수 설 명 : 입력값 Null 체크 함수
+ 파 라 미 터 : pvVal – 입력값
+ 리 턴 내 용 : true/false 값이 Null일 경우 true
+ *****************************************************************************/
+this.gfnIsNull = function (pvVal)
+{
+	if (new String(pvVal).valueOf() == "undefined") 
+	{
+		return true;
+	}
+	if (pvVal == null) 
+	{
+		return true;
+	}
+	if (("x" + pvVal == "xNaN") && (new String(pvVal.length).valueOf() == "undefined")) 
+	{
+		return true;
+	}
+	if (pvVal.length == 0) 
+	{
+		return true;
+	}
+
+	return false;
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Data_TimeAxis" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="dsTimeLog" categorycolumn="bind:date">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Time Axis",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Basic Chart > Area Chart"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "10pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "10pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"axistype": "datetime",
+		"datetickunit": "month",
+		"labelrotate": "-75",
+		"titlegap": "30",
+		"tickmin": "669999600000",
+		"tickmax": "760028400000"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"barvisible": "false",
+			"barsize": "65",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:visits",
+			"linevisible": "true",
+			"linetype": "curve",
+			"itemtexttype": "number",
+			"lineareavisible": "true",
+			"lineareaopacity": "1",
+			"lineareafillstyle": "linear-gradient(to right, #ffffff 0%, #1f77b4 60%)",
+			"linestyle": "0px solid #1f77b4",
+			"lineopacity": "0.6"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "visit",
+			"boardlinevisible": true,
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "10pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"titlegap": "30"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsTimeLog">
+        <ColumnInfo>
+          <Column id="category" type="STRING" size="256"/>
+          <Column id="date" type="DATETIME" size="256"/>
+          <Column id="visits" type="FLOAT" size="256"/>
+          <Column id="date1" type="DATETIME" size="256"/>
+          <Column id="visits1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="category">1</Col>
+            <Col id="date">19900228000000</Col>
+            <Col id="visits">110</Col>
+            <Col id="date1">19960228000000</Col>
+            <Col id="visits1">900</Col>
+          </Row>
+          <Row>
+            <Col id="category">2</Col>
+            <Col id="date">19900331000000</Col>
+            <Col id="visits">290</Col>
+            <Col id="date1">19960331000000</Col>
+            <Col id="visits1">100.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">3</Col>
+            <Col id="date">19900430000000</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19960430000000</Col>
+            <Col id="visits1">340</Col>
+          </Row>
+          <Row>
+            <Col id="category">4</Col>
+            <Col id="date">19900531000000</Col>
+            <Col id="visits">220</Col>
+            <Col id="date1">19960531000000</Col>
+            <Col id="visits1">30.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">5</Col>
+            <Col id="date">19900630000000</Col>
+            <Col id="visits">85</Col>
+            <Col id="date1">19960630000000</Col>
+            <Col id="visits1">200.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">6</Col>
+            <Col id="date">19900731000000</Col>
+            <Col id="visits">55</Col>
+            <Col id="date1">19960731000000</Col>
+            <Col id="visits1">4000.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">7</Col>
+            <Col id="date">19900831000000</Col>
+            <Col id="visits">200</Col>
+            <Col id="date1">19960831000000</Col>
+            <Col id="visits1">290.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">8</Col>
+            <Col id="date">19900930000000</Col>
+            <Col id="visits">300</Col>
+            <Col id="date1">19960930000000</Col>
+            <Col id="visits1">500.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">9</Col>
+            <Col id="date">19901031000000</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19961031000000</Col>
+            <Col id="visits1">606</Col>
+          </Row>
+          <Row>
+            <Col id="date">19901130000000</Col>
+            <Col id="category">10</Col>
+            <Col id="visits">280</Col>
+            <Col id="date1">19961130000000</Col>
+            <Col id="visits1">290</Col>
+          </Row>
+          <Row>
+            <Col id="date">19901231000000</Col>
+            <Col id="category">11</Col>
+            <Col id="visits">420</Col>
+            <Col id="date1">19961231000000</Col>
+            <Col id="visits1">1800</Col>
+          </Row>
+          <Row>
+            <Col id="category">12</Col>
+            <Col id="date">19910131000000</Col>
+            <Col id="visits">380</Col>
+            <Col id="date1">19970131000000</Col>
+            <Col id="visits1">1200.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">13</Col>
+            <Col id="date">19910228000000</Col>
+            <Col id="visits">316.65</Col>
+            <Col id="date1">19970228000000</Col>
+            <Col id="visits1">300.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">14</Col>
+            <Col id="date">19910331000000</Col>
+            <Col id="visits">111</Col>
+            <Col id="date1">19970331000000</Col>
+            <Col id="visits1">100.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">15</Col>
+            <Col id="date">19910430000000</Col>
+            <Col id="visits">178.2</Col>
+            <Col id="date1">19970430000000</Col>
+            <Col id="visits1">1005.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">16</Col>
+            <Col id="date">19910531000000</Col>
+            <Col id="visits">316.55</Col>
+            <Col id="date1">19970531000000</Col>
+            <Col id="visits1">2001.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">17</Col>
+            <Col id="date">19910630000000</Col>
+            <Col id="visits">270</Col>
+            <Col id="date1">19970630000000</Col>
+            <Col id="visits1">500</Col>
+          </Row>
+          <Row>
+            <Col id="category">19</Col>
+            <Col id="date">19910731000000</Col>
+            <Col id="visits">313.84</Col>
+            <Col id="date1">19970731000000</Col>
+            <Col id="visits1">333.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">20</Col>
+            <Col id="date">19910831000000</Col>
+            <Col id="visits">290</Col>
+            <Col id="date1">19970831000000</Col>
+            <Col id="visits1">1900.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">21</Col>
+            <Col id="date">19910930000000</Col>
+            <Col id="visits">315.71</Col>
+            <Col id="date1">19970930000000</Col>
+            <Col id="visits1">300</Col>
+          </Row>
+          <Row>
+            <Col id="category">22</Col>
+            <Col id="date">19911031000000</Col>
+            <Col id="visits">290</Col>
+            <Col id="date1">19971031000000</Col>
+            <Col id="visits1">700</Col>
+          </Row>
+          <Row>
+            <Col id="category">23</Col>
+            <Col id="date">19911130000000</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19971130000000</Col>
+            <Col id="visits1">550.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">24</Col>
+            <Col id="date">19911231</Col>
+            <Col id="visits">220</Col>
+            <Col id="date1">19971231</Col>
+            <Col id="visits1">309</Col>
+          </Row>
+          <Row>
+            <Col id="category">25</Col>
+            <Col id="date">19920131</Col>
+            <Col id="visits">85</Col>
+            <Col id="date1">19980131</Col>
+            <Col id="visits1">400.5</Col>
+          </Row>
+          <Row>
+            <Col id="category">26</Col>
+            <Col id="date">19920229</Col>
+            <Col id="visits">120</Col>
+            <Col id="date1">19980229</Col>
+            <Col id="visits1">300.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">27</Col>
+            <Col id="date">19920331</Col>
+            <Col id="visits">200</Col>
+            <Col id="date1">19980331</Col>
+            <Col id="visits1">200.1</Col>
+          </Row>
+          <Row>
+            <Col id="category">28</Col>
+            <Col id="date">19920430</Col>
+            <Col id="visits">300</Col>
+            <Col id="date1">19980430</Col>
+            <Col id="visits1">150</Col>
+          </Row>
+          <Row>
+            <Col id="category">29</Col>
+            <Col id="date">19920531</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19980531</Col>
+            <Col id="visits1">50</Col>
+          </Row>
+          <Row>
+            <Col id="category">30</Col>
+            <Col id="date">19920731</Col>
+            <Col id="visits">280</Col>
+            <Col id="date1">19980731</Col>
+            <Col id="visits1">90</Col>
+          </Row>
+          <Row>
+            <Col id="category">31</Col>
+            <Col id="date">19920831</Col>
+            <Col id="visits">420</Col>
+            <Col id="date1">19980831</Col>
+            <Col id="visits1">20</Col>
+          </Row>
+          <Row>
+            <Col id="category">32</Col>
+            <Col id="date">19920930</Col>
+            <Col id="visits">380</Col>
+            <Col id="date1">19980930</Col>
+            <Col id="visits1">900.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">33</Col>
+            <Col id="date">19921031</Col>
+            <Col id="visits">316.65</Col>
+            <Col id="date1">19981031</Col>
+            <Col id="visits1">280</Col>
+          </Row>
+          <Row>
+            <Col id="category">34</Col>
+            <Col id="date">19921130</Col>
+            <Col id="visits">111</Col>
+            <Col id="date1">19981130</Col>
+            <Col id="visits1">1800</Col>
+          </Row>
+          <Row>
+            <Col id="category">35</Col>
+            <Col id="date">19921231</Col>
+            <Col id="visits">178.2</Col>
+            <Col id="date1">19981231</Col>
+            <Col id="visits1">500.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">36</Col>
+            <Col id="date">19930131</Col>
+            <Col id="visits">316.55</Col>
+            <Col id="date1">19990131</Col>
+            <Col id="visits1">30.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">37</Col>
+            <Col id="date">19930228</Col>
+            <Col id="visits">318.54</Col>
+            <Col id="date1">19990228</Col>
+            <Col id="visits1">60.99</Col>
+          </Row>
+          <Row>
+            <Col id="category">38</Col>
+            <Col id="date">19930331</Col>
+            <Col id="visits">200</Col>
+            <Col id="date1">19990331</Col>
+            <Col id="visits1">150.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">39</Col>
+            <Col id="date">19930430</Col>
+            <Col id="visits">315.71</Col>
+            <Col id="date1">19990430</Col>
+            <Col id="visits1">200.5</Col>
+          </Row>
+          <Row>
+            <Col id="category">40</Col>
+            <Col id="date">19930531</Col>
+            <Col id="visits">290</Col>
+            <Col id="date1">19990531</Col>
+            <Col id="visits1">600.9</Col>
+          </Row>
+          <Row>
+            <Col id="category">41</Col>
+            <Col id="date">19930630</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19990630</Col>
+            <Col id="visits1">300.2</Col>
+          </Row>
+          <Row>
+            <Col id="category">42</Col>
+            <Col id="date">19930731</Col>
+            <Col id="visits">220</Col>
+            <Col id="date1">19990731</Col>
+            <Col id="visits1">400</Col>
+          </Row>
+          <Row>
+            <Col id="category">43</Col>
+            <Col id="date">19930831</Col>
+            <Col id="visits">85</Col>
+            <Col id="date1">19990831</Col>
+            <Col id="visits1">500.30</Col>
+          </Row>
+          <Row>
+            <Col id="category">44</Col>
+            <Col id="date">19930930</Col>
+            <Col id="visits">120</Col>
+            <Col id="date1">19990930</Col>
+            <Col id="visits1">200.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">45</Col>
+            <Col id="date">19931031</Col>
+            <Col id="visits">200</Col>
+            <Col id="date1">19991031</Col>
+            <Col id="visits1">500.6</Col>
+          </Row>
+          <Row>
+            <Col id="category">46</Col>
+            <Col id="date">19931130</Col>
+            <Col id="visits">300</Col>
+            <Col id="date1">19991130</Col>
+            <Col id="visits1">160.22</Col>
+          </Row>
+          <Row>
+            <Col id="category">47</Col>
+            <Col id="date">19931231</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">19991231</Col>
+            <Col id="visits1">50.55</Col>
+          </Row>
+          <Row>
+            <Col id="category">48</Col>
+            <Col id="date">19940131</Col>
+            <Col id="visits">280</Col>
+            <Col id="date1">20000131</Col>
+            <Col id="visits1">390.4</Col>
+          </Row>
+          <Row>
+            <Col id="category">49</Col>
+            <Col id="date">19940228</Col>
+            <Col id="visits">420</Col>
+            <Col id="date1">20000228</Col>
+            <Col id="visits1">1200</Col>
+          </Row>
+          <Row>
+            <Col id="category">50</Col>
+            <Col id="date">19940331</Col>
+            <Col id="visits">380</Col>
+            <Col id="date1">20000331</Col>
+            <Col id="visits1">1000</Col>
+          </Row>
+          <Row>
+            <Col id="category">51</Col>
+            <Col id="date">19940430</Col>
+            <Col id="visits">316.65</Col>
+            <Col id="date1">20000430</Col>
+            <Col id="visits1">800</Col>
+          </Row>
+          <Row>
+            <Col id="category">52</Col>
+            <Col id="date">19940531</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">20000531</Col>
+            <Col id="visits1">500.40</Col>
+          </Row>
+          <Row>
+            <Col id="category">53</Col>
+            <Col id="date">19940630</Col>
+            <Col id="visits">178.2</Col>
+            <Col id="date1">20000630</Col>
+            <Col id="visits1">50</Col>
+          </Row>
+          <Row>
+            <Col id="category">54</Col>
+            <Col id="date">19940731</Col>
+            <Col id="visits">316.55</Col>
+            <Col id="date1">20000731</Col>
+            <Col id="visits1">90</Col>
+          </Row>
+          <Row>
+            <Col id="category">55</Col>
+            <Col id="date">19940831</Col>
+            <Col id="visits">316.26</Col>
+            <Col id="date1">20000831</Col>
+            <Col id="visits1">190.50</Col>
+          </Row>
+          <Row>
+            <Col id="category">56</Col>
+            <Col id="date">19940930</Col>
+            <Col id="visits">315.42</Col>
+            <Col id="date1">20000930</Col>
+            <Col id="visits1">200.5</Col>
+          </Row>
+          <Row>
+            <Col id="category">57</Col>
+            <Col id="date">19941031</Col>
+            <Col id="visits">316.69</Col>
+            <Col id="date1">20001031</Col>
+            <Col id="visits1">300.50</Col>
+          </Row>
+          <Row>
+            <Col id="category">58</Col>
+            <Col id="date">19941130</Col>
+            <Col id="visits">317.69</Col>
+            <Col id="date1">20001130</Col>
+            <Col id="visits1">100</Col>
+          </Row>
+          <Row>
+            <Col id="category">60</Col>
+            <Col id="date">19941231</Col>
+            <Col id="visits">318.74</Col>
+            <Col id="date1">20001231</Col>
+            <Col id="visits1">600</Col>
+          </Row>
+          <Row>
+            <Col id="category">61</Col>
+            <Col id="date">19950131</Col>
+            <Col id="visits">319.61</Col>
+            <Col id="date1">20010131</Col>
+            <Col id="visits1">1009.3</Col>
+          </Row>
+          <Row>
+            <Col id="category">62</Col>
+            <Col id="date">19950228</Col>
+            <Col id="visits">317.4</Col>
+            <Col id="date1">20010228</Col>
+            <Col id="visits1">3005</Col>
+          </Row>
+          <Row>
+            <Col id="category">63</Col>
+            <Col id="date">19950331</Col>
+            <Col id="visits">315.71</Col>
+            <Col id="date1">20010331</Col>
+            <Col id="visits1">180</Col>
+          </Row>
+          <Row>
+            <Col id="category">64</Col>
+            <Col id="date">19950430</Col>
+            <Col id="visits">290</Col>
+            <Col id="date1">20010430</Col>
+            <Col id="visits1">900</Col>
+          </Row>
+          <Row>
+            <Col id="category">65</Col>
+            <Col id="date">19950531</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">20010531</Col>
+            <Col id="visits1">300.5</Col>
+          </Row>
+          <Row>
+            <Col id="category">66</Col>
+            <Col id="date">19950630</Col>
+            <Col id="visits">220</Col>
+            <Col id="date1">20010630</Col>
+            <Col id="visits1">20</Col>
+          </Row>
+          <Row>
+            <Col id="category">67</Col>
+            <Col id="date">19950731</Col>
+            <Col id="visits">85</Col>
+            <Col id="date1">20010731</Col>
+            <Col id="visits1">50</Col>
+          </Row>
+          <Row>
+            <Col id="category">68</Col>
+            <Col id="date">19950831</Col>
+            <Col id="visits">150</Col>
+            <Col id="date1">20010831</Col>
+            <Col id="visits1">190.44</Col>
+          </Row>
+          <Row>
+            <Col id="date">19950930</Col>
+            <Col id="category">69</Col>
+            <Col id="visits">200</Col>
+            <Col id="date1">20010930</Col>
+            <Col id="visits1">508.44</Col>
+          </Row>
+          <Row>
+            <Col id="date">19951031</Col>
+            <Col id="category">70</Col>
+            <Col id="visits">300</Col>
+            <Col id="date1">20011031</Col>
+            <Col id="visits1">30.5</Col>
+          </Row>
+          <Row>
+            <Col id="date">19951031</Col>
+            <Col id="category">71</Col>
+            <Col id="visits">250</Col>
+            <Col id="date1">20011031</Col>
+            <Col id="visits1">200</Col>
+          </Row>
+          <Row>
+            <Col id="date">19951231</Col>
+            <Col id="category">72</Col>
+            <Col id="visits">280</Col>
+            <Col id="date1">20011231</Col>
+            <Col id="visits1">1006</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

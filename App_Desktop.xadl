@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="2.0">
+  <Application id="App_Desktop" screenid="desktop" onerror="Application_onerror" onload="Application_onload">
+    <Layout>
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="720" titletext="nexacro platform demo" showcascadetitletext="false" layered="true">
+        <VFrameSet id="VFrameSet" separatesize="*,0,0" showtitlebar="false">
+          <Frames>
+            <ChildFrame id="Main" formurl="frame::Main.xfdl" showtitlebar="false" dragmovetype="none"/>
+            <ChildFrame id="Top" showtitlebar="false" showstatusbar="false" dragmovetype="none"/>
+            <HFrameSet id="HFrameSet" separatesize="280,*" showtitlebar="false">
+              <Frames>
+                <ChildFrame id="Left" showtitlebar="false" dragmovetype="none"/>
+                <VFrameSet id="VFrameSet00" showtitlebar="false" separatesize="34,*">
+                  <Frames>
+                    <ChildFrame id="Tab" showtitlebar="false" dragmovetype="none"/>
+                    <FrameSet id="Work" background="url('theme://images/img_WF_workLogo.png') no-repeat center center">
+                      <Frames/>
+                    </FrameSet>
+                  </Frames>
+                </VFrameSet>
+              </Frames>
+            </HFrameSet>
+          </Frames>
+        </VFrameSet>
+      </MainFrame>
+    </Layout>
+    <Style url="xcssrc::NxPivot.xcss"/>
+    <Style url="xcssrc::component.xcss"/>
+    <Style url="xcssrc::grid.xcss"/>
+  </Application>
+  <Script type="xscript5.1"><![CDATA[
+/************************************************************************************************
+ * Application Event 
+ ************************************************************************************************/
+/**
+ * Application onload
+ */
+this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventInfo)
+{
+	// set service URL 
+	var objEnv = nexacro.getEnvironment();
+	var objSvcUrl = objEnv.services["svcurl"];
+	var urlPath;
+	
+	if (system.navigatorname == "nexacro")
+	{
+		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+		{
+			urlPath = "http://localhost/";
+		}
+		else 
+		{
+			urlPath = objSvcUrl;
+		}
+	}
+	else
+	{
+		var sXadl = nexacro.getApplication().xadl;
+		
+		if(sXadl.indexOf("http://127.0.0.1/") > -1)
+		{
+			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+			{
+				urlPath = "http://localhost/";
+			}
+			else 
+			{
+				urlPath = objSvcUrl;
+			}
+		}
+		else
+		{
+			urlPath = window.location.protocol + "//" + window.location.host + "/";
+		}
+	}
+	
+	objEnv.services["svcurl"].set_url(urlPath);
+	objEnv.services["xeni"].set_url(urlPath);
+};
+
+/**
+ * @description prevent communication interruption processing by ESC key
+*/
+this.Application_onerror = function(obj:nexacro.Application,e:nexacro.ErrorEventInfo)
+{
+	// Prevents communication from being interrupted when the user presses the ESC key
+	if (e.errorcode == -2147418039) {
+		return true;
+	}
+};]]></Script>
+</ADL>

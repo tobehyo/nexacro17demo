@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ENV version="2.1">
+  <Environment themeid="theme::demo19" filesecurelevel="all" scrollindicatorsize="5" loadingimage="url('theme://images/waitimage.gif')">
+    <ScreenDefinition>
+      <Screen id="desktop" type="desktop"/>
+      <Screen id="mobile" type="mobile_small" themeid="theme::demo19_mobile" scrollbartype="autoindicator autoindicator"/>
+    </ScreenDefinition>
+    <Variables/>
+    <Cookies/>
+    <httpheader/>
+  </Environment>
+</ENV>

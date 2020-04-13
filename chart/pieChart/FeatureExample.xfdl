@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="SimpleLine" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <Div id="Div00" taborder="1" text="Div00" left="1.95%" top="10" right="1.95%" height="80">
+          <Layouts>
+            <Layout>
+              <Button id="BtnSelType" taborder="2" text="select type" left="0" top="0" width="100" height="30" onclick="Div00_BtnSelType_onclick"/>
+              <Button id="BtnRadius" taborder="0" text="radius" left="BtnSelType:2" top="0" width="100" height="30" onclick="Div00_BtnRadius_onclick"/>
+              <Button id="BtnInnerRadius" taborder="1" text="innerradius" left="BtnRadius:2" top="0" width="100" height="30" onclick="Div00_BtnInnerRadius_onclick"/>
+              <Button id="BtnAngle270" taborder="3" text="angle(0, 270)" left="BtnInnerRadius:2" top="0" width="100" height="30" onclick="Div00_BtnAngle270_onclick"/>
+              <Button id="BtnAngleHalf" taborder="4" text="angle(upper half)" left="BtnAngle270:2" top="0" width="100" height="30" onclick="Div00_BtnAngleHalf_onclick"/>
+              <Button id="BtnAngle90" taborder="5" text="angle(90,270)" left="BtnAngleHalf:2" top="0" width="100" height="30" onclick="Div00_BtnAngle90_onclick"/>
+              <Button id="BtnAngleFull" taborder="6" text="angle full" left="BtnAngle90:2" top="0" width="100" height="30" onclick="Div00_BtnAngleFull_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <PieChart id="PieChart00" taborder="1" left="30" top="91" right="30" bottom="25" binddataset="dsPie" categorycolumn="bind:country" onmouseenter="PieChart00_onmouseenter" onmouseleave="PieChart00_onmouseleave" onmousemove="PieChart00_onmousemove">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "Country Average Litres",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"subtext": "Pie Chart",
+		"subtextalign": "right",
+		"subtextcolor": "lightgray"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c",
+		"itemautofit": "true"
+	},
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": "60",
+			"itemtextvisible": true,
+			"itemtextfont": "bold 10pt \"Arial\",\"맑은 고딕\"",
+			"valuecolumn": "bind:value",
+			"fillstyle": "#1abd9c,#1a85be,#1a67bf,#1a4cbf,#641ac0,#9a1ac0,#c2251b,#c2541b,#c2911d,#21c34d",
+			"itemtexttype": "text",
+			"selecttype": "bind",
+			"selectindent": "20",
+			"selectcolumn": "bind:select",
+			"selectopacity": "1.0",
+			"itemtextguidelinestyle": "1px solid darkgray",
+			"itemtextguideopacity": "1",
+			"itemtextguidesize": "20",
+			"itemtext": "expr:country +  \": \" + (value/dataset.getSum(\"value\")*100).toFixed(2) + \"%\"",
+			"opacity": "0.8",
+			"linestyle": "1px solid white",
+			"selectlinestyle": "1px solid white",
+			"highlightfillstyle": "yellow",
+			"highlightopacity": "0.5",
+			"highlightvisible": "true"
+		}
+	]
+}]]></Contents>
+        </PieChart>
+        <Static id="StaDesc" taborder="2" left="480" top="430" width="370" height="40" visible="false" text="description" background="lightyellow" font="normal 700 14pt/normal &quot;Arial&quot;" fittocontents="width"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsPie">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="value" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+          <Column id="valuedata" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">Czech Republic</Col>
+            <Col id="value">356.9</Col>
+            <Col id="select"/>
+            <Col id="data">test1</Col>
+            <Col id="valuedata">100</Col>
+          </Row>
+          <Row>
+            <Col id="country">Ireland</Col>
+            <Col id="value">54</Col>
+            <Col id="select"/>
+            <Col id="data">tes2</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Germany</Col>
+            <Col id="value">115.8</Col>
+            <Col id="select">1</Col>
+            <Col id="data">test3</Col>
+            <Col id="valuedata">200.11</Col>
+          </Row>
+          <Row>
+            <Col id="country">Australia</Col>
+            <Col id="value">109.9</Col>
+            <Col id="select"/>
+            <Col id="data">test4</Col>
+            <Col id="valuedata">19.1</Col>
+          </Row>
+          <Row>
+            <Col id="country">Austria</Col>
+            <Col id="value">108.3</Col>
+            <Col id="select"/>
+            <Col id="data">test5</Col>
+            <Col id="valuedata">30.12</Col>
+          </Row>
+          <Row>
+            <Col id="country">UK</Col>
+            <Col id="value">65</Col>
+            <Col id="select"/>
+            <Col id="data">test6</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Belgium</Col>
+            <Col id="value">110</Col>
+            <Col id="select"/>
+            <Col id="data">test7</Col>
+            <Col id="valuedata">19.100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Div00_BtnSelType_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var type = this.PieChart00.seriesset[0].selecttype;
+	switch (type)
+	{
+	case "unselect":
+		this.PieChart00.seriesset[0].set_selecttype("select");
+		break;
+		
+	case "select":
+		this.PieChart00.seriesset[0].set_selecttype("bind");
+		break;
+		
+	case "bind":
+		this.PieChart00.seriesset[0].set_selecttype("unselect");
+		break;
+	}
+};
+
+this.Div00_BtnRadius_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var radius = this.PieChart00.seriesset[0].radius;
+	if (radius == 60) this.PieChart00.seriesset[0].set_radius(70);
+	else this.PieChart00.seriesset[0].set_radius(60);
+};
+
+this.Div00_BtnInnerRadius_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var radius = this.PieChart00.seriesset[0].innerradius | 0;
+	if (radius == 0) 
+	{
+		this.PieChart00.seriesset[0].set_innerradius(35);
+		this.PieChart00.board.set_text("Average");
+	}
+	else 
+	{
+		this.PieChart00.seriesset[0].set_innerradius();
+		this.PieChart00.board.set_text("");
+	}
+};
+
+this.Div00_BtnAngle270_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PieChart00.seriesset[0].set_startangle(0);
+	this.PieChart00.seriesset[0].set_endangle(270);
+};
+
+this.Div00_BtnAngleHalf_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PieChart00.seriesset[0].set_startangle(270);
+	this.PieChart00.seriesset[0].set_endangle(180);
+};
+
+this.Div00_BtnAngle90_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PieChart00.seriesset[0].set_startangle(90);
+	this.PieChart00.seriesset[0].set_endangle(270);
+};
+
+this.Div00_BtnAngleFull_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.PieChart00.seriesset[0].set_startangle();
+	this.PieChart00.seriesset[0].set_endangle();
+};
+
+this.PieChart00_onmouseenter = function(obj:nexacro.PieChart,e:nexacro.ChartMouseEventInfo)
+{
+	if (e.fromreferenceobject == obj)
+		this.StaDesc.set_visible(true);
+};
+
+this.PieChart00_onmouseleave = function(obj:nexacro.PieChart,e:nexacro.ChartMouseEventInfo)
+{
+	if (e.fromreferenceobject == obj)
+		this.StaDesc.set_visible(false);
+};
+
+this.PieChart00_onmousemove = function(obj:nexacro.PieChart,e:nexacro.ChartMouseEventInfo)
+{
+	var refobj = e.fromreferenceobject || obj;
+	
+	this.StaDesc.set_text(refobj._type_name);
+	
+	if (!this.StaDesc.visible)
+	{
+		this.StaDesc.set_visible(true);
+	}
+	this.StaDesc.move(obj.getOffsetLeft() + e.canvasx + 10, obj.getOffsetTop() + e.canvasy + 10);
+};
+]]></Script>
+  </Form>
+</FDL>

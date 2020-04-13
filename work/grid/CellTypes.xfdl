@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="CellTypes" width="980" height="1190" titletext="다양한그리드표현">
+    <Layouts>
+      <Layout screenid="desktop">
+        <Static id="staTitle01" taborder="6" text="Various cell expression" cssclass="sta_WF_title02" left="0" top="99" width="421" height="30"/>
+        <Grid id="grdList02" taborder="0" left="0" top="staTitle01:8" binddataset="dsList2" right="20" autofittype="col" cssclass="grd_black" autoenter="select" oncellclick="grdList02_oncellclick" height="355" formatid="default" autoupdatetype="itemselect">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="75"/>
+                <Column size="125"/>
+                <Column size="95"/>
+                <Column size="105"/>
+                <Column size="85"/>
+                <Column size="85"/>
+                <Column size="105"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="32"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="checkbox"/>
+                <Cell col="1" text="text"/>
+                <Cell col="2" text="mask"/>
+                <Cell col="3" text="date"/>
+                <Cell col="4" text="combo"/>
+                <Cell col="5" text="button"/>
+                <Cell col="6" text="masknumber"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column0" textAlign="center" verticalAlign="middle" controlautosizingtype="none"/>
+                <Cell col="1" displaytype="editcontrol" edittype="normal" text="bind:Column1" editdisplay="display" textAlign="left"/>
+                <Cell col="2" displaytype="mask" edittype="mask" text="bind:Column2" mask="###{####}" editautoselect="true" verticalAlign="middle" maskeditformat="###{####}" maskeditlimitbymask="decimal" maskedittype="string"/>
+                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="4" displaytype="combocontrol" edittype="combo" text="bind:Column4" editautoselect="true" combodataset="dsCombo" combocodecol="Column1" combodatacol="Column1" combodisplayrowcount="-1" combodisplay="display" textAlign="center" verticalAlign="middle"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="버튼" editautoselect="true" textAlign="center" verticalAlign="middle"/>
+                <Cell col="6" displaytype="number" edittype="textarea" text="bind:Column6" mask="9,999.99" editautoselect="true" editdisplay="display" editlimitbymask="both" textAlign="right" verticalAlign="middle"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="88"/>
+                <Column size="160"/>
+                <Column size="95"/>
+                <Column size="165"/>
+                <Column size="145"/>
+                <Column size="85"/>
+                <Column size="105"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="checkbox"/>
+                <Cell col="1" text="text"/>
+                <Cell col="2" text="mask"/>
+                <Cell col="3" text="date"/>
+                <Cell col="4" text="combo"/>
+                <Cell col="5" text="button"/>
+                <Cell col="6" text="masknumber"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column0" textAlign="center" verticalAlign="middle" controlautosizingtype="none"/>
+                <Cell col="1" displaytype="editcontrol" edittype="normal" text="bind:Column1" editautoselect="true" editdisplay="display" textAlign="left"/>
+                <Cell col="2" displaytype="mask" edittype="mask" text="bind:Column2" mask="###{####}" editautoselect="true" verticalAlign="middle" maskeditformat="###{####}" maskeditlimitbymask="decimal" maskedittype="string"/>
+                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="yyyy-MM-dd" calendarpopuptype="system" calendarautoselect="true"/>
+                <Cell col="4" displaytype="combocontrol" edittype="combo" text="bind:Column4" editautoselect="true" combodataset="dsCombo" combocodecol="Column1" combodatacol="Column1" combodisplayrowcount="-1" combodisplay="display" textAlign="center" verticalAlign="middle" combopopuptype="center" combopopupsize="350" comboitemheight="100" comboautoselect="true"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="버튼" editautoselect="true" textAlign="center" verticalAlign="middle"/>
+                <Cell col="6" displaytype="number" edittype="textarea" text="bind:Column6" mask="9,999.99" editautoselect="true" editdisplay="display" editlimitbymask="both" textAlign="right" verticalAlign="middle"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staTitle02" taborder="4" text="MutiLine" cssclass="sta_WF_title02" left="0" top="grdList02:18" width="421" height="30"/>
+        <Grid id="grdList01" taborder="2" binddataset="dsList" autoenter="select" autoupdatetype="comboselect" autofittype="col" left="0" top="548" right="20" height="387" onheadclick="grdList01_onheadclick" formatid="default">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="48"/>
+                <Column size="54"/>
+                <Column size="116"/>
+                <Column size="99"/>
+                <Column size="109"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="32" band="head"/>
+                <Row size="32"/>
+                <Row size="32"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="1"/>
+                <Cell col="2" text="Group"/>
+                <Cell col="3" text="Name"/>
+                <Cell col="4" displaytype="normal" text="Pricing"/>
+                <Cell col="5" text="Created Date"/>
+                <Cell row="1" colspan="6" text="Address"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Chk"/>
+                <Cell col="1" text="bind:Column7"/>
+                <Cell col="2" edittype="normal" editfilter="upper" text="bind:Column8" editlimit="1"/>
+                <Cell col="3" edittype="normal" text="bind:Column0"/>
+                <Cell col="4" displaytype="number" edittype="masknumber" text="bind:Column3" mask="#,###" textAlign="right"/>
+                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell row="1" colspan="6" text="bind:Column2"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="40"/>
+                <Column size="33"/>
+                <Column size="93"/>
+                <Column size="120"/>
+                <Column size="99"/>
+                <Column size="109"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="1"/>
+                <Cell col="2" text="GROUP"/>
+                <Cell col="3" text="NAME"/>
+                <Cell col="4" displaytype="normal" text="Pricing"/>
+                <Cell col="5" text="Created Date"/>
+                <Cell row="1" colspan="6" text="ADDRESS"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Chk"/>
+                <Cell col="1" text="bind:Column7"/>
+                <Cell col="2" edittype="normal" editfilter="upper" text="bind:Column8" editlimit="1"/>
+                <Cell col="3" edittype="normal" text="bind:Column0"/>
+                <Cell col="4" displaytype="number" edittype="masknumber" text="bind:Column3" mask="#,###" textAlign="right"/>
+                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell row="1" colspan="6" text="bind:Column2"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staTitle03" taborder="5" text="Expression" cssclass="sta_WF_title02" left="0" top="grdList01:13" width="421" height="30"/>
+        <Grid id="grdList00" taborder="1" binddataset="dsList" autoenter="select" autoupdatetype="comboselect" autofittype="col" left="0" top="staTitle03:8" right="20" visible="true" cssclass="grd_black" height="195" formatid="default">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="108"/>
+                <Column size="53"/>
+                <Column size="58"/>
+                <Column size="99"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="32"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Amount"/>
+                <Cell col="1" text="Operator"/>
+                <Cell col="2" text="Rate"/>
+                <Cell col="3" text="Result"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="number" edittype="normal" text="bind:Column3" mask="#,###" editautoselect="true" textAlign="right"/>
+                <Cell col="1" text="bind:Column6"/>
+                <Cell col="2" text="bind:Column5"/>
+                <Cell col="3" displaytype="number" mask="#,###" textAlign="right" background="rgba(243,255,202,1)" expr="eval(Column3 + Column6 +Column5)"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="108"/>
+                <Column size="95"/>
+                <Column size="58"/>
+                <Column size="99"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Amount"/>
+                <Cell col="1" text="Operator"/>
+                <Cell col="2" text="Rate"/>
+                <Cell col="3" text="Result"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="number" edittype="normal" text="bind:Column3" mask="#,###" editautoselect="true" textAlign="right"/>
+                <Cell col="1" text="bind:Column6"/>
+                <Cell col="2" text="bind:Column5"/>
+                <Cell col="3" displaytype="number" mask="#,###" textAlign="right" background="rgba(243,255,202,1)" expr="eval(Column3 + Column6 +Column5)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staInfo" taborder="3" text="Grid cells can express data in various types such as calendars, combos, and masks." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+      </Layout>
+      <Layout name="Layout1" width="480" height="1530" mobileorientation="landscape" screenid="mobile">
+        <Grid id="grdList02" left="20" top="237" height="443" right="20" formatid="mobile" autofittype="none"/>
+        <Grid id="grdList00" left="20" top="staTitle03:8" height="243" right="20" formatid="mobile"/>
+        <Grid id="grdList01" left="20" top="staTitle02:8" height="483" right="20" formatid="mobile" autofittype="none"/>
+        <Static id="staTitle02" left="20" top="grdList02:19" width="421" height="30"/>
+        <Static id="staTitle03" left="20" top="grdList01:16" width="421" height="30"/>
+        <Static id="staTitle01" left="20" top="199" width="421" height="30"/>
+        <Static id="staInfo" left="20" top="20" height="150" right="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCombo" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">A1</Col>
+            <Col id="Column1">A1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B2</Col>
+            <Col id="Column1">B2</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">C3</Col>
+            <Col id="Column0">C3</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">D4</Col>
+            <Col id="Column0">D4</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">E5</Col>
+            <Col id="Column0">E5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsList2" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+          <Column id="Column10" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column2">8508301</Col>
+            <Col id="Column1">This is Son Ho-young from God.</Col>
+            <Col id="Column3">20170101</Col>
+            <Col id="Column4">E5</Col>
+            <Col id="Column6">8508300</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">8303301</Col>
+            <Col id="Column1">This is Yoon Gye-sang from God.</Col>
+            <Col id="Column3">20170202</Col>
+            <Col id="Column4">D4</Col>
+            <Col id="Column6">8303300</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">8902022</Col>
+            <Col id="Column1">I am a movie star, Kim Sarang.</Col>
+            <Col id="Column3">20170303</Col>
+            <Col id="Column4">C3</Col>
+            <Col id="Column6">8902020</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">9201012</Col>
+            <Col id="Column1">I am Son Ye-jin, a movie star.</Col>
+            <Col id="Column3">20170404</Col>
+            <Col id="Column4">A1</Col>
+            <Col id="Column6">9201010</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">8702022</Col>
+            <Col id="Column1">I'm Song Ji-hyo, a movie star.</Col>
+            <Col id="Column3">20170505</Col>
+            <Col id="Column4">C3</Col>
+            <Col id="Column6">8702020</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">8801012</Col>
+            <Col id="Column1">This is Jeong Eun-ji from Apink.</Col>
+            <Col id="Column3">20170606</Col>
+            <Col id="Column4">C3</Col>
+            <Col id="Column6">8801010</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">9008301</Col>
+            <Col id="Column1">My name is Doojun Yoon.</Col>
+            <Col id="Column3">20170707</Col>
+            <Col id="Column4">D4</Col>
+            <Col id="Column6">9008300</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">9103301</Col>
+            <Col id="Column1">I'm Park Kyung from Block B.</Col>
+            <Col id="Column3">20170808</Col>
+            <Col id="Column4">D4</Col>
+            <Col id="Column6">9103300</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">9205052</Col>
+            <Col id="Column1">I am Seolhyun from AOA.</Col>
+            <Col id="Column3">20170909</Col>
+            <Col id="Column4">A1</Col>
+            <Col id="Column6">9205050</Col>
+            <Col id="Column0">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column2">9208302</Col>
+            <Col id="Column1">This is Son Na-eun from Apink.</Col>
+            <Col id="Column3">20171010</Col>
+            <Col id="Column4">B2</Col>
+            <Col id="Column6">9208300</Col>
+            <Col id="Column0">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsList" firefirstcount="0" useclientlayout="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" keystring="S:Column8">
+        <ColumnInfo>
+          <Column id="Chk" type="STRING" size="256"/>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column3">3000</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column8">A</Col>
+            <Col id="Column0">Lee Seung-hwan</Col>
+            <Col id="Column2">118 Gajwa-dong, Seo-gu, Incheon</Col>
+            <Col id="Column6">/</Col>
+            <Col id="Column7"/>
+            <Col id="Chk">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">4000</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column8">A</Col>
+            <Col id="Column0">Lee Seung-han</Col>
+            <Col id="Column2">2nd Street, 104, Jeongwang-dong, Siheung-si, Gyeonggi-do</Col>
+            <Col id="Column6">*</Col>
+            <Col id="Column7"/>
+            <Col id="Chk">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">50000</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column8">B</Col>
+            <Col id="Column0">Lee Cheol-woo</Col>
+            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
+            <Col id="Column6">+</Col>
+            <Col id="Column7"/>
+            <Col id="Chk">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">51651</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column8">B</Col>
+            <Col id="Column0">Kang Soon-hee</Col>
+            <Col id="Column2">Yeouido-dong, Yeongdeungpo-gu, Seoul 1</Col>
+            <Col id="Column6">-</Col>
+            <Col id="Column7"/>
+            <Col id="Chk">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">216548</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">10</Col>
+            <Col id="Column8">C</Col>
+            <Col id="Column0">Bae Jae-hyun</Col>
+            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column6">%</Col>
+            <Col id="Column7"/>
+            <Col id="Chk">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * FORM variable
+ ************************************************************************************************/
+this.chkFlag = "0";
+
+/************************************************************************************************
+ * FORM EVENT (onload)
+ ************************************************************************************************/
+ 
+ /************************************************************************************************
+ * CALLBACK (Transaction, Popup)
+ ************************************************************************************************/
+
+ /************************************************************************************************
+ * TRANSACTION 
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * User FUNCTION
+ ************************************************************************************************/
+
+/**
+ * Grid check all
+ * @param {Grid} Grid object
+ */
+this.fnBlockChk = function (objGrid)
+{
+	var i;
+	//var objDs = eval("this." + objGrid.binddataset);
+	var objDs = this[objGrid.binddataset];
+
+	for (i = 0; i <= objDs.rowcount; i++) 
+	{
+		objDs.setColumn(i, "Chk", "1");
+	}
+
+	objGrid.setCellProperty("Head", 0, "text", "1");
+};
+
+/**
+ * Grid uncheck all
+ * @param {Grid object} objGrid
+ */
+this.fn_BlockUnChk = function (objGrid)
+{
+	var i;
+	var objDs = this[objGrid.binddataset];
+
+	for (var i = 0; i <= objDs.rowcount; i++) 
+	{
+		objDs.setColumn(i, "Chk", 0);
+	}
+
+	objGrid.setCellProperty("Head", 0, "text", "0");
+};
+
+//Radio button
+this.fnRadioListClick = function(grid, ds, col, row)
+{
+	//get Dataset Column ID
+	var strColId = ds.getColID(grid.getBindCellIndex("body", grid.getCellProperty("body", col, "text").split(":")[1]));
+	
+	// Dataset Event OFF then ON before Loop statement for performance
+	ds.set_enableevent(false);
+	for(var i=0; i<ds.rowcount; i++)
+	{
+		if (row == i)
+			ds.setColumn(row, strColId, "1");
+		else
+			ds.setColumn(i, strColId, "0");
+	}
+	ds.set_enableevent(true);
+};
+/************************************************************************************************
+ * Each COMPONENT EVENT
+ ************************************************************************************************/
+/**
+ * @description oncellclick 
+*/
+this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	
+	if(e.col == 0)
+	{
+		//this.fnRadioListClick(obj, this.ds_list, e.col, e.row);
+	}
+	else if(e.col == 5) 
+	{
+		alert("Call button click event!");
+	}
+	else if(e.col ==3) //calender
+	{
+		obj.dropdownCalendar();
+	}
+	else if(e.col ==4) //combo
+	{
+		obj.dropdownCombo();
+	}
+};
+
+/**
+ * @description onheadclick 
+*/
+this.grdList01_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	if (e.col == 0) 
+	{
+		if (this.chkFlag == "1") 
+		{
+			this.fn_BlockUnChk(obj);
+			this.chkFlag = "0";
+		}
+		else 
+		{
+			this.fnBlockChk(obj);
+			this.chkFlag = "1";
+		}
+	}
+};]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GridSortPop" width="250" height="310" titletext="New Form" background="#ffffff">
+    <Layouts>
+      <Layout>
+        <Grid id="grd_item" taborder="0" binddataset="ds_item" selecttype="cell" autofittype="col" left="10" top="41" height="230" autoenter="select" right="10">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="130"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="31" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="항목"/>
+                <Cell col="1" text="정렬"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="combo" edittype="combo" text="bind:column" combodataset="ds_column" combocodecol="cd" combodatacol="nm"/>
+                <Cell col="1" displaytype="combocontrol" edittype="combo" text="bind:status" combodataset="ds_status" combocodecol="cd" combodatacol="nm"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_add" taborder="1" text="추가" onclick="btn_add_onclick" left="43" top="13" width="40" height="23" cssclass="btn_WF_basic03"/>
+        <Button id="btn_delete" taborder="2" text="삭제" onclick="btn_delete_onclick" left="86" top="13" width="40" height="23" cssclass="btn_WF_basic03"/>
+        <Button id="btn_up" taborder="3" text="위로" onclick="btn_up_onclick" left="129" top="13" width="50" height="23" cssclass="btn_WF_up"/>
+        <Button id="btn_down" taborder="4" text="아래로" onclick="btn_down_onclick" left="182" top="13" width="58" height="23" cssclass="btn_WF_down"/>
+        <Button id="btn_apply" taborder="5" text="적용" onclick="btn_apply_onclick" left="195" top="276" width="45" height="23" cssclass="btn_WF_basic01"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_columnNotSelect" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cd" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="index" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_item" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_item_oncolumnchanged" onrowposchanged="ds_item_onrowposchanged">
+        <ColumnInfo>
+          <Column id="column" type="STRING" size="256"/>
+          <Column id="status" type="STRING" size="256"/>
+          <Column id="index" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_status" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="cd" type="INT" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="cd">1</Col>
+            <Col id="nm">오름차순</Col>
+          </Row>
+          <Row>
+            <Col id="cd">2</Col>
+            <Col id="nm">내림차순</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_column" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_column_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="cd" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="index" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+ * Grid Sort Sample at XPLATFORM
+ *
+ * Copyright (c) 2014 EcoSystem of TOBESOFT
+ * Licensed Free under XPLATFORM.
+ */
+
+/**
+ * oncolumnchanged event handler
+ * @param {Dataset} obj 이벤트가 발생한 Dataset
+ * @param {DSColChangeEventInfo} e DSColChangeEventInfo
+ */
+this.ds_item_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChangeEventInfo)
+{
+	if (e.columnid == "column") 
+	{
+		this.ds_item.setColumn(e.row, "index", this.ds_column.lookup("cd", e.newvalue, "index"));
+		this.ds_item.setColumn(e.row, "column", this.ds_column.lookup("cd", e.newvalue, "nm"));
+	}
+};
+
+/**
+ * 소팅 정보를 화면에 표시
+ * @param {Grid} grid 소트 대상 Grid
+ * @param {array} cells Cell 별 소트 정보
+ */
+this.setSortInfo = function (grid, cells)
+{
+	var cellInfos = grid.cellInfos;
+	var sortItems = grid.sortItems;
+	var columnName,cellInfo,index,status,text,row,cell;
+
+	// 컬럼 정보 구성
+	this.ds_column.deleteAll();
+	for (var i = 0; i < cells.length; i++) 
+	{
+		cell = cells[i];
+		row = this.ds_column.addRow();
+		this.ds_column.setColumn(row, "cd", cell.column);
+		this.ds_column.setColumn(row, "nm", cell.text);
+		this.ds_column.setColumn(row, "index", cell.index);
+		this.ds_column.saveXML();
+	}
+
+	// 현재 소팅 정보 표시
+	this.ds_item.deleteAll();
+	if (!this.gfnIsNull(sortItems)) 
+	{
+		for (var i = 0,len = sortItems.length; i < len; i++) 
+		{
+			columnName = sortItems[i];
+			cellInfo = cellInfos[columnName];
+			index = cellInfo.index;
+			status = cellInfo.status;
+			alert(cellInfo.status);
+			text = cellInfo.text;
+
+			if (status > 0) 
+			{
+				row = this.ds_item.addRow();
+				this.ds_item.setColumn(row, "column", columnName);
+				this.ds_item.setColumn(row, "status", status);
+				this.ds_item.setColumn(row, "index", index);
+			}
+		}
+	}
+};
+
+/**
+ * onclick Event Handler - 항목 추가
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_add_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.ds_item.addRow();
+};
+
+/**
+ * onclick Event Handler - 항목 삭제
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_delete_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.ds_item.deleteRow(this.ds_item.rowposition);
+};
+
+/**
+ * onclick Event Handler - 항목 위로 이동
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_up_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var rowposition = this.ds_item.rowposition;
+	if (rowposition > 0) 
+	{
+		this.ds_item.exchangeRow(rowposition, rowposition - 1);
+	}
+};
+
+/**
+ * onclick Event Handler - 항목 아래로 이동
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_down_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var rowposition = this.ds_item.rowposition;
+	if (rowposition < this.ds_item.rowcount - 1) 
+	{
+		this.ds_item.exchangeRow(rowposition, rowposition + 1);
+	}
+};
+
+/**
+ * onclick Event Handler - 소트 적용
+ * @param {Button} obj Event가 발생한 Button Component
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_apply_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var items = [],index,status;
+	for (var i = 0,len = this.ds_item.rowcount; i < len; i++) 
+	{
+		index = this.ds_item.getColumn(i, "index");
+		status = this.ds_item.getColumn(i, "status");
+
+		if (this.gfnIsNull(index) || this.gfnIsNull(status)) 
+		{
+			continue;
+		}
+
+		items.push({
+			index : index,
+			status : parseInt(status)
+		});
+	}
+	//trace(this.ds_item.saveXML());
+	this.parent.closePopup(items);
+};
+
+
+/**
+ * value의 Date 여부 반환.
+ * @param {date} value 확인할 value.
+ * @return {boolean} Date 여부.
+ * @example
+ * var a = new Date();
+ * trace(Base.isDate(a));	// output : true
+ *
+ * var a = "20130501";
+ * trace(Base.isDate(a));	// output : false
+ * @memberOf Base
+ */
+this.gfn_IsDate = function (value)
+{
+	// 아래내용을 9.2 Rumtiem 지원안함.
+	// 그리고 성능이슈가 발생할 수 있음(느림).
+	// 그런데 많은 곳에서 사용하고 있음.
+	// return toString.call(value) === '[object Date]';
+	// return Object.prototype.toString.call(value) === '[object Date]';
+	// typeof보다는 느리지만 아래처럼 사용하는것과는 대동소이?
+
+	if (typeof value == 'object' && value instanceof Date) 
+	{
+		return true;
+	}
+
+	return false;
+};
+
+/**
+ * value의 Array 여부 반환.
+ * @param {*} value 확인할 value.
+ * @return {boolean} Array 여부.
+ * @example
+ * var a = new Array();
+ * trace(this.gfn_IsArray(a));	// output : true
+ *
+ * var a = [1,2,3];
+ * trace(this.gfn_IsArray(a));	// output : true
+ * @memberOf Base
+ */
+this.gfn_IsArray = function (value)
+{
+	// TODO
+	/*
+	 V13에서는 아래처럼하자(또는 HTML5)
+	 return Object.prototype.toString.call( value ) === '[object Array]';
+	 */
+
+	if (value === null || value === undefined) 
+	{
+		return false;
+	}
+
+	// constructor 에 접근시 XP Comp 는 에러발생
+	if (this.gfnIsNexaComponent(value)) 
+	{
+		return false;
+	}
+
+	return typeof value == "object" && 
+		'constructor' in value && 
+		value.constructor === Array;
+};
+
+/**
+ * value의 Object 여부 반환.
+ * @param {*} value 확인할 value.
+ * @return {boolean} Object 여부.
+ * @example
+ * var o = new Object();
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = {};
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = [1,2,3];
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Button();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Rect();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * @memberOf Base
+ */
+this.gfn_IsObject = function (value)
+{
+	if (value === null || value === undefined) 
+	{
+		return false;
+	}
+
+	// constructor 에 접근시 XP Comp 는 에러발생
+	if (this.gfnIsNexaComponent(value)) 
+	{
+		return false;
+	}
+
+	// 신규추가 2013.11.27 pbh. 데이터셋과 같은 xp object 거르기.
+	if (!this.gfnIsNull(value._type)) 
+	{
+		if (value._type.substr(0, 4) == "TOBE") 
+		{
+			return false;
+		}
+	}
+
+	return typeof value == "object" && 
+		'constructor' in value && 
+		value.constructor === Object;
+};
+
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Left" width="280" height="720" titletext="New Form" onload="Left_onload" ontimer="Left_ontimer">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="280">
+        <Button id="btnMenu" taborder="0" left="0" top="0" width="140" height="40" cssclass="btn_LF_SelectMenu_S" tabstop="false" onclick="Button_onclick" text="MENU"/>
+        <Button id="btnFavorite" taborder="1" top="0" width="140" height="40" tabstop="false" onclick="Button_onclick" right="0" cssclass="btn_LF_BookMark_D" text=""/>
+        <Div id="divLeft" taborder="2" top="40" right="0" bottom="0" formscrollbartype="autoindicator autoindicator" formscrolltype="both" maxheight="" left="0" cssclass="div_LF_menuBg">
+          <Layouts>
+            <Layout>
+              <Button id="btnAllOpen" taborder="0" text="모두열기" left="0" top="13" height="24" onclick="divLeft_btnAllOpen_onclick" cssclass="btn_LF_menuOpen" enable="true" right="0"/>
+              <Button id="Button00" taborder="1" text="Grid Component" left="0" top="75" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
+              <Button id="Button00_00" taborder="2" text="다양한 그리드 기능" left="0" top="125" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_00_00" taborder="3" text="다양한 그리드 기능" left="0" top="171" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_01" taborder="4" text="Component" left="0" top="217" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divFavorite" taborder="3" left="330" top="40" right="-330" bottom="0" formscrollbartype="none none" formscrolltype="none" maxheight="" visible="false" text="" cssclass="div_LF_menuBg">
+          <Layouts>
+            <Layout>
+              <Grid id="grdFavorite" taborder="0" left="0" top="12" right="0" bottom="210" cssclass="grd_LF_TreeGrd" autofittype="col" scrollbartype="default default" binddataset="gdsFavorite" oncellclick="grdMenuOnclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="268"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="36"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="grdRecent" taborder="1" left="0" right="0" cssclass="grd_LF_TreeGrd" autofittype="col" height="161" scrollbartype="none none" scrolltype="none" autosizingtype="none" selectscrollmode="select" tabstop="false" bottom="0" binddataset="gdsRecent" oncellclick="grdMenuOnclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="270"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="38"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NM"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="sta_titleUp" taborder="2" text="최근 접속한 메뉴" left="15" width="134" height="17" cssclass="sta_LF_MenuTitle" fittocontents="width" bottom="174"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnAllClose" taborder="4" text="모두닫기" left="692" top="53" width="128" height="24" onclick="divLeft_btnAllClose_onclick" cssclass="btn_LF_menuClose" visible="false"/>
+        <Button id="btnMenu00" taborder="5" left="330" top="0" width="140" height="40" cssclass="btn_LF_SelectMenu_D" tabstop="false" onclick="Button_onclick" text="MENU" visible="false"/>
+        <Button id="btnFavorite00" taborder="6" top="0" width="140" height="40" tabstop="false" onclick="Button_onclick" right="-330" cssclass="btn_LF_BookMark_S" text="" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Left
+*  @FileName  Left.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.09.23
+*  @Desction    Define script standards and annotation standards
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.09.23      presales                   First created  
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM variable
+ ************************************************************************************************/
+this.fv_timerMax = 50;
+
+this.fvTopDivHeight = 50; // const value
+this.fvButtonHeight = 46; // const value
+/************************************************************************************************
+ * FORM EVENT (onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description Move favorite div and dynamically create accordion menu
+*/
+this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.divFavorite.set_left(0);
+	this.divFavorite.set_right(0);
+	
+	var objApp = nexacro.getApplication();
+	var objMenuDs 	= objApp.gdsMenu;
+	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	this.dsMenu.copyData(objMenuDs, true);
+	objMenuDs.filter("");
+	
+	this.fnDrawAccordionMenu();
+};
+
+/**
+ * @description apply menu animation
+*/
+this.Left_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	var sTimerId = String(e.timerid).substr(0,4);
+	var sMenuId = String(e.timerid).substr(4,4);
+	var objDiv = this.divLeft.form.components["div" + sMenuId];
+	
+	if(sTimerId==1111) // close
+	{
+		var objTile;
+		var nValue = this.fnMoveAnimation(objDiv.curtime, 0, objDiv.pageHeight, this.fv_timerMax);
+		var nTop;
+		var nHeight;
+	
+		// height
+		objDiv.curtime = nexacro.toNumber(objDiv.curtime) + 1;
+		nHeight = this.fvTopDivHeight + objDiv.pageHeight - nValue;
+		
+		objDiv.setOffsetHeight(nHeight);
+		nTop = objDiv.getOffsetTop() + objDiv.getOffsetHeight();
+		
+		objDiv._bOpened = false;
+		
+		// top position
+		var nextObjDiv = this.divLeft.form.components[objDiv.nextDivId];
+		while(nextObjDiv)
+		{
+			nextObjDiv.setOffsetTop(nTop);
+			nTop =  nextObjDiv.getOffsetTop() + nextObjDiv.getOffsetHeight();
+			nextObjDiv = this.divLeft.form.components[nextObjDiv.nextDivId];
+		}
+		
+		if(objDiv.curtime==this.fv_timerMax)
+		{	
+			objDiv.curtime = 0;
+			this.divLeft.form.resetScroll();
+			this.killTimer(e.timerid);
+		}
+	}
+	else if(sTimerId==2222) // open
+	{
+		var nValue = this.fnMoveAnimation(objDiv.curtime, 0, objDiv.pageHeight, this.fv_timerMax);
+		var nTop;
+		var nHeight;
+		
+		objDiv.curtime = nexacro.toNumber(objDiv.curtime) + 1;
+		
+		// height
+		nHeight =  this.fvTopDivHeight + nValue;
+		objDiv.setOffsetHeight(nHeight);
+		nTop = objDiv.getOffsetTop() + objDiv.getOffsetHeight();
+		
+		objDiv._bOpened = true;
+		
+		// top position
+		var nextObjDiv = this.divLeft.form.components[objDiv.nextDivId];
+		while(nextObjDiv)
+		{
+			nextObjDiv.setOffsetTop(nTop);
+			nTop =  nextObjDiv.getOffsetTop() + nextObjDiv.getOffsetHeight();
+			nextObjDiv = this.divLeft.form.components[nextObjDiv.nextDivId];
+		}
+		
+		if(objDiv.curtime==this.fv_timerMax)
+		{
+			objDiv.curtime = 0;
+			this.divLeft.form.resetScroll();
+			
+			//this.divLeft.form.vscrollbar.set_pos(this.divLeft.form.vscrollbar.max);
+			this.killTimer(e.timerid);	
+		}
+	}
+};
+
+/************************************************************************************************
+ * FUNCTION
+ ************************************************************************************************/
+/**
+* fnDrawAccordionMenu : create accordion using dsMenu dataset 
+* @param {String}  menuId	- Menu ID
+* @param {String}  menuNm	- Menu Name
+* @return : N/A
+* @example :  
+*/
+this.fnDrawAccordionMenu = function()
+{
+	var objDs = this.dsMenu;
+	var cnt = this.dsMenu.rowcount;
+	var menuId;
+	var preDivId;
+	
+	var objMenuDiv;
+	var objMenuButton;
+	var objAni;
+	
+	var sDivId;
+	var sBtnId;
+	var sAniId;
+	
+	var nDivTop = 0;
+	var nButtonTop = 0;
+	
+	for(var i = 0 ; i < cnt ; i++)
+	{
+		menuId =  objDs.getColumn(i, "MENU_ID");
+		//Root Menu
+		if(objDs.getColumn(i, "MENU_LVL") == '0')
+		{
+			/***********************************************
+			*** if level is 0 create div and grouping
+			************************************************/
+			sDivId = "div" + menuId;
+			objMenuDiv = new Div();
+			//create div
+			//objMenuDiv.init(sDivId, 0, preDivId+":0", null, this.fvTopDivHeight, 0);
+			objMenuDiv.init(sDivId, 0, nDivTop, null, this.fvTopDivHeight, 0);
+			objMenuDiv.set_formscrolltype("none");
+			objMenuDiv.set_formscrollbartype("none");
+			// value for animation - curtime, startValue, pageHeight
+			objMenuDiv.curtime = 0;
+			objMenuDiv.startValue = 0;
+			objMenuDiv.pageHeight = this.fvTopDivHeight;
+			
+			this.divLeft.addChild(sDivId, objMenuDiv);
+			objMenuDiv.show();
+			
+			if(preDivId)
+			{
+				objMenuDiv.preDivId = preDivId;
+				this.divLeft.form.components[preDivId].nextDivId = sDivId;
+			}
+			
+			/***********************************************
+			*** create top menu button
+			************************************************/
+			sBtnId = "btn" + menuId;
+			
+			objMenuButton = new Button;
+			objMenuButton.init(sBtnId, 0, 0, null, this.fvTopDivHeight, 0);
+			objMenuButton.set_text(objDs.getColumn(i, "MENU_NM"));
+			objMenuButton.set_cssclass("btn_LF_menuD1");
+			
+			objMenuDiv.addChild(sBtnId, objMenuButton);
+			objMenuButton.show();
+			
+			// open sub menu
+			objMenuButton.addEventHandler("onclick", this.fnTopMenuOnclick, this);
+			
+			/***********************************************
+			*** prepare next component
+			************************************************/
+			// next position
+			nDivTop = nDivTop + this.fvTopDivHeight;
+			
+			// init button top position
+			nButtonTop = this.fvTopDivHeight;
+			
+			//set previous div id
+			preDivId = sDivId;
+		}
+		//Leaf Menu
+		else
+		{
+			// set parent Div
+			objMenuDiv = this.divLeft.form.components["div" + objDs.getColumn(i, "PARENT_MENU_ID")];
+			sBtnId = "btn" + objDs.getColumn(i, "MENU_ID");
+			
+			objMenuButton = new Button;
+			objMenuButton.init(sBtnId, 0, nButtonTop, null, this.fvButtonHeight, 0);
+			objMenuButton.set_text(objDs.getColumn(i, "MENU_NM"));
+			objMenuButton.set_cssclass("btn_LF_menuD2");
+			
+			// add objMenuButton to parent menu div 
+			objMenuDiv.addChild(sBtnId, objMenuButton);
+			objMenuButton.show();
+			
+			// add onclick event
+			objMenuButton.addEventHandler("onclick", this.fnMenuOnclick, this);
+			
+			// set next button position
+			nButtonTop = nButtonTop + this.fvButtonHeight;
+		}
+	}
+}
+
+
+/************************************************************************************************
+ * Each COMPONENT EVENT
+ ************************************************************************************************/
+ 
+/**
+ * @description open menu
+*/
+this.fnMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var menuId = String(obj.name).replace("btn", "");
+	var nRow = this.dsMenu.findRow("MENU_ID", menuId);
+	var type = "Left";
+	
+	this.gfnOpenMenu(this.dsMenu.getColumn(nRow, "MENU_ID"), type);
+}
+ 
+ 
+/**
+ * @description add animation when choose menu item
+*/
+this.fnTopMenuOnclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var menuId = String(obj.name).replace("btn", "");
+	var objDiv = obj.parent.parent; //menu group
+	
+	var sAniId;
+	var objAni;
+	
+	var arrAni = new Array();
+	
+	var nHeight = 46;
+	var nTop;
+	
+	if(objDiv._bOpened)
+	{
+		objDiv.pageHeight = this.fvTopDivHeight;
+		objDiv._bOpened = false;
+	}
+	else
+	{
+		this.dsMenu.filter("PARENT_MENU_ID=='" + menuId + "'");
+		objDiv.pageHeight= this.dsMenu.rowcount * this.fvButtonHeight + this.fvTopDivHeight;
+		this.dsMenu.filter("");
+		objDiv._bOpened = true;
+	}
+	objDiv.setOffsetHeight(objDiv.pageHeight);
+	
+	// top position
+	nTop =  objDiv.getOffsetTop() + objDiv.getOffsetHeight();
+	objDiv = this.divLeft.form.components[objDiv.nextDivId];
+	while(objDiv)
+	{
+		objDiv.setOffsetTop(nTop);
+		nTop =  objDiv.getOffsetTop() + objDiv.getOffsetHeight();
+		objDiv = this.divLeft.form.components[objDiv.nextDivId];
+	}
+	
+	this.divLeft.form.resetScroll();
+	
+	/*
+	if(objDiv._bOpened)//close
+	{
+		objDiv.startValue = objDiv.curtime;
+		this.killTimer(2222 + menuId);
+		
+		objDiv.pageHeight = objDiv.getOffsetHeight() - this.fvTopDivHeight;
+		
+		this.setTimer(1111 + menuId,10);
+	}
+	else//open
+	{	
+		objDiv.startValue = objDiv.curtime;
+		this.killTimer(1111 + menuId);
+		
+		this.dsMenu.filter("PARENT_MENU_ID=='" + menuId + "'");
+		objDiv.pageHeight= this.dsMenu.rowcount * this.fvButtonHeight;
+		this.dsMenu.filter("");
+		
+		this.setTimer(2222 + menuId,10);
+	}
+	*/
+}
+
+
+/**
+ * @description select menu tab or favorite tab
+*/
+this.Button_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch(obj.name)
+	{
+		case "btnMenu":// btn_LF_SelectMenu, btn_LF_Select01
+			this.btnMenu.set_cssclass("btn_LF_SelectMenu_S");
+			this.btnFavorite.set_cssclass("btn_LF_BookMark_D");
+			this.divLeft.set_visible(true);
+			this.divFavorite.set_visible(false);
+			break;
+			
+		case "btnFavorite"://btn_LF_MenuBg,btn_LF_BookMark
+			this.btnMenu.set_cssclass("btn_LF_SelectMenu_D");
+			this.btnFavorite.set_cssclass("btn_LF_BookMark_S");
+			this.divLeft.set_visible(false);
+			this.divFavorite.set_visible(true);
+			break;
+	}
+}
+
+
+/**
+* fnMoveAnimation : animation Interpolation function
+* @param {Number}  t	- current time(time or frame)
+* @param {Number}  b	- start value
+* @param {Number}  c	- change between the beginning and destination of the property
+* @param {Number}  d	- duration (time or frame)
+* @return : position value
+* @example :  
+*/
+this.fnMoveAnimation = function (t, b, c, d) 
+{
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t + b;
+	t -= 2;
+	return c/2*(t*t*t + 2) + b;
+};
+
+
+/**
+ * @description open menu
+*/ 
+this.grdMenuOnclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var objDs = obj.getBindDataset();
+	var type = "Left";
+	this.gfnOpenMenu(objDs.getColumn(objDs.rowposition, "MENU_ID"), type);
+};]]></Script>
+    <Objects>
+      <Dataset id="dsMenu"/>
+    </Objects>
+  </Form>
+</FDL>

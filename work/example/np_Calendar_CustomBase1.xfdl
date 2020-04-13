@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <TypeDefinition url="..\..\default_typedef.xml"/>
+  <Form id="Calendar_Base" classname="Calendar_Base" left="0" top="0" width="225" height="30" titletext="Base1" onload="Calendar_Base_onload">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="1" top="2" height="24" onclick="Button00_onclick" width="24" right="1" cssclass="btn_WF_multiCombo"/>
+        <MaskEdit id="MaskEdit00" taborder="2" left="0" top="2" right="24" height="24" type="string" maskchar=" " format="####-##-##" textAlign="left"/>
+        <PopupDiv id="PopupDiv00" text="PopupDiv00" left="0.89%" top="37" right="-35.11%" height="211" onpopup="PopupDiv00_onpopup" async="false"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.Calendar_Base_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var sToDate = this.gfnGetDate();
+	
+	this.MaskEdit00.set_value(sToDate);
+	
+	if (this.userBindDataset && this.userBindColumn) {
+		var objBindItem = new BindItem();  
+		objBindItem.init("b1", "MaskEdit00", "value", this.userBindDataset, this.userBindColumn);
+		
+		this.addChild("b1", objBindItem); 
+		objBindItem.bind(); 
+	}
+}
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.PopupDiv00.set_url("sample::np_Calendar_Custom_Base2.xfdl");
+	this.PopupDiv00.addEventHandler("onpopup",this.PopupDiv00_onpopup , this );
+	this.PopupDiv00.trackPopupByComponent(this.MaskEdit00, 0, 25);
+}
+
+this.PopupDiv00_oncloseup = function(obj, str)
+{
+	//trace(" >>>>> " + obj.name + " >>> " + str + " >>> " + typeof str);
+	this.MaskEdit00.set_value(str);
+}
+
+this.PopupDiv00_onpopup = function(obj:PopupDiv, e:nexacro.EventInfo)
+{
+	this.PopupDiv00.form.reSetCalendar(this.MaskEdit00.value);
+}
+]]></Script>
+  </Form>
+</FDL>

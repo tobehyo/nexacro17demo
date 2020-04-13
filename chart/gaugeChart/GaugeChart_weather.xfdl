@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_weather" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart00" taborder="0" left="10%" top="2%" binddataset="ds_weather" categorycolumn="bind:Column0" right="60%" bottom="2%">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "#4b4b4b",
+		"indicatorlinestyle": "0px none",
+		"indicatoropacity": "1",
+		"fillstyle": "black",
+		"linestyle": "white",
+		"size": "10",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "50",
+			"tickmin": "-25",
+			"tickinterval": "5",
+			"opposite": "true",
+			"labelmask": "##ºC"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 6pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"baropacity": "0",
+			"barsize": "100",
+			"opacity": "0.5",
+			"fillstyle": "linear-gradient(#ff0000 0%,#00ff00 55%,#0000ff 72%)"
+		}
+	],
+	"title": {
+		"id": "title",
+		"text": "Temperature",
+		"textfont": "20pt/normal \"맑은 고딕\"",
+		"padding": "0px 0px 5px",
+		"linestyle": "0px none"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt \"맑은 고딕\"",
+		"itemtextcolor": "#4c4c4c"
+	}
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart01" taborder="1" left="60%" top="2%" binddataset="ds_weather" categorycolumn="bind:Column0" right="10%" bottom="2%">
+          <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "#4b4b4b",
+		"indicatorlinestyle": "0px none",
+		"indicatoropacity": "1",
+		"fillstyle": "black",
+		"linestyle": "white",
+		"size": "10",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmax": "50",
+			"tickmin": "-25",
+			"tickinterval": "5",
+			"opposite": "true",
+			"labelmask": "##ºC"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "false",
+			"itemtextcolor": "black",
+			"itemtextfont": "bold 10pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"baropacity": "1",
+			"barsize": "80",
+			"opacity": "1",
+			"fillstyle": "white",
+			"barfillstyle": "#ff5151",
+			"itemtextmask": "###ºC",
+			"itemtextposition": "middle"
+		}
+	],
+	"title": {
+		"id": "title",
+		"text": "Temperature",
+		"textfont": "20pt/normal \"맑은 고딕\"",
+		"padding": "0px 0px 5px",
+		"linestyle": "0px none"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt \"맑은 고딕\"",
+		"itemtextcolor": "#4c4c4c"
+	}
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_weather">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">temperature</Col>
+            <Col id="Column1">45</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

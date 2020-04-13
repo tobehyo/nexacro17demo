@@ -1,0 +1,16 @@
+﻿{
+	"name": "MultiCombo",
+	"version": "0",
+	"description": "",
+	"license": "",
+	"objInfo": [	
+    "MultiCombo/metainfo/MultiCombo.info"
+	],
+	"scripts": [
+    "MultiCombo/MultiCombo.js"
+	],
+	"designscripts": [
+    "MultiCombo/Design/DesignMultiCombo.js"
+	]
+}
+//# sourceURL=MultiCombo.json

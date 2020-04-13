@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="StackedColumn" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="dsStackBar" categorycolumn="bind:name" enableanimation="true">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #d0d0d0",
+		"ticklinestyle": "0px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"visible": "true",
+		"labeltype": "text",
+		"ticklineopacity": "1",
+		"ticksize": "10",
+		"titletextalign": "middle",
+		"boardlinevisible": "false"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"barvisible": "true",
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"valuecolumn": "bind:Outerwear",
+			"stacktype": "normal",
+			"linevisible": "false",
+			"barfillstyle": "#ffda83",
+			"highlightbarvisible": "false",
+			"lineareavisible": "false",
+			"pointshape": "",
+			"highlightlinevisible": "false",
+			"barlinestyle": "#ffda83",
+			"tooltiptext": ""
+		},
+		{
+			"id": "series1",
+			"titletext": "series",
+			"barvisible": "true",
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"valuecolumn": "bind:Sweeters",
+			"stacktype": "normal",
+			"barfillstyle": "#ff8373",
+			"barlinestyle": "#ff8373"
+		},
+		{
+			"id": "series2",
+			"titletext": "series",
+			"barvisible": true,
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"valuecolumn": "bind:Stairs",
+			"stacktype": "normal",
+			"barfillstyle": "#56d9ff",
+			"barlinestyle": "#56d9ff"
+		},
+		{
+			"id": "series3",
+			"valuecolumn": "bind:Parts",
+			"stacktype": "normal",
+			"barvisible": true,
+			"barsize": "55",
+			"barfillstyle": "#a2a1fb",
+			"lineopacity": "0",
+			"highlightbarvisible": "false",
+			"highlightlinevisible": "false",
+			"pointshape": "",
+			"barlinestyle": "#a2a1fb",
+			"barradius": "7"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis1",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "0px solid #525252",
+			"visible": "true",
+			"ticksize": "0",
+			"tickmax": "1300"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsStackBar">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="Outerwear" type="FLOAT" size="256"/>
+          <Column id="Sweeters" type="FLOAT" size="256"/>
+          <Column id="Stairs" type="STRING" size="256"/>
+          <Column id="Parts" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">Mon</Col>
+            <Col id="Outerwear">100</Col>
+            <Col id="Sweeters">95</Col>
+            <Col id="Stairs">120</Col>
+            <Col id="Parts">221</Col>
+          </Row>
+          <Row>
+            <Col id="name">Tue</Col>
+            <Col id="Outerwear">200</Col>
+            <Col id="Sweeters">234</Col>
+            <Col id="Stairs">111</Col>
+            <Col id="Parts">234</Col>
+          </Row>
+          <Row>
+            <Col id="name">Wed</Col>
+            <Col id="Outerwear">120</Col>
+            <Col id="Sweeters">345</Col>
+            <Col id="Stairs">222</Col>
+            <Col id="Parts">345</Col>
+          </Row>
+          <Row>
+            <Col id="name">Tru</Col>
+            <Col id="Outerwear">340</Col>
+            <Col id="Sweeters">111</Col>
+            <Col id="Stairs">111</Col>
+            <Col id="Parts">111</Col>
+          </Row>
+          <Row>
+            <Col id="name">Fri</Col>
+            <Col id="Outerwear">224</Col>
+            <Col id="Sweeters">99</Col>
+            <Col id="Stairs">345</Col>
+            <Col id="Parts">99</Col>
+          </Row>
+          <Row>
+            <Col id="name">Sat</Col>
+            <Col id="Outerwear">124</Col>
+            <Col id="Sweeters">123</Col>
+            <Col id="Stairs">111</Col>
+            <Col id="Parts">123</Col>
+          </Row>
+          <Row>
+            <Col id="name">Sun</Col>
+            <Col id="Outerwear">323</Col>
+            <Col id="Sweeters">222</Col>
+            <Col id="Stairs">99</Col>
+            <Col id="Parts">222</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

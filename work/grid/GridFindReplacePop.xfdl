@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GridFindReplacePop" width="315" height="215" titletext="New Form" onload="GridFindReplacePop_onload" onkeydown="GridFindReplacePop_onkeydown" background="white">
+    <Layouts>
+      <Layout>
+        <Combo id="cmb_findList" taborder="0" tabstop="false" innerdataset="@ds_findList" codecolumn="text" datacolumn="text" onitemchanged="cmb_findList_onitemchanged" cssclass="cmb_WF" left="90" top="56" width="221" height="20"/>
+        <Combo id="cmb_replaceList" taborder="1" tabstop="false" innerdataset="@ds_replaceList" codecolumn="text" datacolumn="text" onitemchanged="cmb_replaceList_onitemchanged" cssclass="cmb_WF" left="90" top="80" width="221" height="20"/>
+        <Static id="Static01" taborder="2" text="찾을 문자열" cssclass="sta_WF" left="13" top="57" width="71" height="18"/>
+        <Edit id="edt_find" taborder="3" onkeydown="edt_find_onkeydown" cssclass="edt_WF" left="90" top="56" width="204" height="20"/>
+        <Static id="Static02" taborder="4" text="바꿀 문자열" cssclass="sta_WF" left="13" top="81" width="71" height="18"/>
+        <Static id="Static05" taborder="5" text="찾을 조건" cssclass="sta_WF" left="13" top="156" width="71" height="18"/>
+        <Radio id="rdo_condition" taborder="6" columncount="2" rowcount="0" index="0" innerdataset="@ds_condition" codecolumn="code" datacolumn="data" value="equal" cssclass="rdo_WF" left="90" top="156" width="117" height="18"/>
+        <CheckBox id="chk_strict" taborder="7" text="대/소문자 구분" left="203" top="155" width="102" height="18"/>
+        <Button id="btn_find" taborder="8" text="찾기" onclick="btn_find_onclick" cssclass="btn_WF_conf" left="10" top="180" width="64" height="24"/>
+        <Button id="btn_replace" taborder="9" text="바꾸기" onclick="btn_replace_onclick" cssclass="btn_WF_conf" left="82" top="180" width="64" height="24"/>
+        <Button id="btn_replaceAll" taborder="10" text="모두 바꾸기" onclick="btn_replaceAll_onclick" cssclass="btn_WF_conf" left="154" top="180" width="80" height="24"/>
+        <Button id="btn_close" taborder="11" text="닫기" onclick="btn_close_onclick" cssclass="btn_WF_conf" left="242" top="180" width="64" height="24"/>
+        <Edit id="edt_replace" taborder="12" onkeydown="edt_replace_onkeydown" cssclass="edt_WF" left="90" top="80" width="204" height="20"/>
+        <Radio id="rdo_direction" taborder="13" columncount="2" rowcount="0" index="1" innerdataset="@ds_direction" codecolumn="code" datacolumn="data" value="next" cssclass="rdo_WF" left="90" top="110" width="112" height="18"/>
+        <Radio id="rdo_position" taborder="14" columncount="2" rowcount="0" index="0" innerdataset="@ds_position" codecolumn="code" datacolumn="data" value="current" onitemchanged="rdo_position_onitemchanged" cssclass="rdo_WF" left="90" top="133" width="144" height="18"/>
+        <Static id="Static03" taborder="15" text="찾을 방향" cssclass="sta_WF" left="13" top="109" width="71" height="18"/>
+        <Static id="Static04" taborder="16" text="찾을 위치" cssclass="sta_WF" left="13" top="132" width="71" height="18"/>
+        <Static id="Static00" taborder="17" text="대상 칼럼" cssclass="sta_WF" left="13" top="33" width="71" height="18"/>
+        <Combo id="cmb_column" taborder="18" innerdataset="@ds_column" codecolumn="code" datacolumn="data" onitemchanged="cmb_column_onitemchanged" cssclass="cmb_WF" left="90" top="32" width="221" height="20" tooltiptext="바꾸기 기능 사용이 가능한 칼럼만 보여집니다."/>
+        <Grid id="grd_replaceError" taborder="19" binddataset="ds_replaceError" autofittype="col" oncelldblclick="grd_replaceError_oncelldblclick" visible="false" left="9" top="215" width="297" height="172" cssclass="grd_WF_detail">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="256"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="0건 변경 중 0건 오류 발생" color="#ffffff"/>
+                <Cell row="1" text="행"/>
+                <Cell row="1" col="1" text="사유"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:row"/>
+                <Cell col="1" text="bind:message" textAlign="left" verticalAlign="middle"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="st_title" taborder="20" text="찾기/바꾸기" left="0" top="0" width="315" height="25" background="rgba(70,76,87,1)" color="white" padding="0px 0px 0px 10px" font="bold 9pt Dotum"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_condition" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">equal</Col>
+            <Col id="data">일치</Col>
+          </Row>
+          <Row>
+            <Col id="code">inclusion</Col>
+            <Col id="data">포함</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_direction" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">prev</Col>
+            <Col id="data">이전</Col>
+          </Row>
+          <Row>
+            <Col id="code">next</Col>
+            <Col id="data">다음</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_position" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">current</Col>
+            <Col id="data">현재위치</Col>
+          </Row>
+          <Row>
+            <Col id="code">first</Col>
+            <Col id="data">처음부터</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_findList" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_replaceList" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_column" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+          <Column id="displayType" type="STRING" size="256"/>
+          <Column id="editType" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_replaceError" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="row" type="INT" size="256"/>
+          <Column id="cell" type="INT" size="256"/>
+          <Column id="message" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/*
+ * Grid Find Replace Sample at XPLATFORM
+ *
+ * Copyright (c) 2014 EcoSystem of TOBESOFT
+ * Licensed Free under XPLATFORM.
+ */
+
+/**
+ * onload event handler - 화면 로드
+ * @param {Form} obj 이벤트가 발생한 Form
+ * @param {LoadEventInfo} e LoadEventInfo
+ */
+this.GridFindReplacePop_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	// 문자열 목록 만들기
+	this.updateStringList("find");
+	this.updateStringList("replace");
+
+	var grid = this.targetGrid;
+
+	this.setColumnList(grid);
+
+	if (this.cmb_column.index > -1) 
+	{
+		this.edt_find.setFocus();
+	}
+	else 
+	{
+		this.cmb_column.setFocus();
+	}
+};
+
+/**
+ * onitemchanged event handler
+ * 대상 칼럼 변경 시 그리드 셀에 포커스
+ * @param {Combo} obj 이벤트가 발생한 Combo
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.cmb_column_onitemchanged = function (obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	var grid = this.targetGrid;
+
+	grid.setCellPos(e.postvalue);
+};
+
+/**
+ * onkeydown event handler - Esc 키 발생시 화면 종료
+ * @param {Form} obj 이벤트가 발생한 Form
+ * @param {KeyEventInfo} e KeyEventInfo
+ */
+this.GridFindReplacePop_onkeydown = function (obj:Form, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 27) 
+	{
+		this.set_visible(false);
+	}
+};
+
+/**
+ * onkeydown event handler
+ * 찾을 문자열 입력박스 엔터키시 찾기
+ * @param {Edit} obj 이벤트가 발생한 Edit
+ * @param {KeyEventInfo} e KeyEventInfo
+ */
+this.edt_find_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		if (!this.gfnIsNull(this.cmb_column.value)) 
+		{
+			this.btn_find.click();
+		}
+	}
+};
+
+/**
+ * onitemchanged event handler
+ * 찾은 목록 콤보 변경시 입력박스에 값 지정
+ * @param {Combo} obj 이벤트가 발생한 Combo
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.cmb_findList_onitemchanged = function (obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.edt_find.set_value(e.postvalue);
+	obj.set_index(-1);
+};
+
+/**
+ * onkeydown event handler
+ * 바꿀 문자열 입력박스 엔터키시 바꾸기
+ * @param {Edit} obj 이벤트가 발생한 Edit
+ * @param {KeyEventInfo} e KeyEventInfo
+ */
+this.edt_replace_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		if (!this.gfnIsNull(this.cmb_column.value) && !this.gfnIsNull(this.edt_find.value)) 
+		{
+			this.btn_replace.click();
+		}
+	}
+};
+
+/**
+ * onitemchanged event handler
+ * 바꾼 목록 콤보 변경시 입력박스에 값 지정
+ * @param {Combo} obj 이벤트가 발생한 Combo
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.cmb_replaceList_onitemchanged = function (obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	this.edt_replace.set_value(e.postvalue);
+	obj.set_index(-1);
+};
+
+/**
+ * onitemchanged event handler
+ * 찾을 위치를 "처음부터" 로 변경시 시작 위치 지정
+ * @param {Radio} obj 이벤트가 발생한 Radio
+ * @param {ItemChangeEventInfo} e ItemChangeEventInfo
+ */
+this.rdo_position_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInfo)
+{
+	if (e.postvalue == "first") 
+	{
+		// 찾기 시작 위치 초기화
+		var grid = this.targetGrid;
+
+		grid.lastFindRow = 0;
+		grid.lastFindCell = 0;
+	}
+};
+
+/**
+ * onclick event handler - 찾기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_find_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	if (this.gfnIsNull(this.cmb_column.value)) 
+	{
+		this.alert("대상 칼럼을 선택하세요.");
+		this.cmb_column.setFocus();
+		return;
+	}
+
+	var text = this.edt_find.value;
+	if (this.gfnIsNull(text)) 
+	{
+		this.edt_find.setFocus();
+		return;
+	}
+
+	var grid = this.targetGrid;
+	var parent = this.parent;
+	var option = this.getFindOption();
+	var findRowCell = parent.findGridText(grid, text, option);
+	var findRow = findRowCell[0];
+	var findCell = findRowCell[1];
+
+	if (findRow > -1 && findCell > -1) 
+	{
+		parent.markGridFindResult(grid, findRow, findCell);
+		this.setFocus();
+	}
+	else 
+	{
+		var message = this.gfn_Format(parent.GRID_FIND_NO_RESULT_MESSAGE, text);
+		this.alert(message);
+	}
+
+	this.updateStringList("find");
+};
+
+/**
+ * onclick event handler - 바꾸기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_replace_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.replaceText(false);
+};
+
+/**
+ * onclick event handler - 모두 바꾸기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_replaceAll_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.replaceText(true);
+};
+
+/**
+ * onclick event handler - 닫기 버튼 클릭
+ * @param {Button} obj 이벤트가 발생한 Button
+ * @param {ClickEventInfo} e ClickEventInfo
+ */
+this.btn_close_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.set_visible(false);
+};
+
+/**
+ * oncelldblclick event handler - 에러발생 대상 셀 이동
+ * @param {Grid} obj 이벤트가 발생한 Grid
+ * @param {GridClickEventInfo} e GridClickEventInfo
+ */
+this.grd_replaceError_oncelldblclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var grid = this.targetGrid;
+	var dataset = this.gfn_Lookup(grid.parent, grid.binddataset);
+	dataset.set_rowposition(this.ds_replaceError.getColumn(e.row, "row"));
+
+	var cell = this.ds_replaceError.getColumn(e.row, "cell");
+	grid.setCellPos(cell);
+};
+
+/**
+ * 바꾸기 대상 그리드에서 칼럼정보를 얻어 콤보 목록을 만든다.
+ * @param {Grid} grid 대상 그리드
+ */
+this.setColumnList = function (grid)
+{
+	var displayType,editType;
+	var col,row,headCell,headText;
+
+	this.ds_column.set_enableevent(false);
+	this.ds_column.deleteAll();
+
+	for (var i = 0,len = grid.getCellCount("body"); i < len; i++) 
+	{
+		displayType = grid.getCellProperty("body", i, "displaytype");
+		editType = grid.getCellProperty("body", i, "edittype");
+
+		if (this.gfnIsNull(editType)) 
+		{
+			editType = "none";
+		}
+
+		// 체크박스 제외
+		if (displayType == "checkbox" || editType == "checkbox") 
+		{
+			continue;
+		}
+
+		// 입력 가능항목만 리스트 추가
+		if (editType != "none" && editType != "readonly") 
+		{
+			// 매칭되는 헤드 셀 텍스트 ( 가장 마지막에 매칭되는걸로 선택)
+			col = grid.getCellProperty("body", i, "col");
+
+			// 안보이는 칼럼은 제외
+			if (grid.getRealColSize(col) == 0) 
+			{
+				continue;
+			}
+
+			for (var j = 0,len2 = grid.getCellCount("head"); j < len2; j++) 
+			{
+				if (col == grid.getCellProperty("head", j, "col")) 
+				{
+					headCell = j;
+				}
+			}
+			headText = grid.getCellProperty("head", headCell, "text");
+
+			if (this.gfnIsNull(headText)) 
+			{
+				headText = "[" + col + "번째 칼럼]";
+			}
+
+			row = this.ds_column.addRow();
+			this.ds_column.setColumn(row, "code", i);
+			this.ds_column.setColumn(row, "data", headText);
+			this.ds_column.setColumn(row, "displayType", displayType);
+			this.ds_column.setColumn(row, "editType", editType);
+		}
+	}
+	this.ds_column.set_enableevent(true);
+
+	// 현재 선택된 셀을 선택하도록
+	this.setTargetColumn(grid);
+};
+
+/**
+ * 대상 그리드에 현재 선택된 셀에 맞게 대상 칼럼 콤보 인덱스 변경
+ * @param {Grid} grid 대상 그리드
+ */
+this.setTargetColumn = function (grid)
+{
+	var index = this.ds_column.findRow("code", grid.currentcell);
+	this.cmb_column.set_index(index);
+};
+
+/**
+ * 찾기/바꾸기 문자열 목록을 구성하여 콤보에 보이게끔 처리
+ * @param {string} type 찾기/바꾸기 구분
+ */
+this.updateStringList = function (type)
+{
+	var parent = this.parent;
+	var list = parent.getFindReplaceCache(type);
+	var dataset = this.objects["ds_" + type + "List"];
+	var text;
+
+	dataset.set_enableevent(false);
+	dataset.deleteAll();
+	var row;
+	for (var i = 0,len = list.length; i < len; i++) 
+	{
+		text = list[i];
+		row = dataset.addRow();
+		dataset.setColumn(row, "text", text);
+	}
+	dataset.set_enableevent(true);
+};
+
+/**
+ * 찾기 옵션을 얻어온다.
+ * @return {object} 옵션 정보
+ */
+this.getFindOption = function ()
+{
+	var option = {
+		'direction' : this.rdo_direction.value,
+		'position' : this.rdo_position.value,
+		'scope' : 'col',
+		'condition' : this.rdo_condition.value,
+		'strict' : this.chk_strict.value,
+		'cell' : this.cmb_column.value
+	};
+
+	return option;
+};
+
+/**
+ * 바꾸기 실행
+ * @param {boolean} all 모두 바꾸기 여부
+ */
+this.replaceText = function (all)
+{
+	if (this.gfnIsNull(this.cmb_column.value)) 
+	{
+		this.alert("대상 칼럼을 선택하세요.");
+		this.cmb_column.setFocus();
+		return;
+	}
+
+	var findText = this.edt_find.value;
+	if (this.gfnIsNull(findText)) 
+	{
+		return;
+	}
+
+	var grid = this.targetGrid;
+	var parent = this.parent;
+	var option = this.getFindOption();
+	var replaceText = this.edt_replace.value;
+	if (this.gfnIsNull(replaceText)) 
+	{
+		replaceText = "";
+	}
+
+	var results = parent.replaceGridText(grid, findText, replaceText, option, all);
+
+	this.grd_replaceError.set_visible(false);
+	this.set_height(215);
+	this.resetScroll();
+
+	var resultCnt = results.length;
+	if (resultCnt > 0) 
+	{
+		var result;
+		var replaceCnt = 0;
+		for (var i = 0; i < resultCnt; i++) 
+		{
+			result = results[i];
+			if (result.replace) 
+			{
+				replaceCnt += 1;
+			}
+		}
+
+		// 모두 바꾸기
+		if (all) 
+		{
+			if (resultCnt == replaceCnt) 
+			{
+				// 마지막 변경된 셀로 이동
+				parent.markGridFindResult(grid, grid._lastReplaceRow, option.cell);
+				this.setFocus();
+
+				var replaceMsg = this.gfn_Format(parent.GRID_REPLACE_COUNT_MESSAGE, replaceCnt);
+				this.alert(replaceMsg);
+			}
+			else 
+			{
+				var errorCnt = resultCnt - replaceCnt;
+				var message = resultCnt + "건 변경 중 " + errorCnt + "건 오류 발생";
+				this.set_height(395);
+				this.grd_replaceError.setCellProperty("head", 0, "text", message);
+				this.grd_replaceError.set_visible(true);
+
+				var newRow;
+				this.ds_replaceError.set_enableevent(false);
+				this.ds_replaceError.deleteAll();
+				for (var i = 0; i < resultCnt; i++) 
+				{
+					result = results[i];
+					if (!result.replace) 
+					{
+						newRow = this.ds_replaceError.addRow();
+						this.ds_replaceError.setColumn(newRow, "row", result.row);
+						this.ds_replaceError.setColumn(newRow, "cell", result.cell);
+						this.ds_replaceError.setColumn(newRow, "message", result.message);
+					}
+				}
+				this.ds_replaceError.set_rowposition(-1);
+				this.ds_replaceError.set_enableevent(true);
+			}
+		}
+		else 
+		{
+			if (replaceCnt == 0) 
+			{
+				this.alert(results[0].message);
+				return;
+			}
+
+			// 다음 찾기 대상으로 이동
+			findRowCell = parent.findGridText(grid, findText, option);
+			findRow = findRowCell[0];
+			findCell = findRowCell[1];
+			if (findRow > -1 && findCell > -1) 
+			{
+				parent.markGridFindResult(grid, findRow, findCell);
+			}
+			else 
+			{
+				// 다음 대상이 없으면 마지막 찾은 셀로 이동
+				parent.markGridFindResult(grid, Base.XPComp.getUserProperty(grid, "lastReplaceRow"), option.cell);
+			}
+
+			this.setFocus();
+		}
+	}
+	else 
+	{
+		var noFoundMsg = this.gfn_Format(parent.GRID_FIND_NO_RESULT_MESSAGE, findText);
+		this.alert(noFoundMsg);
+	}
+
+	this.updateStringList("replace");
+};
+
+
+
+
+/**
+ * value의 Date 여부 반환.
+ * @param {date} value 확인할 value.
+ * @return {boolean} Date 여부.
+ * @example
+ * var a = new Date();
+ * trace(Base.isDate(a));	// output : true
+ *
+ * var a = "20130501";
+ * trace(Base.isDate(a));	// output : false
+ * @memberOf Base
+ */
+this.gfn_IsDate = function (value)
+{
+	// 아래내용을 9.2 Rumtiem 지원안함.
+	// 그리고 성능이슈가 발생할 수 있음(느림).
+	// 그런데 많은 곳에서 사용하고 있음.
+	// return toString.call(value) === '[object Date]';
+	// return Object.prototype.toString.call(value) === '[object Date]';
+	// typeof보다는 느리지만 아래처럼 사용하는것과는 대동소이?
+
+	if (typeof value == 'object' && value instanceof Date) 
+	{
+		return true;
+	}
+
+	return false;
+};
+
+/**
+ * value의 Array 여부 반환.
+ * @param {*} value 확인할 value.
+ * @return {boolean} Array 여부.
+ * @example
+ * var a = new Array();
+ * trace(this.gfn_IsArray(a));	// output : true
+ *
+ * var a = [1,2,3];
+ * trace(this.gfn_IsArray(a));	// output : true
+ * @memberOf Base
+ */
+this.gfn_IsArray = function (value)
+{
+	// TODO
+	/*
+	 V13에서는 아래처럼하자(또는 HTML5)
+	 return Object.prototype.toString.call( value ) === '[object Array]';
+	 */
+
+	if (value === null || value === undefined) 
+	{
+		return false;
+	}
+
+	// constructor 에 접근시 XP Comp 는 에러발생
+	if (this.gfnIsNexaComponent(value)) 
+	{
+		return false;
+	}
+
+	return typeof value == "object" && 
+		'constructor' in value && 
+		value.constructor === Array;
+};
+
+/**
+ * value의 Object 여부 반환.
+ * @param {*} value 확인할 value.
+ * @return {boolean} Object 여부.
+ * @example
+ * var o = new Object();
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = {};
+ * trace(Base.isObject(o));	// output : true
+ *
+ * var o = [1,2,3];
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Button();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * var o = new Rect();
+ * trace(Base.isObject(o));	// output : false
+ *
+ * @memberOf Base
+ */
+this.gfn_IsObject = function (value)
+{
+	if (value === null || value === undefined) 
+	{
+		return false;
+	}
+
+	// constructor 에 접근시 XP Comp 는 에러발생
+	if (this.gfnIsNexaComponent(value)) 
+	{
+		return false;
+	}
+
+	// 신규추가 2013.11.27 pbh. 데이터셋과 같은 xp object 거르기.
+	if (!this.gfnIsNull(value._type)) 
+	{
+		if (value._type.substr(0, 4) == "TOBE") 
+		{
+			return false;
+		}
+	}
+
+	return typeof value == "object" && 
+		'constructor' in value && 
+		value.constructor === Object;
+};
+
+
+/**
+ * 주어진 대상을 포함한 상위 범위로 지정된 이름에 최초로 일치하는 component, object 반환
+ * @public
+ * @param {xpComp} p 찾을 대상
+ * @param {string} name 찾을 대상 이름
+ * @return {xpComp} 검색된 component, object
+ * @example
+ *
+ * // this = Form
+ * // Form 에 Button11 존재
+ * trace(Base.XPComp.lookup(this, "Button11"));	// output : [object Button]
+ *
+ * // Button12 는 Div01 에 존재하지 않으나 Div01 의 상위 컴포넌트인 Form 에 존재
+ * trace(Base.XPComp.lookup(Div01, "Button11"));	// output : [object Button]
+ *
+ * @memberOf Base.XPComp
+ */
+this.gfn_Lookup = function (p, name)
+{
+	var o;
+	while (p) 
+	{
+		o = p.components;
+		if (o && o[name]) 
+		{
+			return o[name];
+		}
+
+		o = p.objects;
+		if (o && o[name]) 
+		{
+			return o[name];
+		}
+
+		p = p.parent;
+	}
+	return null;
+};
+
+/**
+ * 문자열 내의 {0},{1}...{n}값을 전달받은 arguments로 치환.
+ * @param {string} str 대상 문자열.
+ * @param {arguments} arguments 식별자 {N}을 대체할 값.
+ * @return {string} 치환된 문자열.
+ * @requires Base.formatRegExp
+ * @example
+ * var str = "I {0} a {1} {2}.";
+ * Base.string.format(str, "am", "cool", "guy"); //return "I am a cool guy."
+ *
+ * str = "Currency: [{0}], Date : [{1}], JuminNo: [{2}]";
+ * var result = Base.string.format(str,
+ *      Base.number.getMaskFormatString(12301234, "#,###"),
+ *      Base.date.getMaskFormatString(new Date(), "yyyy-MM-dd tt hh:mm"),
+ *      Base.string.getMaskFormatString("6601011234567", "@@@@@@-{@@@@@@@}")
+ *    );
+ * trace(result); // output : Currency: [12,301,234], Date : [2013-05-03 오후 07:49], JuminNo: [660101-*******]
+ * @memberOf Base.string
+ */
+this.gfn_Format = function ()
+{
+	var str = arguments[0];
+	var args = this.gfn_toArray(arguments, 1);
+	return str.replace("/\{(\d+)\}/g", function (m, i)
+	{
+		return args[i];
+	});
+};
+
+/**
+ * 배열 형태로 변환 처리한다.
+ * @param {object} iterant 변환 대상 Obejct
+ * @param {number=} start 시작 위치 (default: start Index)
+ * @param {number=} end 끝 위치 (default: end Index)
+ * @return {array} 변환된 Array
+ * @example
+ * this.fn_mon("Jan","Feb","Mar","Apr");
+ * function fn_mon()
+ * {
+ * 	var result = Base.array.toArray(arguments);
+ *	trace("result==>" + result);	// output : result==>[Jan,Feb,Mar,Apr]
+ * }
+ *
+ * var result = Base.array.toArray("ABCDEFG",1,3);
+ * trace("result==>" + result);	// output : result==>[B,C]
+ * @memberOf Base.array
+ */
+this.gfn_toArray = function (iterant, start, end)
+{
+	if (!iterant || !iterant.length) 
+	{
+		return [];
+	}
+
+	if (this.gfn_IsArray(iterant)) 
+	{
+		if (arguments.length == 1) 
+		{
+			return iterant;
+		}
+		else if (arguments.length == 2) 
+		{
+			return iterant.slice(start);
+		}
+		else 
+		{
+			return iterant.slice(start, end);
+		}
+	}
+
+	if (typeof iterant === "string") 
+	{
+		iterant = iterant.split("");
+	}
+
+	var i,array = [],start = start || 0;
+
+	end = end ? ((end < 0) ? iterant.length + end : end) : iterant.length;
+
+	for (i = start; i < end; i++) 
+	{
+		array.push(iterant[i]);
+	}
+
+	return array;
+};]]></Script>
+  </Form>
+</FDL>

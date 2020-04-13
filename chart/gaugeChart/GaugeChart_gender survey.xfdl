@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart00" taborder="0" left="1%" top="1%" gaugetype="circular" binddataset="ds_total" categorycolumn="bind:Column0" right="50%" bottom="1%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "total response rate",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"textcolor": "#529f41"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#529f41",
+			"itemtextfont": "bold 30pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"barsize": "100",
+			"innerradius": "70",
+			"startangle": "0",
+			"endangle": "270",
+			"radius": "100",
+			"barfillstyle": "#529f41",
+			"barlinestyle": "1px solid #529f41",
+			"fillstyle": "#529f41",
+			"linestyle": "1px solid #529f41",
+			"itemtextmask": "###%"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart01" taborder="1" left="50%" top="1%" gaugetype="circular" binddataset="ds_male" categorycolumn="bind:Column0" right="1%" bottom="50%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "male response rate",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"textcolor": "#1e77d6"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#1e77d6",
+			"itemtextfont": "bold 15pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"barsize": "100",
+			"startangle": "0",
+			"endangle": "270",
+			"innerradius": "70",
+			"barfillstyle": "#1e77d6",
+			"fillstyle": "#1e77d6",
+			"barlinestyle": "1px solid #1e77d6",
+			"linestyle": "1px solid #1e77d6",
+			"radius": "100",
+			"itemtextmask": "###%"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+        <GaugeChart id="GaugeChart02" taborder="2" left="50%" top="50%" gaugetype="circular" binddataset="ds_female" categorycolumn="bind:Column0" right="1%" bottom="1%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "female response rate",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px",
+		"textcolor": "#a63482"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextcolor": "#a63482",
+			"itemtextfont": "bold 15pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"barsize": "100",
+			"startangle": "0",
+			"endangle": "270",
+			"innerradius": "70",
+			"barfillstyle": "#a63482",
+			"fillstyle": "#a63482",
+			"barlinestyle": "1px solid #a63482",
+			"linestyle": "1px solid #a63482",
+			"radius": "100",
+			"itemtextmask": "###%"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_total">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">total</Col>
+            <Col id="Column1">87</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_male">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">male</Col>
+            <Col id="Column1">81</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_female">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">female</Col>
+            <Col id="Column1">93</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Localization" width="980" height="940" titletext="다국어, 날짜/숫자 형식" onload="sample001_onload" onbeforeclose="Localization_onbeforeclose">
+    <Layouts>
+      <Layout screenid="desktop">
+        <GroupBox id="GroupBox00" text="날짜 형식" taborder="5" left="0" top="661" height="219" width="48.47%" visible="true" cssclass="grb_basic01" msgCd="L0001"/>
+        <Static id="Static00" taborder="6" text="간단한 날짜 " left="21" top="702" height="32" width="100" cssclass="sta_WF_cell01R" msgCd="L0002"/>
+        <Calendar id="Calendar00" taborder="1" left="131" top="702" height="32" dateformat="SHORTDATE" editformat="SHORTDATE" value="null" width="200" visible="true" cssclass="cal_basic01"/>
+        <Static id="Static01" taborder="7" text="자세한 날짜 " left="21" top="744" height="32" width="100" visible="true" cssclass="sta_WF_cell01R" msgCd="L0003"/>
+        <Calendar id="Calendar01" taborder="2" dateformat="LONGDATE" editformat="LONGDATE" left="131" top="744" height="32" value="null" width="200" visible="true" cssclass="cal_basic01"/>
+        <GroupBox id="GroupBox01" text="숫자 형식" taborder="8" left="GroupBox00:10" top="661" height="219" visible="true" cssclass="grb_basic01" msgCd="L0004" right="20"/>
+        <Static id="Static02" taborder="9" text="양수" left="GroupBox00:31" top="702" height="32" width="73" visible="true" cssclass="sta_WF_cell01R" msgCd="L0005"/>
+        <Static id="Static03" taborder="10" text="음수" left="GroupBox00:31" top="744" height="32" width="73" visible="true" cssclass="sta_WF_cell01R" msgCd="L0006"/>
+        <MaskEdit id="MaskEdit00" taborder="3" left="Static02:10" top="702" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00"/>
+        <MaskEdit id="MaskEdit01" taborder="4" left="Static03:10" top="744" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00"/>
+        <Grid id="Grid00" taborder="0" left="0" top="440" right="20" height="199" binddataset="dsList" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="150"/>
+                <Column size="300"/>
+                <Column size="150"/>
+                <Column size="150"/>
+              </Columns>
+              <Rows>
+                <Row size="34" band="head"/>
+                <Row size="34" band="head"/>
+                <Row size="34"/>
+              </Rows>
+              <Band id="head">
+                <Cell colspan="2" text="날짜 형식"/>
+                <Cell col="2" colspan="2" text="숫자 형식"/>
+                <Cell row="1" text="간단한 날짜"/>
+                <Cell row="1" col="1" text="자세한 날짜"/>
+                <Cell row="1" col="2" text="양수"/>
+                <Cell row="1" col="3" text="음수"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="date" edittype="date" text="bind:Column0" background="rgba(255,255,255,1)" calendardateformat="SHORTDATE" calendareditformat="SHORTDATE"/>
+                <Cell col="1" displaytype="date" edittype="date" text="bind:Column1" calendardateformat="LONGDATE" calendareditformat="LONGDATE" background="rgba(255,255,255,1)"/>
+                <Cell col="2" displaytype="number" text="bind:Column2" mask="###,###,##0.00" background="rgba(255,255,255,1)"/>
+                <Cell col="3" displaytype="number" text="bind:Column3" mask="###,###,##0.00" background="rgba(255,255,255,1)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static07" taborder="11" text="넥사크로는 다양한 국가별 언어를 지원하고 있습니다.&#13;&#10;문자 뿐만 아니라 서식, 정렬, 언어별 명기 방식에 대한 부분까지도 변경이 가능합니다.&#13;&#10;국가별 이미지를 클릭하여 확인 해 보세요." cssclass="sta_WF_box03" left="0" top="0" right="20" height="100" wordWrap="char"/>
+        <Static id="Static04" taborder="12" text="참고 : 2018.03.27 기준&#13;&#13;&#13;&#10;아랍어의 RTL 미지원&#13;&#13;&#13;&#10;구현 예정이나 계획 없음" left="447" top="0" width="270" height="60" background="aqua" visible="false"/>
+        <Radio id="rdoLocale" taborder="13" left="8" top="114" height="266" innerdataset="@dsLocale" codecolumn="code" datacolumn="name" onitemchanged="rdoLocale_onitemchanged" columncount="4" direction="horizontal" width="852"/>
+        <Static id="Static08" taborder="14" left="59" top="145" width="60" height="83" cssclass="sta_WF_iconKorea" text="Korea"/>
+        <Static id="Static09" taborder="15" text="USA" cssclass="sta_WF_iconUSA" left="278" top="145" width="62" height="83"/>
+        <Static id="Static10" taborder="16" text="China" cssclass="sta_WF_iconChina" left="493" top="145" width="60" height="83"/>
+        <Static id="Static11" taborder="17" text="Russia" cssclass="sta_WF_iconRussia" left="703" top="145" width="60" height="83"/>
+        <Static id="Static13" taborder="18" text="Spanish" cssclass="sta_WF_iconSpain" left="493" top="279" width="60" height="83"/>
+        <Static id="Static14" taborder="19" text="German" cssclass="sta_WF_iconGeman" left="278" top="279" width="62" height="83"/>
+        <Static id="Static15" taborder="20" text="Czech" cssclass="sta_WF_iconCzech" left="59" top="279" width="60" height="83"/>
+        <Static id="Static16" taborder="21" left="265" top="363" width="88" height="20" text="(Switzerland)"/>
+        <Static id="Static17" taborder="22" text="(Spain)" left="498" top="363" width="51" height="20"/>
+      </Layout>
+      <Layout name="Layout0" width="480" height="1450" mobileorientation="landscape" screenid="mobile">
+        <GroupBox id="GroupBox00" left="20" top="1023" height="187" right="20"/>
+        <Static id="Static00" left="41" top="1074" width="149" height="40"/>
+        <Static id="Static01" left="41" top="1124" width="149" height="40"/>
+        <Calendar id="Calendar01" left="195" top="1124" width="240" height="40"/>
+        <GroupBox id="GroupBox01" left="20" top="1220" height="198" right="20"/>
+        <Calendar id="Calendar00" left="195" top="1074" width="240" height="40"/>
+        <Static id="Static02" left="41" top="1278" width="149" height="40"/>
+        <Static id="Static03" left="41" top="1328" width="149" height="40"/>
+        <MaskEdit id="MaskEdit00" left="195" top="1278" width="240" height="40"/>
+        <MaskEdit id="MaskEdit01" left="195" top="1328" width="240" height="40"/>
+        <Grid id="Grid00" left="20" top="781" height="229" right="20"/>
+        <Radio id="rdoLocale" left="60" top="153" height="586" columncount="2" right="20"/>
+        <Static id="Static07" left="20" top="20" height="140" right="20"/>
+        <Static id="Static04" left="507" top="30" width="270" height="60"/>
+        <Static id="Static08" left="99" top="194" width="60" height="83"/>
+        <Static id="Static09" left="302" top="194" width="62" height="83"/>
+        <Static id="Static10" left="99" top="342" width="60" height="83"/>
+        <Static id="Static11" left="293" top="342" width="60" height="83"/>
+        <Static id="Static13" left="99" top="635" width="60" height="83"/>
+        <Static id="Static14" left="302" top="488" width="62" height="83"/>
+        <Static id="Static15" left="99" top="488" width="60" height="83"/>
+        <Static id="Static16" left="289" top="572" width="88" height="20"/>
+        <Static id="Static17" left="104" top="719" width="51" height="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsLocale">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">ko_KR</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">en_US</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">zh_CN</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">ru_RU</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">cs_CZ</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">de_CH</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">es_ES</Col>
+            <Col id="name"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="BIGDECIMAL" size="256"/>
+          <Column id="Column3" type="BIGDECIMAL" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">20160401</Col>
+            <Col id="Column1">20160401</Col>
+            <Col id="Column2">123456789.00</Col>
+            <Col id="Column3">-123456789.00</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">20170224</Col>
+            <Col id="Column1">20170224</Col>
+            <Col id="Column2">6549658</Col>
+            <Col id="Column3">-86151656</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMessage">
+        <ColumnInfo>
+          <Column id="msgCd" type="STRING" size="256"/>
+          <Column id="langCd" type="STRING" size="256"/>
+          <Column id="msgSbc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="msgSbc">날짜 형식</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0001</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">간단한 날짜</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0002</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">자세한 날짜</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0003</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">숫자 형식</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0004</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">양수</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0005</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">음수</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0006</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Date Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Short Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Long Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Number Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Positive</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Negative</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">日期格式</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">短日期</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">长日期</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">数字格式</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">正面</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">负</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Формат даты</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Короткие Дата</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Длинные Дата</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Формат номера</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">положительный</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">отрицательный</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Formát data</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">krátký Datum</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Long Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Formát čísel</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Pozitivní</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Negativní</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Datumsformat</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Short Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Langes Datum</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Nummer Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Positiv</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Negativ</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Datumsformat</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Short Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Langes Datum</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Nummer Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Positiv</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Negativ</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">صيغة التاريخ</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">التاريخ القصير</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">تاريخ طويل</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">تنسيق رقم</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">إيجابي</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">ar_SA</Col>
+            <Col id="msgSbc">سلبي</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">formát dátumu</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">krátky Dátum</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">long Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">formát čísel</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">pozitívne</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">Negatívna</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsLocale00">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">ko_KR</Col>
+            <Col id="name">Korean</Col>
+          </Row>
+          <Row>
+            <Col id="code">en_US</Col>
+            <Col id="name">English (United States)</Col>
+          </Row>
+          <Row>
+            <Col id="code">zh_CN</Col>
+            <Col id="name">Chinese (China)</Col>
+          </Row>
+          <Row>
+            <Col id="code">ru_RU</Col>
+            <Col id="name">Russian</Col>
+          </Row>
+          <Row>
+            <Col id="code">cs_CZ</Col>
+            <Col id="name">Czech</Col>
+          </Row>
+          <Row>
+            <Col id="code">de_CH</Col>
+            <Col id="name">German (Switzerland)</Col>
+          </Row>
+          <Row>
+            <Col id="code">es_ES</Col>
+            <Col id="name">Spanish (Spain)</Col>
+          </Row>
+          <Row>
+            <Col id="code">ar_SA</Col>
+            <Col id="name">Arabic (Saudi Arabia)</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Calendar00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item2" compid="Calendar01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item3" compid="MaskEdit00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item4" compid="MaskEdit01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item5" compid="Calendar00" propid="value" datasetid="dsList" columnid="Column0"/>
+      <BindItem id="item6" compid="Calendar01" propid="value" datasetid="dsList" columnid="Column1"/>
+      <BindItem id="item7" compid="MaskEdit00" propid="value" datasetid="dsList" columnid="Column2"/>
+      <BindItem id="item8" compid="MaskEdit01" propid="value" datasetid="dsList" columnid="Column3"/>
+      <BindItem id="item9" compid="Grid00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item0" compid="rdoLocale" propid="value" datasetid="gdsLocale" columnid="locale"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  Localization.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.25
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.25      presales                  스크립트 수정 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.gvLangCd = "ko_KR";
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+this.sample001_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	// alert("system.locale : " + system.locale);
+	this.gvLangCd = this.dsLocale.lookupAs("code", system.locale.substr(0, 2), "code");
+
+	this.rdoLocale.set_value(this.gvLangCd);
+
+	this.gfnSetLocale(this.gvLangCd);
+	this.Grid00.redraw();
+
+	this.gfnSetLanguage(this);
+
+	var number = 123456789.01;
+	var number2 = new nexacro.Number(123456789.01);
+
+	// alert("123456789.01 ==> " + number.toLocaleString() + "\n" + "nexacro.Number(123456789.01) ==> " + number2.toLocaleString());
+
+	/*
+	 * Grid 다국어 처리용 메시지코드 설정(Cell index 순으로)
+	 */
+	var arrMessages = new Array();
+
+	arrMessages.push("L0001"); //0 : 날짜 형식
+	arrMessages.push("L0002"); //1 : 간단한 날짜
+	arrMessages.push("L0003"); //2 : 자세한 날짜
+	arrMessages.push("L0004"); //3 : 숫자 형식
+	arrMessages.push("L0005"); //4 : 양수
+	arrMessages.push("L0006"); //5 : 음수
+
+	this.Grid00.msgCd = arrMessages;
+};
+this.Localization_onbeforeclose = function (obj:Form, e:nexacro.CloseEventInfo)
+{
+	nexacro.getEnvironment().set_locale("ko_KR");
+};
+
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+this.gfnSetLocale = function (val)
+{
+	nexacro.getEnvironment().set_locale(val);
+	this.Calendar00.set_locale(val);
+	this.Calendar01.set_locale(val);
+	this.MaskEdit00.set_locale(val);
+	this.MaskEdit01.set_locale(val);
+};
+
+this.gfnSetLanguage = function (obj)
+{
+	var aComponents = obj.components;
+
+	for (var i = 0; i < aComponents.length; i++) 
+	{
+		if (aComponents[i] instanceof CheckBox || 
+			aComponents[i] instanceof GroupBox || 
+			aComponents[i] instanceof Static || 
+			aComponents[i] instanceof ImageViewer || 
+			aComponents[i] instanceof Button) 
+		{
+			if (!this.gfnIsNull(aComponents[i].msgCd)) 
+			{
+				aComponents[i].set_text(this.gfnGetMessage(aComponents[i].msgCd, null, this.gvLangCd));
+			}
+		}
+		else if (aComponents[i] instanceof Edit) 
+		{
+			if (!this.gfnIsNull(aComponents[i].nulltextMsgCd)) 
+			{
+				aComponents[i].set_displaynulltext(this.gfnGetMessage(aComponents[i].nulltextMsgCd, null, this.gvLangCd));
+			}
+		}
+		else if (aComponents[i] instanceof Grid) 
+		{
+			var nCount = aComponents[i].getCellCount("Head");
+
+			if (!this.gfnIsNull(aComponents[i].msgCd)) 
+			{
+				for (var j = 0; j < nCount; j++) 
+				{
+					aComponents[i].setCellProperty("Head", j, "text", this.gfnGetMessage(aComponents[i].msgCd[j], null, this.gvLangCd));
+
+					// if (!Eco.isEmpty(aComponents[i].getCellProperty("Head", j, "msgCd")))
+					// {
+					// aComponents[i].setCellProperty("Head", j, "text", this.gfnGetMessage(aComponents[i].getCellProperty("Head", j, "msgCd"), null, this.gvLangCd));
+					// }
+				}
+			}
+		}
+		else if (aComponents[i] instanceof Div) 
+		{
+			this.gfnSetLanguage(aComponents[i]);
+		}
+		else if (aComponents[i] instanceof Tab) 
+		{
+			var nTabCnt = aComponents[i].tabpages.length;
+			for (var j = 0; j < nTabCnt; j++) 
+			{
+				if (!this.gfnIsNull(aComponents[i].tabpages[j].msgCd)) 
+				{
+					aComponents[i].tabpages[j].text = this.gfnGetMessage(aComponents[i].tabpages[j].msgCd, null, this.gvLangCd);
+				}
+				this.gfnSetLanguage(aComponents[i].tabpages[j]);
+			}
+		}
+	}
+};
+
+this.gfnGetMessage = function (sMsgCd, aMsgAgr, sLangId)
+{
+	if (this.gfnIsNull(sMsgCd)) 
+	{
+		return sMsgCd;
+	}
+	if (this.gfnIsNull(sLangId)) 
+	{
+		sLangId = this.gvLangCd;
+	}
+
+	var iRow = this.dsMessage.findRowExpr("msgCd=='" + sMsgCd + "' && langCd=='" + sLangId + "'");
+
+	if (iRow == -1) 
+	{
+		iRow = this.dsMessage.findRowExpr("msgCd=='" + sMsgCd + "' && langCd=='en_US'");
+	}
+	if (iRow == -1) 
+	{
+		return sMsgCd;
+	}
+
+	var sMessage = String(this.dsMessage.getColumn(iRow, "msgSbc"));
+
+	if (this.gfnIsNull(sMessage)) 
+	{
+		return this.dsMessage.lookupExpr("msgCd=='" + sMsgCd + "' && langCd=='en_US'", "msgSbc");
+	}
+	if (this.gfnIsNull(sMessage)) 
+	{
+		return sMsgCd;
+	}
+
+	if (!this.gfnIsNull(aMsgAgr)) 
+	{
+		if (typeof aMsgAgr == "string") 
+		{
+			aMsgAgr = new Array(aMsgAgr);
+		}
+
+		var sSlip1 = "",sSlip2 = "";
+
+		for (var i = 0; i < aMsgAgr.length; i++) 
+		{
+			if (sMessage.indexOf("[@]") == -1) 
+			{
+				break;
+			}
+
+			sSlip1 = sMessage.substr(0, sMessage.indexOf("[@]"));
+			sSlip2 = sMessage.substr(sMessage.indexOf("[@]") + 3, sMessage.length);
+			sMessage = sSlip1 + aMsgAgr[i] + sSlip2;
+		}
+	}
+
+	if (sMessage.indexOf("\\n") != -1) 
+	{
+		var arr = sMessage.split("\\n");
+		var sTemp = "";
+
+		for (var i = 0; i < arr.length; i++) 
+		{
+			if (i > 0) 
+			{
+				sTemp += String.fromCharCode(10);
+			}
+
+			sTemp += arr[i];
+		}
+
+		sMessage = sTemp;
+	}
+
+	return sMessage;
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInfo)
+{
+	this.gvLangCd = e.postvalue;
+
+	nexacro.getEnvironment().locale = null;
+	this.gfnSetLocale(e.postvalue);
+	this.Grid00.redraw();
+
+	this.gfnSetLanguage(this);
+};]]></Script>
+  </Form>
+</FDL>

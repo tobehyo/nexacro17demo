@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="work06" width="727" height="920" titletext="댓글기능" onload="work06_onload">
+    <Layouts>
+      <Layout>
+        <Static id="Static03" taborder="8" text="댓글 기능" cssclass="sta_WF_title01" left="10" top="0" width="160" height="50"/>
+        <Static id="Static07" taborder="9" text="게시판의 댓글 기능을 넥사크로 플랫폼으로 구현한 샘플입니다.&#13;&#10;하단의 댓글을 입력하거나 입력된 댓글에 답글달기를 해보세요." cssclass="sta_WF_box03" left="10" top="50" right="0" height="71" wordWrap="char"/>
+        <Button id="Button01" taborder="3" text="열기" cssclass="btn_boxOpen" top="337" right="-60" width="49" height="28" visible="false"/>
+        <Div id="divComment" taborder="4" left="10" top="822" right="0" height="82" cssclass="div_WF_replyBox">
+          <Layouts>
+            <Layout>
+              <Edit id="edtReply" taborder="1" left="49" top="10" right="75" height="60" cssclass="ed_WF_reply" onkeydown="divComment_edtReply_onkeydown"/>
+              <Button id="btnReply" taborder="2" text="입력" top="10" right="10" height="60" cssclass="btn_WF_enterReply" width="60" onclick="divComment_btnReply_onclick"/>
+              <Static id="Static00" taborder="0" left="10" top="25" height="30" cssclass="sta_WF_replyIcon01" width="30"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="5" left="782" top="403" width="97" height="62" cssclass="sta_cell02" visible="false" border="0px none rgba(128,128,128,1)"/>
+        <Static id="Static01" taborder="6" cssclass="sta_cell01" left="903" top="518" width="97" height="62" visible="false"/>
+        <Static id="Static02" taborder="7" left="10" top="131" width="717" height="250" cssclass="sta_WF_replyBack" background="URL(&quot;imagerc::img_WF_replyBack.png&quot;)"/>
+        <Div id="divList" taborder="1" left="10" top="391" height="421" right="0" cssclass="div_WF_replyBox">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Button id="Button00" taborder="2" top="235" right="-60" height="28" cssclass="btn_boxFold" text="접기" width="49" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_List">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="id_up" type="STRING" size="256"/>
+          <Column id="user" type="STRING" size="256"/>
+          <Column id="content" type="STRING" size="256"/>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="lvl" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="user">홍길동</Col>
+            <Col id="lvl">0</Col>
+            <Col id="content">test123123</Col>
+            <Col id="id">01</Col>
+            <Col id="id_up">0</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+          <Row>
+            <Col id="user">홍길동</Col>
+            <Col id="lvl">1</Col>
+            <Col id="content">test1</Col>
+            <Col id="id">0101</Col>
+            <Col id="id_up">01</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+          <Row>
+            <Col id="user">홍길동</Col>
+            <Col id="lvl">1</Col>
+            <Col id="content">test2</Col>
+            <Col id="id">0102</Col>
+            <Col id="id_up">01</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+          <Row>
+            <Col id="id">02</Col>
+            <Col id="id_up">0</Col>
+            <Col id="user">홍길동</Col>
+            <Col id="content">test2</Col>
+            <Col id="lvl">0</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+          <Row>
+            <Col id="id">0201</Col>
+            <Col id="id_up">02</Col>
+            <Col id="user">홍길동</Col>
+            <Col id="content">test2</Col>
+            <Col id="lvl">1</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+          <Row>
+            <Col id="id">020101</Col>
+            <Col id="id_up">02</Col>
+            <Col id="user">홍길동</Col>
+            <Col id="content">test2</Col>
+            <Col id="lvl">2</Col>
+            <Col id="date">10월 28일 06시 02분</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.fv_user = "홍길동";
+
+this.work06_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.fn_initReply();
+};
+
+this.fn_initReply = function ()
+{
+	var i,j;
+	var nLeft = 0;
+	var nTop = 0;
+	var nHeight;
+
+	var objReply;
+
+	var sId;
+	var sId_up;
+	var sUser;
+	var sContent;
+	var sLvl;
+
+	var objReply;
+	var objParent;
+
+	for (i = 0; i < this.ds_List.rowcount; i++) 
+	{
+		sId = this.ds_List.getColumn(i, "id");
+		sId_up = this.ds_List.getColumn(i, "id_up");
+		sUser = this.ds_List.getColumn(i, "user");
+		sContent = this.ds_List.getColumn(i, "content");
+		sDate = this.ds_List.getColumn(i, "date");
+		sLvl = this.ds_List.getColumn(i, "lvl");
+
+		nLeft = sLvl * 25;
+		nHeight = 80;
+
+		objReply = new Div("divReply_" + sId, nLeft, nTop, null, nHeight, 0, null);
+		objReply.set_async(false);
+		this.divList.form.addChild(objReply.name, objReply);
+
+		objReply.show();
+
+		if (sLvl == 0) 
+		{
+			objReply.set_url("example::reply_i.xfdl");
+		}
+		else 
+		{
+			objReply.set_url("example::reply_r.xfdl");
+		}
+		objReply._id = sId;
+		objReply._id_up = sId_up;
+		objReply._user = sUser;
+		objReply._content = sContent;
+		objReply._date = sDate;
+		objReply._lvl = sLvl;
+
+		objReply.form.stUser.set_text(sUser);
+		objReply.form.stContent.set_text(sContent);
+		objReply.form.stDate.set_text(sDate);
+
+		nTop += objReply.getOffsetHeight();
+	}
+	this.fn_setSize(this.divList);
+};
+
+this.fn_Like = function (obj)
+{
+
+};
+
+this.fn_Add = function (obj)
+{
+	var sParentId = obj._id;
+	var nFRow = this.ds_List.findRow("id", sParentId);
+
+	var nLvl = nexacro.toNumber(this.ds_List.getColumn(nFRow, "lvl")) + 1;
+	var nRow = this.ds_List.insertRow(nFRow + 1);
+	var sId;
+
+	sId = (nexacro.toNumber(this.ds_List.getCaseCount("id_up=='" + sParentId + "'")) + 1);
+	sId = sParentId + sId.toString().padLeft(2, "0");
+
+	this.ds_List.setColumn(nRow, "id", sId);
+	this.ds_List.setColumn(nRow, "id_up", sParentId);
+	this.ds_List.setColumn(nRow, "user", this.fv_user);
+	this.ds_List.setColumn(nRow, "content", "");
+	this.ds_List.setColumn(nRow, "date", this.gfn_getDate());
+	this.ds_List.setColumn(nRow, "lvl", nLvl);
+
+	// trace(nLvl);
+	var nTop = nexacro.toNumber(obj.getOffsetTop()) + nexacro.toNumber(obj.getOffsetHeight());
+	var nLeft = nLvl * 25;
+
+	nHeight = 50;
+
+	objReply = new Div("divReply_" + sParentId + sId, nLeft, nTop, null, nHeight, 0, null);
+	objReply.set_async(false);
+	this.divList.form.addChild(objReply.name, objReply);
+
+	objReply.show();
+
+	objReply.set_url("example::reply_e.xfdl");
+	objReply._id = sId;
+	objReply._id_up = sParentId;
+	objReply._lvl = nLvl;
+	
+	this.fn_moveReply(objReply, 50);
+	this.fn_setSize(this.divList);
+};
+
+this.fn_Submit = function (obj)
+{
+	var nFRow = this.ds_List.findRow("id", obj._id);
+	var sId = obj._id;
+	var sId_up = obj._id_up;
+	var sContent = obj.form.edtReply.value;
+	var sDate = this.gfn_getDate();
+	var nLvl = obj._lvl;
+
+	this.ds_List.setColumn(nFRow, "content", sContent);
+	this.ds_List.setColumn(nFRow, "date", sDate);
+
+	obj.set_url("example::reply_r.xfdl");
+	trace("aaaa");
+	obj.setOffsetHeight(80);
+	objReply._id = sId;
+	objReply._id_up = sId_up;
+	objReply._user = this.fv_user;
+	objReply._content = sContent;
+	objReply._date = sDate;
+	objReply._lvl = nLvl;
+
+	objReply.form.stUser.set_text(this.fv_user);
+	objReply.form.stContent.set_text(sContent);
+	objReply.form.stDate.set_text(sDate);
+
+	this.fn_moveReply(objReply, 30);
+	this.fn_setSize(this.divList);
+};
+
+this.fn_Insert = function (sContent)
+{
+	var nRow = this.ds_List.insertRow(0);
+	var sId;
+	var sDate = this.gfn_getDate();
+	sId = (nexacro.toNumber(this.ds_List.getCaseCount("lvl=='0'")) + 1);
+	sId = sId.toString().padLeft(2, "0");
+
+	this.ds_List.setColumn(nRow, "id", sId);
+	this.ds_List.setColumn(nRow, "id_up", 0);
+	this.ds_List.setColumn(nRow, "user", this.fv_user);
+	this.ds_List.setColumn(nRow, "content", sContent);
+	this.ds_List.setColumn(nRow, "date", sDate);
+	this.ds_List.setColumn(nRow, "lvl", 0);
+
+	var nTop = 0;
+	var nLeft = 0;
+	var nHeight = 80;
+
+	objReply = new Div("divReply_" + sId, nLeft, nTop, null, nHeight, 0, null);
+	objReply.set_async(false);
+	this.divList.form.addChild(objReply.name, objReply);
+
+	objReply.show();
+
+	objReply.set_url("example::reply_i.xfdl");
+
+	objReply._id = sId;
+	objReply._id_up = 0;
+	objReply._user = this.fv_user;
+	objReply._content = sContent;
+	objReply._date = sDate;
+	objReply._lvl = 0;
+	// trace(sContent);
+	objReply.form.stUser.set_text(this.fv_user);
+	objReply.form.stContent.set_text(sContent);
+	objReply.form.stDate.set_text(sDate);
+
+	this.fn_moveReply(objReply, 80);
+	this.fn_setSize(this.divList);
+};
+
+this.fn_moveReply = function (objReply, nHeight)
+{
+	var i;
+	var nCount = this.divList.form.components.length;
+	var objDiv;
+	var nTop = nexacro.toNumber(objReply.getOffsetTop());
+	// var nHeight = nexacro.toNumber(objReply.getOffsetHeight());
+
+	var nLeft_org;
+	var nTop_org;
+
+	for (i = 0; i < nCount; i++) 
+	{
+		objDiv = this.divList.form.components[i];
+		nLeft_org = nexacro.toNumber(objDiv.getOffsetLeft());
+		nTop_org = nexacro.toNumber(objDiv.getOffsetTop());
+
+		if (objReply.name != objDiv.name && nTop <= nTop_org) 
+		{
+			objDiv.move(nLeft_org, nTop_org + nHeight);
+		}
+	}
+};
+
+this.fn_setSize = function (objDiv)
+{
+	var nLeft;
+	var nTop;
+
+	objDiv.form.resetScroll();
+	if (objDiv.form.vscrollbar.max == 0) 
+	{
+		var h = 0;
+		var comps = objDiv.components;
+
+		for (var i = 0,n = comps.length; i < n; i++) 
+		{
+			var comp = comps[i];
+			if (comp && comp.visible && comp.name != "stBoxGray") 
+			{
+				var offsetbottom = comp.getOffsetBottom();
+
+				h = Math.max(h, offsetbottom);
+			}
+		}
+
+		objDiv.setOffsetHeight(h + 7);
+	}
+	else 
+	{
+		objDiv.setOffsetHeight(objDiv.getOffsetHeight() + objDiv.form.vscrollbar.max + 7);
+	}
+
+	nTop = nexacro.toNumber(objDiv.getOffsetTop()) + nexacro.toNumber(objDiv.getOffsetHeight());
+	this.divComment.move(10, nTop + 10);
+	this.resetScroll();
+
+	this.parent.parent.div_work.setOffsetHeight(this.divComment.getOffsetBottom() + 10);
+	this.parent.parent.parent.setOffsetHeight(this.parent.parent.divWork.getOffsetHeight() + 189);
+	this.parent.parent.parent.form.resetScroll();
+	this.parent.parent.parent.parent.resetScroll();
+};
+
+this.divComment_btnReply_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	var sContent = this.divComment.form.edtReply.value;
+	this.divComment.form.edtReply.set_value("");
+
+	this.fn_Insert(sContent);
+};
+
+this.divComment_edtReply_onkeydown = function (obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if (e.keycode == 13) 
+	{
+		this.divComment.form.btnReply.click();
+	}
+};
+
+this.gfn_getDate = function ()
+{
+	var objDate = new Date();
+	var sDate = (objDate.getMonth() + 1 + "월 " + objDate.getDate() + "일 " + objDate.getHours() + "시 " + objDate.getMinutes() + "분");
+
+	return sDate;
+};
+]]></Script>
+  </Form>
+</FDL>

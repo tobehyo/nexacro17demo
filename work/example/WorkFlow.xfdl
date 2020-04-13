@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="WorkFlow" width="727" height="1135" titletext="트리 그래프" onload="TreeLayoutExample_onload">
+    <Layouts>
+      <Layout>
+        <Graphic id="Graphic00" left="10" top="229" style="border:1 solid #808080ff ;color:transparent;" right="0" height="525"/>
+        <Grid id="Grid00" taborder="3" left="10" top="804" right="0" height="265" binddataset="Dataset01" autofittype="col" font="8pt arial">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="50"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="깊이"/>
+                <Cell col="1" text="항목"/>
+                <Cell col="2" text="유형"/>
+                <Cell col="3" text="상태"/>
+                <Cell col="4" text="하위"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:level"/>
+                <Cell col="1" edittype="normal" text="bind:text" editdisplay="edit" textAlign="left"/>
+                <Cell col="2" text="bind:type"/>
+                <Cell col="3" text="bind:color"/>
+                <Cell col="4" text="bind:collapse"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staSubTitle1" taborder="6" text="  지식정보의 지식변경, 지식상태변경, 지식항목, 지식추가, 지식삭제, 팬잉의 기능을 갖는다." left="10" cssclass="sta_WF_box02" height="30" top="1068" right="0" color="rgba(51,51,51,1)" padding="4px 0px 4px 0px"/>
+        <Static id="staSubtitle2" taborder="11" text="지식데이터1" left="10" top="764" height="40" cssclass="sta_WF_title02" width="148" color="rgba(51,51,51,1)"/>
+        <Static id="staRowcount1" taborder="15" top="200" height="24" width="86" right="0" cssclass="sta_WF_countBox01"/>
+        <Static id="Static00" taborder="17" text="트리 그래프" cssclass="sta_WF_title01" left="10" top="0" width="300" height="50"/>
+        <Static id="Static07" taborder="18" text="그림 요소들을 객체화하여 그릴 수 있는 그래픽(Graphic) 컴포넌트를 이용하여 트리 그래프(Tree Gragh)를 표현할 수 있습니다.&#13;&#10;※ 그래픽(Grapich) 컴포넌트는 플레이넥사크로(&lt;fc v='blue'&gt;www.playnexacro.com&lt;/fc&gt;) 홈페이지에서 다운 받을 수 있습니다." cssclass="sta_WF_box03" left="10" top="50" right="0" height="76" usedecorate="true" wordWrap="char"/>
+        <Static id="Static01" taborder="19" cssclass="sta_WF_box02" left="10" top="146" right="0" height="44"/>
+        <Static id="Static02" taborder="20" text="표출조건" cssclass="sta_WF_condition01" left="30" top="156" width="90" height="24"/>
+        <Combo id="Combo00" taborder="21" value="Vertical" text="Vertical" codecolumn="codecolumn" datacolumn="datacolumn" index="0" left="102" top="156" width="119" height="24" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Vertical</Col>
+                <Col id="datacolumn">Vertical</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Horizontal</Col>
+                <Col id="datacolumn">Horizontal</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Combo id="cmbContents" taborder="22" value="Dataset01" text="지식데이터1" codecolumn="codecolumn" datacolumn="datacolumn" index="0" left="231" top="156" width="120" height="24" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">Dataset01</Col>
+                <Col id="datacolumn">지식데이터1</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">Dataset02</Col>
+                <Col id="datacolumn">지식데이터2</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Button id="Button00" taborder="23" text="적용" onclick="Button00_onclick" cssclass="btn_WF_basic01" top="156" width="50" height="24" right="11"/>
+        <Static id="Static03" taborder="24" left="275" top="83" height="20" width="123" onclick="Static03_onclick" cursor="hand"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset01" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" onrowsetchanged="Dataset_onrowsetchanged">
+        <ColumnInfo>
+          <Column id="level" type="INT" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="collapse" type="INT" size="256"/>
+          <Column id="nodeColor" type="STRING" size="256"/>
+          <Column id="color" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="text">N1</Col>
+            <Col id="level">1</Col>
+            <Col id="type">rect</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.1</Col>
+            <Col id="level">2</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#0390ec</Col>
+            <Col id="color">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2</Col>
+            <Col id="level">2</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.1</Col>
+            <Col id="level">4</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef3a3a</Col>
+            <Col id="color">빨강색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2.1</Col>
+            <Col id="level">5</Col>
+            <Col id="collapse">1</Col>
+            <Col id="type">diamond</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2.2</Col>
+            <Col id="level">6</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">1</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.1</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.2</Col>
+            <Col id="level">4</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.3</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.4</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.3</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.4</Col>
+            <Col id="level">3</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.3</Col>
+            <Col id="level">2</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.4</Col>
+            <Col id="level">2</Col>
+            <Col id="type">rect</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.5</Col>
+            <Col id="level">2</Col>
+            <Col id="type">diamond</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+      <Dataset id="Dataset02" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" onrowsetchanged="Dataset_onrowsetchanged">
+        <ColumnInfo>
+          <Column id="level" type="INT" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="collapse" type="INT" size="256"/>
+          <Column id="nodeColor" type="STRING" size="256"/>
+          <Column id="color" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="text">M1</Col>
+            <Col id="level">1</Col>
+            <Col id="type">rect</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">M1.1</Col>
+            <Col id="level">2</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">M1.2</Col>
+            <Col id="level">2</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">M1.2.1</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.1</Col>
+            <Col id="level">4</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef3a3a</Col>
+            <Col id="color">빨강색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#ef3a3a</Col>
+            <Col id="color">빨강색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2.1</Col>
+            <Col id="level">5</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">diamond</Col>
+            <Col id="nodeColor">#ef3a3a</Col>
+            <Col id="color">빨강색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.1.2.2</Col>
+            <Col id="level">6</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#ef8009</Col>
+            <Col id="color">주황색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">1</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.1</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#0390ec</Col>
+            <Col id="color">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.2</Col>
+            <Col id="level">4</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#0390ec</Col>
+            <Col id="color">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.3</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#0390ec</Col>
+            <Col id="color">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.2.4</Col>
+            <Col id="level">4</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#0390ec</Col>
+            <Col id="color">파랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.3</Col>
+            <Col id="level">3</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.2.4</Col>
+            <Col id="level">3</Col>
+            <Col id="type">circle</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#19A39C</Col>
+            <Col id="color">초록색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.3</Col>
+            <Col id="level">2</Col>
+            <Col id="collapse">0</Col>
+            <Col id="type">rect</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.4</Col>
+            <Col id="level">2</Col>
+            <Col id="type">rect</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+          <Row>
+            <Col id="text">N1.5</Col>
+            <Col id="level">2</Col>
+            <Col id="type">diamond</Col>
+            <Col id="collapse">0</Col>
+            <Col id="nodeColor">#F2B100</Col>
+            <Col id="color">노랑색</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_itemMenu">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+          <Column id="icon" type="STRING" size="256"/>
+          <Column id="enable" type="STRING" size="256"/>
+          <Column id="type" type="STRING" size="256"/>
+          <Column id="menuId" type="STRING" size="256"/>
+          <Column id="bUse" type="STRING" size="256"/>
+          <Column id="bEnbleColumn" type="STRING" size="256"/>
+          <Column id="hotkeyColumn" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">shape</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">지식유형</Col>
+            <Col id="enable"/>
+            <Col id="icon"/>
+            <Col id="type"/>
+            <Col id="menuId">100</Col>
+            <Col id="bUse">Y</Col>
+          </Row>
+          <Row>
+            <Col id="id">color</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">지식상태</Col>
+            <Col id="enable"/>
+            <Col id="icon"/>
+            <Col id="type"/>
+            <Col id="menuId">200</Col>
+            <Col id="bUse">Y</Col>
+          </Row>
+          <Row>
+            <Col id="id">label</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">지식항목</Col>
+            <Col id="enable"/>
+            <Col id="icon"/>
+            <Col id="type"/>
+            <Col id="menuId">300</Col>
+            <Col id="bUse">Y</Col>
+          </Row>
+          <Row>
+            <Col id="id">append</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">지식추가</Col>
+            <Col id="enable"/>
+            <Col id="type"/>
+            <Col id="icon"/>
+            <Col id="menuId">400</Col>
+            <Col id="bUse">Y</Col>
+          </Row>
+          <Row>
+            <Col id="id">delete</Col>
+            <Col id="level">0</Col>
+            <Col id="caption">지식삭제</Col>
+            <Col id="enable"/>
+            <Col id="type"/>
+            <Col id="icon"/>
+            <Col id="menuId">500</Col>
+            <Col id="bUse">Y</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[// https://jstreegraph.codeplex.com : treelayout 로직 참고
+
+var graphic;
+var graphicGroup;
+var graphicGroupId = "__TREE_TOPMOST_GROUP";
+var bindDs = this.Dataset01;
+
+var fvNode;
+var chgDsObj;
+
+this.TreeLayoutExample_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	graphic = this.Graphic00;
+	// this.Dataset00.assign(bindDs);
+
+	this.staRowcount1.set_text("count :" + this.Dataset01.rowcount);
+	this.Dataset01.set_rowposition(-1);
+	this.Dataset02.set_rowposition(-1);
+};
+
+this._toTreeNode = function (dataSet)
+{
+	var level,text,type,collapse,root,previousLevelNode = [],curlevel = -1,pnode,childs,node,nodeColor;
+
+	for (var i = 0,len = dataSet.rowcount; i < len; i++) 
+	{
+		level = dataSet.getColumn(i, "level");
+		text = dataSet.getColumn(i, "text") || "";
+		type = dataSet.getColumn(i, "type") || "rect";
+		collapse = dataSet.getColumn(i, "collapse") || 0;
+		nodeColor = dataSet.getColumn(i, "nodeColor") || 0;
+
+		if (!root) 
+		{
+			root = {
+				"level" : level - 1,
+				"text" : text,
+				"type" : type,
+				"collapse" : collapse,
+				"dsRow" : i,
+				"nodeColor" : nodeColor,
+				"children" : null
+			};
+
+			previousLevelNode[level] = root;
+			curlevel = level;
+		}
+		else 
+		{
+			if (curlevel != level) 
+			{
+				pnode = previousLevelNode[level - 1];
+				curlevel = level;
+				if (pnode) 
+				{
+					childs = pnode.children;
+				}
+			}
+
+			node = {
+				"level" : level - 1,
+				"text" : text,
+				"type" : type,
+				"collapse" : collapse,
+				"dsRow" : i,
+				"nodeColor" : nodeColor,
+				"children" : null
+			};
+
+			previousLevelNode[level] = node;
+
+			if (pnode) 
+			{
+				if (!childs) 
+				{
+					pnode.children = [];
+					childs = pnode.children;
+				}
+				childs.push(node);
+			}
+		}
+	}
+	return root;
+};
+
+this.Button00_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	// bindDs.assign(this.Dataset00);
+
+	var strObjDsName = this.cmbContents.value;
+	var dsObj = this.objects[strObjDsName];
+	bindDs = dsObj;
+
+	// this.Dataset00.assign(bindDs);
+	// bindDs.assign(this.Dataset00);
+
+	this.staSubtitle2.set_text(this.cmbContents.text);
+	this.Grid00.set_binddataset(strObjDsName);
+
+	this.draw();
+};
+
+this.draw = function ()
+{
+	var root = this._toTreeNode(bindDs);
+
+	this._createGroup();
+
+	if (root) 
+	{
+		this._setTreeNode(root);
+		this._setTreeLayout(root);
+
+		this._drawNode(root);
+		this._drawLine(root);
+	}
+
+	graphic.invalidate();
+};
+
+this._setTreeNode = function (node, level, pNode, lNode, rLimits)
+{
+	if (level === undefined) 
+	{
+		level = 0;
+	}
+	if (pNode === undefined) 
+	{
+		pNode = null;
+	}
+	if (lNode === undefined) 
+	{
+		lNode = null;
+	}
+	if (rLimits === undefined) 
+	{
+		rLimits = new Array();
+	}
+	if (node && node.index === undefined) 
+	{
+		node.index = 0;
+	}
+
+	node.pnode = pNode;
+	node.lnode = lNode;
+
+	var children = node.children,left = null;
+
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		for (var i = 0; i < children.length; i++) 
+		{
+			left = null;
+			children[i].index = i;
+
+			if (i == 0 && !Eco.isEmpty(rLimits[level])) 
+			{
+				left = rLimits[level];
+			}
+			if (i > 0) 
+			{
+				left = children[i - 1];
+			}
+			if (i == (children.length - 1)) 
+			{
+				rLimits[level] = children[i];
+			}
+
+			this._setTreeNode(children[i], level + 1, node, left, rLimits);
+		}
+	}
+
+	// trace("node", node);
+};
+
+this._setTreeLayout = function (root)
+{
+	if (this.Combo00.value == "Vertical") 
+	{
+		this._setTreeVerticalLayout(root);
+	}
+	else 
+	{
+		this._setTreeHorizontalLayout(root);
+	}
+};
+
+this._setTreeVerticalLayout = function (node)
+{
+	var nodeTop = 50;
+	var nodeHeight = 50;
+	var nodeWidth = 100;
+	var nodeMarginLeft = 40;
+	var nodeMarginTop = 20;
+
+	var children = node.children;
+
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		for (var i = 0; i < children.length; i++) 
+		{
+			this._setTreeVerticalLayout(children[i]);
+		}
+	}
+
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		var childrenHeight = (children[children.length - 1].top + children[children.length - 1].height) - children[0].top;
+		nodeTop = (children[0].top + (childrenHeight / 2)) - (nodeHeight / 2);
+
+		if (node.lnode && ((node.lnode.top + node.lnode.height + nodeMarginTop) > nodeTop)) 
+		{
+			var newTop = node.lnode.top + node.lnode.height + nodeMarginTop;
+			var diff = newTop - nodeTop;
+
+			this._moveBottom(children, diff);
+			nodeTop = newTop;
+		}
+	}
+	else 
+	{
+		if (node.lnode) 
+		{
+			nodeTop = node.lnode.top + node.lnode.height + nodeMarginTop;
+		}
+	}
+
+	node.top = nodeTop;
+	node.left = (nodeMarginLeft * (node.level + 1)) + (nodeWidth * (node.level + 1));
+	node.height = nodeHeight;
+	node.width = nodeWidth;
+
+	var pointX = node.left + nodeWidth;
+	var pointY = nodeTop + (nodeHeight / 2);
+	node.childrenConnectorPoint = {
+		x : pointX,
+		y : pointY,
+		layout : "Vertical"
+	};
+
+	pointX = node.left;
+	pointY = nodeTop + (nodeHeight / 2);
+	node.parentConnectorPoint = {
+		x : pointX,
+		y : pointY,
+		layout : "Vertical"
+	};
+};
+
+this._moveBottom = function (nodes, distance)
+{
+	for (var i = 0; i < nodes.length; i++) 
+	{
+		nodes[i].top += distance;
+		if (nodes[i].parentConnectorPoint) 
+		{
+			nodes[i].parentConnectorPoint.y += distance;
+		}
+		if (nodes[i].childrenConnectorPoint) 
+		{
+			nodes[i].childrenConnectorPoint.y += distance;
+		}
+		if (nodes[i].children) 
+		{
+			this._moveBottom(nodes[i].children, distance);
+		}
+	}
+};
+
+this._setTreeHorizontalLayout = function (node)
+{
+	var nodeLeft = 50;
+	var nodeHeight = 50;
+	var nodeWidth = 100;
+	var nodeMarginLeft = 40;
+	var nodeMarginTop = 20;
+
+	var children = node.children;
+
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		for (var i = 0; i < children.length; i++) 
+		{
+			this._setTreeHorizontalLayout(children[i]);
+		}
+	}
+
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		var childrenWidth = (children[children.length - 1].left + children[children.length - 1].width) - children[0].left;
+		nodeLeft = (children[0].left + (childrenWidth / 2)) - (nodeWidth / 2);
+
+		if (node.lnode && ((node.lnode.left + node.lnode.width + nodeMarginLeft) > nodeLeft)) 
+		{
+			var newLeft = node.lnode.left + node.lnode.width + nodeMarginLeft;
+			var diff = newLeft - nodeLeft;
+
+			this._moveRight(children, diff);
+			nodeLeft = newLeft;
+		}
+	}
+	else 
+	{
+		if (node.lnode) 
+		{
+			nodeLeft = node.lnode.left + node.lnode.width + nodeMarginLeft;
+		}
+	}
+
+	node.left = nodeLeft;
+	node.top = (nodeMarginTop * (node.level + 1)) + (nodeHeight * (node.level + 1));
+	node.height = nodeHeight;
+	node.width = nodeWidth;
+
+	var pointX = nodeLeft + (nodeWidth / 2);
+	var pointY = node.top + nodeHeight;
+	node.childrenConnectorPoint = {
+		x : pointX,
+		y : pointY,
+		layout : "Horizontal"
+	};
+
+	pointX = nodeLeft + (nodeWidth / 2);
+	pointY = node.top;
+	node.parentConnectorPoint = {
+		x : pointX,
+		y : pointY,
+		layout : "Horizontal"
+	};
+};
+
+this._moveRight = function (nodes, distance)
+{
+	for (var i = 0; i < nodes.length; i++) 
+	{
+		nodes[i].left += distance;
+		if (nodes[i].parentConnectorPoint) 
+		{
+			nodes[i].parentConnectorPoint.x += distance;
+		}
+		if (nodes[i].childrenConnectorPoint) 
+		{
+			nodes[i].childrenConnectorPoint.x += distance;
+		}
+		if (nodes[i].children) 
+		{
+			this._moveRight(nodes[i].children, distance);
+		}
+	}
+};
+
+this._createGroup = function ()
+{
+	var graphicLayer = graphic.getChildByIndex(0);
+	graphicGroup = graphicLayer.getElementById(graphicGroupId);
+
+	if (graphicGroup) 
+	{
+		graphicGroup.removeChildren();
+	}
+	else 
+	{
+		graphicGroup = new Eco.GraphicGroup();
+		graphicGroup.setId(graphicGroupId);
+		// graphicGroup.setFillbrush("solid beige");
+
+		graphicGroup.behavior = "drag";
+		graphicGroup.setCursor("hand");
+		graphicGroup.addEventHandler("ondragstart", onGroupDragStart);
+		graphicGroup.addEventHandler("ondrag", onGroupDrag);
+		graphicGroup.addEventHandler("ondragend", onGroupDragEnd);
+
+		var boundsGrp = graphicGroup.getGlobalBounds(),centerPt = boundsGrp.getCenter(),xPt = boundsGrp.getX();
+		if (this.Combo00.value == "Vertical") 
+		{
+			graphicGroup.setCx(centerPt.x - 80);
+		}
+
+		graphicLayer.addChild(graphicGroup);
+
+
+		var startX;
+		var startY;
+
+		function onGroupDragStart (obj, e)
+		{
+			var bounds = obj.getGlobalBounds(),centerPt = bounds.getCenter();
+
+			startX = centerPt.x;
+			startY = centerPt.y;
+
+			return true;
+		}
+
+		function onGroupDrag (obj, e)
+		{
+			obj.setCx(startX + e.distanceX);
+			obj.setCy(startY + e.distanceY);
+			graphic.invalidate();
+		}
+
+		function onGroupDragEnd (obj, e)
+		{
+			// trace("onGroupDragEnd", e);
+		}
+	}
+};
+
+this._drawNode = function (node)
+{
+	var type = node.type || "rect",nodeEle,strokepenStyle,strokepenWidth = 1,fillbrushStyle,strokepenStyleColor;
+
+	if (node.nodeColor == "#ef8009") 
+	{
+		strokepenStyleColor = "#E37B09";
+	}
+	else if (node.nodeColor == "#ef3a3a") 
+	{
+		strokepenStyleColor = "#CE1111";
+	}
+	else if (node.nodeColor == "#19A39C") 
+	{
+		strokepenStyleColor = "#15817B";
+	}
+	else if (node.nodeColor == "#0271BB") 
+	{
+		strokepenStyleColor = "#239E83";
+	}
+	else if (node.nodeColor == "#F2B100") 
+	{
+		strokepenStyleColor = "#D99D00";
+	}
+
+
+	strokepenStyle = strokepenWidth + " solid " + strokepenStyleColor;
+	// fillbrushStyle = "solid orange";	//orange violet yellowgreen darkturquoise
+	var strFillbrushStyle = "solid ";
+
+	if (type == "rect") 
+	{
+		nodeEle = new Eco.GraphicRect(node.left, node.top, node.width, node.height);
+		nodeEle.setStrokepen(strokepenStyle);
+		nodeEle.setFillbrush(strFillbrushStyle + node.nodeColor);
+		nodeEle.setRadiusx(5);
+		nodeEle.setRadiusy(5);
+	}
+	else if (type == "circle") 
+	{
+		nodeEle = new Eco.GraphicEllipse(node.left + (node.width / 2), node.top + (node.height / 2), node.width, node.height);
+		nodeEle.setStrokepen(strokepenStyle);
+		nodeEle.setFillbrush(strFillbrushStyle + node.nodeColor);
+	}
+	else if (type == "diamond") 
+	{
+		var x = node.left,y = node.top,size = node.width,height = node.height;
+
+		nodeEle = new Eco.GraphicPath();
+		nodeEle.moveTo(x + size / 2, y);
+		nodeEle.lineTo(x, y + height / 2);
+		nodeEle.lineTo(x + size / 2, y + height);
+		nodeEle.lineTo(x + size, y + height / 2);
+		nodeEle.lineTo(x + size / 2, y);
+
+		nodeEle.setStrokepen(strokepenStyle);
+		nodeEle.setFillbrush(strFillbrushStyle + node.nodeColor);
+	}
+
+	if (!nodeEle) 
+	{
+		return;
+	}
+
+	nodeEle.setCursor("hand");
+	// nodeEle.addEventHandler("onclick", onNodeClickDelete);		//node 삭제
+	// nodeEle.addEventHandler("onrbuttondown", this._openGraphicMenu, this);
+	nodeEle.addEventHandler("ondblclick", onNodeRButtonDown); //popup Menu 보이기
+	nodeEle.addEventHandler("onrbuttondown", onNodeRButtonDown); //popup Menu 보이기
+
+	graphicGroup.addChild(nodeEle);
+
+	var centerPt = nodeEle.getCenter();
+
+	if (node.text) 
+	{
+		var nodeText = new Eco.GraphicText(centerPt.x, centerPt.y, node.text);
+		nodeText.setFont("Gulim,-11,bold");
+		nodeText.setFillbrush("solid #ffffff");
+		nodeText.setHalign("center");
+		nodeText.setValign("middle");
+		nodeText.setWordwrap("true");
+
+		// test - node 추가
+		nodeText.setCursor("hand");
+		// nodeText.addEventHandler("onclick", onTextClick);
+
+		graphicGroup.addChild(nodeText);
+	}
+
+	var imgSrc;
+	if (!node.collapse) 
+	{
+		imgSrc = "imagerc::grd_LF_treeClose.png";
+	}
+	else 
+	{
+		imgSrc = "imagerc::grd_LF_treeOpen.png";
+	}
+
+	if (imgSrc) 
+	{
+		if (node.children && node.children.length > 0) 
+		{
+			// var nodeImg = new Eco.GraphicImage(node.left + strokepenWidth, node.top + strokepenWidth);
+			var nodeImg = new Eco.GraphicImage(node.left + 4 + strokepenWidth, (centerPt.y - 12) + strokepenWidth);
+			nodeImg.setSrc(imgSrc);
+			nodeImg.setCursor("hand");
+			nodeImg.addEventHandler("onclick", onImageClick);
+			graphicGroup.addChild(nodeImg);
+		}
+	}
+
+	var children = node.children;
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		for (var i = 0; i < children.length; i++) 
+		{
+			this._drawNode(children[i]);
+		}
+	}
+
+	var pThis = this,removeNodes = [];
+
+	function onNodeRButtonDown (obj, e)
+	{
+		var pmenu,name;
+		name = obj.toString().split('#')[1];
+		pmenu = pThis.components[name];
+		if (Eco.isEmpty(pmenu)) 
+		{
+			pmenu = new PopupMenu;
+			pmenu.init(name, 0, 0, 0, 0);
+			pThis.addChild(name, pmenu);
+			pmenu.set_innerdataset(pThis.ds_itemMenu);
+			pmenu.set_levelcolumn("level");
+			pmenu.set_idcolumn("menuId");
+			pmenu.set_captioncolumn("caption");
+			pmenu.set_enablecolumn("bEnbleColumn");
+			pmenu.set_hotkeycolumn("hotkeyColumn");
+			pmenu.set_iconcolumn("iconColumn");
+			pmenu.set_cssclass("pmenu_WF_workFlow");
+			pmenu.show();
+
+			// pmenu.addEventHandler("onmenuclick", this._gfn_itemMenu_onmenuclick, this);
+			pmenu.addEventHandler("onmenuclick", onMenuClick, this);
+		}
+
+		var pdv,pdv_name;
+		pdv_name = "pdv_" + obj.toString().split('#')[1];
+		pdv = pThis.components["pdv_" + name];
+		if (Eco.isEmpty(pdv)) 
+		{
+			pdv = new PopupDiv;
+			pdv.init(pdv_name, 0, 0, 0, 0);
+			pdv.style.set_border("1 solid #777777ff");
+			pdv.style.set_background("#ffffff");
+			pThis.addChild(pdv_name, pdv);
+
+			pdv.set_async(false);
+			// pdv.addEventHandler("onpopup", onPdvMenuOpen, this);
+			// pdv.addEventHandler("oncloseup", this._pdv_FilterList_oncloseup, this);
+			pdv.show();
+		}
+
+		pmenu.pdv = pdv;
+
+		var x = system.screenToClientX(nexacro.getApplication().mainframe, e.screenX);
+		var y = system.screenToClientY(nexacro.getApplication().mainframe, e.screenY);
+
+		// trace('# popup Menu 위치  ', x, y);
+		pmenu.trackPopup(x, y);
+	}
+
+	// node 삭제
+	function onNodeClickDelete (obj, e)
+	{
+		setRemoveNodes(node);
+
+		if (removeNodes && removeNodes.length > 0) 
+		{
+			Eco.array.Each(removeNodes, function (name, index)
+			{
+				bindDs.deleteRow(name);
+			}, this, true);
+
+			removeNodes = [];
+			pThis.draw();
+		}
+	}
+
+
+	function setRemoveNodes (n)
+	{
+		removeNodes.push(n.dsRow);
+
+		var children = n.children;
+		if (children && children.length > 0) 
+		{
+			for (var i = 0; i < children.length; i++) 
+			{
+				setRemoveNodes(children[i]);
+			}
+		}
+	}
+
+	function onTextClick (obj, e)
+	{
+		if (!node.collapse) 
+		{
+			var dsRow = -1,insRow = -1,level = 0,len = 0,nodeColor;
+
+			dsRow = node.dsRow;
+			level = node.level + 1;
+			len = node.children ? node.children.length : 0;
+			nodeColor = node.nodeColor;
+
+			if (node.children) 
+			{
+				insRow = bindDs.findRow("level", level, dsRow + 1);
+			}
+
+			if (insRow < 0) 
+			{
+				insRow = dsRow + len + 1;
+			}
+
+			bindDs.insertRow(insRow);
+			bindDs.setColumn(insRow, "level", level + 1);
+			bindDs.setColumn(insRow, "text", node.text + "." + (len + 1));
+			bindDs.setColumn(insRow, "type", "rect");
+			bindDs.setColumn(insRow, "collapse", 0);
+			bindDs.setColumn(insRow, "nodeColor", nodeColor);
+			bindDs.setColumn(insRow, "color", bindDs.getColumn(dsRow, 'color'));
+
+			pThis.draw();
+		}
+	}
+
+
+	/**
+	 * @class popdiv 메뉴에서 메뉴를 눌렀을 때 발생하는 이벤트. 왼쪽메뉴클릭시
+	 * @param obj - PopupMenu
+	 * @param e - MenuClickEventInfo
+	 * @return None
+	 */
+	function onMenuClick (obj, e)
+	{
+		var gRow = pThis.ds_itemMenu.findRow('menuId', e.id);
+
+		switch (e.id) 
+		{
+			case "100":
+				// shape change
+				obj.pdv.set_async("false");
+				obj.pdv.set_url("comm::commGraphicPopMenu.xfdl");
+				obj.pdv.set_width(179);
+				obj.pdv.set_height(40);
+				obj.pdv.set_scrollbars("none");
+				obj.pdv.style.set_shadow("outer 3,3 2 gray");
+				obj.pdv.style.set_background("#f6f6f6");
+				obj.pdv.nodeDsRow = node.dsRow;
+				obj.pdv.usrType = node.type;
+				obj.pdv.usrMenuId = pThis.ds_itemMenu.getColumn(gRow, 'id');
+
+				obj.pdv.fn_getInfo(bindDs.name);
+				// var bindColID = this.gfn_getCellBind(obj.grid, obj.cell);
+				// obj.pdv.fn_setList(bindColID);
+				// obj.pdv.trackPopupByComponent(obj, obj.width, obj.height);
+				var x = system.screenToClientX(nexacro.getApplication().mainframe, system.clientToScreenX(obj, 0));
+				var y = system.screenToClientY(nexacro.getApplication().mainframe, system.clientToScreenY(obj, 0));
+				obj.pdv.trackPopup(x, y);
+				break;
+			case "200":
+				// 색변경
+				obj.pdv.set_async("false");
+				obj.pdv.set_url("comm::commGraphicPopMenu.xfdl");
+				obj.pdv.set_width(179);
+				obj.pdv.set_height(40);
+				obj.pdv.set_scrollbars("none");
+				obj.pdv.style.set_shadow("outer 3,3 2 gray");
+				obj.pdv.style.set_background("#f6f6f6");
+				obj.pdv.nodeDsRow = node.dsRow;
+				obj.pdv.usrColor = node.nodeColor;
+				obj.pdv.usrMenuId = pThis.ds_itemMenu.getColumn(gRow, 'id');
+
+				// 콤보의 기본정보 셋팅
+				obj.pdv.fn_getInfo(bindDs.name);
+				// obj.pdv.trackPopupByComponent(obj, obj.position.x, obj.position.y);
+				var x = system.screenToClientX(nexacro.getApplication().mainframe, system.clientToScreenX(obj, 0));
+				var y = system.screenToClientY(nexacro.getApplication().mainframe, system.clientToScreenY(obj, 0));
+				obj.pdv.trackPopup(x, y);
+				break;
+			case "300":
+				// 글자넣기
+				obj.pdv.set_async("false");
+				obj.pdv.set_url("comm::commGraphicPopMenu.xfdl");
+				obj.pdv.set_width(179);
+				obj.pdv.set_height(40);
+				obj.pdv.set_scrollbars("none");
+				obj.pdv.style.set_shadow("outer 3,3 2 gray");
+				obj.pdv.style.set_background("#f6f6f6");
+				obj.pdv.nodeDsRow = node.dsRow;
+				obj.pdv.usrMenuId = pThis.ds_itemMenu.getColumn(gRow, 'id');
+
+				// 콤보의 기본정보 셋팅
+				obj.pdv.fn_getInfo(bindDs.name);
+				// obj.pdv.trackPopupByComponent(obj, obj.position.x, obj.position.y);
+				var x = system.screenToClientX(nexacro.getApplication().mainframe, system.clientToScreenX(obj, 0));
+				var y = system.screenToClientY(nexacro.getApplication().mainframe, system.clientToScreenY(obj, 0));
+				obj.pdv.trackPopup(x, y);
+				break;
+			case "400":
+				// 지식추가
+				onTextClick();
+				break;
+			case "500":
+				// 지식빼기
+				onNodeClickDelete();
+				break;
+		}
+	}
+
+	function onImageClick (obj, e)
+	{
+		if (node.children && node.children.length > 0) 
+		{
+			bindDs.setColumn(node.dsRow, "collapse", !node.collapse);
+			pThis.draw();
+		}
+	}
+
+	nodeEle.node = node;
+};
+
+
+
+
+
+
+/**
+ * @class  메뉴 Open
+ * @param obj - Grid object
+ * @param e - GridMouseEventInfo
+ * @param type - 메뉴구성
+ * @return None
+ */
+this._openGraphicMenu = function (obj, e, type)
+{
+	trace('____________>>>>', ' ** obj ==>' + obj, '  type :' + type);
+
+
+	// pThis.ds_itemMenu.filter("");
+
+	// type에 따른 메뉴 구성
+	if (!Eco.isEmpty(type)) 
+	{
+		// var arrType = type.split(":");
+		// var cnt = pThis.ds_itemMenu.rowcount;
+		// for (var i=0; i<cnt; i++){
+		// if (!Eco.isEmpty(arrType[i])){
+		// pThis.ds_itemMenu.setColumn(i, "bUse", arrType[i]);
+		// } else {
+		// pThis.ds_itemMenu.setColumn(i, "bUse", "Y");
+		// }
+		// }
+		// pThis.ds_itemMenu.filter("bUse == 'Y' || bUse== 'y'");
+	}
+
+	var pmenu = this.components["gphMenu"];
+	if (Eco.isEmpty(pmenu)) 
+	{
+		pmenu = new PopupMenu;
+		pmenu.init("gphMenu", 0, 0, 0, 0);
+		this.addChild("gphMenu", pmenu);
+		pmenu.set_innerdataset(pThis.ds_itemMenu);
+		pmenu.set_levelcolumn("level");
+		pmenu.set_idcolumn("menuId");
+		pmenu.set_captioncolumn("caption");
+		pmenu.set_enablecolumn("bEnbleColumn");
+		pmenu.set_hotkeycolumn("hotkeyColumn");
+		pmenu.set_iconcolumn("iconColumn");
+		pmenu.set_name(obj.text);
+		pmenu.show();
+
+		pmenu.addEventHandler("onmenuclick", this._gfn_itemMenu_onmenuclick, this);
+	}
+
+	var pdv = this.components["pdv_gphMenu"];
+
+	if (Eco.isEmpty(pdv)) 
+	{
+		pdv = new PopupDiv;
+		pdv.init("pdv_gphMenu", 0, 0, 0, 0);
+		pdv.style.set_border("1 solid #777777ff");
+		pdv.style.set_background("#ffffff");
+		this.addChild("pdv_gphMenu", pdv);
+		// pdv.set_async(false);
+		// pdv.addEventHandler("onpopup", this._pdv_FilterList_onpopup, this);
+		// pdv.addEventHandler("oncloseup", this._pdv_FilterList_oncloseup, this);
+		pdv.show();
+	}
+	pmenu.pdv = pdv;
+
+	var x = system.screenToClientX(nexacro.getApplication().mainframe, e.screenX);
+	var y = system.screenToClientY(nexacro.getApplication().mainframe, e.screenY);
+
+	pmenu.trackPopup(x, y);
+};
+
+
+this._drawLine = function (node)
+{
+	var children = node.children;
+	if ((!node.collapse) && children && children.length > 0) 
+	{
+		for (var i = 0; i < children.length; i++) 
+		{
+			if (node.childrenConnectorPoint.layout == "Vertical") 
+			{
+				this._drawVerticalLine(node.childrenConnectorPoint, children[i].parentConnectorPoint);
+			}
+			else 
+			{
+				this._drawHorizontalLine(node.childrenConnectorPoint, children[i].parentConnectorPoint);
+			}
+
+			this._drawLine(children[i]);
+		}
+	}
+};
+
+this._drawVerticalLine = function (startPoint, endPoint)
+{
+	var midX = 0,startY = 0,endY = 0,lineWidth = 1;
+
+	midX = (startPoint.x + ((endPoint.x - startPoint.x) / 2));
+	this._drawGraphicLine(startPoint.x, startPoint.y, midX, startPoint.y, lineWidth);
+
+	startY = startPoint.y < endPoint.y ? startPoint.y : endPoint.y;
+	endY = startPoint.y > endPoint.y ? startPoint.y : endPoint.y;
+
+	this._drawGraphicLine(midX, startY, midX, endY, lineWidth);
+	this._drawGraphicLine(midX, endPoint.y, endPoint.x, endPoint.y, lineWidth);
+};
+
+this._drawHorizontalLine = function (startPoint, endPoint)
+{
+	var midY = 0,startX = 0,endX = 0,lineWidth = 1;
+
+	midY = (startPoint.y + ((endPoint.y - startPoint.y) / 2));
+	this._drawGraphicLine(startPoint.x, startPoint.y, startPoint.x, midY, lineWidth);
+
+	startX = startPoint.x < endPoint.x ? startPoint.x : endPoint.x;
+	endX = startPoint.x > endPoint.x ? startPoint.x : endPoint.x;
+
+	this._drawGraphicLine(startX, midY, endX, midY, lineWidth);
+	this._drawGraphicLine(endPoint.x, midY, endPoint.x, endPoint.y, lineWidth);
+};
+
+this._drawGraphicLine = function (startX, startY, endX, endY, lineWidth)
+{
+	var nodeEle,nodeStyle;
+
+	nodeEle = new Eco.GraphicLine();
+	nodeStyle = lineWidth + " solid gray";
+
+	nodeEle.setStrokepen(nodeStyle);
+	nodeEle.setX1(startX);
+	nodeEle.setY1(startY);
+	nodeEle.setX2(endX);
+	nodeEle.setY2(endY);
+
+	graphicGroup.addChild(nodeEle);
+};
+
+this.Dataset_onrowsetchanged = function (obj:Dataset, e:nexacro.DSRowsetChangeEventInfo)
+{
+	this.staRowcount1.set_text("count :" + obj.rowcount);
+};
+
+this.Static03_onclick = function (obj:Static, e:nexacro.ClickEventInfo)
+{
+	system.execBrowser("http://www.playnexacro.com/articles/196/canvas-이용한-graphic-component");
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="FitToContents" width="980" height="830" titletext="Fit To Contents" onload="FitToContents_onload" onbeforeclose="FitToContents_onbeforeclose">
+    <Layouts>
+      <Layout stepcount="0" screenid="">
+        <Radio id="rdoLocale" taborder="0" left="8" top="64" height="266" innerdataset="@dsLocale" codecolumn="code" datacolumn="name" onitemchanged="rdoLocale_onitemchanged" columncount="4" direction="horizontal" width="852"/>
+        <Static id="Static07" taborder="1" text="Nexacro uses component properties to automatically adjust the component size to fit the text length without coding." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Static id="Static08" taborder="2" left="59" top="86" width="60" height="83" cssclass="sta_WF_iconKorea" text="Korea"/>
+        <Static id="Static09" taborder="3" text="USA" cssclass="sta_WF_iconUSA" left="278" top="86" width="60" height="83"/>
+        <Static id="Static10" taborder="4" text="China" cssclass="sta_WF_iconChina" left="493" top="86" width="60" height="83"/>
+        <Static id="Static11" taborder="5" text="Russia" cssclass="sta_WF_iconRussia" left="703" top="86" width="60" height="83"/>
+        <Static id="Static13" taborder="6" text="Spanish" cssclass="sta_WF_iconSpain" left="493" top="225" width="60" height="83"/>
+        <Static id="Static14" taborder="7" text="German" cssclass="sta_WF_iconGeman" left="278" top="225" width="60" height="83"/>
+        <Static id="Static15" taborder="8" text="Czech" cssclass="sta_WF_iconCzech" left="59" top="225" width="60" height="83"/>
+        <Static id="Static16" taborder="9" left="265" top="304" width="95" height="20" text="(Switzerland)"/>
+        <Static id="Static17" taborder="10" text="(Spain)" left="494" top="304" width="64" height="20"/>
+        <Grid id="grdMaster" taborder="11" left="0" top="349" height="200" binddataset="dsList" autofittype="none" width="50.00%" autosizingtype="col" autosizebandtype="allband">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="60"/>
+                <Column size="150"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="36" band="head"/>
+                <Row size="36"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Name" autosizecol="limitmin"/>
+                <Cell col="1" text="Birth year" autosizecol="limitmin"/>
+                <Cell col="2" text="Height" autosizecol="limitmin"/>
+                <Cell col="3" text="Weight" autosizecol="limitmin"/>
+                <Cell col="4" text="Team" autosizecol="limitmin"/>
+                <Cell col="5" text="Position" autosizecol="limitmin"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+                <Cell col="2" text="bind:Column2" textAlign="center"/>
+                <Cell col="3" text="bind:Column3" textAlign="center"/>
+                <Cell col="4" text="bind:Column4" textAlign="left"/>
+                <Cell col="5" text="bind:Column5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static04" taborder="12" left="grdMaster:3" top="349" border="2px solid #f88882" right="4" text="" height="200" background="#fdf9f9"/>
+        <ImageViewer id="img_image" taborder="13" left="grdMaster:9" top="360" height="177" border="1px solid #bdc2c9" stretch="fit" width="122"/>
+        <Static id="staName" taborder="15" left="img_image:20" width="50" height="20" top="360" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0001" textAlign="left" verticalAlign="middle" text="성명" fittocontents="width"/>
+        <Static id="sta01" taborder="14" left="staName:6" top="361" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px" text=""/>
+        <Static id="staBirth" taborder="16" left="img_image:20" width="50" height="20" top="390" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0002" textAlign="left" verticalAlign="middle" text="출생년도" fittocontents="width"/>
+        <Static id="st_title01" taborder="17" left="staBirth:15" top="390" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="staHeight" taborder="18" left="img_image:20" width="50" height="20" top="420" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0003" textAlign="left" verticalAlign="middle" text="키" fittocontents="width"/>
+        <Static id="st_title02" taborder="19" left="staHeight:15" top="420" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="staWeight" taborder="20" left="img_image:20" width="50" height="20" top="450" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0004" textAlign="left" verticalAlign="middle" text="몸무게" fittocontents="width"/>
+        <Static id="st_title03" taborder="21" left="staWeight:15" top="450" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="staTeam" taborder="22" left="img_image:20" width="50" height="20" top="480" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0005" textAlign="left" verticalAlign="middle" text="소속" fittocontents="width"/>
+        <Static id="staPosition" taborder="23" left="img_image:20" width="50" height="20" top="510" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0006" textAlign="left" verticalAlign="middle" text="포지션" fittocontents="width"/>
+        <Static id="st_title04" taborder="24" left="staTeam:15" top="480" width="214" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="st_title05" taborder="25" left="staPosition:15" top="510" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
+        <Static id="Static00_00" taborder="26" text="Static00" left="28" width="485" height="20" background="aqua" visible="false" bottom="0"/>
+        <Static id="Static00" taborder="27" text="Static00" top="7" width="20" height="153" background="aqua" visible="false" right="0"/>
+        <GroupBox id="GroupBox00" text="날짜 형식" taborder="28" left="0" top="562" height="200" width="50.00%" visible="true" msgCd="L0007" cssclass="grb_basic01"/>
+        <Static id="Static00_01" taborder="29" text="Short Date" left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009" fittocontents="width"/>
+        <Calendar id="Calendar00" taborder="30" left="Static00_01:10" top="603" height="32" dateformat="SHORTDATE" editformat="SHORTDATE" value="20160401" width="215" visible="true" cssclass="cal_basic01"/>
+        <Static id="Static01" taborder="31" text="Long Date" left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010" fittocontents="width"/>
+        <Calendar id="Calendar01" taborder="32" left="Static01:10" top="645" height="32" width="215" visible="true" cssclass="cal_basic01" dateformat="LONGDATE" editformat="LONGDATE"/>
+        <GroupBox id="GroupBox01" text="숫자 형식" taborder="33" left="GroupBox00:4" top="562" height="200" visible="true" msgCd="L0008" right="4" cssclass="grb_basic01"/>
+        <Static id="Static02" taborder="34" text="Positive numbers" left="GroupBox00:28" top="603" height="32" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R" width="130" fittocontents="width"/>
+        <Static id="Static03" taborder="35" text="Negative numbers" left="GroupBox00:28" top="645" height="32" width="130" visible="true" cssclass="sta_WF_cell01R" msgCd="L00012" fittocontents="width"/>
+        <MaskEdit id="MaskEdit00" taborder="36" left="Static02:20" top="603" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="123456789.00"/>
+        <MaskEdit id="MaskEdit01" taborder="37" left="Static03:20" top="645" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="-123456789.00"/>
+        <Button id="Button00" taborder="38" text="text size" left="518" top="701" width="136" height="49" onclick="Button00_onclick" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsLocale">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">ko_KR</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">en_US</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">zh_CN</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">ru_RU</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">cs_CZ</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">de_CH</Col>
+            <Col id="name"/>
+          </Row>
+          <Row>
+            <Col id="code">es_ES</Col>
+            <Col id="name"/>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="BIGDECIMAL" size="256"/>
+          <Column id="Column3" type="BIGDECIMAL" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">Son Heung-min</Col>
+            <Col id="Column1">1992</Col>
+            <Col id="Column2">183</Col>
+            <Col id="Column3">77</Col>
+            <Col id="Column4">Tottenham Hotspur FC</Col>
+            <Col id="Column5">FW forward</Col>
+            <Col id="Column6">imagerc::FW01.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Lee Seung-woo</Col>
+            <Col id="Column1">1998</Col>
+            <Col id="Column2">173</Col>
+            <Col id="Column3">63</Col>
+            <Col id="Column4">Hellas Verona FC</Col>
+            <Col id="Column5">FW forward</Col>
+            <Col id="Column6">imagerc::FW02.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Hwang Hee-chan</Col>
+            <Col id="Column1">1996</Col>
+            <Col id="Column2">177</Col>
+            <Col id="Column3">77</Col>
+            <Col id="Column4">FC Red Bull Salzburg</Col>
+            <Col id="Column5">FW forward</Col>
+            <Col id="Column6">imagerc::FW03.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Hwang Hee-jo </Col>
+            <Col id="Column1">1992</Col>
+            <Col id="Column2">184</Col>
+            <Col id="Column3">73</Col>
+            <Col id="Column4">Gamba Osaka</Col>
+            <Col id="Column5">FW forward</Col>
+            <Col id="Column6">imagerc::FW04.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">Cho Hyun-woo</Col>
+            <Col id="Column1">1991</Col>
+            <Col id="Column2">189</Col>
+            <Col id="Column3">76</Col>
+            <Col id="Column4">Daegu FC</Col>
+            <Col id="Column5">GK goalkeeper</Col>
+            <Col id="Column6">imagerc::GK.jpg</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsLocale00">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="name" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">ko_KR</Col>
+            <Col id="name">Korean</Col>
+          </Row>
+          <Row>
+            <Col id="code">en_US</Col>
+            <Col id="name">English (United States)</Col>
+          </Row>
+          <Row>
+            <Col id="code">zh_CN</Col>
+            <Col id="name">Chinese (China)</Col>
+          </Row>
+          <Row>
+            <Col id="code">ru_RU</Col>
+            <Col id="name">Russian</Col>
+          </Row>
+          <Row>
+            <Col id="code">cs_CZ</Col>
+            <Col id="name">Czech</Col>
+          </Row>
+          <Row>
+            <Col id="code">de_CH</Col>
+            <Col id="name">German (Switzerland)</Col>
+          </Row>
+          <Row>
+            <Col id="code">es_ES</Col>
+            <Col id="name">Spanish (Spain)</Col>
+          </Row>
+          <Row>
+            <Col id="code">ar_SA</Col>
+            <Col id="name">Arabic (Saudi Arabia)</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMessage">
+        <ColumnInfo>
+          <Column id="msgCd" type="STRING" size="256"/>
+          <Column id="langCd" type="STRING" size="256"/>
+          <Column id="msgSbc" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="msgSbc">성명</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0001</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">출생년도</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0002</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">키</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0003</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">몸무게</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0004</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgSbc">소속</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgSbc">포지션</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0007</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgSbc">날짜형식</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0008</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgSbc">숫자형식</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">간단한 날짜</Col>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgSbc">자세한 날짜</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L00011</Col>
+            <Col id="msgSbc">양수</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ko_KR</Col>
+            <Col id="msgCd">L00012</Col>
+            <Col id="msgSbc">음수</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Name</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Birth year</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Height</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Weight</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Team</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Position</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0007</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Date Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0008</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Number Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0009</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Short Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L00010</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Long Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L00011</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Positive numbers</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L00012</Col>
+            <Col id="langCd">en_US</Col>
+            <Col id="msgSbc">Negative numbers</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">名</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">出生年份</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">关键</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">zh_CN</Col>
+            <Col id="msgSbc">重量</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="msgSbc">部门</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="msgSbc">位置</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">日期格式</Col>
+            <Col id="msgCd">L0007</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">数字格式</Col>
+            <Col id="msgCd">L0008</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">短日期</Col>
+            <Col id="msgCd">L0009</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">长日期</Col>
+            <Col id="msgCd">L00010</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">正面</Col>
+            <Col id="msgCd">L00011</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">负</Col>
+            <Col id="msgCd">L00012</Col>
+            <Col id="langCd">zh_CN</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">имя</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Год рождения</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">ключ</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">вес</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">отдел</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgCd">L0005</Col>
+          </Row>
+          <Row>
+            <Col id="msgSbc">позиции</Col>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgCd">L0006</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Формат даты</Col>
+            <Col id="msgCd">L0007</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Формат номера</Col>
+            <Col id="msgCd">L0008</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc"> Короткие Дата</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">Длинные Дата</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">положительный</Col>
+            <Col id="msgCd">L00011</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">ru_RU</Col>
+            <Col id="msgSbc">отрицательный</Col>
+            <Col id="msgCd">L00012</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Jméno</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Rok narození</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Klíč</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Hmotnost</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Přidružení</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Poloha</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Formát data</Col>
+            <Col id="msgCd">L0007</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Formát čísel</Col>
+            <Col id="msgCd">L0008</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">krátký Datum</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Long Date</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Pozitivní</Col>
+            <Col id="msgCd">L00011</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">cs_CZ</Col>
+            <Col id="msgSbc">Negativní</Col>
+            <Col id="msgCd">L00012</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Datumsformat</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Short Date</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Langes Datum</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Nummer Format</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Positiv</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Negativ</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Datumsformat</Col>
+            <Col id="msgCd">L0007</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Nummer Format</Col>
+            <Col id="msgCd">L0008</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Short Date</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Langes Datum</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Positiv</Col>
+            <Col id="msgCd">L00011</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">de_CH</Col>
+            <Col id="msgSbc">Negativ</Col>
+            <Col id="msgCd">L00012</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0001</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Nombre</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0002</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Año de nacimiento</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0003</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Clave</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0004</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Peso</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0005</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Afiliación</Col>
+          </Row>
+          <Row>
+            <Col id="msgCd">L0006</Col>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Posición</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Datumsformat</Col>
+            <Col id="msgCd">L0007</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Nummer Format</Col>
+            <Col id="msgCd">L0008</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Short Date</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Langes Datum</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Positiv</Col>
+            <Col id="msgCd">L00011</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">es_ES</Col>
+            <Col id="msgSbc">Negativ</Col>
+            <Col id="msgCd">L00012</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">formát dátumu</Col>
+            <Col id="msgCd">L0007</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">formát čísel </Col>
+            <Col id="msgCd">L0008</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">krátky Dátum</Col>
+            <Col id="msgCd">L0009</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">long Date</Col>
+            <Col id="msgCd">L00010</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">pozitívne</Col>
+            <Col id="msgCd">L00011</Col>
+          </Row>
+          <Row>
+            <Col id="langCd">sk_SK</Col>
+            <Col id="msgSbc">Negatívna</Col>
+            <Col id="msgCd">L00012</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_calendar">
+        <ColumnInfo>
+          <Column id="shortdate" type="STRING" size="256"/>
+          <Column id="longdate" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="shortdate">20191127</Col>
+            <Col id="longdate">20191127</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    FitToContents.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/02
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/02          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.gvLangCd = "ko_KR";
+
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.FitToContents_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	// alert("system.locale : " + system.locale);
+	this.gvLangCd = this.dsLocale.lookupAs("code", system.locale.substr(0, 2), "code");
+	this.rdoLocale.set_value(this.gvLangCd);
+
+	this.fnSetLocale(this.gvLangCd);
+	this.fnSetLanguage(this);
+
+	var number = 123456789.01;
+	var number2 = new nexacro.Number(123456789.01);
+
+	// alert("123456789.01 ==> " + number.toLocaleString() + "\n" + "nexacro.Number(123456789.01) ==> " + number2.toLocaleString());
+
+	/*
+	 * Grid 다국어 처리용 메시지코드 설정(Cell index 순으로)
+	 */
+	var arrMessages = new Array();
+
+	arrMessages.push("L0001"); //0 : 이름
+	arrMessages.push("L0002"); //1 : 출생년도
+	arrMessages.push("L0003"); //2 : 키
+	arrMessages.push("L0004"); //3 : 몸무게
+	arrMessages.push("L0005"); //4 : 소속
+	arrMessages.push("L0006"); //5 : 포지션
+	arrMessages.push("L0007"); //7 : 날짜 형식
+	arrMessages.push("L0008"); //8 : 숫자 형식
+	arrMessages.push("L0009"); //9 : 간단한 날짜
+	arrMessages.push("L00010"); //10 : 자세한 날짜
+	arrMessages.push("L00011"); //11 : 양수
+	arrMessages.push("L00012"); //12 : 음수
+	
+	this.grdMaster.msgCd = arrMessages;
+};
+
+/**
+ * @description 화면 닫는경우 언어설정 한국어 변경
+*/
+this.FitToContents_onbeforeclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
+{
+	nexacro.getEnvironment().set_locale("ko_KR");
+};
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+
+ 
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnSetCompFitToContents : static에 fit to contents를 설정한다.
+* @param {String}  menuId	- 메뉴 ID
+* @return : N/A
+* @example :  
+*/
+this.fnSetCompFitToContents = function()
+{
+	this.staName.set_fittocontents("width");
+	this.staBirth.set_fittocontents("width");
+	this.staHeight.set_fittocontents("width");
+	this.staWeight.set_fittocontents("width");
+	this.staTeam.set_fittocontents("width");
+	this.staPosition.set_fittocontents("width");
+	this.resetScroll();
+}
+
+/**
+* fnGetMessage : 단어사전 ds를 이용해 선택된 언어로 text를 return 한다.
+* @param {String}  sMsgCd	- 단어에 해당되는 메세지 ID
+* @param {String}  aMsgAgr	- 동적으로 변경되는 메세지 아규먼트
+* @param {String}  sLangId	- 선택된 다국어
+* @return : {String} 선택 언어에 해당되는 단어 
+* @example :  
+*/
+this.fnGetMessage = function (sMsgCd, aMsgAgr, sLangId)
+{
+	if (this.gfnIsNull(sMsgCd)) return sMsgCd;
+	if (this.gfnIsNull(sLangId)) sLangId = this.gvLangCd;
+
+	var iRow = this.dsMessage.findRowExpr("msgCd=='" + sMsgCd + "' && langCd=='" + sLangId + "'");
+	
+	if (iRow == -1) iRow = this.dsMessage.findRowExpr("msgCd=='" + sMsgCd + "' && langCd=='en_US'");
+	if (iRow == -1) return sMsgCd;
+
+	var sMessage = String(this.dsMessage.getColumn(iRow, "msgSbc"));
+
+	if (this.gfnIsNull(sMessage)) return this.dsMessage.lookupExpr("msgCd=='" + sMsgCd + "' && langCd=='en_US'", "msgSbc");
+	if (this.gfnIsNull(sMessage)) return sMsgCd;
+
+	if (!this.gfnIsNull(aMsgAgr)) 
+	{
+		if (typeof aMsgAgr == "string") aMsgAgr = new Array(aMsgAgr);
+
+		var sSlip1 = "",sSlip2 = "";
+		var i;
+		
+		for (i = 0; i < aMsgAgr.length; i++) 
+		{
+			if (sMessage.indexOf("[@]") == -1) break;
+
+			sSlip1 = sMessage.substr(0, sMessage.indexOf("[@]"));
+			sSlip2 = sMessage.substr(sMessage.indexOf("[@]") + 3, sMessage.length);
+			sMessage = sSlip1 + aMsgAgr[i] + sSlip2;
+		}
+	}
+
+	if (sMessage.indexOf("\\n") != -1) 
+	{
+		var arr = sMessage.split("\\n");
+		var sTemp = "";
+		var i;
+		
+		for (i = 0; i < arr.length; i++) 
+		{
+			if (i > 0) sTemp += String.fromCharCode(10);
+
+			sTemp += arr[i];
+		}
+
+		sMessage = sTemp;
+	}
+
+	return sMessage;
+};
+
+
+/**
+* fnSetLocale : 언어 변경
+* @param {String}  val	- 언어 코드
+* @return : N/A
+* @example :  
+*/
+this.fnSetLocale = function (val)
+{
+ 	nexacro.getEnvironment().set_locale(val);
+ 	this.Calendar00.set_locale(val);
+ 	this.Calendar01.set_locale(val);
+ 	this.MaskEdit00.set_locale(val);
+ 	this.MaskEdit01.set_locale(val);
+};
+
+/**
+* fnSetLanguage : 컴포넌트의 text부문을 언어설정에 맞게 설정해준다.
+* @param {object}  obj	- components
+* @return : N/A
+* @example :  
+*/
+this.fnSetLanguage = function (obj)
+{
+	var aComponents = obj.components;
+	var i;
+	
+	for (i = 0; i < aComponents.length; i++) 
+	{
+		if (aComponents[i] instanceof CheckBox || 
+			aComponents[i] instanceof GroupBox || 
+			aComponents[i] instanceof Static || 
+			aComponents[i] instanceof ImageViewer || 
+			aComponents[i] instanceof Button) 
+		{
+			if (!this.gfnIsNull(aComponents[i].msgCd)) {
+				aComponents[i].set_text(this.fnGetMessage(aComponents[i].msgCd, null, this.gvLangCd));
+			}
+		} 
+		else if (aComponents[i] instanceof Edit) 
+		{
+			if (!this.gfnIsNull(aComponents[i].nulltextMsgCd)) {
+				aComponents[i].set_displaynulltext(this.fnGetMessage(aComponents[i].nulltextMsgCd, null, this.gvLangCd));
+			}
+		}
+		else if (aComponents[i] instanceof Grid) 
+		{
+			var nCount = aComponents[i].getCellCount("Head");
+			//trace("aComponents[i].msgCd = " + aComponents[i].msgCd + " >>> " + aComponents[i].name);
+			if (!this.gfnIsNull(aComponents[i].msgCd)) 
+			{
+				for (var j = 0; j < nCount; j++) 
+				{
+					//trace(aComponents[i].getCellProperty("Head", j));
+					aComponents[i].setCellProperty("Head", j, "text", this.fnGetMessage(aComponents[i].msgCd[j], null, this.gvLangCd));
+					
+					// if (!this.gfnIsNull(aComponents[i].getCellProperty("Head", j, "msgCd")))
+					// {
+					// aComponents[i].setCellProperty("Head", j, "text", this.fnGetMessage(aComponents[i].getCellProperty("Head", j, "msgCd"), null, this.gvLangCd));
+					// }
+				}
+			}
+		}		
+	}
+};
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 언어 설정 변경시
+*/
+this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInfo)
+{
+	this.gvLangCd = e.postvalue;
+	
+	nexacro.getEnvironment().locale = null;
+	
+	this.fnSetLocale(e.postvalue);
+	this.fnSetLanguage(this);
+
+	this.fnSetCompFitToContents();
+	this.grdMaster.set_locale(e.postvalue);
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+// 	this.Static02.set_minwidth(90);
+// 	this.Static03.set_minwidth(90);
+// 	this.Static02.set_fittocontents("width");
+// 	this.Static03.set_fittocontents("width");
+// 	this.resetScroll();
+// 	return;
+
+	// comp._cssselector
+	// get font from css
+	var strFont = this.Static02._getCurrentStyleInheritValue("font");
+	var strText = this.Static02.text;
+	var objSize = nexacro.getTextSize( strText, strFont );
+	trace("nx:" + objSize.nx + " ny: " +objSize.ny);
+};]]></Script>
+    <Bind>
+      <BindItem id="item0" compid="rdoLocale" propid="value" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item1" compid="img_image" propid="image" datasetid="dsList" columnid="Column6"/>
+      <BindItem id="item2" compid="sta01" propid="text" datasetid="dsList" columnid="Column0"/>
+      <BindItem id="item3" compid="st_title01" propid="text" datasetid="dsList" columnid="Column1"/>
+      <BindItem id="item4" compid="st_title02" propid="text" datasetid="dsList" columnid="Column2"/>
+      <BindItem id="item5" compid="st_title03" propid="text" datasetid="dsList" columnid="Column3"/>
+      <BindItem id="item6" compid="st_title04" propid="text" datasetid="dsList" columnid="Column4"/>
+      <BindItem id="item7" compid="st_title05" propid="text" datasetid="dsList" columnid="Column5"/>
+      <BindItem id="item8" compid="Calendar00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item12" compid="MaskEdit00" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item14" compid="MaskEdit01" propid="locale" datasetid="gdsLocale" columnid="locale"/>
+      <BindItem id="item9" compid="Calendar00" propid="value" datasetid="ds_calendar" columnid="shortdate"/>
+      <BindItem id="item10" compid="Calendar01" propid="value" datasetid="ds_calendar" columnid="longdate"/>
+    </Bind>
+  </Form>
+</FDL>

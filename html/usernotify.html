@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://demo.nexacroplatform.com/nexacro-demo/service/Sample.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+
+	/***** init *******/
+	if (! window.NEXACROHTML) {
+		  window.NEXACROHTML = {};
+	}
+
+	var parent = null;
+	var bInit = false;
+	window.NEXACROHTML.Init = function() {
+		  var loopCnt = 0;
+		  var interval = setInterval(fn = function() {
+		      parent = window.NEXACROWEBBROWSER;
+	        if(loopCnt >= 10 || parent) {
+	        	bInit = true;
+	    	    clearInterval(interval);
+				//console.log("Parent:" + loopCnt + ":" + parent);
+		      }
+
+			    loopCnt++;
+	  	}, 50);
+	}
+	
+	
+	var npCallBackObj;
+	var npCallBackFn;
+	
+	
+
+	window.NEXACROHTML.FireUserNotify = function(userdata) {
+		//console.log("Fire:" + bInit + ":" + parent);
+	    if(bInit == false) {
+	        var loopCnt = 0;
+	        var interval = setInterval(fn = function() {		
+			        if (loopCnt > 10 || bInit) {
+				          clearInterval(interval);
+			        }
+	  		      loopCnt++;
+		      }, 50);
+	    }
+	    
+		if (parent) {
+		      parent.on_fire_onusernotify(parent, userdata);
+	  	} else {
+		  	  window.document.title = userdata;
+		}			
+	}
+
+	function setCallback(obj, name)
+	{
+    	window.NEXACROHTML.Init();
+
+    	/*
+		npCallBackObj = obj;
+		npCallBackFn = name;
+		alert(	obj + ":" + 	name);
+		console.log("npCallBackObj >>> "+npCallBackObj+"  npCallBackFn >>> "+npCallBackFn);
+		*/
+	};
+	
+	
+	function setContent() {
+
+		var obj = document.getElementById("comboSelect");
+	
+		
+		try
+		{
+			 window.NEXACROHTML.FireUserNotify(obj.options[obj.selectedIndex].text);
+		}
+		catch(e)
+		{
+			 alert(e + "error");
+		}	
+	}
+	
+</script>
+</head>
+
+<body onload="setCallback();">
+	<select id="comboSelect" height="35">
+	<option selected="selected">Apple</option>
+	<option>Orange</option>
+	<option>Pear</option>
+	<option>Strawberry</option>
+	</select>
+	
+	<input type="search" value="usernotify.html" height="35">
+	<input type="button" value="UserNotify" onclick="setContent()" height="35">
+
+</body></html>

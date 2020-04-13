@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="GaugeChart_Highlight" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <GaugeChart id="GaugeChart02" taborder="1" left="1.3%" top="2.08%" binddataset="ds_highlight" categorycolumn="bind:Column0" gaugetype="circular" right="1.04%" bottom="2.08%">
+          <Contents><![CDATA[{
+	"title": {
+		"id": "title",
+		"text": "circular",
+		"textfont": "20pt/normal '맑은 고딕'",
+		"padding": "0px 0px 5px"
+	},
+	"legend": {
+		"id": "legend",
+		"padding": "3px 10px 3px 10px",
+		"itemtextfont": "9pt '맑은 고딕'",
+		"itemtextcolor": "#4c4c4c"
+	},
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"indicator": {
+		"id": "indicator",
+		"visible": "true",
+		"indicatorimage": "",
+		"indicatorsize": "",
+		"indicatorindent": "",
+		"indicatorfillstyle": "white",
+		"indicatorlinestyle": "1px solid black",
+		"indicatoropacity": "1",
+		"linestyle": "1px solid black",
+		"fillstyle": "white",
+		"opacity": "1"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"tickinterval": "10",
+			"opposite": "true",
+			"gap": "5",
+			"labelgap": "5"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": true,
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 20pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"highlightbarvisible": "true",
+			"highlightbarfillstyle": "white",
+			"barfillstyle": "#5587a2",
+			"fillstyle": "#5587a2",
+			"innerradius": "80",
+			"barlinestyle": "black",
+			"radius": "100",
+			"barsize": "100",
+			"itemtextgap": "0 70",
+			"startangle": "220",
+			"endangle": "275"
+		}
+	]
+}]]></Contents>
+        </GaugeChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_highlight">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">0</Col>
+            <Col id="Column1">70</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

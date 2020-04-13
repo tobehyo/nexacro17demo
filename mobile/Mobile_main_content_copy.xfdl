@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Mobile_sub" width="480" height="2280" titletext="New Form">
+    <Layouts>
+      <Layout height="2280" mobileorientation="landscape" width="480">
+        <Div id="Div04" taborder="0" text="Div04" left="0" top="280" height="1600" cssclass="div_WF_mainContent" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="divMain01" taborder="0" text="Div" left="20" top="22" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <BasicChart id="BasicChart00" taborder="0" left="149" top="55" right="10" bottom="20" categorycolumn="bind:name" binddataset="">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30",
+		"visible": false
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #c8f0ff",
+			"barfillstyle": "#32c8ff"
+		}
+	]
+}]]></Contents>
+                    </BasicChart>
+                    <Static id="Static00" taborder="1" text="Daily" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="2" text="68" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="5.6%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData02"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain02" taborder="1" text="Div" left="20" top="152" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <BasicChart id="BasicChart00" taborder="0" left="149" top="55" right="10" bottom="20" categorycolumn="bind:name" binddataset="">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30",
+		"visible": false
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #e2e1ff",
+			"barfillstyle": "#9696ff"
+		}
+	]
+}]]></Contents>
+                    </BasicChart>
+                    <Static id="Static00" taborder="1" text="Weekly" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="2" text="394" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="6.8%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain03" taborder="2" text="Div" left="20" top="282" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <BasicChart id="BasicChart00" taborder="0" left="149" top="55" right="10" bottom="20" categorycolumn="bind:name" binddataset="">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30",
+		"visible": false
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #fee986",
+			"barfillstyle": "#fdc25a"
+		}
+	]
+}]]></Contents>
+                    </BasicChart>
+                    <Static id="Static00" taborder="1" text="Total Views" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="2" text="708" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="3" text="13.8%" left="21" top="94" width="89" height="23" cssclass="sta_WF_chartData01"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain04" taborder="3" left="20" top="412" height="120" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Average" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
+                    <Static id="staNumber" taborder="1" text="612" left="20" top="39" width="90" height="51" font="normal 500 30pt/normal &quot;Arial&quot;" cssclass="sta_WF_chartNum"/>
+                    <Static id="Static02" taborder="2" left="25" top="94" width="89" height="23" text="13.8%"/>
+                    <BasicChart id="BasicChart00" taborder="3" left="149" top="55" right="15" bottom="20" categorycolumn="bind:name" binddataset="">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30",
+		"visible": false
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #fde1db",
+			"barfillstyle": "#fd7357"
+		}
+	]
+}]]></Contents>
+                    </BasicChart>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain05" taborder="4" text="Div" left="20" top="542" height="260" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <BasicChart id="BasicChart00" taborder="0" left="52" top="74" right="68" bottom="20" categorycolumn="bind:name" bargrouping="false" binddataset="">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "0",
+		"labelgap": "5",
+		"visible": true
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #525252",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"axislinestyle": "1px solid #525252",
+			"ticksize": "0",
+			"visible": "false",
+			"ticklineopacity": "",
+			"labeltype": "text",
+			"gap": "1.5"
+		},
+		{
+			"id": "valueaxis1",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"visible": "true",
+			"ticksize": "0"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "3px solid #1abd9c",
+			"barfillstyle": "#64cdfa",
+			"barvisible": "false",
+			"linevisible": "true",
+			"lineareavisible": "true",
+			"lineareaopacity": "0.5",
+			"lineopacity": "1",
+			"highlightbarvisible": "false",
+			"highlightlinevisible": "false",
+			"highlightpointvisible": "false",
+			"pointvisible": "true",
+			"lineareafillstyle": "#64cdfa",
+			"pointfillstyle": "#ffffff",
+			"pointlinestyle": "2px solid #64cdfa",
+			"linestyle": "2px solid #64cdfa"
+		},
+		{
+			"id": "series1",
+			"titletext": "mean",
+			"barvisible": "false",
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:mean",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #1a85be",
+			"barfillstyle": "#1a85be",
+			"linevisible": "true",
+			"lineareaopacity": "0.3",
+			"lineopacity": "1",
+			"lineareavisible": "true",
+			"pointvisible": "true",
+			"stacktype": "none",
+			"selecttype": "unselect",
+			"lineareafillstyle": "#5c7ed2",
+			"pointlinestyle": "2px solid #5c7ed2",
+			"linestyle": "2px solid #5c7ed2",
+			"pointfillstyle": "#ffffff"
+		}
+	],
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "white",
+		"textfont": "10pt/normal \"맑은 고딕\"",
+		"padding": "5px"
+	}
+}]]></Contents>
+                    </BasicChart>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="divMain06" taborder="5" text="Div" top="812" background="#ffffff" height="250" left="20" right="20">
+                <Layouts>
+                  <Layout>
+                    <PieChart id="PieChart00" taborder="0" left="0" top="0" bottom="0" right="0" binddataset="dsCountryLitres" categorycolumn="bind:country" enableanimation="true">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"radius": "60",
+			"valuecolumn": "bind:value",
+			"fillstyle": "#1abd9c,#1a85be,#1a67bf,#1a4cbf,#641ac0,#9a1ac0,#c2251b,#c2541b,#c2911d,#21c34d",
+			"itemtexttype": "text",
+			"selectindent": "20",
+			"selectcolumn": "bind:select",
+			"selectopacity": "1.0",
+			"itemtextguideopacity": "1",
+			"opacity": "0.8",
+			"linestyle": "1px solid white",
+			"selectlinestyle": "1px solid white",
+			"highlightfillstyle": "yellow",
+			"highlightopacity": "0.5",
+			"highlightvisible": "false",
+			"itemtextguidelineopacity": ""
+		}
+	]
+}]]></Contents>
+                    </PieChart>
+                    <Static id="Static00" taborder="1" text="Weekly Report" left="20" top="20" width="151" height="52" cssclass="sta_WF_chartText"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <PieChart id="PieChart00" left="0" top="18" right="0" bottom="0"/>
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="Static06" taborder="6" text="Div" left="20" top="1072" height="240" background="#ffffff" right="20">
+                <Layouts>
+                  <Layout>
+                    <BasicChart id="BasicChart00" taborder="0" left="0" top="50" right="30" bottom="10" binddataset="dsStackBar" categorycolumn="bind:name" enableanimation="true">
+                      <Contents><![CDATA[{
+	"board": {
+		"id": "board",
+		"visible": true
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "11pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "0px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"visible": "true",
+		"labeltype": "text",
+		"ticklineopacity": "1",
+		"ticksize": "10",
+		"titletextalign": "middle",
+		"boardlinevisible": "false"
+	},
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"barvisible": "true",
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Outerwear",
+			"stacktype": "normal",
+			"linevisible": "false",
+			"linetype": "segment",
+			"barfillstyle": "#ffda83",
+			"highlightbarvisible": "false",
+			"lineareavisible": "false",
+			"pointshape": "",
+			"highlightlinevisible": "false",
+			"barlinestyle": "#ffda83"
+		},
+		{
+			"id": "series1",
+			"titletext": "series",
+			"barvisible": "true",
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Sweeters",
+			"stacktype": "normal",
+			"barfillstyle": "#ff8373",
+			"barlinestyle": "#ff8373"
+		},
+		{
+			"id": "series2",
+			"titletext": "series",
+			"barvisible": true,
+			"barsize": "55",
+			"itemtextvisible": "false",
+			"itemtextfont": "bold 12pt '맑은 고딕'",
+			"valuecolumn": "bind:Stairs",
+			"stacktype": "normal",
+			"barfillstyle": "#56d9ff",
+			"barlinestyle": "#56d9ff"
+		},
+		{
+			"id": "series3",
+			"valuecolumn": "bind:Parts",
+			"stacktype": "normal",
+			"barvisible": true,
+			"barsize": "55",
+			"barfillstyle": "#a2a1fb",
+			"lineopacity": "0",
+			"highlightbarvisible": "false",
+			"highlightlinevisible": "false",
+			"pointshape": "",
+			"barlinestyle": "#a2a1fb"
+		}
+	],
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"titletext": "valueaxis",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #525252",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal '맑은 고딕'",
+			"titletextcolor": "#525252",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid  #525252",
+			"visible": "false",
+			"ticksize": "0"
+		},
+		{
+			"id": "valueaxis1",
+			"boardlinevisible": "true",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt/normal \"맑은 고딕\"",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt \"맑은 고딕\"",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "0px solid #525252",
+			"visible": "true",
+			"ticksize": "0",
+			"tickmax": "1300"
+		}
+	]
+}]]></Contents>
+                    </BasicChart>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+              <Div id="Static07" taborder="7" text="Div" top="1322" height="250" background="#ffffff" left="20" right="20" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <GaugeChart id="GaugeChart01" taborder="0" left="7.05%" top="22.29%" binddataset="dsSpeed" categorycolumn="bind:Column0" gaugetype="circular" right="9.90%" bottom="-39.71%">
+                      <Contents><![CDATA[{
+	"tooltip": {
+		"id": "tooltip",
+		"background": "#4b4b4b",
+		"linestyle": "0px none",
+		"textcolor": "#ffffff",
+		"textfont": "10pt/normal '맑은 고딕'",
+		"padding": "5px"
+	},
+	"board": {
+		"id": "board"
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "10pt '맑은 고딕'",
+			"axislinestyle": "1px solid #d0d0d0",
+			"tickmin": "0",
+			"tickmax": "100",
+			"opposite": "false",
+			"visible": "true",
+			"gap": "10",
+			"labelgap": "10",
+			"tickinterval": "10",
+			"labeltype": "normal"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "series",
+			"itemtextvisible": "true",
+			"itemtextfont": "bold 25pt '맑은 고딕'",
+			"valuecolumn": "bind:Column1",
+			"radius": "100",
+			"innerradius": "55",
+			"startangle": "270",
+			"endangle": "180",
+			"baropacity": "0",
+			"itemtextmask": "##%",
+			"linestyle": "1px solid #1abd9c",
+			"opacity": "0.5",
+			"barsize": "100",
+			"barlinestyle": "#ff8273",
+			"barfillstyle": "#1abd9c",
+			"highlightbarvisible": "false",
+			"selecttype": "select",
+			"selectbarfillstyle": "#ff8273",
+			"selectbarlinestyle": "#ff8273",
+			"fillstyle": "#1a85be",
+			"highlightbarfillstyle": "#ff8273",
+			"highlightbarlinestyle": "#ff8273"
+		}
+	]
+}]]></Contents>
+                    </GaugeChart>
+                    <Static id="Static00" taborder="1" text="Capacity Usage" left="20" top="20" width="151" height="52" cssclass="sta_WF_chartText"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1">
+                    <Static id="Static00" left="20" top="10" width="151" height="52"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+            </Layout>
+            <Layout name="Layout0">
+              <Div id="Static05" left="30" top="762" height="450" right="30"/>
+              <Div id="Static03" left="Static02:10" top="162" height="130" right="30"/>
+              <Div id="Static02" left="30" top="162" width="44.71%" height="130"/>
+              <Div id="Static01" top="22" height="130" left="Static00:10" right="30"/>
+              <Div id="Static06" left="30" top="1222" width="46.24%" height="350"/>
+              <Div id="Static07" left="Static06:12" top="1222" height="350" right="30"/>
+              <Div id="Static04" left="30" top="302" height="450" right="30"/>
+              <Div id="Static00" left="30" top="22" height="130" width="44.71%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Div id="Static01" left="20" top="152" height="120" maxwidth="" right="20"/>
+              <Div id="Static02" left="20" top="282" height="120" maxwidth="" right="20"/>
+              <Div id="Static03" text="" left="20" top="412" height="120" right="20" maxwidth=""/>
+              <Div id="Static05" left="20" top="812" height="250" right="20"/>
+              <Div id="Static07" left="20" top="1322" height="250" right="20"/>
+              <Div id="Static06" height="240" left="20" top="1072" right="20"/>
+              <Div id="Static04" left="20" top="542" height="260" right="20"/>
+              <Div id="Static00" left="20" top="22" height="120" maxwidth="" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div03" taborder="1" text="Div03" left="0" height="310" top="1880" cssclass="div_WF_mainSite" right="0">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" left="20" top="24" width="91.67%" height="80" cssclass="btn_WF_mainSite01"/>
+              <Button id="Button01" taborder="1" left="20" top="114" width="91.67%" height="80" cssclass="btn_WF_mainSite02"/>
+              <Button id="Button02" taborder="2" top="204" height="80" left="20" right="20" cssclass="btn_WF_mainSite03"/>
+              <Static id="Static00" taborder="3" left="404" top="52" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+              <Static id="Static01" taborder="4" left="404" top="142" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+              <Static id="Static02" taborder="5" left="403" top="232" height="25" cssclass="sta_WF_mainSiteimg" text="" width="45"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" left="Button00:-32" top="88" width="15" height="25"/>
+              <Button id="Button01" left="Button00:10" top="40" width="30.3%" height="120"/>
+              <Button id="Button02" text="Go to Website" left="Button01:10" top="40" height="120" width="30.3%"/>
+              <Button id="Button00" width="30.3%" left="30" top="40" height="120"/>
+              <Static id="Static01" left="Button01:-32" top="88" width="15" height="25"/>
+              <Static id="Static02" left="Button02:-32" top="88" width="15" height="25"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" left="Button00:-46" top="48" width="15" height="25"/>
+              <Button id="Button02" left="20" top="200" height="80" right="20"/>
+              <Static id="Static01" left="Button01:-46" top="138" width="15" height="25"/>
+              <Static id="Static02" left="Button02:-47" top="228" width="15" height="25"/>
+              <Button id="Button01" left="20" top="110" height="80" right="20"/>
+              <Button id="Button00" height="80" left="20" top="20" right="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div00" taborder="2" left="0" top="0" height="280" cssclass="div_WF_mainVisual" right="0">
+          <Layouts>
+            <Layout>
+              <Div id="Div01" taborder="0" text="Div01" left="10" top="260" width="93.75%" height="0" cssclass="div_WF_mainQuick">
+                <Layouts>
+                  <Layout>
+                    <Static id="Static00" taborder="0" text="Quick Menu" left="0" top="0" width="20.23%" height="120" cssclass="sta_WF_mainQmenu"/>
+                    <Button id="btn_1010" taborder="1" text="그리드" left="Static00:0" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn01" onclick="QuickMenu_onclick"/>
+                    <Button id="btn_1080" taborder="2" text="데이터셋" left="btn_1010:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn02" onclick="QuickMenu_onclick"/>
+                    <Button id="btn_2090" taborder="3" text="차트" left="btn_1080:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn03" onclick="QuickMenu_onclick"/>
+                    <Button id="btn_1110" taborder="4" text="트리그리드/&#13;&#10;그룹핑" left="btn_2090:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn04" onclick="QuickMenu_onclick"/>
+                    <Button id="btn_3060" taborder="5" text="다국어 지원" left="btn_1110:1" top="0" width="11.72%" height="120" cssclass="btn_WF_mainQbtn05" onclick="QuickMenu_onclick"/>
+                    <Button id="btn_1060" taborder="6" text="엑셀&#13;&#13;&#10;Import/Export" left="btn_3060:0" top="0" height="120" cssclass="btn_WF_mainQbtn06" right="7%" onclick="QuickMenu_onclick"/>
+                  </Layout>
+                  <Layout name="Layout0"/>
+                  <Layout name="Layout1"/>
+                </Layouts>
+              </Div>
+            </Layout>
+            <Layout name="Layout0"/>
+            <Layout name="Layout1">
+              <Static id="Static02" height="280" left="0" top="0" right="0" text=""/>
+              <Static id="Static01" left="12.67%" top="170" height="60" right="12.67%"/>
+              <Static id="Static00" left="12.67%" top="110" height="60" right="12.67%"/>
+              <Button id="Button00" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" height="90" cssclass="div_WF_mainFooter" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static02" taborder="1" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="30" top="15" height="62" cssclass="sta_WF_footerAddress" right="30"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" width="18.82%"/>
+              <Static id="Static01" width="18.82%"/>
+              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static00" width="0" left="40" top="18" height="0" visible="false"/>
+              <Static id="Static01" width="0" top="17" height="0" right="40" visible="false"/>
+              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divMainVisual00_00_01" taborder="4" left="0" top="0" height="280" cssclass="div_WF_mainImg01" right="0">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="모바일로 경험하세요!" left="20" top="83" height="56" cssclass="sta_WF_mainTextB" right="20"/>
+              <Static id="Static01" taborder="1" text="편리한 반응형웹 개발을 지원합니다" left="20" top="34" height="60" cssclass="sta_WF_mainTextS" right="20"/>
+              <ImageViewer id="ImageViewer00" taborder="2" top="38.93%" stretch="fixaspectratio" image="url('theme://images/img_WF_mainVisual0001.png')" border="0px none" background="transparent" width="35.21%" bottom="16" right="5.21%"/>
+              <ImageViewer id="ImageViewer01" taborder="3" top="60" image="url('theme://images/img_WF_mainVisual_QR.png')" stretch="fixaspectratio" background="transprent" right="18.13%" border="0px none" width="23.13%" bottom="220" visible="false"/>
+            </Layout>
+            <Layout name="Layout0">
+              <ImageViewer id="ImageViewer00" left="63.53%" top="30.44%" width="29.53%" height="56.00%"/>
+              <Static id="Static00" left="15.47%" top="146" width="519" height="60" right="23.53%"/>
+              <ImageViewer id="ImageViewer01" top="43.78%" width="15.53%" right="Static00:-64.93%" height="45.11%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static01" left="12.67%" top="150" height="60" right="12.67%" visible="false"/>
+              <Static id="Static00" left="12.67%" top="60" height="108" font="normal 700 35pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;" text="모바일로&#13;&#10;경험하세요!" textAlign="center" right="12.67%"/>
+              <ImageViewer id="ImageViewer00" left="54.89%" top="2.00%" width="37.56%" height="58.00%"/>
+              <ImageViewer id="ImageViewer01" top="80" width="24.89%" right="69" bottom="200" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divMainVisual00_00" taborder="5" left="510" top="0" height="280" cssclass="div_WF_mainImg02" right="-510" visible="false">
+          <Layouts>
+            <Layout>
+              <ImageViewer id="ImageViewer00" taborder="2" top="42.86%" stretch="fixaspectratio" image="url('theme://images/img_WF_mainVisual0002.png')" border="0px none" background="transparent" width="34.79%" bottom="13" right="6.88%"/>
+              <Static id="Static00" taborder="0" text="그리드 컴포넌트" left="20" top="90" height="56" cssclass="sta_WF_mainTextB" right="20"/>
+              <Static id="Static01" taborder="1" text="데이터를 빠르게 조회하고&#13;&#10;효과적으로 검색하는" left="20" top="31" height="60" cssclass="sta_WF_mainTextS" right="20"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static00" left="11.88%" top="186" width="396" height="60"/>
+              <ImageViewer id="ImageViewer00" left="59.29%" top="26.44%" height="64.00%" width="33.65%"/>
+              <Static id="Static01" left="11.88%" top="117" width="691" height="60"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static01" left="12.00%" top="130" height="60" right="15.78%" visible="false"/>
+              <Static id="Static00" left="8.00%" top="60" height="60" font="normal 700 35pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;" textAlign="center" right="10.89%"/>
+              <ImageViewer id="ImageViewer00" left="35.56%" top="10.89%" right="0.00%" bottom="10.44%"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="divMainVisual00_00_00" taborder="6" left="1025" top="0" height="280" cssclass="div_WF_mainImg03" right="-1025" visible="false">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="넥사크로 차트" left="20" top="83" height="56" cssclass="sta_WF_mainTextB" right="20"/>
+              <Static id="Static01" taborder="1" text="간단하고 쉬운 데이터 시각화 컴포넌트" left="20" top="34" height="60" cssclass="sta_WF_mainTextS" right="20"/>
+              <ImageViewer id="ImageViewer00" taborder="2" top="38.93%" stretch="fixaspectratio" image="url('theme://images/img_WF_mainVisual0003.png')" border="0px none" background="transparent" width="40.00%" bottom="3" right="6.88%"/>
+            </Layout>
+            <Layout name="Layout0">
+              <Static id="Static01" left="11.65%" top="97" width="691" height="60"/>
+              <Static id="Static00" left="11.65%" top="166" height="60" right="45.18%"/>
+              <ImageViewer id="ImageViewer00" left="60.59%" top="23.78%" width="32.24%" height="54.89%"/>
+            </Layout>
+            <Layout name="Layout1">
+              <Static id="Static01" left="12.67%" top="130" height="60" right="12.67%" visible="false"/>
+              <Static id="Static00" left="12.67%" top="60" height="60" right="12.67%" font="normal 700 35pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;" textAlign="center"/>
+              <ImageViewer id="ImageViewer00" left="30.89%" top="8.67%" right="7.78%" bottom="12.22%"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static03" taborder="7" left="38.96%" top="232" width="30" height="16" cssclass="sta_MN_imgStep_S"/>
+        <Static id="Static03_00" taborder="8" left="220" top="232" width="30" height="16" cssclass="sta_MN_imgStep"/>
+        <Static id="Static03_01" taborder="9" top="232" width="30" height="16" cssclass="sta_MN_imgStep" left="252"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="gdsRainfall">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="rainfall" type="FLOAT" size="256"/>
+          <Column id="mean" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">ABBOTSFORD</Col>
+            <Col id="rainfall">69</Col>
+            <Col id="mean">66.2</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">CONCORD</Col>
+            <Col id="rainfall">49.6</Col>
+            <Col id="mean">48.6</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY BOTANIC GARDENS</Col>
+            <Col id="rainfall">94.1</Col>
+            <Col id="mean">68.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">CHATSWOOD BOWLING CLUB</Col>
+            <Col id="rainfall">78</Col>
+            <Col id="mean">51</Col>
+          </Row>
+          <Row>
+            <Col id="name">CONCORD GOLF CLUB</Col>
+            <Col id="rainfall">11.2</Col>
+            <Col id="mean">59.1</Col>
+          </Row>
+          <Row>
+            <Col id="name">MARRICKVILLE GOLF CLUB</Col>
+            <Col id="rainfall">56</Col>
+            <Col id="mean">55.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY AIRPORT AMO</Col>
+            <Col id="rainfall">66.6</Col>
+            <Col id="mean">60.3</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">PENNANT HILLS</Col>
+            <Col id="rainfall">53.2</Col>
+            <Col id="mean">56.8</Col>
+          </Row>
+          <Row>
+            <Col id="name">RANDWICK BOWLING CLUB</Col>
+            <Col id="rainfall">122.6</Col>
+            <Col id="mean">65.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SANS SOUCI</Col>
+            <Col id="rainfall">66</Col>
+            <Col id="mean">61.5</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">TERREY HILLS AWS</Col>
+            <Col id="rainfall">83.4</Col>
+            <Col id="mean">63.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">SYDNEY</Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">65.5</Col>
+          </Row>
+          <Row>
+            <Col id="name">STRATHFIELD GOLF CLUB</Col>
+            <Col id="rainfall">36</Col>
+            <Col id="mean">45.3</Col>
+          </Row>
+          <Row>
+            <Col id="name">LUCAS HEIGHTS</Col>
+            <Col id="rainfall">58.9</Col>
+            <Col id="mean">50.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">CASTLE COVE</Col>
+            <Col id="rainfall">101</Col>
+            <Col id="mean">69.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">PARRAMATTA NORTH</Col>
+            <Col id="rainfall">33.6</Col>
+            <Col id="mean">52.4</Col>
+          </Row>
+          <Row>
+            <Col id="name">COLLAROY</Col>
+            <Col id="rainfall">91.4</Col>
+            <Col id="mean">66.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">BANKSTOWN AIRPORT AWS</Col>
+            <Col id="rainfall">53.4</Col>
+            <Col id="mean">43.6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="gdsCountryLitres">
+        <ColumnInfo>
+          <Column id="country" type="STRING" size="256"/>
+          <Column id="value" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+          <Column id="data" type="STRING" size="256"/>
+          <Column id="valuedata" type="FLOAT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="country">Czech Republic</Col>
+            <Col id="value">356.9</Col>
+            <Col id="select"/>
+            <Col id="data">test1</Col>
+            <Col id="valuedata">100</Col>
+          </Row>
+          <Row>
+            <Col id="country">Ireland</Col>
+            <Col id="value">54</Col>
+            <Col id="select"/>
+            <Col id="data">tes2</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Germany</Col>
+            <Col id="value">115.8</Col>
+            <Col id="data">test3</Col>
+            <Col id="valuedata">200.11</Col>
+          </Row>
+          <Row>
+            <Col id="country">Australia</Col>
+            <Col id="value">109.9</Col>
+            <Col id="select"/>
+            <Col id="data">test4</Col>
+            <Col id="valuedata">19.1</Col>
+          </Row>
+          <Row>
+            <Col id="country">Austria</Col>
+            <Col id="value">108.3</Col>
+            <Col id="select">1</Col>
+            <Col id="data">test5</Col>
+            <Col id="valuedata">30.12</Col>
+          </Row>
+          <Row>
+            <Col id="country">UK</Col>
+            <Col id="value">65</Col>
+            <Col id="select"/>
+            <Col id="data">test6</Col>
+            <Col id="valuedata">10</Col>
+          </Row>
+          <Row>
+            <Col id="country">Belgium</Col>
+            <Col id="value">110</Col>
+            <Col id="select"/>
+            <Col id="data">test7</Col>
+            <Col id="valuedata">19.100</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="gdsCostProfit">
+        <ColumnInfo>
+          <Column id="category" type="STRING" size="256"/>
+          <Column id="profit" type="FLOAT" size="256"/>
+          <Column id="cost" type="FLOAT" size="256"/>
+          <Column id="revenue" type="FLOAT" size="256"/>
+          <Column id="profit1" type="FLOAT" size="256"/>
+          <Column id="cost1" type="FLOAT" size="256"/>
+          <Column id="revenue1" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="category">1</Col>
+            <Col id="profit">600</Col>
+            <Col id="cost">700</Col>
+            <Col id="revenue">9999</Col>
+            <Col id="profit1">400</Col>
+            <Col id="cost1">200</Col>
+            <Col id="revenue1">8000</Col>
+          </Row>
+          <Row>
+            <Col id="category">2</Col>
+            <Col id="profit">1000</Col>
+            <Col id="cost">1400</Col>
+            <Col id="revenue">5500</Col>
+            <Col id="profit1">2200</Col>
+            <Col id="cost1">4000</Col>
+            <Col id="revenue1">4040</Col>
+          </Row>
+          <Row>
+            <Col id="category">3</Col>
+            <Col id="profit">1500</Col>
+            <Col id="cost">1550</Col>
+            <Col id="revenue">2200</Col>
+            <Col id="profit1">1900</Col>
+            <Col id="cost1">2000</Col>
+            <Col id="revenue1">3000</Col>
+          </Row>
+          <Row>
+            <Col id="category">4</Col>
+            <Col id="profit">2200</Col>
+            <Col id="cost">1300</Col>
+            <Col id="revenue">1900</Col>
+            <Col id="profit1">50</Col>
+            <Col id="cost1">660</Col>
+            <Col id="revenue1">200</Col>
+          </Row>
+          <Row>
+            <Col id="category">5</Col>
+            <Col id="profit">1400</Col>
+            <Col id="cost">900</Col>
+            <Col id="revenue">9900</Col>
+            <Col id="profit1">3000</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">500</Col>
+          </Row>
+          <Row>
+            <Col id="category">6</Col>
+            <Col id="profit">2000</Col>
+            <Col id="cost">500</Col>
+            <Col id="revenue">27000</Col>
+            <Col id="profit1">80</Col>
+            <Col id="cost1">2900</Col>
+            <Col id="revenue1">3050</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="profit">1800</Col>
+            <Col id="category">7</Col>
+            <Col id="cost">1400</Col>
+            <Col id="revenue">8000</Col>
+            <Col id="profit1">2500</Col>
+            <Col id="cost1">800</Col>
+            <Col id="revenue1">2000</Col>
+          </Row>
+          <Row>
+            <Col id="category">8</Col>
+            <Col id="profit">2500</Col>
+            <Col id="cost">800</Col>
+            <Col id="revenue">5700</Col>
+            <Col id="profit1">3000</Col>
+            <Col id="cost1">1900</Col>
+            <Col id="revenue1">1900</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="category">9</Col>
+            <Col id="profit">2550</Col>
+            <Col id="cost">600</Col>
+            <Col id="revenue">3000</Col>
+            <Col id="profit1">1500</Col>
+            <Col id="cost1">1300</Col>
+            <Col id="revenue1">440</Col>
+          </Row>
+          <Row>
+            <Col id="category">10</Col>
+            <Col id="profit">1600</Col>
+            <Col id="cost">1200</Col>
+            <Col id="revenue">5000</Col>
+            <Col id="profit1">8989</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">200</Col>
+          </Row>
+          <Row>
+            <Col id="category">11</Col>
+            <Col id="profit">650</Col>
+            <Col id="cost">550</Col>
+            <Col id="revenue">3087</Col>
+            <Col id="profit1">2000</Col>
+            <Col id="cost1">1500</Col>
+            <Col id="revenue1">500</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

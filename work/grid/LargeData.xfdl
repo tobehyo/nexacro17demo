@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="LargeData" width="980" height="700" titletext="대용량 데이터 조회">
+    <Layouts>
+      <Layout screenid="desktop">
+        <Static id="staLabel" taborder="5" cssclass="sta_WF_box02" left="0" top="59" right="64" height="44" text=""/>
+        <Combo id="cboRowCnt" taborder="1" text="10,000건" codecolumn="codecolumn" datacolumn="datacolumn" left="106" top="66" width="154" height="30" index="0" value="10000" innerdataset="innerdataset">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">10000</Col>
+                <Col id="datacolumn">10,000 cases</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">50000</Col>
+                <Col id="datacolumn">50,000 cases</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">100000</Col>
+                <Col id="datacolumn">100,000 cases</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Static id="stSearchTimeOrg" taborder="3" text="Server/network time &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; seconds, rendering time &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; seconds, views &lt;fc v='#d7381e'&gt; 0 &lt;/fc&gt; cases" usedecorate="true" top="133" height="21" textAlign="right" verticalAlign="middle" font="bold 14px/20px &quot;Malgun Gothic&quot;,&quot;Arial&quot;" width="900" fittocontents="none" right="20"/>
+        <MaskEdit id="mskTemp" taborder="7" top="-1" width="90" height="20" visible="false" format="###,###,###,###" right="0" onchanged="mskTemp_onchanged"/>
+        <Button id="btnSearch" taborder="2" top="59" right="20" width="44" height="44" cssclass="btn_WF_search01" onclick="btnSearch_onclick" text=""/>
+        <Grid id="grdList" taborder="0" cellsizingtype="col" cellmovingtype="col" left="0" top="160" right="20" binddataset="dsList" border="1px solid rgba(156,156,156,1)" bottom="17" autofittype="col" formatid="default">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="50"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="200"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="150"/>
+                <Column size="250"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="No."/>
+                <Cell col="1" text="First name"/>
+                <Cell col="2" text="Last name"/>
+                <Cell col="3" text="Email"/>
+                <Cell col="4" text="Gender"/>
+                <Cell col="5" text="IP Address"/>
+                <Cell col="6" text="State"/>
+                <Cell col="7" text="Street"/>
+                <Cell col="8" text="Date"/>
+                <Cell col="9" text="Domain"/>
+                <Cell col="10" text="GUID"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1"/>
+                <Cell col="1" text="bind:first_name" textAlign="left"/>
+                <Cell col="2" text="bind:last_name" textAlign="left"/>
+                <Cell col="3" text="bind:email" textAlign="left"/>
+                <Cell col="4" text="bind:gender" textAlign="left"/>
+                <Cell col="5" text="bind:ip_address" textAlign="right"/>
+                <Cell col="6" text="bind:state" textAlign="left"/>
+                <Cell col="7" text="bind:street" textAlign="left"/>
+                <Cell col="8" text="bind:date" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="9" text="bind:domain" textAlign="left"/>
+                <Cell col="10" text="bind:guid" textAlign="left"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="50"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="200"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="150"/>
+                <Column size="250"/>
+              </Columns>
+              <Rows>
+                <Row size="70" band="head"/>
+                <Row size="70"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="No."/>
+                <Cell col="1" text="First name"/>
+                <Cell col="2" text="Last name"/>
+                <Cell col="3" text="Email"/>
+                <Cell col="4" text="Gender"/>
+                <Cell col="5" text="IP Address"/>
+                <Cell col="6" text="State"/>
+                <Cell col="7" text="Street"/>
+                <Cell col="8" text="Date"/>
+                <Cell col="9" text="Domain"/>
+                <Cell col="10" text="GUID"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1"/>
+                <Cell col="1" text="bind:first_name" textAlign="left"/>
+                <Cell col="2" text="bind:last_name" textAlign="left"/>
+                <Cell col="3" text="bind:email" textAlign="left"/>
+                <Cell col="4" text="bind:gender" textAlign="left"/>
+                <Cell col="5" text="bind:ip_address" textAlign="right"/>
+                <Cell col="6" text="bind:state" textAlign="left"/>
+                <Cell col="7" text="bind:street" textAlign="left"/>
+                <Cell col="8" text="bind:date" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="9" text="bind:domain" textAlign="left"/>
+                <Cell col="10" text="bind:guid" textAlign="left"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="staInfo" taborder="4" cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" text="You can check the network time, rendering time, and the number of queries related to large data processing." wordWrap="char"/>
+        <Static id="staTitle01" taborder="6" text="조회건수" cssclass="sta_WF_condition01" left="8" top="66" width="90" height="30"/>
+      </Layout>
+      <Layout name="Layout1" width="480" height="720" mobileorientation="landscape" screenid="mobile">
+        <Grid id="grdList" formatid="mobile" left="20" top="204" right="20" bottom="20" autofittype="none"/>
+        <Static id="staLabel" left="20" top="105" height="50" right="70"/>
+        <Combo id="cboRowCnt" left="126" top="110" width="274" height="40" itemheight="50"/>
+        <Button id="btnSearch" top="105" width="50" height="50" right="20"/>
+        <Static id="staInfo" left="20" top="20" height="70" right="20"/>
+        <Static id="staTitle01" left="28" top="115" width="90" height="30"/>
+        <Static id="stSearchTimeOrg" top="170" width="457" height="31" right="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsList" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * CALLBACK (Transaction, Popup)
+ ************************************************************************************************/
+this.fnCallback = function(svcId, errCode, errMsg, elapsedTime)
+{
+	if (errCode < 0) 
+	{
+			alert(errMsg);
+			return;
+	}
+	else
+	{
+		if(svcId == "search")
+		{
+			this.endtime = new Date();
+			var totaltime = nexacro.round((this.endtime - this.starttime) / 1000, 3);
+			
+			var nRowCount = this.dsList.rowcount;
+			
+			this.stSearchTimeOrg.set_text("Server/Network time <fc v='#d7381e'>" + elapsedTime + "</fc> seconds, rendering time <fc v='#d7381e'>" + nexacro.round(totaltime - elapsedTime, 3) + "</fc> seconds, views <fc v='#d7381e'>" +  this.gfnAppendComma(this.dsList.rowcount) + "</fc> cases");
+		}
+	}
+}
+ 
+ /************************************************************************************************
+ * TRANSACTION service
+ ************************************************************************************************/
+this.btnSearch_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.dsList.clearData();
+ 
+	this.stSearchTimeOrg.set_text("Server/network time <fc v='#d7381e'> 0 </fc> seconds, rendering time <fc v='#d7381e'> 0 </fc> seconds, views <fc v='#d7381e'> 0 </fc> cases");
+//	var sURL = "svcurl::";
+	
+// 	var oDatas = {
+// 		svcid: "searchList",
+// 		url : sURL + "service/ssvRead.jsp?rowcount=" + this.cboRowCnt.value,
+// 		outds : [
+// 			"dsList=output"
+// 		]
+// 	};
+
+	var strSvcId    = "search";
+	var strSvcUrl   = "svcurl::services/ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
+	var inData      = "";
+	var outData     = "dsList=output";
+	var strArg      = "";
+	var callBackFnc = "fnCallback";
+	var isAsync   	= true;
+	this.starttime = new Date();
+	
+	// [ Refer Nexacro17 Reference Guide ] Help > help > Nexacro17 Reference Guide { press F1 key }
+	this.transaction(strSvcId , 	// A string representing an ID to distinguish transactions
+					strSvcUrl , 	// A string representing an address to request a transaction
+					inData , 		// A string representing the ID of a Dataset sent to the server for a data transaction
+					outData , 		// A string representing the ID of a Dataset for receiving data from the server for a data transaction
+					strArg, 		// A string representing the information sent to the server page
+					callBackFnc, 	// Callback function name
+					isAsync); 		// It specifies whether the transaction is asynchronous.
+}
+ ]]></Script>
+  </Form>
+</FDL>

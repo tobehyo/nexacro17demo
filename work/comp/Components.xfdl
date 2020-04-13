@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="component" width="980" height="2805" titletext="다양한 컴포넌트" onload="component_onload" visible="true">
+    <Layouts>
+      <Layout screenid="desktop">
+        <Static id="Static12" taborder="0" left="0" top="1670" height="51" cssclass="sta_menu_bg" right="20"/>
+        <Static id="Static02" taborder="1" cssclass="sta_cp_box01" left="0" top="71" width="47.96%" height="202"/>
+        <Static id="Static01" taborder="2" text="Button" left="0" top="71" width="47.96%" height="51" cssclass="sta_cp_box01"/>
+        <Button id="Button00" taborder="3" text="Button" left="Static02:-80.00%" top="142" height="32" width="8.16%" onclick="fn_comBtnOnClick" cssclass="btn_WF_basic01"/>
+        <Grid id="grdObj" binddataset="dsList" autoenter="select" left="0" top="819" height="259" right="20" autofittype="col" taborder="4" formatid="default" oncellclick="grdObj_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Edit"/>
+                <Cell col="1" text="Calendar"/>
+                <Cell col="2" text="Combo"/>
+                <Cell col="3" text="CheckBox"/>
+                <Cell col="4" text="TextArea"/>
+                <Cell col="5" text="Button"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="editcontrol" edittype="normal" text="bind:Column0" editdisplay="display"/>
+                <Cell col="1" displaytype="calendarcontrol" edittype="date" text="bind:Column1" calendardisplay="display"/>
+                <Cell col="2" displaytype="combocontrol" edittype="combo" text="bind:Column2" combodataset="dsCombo" combocodecol="Column0" combodatacol="Column1" combodisplay="display"/>
+                <Cell col="3" displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column3"/>
+                <Cell col="4" text="bind:Column4" displaytype="textareacontrol" edittype="textarea" textareaautoselect="true"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="bind:Column5"/>
+              </Band>
+            </Format>
+            <Format id="mobile">
+              <Columns>
+                <Column size="100"/>
+                <Column size="160"/>
+                <Column size="134"/>
+                <Column size="100"/>
+                <Column size="191"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="40" band="head"/>
+                <Row size="40"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Edit"/>
+                <Cell col="1" text="Calendar"/>
+                <Cell col="2" text="Combo"/>
+                <Cell col="3" text="CheckBox"/>
+                <Cell col="4" text="TextArea"/>
+                <Cell col="5" text="Button"/>
+              </Band>
+              <Band id="body">
+                <Cell displaytype="editcontrol" edittype="normal" text="bind:Column0" editdisplay="display"/>
+                <Cell col="1" displaytype="calendarcontrol" edittype="date" text="bind:Column1" calendardisplay="display" calendarpopuptype="system"/>
+                <Cell col="2" displaytype="combocontrol" edittype="combo" text="bind:Column2" combodataset="dsCombo" combocodecol="Column0" combodatacol="Column1" combodisplay="display" combopopuptype="center" comboitemheight="100" combopopupsize="350"/>
+                <Cell col="3" displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column3"/>
+                <Cell col="4" text="bind:Column4" displaytype="textareacontrol" edittype="textarea"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="bind:Column5"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <PopupDiv id="PopupDiv00" text="PopupDiv" left="1024" top="100" height="100" width="185" background="rgba(255,255,255,1)" border="1px solid rgba(128,128,128,1)"/>
+        <PopupMenu id="PopupMenu00" left="1248" top="100" height="100" innerdataset="@dsMenu" captioncolumn="caption" idcolumn="id" levelcolumn="level" cssclass="pm_basic01" width="185" onmenuclick="PopupMenu00_onmenuclick"/>
+        <Button id="Button03" taborder="8" text="Push" cssclass="btn_cp_basic01" left="Button00:21" top="142" width="8.16%" height="32"/>
+        <Button id="Button04" taborder="9" text="Disabled" onclick="Button00_onclick" cssclass="btn_WF_basic01" left="Button03:19" top="142" width="8.16%" height="32" enable="false"/>
+        <Button id="Button05" taborder="10" text="Save" onclick="fn_comBtnOnClick" cssclass="btn_WF_basic03" left="Static02:-80.00%" top="182" width="8.16%" height="32"/>
+        <Button id="Button06" taborder="11" text="Push" cssclass="btn_cp_basic03" left="Button05:20" top="182" width="8.16%" height="32"/>
+        <Button id="Button07" taborder="12" text="Disabled" onclick="Button00_onclick" cssclass="btn_WF_basic02" left="Button06:20" top="182" width="8.16%" height="32" enable="false"/>
+        <Button id="Button08" taborder="13" text="Delete" onclick="fn_comBtnOnClick" cssclass="btn_WF_basic05" left="Static02:-80.00%" top="222" width="8.16%" height="32"/>
+        <Button id="Button09" taborder="14" text="Push" cssclass="btn_cp_basic04" left="Button08:20" top="222" width="8.16%" height="32"/>
+        <Button id="Button10" taborder="15" text="Disabled" onclick="Button00_onclick" cssclass="btn_WF_basic03" left="Button09:20" top="222" width="8.16%" height="32" enable="false"/>
+        <Static id="Static55" taborder="16" cssclass="sta_cp_box01" left="Static02:20" top="71" height="202" right="20"/>
+        <Static id="Static54" taborder="17" text="CheckBox &amp; Radio" cssclass="sta_cp_box01" left="Static01:20" top="71" height="51" right="20"/>
+        <CheckBox id="CheckBox01" taborder="18" text="CheckBox_Normal" left="Static02:85" top="142" height="32" cssclass="chk_basic01" width="142"/>
+        <CheckBox id="CheckBox03" taborder="19" text="CheckBox_Disable" cssclass="chk_basic01" left="Static02:85" top="222" width="142" height="32" enableevent="false" enable="false" value="false"/>
+        <Radio id="Radio01" taborder="20" top="138" height="121" width="14.08%" cssclass="rdo_basic01" innerdataset="@dsCode" codecolumn="value" datacolumn="label" right="7.45%" onitemchanged="Radio01_onitemchanged"/>
+        <Static id="Static56" taborder="21" cssclass="sta_cp_box01" left="0" top="293" width="47.96%" height="214"/>
+        <Static id="Static57" taborder="22" text="Combo" cssclass="sta_cp_box01" left="0" top="293" width="47.96%" height="51"/>
+        <Static id="Static62" taborder="23" cssclass="sta_cp_box01" left="Static56:20" top="293" height="214" right="20"/>
+        <Static id="Static61" taborder="24" text="ListBox" cssclass="sta_cp_box01" left="Static57:20" top="293" height="51" right="20"/>
+        <Combo id="Combo01" taborder="25" text="Combo01" top="364" height="32" width="13.27%" left="Static56:-95.96%" cssclass="cmb_basic01" innerdataset="@dsCode" codecolumn="value" datacolumn="label" itemheight="30"/>
+        <Static id="Static21" taborder="96" left="Combo01:20" top="364" width="130" height="125" cssclass="sta_cp_Combo"/>
+        <Combo id="Combo03" taborder="26" innerdataset="@dsCode" codecolumn="value" datacolumn="label" cssclass="cmb_basic01" left="Static21:20" top="364" width="13.27%" height="32" enable="false"/>
+        <ListBox id="ListBox01" taborder="27" top="364" height="122" width="Static62:58.51%" left="Static56:25.11%" innerdataset="@dsCode" codecolumn="value" datacolumn="label" cssclass="lst_basic01" multiselect="true" itemheight="30"/>
+        <Static id="Static64" taborder="28" cssclass="sta_cp_box01" left="0" top="527" width="31.33%" height="221"/>
+        <Static id="Static63" taborder="29" text="Edit" cssclass="sta_cp_box01" left="0" top="527" width="31.33%" height="51"/>
+        <Static id="Static66" taborder="30" cssclass="sta_cp_box01" left="Static64:20" top="527" width="31.33%" height="221"/>
+        <Static id="Static68" taborder="31" cssclass="sta_cp_box01" left="Static66:20" top="527" height="221" right="20"/>
+        <Static id="Static65" taborder="32" text="MaskEdit" cssclass="sta_cp_box01" left="Static63:20" top="527" width="31.33%" height="51"/>
+        <Static id="Static67" taborder="33" text="Spin" cssclass="sta_cp_box01" left="Static65:20" top="527" height="51" right="20"/>
+        <Edit id="Edit01" taborder="34" top="598" height="32" displaynulltext="Nexacro" value="Nexacro" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01" text="Nexacro"/>
+        <Edit id="Edit02" taborder="35" top="647" height="32" displaynulltext="Nexacro" value="Nexacro" cssclass="ed_basic02" width="18.98%" left="Static64:-80.13%" text="Nexacro"/>
+        <Edit id="Edit03" taborder="36" top="696" height="32" displaynulltext="Nexacro" value="Nexacro" width="18.98%" left="Static64:-80.46%" cssclass="ed_basic01" enable="false" text="Nexacro"/>
+        <MaskEdit id="MaskEdit02" taborder="37" top="598" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" mask="#,##0.00" canchange="MaskEdit02_canchange"/>
+        <MaskEdit id="MaskEdit03" taborder="38" top="647" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic02" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
+        <MaskEdit id="MaskEdit04" taborder="39" top="696" height="32" enable="false" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
+        <Spin id="Spin01" taborder="40" value="0" left="Static66:26.06%" top="598" width="18.98%" height="32" cssclass="sp_basic01"/>
+        <Spin id="Spin02" taborder="41" value="0" left="Static66:26.06%" top="647" width="18.98%" height="32" cssclass="sp_basic02"/>
+        <Spin id="Spin03" taborder="42" value="0" left="Static66:26.06%" top="696" width="18.98%" height="32" enable="false"/>
+        <Static id="Static69" taborder="43" cssclass="sta_cp_box01" left="0" top="1098" width="47.96%" height="285" text=""/>
+        <Static id="Static70" taborder="44" text="Calendar" cssclass="sta_cp_box01" left="0" top="1098" width="47.96%" height="51"/>
+        <Static id="Static71" taborder="45" cssclass="sta_cp_box01" left="Static69:20" top="1098" height="285" right="20"/>
+        <Static id="Static72" taborder="46" text="TextArea" cssclass="sta_cp_box01" left="Static70:20" top="1098" height="51" right="20"/>
+        <TextArea id="TextArea01" taborder="47" left="Static69:25.53%" top="1169" width="27.55%" height="194" cssclass="txa_basic01" displaynulltext="Yeah, TextArea it is!" wordWrap="char"/>
+        <Calendar id="calToday" taborder="48" left="Static69:-88.3%" top="1169" width="13.27%" height="30" cssclass="cal_basic01"/>
+        <Calendar id="calToday01" taborder="49" left="Static69:-88.3%" top="1259" width="13.27%" height="30" type="spin" cssclass="cal_basic01"/>
+        <Static id="Static03" taborder="50" cssclass="sta_cp_box01" left="0" top="1403" width="31.33%" height="247"/>
+        <Static id="Static06" taborder="51" cssclass="sta_cp_box01" left="Static03:20" top="1403" width="31.33%" height="247"/>
+        <Static id="Static08" taborder="52" cssclass="sta_cp_box01" left="Static06:20" top="1403" height="247" right="20"/>
+        <Static id="Static04" taborder="54" text="Static" cssclass="sta_cp_box01" left="0" top="1403" width="31.33%" height="51"/>
+        <Static id="Static05" taborder="55" text="Div" cssclass="sta_cp_box01" left="Static04:20" top="1403" width="31.33%" height="51"/>
+        <Static id="Static07" taborder="53" text="GroupBox" cssclass="sta_cp_box01" left="Static05:20" top="1403" height="51" right="20"/>
+        <Static id="Static09" taborder="56" text="Static09" left="Static03:-77.20%" top="1474" width="16.94%" height="60" background="#7b69d6" color="rgba(255,255,255,1)" textAlign="center" verticalAlign="middle" font="10pt Malgun gothic,Arial"/>
+        <Static id="Static10" taborder="57" left="Static03:-77.2%" top="1534" width="8.47%" height="30" background="#a17fe7"/>
+        <Static id="Static11" taborder="58" left="Static10:0" top="1534" width="8.47%" height="30" background="rgba(161,103,209,1)"/>
+        <Static id="Static73" taborder="59" text="&lt;b v='true'&gt;Apple&lt;/b&gt; is &lt;fc v='red'&gt;Good&lt;/fc&gt; or not..." left="Static03:-76.55%" top="1572" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Static id="Static74" taborder="60" text="&lt;u v='true'&gt;Apple&lt;/u&gt; is &lt;s v='true'&gt;Good&lt;/s&gt; or not" left="Static03:-76.55%" top="1603" width="163" height="28" usedecorate="true" font="normal 10pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Div id="Div02" taborder="61" text="DIV" left="Static03:30.94%" top="1474" width="16.94%" height="156" cssclass="div_basic01"/>
+        <GroupBox id="GroupBox01" text="Group" taborder="62" left="Static06:31.92%" top="1473" width="16.94%" height="156" cssclass="grb_basic01"/>
+        <Menu id="Menu01" taborder="63" left="130" top="1671" height="49" right="22" levelcolumn="level" innerdataset="@dsMenu01" idcolumn="id" captioncolumn="caption" cssclass="menu_basic01" fittocontents="width" onmenuclick="Menu01_onmenuclick"/>
+        <Static id="Static13" taborder="64" text="Menu" left="20" top="1670" width="110" height="51" cssclass="sta_menu_icon"/>
+        <Static id="Static20" taborder="95" text="Grid" cssclass="sta_cp_box01" left="0" top="768" height="51" right="20"/>
+        <CheckBox id="CheckBox02" taborder="97" text="CheckBox_Select" cssclass="chk_basic01" left="Static02:85" top="182" width="142" height="32" enable="true" enableevent="false" value="true"/>
+        <Calendar id="calToday03" taborder="98" left="calToday:79" top="1169" width="169" height="189" type="monthonly" value="20220101" innerdataset="ds_CalendarColor" backgroundcolumn="BKCOLOR" bordercolumn="BORDER" datecolumn="DATE" textcolorcolumn="COLOR"/>
+        <Calendar id="calToday02" taborder="99" cssclass="cal_basic01" left="Static69:-88.3%" top="1209" width="13.27%" height="30" enable="false"/>
+        <Calendar id="Calendar04" taborder="100" type="spin" cssclass="cal_basic01" left="Static69:-88.3%" top="1299" width="13.27%" height="30" enable="false"/>
+        <PopupMenu id="PopupMenu01" left="1024" top="218" width="185" height="100" visible="false" cssclass="pm_basic01"/>
+        <Static id="Static00" taborder="101" text="Static00" top="19" width="20" height="153" background="aqua" visible="false" right="0"/>
+        <Static id="Static60" taborder="101" text="The Nexacro Platform provides a convenient tool environment for users by providing about 40 components." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+        <Static id="Static14" taborder="0" left="0" top="1752" height="34" cssclass="sta_menu_bg" right="20"/>
+        <Tab id="Tab00" taborder="6" left="0" top="1751" height="175" tabindex="0" scrollbars="autoboth" right="20" cssclass="tab_basic01" showextrabutton="true" tabbuttonheight="32">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="tabpage1"/>
+            <Tabpage id="tabpage2" text="tabpage2"/>
+            <Tabpage id="tabpage3" text="tabpage3"/>
+            <Tabpage id="tabpage4" text="tabpage4"/>
+          </Tabpages>
+        </Tab>
+        <Static id="Static29" taborder="66" cssclass="sta_cp_box01" left="0" top="1946" width="31.33%" height="247"/>
+        <Static id="Static22" taborder="65" cssclass="sta_cp_box01" left="Static29:20" top="1946" width="31.33%" height="247"/>
+        <Static id="Static31" taborder="67" cssclass="sta_cp_box01" left="Static22:20" top="1946" height="247" right="20"/>
+        <Static id="Static23" taborder="70" text="PopupDiv" cssclass="sta_cp_box01" left="0" top="1946" width="31.33%" height="51"/>
+        <Static id="Static15" taborder="69" text="PopupMenu" cssclass="sta_cp_box01" left="Static23:20" top="1946" width="31.33%" height="51"/>
+        <Static id="Static30" taborder="68" text="Step" cssclass="sta_cp_box01" left="Static15:20" top="1946" height="51" right="20"/>
+        <Div id="Div01" taborder="71" left="Static22:26.06%" top="2017" height="155" width="18.78%" url="comp::Components_step.xfdl" text=""/>
+        <Button id="Button01" taborder="72" text="click me" left="Static29:-66.45%" top="2053" width="10.2%" height="60" onclick="fn_comBtnOnClick" cssclass="btn_cp_popDiv"/>
+        <Button id="Button02" taborder="73" text="click me" left="Static29:40.07%" top="2054" width="10.2%" height="60" onclick="fn_comBtnOnClick" cssclass="btn_cp_popMenu"/>
+        <Static id="Static33" taborder="74" cssclass="sta_cp_box01" left="0" top="2213" width="31.33%" height="132"/>
+        <Static id="Static32" taborder="75" text="FileDownload" cssclass="sta_cp_box01" left="0" top="2213" width="31.33%" height="51"/>
+        <Static id="Static35" taborder="76" cssclass="sta_cp_box01" left="Static33:20" top="2213" height="132" right="20"/>
+        <Static id="Static34" taborder="77" text="FileUpload" cssclass="sta_cp_box01" left="Static32:20" top="2213" height="51" right="20"/>
+        <FileDownload id="FileDownload00" taborder="78" text="FileDownload" left="Static33:-75.57%" top="2284" height="40" width="16.33%" cssclass="filedown_basic01"/>
+        <FileUpload id="FileUpload00" taborder="79" index="0" left="Static33:36.16%" top="2284" height="40" width="45.92%" cssclass="fileup_basic01" itemheight="40" buttonsize="160" buttontext="FileUpload"/>
+        <Static id="Static17" taborder="80" cssclass="sta_cp_box01" left="0" top="2365" height="190" right="20"/>
+        <Static id="Static16" taborder="81" text="ImageViewer" cssclass="sta_cp_box01" left="0" top="2365" height="51" right="20"/>
+        <ImageViewer id="ImageViewer01" taborder="82" image="URL('imagerc::nexa_BI.png')" left="333" top="2470" height="65" stretch="fit" width="177"/>
+        <Static id="Static27" taborder="83" text="stretch : fit" left="333" top="2436" width="125" height="24" cssclass="sta_cp_imageViewer"/>
+        <ImageViewer id="ImageViewer02" taborder="84" image="URL('imagerc::nexa_BI.png')" left="638" top="2470" height="65" stretch="fixaspectratio" width="177"/>
+        <Static id="Static28" taborder="85" text="stretch : fixaspectratio" left="638" top="2436" width="155" height="24" cssclass="sta_cp_imageViewer"/>
+        <Static id="Static26" taborder="86" text="stretch : none" left="28" top="2436" height="24" width="125" cssclass="sta_cp_imageViewer"/>
+        <ImageViewer id="ImageViewer00" taborder="87" left="28" top="2470" height="65" image="URL('imagerc::nexa_BI.png')" width="177"/>
+        <Static id="Static18" taborder="88" cssclass="sta_cp_box01" left="0" top="2575" width="31.33%" height="210"/>
+        <Static id="Static19" taborder="89" text="ProgressBar" cssclass="sta_cp_box01" left="0" top="2575" width="31.33%" height="51"/>
+        <ProgressBar id="ProgressBar00" taborder="90" text="56%" left="Static18:-82.74%" top="2662" height="35" width="20.41%" pos="56" cssclass="prg_basic01" smooth="true"/>
+        <ProgressBar id="ProgressBar01" taborder="91" text="15/100" left="Static18:-82.74%" top="2708" width="20.41%" height="35" pos="15" cssclass="prg_basic01" smooth="true"/>
+        <Static id="Static24" taborder="92" cssclass="sta_cp_box01" left="Static18:20" top="2575" right="20" height="210"/>
+        <Static id="Static25" taborder="93" text="WebBrowser" cssclass="sta_cp_box01" left="Static19:20" top="2575" right="20" height="51"/>
+        <WebBrowser id="webNotify" left="Static18:39.09%" top="2636" height="138" taborder="94" width="44.08%" onusernotify="webNotify_onusernotify" border="1px solid rgba(203,203,203,1)"/>
+      </Layout>
+      <Layout name="Layout0" width="480" height="6320" mobileorientation="portrait" screenid="mobile">
+        <Static id="Static55" left="20" top="390" height="242" right="20" text=""/>
+        <CheckBox id="CheckBox01" left="8.13%" top="467" width="37.71%" height="32"/>
+        <CheckBox id="CheckBox02" left="8.13%" top="517" width="37.71%" height="32"/>
+        <CheckBox id="CheckBox03" left="8.13%" top="567" width="37.71%" height="32"/>
+        <Static id="Static54" left="20" top="390" height="51" right="20"/>
+        <Static id="Static61" left="20" top="866" height="51" right="20"/>
+        <Static id="Static62" left="20" top="866" height="253" right="20"/>
+        <ListBox id="ListBox01" left="23.13%" top="937" width="Static62:57.73%" height="162" itemheight="40"/>
+        <Static id="Static65" left="20" top="1398" height="51" right="20"/>
+        <Static id="Static67" left="20" top="1668" height="51" right="20"/>
+        <Static id="Static66" left="20" top="1398" height="260" right="20"/>
+        <Static id="Static68" text="" left="20" top="1668" height="260" right="20"/>
+        <MaskEdit id="MaskEdit02" left="23.13%" top="1469" width="53.13%" height="50"/>
+        <MaskEdit id="MaskEdit03" left="23.13%" top="1524" width="53.13%" height="50"/>
+        <MaskEdit id="MaskEdit04" left="23.13%" top="1579" width="53.13%" height="50"/>
+        <Spin id="Spin01" left="23.13%" top="1739" width="53.13%" height="50"/>
+        <Spin id="Spin02" left="23.13%" top="1794" width="53.13%" height="50"/>
+        <Spin id="Spin03" left="23.13%" top="1849" width="53.13%" height="50"/>
+        <Calendar id="calToday03" top="2361" height="189" width="169" right="10.21%"/>
+        <Calendar id="calToday" left="10.21%" top="2364" width="36.88%" height="40" popuptype="system"/>
+        <Calendar id="calToday02" left="10.21%" top="2409" width="36.88%" height="40" popuptype="system"/>
+        <Calendar id="calToday01" left="10.21%" top="2461" width="36.88%" height="40"/>
+        <Calendar id="Calendar04" left="10.21%" top="2506" width="36.88%" height="40"/>
+        <TextArea id="TextArea01" left="23.13%" top="2654" width="52.92%" height="194"/>
+        <Static id="Static71" text="" left="20" top="2583" height="285" right="20"/>
+        <Static id="Static72" left="20" top="2583" height="51" right="20"/>
+        <Static id="Static05" left="20" top="3185" height="51" right="20"/>
+        <Static id="Static07" left="20" top="3495" height="51" right="20"/>
+        <Static id="Static06" left="20" top="3185" height="300" right="20"/>
+        <Static id="Static08" left="20" top="3495" height="280" right="20"/>
+        <Static id="Static09" left="23.96%" top="2959" width="250" height="60" font="15pt &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Helvetica&quot;"/>
+        <Static id="Static11" left="Static10:0" top="3019" width="125" height="43"/>
+        <Static id="Static10" top="3019" width="125" height="43" left="23.96%"/>
+        <Static id="Static73" left="23.96%" top="3082" width="250" height="28" font="normal 12pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <Static id="Static74" left="23.96%" top="3118" width="250" height="28" font="normal 12pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+        <GroupBox id="GroupBox01" left="23.13%" top="3569" width="52.92%" height="180"/>
+        <Div id="Div02" left="23.13%" top="3256" width="52.92%" height="209"/>
+        <Static id="Static15" left="20" top="4301" height="51" right="20"/>
+        <Static id="Static30" left="20" top="4558" height="51" right="20"/>
+        <Static id="Static22" left="20" top="4301" height="247" text="" right="20"/>
+        <Div id="Div01" left="150" top="4629" width="37.50%" height="155"/>
+        <Static id="Static31" text="" left="20" top="4558" height="247" right="20"/>
+        <Static id="Static34" left="20" top="4994" height="51" right="20"/>
+        <FileDownload id="FileDownload00" left="31.25%" top="4898" width="37.50%" height="50"/>
+        <Static id="Static35" left="20" top="4994" height="160" right="20"/>
+        <FileUpload id="FileUpload00" left="12.50%" top="5074" height="50" right="12.50%" itemheight="50" buttonsize="160"/>
+        <Static id="Static25" left="20" top="6004" height="51" right="20"/>
+        <ProgressBar id="ProgressBar00" left="23.13%" top="5838" width="52.92%" height="46"/>
+        <ProgressBar id="ProgressBar01" left="23.13%" top="5894" width="52.92%" height="46"/>
+        <Static id="Static24" left="20" top="6004" height="290" right="20"/>
+        <WebBrowser id="webNotify" left="14.38%" top="6082" width="70.63%" height="179"/>
+        <Static id="Static14" left="20" top="3785" height="50" right="20"/>
+        <Static id="Static12" left="20" top="3785" height="51" right="20" visible="false"/>
+        <Grid id="grdObj" left="20" top="1989" height="289" right="20" autofittype="none" formatid="mobile" autoenter="none"/>
+        <Tab id="Tab00" left="20" top="3785" height="249" right="20" tabbuttonheight="40"/>
+        <PopupDiv id="PopupDiv00" left="554" top="4150" width="185" height="100"/>
+        <PopupMenu id="PopupMenu00" left="778" top="4150" width="185" height="100"/>
+        <Radio id="Radio01" top="456" width="35.42%" height="154" right="40"/>
+        <Static id="Static56" left="20" top="642" height="214" right="20" text=""/>
+        <Static id="Static57" left="20" top="642" height="51" right="20"/>
+        <Combo id="Combo01" left="8.13%" top="713" width="120" height="32" popuptype="center" popupsize="350" itemheight="100"/>
+        <Static id="Static21" left="Combo01:16" top="713" width="130" height="125" text=""/>
+        <Combo id="Combo03" top="713" height="32" left="Static21:15" width="120"/>
+        <Static id="Static64" left="20" top="1129" height="259" right="20"/>
+        <Static id="Static63" left="20" top="1129" height="51" right="20"/>
+        <Edit id="Edit01" left="23.13%" top="1200" width="53.13%" height="50" text="Nexacro"/>
+        <Edit id="Edit02" left="23.13%" top="1255" width="53.13%" height="50" text="Nexacro"/>
+        <Edit id="Edit03" left="23.13%" top="1310" width="53.13%" height="50" text="Nexacro"/>
+        <Static id="Static69" left="20" top="2288" height="285" right="20"/>
+        <Static id="Static70" left="20" top="2288" height="51" right="20"/>
+        <Static id="Static03" left="20" top="2878" height="297" right="20"/>
+        <Static id="Static04" left="20" top="2878" height="51" right="20"/>
+        <Menu id="Menu01" left="140" top="3786" height="49" right="22" visible="false"/>
+        <Static id="Static13" left="30" top="3785" width="100" height="51" visible="false"/>
+        <Static id="Static29" left="20" top="4044" height="247" right="20"/>
+        <Static id="Static23" left="20" top="4044" height="51" right="20"/>
+        <Button id="Button01" left="31.25%" top="4151" width="37.50%" height="70"/>
+        <Button id="Button02" left="31.25%" top="4409" width="37.50%" height="70" text="click me"/>
+        <Static id="Static33" left="20" top="4815" height="169" right="20"/>
+        <Static id="Static32" left="20" top="4815" height="51" right="20"/>
+        <Static id="Static17" left="20" top="5164" height="570" right="20"/>
+        <Static id="Static16" left="20" top="5164" height="51" right="20"/>
+        <ImageViewer id="ImageViewer01" left="31.67%" top="5466" width="177" height="65"/>
+        <Static id="Static27" left="30.63%" top="5416" width="183" height="40"/>
+        <ImageViewer id="ImageViewer02" left="31.67%" top="5626" width="177" height="65"/>
+        <Static id="Static28" left="27.92%" top="5576" width="213" height="40"/>
+        <Static id="Static26" left="30.63%" top="5256" width="183" height="40" text="stretch : none"/>
+        <ImageViewer id="ImageViewer00" left="31.67%" top="5306" width="177" height="65"/>
+        <Static id="Static18" left="20" top="5744" height="250" right="20"/>
+        <Static id="Static19" left="20" top="5744" height="51" right="20"/>
+        <Static id="Static20" left="20" top="1938" height="51" right="20"/>
+        <PopupMenu id="PopupMenu01" left="554" top="4268" width="185" height="100"/>
+        <Static id="Static00" top="1927" width="112" height="10" right="38"/>
+        <Button id="Button08" left="Static02:-80.00%" top="306" width="16.67%" height="50"/>
+        <Button id="Button05" left="Static02:-80.00%" top="251" width="16.67%" height="50"/>
+        <Button id="Button00" left="Static02:-80.00%" top="196" width="16.67%" height="50"/>
+        <Static id="Static01" left="20" top="121" height="51" right="20"/>
+        <Static id="Static02" left="20" top="121" height="259" right="20"/>
+        <Static id="Static60" left="20" top="20" height="80" right="20"/>
+        <Button id="Button03" width="16.67%" left="Button00:21" top="196" height="50"/>
+        <Button id="Button04" width="16.67%" left="Button03:19" top="196" height="50"/>
+        <Button id="Button06" width="16.67%" left="Button05:21" top="251" height="50"/>
+        <Button id="Button07" width="16.67%" left="Button06:19" top="251" height="50"/>
+        <Button id="Button09" width="16.67%" left="Button08:21" top="306" height="50"/>
+        <Button id="Button10" width="16.67%" left="Button09:19" top="306" height="50"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCode">
+        <ColumnInfo>
+          <Column id="label" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="label">Sales Team</Col>
+            <Col id="value">1</Col>
+          </Row>
+          <Row>
+            <Col id="label">Laboratory</Col>
+            <Col id="value">2</Col>
+          </Row>
+          <Row>
+            <Col id="label">Technical Support Team</Col>
+            <Col id="value">3</Col>
+          </Row>
+          <Row>
+            <Col id="label">Development Team</Col>
+            <Col id="value">4</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsList">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="STRING" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170101</Col>
+            <Col id="Column3"/>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170202</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170303</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170404</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170505</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170606</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170707</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170808</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20170909</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">ABCDEFGHIJK</Col>
+            <Col id="Column5">Button</Col>
+            <Col id="Column2">[Undefined]</Col>
+            <Col id="Column1">20171010</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMenu">
+        <ColumnInfo>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="id">1000</Col>
+            <Col id="caption">Main Menu1</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="id">1100</Col>
+            <Col id="caption">Sub Menu 1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="id">1110</Col>
+            <Col id="caption">Sub2 Menu 1</Col>
+          </Row>
+          <Row>
+            <Col id="level">2</Col>
+            <Col id="id">1120</Col>
+            <Col id="caption">Sub2 Menu 2</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="id">1200</Col>
+            <Col id="caption">Sub Menu 2</Col>
+          </Row>
+          <Row>
+            <Col id="level">0</Col>
+            <Col id="id">2000</Col>
+            <Col id="caption">Main Menu 2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsMenu01">
+        <ColumnInfo>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="caption" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">1000</Col>
+            <Col id="caption">nexacro Menu01</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="id">1100</Col>
+            <Col id="caption">Sub Menu01</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">1110</Col>
+            <Col id="caption">Sub2 Menu01</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">1120</Col>
+            <Col id="caption">Sub2 Menu02</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">1130</Col>
+            <Col id="caption">Sub2 Menu03</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">1140</Col>
+            <Col id="caption">Sub2 Menu04</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">1150</Col>
+            <Col id="caption">Sub2 Menu05</Col>
+            <Col id="level">2</Col>
+          </Row>
+          <Row>
+            <Col id="id">1200</Col>
+            <Col id="caption">Sub Menu02</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">1300</Col>
+            <Col id="caption">Sub Menu03</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="id">2000</Col>
+            <Col id="caption">nexacro Menu02</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="id">1210</Col>
+            <Col id="caption">Sub Menu04</Col>
+          </Row>
+          <Row>
+            <Col id="level">1</Col>
+            <Col id="id">1220</Col>
+            <Col id="caption">Sub Menu05</Col>
+          </Row>
+          <Row>
+            <Col id="id">3000</Col>
+            <Col id="caption">nexacro Menu03</Col>
+            <Col id="level">0</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="dsCombo" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">A1</Col>
+            <Col id="Column1">A1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B2</Col>
+            <Col id="Column1">B2</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">C3</Col>
+            <Col id="Column0">C3</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">D4</Col>
+            <Col id="Column0">D4</Col>
+          </Row>
+          <Row>
+            <Col id="Column1">E5</Col>
+            <Col id="Column0">E5</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_CalendarColor" preload="true" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true">
+        <ColumnInfo>
+          <Column type="STRING" size="256" id="DATE"/>
+          <Column type="STRING" size="256" id="COLOR"/>
+          <Column id="BKCOLOR" type="STRING" size="256"/>
+          <Column id="BORDER" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DATE">20220101</Col>
+            <Col id="COLOR">#EE6B67</Col>
+          </Row>
+          <Row>
+            <Col id="DATE">20220104</Col>
+            <Col id="COLOR">blue</Col>
+            <Col id="BKCOLOR">pink</Col>
+            <Col id="BORDER"/>
+          </Row>
+          <Row>
+            <Col id="DATE">20220107</Col>
+            <Col id="COLOR">white</Col>
+            <Col id="BKCOLOR">skyblue</Col>
+            <Col id="BORDER">1px solid blue</Col>
+          </Row>
+          <Row>
+            <Col id="DATE">20220119</Col>
+            <Col id="COLOR">#7B69D6</Col>
+            <Col id="BKCOLOR">#53C0C1</Col>
+            <Col id="BORDER"/>
+          </Row>
+          <Row>
+            <Col id="DATE">20220128</Col>
+            <Col id="COLOR">#FF0000</Col>
+            <Col id="BKCOLOR">#FDC25A</Col>
+            <Col id="BORDER">1px solid #865500</Col>
+          </Row>
+          <Row>
+            <Col id="DATE">20220125</Col>
+            <Col id="COLOR">#EE6B67</Col>
+            <Col id="BKCOLOR"/>
+            <Col id="BORDER"/>
+          </Row>
+          <Row>
+            <Col id="DATE">20220131</Col>
+            <Col id="COLOR">#EE6B67</Col>
+          </Row>
+          <Row>
+            <Col id="DATE">20220201</Col>
+            <Col id="COLOR">#EE6B67</Col>
+          </Row>
+          <Row>
+            <Col id="DATE">20220202</Col>
+            <Col id="COLOR">#EE6B67</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.component_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	var today = this.gfnGetDate();
+
+	//Calendar random day Color setting
+	for(i=0; i<this.ds_CalendarColor.rowcount; i++)
+	{
+		var randomDay = today.substring(0,6) + this.getRandomIntInclusive(1,29).toString().padLeft(2,"0");
+		this.ds_CalendarColor.setColumn(i,"DATE", randomDay);
+	}
+
+	this.calToday.set_value(today);
+	this.calToday01.set_value(today);
+	this.calToday03.set_value(today);
+	this.webNotify.set_url(nexacro.getProjectPath() + "./html/usernotify.html");
+	
+};
+
+this.getRandomIntInclusive = function (min, max) 
+{
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	switch (obj.name)
+	{
+		case "Button00" :
+			alert(obj.text);
+			break;
+			
+		case "Button01" :
+			var x = 0;
+			var y = obj.getOffsetHeight();
+			this.PopupDiv00.trackPopupByComponent(obj, x, y);
+			break;
+			
+		case "Button02" :
+			var x = 0; 
+			var y = obj.getOffsetHeight();
+			this.PopupMenu01.trackPopupByComponent(obj, x, y);		
+			break;
+	} 
+};
+
+this.grdObj_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var nRow = e.row + 1;
+
+	if (e.col == 5) 
+	{
+		alert(nRow + "Row Button Event!");
+	}
+	else if(e.col == 1) //calender
+	{
+		obj.dropdownCalendar();
+	}
+	else if(e.col == 2) //combo
+	{
+		obj.dropdownCombo();
+	}
+};
+
+this.webNotify_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
+{
+	if (system.navigatorname != "nexacro")
+	{
+		trace(e.userdata);
+	}
+	else
+	{
+		trace(e.userdata);
+	}
+};]]></Script>
+  </Form>
+</FDL>

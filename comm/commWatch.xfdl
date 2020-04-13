@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="commWatch" width="284" height="170" titletext="시계" onload="commWatch_onload" ontimer="commWatch_ontimer">
+    <Layouts>
+      <Layout height="170" mobileorientation="landscape" width="284">
+        <Static id="Static06" taborder="0" text="BEIJING" left="10" top="24" width="95" height="40" cssclass="sta_WF_box05"/>
+        <Static id="Static01" taborder="1" text="LA" left="10" top="76" width="95" height="40" cssclass="sta_WF_box05"/>
+        <Static id="Static03" taborder="2" text="NEWYORK" left="10" top="128" width="95" height="40" cssclass="sta_WF_box05"/>
+        <Static id="Static04" taborder="3" left="164" top="36" height="120" cssclass="sta_WF_clock01" width="120" text="" borderRadius="100px"/>
+        <Static id="stTime" taborder="4" text="17:59" left="183" top="68" width="82" height="37" cssclass="sta_WF_timer"/>
+        <Static id="Static07" taborder="5" text="SEOUL" left="184" top="112" width="81" height="19" cssclass="sta_WF_clock01Text"/>
+        <Button id="btnMove" taborder="6" left="210" top="141" width="29" cssclass="btn_WF_widgetMove03" height="29"/>
+        <Button id="btnClose" taborder="7" top="0" width="30" height="30" cssclass="btn_WF_noteDel" right="0" onclick="btnClose_onclick"/>
+        <Static id="stTime1_1" taborder="8" left="105" top="24" width="27" height="40" text="17" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none,1px solid #c0c2c5," background="white"/>
+        <Static id="stTime1_3" taborder="9" left="131" top="24" width="27" height="40" text="59" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,1px solid #c0c2c5,1px solid #c0c2c5,0px none" background="white"/>
+        <Static id="stTime1_2" taborder="10" text=":" left="126" top="24" width="7" height="40" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none" background="white"/>
+        <Static id="stTime2_1" taborder="11" left="105" top="76" width="27" height="40" text="16" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none,1px solid #c0c2c5," background="white"/>
+        <Static id="stTime2_3" taborder="12" left="131" top="76" width="27" height="40" text="59" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,1px solid #c0c2c5,1px solid #c0c2c5,0px none" background="white"/>
+        <Static id="stTime2_2" taborder="13" text=":" left="126" top="76" width="7" height="40" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none" background="white"/>
+        <Static id="stTime3_1" taborder="14" left="105" top="128" width="27" height="40" text="16" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none,1px solid #c0c2c5," background="white"/>
+        <Static id="stTime3_3" taborder="15" left="131" top="128" width="27" height="40" text="59" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,1px solid #c0c2c5,1px solid #c0c2c5,0px none" background="white"/>
+        <Static id="stTime3_2" taborder="16" text=":" left="126" top="128" width="7" height="40" textAlign="center" verticalAlign="middle" border="1px solid #c0c2c5,0px none" background="white"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.fv_bType = true;
+
+this.commWatch_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.fn_checkTime();
+	this.setTimer(1, 1000);
+};
+
+this.commWatch_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
+{
+	if (e.timerid == 1) {
+		this.fn_checkTime();		
+	}
+};
+
+this.btnClose_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.parent.parent.fn_closeWidget(this.parent);
+};
+
+this.fn_checkTime = function()
+{
+	if (this.fv_bType == true) {
+		this.fv_bType=false;
+	} else {
+		this.fv_bType=true;
+	}
+		
+	this.stTime.set_text(this.gfn_TodayTime(9));
+	
+	//기존소스
+	//this.stTime1.set_text(this.gfn_TodayTime(8));
+	//this.stTime2.set_text(this.gfn_TodayTime(-8));
+	//this.stTime3.set_text(this.gfn_TodayTime(-5));
+	
+	this.gfn_TodayTime(8, "BEIJING");
+	this.gfn_TodayTime(-8, "LA");
+	this.gfn_TodayTime(-5, "NEWYORK");
+}
+
+this.gfn_TodayTime = function(nHour, type)
+{
+	var strToday = "";
+	var objDate  = new Date();
+	
+	objDate.addHours(nHour);
+	
+	var hh = objDate.getUTCHours();
+	var mm = objDate.getUTCMinutes();
+	var ss = objDate.getUTCSeconds();
+
+	var year  = objDate.getUTCFullYear();
+	var month = objDate.getUTCMonth() + 1;
+	var day   = objDate.getUTCDate();
+
+	if(this.fv_bType == true) 
+	{
+		if(type == "BEIJING")
+			strToday = this.stTime1_1.set_text(String(hh).padLeft(2, "0")) + this.stTime1_2.set_text(":") + this.stTime1_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else if(type == "LA")
+			strToday = this.stTime2_1.set_text(String(hh).padLeft(2, "0")) + this.stTime2_2.set_text(":") + this.stTime2_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else if(type == "NEWYORK")
+			strToday = this.stTime3_1.set_text(String(hh).padLeft(2, "0")) + this.stTime3_2.set_text(":") + this.stTime3_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else
+			strToday = String(hh).padLeft(2, "0") + ":" + String(mm).padLeft(2, "0"); // +"."+ String(ss).padLeft(2, "0");
+	} else {
+		if(type == "BEIJING")
+			strToday = this.stTime1_1.set_text(String(hh).padLeft(2, "0")) + this.stTime1_2.set_text("") + this.stTime1_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else if(type == "LA")
+			strToday = this.stTime2_1.set_text(String(hh).padLeft(2, "0")) + this.stTime2_2.set_text("") + this.stTime2_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else if(type == "NEWYORK")
+			strToday = this.stTime3_1.set_text(String(hh).padLeft(2, "0")) + this.stTime3_2.set_text("") + this.stTime3_3.set_text(String(mm).padLeft(2, "0")); // +"."+ String(ss).padLeft(2, "0");
+		else
+			strToday = String(hh).padLeft(2, "0") + " " + String(mm).padLeft(2, "0"); // +"."+ String(ss).padLeft(2, "0");
+	}
+	
+	objDate = null;
+
+	return strToday;
+}]]></Script>
+  </Form>
+</FDL>

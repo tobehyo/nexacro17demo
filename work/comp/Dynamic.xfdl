@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Dynamic" width="980" height="572" titletext="컴포넌트 동적생성" onload="form_onload">
+    <Layouts>
+      <Layout>
+        <Static id="stc_cond00" taborder="15" cssclass="sta_WF_box02" left="0" top="111" height="133" width="32.76%"/>
+        <Static id="stc_cond" taborder="0" left="0" top="81" cssclass="sta_WF_box02C" width="32.76%" text="컴포넌트 선택" height="31"/>
+        <Div id="divCanvas" taborder="11" left="0" top="286" right="20" cssclass="div_WF_box01" bottom="20">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+        <Static id="Static07" taborder="14" text="넥사크로 플랫폼은 동적으로 컴포넌트 생성 하는 기능을 쉽게 구현할 수 있습니다.&#13;&#10;동적으로 생성될 컴포넌트를 선택 후 원하는 생성 옵션 값을 설정하여 생성 시 소요되는 시간을 측정합니다." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
+        <Static id="stc_cond01" taborder="16" cssclass="sta_WF_box02" left="stc_cond00:-1" top="111" width="32.76%" height="133"/>
+        <Static id="stc_cond02" taborder="17" cssclass="sta_WF_box02C" top="81" width="32.76%" text="컴포넌트 생성 옵션" left="stc_cond00:-1" height="31"/>
+        <Static id="stc_cond03" taborder="18" cssclass="sta_WF_box02C" left="stc_cond01:-1" top="81" height="31" right="20" text="생성 소요시간"/>
+        <Static id="stc_cond04" taborder="19" cssclass="sta_WF_box02" left="stc_cond01:-1" top="111" height="133" right="20" text=""/>
+        <CheckBox id="chkCal" taborder="2" text="Calendar" left="30" top="161" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="chkStc" taborder="3" text="Static" left="30" top="190" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="chkImg" taborder="4" text="Images" left="151" top="132" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
+        <CheckBox id="chkEdt" taborder="5" text="Edit" left="151" top="161" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
+        <Static id="stc_stTime02" taborder="6" left="stc_cond00:13" top="122" width="137" height="23" text="컴퍼넌트 수" cssclass="sta_WF_condition01"/>
+        <Edit id="edt_eclipse" taborder="12" top="161" height="32" textAlign="right" width="28.47%" left="stc_cond01:20"/>
+        <CheckBox id="chkBtn" taborder="1" text="Button" left="30" top="132" width="82" height="23" falsevalue="N" truevalue="Y" value="Y" onchanged="CheckBox_onchanged"/>
+        <Static id="stc_stTime01" taborder="20" text="한 라인 표시 갯수" left="stc_cond00:13" top="151" width="137" height="23" cssclass="sta_WF_condition01"/>
+        <Static id="stc_stTime03" taborder="21" text="총 컴포넌트 갯수" left="stc_cond00:13" top="209" width="137" height="23" cssclass="sta_WF_condition01"/>
+        <Static id="stc_stTime04" taborder="22" text="라인 수" left="stc_cond00:13" top="180" width="137" height="23" cssclass="sta_WF_condition01"/>
+        <Edit id="edtLineCnt" taborder="9" left="stc_stTime04:14" top="180" height="23" inputtype="number" autoselect="true" value="20" textAlign="right" width="stc_cond01:42.06%"/>
+        <Edit id="edtTotCnt" taborder="13" inputtype="number" autoselect="true" left="stc_stTime03:14" top="209" width="stc_cond01:42.06%" height="23" value="100" readonly="true" textAlign="right"/>
+        <Edit id="edtCountComp" taborder="7" left="stc_stTime02:14" top="122" height="23" inputtype="number" readonly="true" visible="true" value="5" textAlign="right" width="stc_cond01:42.06%"/>
+        <Edit id="edtLinePerCnt" taborder="8" left="stc_stTime01:14" top="151" height="23" inputtype="number" autoselect="true" value="1" textAlign="right" width="stc_cond01:42.06%"/>
+        <Button id="Button00" taborder="23" text="버튼 동적 생성" left="1012" top="236" width="100" height="30" cssclass="btn_WF_basic02" visible="false"/>
+        <Calendar id="Calendar00" taborder="24" cssclass="cal_basic01" left="1122" top="236" width="130" height="30" visible="false"/>
+        <Static id="Static00" taborder="25" left="993" top="236" width="120" height="30" cssclass="sta_cp_static" visible="false"/>
+        <ImageViewer id="ImageViewer00" taborder="26" left="1040" top="285" width="100" height="30" cssclass="imv_cp_imageViewer" visible="false"/>
+        <Edit id="Edit00" taborder="27" left="1150" top="285" width="130" height="30" cssclass="ed_basic01" visible="false"/>
+        <Button id="btnGenerate" taborder="10" text="생성" left="0" top="248" height="40" onclick="btnGenerate_onclick" cssclass="btn_WF_basic01" right="20"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsCond" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_cond_oncolumnchanged">
+        <ColumnInfo>
+          <Column id="comp_cnt" type="INT" size="256"/>
+          <Column id="line_per_count" type="INT" size="256"/>
+          <Column id="line_count" type="INT" size="256"/>
+          <Column id="tot_count" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="line_per_count">1</Col>
+            <Col id="line_count">20</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="" propid="" datasetid="" columnid=""/>
+      <BindItem id="item0" compid="edtCountComp" propid="value" datasetid="ds_cond" columnid="comp_cnt"/>
+      <BindItem id="item2" compid="edtLinePerCnt" propid="value" datasetid="ds_cond" columnid="line_per_count"/>
+      <BindItem id="item3" compid="edtLineCnt" propid="value" datasetid="ds_cond" columnid="line_count"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    대메뉴 > 소메뉴
+*  @FileName    Dynamic.xfdl
+*  @Creator     presales
+*  @CreateDate  2019/10/01
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019/10/01          presales                  최초 생성 
+*******************************************************************************
+*/
+
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+this.arrCompList = ["chkBtn", "chkCal", "chkStc", "chkImg", "chkEdt"];
+
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description 화면 load시 초기설정 event
+*/
+this.form_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.fnGetCheckbox();
+};
+
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+/**
+* fnGetCheckbox : 체크박스의 체크 상태값 ds에 저장
+* @return : N/A
+* @example :  
+*/
+this.fnGetCheckbox = function ()
+{
+	var nSum = 0;
+	for (var i = 0; i < this.arrCompList.length; i++) 
+	{
+		if (this.all[this.arrCompList[i]].value == "Y") 
+		{
+			nSum++;
+		}
+	}
+	this.dsCond.setColumn(0, "comp_cnt", nSum);
+};
+ 
+ 
+/**
+* fnResetCanvas : 체크박스의 체크 상태값 ds에 저장
+* @return : N/A
+* @example :  
+*/
+this.fnResetCanvas = function ()
+{
+	for (var i = this.divCanvas.form.components.length - 1; i >= 0; i--) 
+	{
+		var objComp = this.divCanvas.form.removeChild(this.divCanvas.form.components[i].name);
+		objComp.destroy();
+	}
+};
+
+
+/**
+* fnDrawComponent : 컴포넌트 동적 생성
+* @return : N/A
+* @example :  
+*/
+this.fnDrawComponent = function ()
+{
+	var arrListup = [];
+	for (var ii = 0; ii < this.arrCompList.length; ii++) 
+	{
+		if (this.all[this.arrCompList[ii]].value == "Y") 
+		{
+			//arrListup.push(this.arrCompList[ii].split("_")[1]);
+			arrListup.push(this.arrCompList[ii].substring(3));
+		}
+	}
+
+	var oComp;
+	var nWidth = 120;
+	var nHeigth = 30;
+	var wGap = 5;
+	var hGap = 5;
+	var nLeft = 0;
+	var nTop = 0;
+	var nCntItem = this.edtLinePerCnt.value;
+	var nCntLine = this.edtLineCnt.value;
+	var nCntLoop = this.edtCountComp.value * nCntItem * nCntLine;
+
+	for (var x = 0; x < nCntLine; x++) 
+	{
+		for (var y = 0; y < nCntItem; y++) 
+		{
+			for (var z = 0; z < arrListup.length; z++) 
+			{
+				switch (arrListup[z]) 
+				{
+					case "Btn":
+						oComp = new Button("btn_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
+						oComp.set_cssclass("btn_WF_basic02");
+						oComp.set_text("버튼");
+						break;
+					case "Cal":
+						oComp = new Calendar("cal_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
+						oComp.set_dateformat("yyyy-MM-dd");
+						oComp.set_value(this.gfnGetDate());
+						oComp.set_cssclass("cal_basic01");
+						break;
+					case "Stc":
+						oComp = new Static("stc_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
+						oComp.set_text("Static" + x + "_" + y + "_" + z);
+						oComp.set_cssclass("sta_cp_static");
+						break;
+					case "Img":
+						oComp = new ImageViewer("img_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
+						oComp.set_image("imagerc::img_WF_imgeveiwer.png");
+						break;
+					case "Edt":
+						oComp = new Edit("edt_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
+						oComp.set_value("edit" + x + "_" + y + "_" + z);
+						oComp.set_cssclass("ed_basic01");
+						break;
+				}
+				this.divCanvas.form.addChild(oComp.name, oComp);
+				oComp.show();
+				nLeft = nLeft + nWidth + wGap;
+			}
+		}
+		nLeft = 0;
+		nTop = nTop + nHeigth + hGap;
+	}
+};
+
+
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+/**
+ * @description 체크박스 선택 시 체크박스 상태값 ds에 저장
+*/
+this.CheckBox_onchanged = function (obj:CheckBox, e:nexacro.CheckBoxChangeEventInfo)
+{
+	this.fnGetCheckbox();
+};
+
+/**
+ * @description 생성 버튼 클릭
+*/
+this.btnGenerate_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.edt_eclipse.set_value("");
+	var stTime = new Date().getTime();
+	this.divCanvas.set_visible(false);
+	this.fnResetCanvas();
+	this.fnDrawComponent();
+	this.divCanvas.set_visible(true);
+	var edTime = new Date().getTime();
+	this.divCanvas.form.resetScroll();
+	this.edt_eclipse.set_value((edTime - stTime) / 1000);
+};
+
+/**
+ * @description 컴포넌트 생성 옵션 동적 카운팅
+*/
+this.dsCond_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChangeEventInfo)
+{
+	if (e.col != "tot_count") 
+	{
+		this.edtTotCnt.set_value(obj.getColumn(e.row, "comp_cnt") * obj.getColumn(e.row, "line_per_count") * obj.getColumn(e.row, "line_count"));
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

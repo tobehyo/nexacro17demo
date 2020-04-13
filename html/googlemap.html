@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style type="text/css">
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+	height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+</style>
+
+<script type="text/javascript">
+    if (!window.NEXACROHTML)
+    {
+        window.NEXACROHTML = {};
+    }
+	
+    window.NEXACROHTML.FireUserNotify = function(userdata)
+    {
+
+        if (window.NEXACROWEBBROWSER)
+        {
+            window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, userdata);
+        }
+        else
+        {
+            window.document.title = userdata;
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    var map;
+    var infowindow;
+    var marker = [];
+    var geocoder;
+    var geocodemarker = [];
+    var GreenIcon;
+    
+	// green marker
+	
+    function Setmarker(latLng)
+    {
+		if (geocodemarker.length > 0)
+        {
+            for (var i = 0; i < geocodemarker.length; i++)
+            {
+                geocodemarker[i].setMap(null);
+            }
+            geocodemarker = [];
+            geocodemarker.length = 0;
+        }
+		
+        if (marker.length > 0)
+        {
+            marker[0].setMap(null);
+        }
+
+        marker = [];
+        marker.length = 0;
+
+        marker.push(new google.maps.Marker({
+            position : latLng,
+            map : map
+        }));
+
+    }
+
+    function codeAddress(arg)
+    {
+        if (geocodemarker.length > 0)
+        {
+            for (var i = 0; i < geocodemarker.length; i++)
+            {
+                geocodemarker[i].setMap(null);
+            }
+            geocodemarker = [];
+            geocodemarker.length = 0;
+        }
+
+        var address = arg;
+
+        geocoder.geocode({
+            'address' : address
+        }, function(results, status)
+        {
+            if (status == google.maps.GeocoderStatus.OK)
+            {
+                //alert(results.length);
+                for (var i = 0; i < results.length; i++)
+                {
+                    map.setCenter(results[i].geometry.location);
+                    geocodemarker.push(new google.maps.Marker({
+                        center : results[i].geometry.location,
+                        position : results[i].geometry.location,
+                        icon : GreenIcon,
+                        map : map
+                    }));
+					
+					if(window.NEXACROWEBBROWSER)
+					{
+						window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, "code:"+results[0].geometry.location)
+					}else{
+						window.document.title = "code:"+results[0].geometry.location;
+					}
+					
+                }
+            }
+            else
+            {
+                alert("Geocode was not successful for the following reason: " + status);
+				
+				if(window.NEXACROWEBBROWSER)
+				{
+					window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, "Geocode was not successful for the following reason: " + status)
+				}else{
+					window.document.title = "Geocode was not successful for the following reason: " + status;
+				}
+
+            }
+        });
+    }
+	
+	function geocodeLatLng(arg) {
+        var input = arg;
+        var latlngStr = input.split(',', 2);
+        var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+				
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+			  
+			 Setmarker(results[1]);
+			 
+            if (results[1]) {
+              map.setZoom(11);
+              var marker = new google.maps.Marker({
+                position: latlng,
+                map: map
+              });
+			  
+			  map.setCenter(results[1].geometry.location);
+			  
+			  if(window.NEXACROWEBBROWSER)
+				{
+					window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, "address:"+results[1].formatted_address)
+				}else{
+					window.document.title = "address:"+results[1].formatted_address;
+				}
+			  
+              infowindow.setContent(results[1].formatted_address);
+              infowindow.open(map, marker);
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
+      }
+	  
+	  function geolocation()
+	  {
+			// Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+			
+			var strLat = position.coords.latitude;
+			var strLog = position.coords.longitude;
+			//var strAddress = geocodeLatLng(strLat+", "+strLog);
+			var strRtn = strLat + "," + strLog;
+			
+			if(window.NEXACROWEBBROWSER){
+				window.NEXACROWEBBROWSER.on_fire_onusernotify(window.NEXACROWEBBROWSER, "geo:"+strRtn);
+			}else
+			{
+				window.document.title = "geo:"+strRtn;
+			}
+
+	
+          }, function() {
+			alert("Error: The Geolocation service failed.");
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          alert("Error: Browser doesn't support Geolocation");
+        }
+      }
+
+
+    // click event
+    function codeCoordinate(event)
+    {
+		Setmarker(event.latLng);
+
+        geocoder.geocode({
+            'latLng' : event.latLng
+        }, function(results, status)
+        {
+			
+            if (status == google.maps.GeocoderStatus.OK)
+            {
+                if (results[1])
+                {
+                    infowindow.setContent(results[1].formatted_address);
+                    infowindow.open(map, marker[0]);
+                }
+            }
+        });
+    }
+	
+	
+	  
+</script>
+</head>
+<body>
+	<div id="map"></div>
+	<script>
+        var map;
+		
+		function initCallNexacro() {
+			var objNexacroBrowser = null;
+			var bInit = false;
+			var loopCnt = 0;
+			var interval = setInterval(function() {
+				objNexacroBrowser = window.NEXACROWEBBROWSER;
+				if(loopCnt >= 20 || objNexacroBrowser) {
+					bInit = true;
+					clearInterval(interval);
+					//console.log("objNexacroBrowser",loopCnt,objNexacroBrowser);
+					
+					if(objNexacroBrowser) {
+						window.NEXACROWEBBROWSER.on_fire_onusernotify(objNexacroBrowser, "googleMapLoaded");
+					} else
+					{
+						window.document.title = "googleMapLoaded";
+					}					
+				  }
+					loopCnt++;
+			}, 50);
+		}
+		
+        function initMap()
+        {	
+            map = new google.maps.Map(document.getElementById('map'), {
+                center : {
+                    lat : 42.4836711,
+                    lng : -71.2055163
+                },
+                zoom : 13,
+                mapTypeId : google.maps.MapTypeId.ROADMAP
+            });
+            geocoder = new google.maps.Geocoder();
+            infowindow = new google.maps.InfoWindow();
+
+            GreenIcon = new google.maps.MarkerImage("http://labs.google.com/ridefinder/images/mm_20_green.png", new google.maps.Size(12, 20), new google.maps.Point(0, 0), new google.maps.Point(6, 20));
+
+            google.maps.event.addListener(map, 'click', codeCoordinate);
+            
+			if(map) {
+				// call nexacro web browser
+				// initCallNexacro();
+			}
+            //geolocation();
+        }
+		function setMapCenterFromNexacro(lat, lng, zoom) {
+			if(zoom) map.setZoom(zoom);
+			map.setCenter(new google.maps.LatLng(lat, lng)); 
+		}
+    </script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpdG1QIm3vydIThHpKw9MHc-C9bnfu1aY&callback=initMap"
+		type="text/javascript"></script>
+</body>
+</html>

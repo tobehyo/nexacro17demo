@@ -1,0 +1,11 @@
+﻿{
+	"name": "Demo19Lib",
+	"version": "1.0.0.0",
+	"description": "TOBESOFT nexacro17 Demo(2019)",
+	"license": "",
+	"scripts": [
+		"Demo19Lib/Frame.js",
+		"Demo19Lib/Util.js"
+	]
+}
+

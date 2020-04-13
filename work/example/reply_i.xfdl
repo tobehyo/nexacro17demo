@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="reply_i" width="1024" height="80" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Static id="Static02" taborder="0" text="5" cssclass="sta_WF_numReply" left="258" top="54" width="35" height="21"/>
+        <Static id="Static00" taborder="1" cssclass="sta_WF_replyIcon01" left="19" top="10" width="40" height="40"/>
+        <Static id="stUser" taborder="2" text="홍길동" cssclass="sta_WF_nameReply" left="69" top="10" width="72" height="20"/>
+        <Button id="btnLike" taborder="3" text="좋아요" cssclass="btn_WF_goodReply" left="199" top="53" width="50" height="22" onclick="btnLike_onclick"/>
+        <Button id="btnAdd" taborder="4" text="답글달기" cssclass="btn_WF_answerReply" left="291" top="53" width="72" height="22" onclick="btnAdd_onclick"/>
+        <Static id="stDate" taborder="5" text="| 10월 28일 오후 6:02" cssclass="sta_WF_dateReply" left="69" top="54" width="128" height="20"/>
+        <Static id="stContent" taborder="6" text="이래서 에버랜드를 싫어합니다 여러분..." cssclass="sta_WF_txtReply" left="69" top="34" right="28" height="21" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btnLike_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.parent.parent.parent.parent.fn_Like(this.parent);
+};
+
+this.btnAdd_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.parent.parent.parent.parent.fn_Add(this.parent);
+};
+]]></Script>
+  </Form>
+</FDL>

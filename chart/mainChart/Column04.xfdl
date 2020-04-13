@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="ColumnAndLine" width="768" height="480" titletext="New Form">
+    <Layouts>
+      <Layout height="480" mobileorientation="landscape" width="768">
+        <BasicChart id="BasicChart00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="dsRainfall" categorycolumn="bind:name" enableanimation="true">
+          <Contents><![CDATA[{
+	"board": {
+		"id": "board"
+	},
+	"categoryaxis": {
+		"id": "categoryaxis",
+		"titletextcolor": "#4c4c4c",
+		"titletextfont": "bold 12pt '맑은 고딕'",
+		"labeltextcolor": "#6f6f6f",
+		"labeltextfont": "9pt '맑은 고딕'",
+		"axislinestyle": "1px solid #525252",
+		"ticklinestyle": "1px solid #525252",
+		"boardlinestyle": "1px solid #d0d0d0",
+		"ticksize": "5",
+		"labelgap": "5",
+		"labelrotate": "-30",
+		"visible": false
+	},
+	"valueaxes": [
+		{
+			"id": "valueaxis0",
+			"boardlinevisible": "false",
+			"boardlinestyle": "1px solid #d0d0d0",
+			"labeltextcolor": "#6f6f6f",
+			"labeltextfont": "9pt/normal '맑은 고딕'",
+			"titletextcolor": "#4c4c4c",
+			"titletextfont": "bold 12pt '맑은 고딕'",
+			"ticklinestyle": "1px solid #525252",
+			"axislinestyle": "1px solid #525252",
+			"labelgap": "5",
+			"ticksize": "5",
+			"visible": "false"
+		}
+	],
+	"seriesset": [
+		{
+			"id": "series0",
+			"titletext": "rainfall",
+			"barvisible": true,
+			"barsize": "75",
+			"itemtextcolor": "#003860",
+			"itemtextfont": "normal 10/normal \"맑은 고딕\"",
+			"valuecolumn": "bind:rainfall",
+			"itemtextposition": "inside start",
+			"itemtexttype": "number",
+			"barlinestyle": "1px solid #fde1db",
+			"barfillstyle": "#fd7357"
+		}
+	]
+}]]></Contents>
+        </BasicChart>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsRainfall">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="rainfall" type="FLOAT" size="256"/>
+          <Column id="mean" type="FLOAT" size="256"/>
+          <Column id="select" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="name">0.0 </Col>
+            <Col id="rainfall">69</Col>
+            <Col id="mean">66.2</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">0.5 </Col>
+            <Col id="rainfall">49.6</Col>
+            <Col id="mean">48.6</Col>
+          </Row>
+          <Row>
+            <Col id="name">1.0 </Col>
+            <Col id="rainfall">94.1</Col>
+            <Col id="mean">68.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">1.5 </Col>
+            <Col id="rainfall">78</Col>
+            <Col id="mean">51</Col>
+          </Row>
+          <Row>
+            <Col id="name">2.0 </Col>
+            <Col id="rainfall">11.2</Col>
+            <Col id="mean">59.1</Col>
+          </Row>
+          <Row>
+            <Col id="name">2.5 </Col>
+            <Col id="rainfall">56</Col>
+            <Col id="mean">55.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">3.0 </Col>
+            <Col id="rainfall">66.6</Col>
+            <Col id="mean">60.3</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">3.5 </Col>
+            <Col id="rainfall">53.2</Col>
+            <Col id="mean">56.8</Col>
+          </Row>
+          <Row>
+            <Col id="name">4.0 </Col>
+            <Col id="rainfall">30</Col>
+            <Col id="mean">65.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">4.5 </Col>
+            <Col id="rainfall">66</Col>
+            <Col id="mean">61.5</Col>
+            <Col id="select">1</Col>
+          </Row>
+          <Row>
+            <Col id="name">5.0 </Col>
+            <Col id="rainfall">83.4</Col>
+            <Col id="mean">63.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">5.5 </Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">65.5</Col>
+          </Row>
+          <Row>
+            <Col id="name">6.0 </Col>
+            <Col id="rainfall">36</Col>
+            <Col id="mean">45.3</Col>
+          </Row>
+          <Row>
+            <Col id="name">6.5 </Col>
+            <Col id="rainfall">58.9</Col>
+            <Col id="mean">50.9</Col>
+          </Row>
+          <Row>
+            <Col id="name">7.0 </Col>
+            <Col id="rainfall">101</Col>
+            <Col id="mean">69.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">7.5 </Col>
+            <Col id="rainfall">60</Col>
+            <Col id="mean">52.4</Col>
+          </Row>
+          <Row>
+            <Col id="name">8.0</Col>
+            <Col id="rainfall">91.4</Col>
+            <Col id="mean">66.2</Col>
+          </Row>
+          <Row>
+            <Col id="name">8.5</Col>
+            <Col id="rainfall">80</Col>
+            <Col id="mean">43.6</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

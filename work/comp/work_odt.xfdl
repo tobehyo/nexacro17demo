@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="work_odt" width="1010" height="691" titletext="odt 출력" onload="work001_onload" ontimer="work001_ontimer">
+    <Layouts>
+      <Layout height="691" mobileorientation="landscape" width="1010">
+        <Grid id="grd_list" taborder="11" left="20" top="107" binddataset="ds_list" cellmovingtype="col" cellsizingtype="col" selecttype="multirow" right="20" bottom="20" cssclass="grd_WF_cellC">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="350"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="350"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="28"/>
+              </Rows>
+              <Band id="head">
+                <Cell displaytype="normal" text="No"/>
+                <Cell col="1" text="성명"/>
+                <Cell col="2" text="타입"/>
+                <Cell col="3" text="주소"/>
+                <Cell col="4" text="설정금액"/>
+                <Cell col="5" text="생성일"/>
+                <Cell col="6" text="확인금액"/>
+                <Cell col="7" text="성명"/>
+                <Cell col="8" text="타입"/>
+                <Cell col="9" text="주소"/>
+                <Cell col="10" text="설정금액"/>
+                <Cell col="11" text="생성일"/>
+                <Cell col="12" text="확인금액"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1"/>
+                <Cell col="1" text="bind:Column0"/>
+                <Cell col="2" text="bind:Column1"/>
+                <Cell col="3" text="bind:Column2" textAlign="left"/>
+                <Cell col="4" text="bind:Column3" textAlign="right" displaytype="number"/>
+                <Cell col="5" text="bind:Column4" displaytype="date" edittype="none"/>
+                <Cell col="6" text="bind:Column5" displaytype="number" textAlign="right"/>
+                <Cell col="7" text="bind:Column6"/>
+                <Cell col="8" text="bind:Column7"/>
+                <Cell col="9" text="bind:Column8" textAlign="left"/>
+                <Cell col="10" text="bind:Column9" displaytype="number" textAlign="right" verticalAlign="middle"/>
+                <Cell col="11" text="bind:Column10" displaytype="date" edittype="none"/>
+                <Cell col="12" text="bind:Column11" displaytype="number" textAlign="right" verticalAlign="middle"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="1" text="odt 출력" left="22" top="40" width="158" height="44" onclick="Button00_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_list">
+        <ColumnInfo>
+          <Column id="Chk" type="STRING" size="256"/>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+          <Column id="Column3" type="INT" size="256"/>
+          <Column id="Column4" type="STRING" size="256"/>
+          <Column id="Column5" type="STRING" size="256"/>
+          <Column id="Column6" type="STRING" size="256"/>
+          <Column id="Column7" type="STRING" size="256"/>
+          <Column id="Column8" type="STRING" size="256"/>
+          <Column id="Column9" type="STRING" size="256"/>
+          <Column id="Column10" type="STRING" size="256"/>
+          <Column id="Column11" type="STRING" size="256"/>
+          <Column id="Column12" type="STRING" size="256"/>
+          <Column id="Column13" type="STRING" size="256"/>
+          <Column id="Column14" type="STRING" size="256"/>
+          <Column id="Column15" type="STRING" size="256"/>
+          <Column id="Column16" type="STRING" size="256"/>
+          <Column id="Column17" type="STRING" size="256"/>
+          <Column id="Column18" type="STRING" size="256"/>
+          <Column id="Column19" type="STRING" size="256"/>
+          <Column id="Column20" type="STRING" size="256"/>
+          <Column id="Column21" type="STRING" size="256"/>
+          <Column id="Column22" type="STRING" size="256"/>
+          <Column id="Column23" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column3">3000</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">3000</Col>
+            <Col id="Column9">3000</Col>
+            <Col id="Column8">인천시 서구 가좌동 118</Col>
+            <Col id="Column0">이승환</Col>
+            <Col id="Column2">인천시 서구 가좌동 118</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">이승환</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column10">20170101</Col>
+            <Col id="Column11">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">4000</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">4000</Col>
+            <Col id="Column9">4000</Col>
+            <Col id="Column8">경기도 시흥시 정왕동 104 (2가)</Col>
+            <Col id="Column0">이승한</Col>
+            <Col id="Column2">경기도 시흥시 정왕동 104 (2가)</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">이승한</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column10">20170201</Col>
+            <Col id="Column11">4000</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">50000</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column9">50000</Col>
+            <Col id="Column8">경기도 이천시 관고동 501-7</Col>
+            <Col id="Column0">이철우</Col>
+            <Col id="Column2">경기도 이천시 관고동 501-7</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column6">이철우</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column10">20170601</Col>
+            <Col id="Column11">50000</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">51651</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">51651</Col>
+            <Col id="Column9">51651</Col>
+            <Col id="Column8">서울특별시 영등포구 여의도동 1</Col>
+            <Col id="Column0">강순희</Col>
+            <Col id="Column2">서울특별시 영등포구 여의도동 1</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column6">강순희</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column10">20170931</Col>
+            <Col id="Column11">51651</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">216548</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">216548</Col>
+            <Col id="Column9">216548</Col>
+            <Col id="Column8">서울특별시 강서구 화곡동 98-252</Col>
+            <Col id="Column0">배재현</Col>
+            <Col id="Column2">서울특별시 강서구 화곡동 98-252</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">배재현</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column10">20171005</Col>
+            <Col id="Column11">216548</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">216218</Col>
+            <Col id="Column4">20171111</Col>
+            <Col id="Column5">216218</Col>
+            <Col id="Column9">216218</Col>
+            <Col id="Column8">서울특별시 강동구 명일동 257</Col>
+            <Col id="Column0">강공작</Col>
+            <Col id="Column2">서울특별시 강동구 명일동 257</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">강공작</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column10">20171111</Col>
+            <Col id="Column11">216218</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">954561</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">954561</Col>
+            <Col id="Column9">954561</Col>
+            <Col id="Column8">서울특별시 강서구 등촌동 631-6</Col>
+            <Col id="Column0">김명기</Col>
+            <Col id="Column2">서울특별시 강서구 등촌동 631-6</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column6">김명기</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column10">20170101</Col>
+            <Col id="Column11">954561</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">2121684</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">2121684</Col>
+            <Col id="Column9">2121684</Col>
+            <Col id="Column8">경기도 광명시 옥길동 370</Col>
+            <Col id="Column0">변길용</Col>
+            <Col id="Column2">경기도 광명시 옥길동 370</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column6">변길용</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column10">20170201</Col>
+            <Col id="Column11">2121684</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">6549845</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">6549845</Col>
+            <Col id="Column9">6549845</Col>
+            <Col id="Column8">서울특별시 영등포구 신길동 116-15 지하</Col>
+            <Col id="Column0">설동옥</Col>
+            <Col id="Column2">서울특별시 영등포구 신길동 116-15 지하</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column6">설동옥</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column10">20170601</Col>
+            <Col id="Column11">6549845</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">65150</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">65150</Col>
+            <Col id="Column9">65150</Col>
+            <Col id="Column8">서울특별시 성북구 돈암동 636</Col>
+            <Col id="Column0">허승조</Col>
+            <Col id="Column2">서울특별시 성북구 돈암동 636</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column6">허승조</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column10">20170931</Col>
+            <Col id="Column11">65150</Col>
+          </Row>
+          <Row>
+            <Col id="Column3">251654</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">251654</Col>
+            <Col id="Column9">251654</Col>
+            <Col id="Column8">인천시 부평구 부개동 부개동 12-213</Col>
+            <Col id="Column0">정상윤</Col>
+            <Col id="Column2">인천시 부평구 부개동 부개동 12-213</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column6">정상윤</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column10">20171005</Col>
+            <Col id="Column11">251654</Col>
+          </Row>
+          <Row>
+            <Col id="Column4">20171111</Col>
+            <Col id="Column5">999999</Col>
+            <Col id="Column3">9999999</Col>
+            <Col id="Column9">9999999</Col>
+            <Col id="Column8">서울특별시 관악구 신림동 산 56-1 서울대학교수의과대학 3층</Col>
+            <Col id="Column0">임해천</Col>
+            <Col id="Column2">서울특별시 관악구 신림동 산 56-1 서울대학교수의과대학 3층</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column6">임해천</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column10">20171111</Col>
+            <Col id="Column11">999999</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">지일성</Col>
+            <Col id="Column2">경기도 고양시 덕양구 삼송동 26-8</Col>
+            <Col id="Column3">3000</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">3000</Col>
+            <Col id="Column6">지일성</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column8">경기도 고양시 덕양구 삼송동 26-8</Col>
+            <Col id="Column9">3000</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column10">20170101</Col>
+            <Col id="Column11">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">홍길동</Col>
+            <Col id="Column2">경기도 광주시 오포읍 양벌리 126</Col>
+            <Col id="Column3">4000</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">4000</Col>
+            <Col id="Column6">홍길동</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column8">경기도 광주시 오포읍 양벌리 126</Col>
+            <Col id="Column9">4000</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column10">20170201</Col>
+            <Col id="Column11">4000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">김옥녀</Col>
+            <Col id="Column2">충청북도 청주시 흥덕구 봉명동 2677 2층</Col>
+            <Col id="Column3">50000</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">김옥녀</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column8">충청북도 청주시 흥덕구 봉명동 2677 2층</Col>
+            <Col id="Column9">50000</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column10">20170601</Col>
+            <Col id="Column11">50000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">김석준</Col>
+            <Col id="Column2">서울특별시 강서구 염창동 249-8 외1필지1층</Col>
+            <Col id="Column3">51651</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">51651</Col>
+            <Col id="Column6">김석준</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column8">서울특별시 강서구 염창동 249-8 외1필지1층</Col>
+            <Col id="Column9">51651</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column10">20170931</Col>
+            <Col id="Column11">51651</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">이정택</Col>
+            <Col id="Column2">서울특별시 영등포구 신길동 197-2</Col>
+            <Col id="Column3">216548</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">216548</Col>
+            <Col id="Column6">이정택</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column8">서울특별시 영등포구 신길동 197-2</Col>
+            <Col id="Column9">216548</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column10">20171005</Col>
+            <Col id="Column11">216548</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">이정택</Col>
+            <Col id="Column2">서울특별시 구로구 구로동 147-12</Col>
+            <Col id="Column3">216218</Col>
+            <Col id="Column4">20171111</Col>
+            <Col id="Column5">216218</Col>
+            <Col id="Column6">이정택</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column8">서울특별시 구로구 구로동 147-12</Col>
+            <Col id="Column9">216218</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column10">20171111</Col>
+            <Col id="Column11">216218</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">이정택</Col>
+            <Col id="Column2">서울특별시 영등포구 문래동6가 5-2 문래아카데미1층 10</Col>
+            <Col id="Column3">954561</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">954561</Col>
+            <Col id="Column6">이정택</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column8">서울특별시 영등포구 문래동6가 5-2 문래아카데미1층 10</Col>
+            <Col id="Column9">954561</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column10">20170101</Col>
+            <Col id="Column11">954561</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">박천수</Col>
+            <Col id="Column2">서울특별시 구로구 구로동 549-43</Col>
+            <Col id="Column3">2121684</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">2121684</Col>
+            <Col id="Column6">박천수</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column8">서울특별시 구로구 구로동 549-43</Col>
+            <Col id="Column9">2121684</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column10">20170201</Col>
+            <Col id="Column11">2121684</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">이정녀</Col>
+            <Col id="Column2">경기 광명시 광명동 150-50</Col>
+            <Col id="Column3">6549845</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">6549845</Col>
+            <Col id="Column6">이정녀</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column8">경기 광명시 광명동 150-50</Col>
+            <Col id="Column9">6549845</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column10">20170601</Col>
+            <Col id="Column11">6549845</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">여상락</Col>
+            <Col id="Column2">서울시 구로구 구로동 45</Col>
+            <Col id="Column3">65150</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">65150</Col>
+            <Col id="Column6">여상락</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column8">서울시 구로구 구로동 45</Col>
+            <Col id="Column9">65150</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column10">20170931</Col>
+            <Col id="Column11">65150</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">정동옥</Col>
+            <Col id="Column2">서울 영등포구 대림동 965-5</Col>
+            <Col id="Column3">251654</Col>
+            <Col id="Column4">20171005</Col>
+            <Col id="Column5">251654</Col>
+            <Col id="Column6">정동옥</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column8">서울 영등포구 대림동 965-5</Col>
+            <Col id="Column9">251654</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column10">20171005</Col>
+            <Col id="Column11">251654</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">김동성</Col>
+            <Col id="Column2">경기 광명시 철산동 56-151</Col>
+            <Col id="Column3">9999999</Col>
+            <Col id="Column4">20171111</Col>
+            <Col id="Column5">999999</Col>
+            <Col id="Column6">김동성</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column8">경기 광명시 철산동 56-151</Col>
+            <Col id="Column9">9999999</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column10">20171111</Col>
+            <Col id="Column11">999999</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">이부종</Col>
+            <Col id="Column2">인천 서구 가좌동 30-73</Col>
+            <Col id="Column3">3000</Col>
+            <Col id="Column4">20170101</Col>
+            <Col id="Column5">3000</Col>
+            <Col id="Column6">이부종</Col>
+            <Col id="Column7">조회</Col>
+            <Col id="Column8">인천 서구 가좌동 30-73</Col>
+            <Col id="Column9">3000</Col>
+            <Col id="Column1">조회</Col>
+            <Col id="Column10">20170101</Col>
+            <Col id="Column11">3000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">김용섭</Col>
+            <Col id="Column2">인천 부평구 일신동 107</Col>
+            <Col id="Column3">4000</Col>
+            <Col id="Column4">20170201</Col>
+            <Col id="Column5">4000</Col>
+            <Col id="Column6">김용섭</Col>
+            <Col id="Column7">입력</Col>
+            <Col id="Column8">인천 부평구 일신동 107</Col>
+            <Col id="Column9">4000</Col>
+            <Col id="Column1">입력</Col>
+            <Col id="Column10">20170201</Col>
+            <Col id="Column11">4000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">구자문</Col>
+            <Col id="Column2">인천 남동구 간석동 224-548</Col>
+            <Col id="Column3">50000</Col>
+            <Col id="Column4">20170601</Col>
+            <Col id="Column5">50000</Col>
+            <Col id="Column6">구자문</Col>
+            <Col id="Column7">수정</Col>
+            <Col id="Column8">인천 남동구 간석동 224-548</Col>
+            <Col id="Column9">50000</Col>
+            <Col id="Column1">수정</Col>
+            <Col id="Column10">20170601</Col>
+            <Col id="Column11">50000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">신하영</Col>
+            <Col id="Column2">서울 관악구 봉천동 1706 우성타운상가지하1층</Col>
+            <Col id="Column3">51651</Col>
+            <Col id="Column4">20170931</Col>
+            <Col id="Column5">51651</Col>
+            <Col id="Column6">신하영</Col>
+            <Col id="Column7">삭제</Col>
+            <Col id="Column8">서울 관악구 봉천동 1706 우성타운상가지하1층</Col>
+            <Col id="Column9">51651</Col>
+            <Col id="Column1">삭제</Col>
+            <Col id="Column10">20170931</Col>
+            <Col id="Column11">51651</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.callBack = function(trId, errCd, errMsg)
+{
+	if (errCd > -1) {
+		alert(errCd + " :: " + errMsg);
+	}
+	
+	if(trId == "odtExport") {
+		trace("odtExport callback");
+	}
+}
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    this.transaction("odtExport", "http://localhost:8080/nexacro-demo/odsSample.jsp", "input=ds_list", "", "", "callBack"); 
+}
+]]></Script>
+  </Form>
+</FDL>

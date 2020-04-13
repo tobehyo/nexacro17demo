@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="MegaMenu" width="1280" height="560" titletext="New Form" background="#ffffff" onload="form_onload" onsize="MegaMenu_onsize" onhscroll="MegaMenu_onhscroll">
+    <Layouts>
+      <Layout height="560" mobileorientation="landscape" width="1280">
+        <Static id="Static02" taborder="5" left="0" top="80" bottom="0" right="0" cssclass="sta_megaMenu_bg" text=""/>
+        <Static id="Static00" taborder="4" left="0" top="0" height="80" cssclass="sta_megaMenu_head" right="0"/>
+        <Static id="staTopMenuSample" taborder="1" text="Grid Component" left="36" top="0" width="194" height="80" visible="false" cssclass="sta_WF_navTitle" onsetfocus="staTopMenuSample_onsetfocus" onmouseenter="staTopMenuSample_onmouseenter" onmouseleave="staTopMenuSample_onmouseleave"/>
+        <Static id="staMenuSample" taborder="2" text="다양한 그리드 기능" left="36" top="105" width="339" height="31" visible="false" cssclass="sta_WF_navText"/>
+        <Static id="Static01" taborder="3" text="Static01" left="0" top="80" height="1" background="#e6e6e6" right="0" visible="false"/>
+        <Button id="btnClosePopup" taborder="0" top="27" width="24" height="24" right="20" cssclass="btn_WF_navClose" onclick="btnClosePopup_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * FORM EVENT (onload, onbeforeclose)
+ ************************************************************************************************/
+/**
+ * @description create menu
+*/
+this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var objApp = nexacro.getApplication();
+	var objMenuDs 	= objApp.gdsMenu;
+	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	this.dsMenu.copyData(objApp.gdsMenu,true);
+	objMenuDs.filter("");
+	this.fnDrawMenu();
+};
+
+/**
+ * @description Adjust the menu size when the screen size changes
+*/
+this.MegaMenu_onsize = function(obj:nexacro.Form,e:nexacro.SizeEventInfo)
+{
+	this.fnDrawMenu();
+};
+
+/**
+ * @description Adjust the button position when the scroll changes
+*/
+this.MegaMenu_onhscroll = function(obj:nexacro.Form,e:nexacro.ScrollEventInfo)
+{
+	//this.btnClosePopup.setOffsetWidth(this.btnClosePopup.getOffsetLeft() + e.pos);
+};
+
+/************************************************************************************************
+ * FUNCTION
+ ************************************************************************************************/
+/**
+ * fnDrawMenu : Create popup Div menu
+ * @return : N/A
+ * @example :  
+ */
+this.fnDrawMenu = function()
+{
+	if(this.dsMenu.rowcount < 1) return;
+	
+	// Level 0 is one vertical line
+	var columnCnt = this.dsMenu.getCaseCount("MENU_LVL=='0'");
+	var dsCnt = this.dsMenu.rowcount;
+	var menuId = "";
+	
+	// init variable for static
+	var objStatic;
+	var nLeft = 36;
+	var nTop = 24;
+	var nHeight = 30;
+	var nGap = 15;
+	var nWidth;// Dynamically calculated and changed
+	
+	// Screen size - width
+	var nScreenSize = this.getOffsetWidth();
+	
+	if(nScreenSize >  1500)
+	{
+		nScreenSize = 1500;
+	}
+	else if( nScreenSize < 1000)
+	{
+		//nScreenSize = 1000;
+	}
+	
+	// calculated nWidth. 
+	// Find the popupDiv width and divide it into n equal parts, if the screen becomes narrower, put them vertically, and put horizontal lines ...
+	nWidth = Math.floor((nScreenSize - 72)/columnCnt) - nGap ;// 36*2 = 72 is space
+		
+	for(var i = 0 ; i < dsCnt ; i++)
+	{
+		objId = "sta" + this.dsMenu.getColumn(i, "MENU_ID");
+		
+		if(this.dsMenu.getColumn(i,"MENU_LVL") == '0')// main menu
+		{
+			objId = "L_" + objId;
+			nTop = 0;
+			nHeight = 80;
+			if(i !=0 ) nLeft = nLeft + nWidth + nGap ;
+		}
+		else if(this.dsMenu.getColumn((i-1),"MENU_LVL") == '0')// first leaf menu
+		{
+			nTop = 105;
+			nHeight = 30;
+		}
+		else
+		{
+			nTop = nTop + nHeight;
+			nHeight = 30;
+		}
+		
+		objStatic = this.components[objId];
+		
+		// Change position
+		if(objStatic)
+		{
+			objStatic.move(nLeft, nTop);
+			objStatic.set_width(nWidth);
+		}
+		else
+		{
+			// create button
+			objStatic = new Static(objId, nLeft, nTop, nWidth, nHeight);  
+			objStatic.set_text(this.dsMenu.getColumn(i, "MENU_NM"));
+			
+			if(this.dsMenu.getColumn(i,"MENU_LVL") == '0')
+			{
+				objStatic.set_cssclass(this.staTopMenuSample.cssclass);
+				objStatic.addEventHandler("onmouseenter",this.staTopMenuSample_onmouseenter, this);
+				objStatic.addEventHandler("onmouseleave",this.staTopMenuSample_onmouseleave, this);		
+			}
+			else
+			{
+				objStatic.set_cssclass(this.staMenuSample.cssclass);
+				objStatic.set_cursor("pointer");
+				objStatic.addEventHandler("onclick",this.btnMenu_onclick, this);
+			}
+			this.addChild(objId, objStatic); 
+			objStatic.show();
+		}
+		
+	}
+	
+	this.btnClosePopup.bringToFront();
+	this.resetScroll();
+}
+
+
+/**
+ * @description Click menu button : open menu
+*/
+this.btnMenu_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{	
+	var menuId = String(obj.name).replace("sta","");
+	var type = "Mega";
+	
+	if(this.gfnCloseMegaMenu())
+	{
+		this.gfnOpenMenu(menuId, type);
+	}
+};
+
+/**
+ * @description close mega menu
+*/
+this.btnClosePopup_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.gfnCloseMegaMenu();
+};
+
+
+/**
+ * @description change css for set focus
+*/
+this.staTopMenuSample_onmouseenter = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
+{
+	var staObj; // prefix for flag is L_
+	
+	for(var objSta in this.components)
+	{
+		staObj = this.components[objSta];
+		if( String(staObj.name).indexOf("L_") == 0)
+		{
+			staObj.set_cssclass("sta_WF_navTitle");
+		}
+	}
+};
+
+/**
+ * @description change css for remove focus
+*/
+this.staTopMenuSample_onmouseleave = function(obj:nexacro.Static,e:nexacro.MouseEventInfo)
+{
+	obj.set_cssclass("sta_WF_navTitle_S");
+};
+]]></Script>
+    <Objects>
+      <Dataset id="dsMenu"/>
+    </Objects>
+  </Form>
+</FDL>

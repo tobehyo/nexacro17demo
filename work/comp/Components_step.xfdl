@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="component_step" width="184" height="155" titletext="New Form" onload="component_step_onload" onstepchanged="component_step_onstepchanged" ontimer="component_step_ontimer">
+    <Layouts>
+      <Layout stepcount="3">
+        <Static id="Static00" taborder="0" left="0" top="0" right="0" bottom="0" background="red"/>
+        <Static id="Static01" taborder="1" left="0" top="0" right="0" bottom="0" positionstep="1" background="blue"/>
+        <Static id="Static02" taborder="2" left="0" top="0" right="0" bottom="0" positionstep="2" background="yellow"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.elapseTime = 3000;
+
+this.component_step_onload = function (obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.Static00.set_background('url("imagerc::img_cp_step01.png") no-repeat left top');
+	this.Static01.set_background('url("imagerc::img_cp_step02.png") no-repeat left top');
+	this.Static02.set_background('url("imagerc::img_cp_step03.png") no-repeat left top');
+	
+	this.setTimer(0, this.elapseTime);
+};
+
+this.component_step_onstepchanged = function (obj:Form, e:nexacro.StepChangeEventInfo)
+{
+	this.killTimer(0);
+	this.setTimer(0, this.elapseTime);
+};
+
+this.component_step_ontimer = function (obj:Form, e:nexacro.TimerEventInfo)
+{
+	if (e.timerid == 0) 
+	{
+		//this.stepcontrol.stepIt(true, true); -> 17에서는 stepcontrol 대신 stepselector를 쓴다.
+		this.stepselector.stepIt(true, true);
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

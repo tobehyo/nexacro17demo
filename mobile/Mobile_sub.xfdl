@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="Mobile_sub" width="480" height="768" titletext="New Form">
+    <Layouts>
+      <Layout height="768" mobileorientation="landscape" width="480"/>
+    </Layouts>
+  </Form>
+</FDL>

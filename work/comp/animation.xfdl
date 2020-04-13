@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="animation" width="1010" height="768" titletext="애니메이션" onload="animation_onload">
+    <Layouts>
+      <Layout height="768" mobileorientation="landscape" width="1010">
+        <Button id="Button00" taborder="0" left="0" top="148" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button01" taborder="1" left="0" top="268" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button02" taborder="2" left="0" top="388" height="100" cssclass="btn_WF_animation" right="20"/>
+        <Button id="Button03" taborder="3" left="0" top="508" height="100" cssclass="btn_WF_animation" right="20" textAlign="left" font="normal 700 25px/normal &quot;맑은 고딕&quot;"/>
+        <Button id="Button04" taborder="4" left="0" top="628" height="100" cssclass="btn_WF_animation" right="20" textAlign="left" font="normal 700 25px/normal &quot;맑은 고딕&quot;"/>
+        <Static id="Static00" taborder="5" text="News" left="34.46%" top="68" height="60" font="bold 40px/normal &quot;맑은 고딕&quot;" width="314" textAlign="center"/>
+        <Static id="Static60" taborder="6" text="Nexacro Platform can express variously by applying animation effects to components registered as items." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="dsNews">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">Coronavirus death rate is lower than previously reported, study says, but it's still deadlier than seasonal flu</Col>
+          </Row>
+          <Row>
+            <Col id="title">Ken Shimura, famed Japanese comedian, dead at 70 after contracting coronavirus</Col>
+          </Row>
+          <Row>
+            <Col id="title">Amazon fires warehouse worker who led Staten Island warehouse walkout</Col>
+          </Row>
+          <Row>
+            <Col id="title">Portugal gives migrants and asylum-seekers full citizenship rights during coronavirus outbreak</Col>
+          </Row>
+          <Row>
+            <Col id="title">South Korean students will start the new school year online</Col>
+          </Row>
+          <Row>
+            <Col id="title">A woman got to say goodbye over FaceTime before her mother died from coronavirus</Col>
+          </Row>
+          <Row>
+            <Col id="title">It's just past 1:30 p.m. in Beijing and 11 a.m. in New Delhi. Here's the latest from the world's most populous countries</Col>
+          </Row>
+          <Row>
+            <Col id="title">Gun stores in Los Angeles don't have to close because they are essential services, says sheriff</Col>
+          </Row>
+          <Row>
+            <Col id="title">India's Prime Minister is sharing online yoga tips to help people stay healthy under lockdown</Col>
+          </Row>
+          <Row>
+            <Col id="title">China's college entrance exam has been postponed by a month. That affects millions of students</Col>
+          </Row>
+          <Row>
+            <Col id="title">Mexico declares "health emergency," suspends all non-essential activities until April 30</Col>
+          </Row>
+          <Row>
+            <Col id="title">It's just gone 8 p.m. in Los Angeles and 11 a.m. in Hong Kong. Here's what you need to know</Col>
+          </Row>
+          <Row>
+            <Col id="title">Coronavirus death rate is lower than previously reported -- but it's still deadlier than flu, study says</Col>
+          </Row>
+          <Row>
+            <Col id="title">First coronavirus cases reported in Los Angeles homeless population</Col>
+          </Row>
+          <Row>
+            <Col id="title">There are more than 160,000 coronavirus cases in the US</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[/**
+*  nexacro 17 demo
+*  @MenuPath    Frame > Tab
+*  @FileName  animation.xfdl 
+*  @Creator  presales
+*  @CreateDate  2019.10.25
+*  @Desction    스크립트 표준 및 주석 표준 정의
+************** 소스 수정 이력 ***********************************************
+*  date            Modifier                Description
+*******************************************************************************
+*  2019.10.25      presales                  스크립트 수정 
+*******************************************************************************
+*/
+ 
+/************************************************************************************************
+ * FORM 변수 선언 영역
+ ************************************************************************************************/
+ this.page = 1;
+/************************************************************************************************
+ * FORM EVENT 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+ 
+this.animation_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.initAni();
+};
+/************************************************************************************************
+ * CALLBACK 콜백 처리부분(Transaction, Popup)
+ ************************************************************************************************/
+ /************************************************************************************************
+ * CRUD 및 TRANSACTION 서비스 호출 처리
+ ************************************************************************************************/
+/************************************************************************************************
+ * 사용자 FUNCTION 영역
+ ************************************************************************************************/
+ /**
+ * @description 애니메이션 초기화 함수
+ * @param  
+ * @return 
+ */
+this.initAni = function()
+{
+	var anitimeObj = new nexacro.AnimationTimeline("anitime00", this);
+	this.addChild("anitime00", anitimeObj);
+	
+	anitimeObj.addEventHandler("oncomplete", this.anitime00_oncomplete, this);
+	
+	for (var i = 0, len = 5; i < len; i++)
+	{
+		var idx = new String(i).padLeft(2, '0');
+		var aniObj = new nexacro.Animation("ani" + idx, this);
+		aniObj.set_easing("easeinquad");
+		
+		this.addChild("ani" + idx, aniObj);
+		aniObj.addTarget("aniItem" + idx, this.components["Button" + idx], "height:100,opacity:[0,0,1]");
+		
+		this.anitime00.addTarget("anitimeItem" + idx, aniObj, 400);
+		
+		this.components["Button" + idx].set_height(0);
+		this.components["Button" + idx].set_opacity(0);
+		this.components["Button" + idx].set_visible(true);
+	}
+	
+	this.startAni();
+};
+ /**
+ * @description 애니메이션 적용 함수
+ * @param  
+ * @return 
+ */
+this.startAni = function()
+{
+	for (var i = 0, len = 5; i < len; i++)
+	{
+		var idx = new String(i).padLeft(2, '0');
+		this.components["Button" + idx].set_text(this.dsNews.getColumn(((this.page - 1) * 5 + i), "title"));
+	}
+	this.page++;
+	this.anitime00.play();
+};
+/************************************************************************************************
+ * 각 COMPONENT 별 EVENT 영역
+ ************************************************************************************************/
+this.anitime00_oncomplete = function(obj:nexacro.AnimationTimeline, e:nexacro.AnimationEventInfo)
+{
+	this.page = this.page > 3 ? 1 : this.page;
+	
+	nexacro._OnceCallbackTimer.callonce(this, this.startAni, 3000);
+};]]></Script>
+  </Form>
+</FDL>
