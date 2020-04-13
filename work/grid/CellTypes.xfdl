@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="CellTypes" width="980" height="1190" titletext="다양한그리드표현">
+  <Form id="CellTypes" width="980" height="1190" titletext="Various grid expression">
     <Layouts>
       <Layout screenid="desktop">
-        <Static id="staTitle01" taborder="6" text="Various cell expression" cssclass="sta_WF_title02" left="0" top="99" width="421" height="30"/>
+        <Static id="staTitle01" taborder="5" text="Various cell expression" cssclass="sta_WF_title02" left="0" top="99" width="421" height="30"/>
         <Grid id="grdList02" taborder="0" left="0" top="staTitle01:8" binddataset="dsList2" right="20" autofittype="col" cssclass="grd_black" autoenter="select" oncellclick="grdList02_oncellclick" height="355" formatid="default" autoupdatetype="itemselect">
           <Formats>
             <Format id="default">
@@ -33,9 +33,9 @@
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column0" textAlign="center" verticalAlign="middle" controlautosizingtype="none"/>
                 <Cell col="1" displaytype="editcontrol" edittype="normal" text="bind:Column1" editdisplay="display" textAlign="left"/>
                 <Cell col="2" displaytype="mask" edittype="mask" text="bind:Column2" mask="###{####}" editautoselect="true" verticalAlign="middle" maskeditformat="###{####}" maskeditlimitbymask="decimal" maskedittype="string"/>
-                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="MM-dd-yyyy" calendareditformat="MM-dd-yyyyy"/>
                 <Cell col="4" displaytype="combocontrol" edittype="combo" text="bind:Column4" editautoselect="true" combodataset="dsCombo" combocodecol="Column1" combodatacol="Column1" combodisplayrowcount="-1" combodisplay="display" textAlign="center" verticalAlign="middle"/>
-                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="버튼" editautoselect="true" textAlign="center" verticalAlign="middle"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="Button" editautoselect="true" textAlign="center" verticalAlign="middle"/>
                 <Cell col="6" displaytype="number" edittype="textarea" text="bind:Column6" mask="9,999.99" editautoselect="true" editdisplay="display" editlimitbymask="both" textAlign="right" verticalAlign="middle"/>
               </Band>
             </Format>
@@ -66,15 +66,15 @@
                 <Cell displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column0" textAlign="center" verticalAlign="middle" controlautosizingtype="none"/>
                 <Cell col="1" displaytype="editcontrol" edittype="normal" text="bind:Column1" editautoselect="true" editdisplay="display" textAlign="left"/>
                 <Cell col="2" displaytype="mask" edittype="mask" text="bind:Column2" mask="###{####}" editautoselect="true" verticalAlign="middle" maskeditformat="###{####}" maskeditlimitbymask="decimal" maskedittype="string"/>
-                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="yyyy-MM-dd" calendarpopuptype="system" calendarautoselect="true"/>
-                <Cell col="4" displaytype="combocontrol" edittype="combo" text="bind:Column4" editautoselect="true" combodataset="dsCombo" combocodecol="Column1" combodatacol="Column1" combodisplayrowcount="-1" combodisplay="display" textAlign="center" verticalAlign="middle" combopopuptype="center" combopopupsize="350" comboitemheight="100" comboautoselect="true"/>
-                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="버튼" editautoselect="true" textAlign="center" verticalAlign="middle"/>
+                <Cell col="3" displaytype="calendarcontrol" edittype="date" text="bind:Column3" editautoselect="true" calendardisplay="display" textAlign="left" verticalAlign="middle" calendardateformat="MM-dd-yyyy" calendarpopuptype="system" calendarautoselect="true" calendareditformat="MM-dd-yyyy"/>
+                <Cell col="4" displaytype="combocontrol" edittype="combo" text="bind:Column4" editautoselect="true" combodataset="dsCombo" combocodecol="Column1" combodatacol="Column1" combodisplayrowcount="-1" combodisplay="display" textAlign="center" verticalAlign="middle" comboautoselect="true" combopopupsize="145"/>
+                <Cell col="5" displaytype="buttoncontrol" edittype="button" text="Button" editautoselect="true" textAlign="center" verticalAlign="middle"/>
                 <Cell col="6" displaytype="number" edittype="textarea" text="bind:Column6" mask="9,999.99" editautoselect="true" editdisplay="display" editlimitbymask="both" textAlign="right" verticalAlign="middle"/>
               </Band>
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle02" taborder="4" text="MutiLine" cssclass="sta_WF_title02" left="0" top="grdList02:18" width="421" height="30"/>
+        <Static id="staTitle02" taborder="3" text="MutiLine" cssclass="sta_WF_title02" left="0" top="grdList02:18" width="421" height="30"/>
         <Grid id="grdList01" taborder="2" binddataset="dsList" autoenter="select" autoupdatetype="comboselect" autofittype="col" left="0" top="548" right="20" height="387" onheadclick="grdList01_onheadclick" formatid="default">
           <Formats>
             <Format id="default">
@@ -107,7 +107,7 @@
                 <Cell col="2" edittype="normal" editfilter="upper" text="bind:Column8" editlimit="1"/>
                 <Cell col="3" edittype="normal" text="bind:Column0"/>
                 <Cell col="4" displaytype="number" edittype="masknumber" text="bind:Column3" mask="#,###" textAlign="right"/>
-                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4" calendardateformat="MM-dd-yyyy ddd" calendareditformat="MM-dd-yyyy"/>
                 <Cell row="1" colspan="6" text="bind:Column2"/>
               </Band>
             </Format>
@@ -141,13 +141,13 @@
                 <Cell col="2" edittype="normal" editfilter="upper" text="bind:Column8" editlimit="1"/>
                 <Cell col="3" edittype="normal" text="bind:Column0"/>
                 <Cell col="4" displaytype="number" edittype="masknumber" text="bind:Column3" mask="#,###" textAlign="right"/>
-                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4"/>
+                <Cell col="5" displaytype="date" edittype="date" text="bind:Column4" calendardateformat="MM-dd-yyyy ddd" calendareditformat="MM-dd-yyyy"/>
                 <Cell row="1" colspan="6" text="bind:Column2"/>
               </Band>
             </Format>
           </Formats>
         </Grid>
-        <Static id="staTitle03" taborder="5" text="Expression" cssclass="sta_WF_title02" left="0" top="grdList01:13" width="421" height="30"/>
+        <Static id="staTitle03" taborder="4" text="Expression" cssclass="sta_WF_title02" left="0" top="grdList01:13" width="421" height="30"/>
         <Grid id="grdList00" taborder="1" binddataset="dsList" autoenter="select" autoupdatetype="comboselect" autofittype="col" left="0" top="staTitle03:8" right="20" visible="true" cssclass="grd_black" height="195" formatid="default">
           <Formats>
             <Format id="default">
@@ -200,16 +200,16 @@
             </Format>
           </Formats>
         </Grid>
-        <Static id="staInfo" taborder="3" text="Grid cells can express data in various types such as calendars, combos, and masks." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char"/>
+        <Static id="staInfo" taborder="3" text="Grid cells can express data in various types such as calendars, combos, and masks." cssclass="sta_WF_box03" left="0" top="0" right="20" height="80" wordWrap="char" onclick="staInfo_onclick"/>
       </Layout>
       <Layout name="Layout1" width="480" height="1530" mobileorientation="landscape" screenid="mobile">
-        <Grid id="grdList02" left="20" top="237" height="443" right="20" formatid="mobile" autofittype="none"/>
+        <Grid id="grdList02" left="20" top="167" height="443" right="20" formatid="mobile" autofittype="none"/>
         <Grid id="grdList00" left="20" top="staTitle03:8" height="243" right="20" formatid="mobile"/>
         <Grid id="grdList01" left="20" top="staTitle02:8" height="483" right="20" formatid="mobile" autofittype="none"/>
         <Static id="staTitle02" left="20" top="grdList02:19" width="421" height="30"/>
         <Static id="staTitle03" left="20" top="grdList01:16" width="421" height="30"/>
-        <Static id="staTitle01" left="20" top="199" width="421" height="30"/>
-        <Static id="staInfo" left="20" top="20" height="150" right="20"/>
+        <Static id="staTitle01" left="20" top="129" width="421" height="30"/>
+        <Static id="staInfo" left="20" top="20" height="80" right="20"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -258,7 +258,7 @@
         <Rows>
           <Row>
             <Col id="Column2">8508301</Col>
-            <Col id="Column1">This is Son Ho-young from God.</Col>
+            <Col id="Column1">This is Adam Levine from Maroon 5.</Col>
             <Col id="Column3">20170101</Col>
             <Col id="Column4">E5</Col>
             <Col id="Column6">8508300</Col>
@@ -266,7 +266,7 @@
           </Row>
           <Row>
             <Col id="Column2">8303301</Col>
-            <Col id="Column1">This is Yoon Gye-sang from God.</Col>
+            <Col id="Column1">This is Matt Flynn from Maroon 5.</Col>
             <Col id="Column3">20170202</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">8303300</Col>
@@ -274,7 +274,7 @@
           </Row>
           <Row>
             <Col id="Column2">8902022</Col>
-            <Col id="Column1">I am a movie star, Kim Sarang.</Col>
+            <Col id="Column1">I am a movie star, Will Smith.</Col>
             <Col id="Column3">20170303</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8902020</Col>
@@ -282,7 +282,7 @@
           </Row>
           <Row>
             <Col id="Column2">9201012</Col>
-            <Col id="Column1">I am Son Ye-jin, a movie star.</Col>
+            <Col id="Column1">I am Tom Hanks, a movie star.</Col>
             <Col id="Column3">20170404</Col>
             <Col id="Column4">A1</Col>
             <Col id="Column6">9201010</Col>
@@ -290,7 +290,7 @@
           </Row>
           <Row>
             <Col id="Column2">8702022</Col>
-            <Col id="Column1">I'm Song Ji-hyo, a movie star.</Col>
+            <Col id="Column1">I am Kate, a movie star.</Col>
             <Col id="Column3">20170505</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8702020</Col>
@@ -298,7 +298,7 @@
           </Row>
           <Row>
             <Col id="Column2">8801012</Col>
-            <Col id="Column1">This is Jeong Eun-ji from Apink.</Col>
+            <Col id="Column1">This is James Bond.</Col>
             <Col id="Column3">20170606</Col>
             <Col id="Column4">C3</Col>
             <Col id="Column6">8801010</Col>
@@ -306,7 +306,7 @@
           </Row>
           <Row>
             <Col id="Column2">9008301</Col>
-            <Col id="Column1">My name is Doojun Yoon.</Col>
+            <Col id="Column1">My name is John Adams.</Col>
             <Col id="Column3">20170707</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">9008300</Col>
@@ -314,7 +314,7 @@
           </Row>
           <Row>
             <Col id="Column2">9103301</Col>
-            <Col id="Column1">I'm Park Kyung from Block B.</Col>
+            <Col id="Column1">I am Charlie.</Col>
             <Col id="Column3">20170808</Col>
             <Col id="Column4">D4</Col>
             <Col id="Column6">9103300</Col>
@@ -322,7 +322,7 @@
           </Row>
           <Row>
             <Col id="Column2">9205052</Col>
-            <Col id="Column1">I am Seolhyun from AOA.</Col>
+            <Col id="Column1">I am Sandra.</Col>
             <Col id="Column3">20170909</Col>
             <Col id="Column4">A1</Col>
             <Col id="Column6">9205050</Col>
@@ -330,8 +330,8 @@
           </Row>
           <Row>
             <Col id="Column2">9208302</Col>
-            <Col id="Column1">This is Son Na-eun from Apink.</Col>
-            <Col id="Column3">20171010</Col>
+            <Col id="Column1">This is Mary Jones.</Col>
+            <Col id="Column3">20171012</Col>
             <Col id="Column4">B2</Col>
             <Col id="Column6">9208300</Col>
             <Col id="Column0">1</Col>
@@ -356,8 +356,8 @@
             <Col id="Column4">20170101</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Lee Seung-hwan</Col>
-            <Col id="Column2">118 Gajwa-dong, Seo-gu, Incheon</Col>
+            <Col id="Column0">Mary Jones</Col>
+            <Col id="Column2">7036 Courtland Ave., Morrisville, PA 19067</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -367,8 +367,8 @@
             <Col id="Column4">20170201</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Lee Seung-han</Col>
-            <Col id="Column2">2nd Street, 104, Jeongwang-dong, Siheung-si, Gyeonggi-do</Col>
+            <Col id="Column0">John Adams</Col>
+            <Col id="Column2">217 E. Shipley Ave.,Terre Haute, IN 47802</Col>
             <Col id="Column6">*</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -378,8 +378,8 @@
             <Col id="Column4">20170601</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">Lee Cheol-woo</Col>
-            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
+            <Col id="Column0">Will Smith</Col>
+            <Col id="Column2">314 Airport Dr., Encino, CA 91316</Col>
             <Col id="Column6">+</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -389,8 +389,8 @@
             <Col id="Column4">20170931</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">Kang Soon-hee</Col>
-            <Col id="Column2">Yeouido-dong, Yeongdeungpo-gu, Seoul 1</Col>
+            <Col id="Column0">Emma Stone</Col>
+            <Col id="Column2">98 Orchard Lane, Downingtown, PA 19335</Col>
             <Col id="Column6">-</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -400,8 +400,8 @@
             <Col id="Column4">20171005</Col>
             <Col id="Column5">10</Col>
             <Col id="Column8">C</Col>
-            <Col id="Column0">Bae Jae-hyun</Col>
-            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Charlie Brown</Col>
+            <Col id="Column2">9326 Park Avenue , Eau Claire, WI 54701</Col>
             <Col id="Column6">%</Col>
             <Col id="Column7"/>
             <Col id="Chk">0</Col>
@@ -433,6 +433,8 @@ this.chkFlag = "0";
 /**
  * Grid check all
  * @param {Grid} Grid object
+ * Check column Chk for all rows.
+ * Also check the checkbox in Head band.
  */
 this.fnBlockChk = function (objGrid)
 {
@@ -451,6 +453,8 @@ this.fnBlockChk = function (objGrid)
 /**
  * Grid uncheck all
  * @param {Grid object} objGrid
+ * UnCheck column Chk for all rows.
+ * Also uncheck the checkbox in Head band.
  */
 this.fn_BlockUnChk = function (objGrid)
 {
@@ -491,11 +495,11 @@ this.fnRadioListClick = function(grid, ds, col, row)
 this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
 	
-	if(e.col == 0)
+	if(e.col == 0) //checkbox
 	{
 		//this.fnRadioListClick(obj, this.ds_list, e.col, e.row);
 	}
-	else if(e.col == 5) 
+	else if(e.col == 5) //Button
 	{
 		alert("Call button click event!");
 	}
@@ -511,6 +515,7 @@ this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 
 /**
  * @description onheadclick 
+ * Check/uncheck when you click on the first header column
 */
 this.grdList01_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
@@ -527,6 +532,8 @@ this.grdList01_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 			this.chkFlag = "1";
 		}
 	}
-};]]></Script>
+};
+
+]]></Script>
   </Form>
 </FDL>

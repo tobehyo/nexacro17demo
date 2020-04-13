@@ -180,17 +180,17 @@
         <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" height="90" cssclass="div_WF_mainFooter" right="0">
           <Layouts>
             <Layout>
-              <Static id="Static02" taborder="1" text="Intops Building, 617, Bongeunsa-ro, Gangnam-gu, Seoul, Korea | TEL: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="0" top="15" height="62" cssclass="sta_WF_footerAddress" right="0"/>
+              <Static id="Static02" taborder="1" text="60 Mall Road, Suite 310, Burlington MA 01803 | TEL: 781-345-5500&#13;&#10;COPYRIGHT(C) BY 2020 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="0" top="15" height="62" cssclass="sta_WF_footerAddress" right="0"/>
             </Layout>
             <Layout name="Layout0">
               <Static id="Static00" width="18.82%"/>
               <Static id="Static01" width="18.82%"/>
-              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
+              <Static id="Static02" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2020 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" right="20.23%"/>
             </Layout>
             <Layout name="Layout1">
               <Static id="Static00" width="0" left="40" top="18" height="0" visible="false"/>
               <Static id="Static01" width="0" top="17" height="0" right="40" visible="false"/>
-              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
+              <Static id="Static02" left="30" top="14" height="62" right="30" text="서울시 강남구 봉은사로 617 | 대표번호: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2020 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED"/>
             </Layout>
           </Layouts>
         </Div>

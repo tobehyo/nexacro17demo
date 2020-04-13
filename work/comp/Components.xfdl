@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="component" width="980" height="2805" titletext="다양한 컴포넌트" onload="component_onload" visible="true">
+  <Form id="component" width="980" height="2805" titletext="Various components" onload="component_onload" visible="true">
     <Layouts>
       <Layout screenid="desktop">
         <Static id="Static12" taborder="0" left="0" top="1670" height="51" cssclass="sta_menu_bg" right="20"/>
-        <Static id="Static02" taborder="1" cssclass="sta_cp_box01" left="0" top="71" width="47.96%" height="202"/>
+        <Static id="Static02" taborder="1" cssclass="sta_cp_box01" left="0" top="71" width="47.96%" height="202" text=""/>
         <Static id="Static01" taborder="2" text="Button" left="0" top="71" width="47.96%" height="51" cssclass="sta_cp_box01"/>
         <Button id="Button00" taborder="3" text="Button" left="Static02:-80.00%" top="142" height="32" width="8.16%" onclick="fn_comBtnOnClick" cssclass="btn_WF_basic01"/>
         <Grid id="grdObj" binddataset="dsList" autoenter="select" left="0" top="819" height="259" right="20" autofittype="col" taborder="4" formatid="default" oncellclick="grdObj_oncellclick">
@@ -83,7 +83,7 @@
         <Button id="Button10" taborder="15" text="Disabled" onclick="Button00_onclick" cssclass="btn_WF_basic03" left="Button09:20" top="222" width="8.16%" height="32" enable="false"/>
         <Static id="Static55" taborder="16" cssclass="sta_cp_box01" left="Static02:20" top="71" height="202" right="20"/>
         <Static id="Static54" taborder="17" text="CheckBox &amp; Radio" cssclass="sta_cp_box01" left="Static01:20" top="71" height="51" right="20"/>
-        <CheckBox id="CheckBox01" taborder="18" text="CheckBox_Normal" left="Static02:85" top="142" height="32" cssclass="chk_basic01" width="142"/>
+        <CheckBox id="CheckBox01" taborder="18" text="CheckBox_Normal" left="Static02:85" top="142" height="32" cssclass="chk_basic01" width="142" enableevent="true"/>
         <CheckBox id="CheckBox03" taborder="19" text="CheckBox_Disable" cssclass="chk_basic01" left="Static02:85" top="222" width="142" height="32" enableevent="false" enable="false" value="false"/>
         <Radio id="Radio01" taborder="20" top="138" height="121" width="14.08%" cssclass="rdo_basic01" innerdataset="@dsCode" codecolumn="value" datacolumn="label" right="7.45%" onitemchanged="Radio01_onitemchanged"/>
         <Static id="Static56" taborder="21" cssclass="sta_cp_box01" left="0" top="293" width="47.96%" height="214"/>
@@ -106,8 +106,8 @@
         <MaskEdit id="MaskEdit02" taborder="37" top="598" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" mask="#,##0.00" canchange="MaskEdit02_canchange"/>
         <MaskEdit id="MaskEdit03" taborder="38" top="647" height="32" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic02" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
         <MaskEdit id="MaskEdit04" taborder="39" top="696" height="32" enable="false" value="123,456,789" displaynulltext="123,456,789" cssclass="msk_basic01" width="18.98%" left="Static64:26.06%" type="number" maskchar="_" mask="#,##0.00"/>
-        <Spin id="Spin01" taborder="40" value="0" left="Static66:26.06%" top="598" width="18.98%" height="32" cssclass="sp_basic01"/>
-        <Spin id="Spin02" taborder="41" value="0" left="Static66:26.06%" top="647" width="18.98%" height="32" cssclass="sp_basic02"/>
+        <Spin id="Spin01" taborder="40" value="0" left="Static66:26.06%" top="598" width="18.98%" height="32" cssclass="sp_basic01" max="10000" min="0" circulation="false"/>
+        <Spin id="Spin02" taborder="41" value="0" left="Static66:26.06%" top="647" width="18.98%" height="32" cssclass="sp_basic02" max="10000" min="0"/>
         <Spin id="Spin03" taborder="42" value="0" left="Static66:26.06%" top="696" width="18.98%" height="32" enable="false"/>
         <Static id="Static69" taborder="43" cssclass="sta_cp_box01" left="0" top="1098" width="47.96%" height="285" text=""/>
         <Static id="Static70" taborder="44" text="Calendar" cssclass="sta_cp_box01" left="0" top="1098" width="47.96%" height="51"/>
@@ -115,7 +115,7 @@
         <Static id="Static72" taborder="46" text="TextArea" cssclass="sta_cp_box01" left="Static70:20" top="1098" height="51" right="20"/>
         <TextArea id="TextArea01" taborder="47" left="Static69:25.53%" top="1169" width="27.55%" height="194" cssclass="txa_basic01" displaynulltext="Yeah, TextArea it is!" wordWrap="char"/>
         <Calendar id="calToday" taborder="48" left="Static69:-88.3%" top="1169" width="13.27%" height="30" cssclass="cal_basic01"/>
-        <Calendar id="calToday01" taborder="49" left="Static69:-88.3%" top="1259" width="13.27%" height="30" type="spin" cssclass="cal_basic01"/>
+        <Calendar id="calToday01" taborder="49" left="Static69:-88.3%" top="1259" width="13.27%" height="30" type="spin" cssclass="cal_basic01" showyearspin="false" showmonthspin="false"/>
         <Static id="Static03" taborder="50" cssclass="sta_cp_box01" left="0" top="1403" width="31.33%" height="247"/>
         <Static id="Static06" taborder="51" cssclass="sta_cp_box01" left="Static03:20" top="1403" width="31.33%" height="247"/>
         <Static id="Static08" taborder="52" cssclass="sta_cp_box01" left="Static06:20" top="1403" height="247" right="20"/>
@@ -133,14 +133,14 @@
         <Static id="Static13" taborder="64" text="Menu" left="20" top="1670" width="110" height="51" cssclass="sta_menu_icon"/>
         <Static id="Static20" taborder="95" text="Grid" cssclass="sta_cp_box01" left="0" top="768" height="51" right="20"/>
         <CheckBox id="CheckBox02" taborder="97" text="CheckBox_Select" cssclass="chk_basic01" left="Static02:85" top="182" width="142" height="32" enable="true" enableevent="false" value="true"/>
-        <Calendar id="calToday03" taborder="98" left="calToday:79" top="1169" width="169" height="189" type="monthonly" value="20220101" innerdataset="ds_CalendarColor" backgroundcolumn="BKCOLOR" bordercolumn="BORDER" datecolumn="DATE" textcolorcolumn="COLOR"/>
+        <Calendar id="calToday03" taborder="98" left="calToday:79" top="1169" width="169" height="189" type="monthonly" value="20220101" innerdataset="ds_CalendarColor" backgroundcolumn="BKCOLOR" bordercolumn="BORDER" datecolumn="DATE" textcolorcolumn="COLOR" showmonthspin="true"/>
         <Calendar id="calToday02" taborder="99" cssclass="cal_basic01" left="Static69:-88.3%" top="1209" width="13.27%" height="30" enable="false"/>
         <Calendar id="Calendar04" taborder="100" type="spin" cssclass="cal_basic01" left="Static69:-88.3%" top="1299" width="13.27%" height="30" enable="false"/>
         <PopupMenu id="PopupMenu01" left="1024" top="218" width="185" height="100" visible="false" cssclass="pm_basic01"/>
         <Static id="Static00" taborder="101" text="Static00" top="19" width="20" height="153" background="aqua" visible="false" right="0"/>
         <Static id="Static60" taborder="101" text="The Nexacro Platform provides a convenient tool environment for users by providing about 40 components." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
         <Static id="Static14" taborder="0" left="0" top="1752" height="34" cssclass="sta_menu_bg" right="20"/>
-        <Tab id="Tab00" taborder="6" left="0" top="1751" height="175" tabindex="0" scrollbars="autoboth" right="20" cssclass="tab_basic01" showextrabutton="true" tabbuttonheight="32">
+        <Tab id="Tab00" taborder="6" left="0" top="1751" height="175" tabindex="0" scrollbars="autoboth" right="20" cssclass="tab_basic01" showextrabutton="true" tabbuttonheight="32" onchanged="Tab00_onchanged">
           <Tabpages>
             <Tabpage id="tabpage1" text="tabpage1"/>
             <Tabpage id="tabpage2" text="tabpage2"/>
@@ -161,8 +161,8 @@
         <Static id="Static32" taborder="75" text="FileDownload" cssclass="sta_cp_box01" left="0" top="2213" width="31.33%" height="51"/>
         <Static id="Static35" taborder="76" cssclass="sta_cp_box01" left="Static33:20" top="2213" height="132" right="20"/>
         <Static id="Static34" taborder="77" text="FileUpload" cssclass="sta_cp_box01" left="Static32:20" top="2213" height="51" right="20"/>
-        <FileDownload id="FileDownload00" taborder="78" text="FileDownload" left="Static33:-75.57%" top="2284" height="40" width="16.33%" cssclass="filedown_basic01"/>
-        <FileUpload id="FileUpload00" taborder="79" index="0" left="Static33:36.16%" top="2284" height="40" width="45.92%" cssclass="fileup_basic01" itemheight="40" buttonsize="160" buttontext="FileUpload"/>
+        <FileDownload id="FileDownload00" taborder="78" text="FileDownload" left="Static33:-75.57%" top="2284" height="40" width="16.33%" cssclass="filedown_basic01" onclick="FileDownload00_onclick"/>
+        <FileUpload id="FileUpload00" taborder="79" index="0" left="Static33:36.16%" top="2284" height="40" width="45.92%" cssclass="fileup_basic01" itemheight="40" buttonsize="160" buttontext="FileUpload" onitemchanged="FileUpload00_onitemchanged"/>
         <Static id="Static17" taborder="80" cssclass="sta_cp_box01" left="0" top="2365" height="190" right="20"/>
         <Static id="Static16" taborder="81" text="ImageViewer" cssclass="sta_cp_box01" left="0" top="2365" height="51" right="20"/>
         <ImageViewer id="ImageViewer01" taborder="82" image="URL('imagerc::nexa_BI.png')" left="333" top="2470" height="65" stretch="fit" width="177"/>
@@ -170,7 +170,7 @@
         <ImageViewer id="ImageViewer02" taborder="84" image="URL('imagerc::nexa_BI.png')" left="638" top="2470" height="65" stretch="fixaspectratio" width="177"/>
         <Static id="Static28" taborder="85" text="stretch : fixaspectratio" left="638" top="2436" width="155" height="24" cssclass="sta_cp_imageViewer"/>
         <Static id="Static26" taborder="86" text="stretch : none" left="28" top="2436" height="24" width="125" cssclass="sta_cp_imageViewer"/>
-        <ImageViewer id="ImageViewer00" taborder="87" left="28" top="2470" height="65" image="URL('imagerc::nexa_BI.png')" width="177"/>
+        <ImageViewer id="ImageViewer00" taborder="87" left="28" top="2470" height="65" image="URL('imagerc::nexa_BI.png')" width="177" stretch="none"/>
         <Static id="Static18" taborder="88" cssclass="sta_cp_box01" left="0" top="2575" width="31.33%" height="210"/>
         <Static id="Static19" taborder="89" text="ProgressBar" cssclass="sta_cp_box01" left="0" top="2575" width="31.33%" height="51"/>
         <ProgressBar id="ProgressBar00" taborder="90" text="56%" left="Static18:-82.74%" top="2662" height="35" width="20.41%" pos="56" cssclass="prg_basic01" smooth="true"/>
@@ -659,6 +659,16 @@ this.webNotify_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserN
 	{
 		trace(e.userdata);
 	}
-};]]></Script>
+};
+this.FileDownload00_onclick = function(obj:nexacro.FileDownload,e:nexacro.ClickEventInfo)
+{
+	
+};
+
+this.FileUpload00_onitemchanged = function(obj:nexacro.FileUpload,e:nexacro.FileUploadItemChangeEventInfo)
+{
+	
+};
+]]></Script>
   </Form>
 </FDL>
