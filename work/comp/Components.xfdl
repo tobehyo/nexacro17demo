@@ -81,11 +81,11 @@
         <Button id="Button08" taborder="13" text="Delete" onclick="fn_comBtnOnClick" cssclass="btn_WF_basic05" left="Static02:-80.00%" top="222" width="8.16%" height="32"/>
         <Button id="Button09" taborder="14" text="Push" cssclass="btn_cp_basic04" left="Button08:20" top="222" width="8.16%" height="32"/>
         <Button id="Button10" taborder="15" text="Disabled" onclick="Button00_onclick" cssclass="btn_WF_basic03" left="Button09:20" top="222" width="8.16%" height="32" enable="false"/>
-        <Static id="Static55" taborder="16" cssclass="sta_cp_box01" left="Static02:20" top="71" height="202" right="20"/>
+        <Static id="Static55" taborder="16" cssclass="sta_cp_box01" left="Static02:20" top="71" height="202" right="20" fittocontents="none"/>
         <Static id="Static54" taborder="17" text="CheckBox &amp; Radio" cssclass="sta_cp_box01" left="Static01:20" top="71" height="51" right="20"/>
         <CheckBox id="CheckBox01" taborder="18" text="CheckBox_Normal" left="Static02:85" top="142" height="32" cssclass="chk_basic01" width="142"/>
         <CheckBox id="CheckBox03" taborder="19" text="CheckBox_Disable" cssclass="chk_basic01" left="Static02:85" top="222" width="142" height="32" enableevent="false" enable="false" value="false"/>
-        <Radio id="Radio01" taborder="20" top="138" height="121" width="14.08%" cssclass="rdo_basic01" innerdataset="@dsCode" codecolumn="value" datacolumn="label" right="7.45%" onitemchanged="Radio01_onitemchanged"/>
+        <Radio id="Radio01" taborder="20" top="138" height="121" width="20.20%" cssclass="rdo_basic01" innerdataset="@dsCode" codecolumn="value" datacolumn="label" right="4.08%" onitemchanged="Radio01_onitemchanged" fittocontents="none"/>
         <Static id="Static56" taborder="21" cssclass="sta_cp_box01" left="0" top="293" width="47.96%" height="214"/>
         <Static id="Static57" taborder="22" text="Combo" cssclass="sta_cp_box01" left="0" top="293" width="47.96%" height="51"/>
         <Static id="Static62" taborder="23" cssclass="sta_cp_box01" left="Static56:20" top="293" height="214" right="20"/>
@@ -237,7 +237,7 @@
         <Tab id="Tab00" left="20" top="3785" height="249" right="20" tabbuttonheight="40"/>
         <PopupDiv id="PopupDiv00" left="554" top="4150" width="185" height="100"/>
         <PopupMenu id="PopupMenu00" left="778" top="4150" width="185" height="100"/>
-        <Radio id="Radio01" top="456" width="35.42%" height="154" right="40"/>
+        <Radio id="Radio01" top="456" width="45.83%" height="154" right="30"/>
         <Static id="Static56" left="20" top="642" height="214" right="20" text=""/>
         <Static id="Static57" left="20" top="642" height="51" right="20"/>
         <Combo id="Combo01" left="8.13%" top="713" width="120" height="32" popuptype="center" popupsize="350" itemheight="100"/>
@@ -326,20 +326,20 @@
             <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
-            <Col id="Column1">20170101</Col>
+            <Col id="Column1">20170114</Col>
             <Col id="Column3"/>
           </Row>
           <Row>
             <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
-            <Col id="Column1">20170202</Col>
+            <Col id="Column1">20170213</Col>
           </Row>
           <Row>
             <Col id="Column4">ABCDEFGHIJK</Col>
             <Col id="Column5">Button</Col>
             <Col id="Column2">[Undefined]</Col>
-            <Col id="Column1">20170303</Col>
+            <Col id="Column1">20170321</Col>
           </Row>
           <Row>
             <Col id="Column4">ABCDEFGHIJK</Col>
@@ -583,7 +583,12 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[/**
+ *Initialize Form
+ *@param {Form object} Form
+ *@param {nexacro event} nexacro.LoadEventInfo
+ *set today's date in calendar component. 
+*/
 this.component_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
 	var today = this.gfnGetDate();
@@ -609,20 +614,33 @@ this.getRandomIntInclusive = function (min, max)
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ *Button on_click event handler
+ *@param {Button object} Button00
+ *@param {nexacro event} nexacro.ClickEventInfo
+ * 
+*/
 this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
+	//functionality of button click according to different buttons listed below
 	switch (obj.name)
 	{
+		//show alert window displaying text property of Button00
+		//Button00 is in "Button" section of the form
 		case "Button00" :
 			alert(obj.text);
 			break;
-			
+		
+		//open a PopupDiv component below the button
+		//Button01 is in "PopupDiv" section of the form
 		case "Button01" :
 			var x = 0;
 			var y = obj.getOffsetHeight();
 			this.PopupDiv00.trackPopupByComponent(obj, x, y);
 			break;
-			
+		
+		//open a PopupMenu component below the button	
+		//Button01 is in "PopupMenu" section of the form
 		case "Button02" :
 			var x = 0; 
 			var y = obj.getOffsetHeight();
@@ -631,30 +649,55 @@ this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	} 
 };
 
+
+/**
+ *Event handler when a clickable item in the Grid object grdObj is clicked
+ *@param {Grid object} Grid
+ *@param {nexacro event} GridClickEventInfo
+ *When a clickable item in the Grid grdObj is clicked, then it displays a popup window 
+ *with some info
+*/
 this.grdObj_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
+	//get the current row number in the grid
 	var nRow = e.row + 1;
-
+	
+	//item clicked is a button (in column 5)
+	//then display an alert with current row number
 	if (e.col == 5) 
 	{
 		alert(nRow + "Row Button Event!");
 	}
-	else if(e.col == 1) //calender
+	
+	//item clicked is a calendar (in column 1)
+	//then show drop down calendar control
+	else if(e.col == 1) 
 	{
 		obj.dropdownCalendar();
 	}
-	else if(e.col == 2) //combo
+	
+	//item clicked is a combo control (in column 2)
+	//then show drop down combo control
+	else if(e.col == 2) 
 	{
 		obj.dropdownCombo();
 	}
 };
 
+/**
+ *Fires a usernotify event to send userdata to console
+ *@param {Nexacro object} WebBrowser
+ *@param {nexacro event} onusernotify
+ *Userdata sent to the console is the user data delivered from web page to Nexacro Platform
+*/
 this.webNotify_onusernotify = function(obj:nexacro.WebBrowser,e:nexacro.WebUserNotifyEventInfo)
 {
+	//the name of the web browser is Nexacro browser
 	if (system.navigatorname != "nexacro")
 	{
 		trace(e.userdata);
 	}
+	//all other web browsers
 	else
 	{
 		trace(e.userdata);
