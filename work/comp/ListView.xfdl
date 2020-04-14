@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="sampleListView" width="980" height="600" titletext="리스트뷰" onload="Form_onload">
+  <Form id="sampleListView" width="980" height="600" titletext="List view" onload="Form_onload">
     <Layouts>
       <Layout height="600" width="980" screenid="desktop">
         <ListView id="lstList" taborder="0" left="0" top="130" right="20" bottom="60" binddataset="dsList" bandinitstatus="collapse" bandexpandtype="accordion" oncellclick="lstList_oncellclick" onbandstatuschanged="lstList_onbandstatuschanged">
@@ -63,85 +63,87 @@
         <Rows>
           <Row>
             <Col id="ORG_NM">TOBESOFT</Col>
-            <Col id="EMP_NM">Gildong Hong</Col>
+            <Col id="EMP_NM">David Clark</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi01.png</Col>
             <Col id="JOB_NM">CEO</Col>
             <Col id="EMP_NO">01070101</Col>
-            <Col id="TEL_NO">010-1111-1234</Col>
+            <Col id="TEL_NO">617-111-1234</Col>
             <Col id="EMAIL">ceo@tobesoft.com</Col>
             <Col id="BRITHDAY">19650105</Col>
             <Col id="REMARK">Note 1</Col>
           </Row>
           <Row>
             <Col id="ORG_NM">Laboratory</Col>
-            <Col id="EMP_NM">Cheolsoo Kim</Col>
+            <Col id="EMP_NM">John Smith</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi02.png</Col>
             <Col id="JOB_NM">Intestine</Col>
             <Col id="EMP_NO">01070102</Col>
-            <Col id="TEL_NO">010-2222-2345</Col>
-            <Col id="EMAIL">CheolsuKim@tobesoft.com</Col>
+            <Col id="TEL_NO">617-222-2345</Col>
+            <Col id="EMAIL">JohnSmith@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 2</Col>
           </Row>
           <Row>
             <Col id="ORG_NM">Planning Department</Col>
-            <Col id="EMP_NM">Younghee Kim</Col>
+            <Col id="EMP_NM">James Johnson</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi03.png</Col>
             <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070103</Col>
-            <Col id="TEL_NO">010-3333-4567</Col>
-            <Col id="EMAIL">YeonghuiKim@tobesoft.com</Col>
+            <Col id="TEL_NO">617-333-4567</Col>
+            <Col id="EMAIL">JamesJohnson@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 3</Col>
           </Row>
           <Row>
             <Col id="ORG_NM">Implementation</Col>
-            <Col id="EMP_NM">Park Gil-dong</Col>
+            <Col id="EMP_NM">George Miller</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi04.png</Col>
             <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070104</Col>
-            <Col id="TEL_NO">010-4444-5555</Col>
-            <Col id="EMAIL">GildongPark@tobesoft.com</Col>
+            <Col id="TEL_NO">617-444-5555</Col>
+            <Col id="EMAIL">GeorgeMiller@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 4</Col>
           </Row>
           <Row>
             <Col id="ORG_NM">Support</Col>
-            <Col id="EMP_NM">Steel number</Col>
+            <Col id="EMP_NM">Robert Brown</Col>
             <Col id="IMG_URL">imagerc::img_WF_organi05.png</Col>
             <Col id="JOB_NM">Department head</Col>
             <Col id="EMP_NO">01070105</Col>
-            <Col id="TEL_NO">010-5555-9874</Col>
-            <Col id="EMAIL">Cheolsu@tobesoft.com</Col>
+            <Col id="TEL_NO">617-555-9874</Col>
+            <Col id="EMAIL">RobertBrown@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 5</Col>
           </Row>
           <Row>
             <Col id="IMG_URL">imagerc::img_WF_organi06.png</Col>
             <Col id="ORG_NM">Management headquarters</Col>
-            <Col id="EMP_NM">Kim management</Col>
+            <Col id="EMP_NM">Sam Taylor</Col>
             <Col id="JOB_NM">General manager</Col>
             <Col id="EMP_NO">01070106</Col>
-            <Col id="TEL_NO">010-6666-9632</Col>
-            <Col id="EMAIL">Gwanri@tobesoft.com</Col>
+            <Col id="TEL_NO">617-666-9632</Col>
+            <Col id="EMAIL">SamTaylor@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 6</Col>
           </Row>
           <Row>
             <Col id="IMG_URL">imagerc::img_WF_organi07.png</Col>
             <Col id="ORG_NM">HR Team</Col>
-            <Col id="EMP_NM">Insa Kim</Col>
+            <Col id="EMP_NM">Maria Garcia</Col>
             <Col id="JOB_NM">Team Leader</Col>
             <Col id="EMP_NO">01070107</Col>
-            <Col id="TEL_NO">010-7777-0258</Col>
-            <Col id="EMAIL">KimInsa@tobesoft.com</Col>
+            <Col id="TEL_NO">617-777-0258</Col>
+            <Col id="EMAIL">MariaGarcia@tobesoft.com</Col>
             <Col id="BRITHDAY">20180725</Col>
             <Col id="REMARK">Note 7</Col>
           </Row>
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[/**
+ * Toggle between expand and collapse based on the detail band's expand status
+ */
 this.lstList_oncellclick = function(obj:nexacro.ListView,e:nexacro.ListViewClickEventInfo)
 {
 	var bBandExpand = obj.getBandExpandStatus(e.row);
@@ -152,6 +154,10 @@ this.lstList_oncellclick = function(obj:nexacro.ListView,e:nexacro.ListViewClick
 	}
 };
 
+/**
+ * Apply the format "default" and cssclass to display the contents of ListView
+ * You can add multiple formats through the ListView Contents Editor of Nexacro Studio.
+ */
 this.btnList_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.btnList.set_cssclass("btn_WF_listviewList");
@@ -160,6 +166,10 @@ this.btnList_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	this.lstList.set_formatid("default");
 };
 
+/**
+ * Apply the format "cross" and cssclass to display the contents of ListView
+ * You can add multiple formats through the ListView Contents Editor of Nexacro Studio.
+ */
 this.btnCross_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//this.btnList.set_cssclass("btn_WF_basicWhite");
