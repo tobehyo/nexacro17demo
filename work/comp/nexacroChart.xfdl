@@ -45,7 +45,12 @@
         <Grid id="grdChartLilst" left="20" top="180" right="20" bottom="20"/>
       </Layout>
     </Layouts>
-    <Script type="xscript5.1"><![CDATA[
+    <Script type="xscript5.1"><![CDATA[/**
+ *Opens the stepscreen that displays the desired chart.
+ *@param {URL object} URL of the chart type selected from grdCharList object
+ *@param {nexacro event} none
+ *@returns none
+*/
 this.fnOpenForm = function (url)
 {
 	if ( url == null || url == "" ) 
@@ -53,26 +58,50 @@ this.fnOpenForm = function (url)
 		
 	if (this.getStepCount() > 0)
 	{
+		//move to the second step screen that displays the chart
 		this.setStepIndex(1);
 	}
 	this.divChart.set_url(url);
+	//add the onclose event handler when this form object opens
 	this.divChart.form.addEventHandler("onclose", this.nexacroChart_onclose, this);
 };
 
+/**
+ *Moves the page back to the charts menu by setting step index to 0
+ *@param {Button object} btnMove
+ *@param {nexacro event} ClickEventInfo
+ *@returns none
+*/
 this.btnMove_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.setStepIndex(0);
 };
 
+/**
+ *Opens the chart indicated on a particular cell of Nexacro chart tree list
+ *@param {Grid object} grdChartLilst
+ *@param {nexacro event} GridClickEventInfo
+ *@returns none 
+*/
 this.grdChartLilst_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
+	//get the URL of the corresponding chart form
+	//from dataset dsMenu dataset object under nexacroChart.xfdl
 	var formurl = this.dsMenu.getColumn(e.row, "formurl");
 	
+	//open form containing the desired chart
 	this.fnOpenForm(formurl);
 };
 
+/**
+ *Prevents the onclose event from propagating to components at higher levels when nexacroChart form closes
+ *@param {Form object} Form
+ *@param {nexacro event} CloseEventInfo
+ *@returns none 
+*/
 this.nexacroChart_onclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
 {
+	//prevent the same event from propagating to the parent or child forms
 	e.stopPropagation();
 };]]></Script>
     <Objects>

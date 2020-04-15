@@ -18,16 +18,31 @@
       </Layout>
     </Layouts>
     <Objects/>
-    <Script type="xscript5.1"><![CDATA[this.GoogleMap_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+    <Script type="xscript5.1"><![CDATA[/**
+ *Sets the URL property of the WebBrowser component when form is loaded
+ *@param {Form object} GoogleMap
+ *@param {nexacro event} LoadEventInfo
+ *@returns none 
+*/
+this.GoogleMap_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.WebBrowser01.set_url(nexacro.getProjectPath() + "./html/googlemap.html");
 };
 
+/**
+ *Sets address markers on the Google Maps corresponding to the two input addresses
+ *and calls the codeAddress methods in the loaded google maps webpage
+ *@param {Button object} Button02
+ *@param {nexacro event} ClickEventInfo
+ *@returns none
+*/
 this.Button02_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 {
+	//get the two street addresses from Edit controls Edit00 and Edit01
 	var strAddr1 = this.Edit00.value;
 	var strAddr2 = this.Edit01.value;
-
+	
+	//calls the JS method "codeAddress" which uses Google API to add address to the map
 	this.WebBrowser01.callMethod("codeAddress", strAddr1);
 	this.WebBrowser01.callMethod("codeAddress", strAddr2);
 };
