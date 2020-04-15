@@ -46,11 +46,10 @@
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/**
- *Method to open the stepscreen that displays the desired chart
+ *Opens the stepscreen that displays the desired chart.
  *@param {URL object} URL of the chart type selected from grdCharList object
  *@param {nexacro event} none
  *@returns none
- *This method is called from grdChartLilst_oncellclick event of Grid grdChartList 
 */
 this.fnOpenForm = function (url)
 {
@@ -68,11 +67,10 @@ this.fnOpenForm = function (url)
 };
 
 /**
- *Moves the page back to the charts menu
+ *Moves the page back to the charts menu by setting step index to 0
  *@param {Button object} btnMove
  *@param {nexacro event} ClickEventInfo
  *@returns none
- *Sets the step index to 0, to move the page back to the charts menu
 */
 this.btnMove_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -96,7 +94,7 @@ this.grdChartLilst_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEv
 };
 
 /**
- *Close  
+ *Prevents the onclose event from propagating to components at higher levels when nexacroChart form closes
  *@param {Form object} Form
  *@param {nexacro event} CloseEventInfo
  *@returns none 

@@ -19,7 +19,7 @@
     </Layouts>
     <Objects/>
     <Script type="xscript5.1"><![CDATA[/**
- *Set the URL of Google Maps stored in html folder in project, once this Form loads
+ *Sets the URL property of the WebBrowser component when form is loaded
  *@param {Form object} GoogleMap
  *@param {nexacro event} LoadEventInfo
  *@returns none 
@@ -42,7 +42,7 @@ this.Button02_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 	var strAddr1 = this.Edit00.value;
 	var strAddr2 = this.Edit01.value;
 	
-	//call the "codeAddress" method (a Google Maps JS method) loaded in the WebBrowser DOM 
+	//calls the JS method "codeAddress" which uses Google API to add address to the map
 	this.WebBrowser01.callMethod("codeAddress", strAddr1);
 	this.WebBrowser01.callMethod("codeAddress", strAddr2);
 };
