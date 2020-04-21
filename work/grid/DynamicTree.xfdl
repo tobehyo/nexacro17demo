@@ -485,21 +485,13 @@
       </Dataset>
     </Objects>
     <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
+*  nexacro 17.1 demo
 *  @MenuPath    grid > DynamicTree
 *  @FileName  DynamicTree.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.10.14      presales                  최초 생성 
-*******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable Declaration area
  ************************************************************************************************/
 this.nRowBegin = 0;
 this.nRowFinish = 0;
@@ -513,11 +505,13 @@ this.dsOrg = null;
 this.dsTarget = null;
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
- 
 /**
- * @description Form onload
+ *Initalizes datasets when the form is loaded .
+ *@param {Form object} DynamicTree
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None. 
 */
 this.DynamicTree_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -526,25 +520,14 @@ this.DynamicTree_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 }
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
- ************************************************************************************************/
-
-
- /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
- ************************************************************************************************/
-
-/************************************************************************************************
- * 사용자 FUNCTION 영역
- ************************************************************************************************/
-
-
-/************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
  
-/**
- * @description ondragmove 
+ /**
+ *Sets static drag image invisible and move it based on drag location .
+ *@param {Form object} DynamicTree
+ *@param {nexacro event} DragEventInfo ondragmove
+ *@returns Boolean "false" by default. 
 */
 this.DynamicTree_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
 {
@@ -555,23 +538,30 @@ this.DynamicTree_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
 }
 
 /**
- * @description ondrop 
+ *Sets static drag image to be invisible
+ *@param {Form object} DynamicTree
+ *@param {nexacro event} DragEventInfo ondrop
+ *@returns Boolean "false" by default. 
 */
 this.DynamicTree_ondrop = function(obj:nexacro.Form, e:nexacro.DragEventInfo)
 {
 	this.stDragImg.set_visible(false);
 }
 
+
 /**
- * @description ondrag
+ *Set static drag image's text to the selected drid text.  .
+ *@param {Grid object} grdTree,grdTree2 or grdTree3
+ *@param {nexacro event} GridDragEventInfo ondrag
+ *@returns Boolean "false" by default. 
 */
 this.fnOndrag = function(obj:nexacro.Grid,e:nexacro.GridDragEventInfo)
 {
 	switch (obj.name)
 	{
-		case "grdTree" : // 트리 -> 트리
-		case "grdTree2" : // 트리 -> 그리드
-		case "grdTree3" : // 트리 -> 그리드 (특정 컬럼에 drag&drop)
+		case "grdTree" : // Tree-> tree
+		case "grdTree2" : // Tree-> grid
+		case "grdTree3" : // tree-> grid (drag & drop to a specific column)
 			if (e.row > -1) {
 				this.stDragImg.bringToFront();
 				this.stDragImg.set_text(obj.getCellText(e.row, e.cell));
@@ -584,8 +574,12 @@ this.fnOndrag = function(obj:nexacro.Grid,e:nexacro.GridDragEventInfo)
 	}
 };
 
+
 /**
- * @description ondrop
+ *Populate the dataset of grid receiving drop event based on dragged grid.
+ *@param {Grid object} grdList,grdList2 or grdList3
+ *@param {nexacro event} GridDragEventInfo ondrop
+ *@returns Boolean "false" by default. 
 */
 this.fnOndrop = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
 {
@@ -594,10 +588,10 @@ this.fnOndrop = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
 	var nRow = 0, nStart, nEnd = 0;
 	
 	this.stDragImg.set_visible(false);
-		
+
 	switch (obj.name)
 	{
-		case "grdList" : // 트리 -> 트리
+		case "grdList" : //Tree-> tree
 			if (e.row != -9) {
 				nInsertRow = e.row;
 			}
@@ -671,7 +665,7 @@ this.fnOndrop = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
 			this.dsTarget.set_enableevent(true);
 			break;
 			
-		case "grdList2" : // 트리 -> 그리드
+		case "grdList2" : // Tree-> grid
 			if (e.row != -9) {
 				nInsertRow = e.row;
 			}
@@ -747,7 +741,7 @@ this.fnOndrop = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
 			this.dsTreetoGrid.set_enableevent(true);		
 			break;
 		
-		case "grdList3" : // 트리 -> 그리드 (특정 컬럼에 drag&drop)
+		case "grdList3" : // Tree-> grid (drag & drop to specific column)
 			if (e.row != -9) {
 				nInsertRow = e.row;
 			}
@@ -838,23 +832,27 @@ this.fnOndrop = function(obj:nexacro.Grid, e:nexacro.GridDragEventInfo)
 };
 
 /**
- * @description ondragleave
+ *Save the start and end rows of dragged grid when moused is moves out of the grid.
+ *These rows number are used to populate dataset when the dragged rows are dropped into another grid.
+ *@param {Grid object} grdTree,grdTree2 or grdTree3
+ *@param {nexacro event} DragEventInfo ondragleave
+ *@returns Boolean "false" by default. 
 */
 this.fnOndragleave = function(obj:nexacro.Grid,e:nexacro.DragEventInfo)
 {
 	switch (obj.name)
 	{
-		case "grdTree" : // 트리 -> 트리
+		case "grdTree" : //Tree-> tree
 			this.nRowBegin = nexacro.toNumber(obj.selectstartrow);
 			this.nRowFinish = nexacro.toNumber(obj.selectendrow);
 			break;
 			
-		case "grdTree2" : // 트리 -> 그리드
+		case "grdTree2" : //Tree-> grid
 			this.nRowBegin2 = nexacro.toNumber(obj.selectstartrow);
 			this.nRowFinish2 = nexacro.toNumber(obj.selectendrow);
 			break;
 			
-		case "grdTree3" : // 트리 -> 그리드 (특정 컬럼에 drag&drop)
+		case "grdTree3" : //Tree-> grid (drag & drop to specific column)
 			this.nRowBegin4 = nexacro.toNumber(obj.selectstartrow);
 			this.nRowFinish4 = nexacro.toNumber(obj.selectendrow);		
 			break;
