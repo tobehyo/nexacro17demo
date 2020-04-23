@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="CategoryGrid" width="980" height="770" titletext="카테고리 그리드" onload="CategoryGrid_onload" ondragmove="CategoryGrid_ondragmove" ondrop="CategoryGrid_ondrop">
+  <Form id="CategoryGrid" width="980" height="770" titletext="Category grid" onload="CategoryGrid_onload" ondragmove="CategoryGrid_ondragmove" ondrop="CategoryGrid_ondrop">
     <Layouts>
       <Layout>
         <Div id="divCategory" taborder="0" left="0" top="89" right="20" height="50" ondrop="divCategory_ondrop" cssclass="div_cellMoveBox"/>
@@ -59,8 +59,8 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gangnam-gil</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Drew Thomson</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">37</Col>
             <Col id="price">22000</Col>
@@ -68,8 +68,8 @@
             <Col id="list_date">20031213</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gangnam-gil</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Drew Thomson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">2</Col>
             <Col id="price">33000</Col>
@@ -77,17 +77,17 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gangnam-gil</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Drew Thomson</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">3</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">99000</Col>
             <Col id="list_date">20031213</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Charlie Jenkins</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">15000</Col>
@@ -95,8 +95,8 @@
             <Col id="list_date">20050622</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Charlie Jenkins</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">2</Col>
             <Col id="price">34000</Col>
@@ -104,8 +104,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Gildong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Charlie Jenkins</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">14000</Col>
@@ -113,8 +113,8 @@
             <Col id="list_date">20050608</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Leigh Harris</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
@@ -122,8 +122,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Leigh Harris</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
@@ -131,8 +131,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Jaedong Kim</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Leigh Harris</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">23000</Col>
@@ -140,8 +140,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Hayden Scott</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">1</Col>
             <Col id="price">23000</Col>
@@ -149,8 +149,8 @@
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Hayden Scott</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">3</Col>
             <Col id="price">23000</Col>
@@ -158,8 +158,8 @@
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Hayden Scott</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">4</Col>
             <Col id="price">23000</Col>
@@ -167,8 +167,8 @@
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Hayden Scott</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">9</Col>
             <Col id="price">23000</Col>
@@ -176,8 +176,8 @@
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Park Soo-yong</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Hayden Scott</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">23</Col>
             <Col id="price">23000</Col>
@@ -185,8 +185,8 @@
             <Col id="list_date">20040831</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Sujin Lee</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Leigh Davidson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">10000</Col>
@@ -194,8 +194,8 @@
             <Col id="list_date">20050713</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Sujin Lee</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Leigh Davidson</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">33000</Col>
@@ -203,8 +203,8 @@
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Admiral Yi</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Mell Padilla</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">66</Col>
             <Col id="price">5000</Col>
@@ -212,8 +212,8 @@
             <Col id="list_date">20050518</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Admiral Yi</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Mell Padilla</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">55</Col>
             <Col id="price">15000</Col>
@@ -221,17 +221,17 @@
             <Col id="list_date">20050705</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Seung Woo Cho</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Ash Leach</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">120</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">3240000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangnam Division</Col>
-            <Col id="sal_nm">Seung Woo Cho</Col>
+            <Col id="pro_id">Manhattan Division</Col>
+            <Col id="sal_nm">Ash Leach</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">19</Col>
             <Col id="price">400000</Col>
@@ -239,17 +239,17 @@
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Min Kyu Kang</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Raylee Gamble</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">22000</Col>
             <Col id="sal_sum">440000</Col>
             <Col id="list_date">20031212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Min Kyu Kang</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Raylee Gamble</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">10</Col>
             <Col id="price">14000</Col>
@@ -257,7 +257,7 @@
             <Col id="list_date">20050705</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
+            <Col id="pro_id">Bronx Division</Col>
             <Col id="sal_nm">Younggil Kim</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
@@ -266,8 +266,8 @@
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Inha Kim</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">River Estes</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">14000</Col>
@@ -275,17 +275,17 @@
             <Col id="list_date">20050622</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Inha Kim</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">River Estes</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">34000</Col>
             <Col id="sal_sum">1360000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Kim Jong-oh</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Gabby Bauer</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">13000</Col>
@@ -293,8 +293,8 @@
             <Col id="list_date">20050628</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Kim Jong-oh</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Gabby Bauer</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
@@ -302,8 +302,8 @@
             <Col id="list_date">20031224</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Ryan Davidson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -311,8 +311,8 @@
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Ryan Davidson</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -320,8 +320,8 @@
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jinsuk Kim</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Ryan Davidson</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -329,8 +329,8 @@
             <Col id="list_date">20031207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Sujin Park</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Sammy Macdonald</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">77</Col>
             <Col id="price">34000</Col>
@@ -338,8 +338,8 @@
             <Col id="list_date">20031117</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Sujin Park</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Sammy Macdonald</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">77</Col>
             <Col id="price">34000</Col>
@@ -347,8 +347,8 @@
             <Col id="list_date">20031117</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Park Un-Seok</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Dane Richardson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">45000</Col>
@@ -356,17 +356,17 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Park Un-Seok</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Dane Richardson</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">35</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1155000</Col>
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jaewon Ahn</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Marley Grant</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
@@ -374,8 +374,8 @@
             <Col id="list_date">20030815</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jaewon Ahn</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Marley Grant</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
@@ -383,17 +383,17 @@
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Jaewon Ahn</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Marley Grant</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">12</Col>
             <Col id="price">60000</Col>
             <Col id="sal_sum">720000</Col>
             <Col id="list_date">20030916</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Jamie Atkinson</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
@@ -401,8 +401,8 @@
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Jamie Atkinson</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
@@ -410,8 +410,8 @@
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Sooyoung Lee</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Jamie Atkinson</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">33000</Col>
@@ -419,8 +419,8 @@
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Kang Hoon Jang</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Aubrey Benjamin</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">22000</Col>
@@ -428,8 +428,8 @@
             <Col id="list_date">20031212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Seung Woo Cho</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Ash Leach</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">3444</Col>
@@ -437,17 +437,17 @@
             <Col id="list_date">20050610</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gangseo Division</Col>
-            <Col id="sal_nm">Hwang Myeong-hee</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Bronx Division</Col>
+            <Col id="sal_nm">Val Vaughn</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">460000</Col>
             <Col id="list_date">20031205</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Hoyeon Kim</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Terry Booth</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -455,17 +455,17 @@
             <Col id="list_date">20031203</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Byeongcheol Min</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Val Lucas</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">340</Col>
             <Col id="price">24000</Col>
             <Col id="sal_sum">8160000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Lee Mold</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Mel Holmes</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">33000</Col>
@@ -473,8 +473,8 @@
             <Col id="list_date">20031112</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Lee Na-young</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Jaden Fisher</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">38</Col>
             <Col id="price">33000</Col>
@@ -482,26 +482,26 @@
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Seungheon Lee</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Silver Wallace</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">45000</Col>
             <Col id="sal_sum">4500000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Seungheon Lee</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Silver Wallace</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1287000</Col>
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Gunja Business Division</Col>
-            <Col id="sal_nm">Seungheon Lee</Col>
+            <Col id="pro_id">Charlestown Business Division</Col>
+            <Col id="sal_nm">Silver Wallace</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">25</Col>
             <Col id="price">13500</Col>
@@ -509,8 +509,8 @@
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Kisu Kim</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Erin Miller</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">35</Col>
             <Col id="price">35000</Col>
@@ -518,8 +518,8 @@
             <Col id="list_date">20031202</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Song In-yong</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Kris Herring</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -527,8 +527,8 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Taeyoung Shin</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Skyler Murphy</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -536,8 +536,8 @@
             <Col id="list_date">20040204</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Selfish</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Kit Coleman</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
@@ -545,26 +545,26 @@
             <Col id="list_date">20031204</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Earthquake</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Lee Reid</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1122000</Col>
             <Col id="list_date">20030918</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daegu Division</Col>
-            <Col id="sal_nm">Earthquake</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Queens Division</Col>
+            <Col id="sal_nm">Lee Reid</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1122000</Col>
             <Col id="list_date">20030918</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Kim Jung Hoon</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Skylar Nash</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">10000</Col>
@@ -572,8 +572,8 @@
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Kim Jung Hoon</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Skylar Nash</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
@@ -581,8 +581,8 @@
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Lee Dong-beom</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Addison Fleming</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">1000</Col>
@@ -590,8 +590,8 @@
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Lee Dong-beom</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Addison Fleming</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
@@ -599,8 +599,8 @@
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Changjin Lee</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Skye Armstrong</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
@@ -608,8 +608,8 @@
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Daejeon Division</Col>
-            <Col id="sal_nm">Changjin Lee</Col>
+            <Col id="pro_id">Southwest Division</Col>
+            <Col id="sal_nm">Skye Armstrong</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">15000</Col>
@@ -617,8 +617,8 @@
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Lee Kyu Kim</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Aubrey Richardson</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
@@ -626,8 +626,8 @@
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Lee Kyu Kim</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Aubrey Richardson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -635,8 +635,8 @@
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Kwang Sub Lee</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Brett Shaw</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">25000</Col>
@@ -644,8 +644,8 @@
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Kwang Sub Lee</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Brett Shaw</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
@@ -653,8 +653,8 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Jonghoon Lee</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Will Andrews</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
@@ -662,8 +662,8 @@
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Mapo Division</Col>
-            <Col id="sal_nm">Jonghoon Lee</Col>
+            <Col id="pro_id">Brighton Division</Col>
+            <Col id="sal_nm">Will Andrews</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
@@ -671,8 +671,8 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Danni Burton</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
@@ -680,8 +680,8 @@
             <Col id="list_date">20050504</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Danni Burton</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -689,8 +689,8 @@
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Danni Burton</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">40000</Col>
@@ -698,8 +698,8 @@
             <Col id="list_date">20050504</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Sangjin Kang</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Danni Burton</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -707,17 +707,17 @@
             <Col id="list_date">20031016</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Moon Jeong-joo</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Dane Foster</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">20000</Col>
             <Col id="sal_sum">1800000</Col>
             <Col id="list_date">20030702</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Moon Jeong-joo</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Dane Foster</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">20000</Col>
@@ -725,8 +725,8 @@
             <Col id="list_date">20030702</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Park Insik</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Bennie Mcgowan</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">23000</Col>
@@ -734,17 +734,17 @@
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Busan Business Department</Col>
-            <Col id="sal_nm">Park Insik</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Allston Business Department</Col>
+            <Col id="sal_nm">Bennie Mcgowan</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">690000</Col>
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Go Sunkyung</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Jo Bass</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">27000</Col>
@@ -752,8 +752,8 @@
             <Col id="list_date">20030806</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Go Sunkyung</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Jo Bass</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">30000</Col>
@@ -761,8 +761,8 @@
             <Col id="list_date">20030925</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Kiwon Kim</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Elliot Cherry</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">27000</Col>
@@ -770,17 +770,17 @@
             <Col id="list_date">20030806</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Kiwon Kim</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Elliot Cherry</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">80</Col>
             <Col id="price">30000</Col>
             <Col id="sal_sum">2400000</Col>
             <Col id="list_date">20030925</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Hongcheol Kim</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Rowan Lindsey</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">33000</Col>
@@ -788,8 +788,8 @@
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Hongcheol Kim</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Rowan Lindsey</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">230</Col>
             <Col id="price">33000</Col>
@@ -797,17 +797,17 @@
             <Col id="list_date">20031030</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Wooonsik</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Dane Chase</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">1215000</Col>
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Jinkyung Kim</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Ashley Parker</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">1000</Col>
@@ -815,8 +815,8 @@
             <Col id="list_date">20030804</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Jinkyung Kim</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">Ashley Parker</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">36</Col>
             <Col id="price">1000</Col>
@@ -824,8 +824,8 @@
             <Col id="list_date">20030804</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongdong Division</Col>
-            <Col id="sal_nm">Hwang In-soo</Col>
+            <Col id="pro_id">Midwest Division</Col>
+            <Col id="sal_nm">River Doyle</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
@@ -833,8 +833,8 @@
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Strong</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Quinn Manning</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">20000</Col>
@@ -842,8 +842,8 @@
             <Col id="list_date">20040128</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Strong</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Quinn Manning</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">20000</Col>
@@ -851,8 +851,8 @@
             <Col id="list_date">20040128</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Mok Jin-cheol</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Tyler Hamilton</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">4000</Col>
@@ -860,8 +860,8 @@
             <Col id="list_date">20040212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Mok Jin-cheol</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Tyler Hamilton</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">4900</Col>
@@ -869,26 +869,26 @@
             <Col id="list_date">20040212</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Park Je-jun</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Aubrey Duncan</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Park Je-jun</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Aubrey Duncan</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Alex Bennett</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">15000</Col>
@@ -896,8 +896,8 @@
             <Col id="list_date">20031121</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Alex Bennett</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">25000</Col>
@@ -905,8 +905,8 @@
             <Col id="list_date">20031121</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Alex Bennett</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">66000</Col>
@@ -914,8 +914,8 @@
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Younghee Ahn</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Alex Bennett</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">60</Col>
             <Col id="price">66000</Col>
@@ -923,35 +923,35 @@
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Misook Lee</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Vic Oliver</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Misook Lee</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Vic Oliver</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Misook Lee</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Vic Oliver</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">990000</Col>
             <Col id="list_date">20031113</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Aiden Gilliam</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
@@ -959,8 +959,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Aiden Gilliam</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
@@ -968,8 +968,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Seongsu Division</Col>
-            <Col id="sal_nm">Lim Su-geun</Col>
+            <Col id="pro_id">Southeast Division</Col>
+            <Col id="sal_nm">Aiden Gilliam</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">34000</Col>
@@ -977,8 +977,8 @@
             <Col id="list_date">20031106</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Alex Christian</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
@@ -986,8 +986,8 @@
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Alex Christian</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
@@ -995,8 +995,8 @@
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kwak Heejung</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Alex Christian</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">45000</Col>
@@ -1004,8 +1004,8 @@
             <Col id="list_date">20030801</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kwon Mija</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Lynn Wyatt</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
@@ -1013,8 +1013,8 @@
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kwon Mija</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Lynn Wyatt</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
@@ -1022,8 +1022,8 @@
             <Col id="list_date">20030710</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Tyler Berry</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">5000</Col>
@@ -1031,8 +1031,8 @@
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Tyler Berry</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">200</Col>
             <Col id="price">3000</Col>
@@ -1040,17 +1040,17 @@
             <Col id="list_date">20030711</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilyoung Kim</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Tyler Berry</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">200</Col>
             <Col id="price">3000</Col>
             <Col id="sal_sum">600000</Col>
             <Col id="list_date">20030711</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilyoung Kim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Tyler Berry</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">5000</Col>
@@ -1058,8 +1058,8 @@
             <Col id="list_date">20050706</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilja Kim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Quinn Ryan</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
@@ -1067,8 +1067,8 @@
             <Col id="list_date">20031007</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Gilja Kim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Quinn Ryan</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">27000</Col>
@@ -1076,26 +1076,26 @@
             <Col id="list_date">20031007</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kim Gil-gil</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Aaren May</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">70</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">2310000</Col>
             <Col id="list_date">20031023</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Kim Gil-gil</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Aaren May</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">20</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">660000</Col>
             <Col id="list_date">20031023</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Park Soo-in</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Frankie Russell</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
@@ -1103,8 +1103,8 @@
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Park Soo-in</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Frankie Russell</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">40000</Col>
@@ -1112,8 +1112,8 @@
             <Col id="list_date">20031009</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Indeok Bae</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Phoenix Lloyd</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">29000</Col>
@@ -1121,8 +1121,8 @@
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Indeok Bae</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Phoenix Lloyd</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">29000</Col>
@@ -1130,8 +1130,8 @@
             <Col id="list_date">20031127</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Youngsoo Sim</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Cameron Davis</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">10000</Col>
@@ -1139,26 +1139,26 @@
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Lactating Business Division</Col>
-            <Col id="sal_nm">Youngsoo Sim</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">West Business Division</Col>
+            <Col id="sal_nm">Cameron Davis</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">15800</Col>
             <Col id="sal_sum">1580000</Col>
             <Col id="list_date">20040501</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Waterproof</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Caden Duncan</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
             <Col id="sal_sum">810000</Col>
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Waterproof</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Caden Duncan</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">27000</Col>
@@ -1166,8 +1166,8 @@
             <Col id="list_date">20031008</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Yoo Young-rak</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Tyler Barnes</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">10000</Col>
@@ -1175,17 +1175,17 @@
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Yoo Young-rak</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Tyler Barnes</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">50</Col>
             <Col id="price">10000</Col>
             <Col id="sal_sum">500000</Col>
             <Col id="list_date">20040210</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Already</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Billie Fletcher</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">60000</Col>
@@ -1193,8 +1193,8 @@
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Yeongdong Division</Col>
-            <Col id="sal_nm">Already</Col>
+            <Col id="pro_id">Brooklyn Division</Col>
+            <Col id="sal_nm">Billie Fletcher</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">30</Col>
             <Col id="price">50000</Col>
@@ -1202,8 +1202,8 @@
             <Col id="list_date">20030717</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Do-jun Kim</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">River Robertson</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
@@ -1211,8 +1211,8 @@
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Do-jun Kim</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">River Robertson</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">3000</Col>
@@ -1220,8 +1220,8 @@
             <Col id="list_date">20040408</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Inhyun Kim</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Carol Henderson</Col>
             <Col id="list_id">French textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
@@ -1229,17 +1229,17 @@
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Inhyun Kim</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Carol Henderson</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">23000</Col>
             <Col id="sal_sum">782000</Col>
             <Col id="list_date">20040824</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Shay Lindsay</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
@@ -1247,8 +1247,8 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Shay Lindsay</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
@@ -1256,17 +1256,17 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Insoo Park</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Shay Lindsay</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">56</Col>
             <Col id="price">33000</Col>
             <Col id="sal_sum">1848000</Col>
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Insoo Park</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Shay Lindsay</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">45</Col>
             <Col id="price">23000</Col>
@@ -1274,8 +1274,8 @@
             <Col id="list_date">20031201</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Jinyoung Lee</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Blake Stevens</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">90</Col>
             <Col id="price">25000</Col>
@@ -1283,17 +1283,17 @@
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Jinyoung Lee</Col>
-            <Col id="list_id">Chinese textbooks</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Blake Stevens</Col>
+            <Col id="list_id">Math textbooks</Col>
             <Col id="sal_amt">40</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1000000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Changhee Lee</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Steff Elliott</Col>
             <Col id="list_id">English textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -1301,8 +1301,8 @@
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Changhee Lee</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Steff Elliott</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">34</Col>
             <Col id="price">34000</Col>
@@ -1310,17 +1310,17 @@
             <Col id="list_date">20031002</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Lee Hwa-ryong</Col>
-            <Col id="list_id">Japanese textbook</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Danny Palmer</Col>
+            <Col id="list_id">History textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
             <Col id="sal_sum">1875000</Col>
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Lee Hwa-ryong</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Danny Palmer</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">75</Col>
             <Col id="price">25000</Col>
@@ -1328,8 +1328,8 @@
             <Col id="list_date">20031209</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Inho Jeong</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Vic Whitehead</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">25000</Col>
@@ -1337,8 +1337,8 @@
             <Col id="list_date">20040207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Inho Jeong</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Vic Whitehead</Col>
             <Col id="list_id">Korean textbook</Col>
             <Col id="sal_amt">39</Col>
             <Col id="price">25000</Col>
@@ -1346,8 +1346,8 @@
             <Col id="list_date">20040207</Col>
           </Row>
           <Row>
-            <Col id="pro_id">Ulsan Division</Col>
-            <Col id="sal_nm">Soojung Choi</Col>
+            <Col id="pro_id">Back Bay Division</Col>
+            <Col id="sal_nm">Elliot Mccoy</Col>
             <Col id="list_id">Science textbook</Col>
             <Col id="sal_amt">100</Col>
             <Col id="price">45000</Col>
@@ -1372,32 +1372,26 @@
       </Dataset>
     </Objects>
     <Script type="xscript5.1"><![CDATA[/**
-*  nexacro 17 demo
+*  nexacro 17.1 demo
 *  @MenuPath    grid > CategoryGrid
 *  @FileName  CategoryGrid.xfdl 
-*  @Creator  presales
-*  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
-*  date            Modifier                Description
-*******************************************************************************
-*  2019.10.14      presales                 최초 생성 
-*******************************************************************************
-*/
- 
+
 /************************************************************************************************
-* FORM 변수 선언 영역
+* FORM Variable Declaration area
 ************************************************************************************************/
 this.fv_arrGroupId;
 this.fv_width = 50;
 this.fn_DragType;
  
 /************************************************************************************************
-* FORM EVENT 영역(onload, onbeforeclose)
+* FORM EVENT area(onload, onbeforeclose)
 ************************************************************************************************/
  
 /**
-* @description Form onload
+ *Initalizes an array when the form is loaded .
+ *@param {Form object} CategoryGrid
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None. 
 */
 this.CategoryGrid_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -1405,27 +1399,17 @@ this.CategoryGrid_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 };
  
 /************************************************************************************************
-* CALLBACK 콜백 처리부분(Transaction, Popup)
-************************************************************************************************/
- 
- 
-/************************************************************************************************
-* CRUD 및 TRANSACTION 서비스 호출 처리
-************************************************************************************************/
- 
- 
-/************************************************************************************************
-* 사용자 FUNCTION 영역
-************************************************************************************************/
+ * User FUNCTION area
+ ************************************************************************************************/
 
 /**
-* @description Grouping 지어주는 함수
+* Build the Groups based on the column ids saved in an array and apply to the dataset dsGrid.
 */
 this.fnSetGroup = function()
 {
 	var i;
 	var sKeyString = "G:";
-	
+	//If no column were dragged, Don't group
 	if (this.fv_arrGroupId.length == 0) 
 	{
 		this.dsGrid.set_keystring("");
@@ -1433,24 +1417,26 @@ this.fnSetGroup = function()
 	else 
 	{
 		for (i = 0; i < this.fv_arrGroupId.length; i++) 
-		{
+		{	//If one column was dragged, set the keyString as "G:column1" which will group the dataset based on column1.
 			if (i == 0) 
 			{
 				sKeyString += this.fv_arrGroupId[i];
 			}
+			//If more columns were dropped, set the keyString as "G:column1,column2" which will form the "column1" group first and then the "column2" group within column1.
 			else 
 			{
 				sKeyString += "," + this.fv_arrGroupId[i];
 			}
 		}
-		
+		//Apply the grouping to the dataset
 		this.dsGrid.set_keystring(sKeyString);
+		//Sets the size of first column
 		this.grdMain.setFormatColProperty(0, "size", 150);
 	}
 };
  
 /**
-* @description 트리 구조 만드는 함수
+* Add the div components to the divCategory.
 */
 this.fnSetTree = function ()
 {
@@ -1462,6 +1448,7 @@ this.fnSetTree = function ()
 	var objRmv;
 	var rtn;
 	
+	//Make all the components of the divCategory form as invisible
 	for (i = this.divCategory.form.components.length - 1; i >= 0; i--) 
 	{
 		this.divCategory.form.components[i].set_visible(false);
@@ -1473,36 +1460,43 @@ this.fnSetTree = function ()
 		return;
 	}
 	
+	//For each header column dropped onto the divCategory, create a child Div component
 	for (i = 0; i < this.fv_arrGroupId.length; i++) 
 	{
 		nLeft = 10 + i * (this.fv_width + 10);
 		nTop = 10;
 		
+		//If a new header column is dropped onto the divCategeory, create a child Div
 		if (this.gfnIsNull(this.divCategory.form.components["stGroup" + i]) == true) 
 		{
+			// create a child Div component with id = "stGroup+i
+			// and add it to the divCategory.form
 			objStatic = new Div("stGroup" + i, nLeft, nTop, this.fv_width, 26);
 			this.divCategory.form.addChild(objStatic.name, objStatic);
 			
 			nCell = this.grdMain.getBindCellIndex("body", this.fv_arrGroupId[i]);
 			
+			//set child Div text property to the header column text
 			objStatic.set_text(this.grdMain.getCellProperty("head", nCell, "text"));
 			objStatic.groupid = this.fv_arrGroupId[i];
 			
-			//objStatic.set_align("center middle"); text align인거 같은데 제어..가안되나?
+			//objStatic.set_align("center middle"); ***********I think it's text align, but can't control ..?
 			objStatic.set_background("#ff6c54");
 			objStatic.set_border("1 solid #f95d43ff ");
-			objStatic.set_borderRadius("2px");//borderType->borderRadius로 property명 변경
+			objStatic.set_borderRadius("2px");//Change property name to borderType-> borderRadius
 			objStatic.set_color("#ffffff");
 			objStatic.set_cursor("hand");
 			objStatic.set_font("bold 9 Malgun Gothic");
 			objStatic.set_padding("0 0 2 0");
 			
+			//add ondrag and on drop event handler to the child Div
 			objStatic.addEventHandler("ondrag", this.fnTreeDrag, this);
 			objStatic.addEventHandler("ondrop", this.fnTreeDrop, this);
 			objStatic.show();
 		}
+		//If the header colum was already dropped onto the divCategeory, make it visible
 		else 
-		{
+		{	
 			nCell = this.grdMain.getBindCellIndex("body", this.fv_arrGroupId[i]);
 			this.divCategory.form.components["stGroup" + i].move(nLeft, nTop);
 			this.divCategory.form.components["stGroup" + i].set_text(this.grdMain.getCellProperty("head", nCell, "text"));
@@ -1514,22 +1508,29 @@ this.fnSetTree = function ()
 };
  
 /**
-* @description 해당 Row의 Text값을 ReserveSubSum으로 구해서 리턴.
+* Returns the text value of the row as ReserveSubSum and returns.
 */
 this.fnSetSubSumText = function(nRow)
 {
 	var nLevel = this.dsGrid.getRowLevel(nRow);
-	
+	var a;
+	var b;
+	var c;
+	var d;
 	if (nLevel == 0) 
 	{
 		return "";
 	}
-	
+	a= this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)];
+	b=  this.grdMain.getTreeChildCount(nRow);
+	c=  this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]);
+	d= this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]) + "(" + this.grdMain.getTreeChildCount(nRow) + ")";
 	return this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]) + "(" + this.grdMain.getTreeChildCount(nRow) + ")";
 };
  
 /**
-* @description 이미지 초기화
+
+* Reset Static component stDragImg
 */
 this.fnDragImgClear = function ()
 {
@@ -1540,7 +1541,7 @@ this.fnDragImgClear = function ()
 };
  
 /**
-* @description 라인 그리기
+* @description Line drawing
 */
 this.fnSetLine = function (nLevel)
 {
@@ -1556,11 +1557,14 @@ this.fnSetLine = function (nLevel)
 };
  
 /************************************************************************************************
-* 각 COMPONENT 별 EVENT 영역
+* EVENT area for each COMPONENT
 ************************************************************************************************/
  
 /**
-* @description ondragmove 
+ *Move the static drag component while object is dragged within Form.
+ *@param {Form object} CategoryGrid
+ *@param {nexacro event} DragEventInfo ondragmove
+ *@returns Boolean "false" by default. 
 */
 this.CategoryGrid_ondragmove = function(obj:Form, e:nexacro.DragEventInfo)
 {
@@ -1601,7 +1605,7 @@ this.CategoryGrid_ondrop = function (obj:Form, e:nexacro.DragEventInfo)
 		
 		nCell = this.grdMain.getBindCellIndex("body", e.userdata);
 		
-		//인덱스 제거
+		//Remove index
 		this.dsGroupId.setColumn(0, e.userdata, "0");
 		
 		this.grdMain.setFormatColProperty(nCell, "size", 120);
@@ -1616,19 +1620,24 @@ this.CategoryGrid_ondrop = function (obj:Form, e:nexacro.DragEventInfo)
 };
  
 /**
-* @description ondrop 
+ *Make the dropped column invisible in grdMain, group dsGrid based on the dropped columns,
+ *add the child div to the divCategeory and clear the static drag component.
+ *@param {Div object} divCategory
+ *@param {nexacro event} DragEventInfo ondrop
+ *@returns Boolean "false" by default. 
 */
 this.divCategory_ondrop = function (obj:Div, e:nexacro.DragEventInfo)
 {
 	if(this.fn_DragType == "TREE") 
 	{
 		return;
-	}
-	
+	}	
+	//Sets the size of dropped column to be 0 in the main grid
 	this.grdMain.setFormatColProperty(this.stDragImg.selcol, "size", 0);
-	//인덱스 추가
+	//e.userdata has column id of dataset dropped on to the Div
+	//Add index 
 	this.dsGroupId.setColumn(0, e.userdata, "1");
-	
+	//Save the column id of dataset dropped on to the Div into an array
 	this.fv_arrGroupId[this.fv_arrGroupId.length] = e.userdata;
 	
 	this.fnSetGroup();
@@ -1638,21 +1647,29 @@ this.divCategory_ondrop = function (obj:Div, e:nexacro.DragEventInfo)
 };
  
 /**
-* @description ondrag
+ *Sets static drag component invisible and move it based on drag location .
+ *@param {Grid object} grdMain
+ *@param {nexacro event} GridDragEventInfo ondrag
+ *@returns Boolean "false" by default. 
 */
 this.grdMain_ondrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 {
 	this.fn_DragType = "GRID";
 	
+	//Check if header column is dragged. When header column is dragged, e.row =-1
 	if (e.row == -1) 
 	{
+		//Get the header coumn text
 		var cellText = obj.getCellText(e.row, e.cell);
 		
+		//If the hearder colum text is not Null,
+		//Set the static drag component's text, col and make it visible. 
 		if (!this.gfnIsNull(cellText)) 
 		{
 			this.stDragImg.set_text(obj.getCellText(e.row, e.cell));
 			this.stDragImg.selcol = e.col;
 			this.stDragImg.set_visible(true);
+			//Save the column id of dataset bound to the cell.
 			e.userdata = obj.getCellProperty("body", e.cell, "text").toString().replace("bind:", "");
 			return true;
 		}
@@ -1660,20 +1677,25 @@ this.grdMain_ondrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 };
  
 /**
-* @description TreeDrag 
+ *Sets static drag component's text to Div's text and make it visible.
+ *@param {Div object} 
+ *@param {nexacro event} DragEventInfo ondrag
+ *@returns Boolean "true". 
 */
 this.fnTreeDrag = function (obj:Div, e:nexacro.DragEventInfo)
 {
 	this.fn_DragType = "TREE";
 	this.stDragImg2.set_text(obj.text);
 	this.stDragImg2.set_visible(true);
-	
+	//groupid is the column id set in fnSetTree function
 	e.userdata = obj.groupid;
 	return true;
 };
  
 /**
-* @description TreeDrop 
+ *@param {Div object} 
+ *@param {nexacro event} DragEventInfo ondrop
+ *@returns Boolean "true". 
 */
 this.fnTreeDrop = function (obj:Div, e:nexacro.DragEventInfo)
 {
