@@ -706,10 +706,10 @@ this.FILTER_APPLY_IMAGE_URL = "imagerc::grd_filter_check.png";
 this.FILTER_APPLY_IMAGE_SIZE = [30, 30];
 
 // Message to display when no results are found
-this.GRID_FIND_NO_RESULT_MESSAGE = "\"{0}\" 을(를) 더 이상 찾을 수 없습니다.";
+this.GRID_FIND_NO_RESULT_MESSAGE = "\"{0}\" Can no longer be found.";
 
 // Message to display the number of changes when replacing all
-this.GRID_REPLACE_COUNT_MESSAGE = "{0}개 항목이 변경되었습니다.";
+this.GRID_REPLACE_COUNT_MESSAGE = "{0} items changed.";
 
 this.nCell1 = "";
 this.cellFixFalg = "off";
@@ -2568,7 +2568,7 @@ this.executeFilter = function(grid, headCellIndex, filterString, filterData)
         }
     }
 	
-    // 필터 적용
+    // Apply filter
     ds.filter(resultString);
 }
 
@@ -3620,7 +3620,7 @@ this.replaceGridCellText = function(grid, findRow, findCell, findText, replaceTe
 {
     var result = {
         'replace': true,
-        'message': '처리되었습니다.',
+        'message': 'Has been processed.',
         'row': findRow,
         'cell': findCell
     };
@@ -3694,7 +3694,7 @@ this.replaceGridCellText = function(grid, findRow, findCell, findText, replaceTe
         else
         {
             result.replace = false;
-            result.message = "바꿀 문자열에 해당하는 데이터 없음";
+            result.message = "No data corresponding to the string to be replaced";
         }
     }
     else if (displayType == "number" || displayType == "currency")
@@ -4005,12 +4005,10 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
             var isLeapYear = this.fnIsLeapYear(dt);
             if (!isLeapYear && inputDay == 29)
             {
-                //errorMsg = "해당 연도는 윤년이 아닙니다.";
 				errorMsg = "The year is not a leap year.";
             }
             else
             {
-                //errorMsg = "일자가 올바르지 않습니다.";
 				errorMsg = "The date is incorrect.";
             }
         }
@@ -4758,7 +4756,6 @@ this.gridCopyOnkeydown = function (obj, e)
 								{
 									if(temp != Math.abs(obj.selectendrow[i] - obj.selectstartrow[i]))
 									{
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										alert("This command is not available in multiple selection ranges.");
 										return;
 									}
@@ -4880,7 +4877,6 @@ this.gridCopyOnkeydown = function (obj, e)
 									if(temp != Math.abs(obj.selectendcol[i] - obj.selectstartcol[i]))
 									{
 										alert("This command is not available in multiple selection ranges.");
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										return;
 									}
 								}
@@ -4917,7 +4913,6 @@ this.gridCopyOnkeydown = function (obj, e)
 					//CTRL cell only (incomplete)
 					else
 					{
-						//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 						alert("This command is not available in multiple selection ranges.");
 						return; 
 						
@@ -5299,7 +5294,6 @@ this.gridCopyOnkeydown = function (obj, e)
 								{
 									if(temp != Math.abs(obj.selectendrow[i] - obj.selectstartrow[i]))
 									{
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										alert("This command is not available in multiple selection ranges.");
 										return;
 									}

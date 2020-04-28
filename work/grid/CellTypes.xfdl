@@ -432,9 +432,9 @@ this.chkFlag = "0";
 
 /**
  * Grid check all
- * @param {Grid} Grid object
  * Check column Chk for all rows.
  * Also check the checkbox in Head band.
+ * @param {Grid} Grid object
  */
 this.fnBlockChk = function (objGrid)
 {
@@ -452,9 +452,9 @@ this.fnBlockChk = function (objGrid)
 
 /**
  * Grid uncheck all
- * @param {Grid object} objGrid
  * UnCheck column Chk for all rows.
  * Also uncheck the checkbox in Head band.
+ * @param {Grid object} objGrid
  */
 this.fn_BlockUnChk = function (objGrid)
 {
@@ -490,7 +490,10 @@ this.fnRadioListClick = function(grid, ds, col, row)
  * Each COMPONENT EVENT
  ************************************************************************************************/
 /**
- * @description oncellclick 
+ * @description performs various functions depending on which cell the user clicks inside Grid grdList02
+ * @param {nexacro Object} Grid grdList02
+ * @param {nexacro Event} GridClickEventInfo fires event when user clicks inside Grid component
+ * returns none
 */
 this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
@@ -516,6 +519,9 @@ this.grdList02_oncellclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 /**
  * @description onheadclick 
  * Check/uncheck when you click on the first header column
+ * @param {nexacro Object} Grid grdList01
+ * @param {nexacro Event} GridClickEventInfo event fires when user clicks on Grid component
+ * @returns none
 */
 this.grdList01_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
