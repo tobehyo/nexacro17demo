@@ -1513,18 +1513,10 @@ this.fnSetTree = function ()
 this.fnSetSubSumText = function(nRow)
 {
 	var nLevel = this.dsGrid.getRowLevel(nRow);
-	var a;
-	var b;
-	var c;
-	var d;
 	if (nLevel == 0) 
 	{
 		return "";
 	}
-	a= this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)];
-	b=  this.grdMain.getTreeChildCount(nRow);
-	c=  this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]);
-	d= this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]) + "(" + this.grdMain.getTreeChildCount(nRow) + ")";
 	return this.dsGrid.getColumn(nRow + nLevel, this.fv_arrGroupId[this.fv_arrGroupId.length - (nLevel)]) + "(" + this.grdMain.getTreeChildCount(nRow) + ")";
 };
  
