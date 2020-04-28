@@ -679,7 +679,7 @@
 ************** Source modification history ************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.10.14      presales                  최초 생성 
+*  2019.10.14      presales                  Initial creation 
 *******************************************************************************
 */
 
@@ -706,10 +706,10 @@ this.FILTER_APPLY_IMAGE_URL = "imagerc::grd_filter_check.png";
 this.FILTER_APPLY_IMAGE_SIZE = [30, 30];
 
 // Message to display when no results are found
-this.GRID_FIND_NO_RESULT_MESSAGE = "\"{0}\" 을(를) 더 이상 찾을 수 없습니다.";
+this.GRID_FIND_NO_RESULT_MESSAGE = "\"{0}\" Can no longer be found.";
 
 // Message to display the number of changes when replacing all
-this.GRID_REPLACE_COUNT_MESSAGE = "{0}개 항목이 변경되었습니다.";
+this.GRID_REPLACE_COUNT_MESSAGE = "{0} items changed.";
 
 this.nCell1 = "";
 this.cellFixFalg = "off";
@@ -855,10 +855,10 @@ this.fnIndexOfIgnoreCase = function(value, sFind, nStart)
 /************************************************************************************************
  * Function Name: fnReplaceIgnoreCase
  * Description  : Substitutes a given string, ignoring the case.
- * Arguments    : @param {string} sOrg 대상 문자열( 예 : "aaBBbbcc" )
-		  		  @param {string} sRepFrom 찾을 문자열( 예 : "bb" )
-		  		  @param {string} sRepTo 치환할 문자열 ( 예 : "xx" )
- * Return       : @return {string} 치환된 문자열 ( 예 : "aaxxxxccxx" ).
+ * Arguments    : @param {string} sOrg Target string (eg "aaBBbbcc")
+		  		  @param {string} sRepFrom String to find (eg "bb")
+		  		  @param {string} sRepTo String to replace (eg "xx")
+ * Return       : @return {string} The substituted string (eg "aaxxxxccxx").
 *************************************************************************************************/
 this.fnReplaceIgnoreCase = function(sOrg, sRepFrom, sRepTo)
 {
@@ -2090,12 +2090,12 @@ Function common to mouse over filter function
 
 /**
 * onlbuttondown Event Handler
-* @param {Grid} obj Event가 발생한 Grid Component
+* @param {Grid} obj Grid Component where the event occurred
 * @param {GridMouseEventInfo} e GridMouseEventInfo
 */
 this.filterGridOnLButtonDownHandler = function(obj, e)
 {
-    // head cell resize 시 필터가능 버튼을 숨기기위한 설정
+    // Setting to hide the filterable button when resizing the head cell
     if (e.row == -1)
     {
         obj.celLResizeLbuttondown = true;
@@ -2123,7 +2123,7 @@ this.filterGridOnLButtonUpHandler = function(obj, e)
 
 /**
 * onmousemove Event Handler
-* @param {Grid} obj Event가 발생한 Grid Component
+* @param {Grid} obj Grid Component where the event occurred
 * @param {GridMouseEventInfo} e GridMouseEventInfo
 */
 this.filterGridOnMouseMoveHandler = function(obj, e)
@@ -2568,7 +2568,7 @@ this.executeFilter = function(grid, headCellIndex, filterString, filterData)
         }
     }
 	
-    // 필터 적용
+    // Apply filter
     ds.filter(resultString);
 }
 
@@ -2623,7 +2623,7 @@ this.hideHeadAppendFilter = function(grid)
 
 /**
 * Removed components added to Grid head over filter function
-* @param {Grid} grid 대상 Grid Component
+* @param {Grid} grid Target Grid Component
 */
 this.removeOverFilterComps = function(grid)
 {
@@ -2851,7 +2851,7 @@ this.getBindColumnNameByIndex = function(grid, index)
 
 /**
 * Get the body cell matched to the head cell
-* @param {Grid} grid 대상 Grid Component
+* @param {Grid} grid Target Grid Component
 * @param {number} headCellIndex head cell index
 */
 this.getBodyCellIndex = function(grid, headCellIndex)
@@ -3620,7 +3620,7 @@ this.replaceGridCellText = function(grid, findRow, findCell, findText, replaceTe
 {
     var result = {
         'replace': true,
-        'message': '처리되었습니다.',
+        'message': 'Has been processed.',
         'row': findRow,
         'cell': findCell
     };
@@ -3694,7 +3694,7 @@ this.replaceGridCellText = function(grid, findRow, findCell, findText, replaceTe
         else
         {
             result.replace = false;
-            result.message = "바꿀 문자열에 해당하는 데이터 없음";
+            result.message = "No data corresponding to the string to be replaced";
         }
     }
     else if (displayType == "number" || displayType == "currency")
@@ -3743,7 +3743,7 @@ this.replaceGridCellText = function(grid, findRow, findCell, findText, replaceTe
             // Like "0000-01-01" when there is no value
             // It may be found in the text.
             result.replace = false;
-            result.message = "유효한 날짜가 아닙니다.";
+            result.message = "It is not a valid date.";
         }
         else
         {
@@ -3902,7 +3902,7 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
 				if (tmpStr.length != 4 || !nexacro.isNumeric(tmpStr))
 				{
 					isDate = false;
-					errorMsg = "연도가 올바르지 않습니다.";
+					errorMsg = "The year is incorrect.";
 				}
 				
 				// For date check
@@ -3937,7 +3937,7 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
 						if (parseInt(tmpStr) < 1 || parseInt(tmpStr) > 12)
 						{
 							isDate = false;
-							errorMsg = "월이 올바르지 않습니다.";
+							errorMsg = "The month is incorrect.";
 						}
 						
 						// For date check
@@ -3955,7 +3955,7 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
 						if (parseInt(tmpStr) < 0 || parseInt(tmpStr) > 23)
 						{
 							isDate = false;
-							errorMsg = "시간이 올바르지 않습니다.";
+							errorMsg = "The time is incorrect.";
 						}
 					}
 					else if (checkMask == "mm" || checkMask == "ss")
@@ -3963,14 +3963,14 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
 						if (parseInt(tmpStr) < 0 || parseInt(tmpStr) > 59)
 						{
 							isDate = false;
-							errorMsg = "분이 올바르지 않습니다.";
+							errorMsg = "The minute is incorrect.";
 						}
 					}
 				}
 				else
 				{
 					isDate = false;
-					errorMsg = "날짜 형식이 올바르지 않습니다.";
+					errorMsg = "The date format is incorrect.";
 				}
 				
 				dateValue[dateValue.length] = tmpStr.trim(" ");
@@ -4005,12 +4005,10 @@ this.replaceDateMaskValue = function(columnValue, displayValue, findText, replac
             var isLeapYear = this.fnIsLeapYear(dt);
             if (!isLeapYear && inputDay == 29)
             {
-                //errorMsg = "해당 연도는 윤년이 아닙니다.";
 				errorMsg = "The year is not a leap year.";
             }
             else
             {
-                //errorMsg = "일자가 올바르지 않습니다.";
 				errorMsg = "The date is incorrect.";
             }
         }
@@ -4208,7 +4206,7 @@ this.parseStringMask = function(strMask, maskChar)
 * @param {*} columnValue Actual value of dataset before change
 * @param {string} displayValue String shown
 * @param {string} findText String to find
-* @param {string} replaceText 바꿀 문자열
+* @param {string} replaceText String to replace
 * @param {string} strMask Mask attribute value
 * @param {string} maskChar Mask character
 * @param {boolean} strict Case sensitivity
@@ -4512,10 +4510,10 @@ this.gridonheadclick = function(obj, e)
     }
     else
     {
-        // Shift 키
+        // Shift key
         if (e.shiftKey) multiple = true;
 		
-        // Ctrl 키
+        // Ctrl key
         if (e.ctrlKey) multiple = true;
 		
         if (this.setSortStatus(obj, e.cell, multiple))
@@ -4545,7 +4543,7 @@ this.edt_Search_onkeydown = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
 			if(endDate > startDate)
 			this.dsList.filter("Column0 == '" + obj.text + "'");
 			else
-			alert("시작일은 종료일보다 클 수 없습니다.");
+			alert("The start date cannot be greater than the end date.");
 		}
 	}
 };
@@ -4562,7 +4560,7 @@ this.edt_Search_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
 	if(endDate > startDate)
 		this.dsList.filter("String(Column0).indexOf('" + obj.text + "') >= 0");
 	else
-		alert("시작일은 종료일보다 클 수 없습니다.");
+		alert("The start date cannot be greater than the end date.");
 };
 
 
@@ -4697,7 +4695,7 @@ this.gridCopyOnkeydown = function (obj, e)
 					}
 					
 					//When nFlag2 is 1: Specify multiple columns
-					//nFlag2 가 0일때 : 단일 열 지정
+					//nFlag2 is 0: single column designation
 					for(var i=1; i<obj.selectstartcol.length; i++)
 					{
 						if(obj.selectstartcol[0] != obj.selectstartcol[i])
@@ -4758,7 +4756,6 @@ this.gridCopyOnkeydown = function (obj, e)
 								{
 									if(temp != Math.abs(obj.selectendrow[i] - obj.selectstartrow[i]))
 									{
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										alert("This command is not available in multiple selection ranges.");
 										return;
 									}
@@ -4880,7 +4877,6 @@ this.gridCopyOnkeydown = function (obj, e)
 									if(temp != Math.abs(obj.selectendcol[i] - obj.selectstartcol[i]))
 									{
 										alert("This command is not available in multiple selection ranges.");
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										return;
 									}
 								}
@@ -4917,7 +4913,6 @@ this.gridCopyOnkeydown = function (obj, e)
 					//CTRL cell only (incomplete)
 					else
 					{
-						//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 						alert("This command is not available in multiple selection ranges.");
 						return; 
 						
@@ -5299,7 +5294,6 @@ this.gridCopyOnkeydown = function (obj, e)
 								{
 									if(temp != Math.abs(obj.selectendrow[i] - obj.selectstartrow[i]))
 									{
-										//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
 										alert("This command is not available in multiple selection ranges.");
 										return;
 									}
@@ -5420,7 +5414,7 @@ this.gridCopyOnkeydown = function (obj, e)
 								{
 									if(temp != Math.abs(obj.selectendcol[i] - obj.selectstartcol[i]))
 									{
-										alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
+										alert("This command is not available in multiple selection ranges.");
 										return;
 									}
 								}
@@ -5457,7 +5451,7 @@ this.gridCopyOnkeydown = function (obj, e)
 					//CTRL cell only (incomplete)
 					else
 					{
-						//alert("다중 선택 범위에서는 사용할 수 없는 명령입니다.");
+						
 						alert ("This command is not available in multiple selections.");
 						return; 
 						

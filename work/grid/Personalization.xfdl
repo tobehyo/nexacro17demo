@@ -33,7 +33,7 @@
                 <Cell col="2" text="bind:Column0"/>
                 <Cell col="3" text="bind:Column2" textAlign="left"/>
                 <Cell col="4" displaytype="number" text="bind:Column9" mask="#,###" textAlign="right"/>
-                <Cell col="5" displaytype="date" text="bind:Column4"/>
+                <Cell col="5" displaytype="date" text="bind:Column4" calendardateformat="MM-dd-yyyy ddd"/>
               </Band>
             </Format>
           </Formats>
@@ -65,8 +65,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">3000</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Seunghwan Lee</Col>
-            <Col id="Column2">118 Gajwa-dong, Seo-gu, Incheon</Col>
+            <Col id="Column0">Tom Hanks</Col>
+            <Col id="Column2">1840 Century Park East, Los Angeles USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120101</Col>
@@ -78,8 +78,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">4000</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Lee Seung-han</Col>
-            <Col id="Column2">104, Jeongwang-dong, Siheung-si, Gyeonggi-do (2nd Street)</Col>
+            <Col id="Column0">Madonna</Col>
+            <Col id="Column2">Wellington Road, London</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120201</Col>
@@ -91,8 +91,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">50000</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">Chulwoo Lee</Col>
-            <Col id="Column2">501-7, Gwango-dong, Icheon-si, Gyeonggi-do</Col>
+            <Col id="Column0">Taylor Swift</Col>
+            <Col id="Column2">Thompson Lane, Nashville Tennessee USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120601</Col>
@@ -104,8 +104,8 @@
             <Col id="Column5">10</Col>
             <Col id="Column9">51651</Col>
             <Col id="Column8">B</Col>
-            <Col id="Column0">Soonhee Kang</Col>
-            <Col id="Column2">Yeouido-dong, Yeongdeungpo-gu, Seoul 1</Col>
+            <Col id="Column0">Oprah Winfrey</Col>
+            <Col id="Column2">W 57th St, New York, NY USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120931</Col>
@@ -117,8 +117,8 @@
             <Col id="Column5">12</Col>
             <Col id="Column9">216548</Col>
             <Col id="Column8">C</Col>
-            <Col id="Column0">Jaehyun Bae</Col>
-            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Brad Pitt</Col>
+            <Col id="Column2">Wilshire Boulevard</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20121005</Col>
@@ -130,8 +130,8 @@
             <Col id="Column5">15</Col>
             <Col id="Column9">216218</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Strong work</Col>
-            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
+            <Col id="Column0">Beyonce</Col>
+            <Col id="Column2">Tribeca Penthouse</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20121111</Col>
@@ -143,8 +143,8 @@
             <Col id="Column5">12</Col>
             <Col id="Column9">954561</Col>
             <Col id="Column8">A</Col>
-            <Col id="Column0">Myeongki Kim</Col>
-            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Ellen DeGeneres</Col>
+            <Col id="Column2">Burbank California USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120101</Col>
@@ -156,8 +156,8 @@
             <Col id="Column5">13</Col>
             <Col id="Column9">2121684</Col>
             <Col id="Column8">D</Col>
-            <Col id="Column0">Byeon Gil Yong</Col>
-            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
+            <Col id="Column0">Kim Kardashian</Col>
+            <Col id="Column2">Hidden Hills, California USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120201</Col>
@@ -169,8 +169,8 @@
             <Col id="Column5">14</Col>
             <Col id="Column9">6549845</Col>
             <Col id="Column8">D</Col>
-            <Col id="Column0">Seol Dong-ok</Col>
-            <Col id="Column2">116-15, Singil-dong, Yeongdeungpo-gu, Seoul</Col>
+            <Col id="Column0">Angelina Jolie</Col>
+            <Col id="Column2">Newport Beach, California USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120601</Col>
@@ -182,8 +182,8 @@
             <Col id="Column5">19</Col>
             <Col id="Column9">65150</Col>
             <Col id="Column8">F</Col>
-            <Col id="Column0">Seungho Cho</Col>
-            <Col id="Column2">636 Donam-dong, Seongbuk-gu, Seoul</Col>
+            <Col id="Column0">Jennifer Lopez</Col>
+            <Col id="Column2">Santa Monica Boulevard, California USA</Col>
             <Col id="Column6">/</Col>
             <Col id="Column7"/>
             <Col id="Column10">20120931</Col>
@@ -191,8 +191,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Jaehyun Bae</Col>
-            <Col id="Column2">98-252, Hwagok-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Rihanna</Col>
+            <Col id="Column2">220 West 42nd Street, New York USA</Col>
             <Col id="Column3">216548</Col>
             <Col id="Column4">20171005</Col>
             <Col id="Column5">12</Col>
@@ -205,8 +205,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Strong work</Col>
-            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
+            <Col id="Column0">Natalie Portman</Col>
+            <Col id="Column2">Cole Avenue, Los Angeles California USA</Col>
             <Col id="Column3">216218</Col>
             <Col id="Column4">20171111</Col>
             <Col id="Column5">15</Col>
@@ -219,8 +219,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Myeongki Kim</Col>
-            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Jennifer Aniston</Col>
+            <Col id="Column2">W Sunset Boulevard, California USA</Col>
             <Col id="Column3">954561</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">12</Col>
@@ -233,8 +233,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Byeon Gil Yong</Col>
-            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
+            <Col id="Column0">Katy Perry</Col>
+            <Col id="Column2">Los Angeles USA</Col>
             <Col id="Column3">2121684</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">13</Col>
@@ -247,8 +247,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Strong work</Col>
-            <Col id="Column2">257 Myeongil-dong, Gangdong-gu, Seoul</Col>
+            <Col id="Column0">Steven Spielberg</Col>
+            <Col id="Column2">Universal City Plaza, Universal City, California USA</Col>
             <Col id="Column3">216218</Col>
             <Col id="Column4">20171111</Col>
             <Col id="Column5">15</Col>
@@ -261,8 +261,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Myeongki Kim</Col>
-            <Col id="Column2">631-6, Deungchon-dong, Gangseo-gu, Seoul</Col>
+            <Col id="Column0">Miley Cyrus</Col>
+            <Col id="Column2">Malibu, California USA</Col>
             <Col id="Column3">954561</Col>
             <Col id="Column4">20170101</Col>
             <Col id="Column5">12</Col>
@@ -275,8 +275,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Byeon Gil Yong</Col>
-            <Col id="Column2">370, Okgil-dong, Gwangmyeong-si, Gyeonggi-do</Col>
+            <Col id="Column0">Dwayne Johnson</Col>
+            <Col id="Column2">Wilshire Boulevard, Beverley Hills, USA</Col>
             <Col id="Column3">2121684</Col>
             <Col id="Column4">20170201</Col>
             <Col id="Column5">13</Col>
@@ -289,8 +289,8 @@
           </Row>
           <Row>
             <Col id="Chk"/>
-            <Col id="Column0">Seol Dong-ok</Col>
-            <Col id="Column2">116-15, Singil-dong, Yeongdeungpo-gu, Seoul</Col>
+            <Col id="Column0">Leonardo di Caprio</Col>
+            <Col id="Column2">Sunset Boulevard, California USA</Col>
             <Col id="Column3">6549845</Col>
             <Col id="Column4">20170601</Col>
             <Col id="Column5">14</Col>
@@ -310,25 +310,28 @@
 *  @FileName  Personalization.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.10.14      presales                  최초 생성 
+*  2019.10.14      presales                Initial creation
 *******************************************************************************
 */
 
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
+/******************************************************************************
+ * FORM Variable declaration area
+ *******************************************************************************/
 this.chkFlag = "0";
 
-/************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
- ************************************************************************************************/
+/******************************************************************************
+ * FORM EVENT domain(onload, onbeforeclose)
+ *******************************************************************************/
  
 /**
- * @description Form onload
+ * @description Initializes the format of the grid object grdListUnique when the form loads
+ * @param {nexacro Object} Form the current form object
+ * @param {nexacro Event} LoadEventInfo fires when the form object is loaded
+ * @returns none
 */
 this.Personalization_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -343,22 +346,23 @@ this.Personalization_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK Callback processing part (Transaction, Popup)
  ************************************************************************************************/
 
 
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call handling
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 
 /**
- * 그리드 전체 선택
- * @param {Grid} objGrid 해당 grid
- */
+  * Utility function called by grdListUnique_onheadclick event handler. Checks all checkboxes
+  * @param {nexacro Object} objGrid equivalent grid
+  * @returns none
+  */
 this.fnBlockChk = function (objGrid)
 {
 	var i;
@@ -373,9 +377,10 @@ this.fnBlockChk = function (objGrid)
 };
 
 /**
- * 그리드 전체 해제
- * @param {Grid} objGrid 해당 grid
- */
+  * Utility function called by grdListUnique_onheadclick event handler. Uncheck all checkboxes 
+  * @param {nexacro Object} Grid objGrid equivalent grid
+  * @returns none
+  */
 this.fnBlockUnChk = function (objGrid)
 {
 	var i;
@@ -390,44 +395,60 @@ this.fnBlockUnChk = function (objGrid)
 };
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
  
 /**
- * @description onclick
+ * @description When user clicks on the "Save current format" button (btnSave object), the application
+ *				saves the current grid format as application data
+ * @param {nexacro Object} Button btn_Save 
+ * @param {nexacro Event} ClickEventInfo when user clicks on the button
+ * @returns none
 */
 this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var formatString = this.grdListUnique.getCurFormatString();
 	nexacro.setPrivateProfile("grid_format", formatString);
-	alert("그리드 포맷 저장완료");
+	alert ("Completion of grid format storage");
 };
 
 /**
- * @description onclick
+ * @description When user clicks on Grid Initialization button (btnInit object) the application
+ *				intializes the format of the grid, saves it as application data and gives a popup 
+ *				message to user informing the same
+ * @param {nexacro Object} Button object btnInit
+ * @param {nexacro Event} ClickEventInfo fires when user clicks on the button
+ * @returns none
 */
 this.btnInit_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 {
+	//initialize the format of grid
 	this.grdListUnique.set_formats(this.grd_orgFormat);
 
+	//save the format of grid as application data with key as "grid_format"
 	var g_format = nexacro.setPrivateProfile("grid_format", "");
 
-	alert("그리드 초기화 및 포맷저장완료");
+	alert ("Grid initialization and format saving complete");
 };
 
 /**
- * @description onheadclick
+ * @description onheadclick When the check box column header is checked or unchecked, it 
+ * 				accordingly checks or unchecks all the boxes in this column
+ * @param {nexacro Object} Grid the current grid object grdListUnique
+ * @param {nexacro Event} GridClickEventInfo fires when a click event happens in the Grid component
+ * @returns none
 */
 this.grdListUnique_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
+	//if this is the checkbox column
 	if (e.col == 0) 
-	{
-		if (this.chkFlag == "1") 
+	{	
+		if (this.chkFlag == "1") //the header checkbox was already checked, so uncheck all 
 		{
 			this.fnBlockUnChk(obj);
 			this.chkFlag = "0";
 		}
-		else 
+		else //the header checkbox was already unchecked, so check all 
 		{
 			this.fnBlockChk(obj);
 			this.chkFlag = "1";

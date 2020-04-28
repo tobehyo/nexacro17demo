@@ -1313,29 +1313,33 @@
 *  @FileName  Dynamic.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.10.14      presales                  최초 생성 
-*  2020.01.31	   presales					 버그 수정
+*  2019.10.14      presales                  Initial creation
+*  2020.01.31	   presales					 Bug fixes
 *******************************************************************************
 */
 
-/************************************************************************************************
- * FORM 변수 선언 영역
- ************************************************************************************************/
+/******************************************************************************
+ * FORM Variable declaration area
+ ******************************************************************************/
 this.fv_sTextVal = [];
 this.fv_dropFlag;
-this.fv_formats1;
-this.fv_formats2;
+this.fv_formats1; //variable to store the Grid grdList01 "formats" attribute when form loads
+this.fv_formats2; //variable to store the Grid grdList02 "formats" attribute when form loads
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area (onload, onbeforeclose)
  ************************************************************************************************/
  
 /**
- * @description Form onload
+ * @description Stores the formats information of the two grid components into local variables when
+ * the form loads
+ * @param {nexacro object} Form the current form object 
+ * @param {nexacro event} LoadEventInfo form load event 
+ * @returns none
 */
 this.Dynamic_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -1344,26 +1348,29 @@ this.Dynamic_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK callback processing part (Transaction, Popup)
  ************************************************************************************************/
 
 
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call handling
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 
 /**
-   컴포넌트 영역에서 드래그 동작중인 마우스가 이동할 때 발생
+   Occurs when the dragging mouse moves in the component area
  * @description Form ondragmove
+ * @param {nexacro Object} Form current form object
+ * @param {nexacro Event} DragEventInfo mouse drag event
+ * @returns none
 */
 this.Dynamic_ondragmove = function (obj:Form, e:nexacro.DragEventInfo)
 {
@@ -1374,12 +1381,14 @@ this.Dynamic_ondragmove = function (obj:Form, e:nexacro.DragEventInfo)
 };
 
 /**
-   컴포넌트 영역에 드래그한 컴포넌트를 내려 놓을 때 발생
+   Occurs when dropping a dragged component in the component area
  * @description Form ondrop
+ * @param {nexacro Object} Form the current form object
+ * @param {nexacro Event} DragEventInfo mouse drag event
 */
 this.Dynamic_ondrop = function (obj:Form, e:nexacro.DragEventInfo)
 {
-	// Grid Drop이 아닐경우 처리
+	// Processed when it is not a Grid Drop
 	var objComp = e.fromobject;
 
 	if (objComp != "[object Grid]") 
@@ -1389,22 +1398,25 @@ this.Dynamic_ondrop = function (obj:Form, e:nexacro.DragEventInfo)
 };
 
 /**
-   컴포넌트 영역에 드래그한 컴포넌트를 내려 놓을 때 발생
+   Occurs when dropping a dragged component in the component area
  * @description Form ondrop
+ * @param {nexacro Object} Button
+ * @param {nexacro Event} ClickEventInfo when button object is clicked
+ * @returns none
 */
 this.fnComBtn = function(obj:Button, e:nexacro.ClickEventInfo)
 {
 	switch (obj.name) 
 	{
 		case "btnInit01":
-			// 초기화
+			// reset
 			this.dropFlag = 0;
 			this.grdList01.set_formats(this.fv_formats1);
 			this.grdList01.set_nodatatext("NO DATA");
 			this.dsList01.clearData();
 			break;
 		case "btnInit02":
-			// 초기화
+			// reset
 			this.grdList02.set_formats(this.fv_formats2);
 			this.grdList02.set_nodatatext("NO DATA");
 			this.dsList02.clearData();
@@ -1414,6 +1426,8 @@ this.fnComBtn = function(obj:Button, e:nexacro.ClickEventInfo)
 
 /**
  * @description Grid ondrag
+ * @param {nexacro Object} Grid the current grid object 
+ * @param {nexacro Event} GridDragEventInfo event related to Drag action in Grid component
 */
 
 this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
@@ -1421,8 +1435,8 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 	switch (obj.name) 
 	{
 		case "grdColumn":
-			// 단일 Column 이동
-			// 헤더가 클릭되었을경우 빈 column이 생기는 오류 방지
+			// Move a single column
+			// Prevent the error that an empty column is generated when the header is clicked
 			if (e.row < 0) 
 			{
 				return;
@@ -1435,7 +1449,7 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 
 			e.userdata = obj.getCellProperty("body", e.cell, "text").toString().replace("bind:", "");
 
-			// Column Parsing 중복방지
+			// Prevent column parsing duplication
 			var nCount = this.grdList01.getCellCount("Head");
 			var nCount2 = this.grdList02.getCellCount("Head");
 			var sCol = this.stDragImg.text;
@@ -1458,7 +1472,7 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 			return true;
 			break;
 		case "grdMultiColumn":
-			// 멀티 Column 이동
+			// Move Multi Column
 			this.fv_dropFlag = "multi";
 
 			var sColId = this.dsMulticolumn.getColID(e.col);
@@ -1471,7 +1485,7 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 			{
 				var sChk;
 
-				// Check 된 데이터 없으면 Return
+				// Return if there is no checked data
 				if (this.fv_sTextVal.length == 0 || this.fv_sTextVal == "") 
 				{
 					return;
@@ -1499,6 +1513,9 @@ this.fnOndrag = function (obj:Grid, e:nexacro.GridDragEventInfo)
 
 /**
  * @description Grid ondrop
+ * @param {nexacro Object} Grid current grid object
+ * @param {nexacro Event} GridDragEventInfo event related to Drag action in Grid component
+ * @returns none
 */
 this.dropFlag = 0;
 
@@ -1517,7 +1534,7 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 		var nRowCnt1 = this.dsGrid.rowcount;
 		var nRowCnt2 = objDs.rowcount;
 
-		/* Grid Formats 생성 - Start */
+		/* Create Grid Formats-Start */
 		if(nRowCnt2 > 0) {
 			obj.appendContentsCol();
 			nColIdx = obj.getFormatColCount();
@@ -1553,21 +1570,21 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 		obj.setFormatColProperty(nColIdx, "size", objFontSize.nx + 50);
 
 		//this.grdList01.setRealRowSize(-1, 30);
-		/* Grid Formats 생성 - End   */
+		/*  Create Grid Formats-End */
 
-		// Grid Cell Focus 처리
+		// Grid Cell Focus processing
 		obj.setFocus();
 		objDs.set_rowposition(0);
 	}
 	else 
 	{
 		this.dropFlag = 0;
-		// 멀티
-		// Grid Formats 초기화
+		// Multi
+		// Initialize Grid Formats
 		obj.setFormat("");
 		objDs.clearData();
 
-		/* Grid Formats 생성 - Start */
+		/* Create Grid Formats - Start */
 		var nColIdx = 0;
 		var nCellCnt = obj.getCellCount("Head");
 		var sCol;
@@ -1619,9 +1636,9 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 		}
 
 		obj.setRealRowSize(-1, 30);
-		/* Grid Formats 생성 - End   */
+		/* Create Grid Formats-End   */
 
-		// Grid Cell Focus 처리
+		// Grid Cell Focus processing
 		obj.setFocus();
 		objDs.set_rowposition(0);
 	}
@@ -1631,11 +1648,15 @@ this.fnOndrop = function (obj:Grid, e:nexacro.GridDragEventInfo)
 };
 
 /**
- * @description Grid onheadclick
+ * @description When the header cell of the grid object "grdMultiColumn" is checked or unchecked, it checks 
+ * or unchecks every other cell in that column
+ * @param {nexacro Object} Grid the current Grid
+ * @param {nexacro Event} GridClickEventInfo event that fires when a cell in the Grid is clicked
+ * @returns none
 */
 this.grdMultiColumn_onheadclick = function (obj:Grid, e:nexacro.GridClickEventInfo)
 {
-	// 전체선택, 전체해제 처리
+	// All selection, all cancellation processing
 	if (e.col == 0) 
 	{
 		if (this.chkFlag == "1") 
@@ -1653,6 +1674,9 @@ this.grdMultiColumn_onheadclick = function (obj:Grid, e:nexacro.GridClickEventIn
 
 /**
  * @description  Dataset oncolumnchanged
+ * @param {nexacro Object} Dataset
+ * @param {nexacro Event} DSColChangeEventInfo event that fires when a column in a DataSet object changes
+ * @returns none
 */
 this.dsMulticolumn_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChangeEventInfo)
 {
@@ -1673,7 +1697,9 @@ this.dsMulticolumn_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChang
 };
 
 /**
- * @description Drag Image 정보 Clear
+ * @description Drag Image Information Clear
+ * @param none
+ * @returns none
 */
 this.fnDragImgClear = function ()
 {
@@ -1683,7 +1709,9 @@ this.fnDragImgClear = function ()
 };
 
 /**
- * @description Grid Check Column 전체선택 처리
+ * @description Grid Check Column All selection processing
+ * @param {nexacro Object} Grid object
+ * @returns none
 */
 this.fnBlockChk = function (objGrid)
 {
@@ -1699,7 +1727,9 @@ this.fnBlockChk = function (objGrid)
 };
 
 /**
- * @description Grid Check Column 전체해제 처리
+ * @description Complete processing of Grid Check Column cancellation
+ * @param {nexacro Object} Grid object
+ * @returns none
 */
 this.fnBlockUnChk = function (objGrid)
 {
