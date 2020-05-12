@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="DynamicComponent" width="980" height="572" titletext="컴포넌트 동적생성" onload="form_onload">
+  <Form id="DynamicComponent" width="980" height="572" titletext="Component dynamic creation" onload="form_onload">
     <Layouts>
       <Layout>
         <Static id="stc_cond00" taborder="15" cssclass="sta_WF_box02" left="0" top="111" height="133" width="28.37%" text=""/>
@@ -29,16 +29,16 @@
         <Edit id="edtTotCnt" taborder="13" inputtype="number" autoselect="true" left="stc_stTime03:14" top="209" width="stc_cond01:40%" height="23" value="100" readonly="true" textAlign="right"/>
         <Edit id="edtCountComp" taborder="7" left="stc_stTime02:14" top="122" height="23" inputtype="number" readonly="true" visible="true" value="5" textAlign="right" width="stc_cond01:40%"/>
         <Edit id="edtLinePerCnt" taborder="8" left="stc_stTime01:15" top="151" height="23" inputtype="number" autoselect="true" value="1" textAlign="right" width="stc_cond01:15.82%"/>
-        <Button id="Button00" taborder="23" text="버튼 동적 생성" left="1012" top="236" width="100" height="30" cssclass="btn_WF_basic02" visible="false"/>
+        <Button id="Button00" taborder="23" text="Dynamic button creation" left="1012" top="236" width="100" height="30" cssclass="btn_WF_basic02" visible="false"/>
         <Calendar id="Calendar00" taborder="24" cssclass="cal_basic01" left="1122" top="236" width="130" height="30" visible="false"/>
         <Static id="Static00" taborder="25" left="993" top="236" width="120" height="30" cssclass="sta_cp_static" visible="false"/>
         <ImageViewer id="ImageViewer00" taborder="26" left="1040" top="285" width="100" height="30" cssclass="imv_cp_imageViewer" visible="false"/>
         <Edit id="Edit00" taborder="27" left="1150" top="285" width="130" height="30" cssclass="ed_basic01" visible="false"/>
-        <Button id="btnGenerate" taborder="10" text="생성" left="0" top="248" height="40" onclick="btnGenerate_onclick" cssclass="btn_WF_basic01" right="20"/>
+        <Button id="btnGenerate" taborder="10" text="Create" left="0" top="248" height="40" onclick="btnGenerate_onclick" cssclass="btn_WF_basic01" right="20"/>
       </Layout>
     </Layouts>
     <Objects>
-      <Dataset id="dsCond" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="ds_cond_oncolumnchanged">
+      <Dataset id="dsCond" firefirstcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" oncolumnchanged="dsCond_oncolumnchanged">
         <ColumnInfo>
           <Column id="comp_cnt" type="INT" size="256"/>
           <Column id="line_per_count" type="INT" size="256"/>
@@ -61,28 +61,32 @@
     </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
+*  @MenuPath    Components > Component dynamic creation
 *  @FileName    Dynamic.xfdl
 *  @Creator     presales
 *  @CreateDate  2019/10/01
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Description    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019/10/01          presales                  최초 생성 
+*  2019/10/01          presales                  Initial creation
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
+//arraylist of ids of checkbox components that can be selected
 this.arrCompList = ["chkBtn", "chkCal", "chkStc", "chkImg", "chkEdt"];
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 load시 초기설정 event
+ *Set total number of selected checkbox value upon screen load
+ *@param {Form object} DynamicComponent
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None. 
 */
 this.form_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -90,12 +94,11 @@ this.form_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 /**
-* fnGetCheckbox : 체크박스의 체크 상태값 ds에 저장
-* @return : N/A
-* @example :  
+* fnGetCheckbox : Set total number of selected checkbox value in dsCond datasource
+* @return: N/A
 */
 this.fnGetCheckbox = function ()
 {
@@ -112,9 +115,8 @@ this.fnGetCheckbox = function ()
  
  
 /**
-* fnResetCanvas : 체크박스의 체크 상태값 ds에 저장
+* fnResetCanvas : Remove all the components from the div canvas.
 * @return : N/A
-* @example :  
 */
 this.fnResetCanvas = function ()
 {
@@ -127,12 +129,12 @@ this.fnResetCanvas = function ()
 
 
 /**
-* fnDrawComponent : 컴포넌트 동적 생성
-* @return : N/A
-* @example :  
+* fnDrawComponent : Create components dynamically based on selected checkboxes and creation options.
+* @return : N/A 
 */
 this.fnDrawComponent = function ()
 {
+    //holds substring of id of selected checkboxs
 	var arrListup = [];
 	for (var ii = 0; ii < this.arrCompList.length; ii++) 
 	{
@@ -165,11 +167,11 @@ this.fnDrawComponent = function ()
 					case "Btn":
 						oComp = new Button("btn_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
 						oComp.set_cssclass("btn_WF_basic02");
-						oComp.set_text("버튼");
+						oComp.set_text("button");
 						break;
 					case "Cal":
 						oComp = new Calendar("cal_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
-						oComp.set_dateformat("yyyy-MM-dd");
+						oComp.set_dateformat("MM-dd-yyyy");
 						oComp.set_value(this.gfnGetDate());
 						oComp.set_cssclass("cal_basic01");
 						break;
@@ -200,10 +202,13 @@ this.fnDrawComponent = function ()
 
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description 체크박스 선택 시 체크박스 상태값 ds에 저장
+ *When the checkbox selection is changed, update the total number of selected checkbox value in ds.
+ *@param {CheckBox object} "chkBtn", "chkCal", "chkStc", "chkImg", "chkEdt"
+ *@param {nexacro event} CheckBoxChangeEventInfo onchanged
+ *@returns None. 
 */
 this.CheckBox_onchanged = function (obj:CheckBox, e:nexacro.CheckBoxChangeEventInfo)
 {
@@ -211,7 +216,10 @@ this.CheckBox_onchanged = function (obj:CheckBox, e:nexacro.CheckBoxChangeEventI
 };
 
 /**
- * @description 생성 버튼 클릭
+ *Reset and draw the selected components in the divCanvas. Also calculate the time taken.
+ *@param {Button object} btnGenerate
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
 */
 this.btnGenerate_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 {
@@ -227,7 +235,10 @@ this.btnGenerate_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description 컴포넌트 생성 옵션 동적 카운팅
+ *Calculate the total number of components when the value of a dataset column changes.
+ *@param {Dataset object} dsCond
+ *@param {nexacro event} DSColChangeEventInfo oncolumnchanged
+ *@returns None. 
 */
 this.dsCond_oncolumnchanged = function (obj:Dataset, e:nexacro.DSColChangeEventInfo)
 {
