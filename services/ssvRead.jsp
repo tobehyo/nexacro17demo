@@ -39,7 +39,7 @@ try {
 	sbSsv.append("Dataset:").append("output").append(RS);
 	sbSsv.append("_RowType_"+US);
 	sbSsv.append("id:STRING(50)"+US+"first_name:STRING(50)"+US+"last_name:STRING(50)"+US+"email:STRING(50)"+US+"gender:STRING(50)"+US+"ip_address:STRING(50)"+US+"state:STRING(50)"+US+"street:STRING(50)"+US+"date:STRING(50)"+US+"domain:STRING(50)"+US+"guid:STRING(50)"+RS);
-   	fis = new FileInputStream(new File(getServletContext().getRealPath("/") + "dat/ssv_" + rowcount + ".dat"));
+   	fis = new FileInputStream(new File(getServletContext().getRealPath("/") + "services/dat/ssv_" + rowcount + ".dat"));
 	isr = new InputStreamReader(fis, "utf-8");
 	bs = new BufferedReader(isr);
     len = 0;

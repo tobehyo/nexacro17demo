@@ -42,40 +42,40 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 	var objSvcUrl = objEnv.services["svcurl"];
 	var urlPath;
 	
-	if (system.navigatorname == "nexacro")
-	{
-		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
-		{
-			urlPath = "http://localhost/";
-		}
-		else 
-		{
-			urlPath = objSvcUrl;
-		}
-	}
-	else
-	{
-		var sXadl = nexacro.getApplication().xadl;
-		
-		if(sXadl.indexOf("http://127.0.0.1/") > -1)
-		{
-			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
-			{
-				urlPath = "http://localhost/";
-			}
-			else 
-			{
-				urlPath = objSvcUrl;
-			}
-		}
-		else
-		{
-			urlPath = window.location.protocol + "//" + window.location.host + "/";
-		}
-	}
-	
-	objEnv.services["svcurl"].set_url(urlPath);
-	objEnv.services["xeni"].set_url(urlPath);
+//	if (system.navigatorname == "nexacro")
+// 	{
+// 		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+// 		{
+// 			urlPath = "http://localhost/";
+// 		}
+// 		else 
+// 		{
+// 			urlPath = objSvcUrl;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		var sXadl = nexacro.getApplication().xadl;
+// 		
+// 		if(sXadl.indexOf("http://127.0.0.1/") > -1)
+// 		{
+// 			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
+// 			{
+// 				urlPath = "http://localhost/";
+// 			}
+// 			else 
+// 			{
+// 				urlPath = objSvcUrl;
+// 			}
+// 		}
+// 		else
+// 		{
+// 			//urlPath = window.location.protocol + "//" + window.location.host + "/";
+// 		}
+// 	}
+// 	
+// 	objEnv.services["svcurl"].set_url(urlPath);
+// 	objEnv.services["xeni"].set_url(urlPath);
 };
 
 /**

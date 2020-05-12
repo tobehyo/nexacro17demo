@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="LargeData" width="980" height="700" titletext="대용량 데이터 조회">
+  <Form id="LargeData" width="980" height="700" titletext="Large data inquiry">
     <Layouts>
       <Layout screenid="desktop">
         <Static id="staLabel" taborder="5" cssclass="sta_WF_box02" left="0" top="59" right="64" height="44" text=""/>
@@ -71,7 +71,7 @@
                 <Cell col="5" text="bind:ip_address" textAlign="right"/>
                 <Cell col="6" text="bind:state" textAlign="left"/>
                 <Cell col="7" text="bind:street" textAlign="left"/>
-                <Cell col="8" text="bind:date" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="8" text="bind:date" calendardateformat="MM-dd-yyyy"/>
                 <Cell col="9" text="bind:domain" textAlign="left"/>
                 <Cell col="10" text="bind:guid" textAlign="left"/>
               </Band>
@@ -116,7 +116,7 @@
                 <Cell col="5" text="bind:ip_address" textAlign="right"/>
                 <Cell col="6" text="bind:state" textAlign="left"/>
                 <Cell col="7" text="bind:street" textAlign="left"/>
-                <Cell col="8" text="bind:date" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="8" text="bind:date" calendardateformat="MM-dd-yyyy"/>
                 <Cell col="9" text="bind:domain" textAlign="left"/>
                 <Cell col="10" text="bind:guid" textAlign="left"/>
               </Band>
@@ -200,7 +200,7 @@ this.btnSearch_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 // 	};
 
 	var strSvcId    = "search";
-	var strSvcUrl   = "svcurl::services/ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
+	var strSvcUrl   = "svcurl::ssvRead.jsp?rowcount=" + this.cboRowCnt.value;
 	var inData      = "";
 	var outData     = "dsList=output";
 	var strArg      = "";
