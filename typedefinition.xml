@@ -53,7 +53,7 @@
     <Service prefixid="imagerc" type="resource" url="./_resource_/_images_/" cachelevel="session" include_subdir="true"/>
     <Service prefixid="font" type="resource" url="./_resource_/_font_/" version="0" communicationversion="0" cachelevel="session" include_subdir="false"/>
     <Service prefixid="svcurl" type="JSP" cachelevel="none" url="./services/" version="0" communicationversion="0" include_subdir="false"/>
-    <Service prefixid="xeni" type="JSP" cachelevel="none" url="http://localhost/nexacroXeni/" version="0" communicationversion="0" include_subdir="false"/>
+    <Service prefixid="xeni" type="JSP" cachelevel="none" url="http://localhost:8080/nexacro17-xeni/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="Demo19Lib" type="js" cachelevel="session" url="./_extlib_/Demo19Lib/" include_subdir="true" version="0" communicationversion="0"/>
     <Service prefixid="lib" type="js" cachelevel="session" url="./lib/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="frame" type="form" url="./frame/" cachelevel="session" version="0" communicationversion="0" include_subdir="false"/>

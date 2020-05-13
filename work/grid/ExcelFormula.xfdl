@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="ExcelFormula" width="980" height="570" titletext="엑셀수식Export" onload="ExcelFormula_onload">
+  <Form id="ExcelFormula" width="980" height="570" titletext="Excel Formula" onload="ExcelFormula_onload">
     <Layouts>
       <Layout>
         <Grid id="grdExcel" cssclass="grd_excel" taborder="2" binddataset="dsOut" treeuseline="false" treeusecheckbox="false" treeuseimage="false" treeinitstatus="collapse,all" left="0" top="147" right="20" height="400" cellsizingtype="col" selecttype="area" autofittype="col">
@@ -70,7 +70,7 @@
         <Static id="staTitle01" taborder="5" text="EXEL" cssclass="sta_WF_excel" left="0" top="109" width="431" height="30"/>
         <Button id="btnImport" taborder="0" text="IMPORT" top="109" height="30" width="90" cssclass="btn_WF_excelInput" right="113" onclick="fnComBtn"/>
         <Button id="btnExport" taborder="1" text="EXPORT" top="109" width="90" height="30" cssclass="btn_WF_excelOutput" right="20" onclick="fnComBtn"/>
-        <Combo id="cboRowCnt" taborder="3" codecolumn="codecolumn" datacolumn="datacolumn" top="109" width="200" height="30" index="0" value="[ 수식을 선택하세요. ]" innerdataset="innerdataset" text="" onitemchanged="fn_comCboOnItemChanged" right="206">
+        <Combo id="cboRowCnt" taborder="3" codecolumn="codecolumn" datacolumn="datacolumn" top="109" width="200" height="30" index="0" value="[ Please select a formula. ]" innerdataset="innerdataset" text="" onitemchanged="fn_comCboOnItemChanged" right="206">
           <Dataset id="innerdataset">
             <ColumnInfo>
               <Column id="codecolumn" size="256"/>
@@ -434,8 +434,8 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-A 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-A team</Col>
             <Col id="Column2">100000</Col>
             <Col id="Column3">100000</Col>
             <Col id="Column4">50000</Col>
@@ -450,8 +450,8 @@
             <Col id="Column13">55000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-B 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-B team</Col>
             <Col id="Column2">110000</Col>
             <Col id="Column3">220000</Col>
             <Col id="Column4">110000</Col>
@@ -466,8 +466,8 @@
             <Col id="Column13">185000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-C 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-C team</Col>
             <Col id="Column2">135000</Col>
             <Col id="Column3">270000</Col>
             <Col id="Column4">135000</Col>
@@ -482,8 +482,8 @@
             <Col id="Column13">330000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-D 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-D team</Col>
             <Col id="Column2">500000</Col>
             <Col id="Column3">180000</Col>
             <Col id="Column4">90000</Col>
@@ -498,8 +498,8 @@
             <Col id="Column13">430000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-E 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-E team</Col>
             <Col id="Column2">400000</Col>
             <Col id="Column3">100000</Col>
             <Col id="Column4">0</Col>
@@ -514,8 +514,8 @@
             <Col id="Column13">485000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 A 그룹</Col>
-            <Col id="Column1">A-F 팀</Col>
+            <Col id="Column0">TOBESOFT Group A</Col>
+            <Col id="Column1">A-F team</Col>
             <Col id="Column2">0</Col>
             <Col id="Column3">0</Col>
             <Col id="Column4">0</Col>
@@ -530,8 +530,8 @@
             <Col id="Column13">460000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-A 팀</Col>
+            <Col id="Column0">TOBESOFT Group B</Col>
+            <Col id="Column1">B-A team</Col>
             <Col id="Column2">1000</Col>
             <Col id="Column3">500</Col>
             <Col id="Column4">50000</Col>
@@ -546,8 +546,8 @@
             <Col id="Column13">350000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-B 팀</Col>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-B team</Col>
             <Col id="Column2">500</Col>
             <Col id="Column3">50</Col>
             <Col id="Column4">200000</Col>
@@ -562,8 +562,8 @@
             <Col id="Column13">140000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-C 팀</Col>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-C team</Col>
             <Col id="Column2">0</Col>
             <Col id="Column3">0</Col>
             <Col id="Column4">250000</Col>
@@ -578,8 +578,8 @@
             <Col id="Column13">285000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-D 팀</Col>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-D team</Col>
             <Col id="Column2">100</Col>
             <Col id="Column3">1000</Col>
             <Col id="Column4">250000</Col>
@@ -594,8 +594,8 @@
             <Col id="Column13">405000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-E 팀</Col>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-E team</Col>
             <Col id="Column2">4500</Col>
             <Col id="Column3">14000</Col>
             <Col id="Column4">15000</Col>
@@ -610,8 +610,8 @@
             <Col id="Column13">0</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 B 그룹</Col>
-            <Col id="Column1">B-F 팀</Col>
+            <Col id="Column0">TOBESOFT B Group</Col>
+            <Col id="Column1">B-F team</Col>
             <Col id="Column2">9900</Col>
             <Col id="Column3">20000</Col>
             <Col id="Column4">10000</Col>
@@ -626,8 +626,8 @@
             <Col id="Column13">0</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-A 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-A team</Col>
             <Col id="Column2">900</Col>
             <Col id="Column3">1000</Col>
             <Col id="Column4">0</Col>
@@ -642,8 +642,8 @@
             <Col id="Column13">70000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-B 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-B team</Col>
             <Col id="Column2">700</Col>
             <Col id="Column3">800</Col>
             <Col id="Column4">0</Col>
@@ -658,8 +658,8 @@
             <Col id="Column13">215000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-C 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-C team</Col>
             <Col id="Column2">300</Col>
             <Col id="Column3">400</Col>
             <Col id="Column4">0</Col>
@@ -674,8 +674,8 @@
             <Col id="Column13">345000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-D 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-D team</Col>
             <Col id="Column2">600</Col>
             <Col id="Column3">500</Col>
             <Col id="Column4">0</Col>
@@ -690,8 +690,8 @@
             <Col id="Column13">80000</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-E 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-E team</Col>
             <Col id="Column2">100</Col>
             <Col id="Column3">0</Col>
             <Col id="Column4">0</Col>
@@ -706,8 +706,8 @@
             <Col id="Column13">0</Col>
           </Row>
           <Row>
-            <Col id="Column0">투비소프트 C 그룹</Col>
-            <Col id="Column1">C-F 팀</Col>
+            <Col id="Column0">TOBESOFT C Group</Col>
+            <Col id="Column1">C-F team</Col>
             <Col id="Column2">0</Col>
             <Col id="Column3">200</Col>
             <Col id="Column4">0</Col>
@@ -731,51 +731,52 @@
 *  @FileName  ExcelFormula.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.10.14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Description    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.10.14      presales                  최초 생성 
+*  2019.10.14      presales                  Initial creation 
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
 this.exportUrl = "xeni::XExportImport"; //export URL
 this.importUrl = "xeni::XImport"; //this.importUrl = "http://localhost/nexacro-xeni/XImport";		// import URL
-this.exportType; //Grid 속성 selecttype 변경을 위함
+this.exportType; //to change the Grid property selecttype
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
- 
 /**
- * @description Form onload
+ *@param {Form object} ExcelFormula
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None. 
 */
-
 this.ExcelFormula_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK Processing(Transaction, Popup)
  ************************************************************************************************/
 
 
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION Service call
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
-
 /**
- * @description 사용자 버튼 클릭 이벤트
- */
- 
+ *Import or Export excel sheet
+ *@param {Button object} btnImport, btnExport
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.fnComBtn = function (obj:Button, e:nexacro.ClickEventInfo)
 {
 	switch (obj.name) 
@@ -797,9 +798,11 @@ this.fnComBtn = function (obj:Button, e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description 콤보 컴포넌트 변경 이벤트
- */
- 
+ *When the combo selection is changed, update grid using the new value.
+ *@param {Combo object} cboRowCnt
+ *@param {nexacro event} ItemChangeEventInfo onitemchanged
+ *@returns None. 
+*/ 
 this.fn_comCboOnItemChanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
 {
 	var objGrid = "";
@@ -810,32 +813,32 @@ this.fn_comCboOnItemChanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEve
 			objGrid = this.grdExcel;
 			break;
 	}
-	
+	//Update the cell index 14 (Gross sales column) of the excel grid
 	objGrid.setCellProperty("body", 14 ,"text", e.postvalue);
 };
 
 
 /**
  * Excel Export
- * @param {arrObjGrid} Export 할 Grid가 들어있는 배열
- * @param {strType} Excel Type (Excel / 한셀)
- * @param {strComboData} 선택된 수식값
+ * @param {arrObjGrid} Array containing the Grid to be exported
+ * @param {strType} Excel Type (Excel / Hancell)
+ * @param {strComboData} Selected formula value
  */
 this.fn_exportExcel = function (arrObjGrid, strType, strComboData)
 {
 	var exportObj;
 
-	exportObj = new ExcelExportObject("Export00", this); //ExcelExport 객체 생성
+	exportObj = new ExcelExportObject("Export00", this); // Create ExcelExport object
 	
-	// 내보내기 할 엑셀 형식 지정
+	// Specify the Excel format to export
 	if (strType == "Excel") {
 		exportObj.set_exporttype(nexacro.ExportTypes.EXCEL2007);
 	}
 
-	exportObj.addEventHandler("onsuccess", this.Export00_onsuccess, this); //onsuccess 이벤트 연결
-	exportObj.addEventHandler("onerror", this.Export00_onerror, this); //onerror 이벤트 연결
+	exportObj.addEventHandler("onsuccess", this.Export00_onsuccess, this); // add onsuccess event handler
+	exportObj.addEventHandler("onerror", this.Export00_onerror, this); //add onerror event handler
 
-	// 하나의 파일에 여러 시트 출력
+	// Print multiple sheets in one file
 	var objGrid;
 	var i, nMax;
 	var strSheetName;
@@ -856,6 +859,7 @@ this.fn_exportExcel = function (arrObjGrid, strType, strComboData)
 	exportObj.exportData();
 	// exportObj = null;
 };
+
 
 this.Export00_onsuccess = function (obj:ExcelExportObject, e:nexacro.ExcelExportEventInfo)
 {
@@ -880,10 +884,10 @@ this.Export00_onerror = function (obj:ExcelExportObject, e:nexacro.ExcelExportEr
 
 /**
  * Excel Import
- * @param {strSheetName} Sheet 명
- * @param {strSheetArea} Sheet 정보
+ * @param {strSheetName} Sheet name
+ * @param {strSheetArea} Sheet information
  * @param {strDsName} Dataset Object
- * @param {strType} Excel Type (Excel / 한셀)
+ * @param {strType} Excel Type (Excel / Hancell)
  */
 this.fn_importExcel = function (strSheetName, strSheetArea, strDsName, strType)
 {
@@ -924,7 +928,7 @@ this.fn_ImportOnError = function (obj:ExcelImportObject, e:nexacro.ExcelImportEr
 };
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
  ]]></Script>
   </Form>
