@@ -55,9 +55,9 @@
     </Objects>
     <Bind>
       <BindItem id="item1" compid="" propid="" datasetid="" columnid=""/>
-      <BindItem id="item0" compid="edtCountComp" propid="value" datasetid="ds_cond" columnid="comp_cnt"/>
-      <BindItem id="item2" compid="edtLinePerCnt" propid="value" datasetid="ds_cond" columnid="line_per_count"/>
-      <BindItem id="item3" compid="edtLineCnt" propid="value" datasetid="ds_cond" columnid="line_count"/>
+      <BindItem id="item0" compid="edtCountComp" propid="value" datasetid="dsCond" columnid="comp_cnt"/>
+      <BindItem id="item2" compid="edtLinePerCnt" propid="value" datasetid="dsCond" columnid="line_per_count"/>
+      <BindItem id="item3" compid="edtLineCnt" propid="value" datasetid="dsCond" columnid="line_count"/>
     </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
