@@ -5,7 +5,7 @@
       <Layout height="680" mobileorientation="landscape" width="980">
         <ImageViewer id="img_grip" taborder="8" left="408" top="283" width="12" height="12" image="URL(&quot;theme://images/img_grip.png&quot;)" cursor="nw-resize" ondrag="img_grip_ondrag" onlbuttondown="img_grip_onlbuttondown" onlbuttonup="img_grip_onlbuttonup"/>
         <Static id="Static03" taborder="0" text="Component Position - Anchor" left="0" top="81" width="250" height="24" cssclass="sta_WF_title02"/>
-        <Div id="div_base" taborder="1" text="Div00" left="0" top="115" right="img_grip:-4" bottom="img_grip:-7" border="3px solid #ff5151">
+        <Div id="div_base" taborder="1" text="Div00" left="0" top="115" right="img_grip:-4" bottom="img_grip:-7" border="3px solid #ff5151" onclick="div_base_onclick">
           <Layouts>
             <Layout>
               <Edit id="Edit00" taborder="0" left="10" top="10" width="100" height="30" border="1px solid crimson, 1px dashed, 1px dashed, 1px solid crimson" enable="true" readonly="true" value="Left Top" text="Left Top" textAlign="center"/>
@@ -63,20 +63,20 @@
     </Layouts>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
+*  @MenuPath    Large menu > Small menu
 *  @FileName    ComponentsArrange.xfdl
 *  @Creator     presales
 *  @CreateDate  2019/10/11
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ******************************************************
 *  date            Modifier                Description
-*******************************************************************************
-*  2019/10/11          presales                  최초 생성 
-*******************************************************************************
+*************************************************************************************************
+*  2019/10/11          presales                  Initial creation 
+*************************************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM variable declaration area
  ************************************************************************************************/
 this.nCnt = 0;
 this.sFlag = "A";
@@ -84,10 +84,13 @@ this.arrPos = new Array();
 this.nMousePointer;
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT domain(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 load시 초기설정 event
+ * @description Initial setting event upon screen load
+ * @param {nexacro Object} Form the current form object ComponentsArrange
+ * @param {nexacro Event} LoadEventInfo triggers when the current object is loaded
+ * @return none
 */
 this.ComponentsArrange_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -98,7 +101,10 @@ this.ComponentsArrange_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInf
 }
 
 /**
- * @description 화면 load시 초기설정 event
+ * @description Initial setting event upon screen load
+ * @param {nexacro Object} Form the current form object ComponentsArrange
+ * @param {nexacro Event} TimerEventInfo passes the info of a timer set using setTimer() method
+ * @return none
 */
 this.ComponentsArrange_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventInfo)
 {
@@ -116,20 +122,20 @@ this.ComponentsArrange_ontimer = function(obj:nexacro.Form,e:nexacro.TimerEventI
 	}
 };
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK callback processing part (Transaction, Popup)
  ************************************************************************************************/
 
  
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call handling
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 /**
-* fnMove : 사용자 설정 이벤트
-* @param {array}  arrObj - component array 
+* fnMove : User-set events
+* @param {array}  arrObj - component array - contains various components
 * @return : N/A
 * @example :  
 */
@@ -140,7 +146,9 @@ this.fnMove = function(arrObj)
 	} else if (this.nCnt == 0) {
 		this.sFlag = "A";
 	}
-	
+	//if the base components are at the left most position, move them towards right
+	//btn_baseB, stored in arrObj[5], moves downward 
+	//btn_baseT, stored in arrObj[6], moves upward 
 	if (this.sFlag == "A") {
 		arrObj[0].move(parseInt(arrObj[0].left) + 1, parseInt(arrObj[0].top));
 		arrObj[1].move(parseInt(arrObj[1].left) + 1, parseInt(arrObj[1].top));
@@ -148,10 +156,13 @@ this.fnMove = function(arrObj)
 		arrObj[3].move(parseInt(arrObj[3].left) - 1, parseInt(arrObj[3].top));
 		arrObj[4].move(parseInt(arrObj[4].left) - 1, parseInt(arrObj[4].top));
 		arrObj[5].move(parseInt(arrObj[5].left), parseInt(arrObj[5].top) + 1);
-		arrObj[6].set_top(parseInt(arrObj[6].top) - 1);//right 포지션 유지하기 위해 변경
+		arrObj[6].set_top(parseInt(arrObj[6].top) - 1);//Change to maintain right position
 		//arrObj[6].move(parseInt(arrObj[6].getOffsetLeft()), parseInt(arrObj[6].top) - 1);
 		
 		this.nCnt ++;
+		//if base components are at the right most position, move them towards left
+		//btn_baseB, stored in arrObj[5], moves upward 
+		//btn_baseT, stored in arrObj[6], moves downward
 	} else {
 		arrObj[0].move(parseInt(arrObj[0].left) - 1, parseInt(arrObj[0].top));
 		arrObj[1].move(parseInt(arrObj[1].left) - 1, parseInt(arrObj[1].top));
@@ -159,7 +170,7 @@ this.fnMove = function(arrObj)
 		arrObj[3].move(parseInt(arrObj[3].left) + 1, parseInt(arrObj[3].top));
 		arrObj[4].move(parseInt(arrObj[4].left) + 1, parseInt(arrObj[4].top));
 		arrObj[5].move(parseInt(arrObj[5].left), parseInt(arrObj[5].top) - 1);
-		arrObj[6].set_top(parseInt(arrObj[6].top) + 1);//right 포지션 유지하기 위해 변경
+		arrObj[6].set_top(parseInt(arrObj[6].top) + 1);//Change to maintain right position
 		
 		this.nCnt--;
 	}
@@ -168,10 +179,12 @@ this.fnMove = function(arrObj)
 	this.div_ver.form.resetScroll();
 }
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description component position size 조절
+ * @description Component position size adjustment
+ * @param {nexacro Object} Form ComponentsArrange 
+ * @param {nexacro Event} DragEventInfo fires when an object is dragged within this Form
 */
 this.ComponentsArrange_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEventInfo)
 {
@@ -180,7 +193,11 @@ this.ComponentsArrange_ondragmove = function(obj:nexacro.Form,e:nexacro.DragEven
 };
 
 /**
- * @description ondrag이벤트 - 상위컴포넌트로 이벤트 전파
+ * @description ondrag event-propagates the event to the parent component. This function fires
+ * 				when user drags the grip image at the bottom right corner of "div_base"
+ * @param {nexacro Object} ImageViewer the component that holds the grip image
+ * @param {nexacro Event} DragEventInfo fires when the ImageViewer object is dragged
+ * @returns {Boolean} returns true if the ImageViewer object is dragged
 */
 this.img_grip_ondrag = function(obj:nexacro.ImageViewer,e:nexacro.DragEventInfo)
 {
@@ -188,7 +205,11 @@ this.img_grip_ondrag = function(obj:nexacro.ImageViewer,e:nexacro.DragEventInfo)
 };
 
 /**
- * @description drag시작
+ * @description drag start - stores the X and Y coordinates where user presses the left mouse button 
+				on the ImageViewer object
+ * @param {nexacro Object} ImageViewer this object holds the grip image
+ * @param {nexacro Event} MouseEventInfo triggers when a user clicks a button on the mouse 
+ * @returns none
 */
 this.img_grip_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
 {
@@ -199,7 +220,11 @@ this.img_grip_onlbuttondown = function(obj:nexacro.ImageViewer,e:nexacro.MouseEv
 };
 
 /**
- * @description drag끝
+ * @description drag end- stores the X and Y coordinates where user lifts the left mouse button 
+				on the ImageViewer object - end of drag operation
+ * @param {nexacro Object} ImageViewer this object holds the grip image
+ * @param {nexacro Event} MouseEventInfo triggers at the end of a mouse click
+ * @returns none
 */
 this.img_grip_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEventInfo)
 {
@@ -217,7 +242,10 @@ this.img_grip_onlbuttonup = function(obj:nexacro.ImageViewer,e:nexacro.MouseEven
 };
 
 /**
- * @description 재생버튼 정지버튼 클릭 이벤트
+ * @description Play Button Stop Button Click Event by setting a timer of 50ms interval
+ * @param {nexacro Object} Button either the btnStart or btnStop 
+ * @param {nexacro Event} ClickEventInfo fires when user clicks mouse button
+ * @returns none
 */
 this.fn_comBtnOnClick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
