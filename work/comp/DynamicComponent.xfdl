@@ -172,6 +172,7 @@ this.fnDrawComponent = function ()
 					case "Cal":
 						oComp = new Calendar("cal_" + x + "_" + y + "_" + z, nLeft + 10, nTop + 10, nWidth, nHeigth, null, null);
 						oComp.set_dateformat("MM-dd-yyyy");
+						oComp.set_editformat("MM-dd-yyyy");
 						oComp.set_value(this.gfnGetDate());
 						oComp.set_cssclass("cal_basic01");
 						break;
