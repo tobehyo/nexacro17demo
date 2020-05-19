@@ -32,7 +32,7 @@
               </Band>
               <Band id="body">
                 <Cell displaytype="editcontrol" edittype="normal" text="bind:Column0" editdisplay="display"/>
-                <Cell col="1" displaytype="calendarcontrol" edittype="date" text="bind:Column1" calendardisplay="display"/>
+                <Cell col="1" displaytype="calendarcontrol" edittype="date" text="bind:Column1" calendardisplay="display" calendardateformat="MM-dd-yyyy ddd" calendareditformat="MM-dd-yyyy"/>
                 <Cell col="2" displaytype="combocontrol" edittype="combo" text="bind:Column2" combodataset="dsCombo" combocodecol="Column0" combodatacol="Column1" combodisplay="display"/>
                 <Cell col="3" displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column3"/>
                 <Cell col="4" text="bind:Column4" displaytype="textareacontrol" edittype="textarea" textareaautoselect="true"/>
@@ -114,8 +114,8 @@
         <Static id="Static71" taborder="45" cssclass="sta_cp_box01" left="Static69:20" top="1098" height="285" right="20"/>
         <Static id="Static72" taborder="46" text="TextArea" cssclass="sta_cp_box01" left="Static70:20" top="1098" height="51" right="20"/>
         <TextArea id="TextArea01" taborder="47" left="Static69:25.53%" top="1169" width="27.55%" height="194" cssclass="txa_basic01" displaynulltext="Yeah, TextArea it is!" wordWrap="char"/>
-        <Calendar id="calToday" taborder="48" left="Static69:-88.3%" top="1169" width="13.27%" height="30" cssclass="cal_basic01"/>
-        <Calendar id="calToday01" taborder="49" left="Static69:-88.3%" top="1259" width="13.27%" height="30" type="spin" cssclass="cal_basic01"/>
+        <Calendar id="calToday" taborder="48" left="Static69:-88.3%" top="1169" width="13.27%" height="30" cssclass="cal_basic01" dateformat="MM-dd-yyyy ddd" editformat="MM-dd-yyyy"/>
+        <Calendar id="calToday01" taborder="49" left="Static69:-88.3%" top="1259" width="13.27%" height="30" type="spin" cssclass="cal_basic01" dateformat="MM-dd-yyyy ddd" editformat="MM-dd-yyyy"/>
         <Static id="Static03" taborder="50" cssclass="sta_cp_box01" left="0" top="1403" width="31.33%" height="247"/>
         <Static id="Static06" taborder="51" cssclass="sta_cp_box01" left="Static03:20" top="1403" width="31.33%" height="247"/>
         <Static id="Static08" taborder="52" cssclass="sta_cp_box01" left="Static06:20" top="1403" height="247" right="20"/>
@@ -133,9 +133,9 @@
         <Static id="Static13" taborder="64" text="Menu" left="20" top="1670" width="110" height="51" cssclass="sta_menu_icon"/>
         <Static id="Static20" taborder="95" text="Grid" cssclass="sta_cp_box01" left="0" top="768" height="51" right="20"/>
         <CheckBox id="CheckBox02" taborder="97" text="CheckBox_Select" cssclass="chk_basic01" left="Static02:85" top="182" width="142" height="32" enable="true" enableevent="false" value="true"/>
-        <Calendar id="calToday03" taborder="98" left="calToday:79" top="1169" width="169" height="189" type="monthonly" value="20220101" innerdataset="ds_CalendarColor" backgroundcolumn="BKCOLOR" bordercolumn="BORDER" datecolumn="DATE" textcolorcolumn="COLOR"/>
-        <Calendar id="calToday02" taborder="99" cssclass="cal_basic01" left="Static69:-88.3%" top="1209" width="13.27%" height="30" enable="false"/>
-        <Calendar id="Calendar04" taborder="100" type="spin" cssclass="cal_basic01" left="Static69:-88.3%" top="1299" width="13.27%" height="30" enable="false"/>
+        <Calendar id="calToday03" taborder="98" left="calToday:79" top="1169" width="169" height="189" type="monthonly" value="20220101" innerdataset="ds_CalendarColor" backgroundcolumn="BKCOLOR" bordercolumn="BORDER" datecolumn="DATE" textcolorcolumn="COLOR" dateformat="MM-dd-yyyy ddd" editformat="MM-dd-yyyy"/>
+        <Calendar id="calToday02" taborder="99" cssclass="cal_basic01" left="Static69:-88.3%" top="1209" width="13.27%" height="30" enable="false" dateformat="MM-dd-yyyy ddd" editformat="MM-dd-yyyy"/>
+        <Calendar id="Calendar04" taborder="100" type="spin" cssclass="cal_basic01" left="Static69:-88.3%" top="1299" width="13.27%" height="30" enable="false" dateformat="MM-dd-yyyy ddd" editformat="MM-dd-yyyy"/>
         <PopupMenu id="PopupMenu01" left="1024" top="218" width="185" height="100" visible="false" cssclass="pm_basic01"/>
         <Static id="Static00" taborder="101" text="Static00" top="19" width="20" height="153" background="aqua" visible="false" right="0"/>
         <Static id="Static60" taborder="101" text="The Nexacro Platform provides a convenient tool environment for users by providing about 40 components." cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char"/>
