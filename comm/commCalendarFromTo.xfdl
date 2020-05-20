@@ -142,10 +142,7 @@ this.popdivCalendar_oncloseup = function(obj:nexacro.PopupDiv,e:nexacro.EventInf
 	this.calTo.set_value(sToDate);
 };
 
-this.calTo_onchanged = function(obj:nexacro.Calendar,e:nexacro.ChangeEventInfo)
-{
-	
-};
+
 ]]></Script>
   </Form>
 </FDL>

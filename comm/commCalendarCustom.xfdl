@@ -88,10 +88,6 @@ this.pdivCal_onpopup = function(obj:PopupDiv, e:nexacro.EventInfo)
 	this.pdivCal.form.fnReSetCalendar(this.makCal.value);
 }
 
-this.makCal_onchanged = function(obj:nexacro.MaskEdit,e:nexacro.ChangeEventInfo)
-{
-	
-};
 ]]></Script>
   </Form>
 </FDL>
