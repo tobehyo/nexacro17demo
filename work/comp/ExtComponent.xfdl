@@ -90,10 +90,6 @@ this.ExtComponent_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 	this.dsData.setColumn(0, "Column0", today);
 };
 
-this.Static04_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
-{
-	
-};
 ]]></Script>
   </Form>
 </FDL>
