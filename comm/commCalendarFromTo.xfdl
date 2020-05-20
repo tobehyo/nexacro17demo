@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="commCalendarFromTo" width="280" height="28" titletext="프롬투캘린더" onload="commCalendarFromTo_onload">
     <Layouts>
       <Layout>
-        <Calendar id="calFrom" taborder="0" left="0" top="0" width="101" dateformat="yyyy-MM-dd" border="1px solid rgba(156,156,156,1)" type="normal" buttonsize="0 0" bottom="0"/>
-        <Calendar id="calTo" taborder="1" left="153" top="0" dateformat="yyyy-MM-dd" border="1px solid rgba(156,156,156,1)" buttonsize="0 0" bottom="0" right="26"/>
+        <Calendar id="calFrom" taborder="0" left="0" top="0" width="101" dateformat="MM-dd-yyyy" border="1px solid rgba(156,156,156,1)" type="normal" buttonsize="0 0" bottom="0" editformat="MM-dd-yyyy"/>
+        <Calendar id="calTo" taborder="1" left="153" top="0" dateformat="MM-dd-yyyy" border="1px solid rgba(156,156,156,1)" buttonsize="0 0" bottom="0" right="26" onchanged="calTo_onchanged" editformat="MM-dd-yyyy"/>
         <PopupDiv id="popdivCalendar" text="PopupDiv00" left="0" top="44" width="370" height="271" visible="false" border="1px solid rgba(156,156,156,1)" oncloseup="popdivCalendar_oncloseup" background="white">
           <Layouts>
             <Layout>
@@ -68,27 +68,27 @@
     </Bind>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
+*  @MenuPath    Large menu > Small menu
 *  @FileName    commCalendarFromTo.xfdl
 *  @Creator     presales
 *  @CreateDate  2019/10/14
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019/10/14          presales                  최초 생성 
+*  2019/10/14          presales                  Initial creation
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 load시 초기설정 event
+ * @description Initial setting event upon screen load
 */
 this.commCalendarFromTo_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -107,23 +107,23 @@ this.commCalendarFromTo_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK Callback processing part(Transaction, Popup)
  ************************************************************************************************/
 
  
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call handling
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
  
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description 버튼 click이벤트
+ * @description Button00 (From button) click event
 */
 this.Button_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 {
@@ -131,7 +131,7 @@ this.Button_onclick = function (obj:Button, e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description 팝업 div 종료시 이벤트
+ * @description Event when popup div ends
 */
 this.popdivCalendar_oncloseup = function(obj:nexacro.PopupDiv,e:nexacro.EventInfo)
 {
@@ -141,6 +141,8 @@ this.popdivCalendar_oncloseup = function(obj:nexacro.PopupDiv,e:nexacro.EventInf
 	this.calFrom.set_value(sFormDate);
 	this.calTo.set_value(sToDate);
 };
+
+
 ]]></Script>
   </Form>
 </FDL>

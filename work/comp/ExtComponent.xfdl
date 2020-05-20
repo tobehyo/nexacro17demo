@@ -58,27 +58,30 @@
     <Bind/>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
-*  @MenuPath    component > 확장컴포넌트
+*  @MenuPath    component > Extension component
 *  @FileName    ExtComponent.xfdl
 *  @Creator     presales
 *  @CreateDate  2019/10/11
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019/10/11          presales                  최초 생성 
+*  2019/10/11          presales                  Initial creation
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT domain(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 load시 초기설정 event
+ * @description Initial setting event upon screen load. 
+ * @param {nexacro Object} Form - the current form object ExtComponent
+ * @param {nexacro Event} LoadEventInfo - fires when the form object is loaded
+ * @returns none
 */
 this.ExtComponent_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -87,10 +90,6 @@ this.ExtComponent_onload = function (obj:Form, e:nexacro.LoadEventInfo)
 	this.dsData.setColumn(0, "Column0", today);
 };
 
-this.Static04_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
-{
-	
-};
 ]]></Script>
   </Form>
 </FDL>

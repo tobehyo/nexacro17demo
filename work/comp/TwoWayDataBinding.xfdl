@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="TwoWayDataBinding" titletext="양방향 데이타 바인딩" width="980" height="630">
+  <Form id="TwoWayDataBinding" titletext="Bidirectional data binding" width="980" height="630">
     <Layouts>
       <Layout>
         <Static id="Static60" taborder="0" text="One dataset is bound to the grid and components, so if you change the value, both are reflected simultaneously.&#13;&#10;Try changing the content in the grid and detail area." cssclass="sta_WF_box03" left="0" top="0" right="20" height="71" wordWrap="char"/>
@@ -29,7 +29,7 @@
               <Band id="body">
                 <Cell edittype="normal" text="bind:Column0" editautoselect="true" editdisplay="display" displaytype="editcontrol" verticalAlign="middle"/>
                 <Cell col="1" displaytype="combocontrol" edittype="combo" text="bind:Column1" combodataset="Dataset01" combocodecol="code" combodatacol="data" combodisplay="display"/>
-                <Cell col="2" displaytype="calendarcontrol" edittype="date" text="bind:Column2" calendardisplay="display" calendardateformat="yyyy-MM-dd"/>
+                <Cell col="2" displaytype="calendarcontrol" edittype="date" text="bind:Column2" calendardisplay="display" calendardateformat="MM-dd-yyyy"/>
                 <Cell col="3" displaytype="checkboxcontrol" edittype="checkbox" text="bind:Column3"/>
                 <Cell col="4" displaytype="editcontrol" edittype="normal" text="bind:Column4" editautoselect="true" editdisplay="display" textAlign="left" verticalAlign="middle" wordWrap="char"/>
               </Band>
@@ -40,7 +40,7 @@
         <Static id="Static08" taborder="5" cssclass="sta_WF_box04" left="115" top="387" height="34" right="20"/>
         <Radio id="Radio00" taborder="4" columncount="2" innerdataset="@Dataset01" codecolumn="code" datacolumn="data" left="401" top="359" width="130" height="24"/>
         <Static id="Static12" taborder="6" cssclass="sta_WF_box04" left="115" top="420" height="186" right="20"/>
-        <Calendar id="Calendar00" taborder="7" dateformat="yyyy-MM-dd" left="126" top="392" width="135" height="24"/>
+        <Calendar id="Calendar00" taborder="7" dateformat="MM-dd-yyyy" left="126" top="392" width="135" height="24" editformat="MM-dd-yyyy"/>
         <CheckBox id="CheckBox00" taborder="8" left="401" top="392" width="130" height="24"/>
         <TextArea id="TextArea00" taborder="9" left="126" top="426" height="174" autoselect="true" wordWrap="char" right="30"/>
         <Static id="Static07" taborder="10" text="Date of birth" cssclass="sta_WF_box02" left="0" top="387" width="116" height="34"/>
@@ -78,39 +78,39 @@
         </ColumnInfo>
         <Rows>
           <Row>
-            <Col id="Column0">Kim Gapdol</Col>
+            <Col id="Column0">Tom Sawyer</Col>
             <Col id="Column1">M</Col>
             <Col id="Column2">19851128</Col>
             <Col id="Column3">0</Col>
-            <Col id="Column4">This is Kim Gapdol.</Col>
+            <Col id="Column4">This is Tom Sawyer.</Col>
           </Row>
           <Row>
-            <Col id="Column0">Gap-soon Na</Col>
+            <Col id="Column0">Mary Jane</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">1980331</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">This is Na Gap-soon.</Col>
+            <Col id="Column4">This is Mary Jane.</Col>
           </Row>
           <Row>
-            <Col id="Column0">Hong Gil Dong</Col>
+            <Col id="Column0">David Hill</Col>
             <Col id="Column1">M</Col>
             <Col id="Column2">19770105</Col>
             <Col id="Column3">0</Col>
-            <Col id="Column4">This is Hong Gil-dong.</Col>
+            <Col id="Column4">This is David Hill.</Col>
           </Row>
           <Row>
-            <Col id="Column0">Moon-hee Na</Col>
+            <Col id="Column0">Emma Stone</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">19911005</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">This is Naik Hee.</Col>
+            <Col id="Column4">This is Emma Stone.</Col>
           </Row>
           <Row>
-            <Col id="Column0">Lee Bok</Col>
+            <Col id="Column0">Isabella Gardner</Col>
             <Col id="Column1">F</Col>
             <Col id="Column2">19880420</Col>
             <Col id="Column3">1</Col>
-            <Col id="Column4">This is Lee Bok</Col>
+            <Col id="Column4">This is Isabella Gardner.</Col>
           </Row>
         </Rows>
       </Dataset>
