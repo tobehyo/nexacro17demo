@@ -63,7 +63,7 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="btnDonwload" taborder="6" text="DOWNLOAD ALL" top="474" width="106" height="30" onclick="btnDonwload_onclick" positionstep="0" right="20" cssclass="btn_WF_basic01"/>
+        <Button id="btnDownload" taborder="6" text="DOWNLOAD ALL" top="474" width="106" height="30" onclick="btnDownload_onclick" positionstep="0" right="20" cssclass="btn_WF_basic01"/>
         <Button id="btnSearch" taborder="7" text="VIEW LIST" top="474" width="106" height="30" onclick="btnSearch_onclick" positionstep="0" right="132" cssclass="btn_WF_basic03"/>
         <Button id="btnAdd" taborder="8" text="ADD" top="91" width="69" height="30" right="167" onclick="btnAdd_onclick" cssclass="btn_WF_basic01"/>
         <Static id="Static60" taborder="9" cssclass="sta_WF_box03" left="0" top="0" right="20" height="51" wordWrap="char" text="Nexacro can handle file upload and download processing by drag &amp; drop in Windows Explorer."/>
@@ -76,7 +76,7 @@
         <Grid id="grdFileUpload" left="20" top="247" height="320" right="20" cssclass="grd_WF_FileUpload"/>
         <Button id="btnSave" top="194" width="90" height="46" right="20"/>
         <Grid id="grdFileDownload" left="20" top="697" height="320" right="20" cssclass="grd_WF_FileDownload"/>
-        <Button id="btnDonwload" top="644" width="126" height="46" right="20"/>
+        <Button id="btnDownload" top="644" width="126" height="46" right="20"/>
         <Button id="btnSearch" top="644" width="150" height="46" right="151"/>
         <Button id="btnAdd" top="194" width="90" height="46" right="210"/>
       </Layout>
@@ -144,7 +144,7 @@ this.fnAddFileList = function(filelists)
 }
 
 /**
-* fnUploadFile : Upload file
+* fnUploadFile : Upload file to the folder fileSample
 * @return : N/A
 * @example :  
 */
@@ -267,18 +267,23 @@ this.fnCallbackTransaction = function(svcId, errCode, errMsg)
 * each COMPONENT EVENT
 ************************************************************************************************/
 /**
- * @description add file
-*/
+ *Open File dialog that can add multiple files.
+ *@param {Button object} btnAdd
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.btnAdd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//file dialog open
 	this.fileDialog.open('nexacro17', FileDialog.MULTILOAD);
 };
 
-
 /**
- * @description delete file
-*/
+ *Delete selected file
+ *@param {Button object} btnDel
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.btnDel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//selected file delete
@@ -307,10 +312,12 @@ this.btnDel_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	}
 };
 
-
 /**
- * @description upload file
-*/
+ *Upload file
+ *@param {Button object} btnSave
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.setWaitCursor(true);
@@ -318,19 +325,24 @@ this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 };
 
 /**
- * @description search file list
-*/
+ *Search all the files from the fileSample folder and add file information to the dsDownload datasource 
+ *@param {Button object} btnSearch
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.btnSearch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	//search attach file list
 	this.transaction("list", this.saveUrl + "services/fileDownload_servlet_list_XML.jsp", "", "dsDownload=dsList", "filefolder="+this.folderName, "fnCallbackTransaction", "false", "0")
 };
 
-
 /**
- * @description download all files
-*/
-this.btnDonwload_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+ *Download selected files
+ *@param {Button object} btnDownload
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
+this.btnDownload_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	if(this.dsDownload.getCaseCount("CHK == '1'") < 1)
 	{
@@ -359,7 +371,10 @@ this.grdFileUpload_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClic
 };
 
 /**
- * @description upload file drag and drop
+ *Upload file drag and dropped onto upload grid.
+ *@param {Grid object} grdFileUpload
+ *@param {nexacro event} GridDragEventInfo ondrop
+ *@returns None. 
 */
 this.grdFileUpload_ondrop = function(obj:nexacro.Grid,e:nexacro.GridDragEventInfo)
 {
@@ -369,9 +384,11 @@ this.grdFileUpload_ondrop = function(obj:nexacro.Grid,e:nexacro.GridDragEventInf
 	}
 };
 
-
 /**
- * @description upload all files
+ *When Check all checkbox on the upload grid header is clicked, check all rows.
+ *@param {Grid object} grdFileUpload
+ *@param {nexacro event} GridClickEventInfo onheadclick
+ *@returns None. 
 */
 this.grdFileUpload_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
@@ -402,7 +419,10 @@ this.grdFileUpload_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEv
 
 
 /**
- * @description close event
+ *When the fileDialog is closed, add the files selected in the fileDialog open method.
+ *@param {FileDialog object} fileDialog
+ *@param {nexacro event} FileDialogEventInfo onclose
+ *@returns None. 
 */
 this.fileDialog_onclose = function(obj:nexacro.FileDialog,e:nexacro.FileDialogEventInfo)
 {
@@ -426,7 +446,7 @@ this.fileList_onsuccess = function(obj:nexacro.VirtualFile, e:nexacro.VirtualFil
 }
 
 /**
- * @description add file
+ * @description fail event
 */
 this.fileList_onerror = function(obj:nexacro.VirtualFile, e:nexacro.VirtualFileErrorEventInfo)
 {
@@ -436,7 +456,10 @@ this.fileList_onerror = function(obj:nexacro.VirtualFile, e:nexacro.VirtualFileE
 }
 
 /**
- * @description success upload
+ *Successful upload
+ *@param {FileUpTransfer object} fileUpTrans
+ *@param {nexacro event} FileUpTransferEventinfo onsuccess
+ *@returns None. 
 */
 this.fileUpTrans_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferEventinfo)
 {
@@ -451,9 +474,11 @@ this.fileUpTrans_onsuccess = function(obj:nexacro.FileUpTransfer,e:nexacro.FileU
 	alert("Success");	
 };
 
-
 /**
- * @description fail upload
+ *Failed upload
+ *@param {FileUpTransfer object} fileUpTrans
+ *@param {nexacro event} FileUpTransferEventinfo onerror
+ *@returns None. 
 */
 this.fileUpTrans_onerror = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpTransferErrorEventInfo)
 {
@@ -461,9 +486,11 @@ this.fileUpTrans_onerror = function(obj:nexacro.FileUpTransfer,e:nexacro.FileUpT
 	alert(e.errortype + ">>" + e.errormsg);
 };
 
-
 /**
- * @description dowload checkbox check all
+ *When Check all checkbox on the download grid header is clicked, check all rows.
+ *@param {Grid object} grdFileDownload
+ *@param {nexacro event} GridClickEventInfo onheadclick
+ *@returns None. 
 */
 this.grdFileDownload_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
@@ -493,7 +520,10 @@ this.grdFileDownload_onheadclick = function(obj:nexacro.Grid,e:nexacro.GridClick
 };
 
 /**
- * @description cell click download
+ *Download file when a cell is double clicked in the download grid
+ *@param {Grid object} grdFileDownload
+ *@param {nexacro event} GridClickEventInfo oncelldblclick
+ *@returns None. 
 */
 this.grdFileDownload_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
@@ -501,7 +531,10 @@ this.grdFileDownload_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridCl
 };
 
 /**
- * @description success download
+ *Successful download
+ *@param {FileDownTransfer object} fileDownTrans
+ *@param {nexacro event} FileDownTransferEventInfo onsuccess
+ *@returns None. 
 */
 this.fileDownTrans_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferEventInfo)
 {
@@ -509,7 +542,10 @@ this.fileDownTrans_onsuccess = function(obj:nexacro.FileDownTransfer,e:nexacro.F
 };
 
 /**
- * @description fail download
+ *Failed download
+ *@param {FileDownTransfer object} fileDownTrans
+ *@param {nexacro event} FileDownTransferEventInfo onerror
+ *@returns None. 
 */
 this.fileDownTrans_onerror = function(obj:nexacro.FileDownTransfer,e:nexacro.FileDownTransferErrorEventInfo)
 {
