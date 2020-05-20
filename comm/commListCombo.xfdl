@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="commListCombo" width="250" height="28" titletext="멀티콤보">
     <Layouts>
       <Layout>
@@ -20,8 +20,8 @@
                       <Row size="34"/>
                     </Rows>
                     <Band id="head">
-                      <Cell text="코드"/>
-                      <Cell col="1" text="명칭"/>
+                      <Cell text="Code"/>
+                      <Cell col="1" text="Designation"/>
                     </Band>
                     <Band id="body">
                       <Cell text="bind:Code"/>
@@ -44,23 +44,23 @@
         <Rows>
           <Row>
             <Col id="Code">aa</Col>
-            <Col id="Value">사과</Col>
+            <Col id="Value">Apple</Col>
           </Row>
           <Row>
             <Col id="Code">bb</Col>
-            <Col id="Value">바나나</Col>
+            <Col id="Value">Banana</Col>
           </Row>
           <Row>
             <Col id="Code">cc</Col>
-            <Col id="Value">배</Col>
+            <Col id="Value">Pear</Col>
           </Row>
           <Row>
             <Col id="Code">dd</Col>
-            <Col id="Value">포도</Col>
+            <Col id="Value">Grapes</Col>
           </Row>
           <Row>
             <Col id="Code">ee</Col>
-            <Col id="Value">수박</Col>
+            <Col id="Value">Watermelon</Col>
           </Row>
         </Rows>
       </Dataset>
