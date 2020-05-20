@@ -50,26 +50,26 @@
         </Grid>
         <Static id="Static04" taborder="12" left="grdMaster:3" top="349" border="2px solid #f88882" right="4" text="" height="200" background="#fdf9f9"/>
         <ImageViewer id="img_image" taborder="13" left="grdMaster:9" top="360" height="177" border="1px solid #bdc2c9" stretch="fit" width="122"/>
-        <Static id="staName" taborder="15" left="img_image:20" width="50" height="20" top="360" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0001" textAlign="left" verticalAlign="middle" text="성명" fittocontents="width"/>
+        <Static id="staName" taborder="15" left="img_image:20" width="50" height="20" top="360" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0001" textAlign="left" verticalAlign="middle" text="Name" fittocontents="width"/>
         <Static id="sta01" taborder="14" left="staName:6" top="361" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px" text=""/>
-        <Static id="staBirth" taborder="16" left="img_image:20" width="50" height="20" top="390" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0002" textAlign="left" verticalAlign="middle" text="출생년도" fittocontents="width"/>
+        <Static id="staBirth" taborder="16" left="img_image:20" width="80" height="20" top="390" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0002" textAlign="left" verticalAlign="middle" text="Birth year" fittocontents="width"/>
         <Static id="st_title01" taborder="17" left="staBirth:15" top="390" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
-        <Static id="staHeight" taborder="18" left="img_image:20" width="50" height="20" top="420" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0003" textAlign="left" verticalAlign="middle" text="키" fittocontents="width"/>
+        <Static id="staHeight" taborder="18" left="img_image:20" width="55" height="20" top="420" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0003" textAlign="left" verticalAlign="middle" text="Height" fittocontents="width"/>
         <Static id="st_title02" taborder="19" left="staHeight:15" top="420" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
-        <Static id="staWeight" taborder="20" left="img_image:20" width="50" height="20" top="450" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0004" textAlign="left" verticalAlign="middle" text="몸무게" fittocontents="width"/>
+        <Static id="staWeight" taborder="20" left="img_image:20" width="60" height="20" top="450" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0004" textAlign="left" verticalAlign="middle" text="Weight" fittocontents="width"/>
         <Static id="st_title03" taborder="21" left="staWeight:15" top="450" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
-        <Static id="staTeam" taborder="22" left="img_image:20" width="50" height="20" top="480" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0005" textAlign="left" verticalAlign="middle" text="소속" fittocontents="width"/>
-        <Static id="staPosition" taborder="23" left="img_image:20" width="50" height="20" top="510" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0006" textAlign="left" verticalAlign="middle" text="포지션" fittocontents="width"/>
+        <Static id="staTeam" taborder="22" left="img_image:20" width="50" height="20" top="480" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0005" textAlign="left" verticalAlign="middle" text="Team" fittocontents="width"/>
+        <Static id="staPosition" taborder="23" left="img_image:20" width="60" height="20" top="510" color="#d9381e" font="normal bold 10pt &quot;Verdana&quot;" msgCd="L0006" textAlign="left" verticalAlign="middle" text="Position" fittocontents="width"/>
         <Static id="st_title04" taborder="24" left="staTeam:15" top="480" width="214" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
         <Static id="st_title05" taborder="25" left="staPosition:15" top="510" width="133" height="20" leftbase="" topbase="" bottombase="" rightbase="" widthbase="" heightbase="" padding="0px 3px"/>
         <Static id="Static00_00" taborder="26" text="Static00" left="28" width="485" height="20" background="aqua" visible="false" bottom="0"/>
         <Static id="Static00" taborder="27" text="Static00" top="7" width="20" height="153" background="aqua" visible="false" right="0"/>
-        <GroupBox id="GroupBox00" text="날짜 형식" taborder="28" left="0" top="562" height="200" width="50.00%" visible="true" msgCd="L0007" cssclass="grb_basic01"/>
+        <GroupBox id="GroupBox00" text="Date Format" taborder="28" left="0" top="562" height="200" width="50.00%" visible="true" msgCd="L0007" cssclass="grb_basic01"/>
         <Static id="Static00_01" taborder="29" text="Short Date" left="21" top="603" height="32" width="120" cssclass="sta_WF_cell01R" msgCd="L0009" fittocontents="width"/>
         <Calendar id="Calendar00" taborder="30" left="Static00_01:10" top="603" height="32" dateformat="SHORTDATE" editformat="SHORTDATE" value="20160401" width="215" visible="true" cssclass="cal_basic01"/>
         <Static id="Static01" taborder="31" text="Long Date" left="21" top="645" height="32" width="120" visible="true" cssclass="sta_WF_cell01R" msgCd="L00010" fittocontents="width"/>
         <Calendar id="Calendar01" taborder="32" left="Static01:10" top="645" height="32" width="215" visible="true" cssclass="cal_basic01" dateformat="LONGDATE" editformat="LONGDATE"/>
-        <GroupBox id="GroupBox01" text="숫자 형식" taborder="33" left="GroupBox00:4" top="562" height="200" visible="true" msgCd="L0008" right="4" cssclass="grb_basic01"/>
+        <GroupBox id="GroupBox01" text="Number Format" taborder="33" left="GroupBox00:4" top="562" height="200" visible="true" msgCd="L0008" right="4" cssclass="grb_basic01"/>
         <Static id="Static02" taborder="34" text="Positive numbers" left="GroupBox00:28" top="603" height="32" visible="true" msgCd="L00011" cssclass="sta_WF_cell01R" width="130" fittocontents="width"/>
         <Static id="Static03" taborder="35" text="Negative numbers" left="GroupBox00:28" top="645" height="32" width="130" visible="true" cssclass="sta_WF_cell01R" msgCd="L00012" fittocontents="width"/>
         <MaskEdit id="MaskEdit00" taborder="36" left="Static02:20" top="603" height="32" mask="###,###,##0.00" width="200" visible="true" format="###,###,##0.00" value="123456789.00"/>
@@ -686,29 +686,32 @@
     </Objects>
     <Script type="xscript5.1"><![CDATA[/**
 *  nexacro 17 demo
-*  @MenuPath    대메뉴 > 소메뉴
+*  @MenuPath    Components > Fit to Contents
 *  @FileName    FitToContents.xfdl
 *  @Creator     presales
 *  @CreateDate  2019/10/02
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Description    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019/10/02          presales                  최초 생성 
+*  2019/10/02          presales                  Initial creation
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
-this.gvLangCd = "ko_KR";
+this.gvLangCd = "en_US";
 
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 load시 초기설정 event
+ *When form is loaded, get the system locale and set it to all the components
+ *@param {Form object} ExcelFormula
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None. 
 */
 this.FitToContents_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -724,51 +727,53 @@ this.FitToContents_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 
 	// alert("123456789.01 ==> " + number.toLocaleString() + "\n" + "nexacro.Number(123456789.01) ==> " + number2.toLocaleString());
 
-	/*
-	 * Grid 다국어 처리용 메시지코드 설정(Cell index 순으로)
-	 */
+	/*	
+	* Set the Message code setting for Grid multi-language processing (in order of Cell index)
+	*/
 	var arrMessages = new Array();
+	arrMessages.push ("L0001"); /// 0: Name
+	arrMessages.push ("L0002"); // 1: Birth year
+	arrMessages.push ("L0003"); // 2: Height
+	arrMessages.push ("L0004"); // 3: Weight
+	arrMessages.push ("L0005"); // 4: Team
+	arrMessages.push ("L0006"); // 5: Position
+	arrMessages.push ("L0007"); // 7: Date Format
+	arrMessages.push ("L0008"); // 8: Number Format
+	arrMessages.push ("L0009"); // 9: Short Date
+	arrMessages.push ("L00010"); // 10: Long Date
+	arrMessages.push ("L00011"); // 11: Positive numbers
+	arrMessages.push ("L00012"); // 12: Negative numbers
 
-	arrMessages.push("L0001"); //0 : 이름
-	arrMessages.push("L0002"); //1 : 출생년도
-	arrMessages.push("L0003"); //2 : 키
-	arrMessages.push("L0004"); //3 : 몸무게
-	arrMessages.push("L0005"); //4 : 소속
-	arrMessages.push("L0006"); //5 : 포지션
-	arrMessages.push("L0007"); //7 : 날짜 형식
-	arrMessages.push("L0008"); //8 : 숫자 형식
-	arrMessages.push("L0009"); //9 : 간단한 날짜
-	arrMessages.push("L00010"); //10 : 자세한 날짜
-	arrMessages.push("L00011"); //11 : 양수
-	arrMessages.push("L00012"); //12 : 음수
-	
 	this.grdMaster.msgCd = arrMessages;
 };
 
 /**
- * @description 화면 닫는경우 언어설정 한국어 변경
+ *When closing screen, change the language setting to US
+ *@param {Form object} FitToContents
+ *@param {nexacro event} CloseEventInfo onbeforeclose
+ *@returns None. 
 */
 this.FitToContents_onbeforeclose = function(obj:nexacro.Form,e:nexacro.CloseEventInfo)
 {
-	nexacro.getEnvironment().set_locale("ko_KR");
+	nexacro.getEnvironment().set_locale("en_US");
 };
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK Processing(Transaction, Popup)
  ************************************************************************************************/
 
  
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call processing
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 /**
-* fnSetCompFitToContents : static에 fit to contents를 설정한다.
-* @param {String}  menuId	- 메뉴 ID
-* @return : N/A
-* @example :  
+* fnSetCompFitToContents: Set "fit to contents" on static components.
+* @param {String} menuId - Menu ID
+* @return: N / A
+* @example:
 */
 this.fnSetCompFitToContents = function()
 {
@@ -782,12 +787,11 @@ this.fnSetCompFitToContents = function()
 }
 
 /**
-* fnGetMessage : 단어사전 ds를 이용해 선택된 언어로 text를 return 한다.
-* @param {String}  sMsgCd	- 단어에 해당되는 메세지 ID
-* @param {String}  aMsgAgr	- 동적으로 변경되는 메세지 아규먼트
-* @param {String}  sLangId	- 선택된 다국어
-* @return : {String} 선택 언어에 해당되는 단어 
-* @example :  
+* fnGetMessage: Returns text in the selected language using the word dictionary ds.
+* @param {String} sMsgCd	-	the message ID corresponding to the componenent
+* @param {String} aMsgAgr	-	dynamically changing message argument
+* @param {String} sLangId	-	selected language
+* @return: {String} Words for the selected language
 */
 this.fnGetMessage = function (sMsgCd, aMsgAgr, sLangId)
 {
@@ -840,12 +844,10 @@ this.fnGetMessage = function (sMsgCd, aMsgAgr, sLangId)
 	return sMessage;
 };
 
-
 /**
-* fnSetLocale : 언어 변경
-* @param {String}  val	- 언어 코드
-* @return : N/A
-* @example :  
+* fnSetLocale: Change language
+* @param {String} val	-	language code
+* @return: N / A
 */
 this.fnSetLocale = function (val)
 {
@@ -857,10 +859,9 @@ this.fnSetLocale = function (val)
 };
 
 /**
-* fnSetLanguage : 컴포넌트의 text부문을 언어설정에 맞게 설정해준다.
-* @param {object}  obj	- components
-* @return : N/A
-* @example :  
+* fnSetLanguage: Sets the text section of the component to match the language setting.
+* @param {object} obj-components
+* @return: N / A
 */
 this.fnSetLanguage = function (obj)
 {
@@ -907,11 +908,14 @@ this.fnSetLanguage = function (obj)
 };
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description 언어 설정 변경시
-*/
+ *When language selection is changed, update components using the new language code value.
+ *@param {Radio object} rdoLocale
+ *@param {nexacro event} ItemChangeEventInfo onitemchanged
+ *@returns None. 
+*/ 
 this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInfo)
 {
 	this.gvLangCd = e.postvalue;
@@ -925,6 +929,11 @@ this.rdoLocale_onitemchanged = function (obj:Radio, e:nexacro.ItemChangeEventInf
 	this.grdMaster.set_locale(e.postvalue);
 };
 
+/**
+ *@param {Button object} Button00
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/ 
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 // 	this.Static02.set_minwidth(90);
