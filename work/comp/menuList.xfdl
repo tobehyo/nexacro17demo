@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
   <TypeDefinition url="..\default_typedef.xml"/>
-  <Form id="menuList" left="0" top="0" width="980" height="572" titletext="다양한 메뉴" onload="work013_onload" ontimer="work013_ontimer">
+  <Form id="menuList" left="0" top="0" width="980" height="572" titletext="Various menu" onload="work013_onload" ontimer="work013_ontimer">
     <Layouts>
       <Layout>
         <Static id="Static00" taborder="9" left="0" top="0" bottom="0" right="0" onclick="Static00_onclick" text=""/>
@@ -21,7 +21,7 @@
                 <Row size="30"/>
               </Rows>
               <Band id="head">
-                <Cell text="시스템목록"/>
+                <Cell text="System list"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:caption" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:level"/>
@@ -1263,6 +1263,9 @@ this.fv_Row;
  ************************************************************************************************/
 /**
  * @description Initial setting event upon screen load
+ * @param {nexacro Object} Form - the current form menuList
+ * @param {nexacro Event} LoadEventInfo fires when the form obj
+ * @returns none
 */
 this.work013_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 {
@@ -1284,7 +1287,12 @@ this.work013_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 
 
 /**
- * @description Initial setting event upon screen load
+ * @description Initial setting event upon screen load. Animates the opening
+				and closing of accordion menu. Occurs at regular intervals set by 
+				the setTimer method, in this case every 10ms
+ * @param {nexacro Object} Form - the current form menuList
+ * @param {nexacro Event} TimerEventInfo fires at regular intervals set by setTimer method
+ * @returns none
 */
 this.work013_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
 {
@@ -1296,6 +1304,7 @@ this.work013_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
 		
 		this.fv_timerIdx++;
 		
+		//iterate over the number of menus in the accrodian (divMenu) component
 		for(i=0;i<this.divMenu.form.components.length;i++)
 		{
 			objTile = this.divMenu.form.components[i];
@@ -1310,8 +1319,10 @@ this.work013_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
 			objTile.setOffsetTop(nTop);
 		}
 		
+		//specify the height of grid grdHideMenu in pixels
 		this.divMenu.form.grdHideMenu.setOffsetHeight(nValue);
 		
+		//move grdHideMenu 
 		if(this.fv_timerIdx==this.fv_timerMax)
 		{
 			var nTop = this.objTarget.getOffsetBottom();
@@ -1430,6 +1441,9 @@ this.fnSetMenu = function()
  ************************************************************************************************/
 /**
  * @description Button click event
+ * @param {nexacro Object} Button btnMenu 
+ * @param {nexacro Event} ClickEventInfo
+ * @returns none
 */
 this.btnMenu_onclick = function(obj, e)
 {
@@ -1450,6 +1464,9 @@ this.btnMenu_onclick = function(obj, e)
 
 /**
  * @description Menu call button
+ * @param {nexacro Object} Button btnCall
+ * @param {nexacro Event} ClickEventInfo 
+ * @returns none
 */
 this.btnCall_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
 {
@@ -1458,6 +1475,9 @@ this.btnCall_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
 
 /**
  * @description Grid mouse move event
+ * @param {nexacro Object} Grid the current form work013
+ * @param {nexacro Event} GridMouseEventInfo 
+ * @returns none
 */
 this.grdMenu_onmousemove = function(obj:Grid, e:nexacro.GridMouseEventInfo)
 {
@@ -1494,6 +1514,9 @@ this.grdMenu_onmousemove = function(obj:Grid, e:nexacro.GridMouseEventInfo)
 
 /**
  * @description Grid mouse killfocus event
+ * @param {nexacro Object} Grid grdMenu
+ * @param {nexacro Event} KillFocusEventInfo 
+ * @returns none
 */
 this.grdMenu_onkillfocus = function(obj:nexacro.Grid,e:nexacro.KillFocusEventInfo)
 {
@@ -1511,13 +1534,24 @@ this.grdMenu_onmouseleave = function(obj:nexacro.Grid,e:nexacro.MouseEventInfo)
 // 	}
 };
 
-
+/**
+ * @description Static mouse click event
+ * @param {nexacro Object} Static Label Static00
+ * @param {nexacro Event} ClickEventInfo 
+ * @returns none
+*/
 this.Static00_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
 {
 	this.divMenu1.set_visible(false);
 	this.Static00.sendToBack();
 };
 
+/**
+ * @description 
+ * @param {nexacro Object} Grid divMenu1_grdMenu2
+ * @param {nexacro Event} GridClickEventInfo 
+ * @returns none
+*/
 this.divMenu1_grdMenu2_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
 	this.divMenu1.set_visible(false);
