@@ -4,7 +4,7 @@
     <Layouts>
       <Layout>
         <Calendar id="calFrom" taborder="0" left="0" top="0" width="101" dateformat="MM-dd-yyyy" border="1px solid rgba(156,156,156,1)" type="normal" buttonsize="0 0" bottom="0" editformat="MM-dd-yyyy"/>
-        <Calendar id="calTo" taborder="1" left="153" top="0" dateformat="MM-dd-yyyy" border="1px solid rgba(156,156,156,1)" buttonsize="0 0" bottom="0" right="26" onchanged="calTo_onchanged" editformat="MM-dd-yyyy"/>
+        <Calendar id="calTo" taborder="1" left="153" top="0" dateformat="MM-dd-yyyy" border="1px solid rgba(156,156,156,1)" buttonsize="0 0" bottom="0" right="26" editformat="MM-dd-yyyy"/>
         <PopupDiv id="popdivCalendar" text="PopupDiv00" left="0" top="44" width="370" height="271" visible="false" border="1px solid rgba(156,156,156,1)" oncloseup="popdivCalendar_oncloseup" background="white">
           <Layouts>
             <Layout>
