@@ -39,22 +39,51 @@
 */
 this.Calendar_Base_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 {
-	var sToDate = this.gfnGetDate();
+	if(system.locale.indexOf("en") > -1) {
 	
-	this.makCal.set_value(sToDate);
-	
-	if (this.userBindDataset && this.userBindColumn) {
-		var objBindItem = new BindItem();  
-		objBindItem.init("b1", "makCal", "value", this.userBindDataset, this.userBindColumn);
-		
-		this.addChild("b1", objBindItem); 
-		objBindItem.bind(); 
+		this.makCal.set_format("##-##-####");
 	}
+	
+	var sToDate = this.gfnGetDate();
+	sToDate = this.getConvertFormatValue(sToDate);
+	this.makCal.set_value(sToDate);
 }
 
 /************************************************************************************************
  * User FUNCTION area
  ************************************************************************************************/
+ 
+ /**
+* getConvertFormatValue : retrun value after converting date format
+* @param {String}  stringDateValue - string date value yyyymmdd
+* @param {String}  stringDateFormat - date format
+* @param {String}  stringLocale - locale
+* @return {String}: date format value
+* @example :  this.getConvertFormatValue("20200521", "MMddyyyy", "en_US");
+*/
+
+this.getConvertFormatValue = function(stringDateValue, stringDateFormat, stringLocale) {
+
+	if(!stringDateValue || stringDateValue.length != 8) return alert("invalid value");
+	if(!stringDateFormat) stringDateFormat = "MMddyyyy";
+	if(!stringLocale) stringLocale = "en_US";
+	
+	this.makCal.yyyyMMdd = stringDateValue;
+	
+	var maskDateType = new nexacro._EditMaskTypeDate();
+	
+	maskDateType.setDateMask(stringDateFormat);
+	maskDateType.setEditMask(stringDateFormat);
+	maskDateType.setLocale(stringLocale);
+	
+	var val = maskDateType.applyMask(stringDateValue);
+	
+	delete maskDateType;
+	maskDateType = null;
+	
+	return val;
+}
+
 /**
 * fnClosePopup : When pop-up window is closed
 * @param {object}  obj	- Pop div
@@ -64,6 +93,7 @@ this.Calendar_Base_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 */
 this.fnClosePopup = function(obj, str)
 {
+	str = this.getConvertFormatValue(str);
 	this.makCal.set_value(str);
 }
 
@@ -85,7 +115,7 @@ this.btnOpenPop_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
 */
 this.pdivCal_onpopup = function(obj:PopupDiv, e:nexacro.EventInfo)
 {
-	this.pdivCal.form.fnReSetCalendar(this.makCal.value);
+	this.pdivCal.form.fnReSetCalendar(this.makCal.yyyyMMdd);
 }
 
 ]]></Script>
