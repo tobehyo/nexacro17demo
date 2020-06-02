@@ -72,39 +72,47 @@
 *  @FileName  animation.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.10.25
-*  @Desction    스크립트 표준 및 주석 표준 정의
+*  @Desction    Define script standards and annotation standards
 ************** 소스 수정 이력 ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.10.25      presales                  스크립트 수정 
+*  2019.10.25      presales                  Script modification
 *******************************************************************************
 */
  
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
+ //page variable tracks the number of "pages" of news - each page has 5 news items from dsNews DataSet
  this.page = 1;
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT domain(onload, onbeforeclose)
  ************************************************************************************************/
- 
+ /**
+ * @description Form on load event
+ * @param {nexacro Object} this form object - "animation" 
+ * @param {nexacro event} LoadEventInfo - event fires when form object is loaded
+ * @return none
+ */
 this.animation_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
+	//call the animation initialization function
 	this.initAni();
 };
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK Callback processing part(Transaction, Popup)
  ************************************************************************************************/
  /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call handling
  ************************************************************************************************/
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
  /**
- * @description 애니메이션 초기화 함수
- * @param  
- * @return 
+ * @description Animation initialization function - set initial state of components at the start of
+ * animation.
+ * @param none 
+ * @return none
  */
 this.initAni = function()
 {
@@ -116,6 +124,7 @@ this.initAni = function()
 	for (var i = 0, len = 5; i < len; i++)
 	{
 		var idx = new String(i).padLeft(2, '0');
+		//set Animation object - object to be animated
 		var aniObj = new nexacro.Animation("ani" + idx, this);
 		aniObj.set_easing("easeinquad");
 		
@@ -132,23 +141,37 @@ this.initAni = function()
 	this.startAni();
 };
  /**
- * @description 애니메이션 적용 함수
- * @param  
- * @return 
+ * @description Animation function. Get the news text lines for each button component from dsNews 
+ * DataSet object. Once all the buttons get their news text lines, increment the value of page variable.
+ * @param none
+ * @return none
  */
 this.startAni = function()
 {
+	//get text for all the buttons from dsNews DataSet object
 	for (var i = 0, len = 5; i < len; i++)
 	{
 		var idx = new String(i).padLeft(2, '0');
 		this.components["Button" + idx].set_text(this.dsNews.getColumn(((this.page - 1) * 5 + i), "title"));
 	}
 	this.page++;
+	//run the animation effect
 	this.anitime00.play();
 };
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
+/**
+ * @description When animation is complete, check the page
+ * where each page consists of 5 news items, for a total of three pages. So total news items = 15. 
+ * Once a single page is shown and animation is complete for all the five Button components, check
+ * the page number, if it is less than or equal to 3, then page number is as is, otherwise if it is 
+ * greater than 3, then reset page number to 1 so that news items are fetched from the beginning of 
+ * DataSet dsNews. 
+ * @param {nexacro Object} AnimationTimeline - "anitime00"
+ * @param {nexacro Event} AnimationEventInfo - info related to animation object when its run
+ * @return none
+ */
 this.anitime00_oncomplete = function(obj:nexacro.AnimationTimeline, e:nexacro.AnimationEventInfo)
 {
 	this.page = this.page > 3 ? 1 : this.page;
