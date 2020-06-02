@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="animation" width="1010" height="768" titletext="애니메이션" onload="animation_onload">
+  <Form id="animation" width="1010" height="768" titletext="animation" onload="animation_onload">
     <Layouts>
       <Layout height="768" mobileorientation="landscape" width="1010">
         <Button id="Button00" taborder="0" left="0" top="148" height="100" cssclass="btn_WF_animation" right="20"/>
@@ -73,7 +73,7 @@
 *  @Creator  presales
 *  @CreateDate  2019.10.25
 *  @Desction    Define script standards and annotation standards
-************** 소스 수정 이력 ***********************************************
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
 *  2019.10.25      presales                  Script modification
