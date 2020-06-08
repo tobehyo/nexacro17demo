@@ -53,12 +53,12 @@ this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  ************************************************************************************************/
 /**
  * @description Open/close the menu frame when user clicks on the left menu button
- * @param {nexacro Object} the current form
+ * @param {nexacro Object} the hamburger button btn_leftMenu
  * @param {nexacro Event} ClickEventInfo - this object is passed to the left mouse button click event 
  * 						  when user clicks on the left menu button (btn_leftMenu)
  * @return none
 */
-this.Common_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+this.Common_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.gfnOpenMegaMenu(this);
 };
