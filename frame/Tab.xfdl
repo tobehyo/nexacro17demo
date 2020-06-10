@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Tab" width="1024" height="33" scrolltype="none" background="#fafafa">
     <Layouts>
       <Layout height="33" mobileorientation="landscape" width="1024">
@@ -8,11 +8,11 @@
             <Layout/>
           </Layouts>
         </Div>
-        <Button id="btnMaximize" taborder="1" top="0" width="19" height="33" enable="true" right="93" onclick="btnMaximize_onclick" cssclass="btn_MDI_ScnBg, btn_MDI_ScnFull"/>
-        <Button id="btnCascade" taborder="2" top="0" width="19" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnWin" enable="true" right="71" onclick="btnArrange_onclick" text=""/>
-        <Button id="btnHorizontal" taborder="3" top="0" width="18" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnVDiv" enable="true" right="49" onclick="btnArrange_onclick"/>
-        <Button id="btnVertical" taborder="4" top="0" width="17" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnHDiv" enable="true" right="27" onclick="btnArrange_onclick"/>
-        <Button id="btnCloseAll" taborder="5" top="0" width="17" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnClose" enable="true" right="5" onclick="btnCloseAll_onclick"/>
+        <Button id="btnMaximize" taborder="1" top="0" width="19" height="33" enable="true" right="93" onclick="btnMaximize_onclick" cssclass="btn_MDI_ScnBg, btn_MDI_ScnFull" tooltiptext="Maximize"/>
+        <Button id="btnCascade" taborder="2" top="0" width="19" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnWin" enable="true" right="71" onclick="btnArrange_onclick" text="" tooltiptext="Cascade"/>
+        <Button id="btnHorizontal" taborder="3" top="0" width="18" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnVDiv" enable="true" right="49" onclick="btnArrange_onclick" tooltiptext="Horizontal"/>
+        <Button id="btnVertical" taborder="4" top="0" width="17" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnHDiv" enable="true" right="27" onclick="btnArrange_onclick" tooltiptext="Vertical"/>
+        <Button id="btnCloseAll" taborder="5" top="0" width="17" height="33" cssclass="btn_MDI_ScnBg, btn_MDI_ScnClose" enable="true" right="5" onclick="btnCloseAll_onclick" tooltiptext="Close All"/>
         <Button id="btnMdiPrev" taborder="6" top="0" width="19" height="33" cssclass="btn_MDI_LeftTabCha" right="144" onclick="divButtonList_btnMdiPrev_onclick" enable="false"/>
         <Button id="btnMdiNext" taborder="7" top="0" width="19" height="33" cssclass="btn_MDI_RightTabCha" right="121" onclick="divButtonList_btnMdiNext_onclick" enable="false"/>
         <Static id="Static00" taborder="8" top="13" width="1" height="6" background="#bec0c2" right="141"/>
@@ -24,42 +24,45 @@
 *  @FileName  Tab.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history  ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.09.23      presales                  최초 생성 
+*  2019.09.23      presales                  Initial creation 
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
-this.fvLeft = 0; //탭 position
+this.fvLeft = 0; //Tab position
 this.fvTabButtonSize = 200;
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT area(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description 화면 onload시 처리내역(필수)
+ *Processing on screen onload (required)
+ *@param {Form object} Form
+ *@param {nexacro event} LoadEventInfo onload
+ *@returns None.
 */
 this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 };
 
 /************************************************************************************************
- * CALLBACK 콜백 처리부분(Transaction, Popup)
+ * CALLBACK processing part(Transaction, Popup)
  ************************************************************************************************/
 /************************************************************************************************
- * CRUD 및 TRANSACTION 서비스 호출 처리
+ * CRUD and TRANSACTION service call processing
  ************************************************************************************************/
 
 /************************************************************************************************
- * 사용자 FUNCTION 영역
+ * User FUNCTION area
  ************************************************************************************************/
 /**
-* fnOpenTabMenu : CommFrame.js 의 gfnOpenMenu함수에서 호출한다. TopFrame의 MDI를 컨트롤 한다.
+* fnOpenTabMenu: Called from gfnOpenMenu function of CommFrame.js. Controls MDI of TopFrame
 * @return : N/A
 */
 this.fnOpenTabMenu = function(menuId, menuNm)
@@ -70,7 +73,7 @@ this.fnOpenTabMenu = function(menuId, menuNm)
 
 
 /**
-* fnInitTab : 탭 버튼을 모두 선택 안된 상태로cssclass(btn_MDI_Tab) 변경
+* fnInitTab: Change cssclass(btn_MDI_Tab) of all tab buttons
 * @return : N/A
 */
 this.fnInitTab = function()
@@ -88,11 +91,11 @@ this.fnInitTab = function()
 }
 
 /**
-* fnCreateTab : Menu가 Open될때 탭을 동적으로 그려준다.
-* @param {String}  menuId	- 메뉴 ID
-* @param {String}  menuNm	- 메뉴명
-* @return : {object} 생성된 탭버튼 Div
-* @example :  
+* fnCreateTab: Dynamically draws the tab when the menu is opened.
+* @param {String} menuId	-	Menu ID
+* @param {String} menuNm	-	menu name
+* @return: {object} Tab button created Div
+* @example:
 */
 this.fnCreateTab = function(menuId, menuNm)
 {
@@ -102,7 +105,7 @@ this.fnCreateTab = function(menuId, menuNm)
 	var objDiv = new Div();
 		objDiv.titletext = menuNm;
 		objDiv.init(sMenuId, nLeft, 0, this.fvTabButtonSize, 31);
-		objDiv.set_async(false);//동기
+		objDiv.set_async(false);//sync
 		objDiv.set_url("frame::TabButton.xfdl");
 		
 	// Add Object to Parent Form  
@@ -113,16 +116,14 @@ this.fnCreateTab = function(menuId, menuNm)
 	
 	this.divButtonList.form.resetScroll();
 	this.divButtonList.form.hscrollbar.set_pos(this.fvLeft);
-	//다음 탭버튼이 그려질 위치
-	this.fvLeft = nLeft + objDiv.getOffsetWidth();//200씩 늘어난다.
+	//Position where the next tab button will be drawn
+	this.fvLeft = nLeft + objDiv.getOffsetWidth();// increase by 200.
 	
 	return objDiv;
 }
 
-
-
 /**
-* fnCloseAllTab : 모든 화면을 닫아준다.
+* fnCloseAllTab: Close all screens.
 * @return : N/A
 * @example :  
 */
@@ -144,21 +145,20 @@ this.fnCloseAllTab = function()
 	this.divButtonList.form.hscrollbar.set_pos(0);
 }	
 
-
 /**
- * fnSetTabFocus : (ex:화면이 닫히면서 다른 화면에 focus가 갔을때) 해당 탭버튼이 선택된다.
- * @param {string} divNm : 선택하고자 하는 버튼 명
- * @return : N/A
- * @example :  
+ * fnSetTabFocus: (ex: When the focus is on another screen when the screen is closed) The corresponding tab button is selected.
+ * @param {string} divNm: Button name to select
+ * @return: N/A
+ * @example:
  */
 this.fnSetTabFocus = function(divNm)
 {
-	this.fnInitTab();//모든 버튼을 초기화 한 후에 해당 메뉴에만 css를 바꿔준다.
+	this.fnInitTab();//After initializing all the buttons, change css to the menu only.
 	var objApp = nexacro.getApplication();
 	
 	var objDiv = this.divButtonList.form.components[divNm];
 	
-	/*해당 탭이 없으면 새로 생성해준다.- ex> top을 reload한후 버튼이 사라졌을 경우 예외 처리
+	/*If the tab does not exist, a new one is created.-ex> Exception is handled when the button disappears after reloading top
 	if(this.gfnIsNull(objDiv))
 	{
 		var menuId = String(divNm).replace("div","");
@@ -168,7 +168,7 @@ this.fnSetTabFocus = function(divNm)
 	*/
 	objDiv.form.btnTab.set_cssclass("btn_MDI_TabFix");//btn_MDI_Tab
 	
-	//선택된 탭으로 스크롤 이동
+	// Scroll to the selected tab
 	var nMaxPos = this.divButtonList.form.hscrollbar.max;
 	if(!this.gfnIsNull(nMaxPos) && nMaxPos > 0)
 	{
@@ -190,8 +190,8 @@ this.fnSetTabFocus = function(divNm)
 }
 
 /**
- * fnRearrange : 버튼이 삭제되었을 때 버튼 위치를 재정렬 해준다.
- * @param {string} btnNm : 포커스 된 버튼 명
+ * fnRearrange: Reorder button position when button is deleted.
+ * @param {string} btnNm: focused button name
  * @return : N/A
  * @example :  
  */
@@ -212,7 +212,7 @@ this.fnRearrange = function(divNm)
 	}
 	this.divButtonList.form.resetScroll();
 	
-	//< > 버튼 제어 - div_tab_onhscroll 이벤트발생
+	//< > Button control - div_tab_onhscroll event occurs
 	if( this.divButtonList.form.hscrollbar.max < 0)
 	{
 		this.divButtonList.form.hscrollbar.set_pos(0);
@@ -221,7 +221,7 @@ this.fnRearrange = function(divNm)
 
 
 /**
- * fnMenuMove : 탭버튼 리슽의 포커스를 이동시킨다 - 스크롤이동
+ * fnMenuMove: Move the focus of tab button list - Scrolling
  * @param {string} pvType : NEXT | PREV
  * @return : N/A
  * @example :  
@@ -264,10 +264,13 @@ this.fnMenuMove = function(pvType)
 
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description arrange버튼 - 최대화
+ *Arrange button - maximize
+ *@param {Button object} btnMaximize
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
 */
 this.btnMaximize_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -291,7 +294,12 @@ this.btnMaximize_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	childFrame.setFocus();
 };
 
-//arrange버튼 - 정렬 (계단, 수평, 수직)
+/**
+ *Arrange button - alignment (stairs, horizontal, vertical)
+ *@param {Button object} btnCascade, btnHorizontal or btnVertical
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
+*/
 this.btnArrange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	var btnNm = obj.name;
@@ -325,14 +333,16 @@ this.btnArrange_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 			workFrame.arrange("vertical");
 			break;
 			
-		//"vertical" 설정 시 자식 Frame 을 수직(왼쪽에서 오른쪽으로)으로 배열합니다.
+		// When setting "vertical", arrange child frames vertically (from left to right).
 		//tilehorizontal
 	}
 };
 
-
 /**
- * @description /arrange버튼 - 전체닫기
+ *Arrange button - button-close all
+ *@param {Button object} btnCloseAll
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
 */
 this.btnCloseAll_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -342,23 +352,27 @@ this.btnCloseAll_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	{
 		if(workFrame.frames.length < 1) break;
 		
-		//활성화된 화면부터 순차적으로 닫는다.
+		//Closes sequentially from the active screen.
 		workFrame.frames[workFrame.getActiveFrame().name].form.close();
 	}
 };
 
-
 /**
- * @description 탭이동 - 앞으로
+ *Tab Move - Forward
+ *@param {Button object} btnMdiPrev
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
 */
 this.divButtonList_btnMdiPrev_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.fnMenuMove("PREV");
 };
 
-
 /**
- * @description 탭이동 - 뒤로
+ *Tab Move - Back
+ *@param {Button object} btnMdiNext
+ *@param {nexacro event} ClickEventInfo onclick
+ *@returns None. 
 */
 this.divButtonList_btnMdiNext_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
@@ -366,7 +380,10 @@ this.divButtonList_btnMdiNext_onclick = function(obj:nexacro.Button,e:nexacro.Cl
 };
 
 /**
- * @description 화면 추가 삭제 시 탭 스크롤 적용
+ *Tab scroll applied when adding or deleting screens
+ *@param {Div object} divButtonList
+ *@param {nexacro event} ScrollEventInfo onhscroll
+ *@returns None. 
 */
 this.divButtonList_onhscroll = function(obj:nexacro.Div,e:nexacro.ScrollEventInfo)
 {
@@ -399,7 +416,10 @@ this.divButtonList_onhscroll = function(obj:nexacro.Div,e:nexacro.ScrollEventInf
 };
 
 /**
- * @description 리사이즈 시에 탭스크롤 
+ *Scroll tab when resizing
+ *@param {Div object} divButtonList
+ *@param {nexacro event} SizeEventInfo onsize
+ *@returns None. 
 */
 this.divButtonList_onsize = function(obj:nexacro.Div,e:nexacro.SizeEventInfo)
 {
