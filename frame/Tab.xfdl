@@ -296,7 +296,7 @@ this.btnMaximize_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 /**
  *Arrange button - alignment (stairs, horizontal, vertical)
- *@param {Button object} btnArrange
+ *@param {Button object} btnCascade, btnHorizontal or btnVertical
  *@param {nexacro event} ClickEventInfo onclick
  *@returns None. 
 */
