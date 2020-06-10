@@ -357,7 +357,7 @@
         <Row>
           <Col id="MENU_LVL">1</Col>
           <Col id="MENU_ID">1010</Col>
-          <Col id="MENU_NM">다양한 그리드 기능</Col>
+          <Col id="MENU_NM">Various grid functions</Col>
           <Col id="PARENT_MENU_ID">1000</Col>
           <Col id="MENU_URL">grid::Functions.xfdl</Col>
           <Col id="MOBILE_YN">P</Col>
@@ -366,7 +366,7 @@
           <Col id="MENU_LVL">1</Col>
           <Col id="PARENT_MENU_ID">2000</Col>
           <Col id="MENU_ID">2010</Col>
-          <Col id="MENU_NM">다양한 컴포넌트</Col>
+          <Col id="MENU_NM">Various components</Col>
           <Col id="MENU_URL">comp::Components.xfdl</Col>
           <Col id="MOBILE_YN"/>
         </Row>
@@ -393,7 +393,7 @@
         <Row>
           <Col id="MENU_LVL">1</Col>
           <Col id="MENU_ID">1010</Col>
-          <Col id="MENU_NM">다양한 그리드 기능</Col>
+          <Col id="MENU_NM">Various grid functions</Col>
           <Col id="PARENT_MENU_ID">1000</Col>
           <Col id="MENU_URL">grid::Functions.xfdl</Col>
           <Col id="MOBILE_YN">P</Col>
@@ -402,7 +402,7 @@
           <Col id="MENU_LVL">1</Col>
           <Col id="PARENT_MENU_ID">2000</Col>
           <Col id="MENU_ID">2010</Col>
-          <Col id="MENU_NM">다양한 컴포넌트</Col>
+          <Col id="MENU_NM">Various components</Col>
           <Col id="MENU_URL">comp::Components.xfdl</Col>
           <Col id="MOBILE_YN"/>
         </Row>
@@ -417,7 +417,7 @@
         <Row>
           <Col id="MENU_LVL">1</Col>
           <Col id="MENU_ID">6011</Col>
-          <Col id="MENU_NM">상세(1), 그리드(1)</Col>
+          <Col id="MENU_NM">Detail(1), Grid(1)</Col>
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_URL">template::11_Temp.xfdl</Col>
           <Col id="MOBILE_YN">P</Col>

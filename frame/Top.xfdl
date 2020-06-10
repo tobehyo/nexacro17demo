@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="Top" width="1280" height="64" titletext="New Form" onload="form_onload">
     <Layouts>
       <Layout height="64" mobileorientation="landscape" width="1280">
@@ -7,7 +7,7 @@
           <Layouts>
             <Layout>
               <Button id="btn_leftMenu" taborder="0" left="9" top="15" width="34" height="34" cssclass="btn_TF_LeftOpen" onclick="Common_onclick" text=""/>
-              <Button id="btn_sysConfig" taborder="1" top="17" width="30" height="30" cssclass="btn_TF_setting" right="60" visible="false"/>
+              <Button id="btn_sysConfig" taborder="1" top="17" width="30" height="30" cssclass="btn_TF_setting" right="60" visible="false" text=""/>
               <Button id="btn_sysConfig00" taborder="2" top="17" width="30" height="30" cssclass="btn_TF_userInfo" right="20" visible="false"/>
               <Static id="Static00" taborder="3" left="64" top="7" width="150" height="50" cssclass="sta_TF_logo" onclick="home_onclick" cursor="pointer"/>
             </Layout>
@@ -21,23 +21,27 @@
 *  @FileName  Top.xfdl 
 *  @Creator  presales
 *  @CreateDate  2019.09.23
-*  @Desction    스크립트 표준 및 주석 표준 정의
-************** 소스 수정 이력 ***********************************************
+*  @Desction    Define script standards and annotation standards
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
-*  2019.09.23      presales                  최초 생성 
+*  2019.09.23      presales                  Initial creation
 *******************************************************************************
 */
 
 /************************************************************************************************
- * FORM 변수 선언 영역
+ * FORM Variable declaration area
  ************************************************************************************************/
 
 /************************************************************************************************
- * FORM EVENT 영역(onload, onbeforeclose)
+ * FORM EVENT domain(onload, onbeforeclose)
  ************************************************************************************************/
 /**
- * @description MegaMenu를 생성한다.
+ * @description Create MegaMenu.d
+ * @param {nexacro Object} Form the current form
+ * @param {nexacro Event} This EventInfo object is delivered to the events that occur when all the 
+ * 							objects of the current Form are loaded.
+ * @return none
 */
 this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
@@ -45,22 +49,30 @@ this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 };
 
 /************************************************************************************************
- * 각 COMPONENT 별 EVENT 영역
+ * EVENT area for each COMPONENT
  ************************************************************************************************/
 /**
- * @description 메뉴 프레임을 열고/닫아준다.
+ * @description Open/close the menu frame when user clicks on the left menu button
+ * @param {nexacro Object} the hamburger button btn_leftMenu
+ * @param {nexacro Event} ClickEventInfo - this object is passed to the left mouse button click event 
+ * 						  when user clicks on the left menu button (btn_leftMenu)
+ * @return none
 */
-this.Common_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+this.Common_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.gfnOpenMegaMenu(this);
 };
 
 /**
- * @description 메인화면을 보여준다.
+ * @description Show the main screen when user clicks on Nexacro Platform logo.
+ * @param {nexacro Object} the current Static object which contains the Nexacro Platform logo
+ * @param {nexacro Event} ClickEventInfo - this object is passed to the left mouse button click event 
+ * 						  when user clicks on the "Nexacro Platform" logo at top left.
+ * @return none
 */
 this.home_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
 {
-	nexacro.getApplication().mainframe.VFrameSet.set_separatesize("*, 0, 0");//메인, 탑, 업무
+	nexacro.getApplication().mainframe.VFrameSet.set_separatesize("*, 0, 0");//Main, tower, business
 };
 
 ]]></Script>

@@ -8,10 +8,10 @@
         <Div id="divLeft" taborder="2" top="40" right="0" bottom="0" formscrollbartype="autoindicator autoindicator" formscrolltype="both" maxheight="" left="0" cssclass="div_LF_menuBg">
           <Layouts>
             <Layout>
-              <Button id="btnAllOpen" taborder="0" text="모두열기" left="0" top="13" height="24" onclick="divLeft_btnAllOpen_onclick" cssclass="btn_LF_menuOpen" enable="true" right="0"/>
+              <Button id="btnAllOpen" taborder="0" text="Open all" left="0" top="13" height="24" onclick="divLeft_btnAllOpen_onclick" cssclass="btn_LF_menuOpen" enable="true" right="0"/>
               <Button id="Button00" taborder="1" text="Grid Component" left="0" top="75" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
-              <Button id="Button00_00" taborder="2" text="다양한 그리드 기능" left="0" top="125" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
-              <Button id="Button00_00_00" taborder="3" text="다양한 그리드 기능" left="0" top="171" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_00" taborder="2" text="Various grid functions" left="0" top="125" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
+              <Button id="Button00_00_00" taborder="3" text="Various grid functions" left="0" top="171" height="46" right="0" cssclass="btn_LF_menuD2" visible="false"/>
               <Button id="Button00_01" taborder="4" text="Component" left="0" top="217" height="50" right="0" cssclass="btn_LF_menuD1" visible="false"/>
             </Layout>
           </Layouts>
@@ -49,11 +49,11 @@
                   </Format>
                 </Formats>
               </Grid>
-              <Static id="sta_titleUp" taborder="2" text="최근 접속한 메뉴" left="15" width="134" height="17" cssclass="sta_LF_MenuTitle" fittocontents="width" bottom="174"/>
+              <Static id="sta_titleUp" taborder="2" text="Recently accessed menu" left="15" width="134" height="17" cssclass="sta_LF_MenuTitle" fittocontents="width" bottom="174"/>
             </Layout>
           </Layouts>
         </Div>
-        <Button id="btnAllClose" taborder="4" text="모두닫기" left="692" top="53" width="128" height="24" onclick="divLeft_btnAllClose_onclick" cssclass="btn_LF_menuClose" visible="false"/>
+        <Button id="btnAllClose" taborder="4" text="Close all" left="692" top="53" width="128" height="24" onclick="divLeft_btnAllClose_onclick" cssclass="btn_LF_menuClose" visible="false"/>
         <Button id="btnMenu00" taborder="5" left="330" top="0" width="140" height="40" cssclass="btn_LF_SelectMenu_D" tabstop="false" onclick="Button_onclick" text="MENU" visible="false"/>
         <Button id="btnFavorite00" taborder="6" top="0" width="140" height="40" tabstop="false" onclick="Button_onclick" right="-330" cssclass="btn_LF_BookMark_S" text="" visible="false"/>
       </Layout>
@@ -65,7 +65,7 @@
 *  @Creator  presales
 *  @CreateDate  2019.09.23
 *  @Desction    Define script standards and annotation standards
-************** 소스 수정 이력 ***********************************************
+************** Source modification history ***********************************************
 *  date            Modifier                Description
 *******************************************************************************
 *  2019.09.23      presales                   First created  
@@ -84,6 +84,10 @@ this.fvButtonHeight = 46; // const value
  ************************************************************************************************/
 /**
  * @description Move favorite div and dynamically create accordion menu
+ * @param {nexacro Object} Current form Left.xfdl
+ * @param {nexacro Event} LoadEventInfo passes information about the load event when the 
+ *							form loads
+ * @return none
 */
 this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
