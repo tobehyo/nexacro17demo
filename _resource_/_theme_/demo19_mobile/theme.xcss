@@ -4956,8 +4956,10 @@
 {
 }
 .VScrollIndicatorControl,
+/*
 .VScrollIndicatorControl[status=mouseover],
 .VScrollIndicatorControl[status=disabled]
+*/
 {
 	background : #e6e6e6;
 	
@@ -4972,8 +4974,10 @@
 	background : #b5b5b5;
 }
 .HScrollIndicatorControl,
+/*
 .HScrollIndicatorControl[status=mouseover],
 .HScrollIndicatorControl[status=disabled]
+*/
 {
 	background : #e6e6e6;
 	

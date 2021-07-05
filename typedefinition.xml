@@ -38,13 +38,17 @@
     <Component type="JavaScript" id="Plugin" classname="nexacro.Plugin"/>
     <Component type="JavaScript" id="Grid" classname="nexacro.Grid"/>
     <Component type="JavaScript" id="ListView" classname="nexacro.ListView"/>
+    <Component type="JavaScript" id="MultiCombo" classname="nexacro.MultiCombo"/>
+    <Component type="JavaScript" id="NxPivot" classname="nexacro.NxPivot"/>
     <Component type="JavaScript" id="BasicChart" classname="nexacro.BasicChart"/>
     <Component type="JavaScript" id="BubbleChart" classname="nexacro.BubbleChart"/>
     <Component type="JavaScript" id="PieChart" classname="nexacro.PieChart"/>
-    <Component type="JavaScript" id="RadarChart" classname="nexacro.RadarChart"/>
     <Component type="JavaScript" id="GaugeChart" classname="nexacro.GaugeChart"/>
-    <Component type="JavaScript" id="MultiCombo" classname="nexacro.MultiCombo"/>
-    <Component type="JavaScript" id="NxPivot" classname="nexacro.NxPivot"/>
+    <Component type="JavaScript" id="RadarChart" classname="nexacro.RadarChart"/>
+    <Component type="JavaScript" id="RoseChart" classname="nexacro.RoseChart"/>
+    <Component type="JavaScript" id="FloatChart" classname="nexacro.FloatChart"/>
+    <Component type="JavaScript" id="Series" classname="nexacro.ChartFloatSeriesControl"/>
+    <Component type="JavaScript" id="PyramidChart" classname="nexacro.PyramidChart"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
@@ -79,7 +83,7 @@
     <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server"/>
     <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
       <Version name="common">
-        <Resource type="Engine" file="nexacrodemo.apk" version="2020.03.13.01" targetpath="./"/>
+        <Resource type="Engine" file="demoNexacroMain.apk" version="2020.11.23" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="1.0.0" targetpath="./" description=""/>
         <Resource type="File" file="Archive00.xzip" version="1.0.12" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="1.0.0" targetpath="./" description=""/>
@@ -87,11 +91,11 @@
     </Os>
     <Os name="iOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
       <Version name="common">
+        <Resource type="Engine" file="https://cacao.tobesoft.co.kr:8443/~nexacro/appbuilder/M2/tops/162/app.plist" version="2020.11.23" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20200316122932" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20201123112148" targetpath="./" description=""/>
         <Resource type="File" file="Archive00.xzip" version="1.0.0" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
-        <Resource type="Engine" file="https://cacao.tobesoft.co.kr/~nexacro/appbuilder/tops//923/app.plist" version="2020.03.13.01" targetpath="./"/>
       </Version>
     </Os>
   </Update>
@@ -100,4 +104,5 @@
     <Os name="Android"/>
     <Os name="iOS"/>
   </Deploy>
+  <DeviceAdaptors/>
 </TypeDefinition>

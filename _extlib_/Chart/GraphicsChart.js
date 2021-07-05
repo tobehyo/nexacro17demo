@@ -2526,17 +2526,13 @@ if (!nexacro._ChartGraphicsRectsManager) {
 
 		for (i = 0; i < size; i++) {
 			r = rects[i];
-			if (r == null) {
-				continue;
-			}
+			if (r == null) continue;
 			cost1 = (overhead + (r.height * lineOverhead) + (r.height * r.width));
 			do {
 				var maxX = r.left + r.width + overhead / r.height;
 				for (j = i + 1; j < size; j++) {
 					cr = rects[j];
-					if ((cr == null) || (cr == r)) {
-						continue;
-					}
+					if ((cr == null) || (cr == r)) continue;
 					if (cr.left >= maxX) {
 						j = size;
 						break;
@@ -2968,8 +2964,7 @@ if (!nexacro._ChartGraphicsObject) {
 			this.y = 0;
 		}
 		this.__readArgs = read;
-		this._childidx_map = {
-		};
+		this._childidx_map = new nexacro.Collection();
 		this.childlength = 0;
 	};
 
@@ -3611,42 +3606,55 @@ if (!nexacro._ChartGraphicsObject) {
 		this._type = null;
 		this.__readArgs = null;
 
+		if (this._childidx_map)
+			this._childidx_map.clear();
 		this._childidx_map = null;
 
 		nexacro.Object.prototype.destroy.call(this);
 		return true;
 	};
 
-	_pGraphicsObject._getItemById = function (val) {
-		var elem;
-		if (this._firstchild) {
-			var idCache = this._idCache;
-			if (!idCache || idCache._childchanged != this._childchanged) {
-				idCache = {
-				};
-				this._idCache = idCache;
-				idCache._childchanged = this._childchanged;
-				elem = this._firstchild;
-				for (; elem; elem = elem._nextsibling) {
-					if (elem._id) {
-						idCache[elem._id] = elem;
-					}
-				}
-			}
-			var res = idCache[val];
-			if (!res) {
-				elem = this._firstchild;
-				for (; elem; elem = elem._nextsibling) {
-					if (elem._firstchild) {
-						res = elem._getItemById(val);
-						if (res) {
-							break;
+	_pGraphicsObject._getItemById = function (val, bOnlyChild) {
+		if (!val) return null;
+		if(bOnlyChild)
+		{
+			if(this._childidx_map[val])
+				return this._childidx_map[val];
+			else
+				return null;		
+		}
+		else
+		{
+			var elem;
+			if (this._firstchild) {
+				var idCache = this._idCache;
+				if (!idCache || idCache._childchanged != this._childchanged) {
+					idCache = {
+					};
+					this._idCache = idCache;
+					idCache._childchanged = this._childchanged;
+					elem = this._firstchild;
+					for (; elem; elem = elem._nextsibling) {
+						if (elem._id) {
+							idCache[elem._id] = elem;
 						}
 					}
 				}
+				var res = idCache[val];
+				if (!res) {
+					elem = this._firstchild;
+					for (; elem; elem = elem._nextsibling) {
+						if (elem._firstchild) {
+							res = elem._getItemById(val);
+							if (res) {
+								break;
+							}
+						}
+					}
+					return res;
+				}
 				return res;
 			}
-			return res;
 		}
 	};
 
@@ -3664,8 +3672,20 @@ if (!nexacro._ChartGraphicsObject) {
 			trace("refChild' parent error");
 			return;
 		}
+		var is_insert = false;
+		var ret = -1;
+		var idx = -1;
+		if (refChild != null)
+		{
+			is_insert = true;
+		}
+		if (is_insert)
+		{
+			idx = this._childidx_map.indexOf(refChild.id);
+		}		
 		if (newChild == refChild) {
 			refChild = refChild.getNextSibling();
+			idx = this._childidx_map.indexOf(refChild.id);
 			this.removeChild(newChild);
 			this.insertChild(newChild, refChild);
 			return newChild;
@@ -3678,8 +3698,13 @@ if (!nexacro._ChartGraphicsObject) {
 
 		newChild.parent = this;
 
-		if (!no_check_id) {
-			this._childidx_map[newChild.id] = true;
+		if (is_insert)
+		{
+			ret = this._childidx_map.insert_item(idx, newChild.id, newChild);
+		}
+		else
+		{
+			ret = this._childidx_map.add_item(newChild.id, newChild);
 		}
 
 		this.childlength++;
@@ -3778,9 +3803,7 @@ if (!nexacro._ChartGraphicsObject) {
 			}
 		}
 
-		if (!no_check_id) {
-			this._childidx_map[oldChild.id] = undefined;
-		}
+		this._childidx_map.delete_item(oldChild.id);
 
 		this.childlength--;
 
@@ -6625,11 +6648,11 @@ if (!nexacro.ChartGraphicsPaths) {
 		return last && last.getLastSegment();
 	};
 
-	_pGraphicsPaths.getObjectByID = function (id) {
+	_pGraphicsPaths.getObjectByID = function (id, bOnlyChild) {
 		if (!id) {
 			return null;
 		}
-		return this._getItemById(id);
+		return this._getItemById(id, bOnlyChild);
 	};
 
 	_pGraphicsPaths.moveTo = function () {
@@ -6803,11 +6826,12 @@ if (!nexacro.ChartGraphicsPaths) {
 			this._firstchild = arr[0];
 			arr[0]._isfirstchild = true;
 
-			this._childidx_map[arr[0].id] = true;
+			this._childidx_map.add_item(arr[0].id, arr[0]);
+
 			for (i = 0; i < len; i++) {
 				arr[i]._nextsibling = arr[i + 1];
 				arr[i + 1]._previoussibling = arr[i];
-				this._childidx_map[arr[i + 1].id] = true;
+				this._childidx_map.add_item(arr[i + 1].id, arr[i + 1]);
 			}
 			arr[0]._previoussibling = arr[arr.length - 1];
 		}
@@ -6816,11 +6840,11 @@ if (!nexacro.ChartGraphicsPaths) {
 			lastChild._nextsibling = arr[0];
 			arr[0]._previoussibling = lastChild;
 
-			this._childidx_map[arr[0].id] = true;
+			this._childidx_map.add_item(arr[0].id, arr[0]);
 			for (i = 0; i < len; i++) {
 				arr[i]._nextsibling = arr[i + 1];
 				arr[i + 1]._previoussibling = arr[i];
-				this._childidx_map[arr[i + 1].id] = true;
+				this._childidx_map.add_item(arr[i + 1].id, arr[i + 1]);
 			}
 			this._firstchild._previoussibling = arr[arr.length - 1];
 		}
@@ -7106,8 +7130,11 @@ if (!nexacro.ChartGraphicsGroup) {
 			delected = true;
 		}
 
-		this._childidx_map = {
-		};
+		if (this._childidx_map)
+		{
+			this._childidx_map.clear();
+		}
+			
 		this.childlength = 0;
 
 		if (delected) {
@@ -7128,11 +7155,11 @@ if (!nexacro.ChartGraphicsGroup) {
 		}
 	};
 
-	_pGraphicsGroup.getObjectByID = function (id) {
+	_pGraphicsGroup.getObjectByID = function (id, bOnlyChild) {
 		if (!id) {
 			return null;
 		}
-		return this._getItemById(id);
+		return this._getItemById(id, bOnlyChild);
 	};
 
 	_pGraphicsGroup.getObjects = function () {
@@ -7179,8 +7206,7 @@ if (!nexacro._ChartGraphicsLayer) {
 		nexacro._ChartGraphicsHashMap.getHashKey("ge", this);
 
 		this._dirtyRectsMgr = new nexacro._ChartGraphicsRectsManager();
-		this._childidx_map = {
-		};
+		this._childidx_map = new nexacro.Collection();
 		this._totalItems = [];
 	};
 
@@ -7197,11 +7223,11 @@ if (!nexacro._ChartGraphicsLayer) {
 	_pGraphicsLayer._level = 0;
 	_pGraphicsLayer._treechange = 0;
 	_pGraphicsLayer._childchanged = 0;
+	
 
-
-	_pGraphicsLayer.getObjectByID = function (id) {
+	_pGraphicsLayer.getObjectByID = function (id, bOnlyChild) {
 		if (id) {
-			return this._getItemById(id);
+			return this._getItemById(id, bOnlyChild);
 		}
 
 		return null;
@@ -7269,8 +7295,10 @@ if (!nexacro._ChartGraphicsLayer) {
 			delected = true;
 		}
 
-		this._childidx_map = {
-		};
+		if (this._childidx_map)
+		{
+			this._childidx_map.clear();
+		}
 		this.childlength = 0;
 
 		if (delected) {
@@ -7307,7 +7335,10 @@ if (!nexacro._ChartGraphicsLayer) {
 		}
 
 		this._dirtyRectsMgr = null;
-		this._childidx_map = null;
+		if (this._childidx_map)
+		{
+			this._childidx_map = null;
+		}
 
 		this._totalItems = null;
 		this._quadtree = null;
@@ -7347,6 +7378,7 @@ if (!nexacro._ChartGraphicsLayer) {
 	};
 
 	_pGraphicsLayer._paint = function () {
+	
 		var totalItems = this.getAllObjects();
 
 		if (this._renderHint == "all") {
@@ -7357,6 +7389,7 @@ if (!nexacro._ChartGraphicsLayer) {
 		}
 
 		this._setQuadTree(totalItems);
+		
 	};
 
 	_pGraphicsLayer._drawAll = function (totalItems) {
@@ -7851,7 +7884,7 @@ if (!nexacro._ChartGraphicsLayer) {
 				item._oldGlobalBounds = null;
 			}
 		}
-
+		// 5.20 데이터가 많은 경우 다시그리는 것이 성능에 유리 mergeRects
 		if (totalItems.length > 0 && !(nexacro._Browser == "IE" && nexacro._BrowserVersion <= 8)) {
 			this._renderHint = "dirty";
 		}
@@ -8071,11 +8104,11 @@ if (!nexacro.ChartGraphicsControl) {
 		return insertchild;
 	};
 
-	_pGraphicsControl.getObjectByID = function (id) {
+	_pGraphicsControl.getObjectByID = function (id, bOnlyChild) {
 		var children;
 		var layer = this._layer;
 		if (layer && id) {
-			children = layer.getObjectByID(id);
+			children = layer.getObjectByID(id, bOnlyChild);
 		}
 
 		return children;

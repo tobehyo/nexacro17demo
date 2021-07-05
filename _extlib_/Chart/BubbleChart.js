@@ -1024,7 +1024,7 @@ if (!nexacro.ChartBubbleSeriesControl) {
 
 		for (var i = 1; i <= this._itemCnt; i++) {
 			itemID = this._configIndex + " SeriesBubble" + "Item_" + (i - 1);
-			item = seriesGroup.getObjectByID(itemID);
+			item = seriesGroup.getObjectByID(itemID, true);
 
 			if (!nexacro._isNull(item)) {
 				var length = this._selectedItem.length;
@@ -1254,7 +1254,7 @@ if (!nexacro.ChartBubbleSeriesControl) {
 			if (seriesGroup) {
 				seriesId = this._configIndex + " SeriesScatterItem_" + index;
 
-				point = seriesGroup.getObjectByID(seriesId);
+				point = seriesGroup.getObjectByID(seriesId, true);
 				if (point) {
 					if (pointshape == "square" || pointshape == "diamond" || pointshape == "triangle" || pointshape == "cross") {
 						radius = radius / 2;
@@ -1363,7 +1363,7 @@ if (!nexacro.ChartBubbleSeriesControl) {
 		}
 		else {
 			seriesId = this._configIndex + " SeriesBubbleItem_" + index;
-			circle = seriesGroup.getObjectByID(seriesId);
+			circle = seriesGroup.getObjectByID(seriesId, true);
 			if (effect && effect.isloadanimation) {
 				radius = this._getanimationdrawvalue(radius);
 			}
