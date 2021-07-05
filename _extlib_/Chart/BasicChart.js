@@ -3077,7 +3077,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 
 				if (barvisible) {
 					itemID = this._configIndex + " SeriesBarItem_" + i;
-					item = seriesGroup.getObjectByID(itemID);
+					item = seriesGroup.getObjectByID(itemID, true);
 					if (item) {
 						re = seriesGroup.removeChild(item);
 						if (item._series) {
@@ -3110,7 +3110,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 
 				if (pointvisible) {
 					itemID = this._configIndex + " SeriesPointItem_" + i;
-					item = seriesGroup.getObjectByID(itemID);
+					item = seriesGroup.getObjectByID(itemID, true);
 					if (item) {
 						re = seriesGroup.removeChild(item);
 						item.destroy();
@@ -3128,7 +3128,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 							itemID = this._configIndex + " SeriesAreaItem_0";
 						}
 
-						item = seriesGroup.getObjectByID(itemID);
+						item = seriesGroup.getObjectByID(itemID, true);
 						if (item) {
 							re = seriesGroup.removeChild(item);
 							item.destroy();
@@ -3143,7 +3143,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 							itemID = this._configIndex + " SeriesLineItem_0";
 						}
 
-						item = seriesGroup.getObjectByID(itemID);
+						item = seriesGroup.getObjectByID(itemID, true);
 						if (item) {
 							re = seriesGroup.removeChild(item);
 							item.destroy();
@@ -3154,7 +3154,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 
 				if (this.itemtextvisible) {
 					itemID = this._configIndex + " SeriesItemText_" + i;
-					item = seriesGroup.getObjectByID(itemID);
+					item = seriesGroup.getObjectByID(itemID, true);
 					if (item) {
 						re = seriesGroup.removeChild(item);
 						item.destroy();
@@ -3264,7 +3264,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 			for (var i = 1; i <= this._itemCnt; i++) {
 				var itemID = this._configIndex + " Series" + type + "Item_" + (i - 1), isselectitem = false;
 
-				item = seriesGroup.getObjectByID(itemID);
+				item = seriesGroup.getObjectByID(itemID, true);
 				if (!nexacro._isNull(item)) {
 					var length = this._selectedItem.length;
 					if (length > 0) {
@@ -3500,10 +3500,11 @@ if (!nexacro.ChartBasicSeriesControl) {
 				else {
 					stackbargrouplist[index] = objPosition;
 				}
-				if (isNaN(this._seriesitems[index].value)) {
+				if (isNaN(this._seriesitems[index].value) || nexacro._isNull(this._seriesitems[index].value)) {
 				}
 				else {
 					stackbargrouplist[index].v = this._seriesitems[index].value.toFixed(2);
+					
 				}
 			}
 			index++;
@@ -4215,7 +4216,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 		else {
 			if (seriesGroup) {
 				seriesId = this._configIndex + " SeriesBarItem_" + index;
-				rect = seriesGroup.getObjectByID(seriesId);
+				rect = seriesGroup.getObjectByID(seriesId, true);
 				if (!rect) {
 					rect = new nexacro.ChartGraphicsRect(left, top, width, height);
 					rect.set_id(seriesId);
@@ -4339,7 +4340,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 		}
 
 		seriesId = stackgroupname + " SeriesStackBarItem_" + index;
-		rect = seriesGroup.getObjectByID(seriesId);
+		rect = seriesGroup.getObjectByID(seriesId, true);
 		if (!rect) {
 			rect = new nexacro.ChartGraphicsRect(left, top, width, height);
 			rect.set_id(seriesId);
@@ -4434,7 +4435,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 		else {
 			if (seriesGroup) {
 				seriesId = this._configIndex + " SeriesPointItem_" + index;
-				point = seriesGroup.getObjectByID(seriesId);
+				point = seriesGroup.getObjectByID(seriesId, true);
 				if (point) {
 					if (pointshape == "square" || pointshape == "diamond" || pointshape == "triangle" || pointshape == "cross") {
 						radius = radius / 2;
@@ -4561,7 +4562,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 			}
 
 			var seriesid = this._configIndex + " SeriesLineItem_0";
-			path = seriesGroup.getObjectByID(seriesid);
+			path = seriesGroup.getObjectByID(seriesid, true);
 			if (!path) {
 				bCreate = true;
 				path = new nexacro.ChartGraphicsPaths();
@@ -4760,7 +4761,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 			points = this._getanimationdrawvalue(points);
 		}
 		var seriesid = this._configIndex + " SeriesAreaItem_0";
-		area = seriesGroup.getObjectByID(seriesid);
+		area = seriesGroup.getObjectByID(seriesid, true);
 		if (!area) {
 			bCreate = true;
 			area = new nexacro.ChartGraphicsPaths();
@@ -5140,7 +5141,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 		}
 		else {
 			var seriesid = this._configIndex + " SeriesCurveLineItem_0";
-			path = seriesGroup.getObjectByID(seriesid);
+			path = seriesGroup.getObjectByID(seriesid, true);
 			if (!path) {
 				bCreate = true;
 				path = new nexacro.ChartGraphicsPaths();
@@ -5205,7 +5206,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 		var pvlength = vpoints.length;
 
 		var seriesid = this._configIndex + " SeriesCurveAreaItem_0";
-		area = seriesGroup.getObjectByID(seriesid);
+		area = seriesGroup.getObjectByID(seriesid, true);
 		if (!area) {
 			bCreate = true;
 			area = new nexacro.ChartGraphicsPaths();
@@ -5337,7 +5338,7 @@ if (!nexacro.ChartBasicSeriesControl) {
 
 			var text = nexacro._getChartDisplayText_text(uservalue2, 0, itemtextmask, chart);
 			var textId = stackgroupname + " StackBarAllTextItem_" + index2;
-			itemText = seriesGroup.getObjectByID(textId);
+			itemText = seriesGroup.getObjectByID(textId, true);
 			if (!itemText) {
 				itemText = new nexacro.ChartGraphicsText(0, 0);
 				itemText.set_id(textId);

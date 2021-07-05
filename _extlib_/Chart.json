@@ -1,50 +1,51 @@
 ﻿{
 	"name": "Chart",
-	"version": "17.0.0.2300",
-	"description": "nexacro chart",
-	"license": "http://www.nexacro.co.kr/legal/nexacrochart-public-license-readme-1.0.html",
+	"moduletype": "component",
+	"version": "2021.03.12.01",
+	"minnexacroversion": "17.0.0.2300",
+	"description": "",
+	"license": "",
 	"objInfo": [	
-    "Chart/metainfo/EnumInfo.info",
-    "Chart/metainfo/BasicChart.info",
-    "Chart/metainfo/BubbleChart.info",
-    "Chart/metainfo/ChartAxisControl.info",
-    "Chart/metainfo/ChartBasicSeriesControl.info",
-    "Chart/metainfo/ChartBoardControl.info",
-    "Chart/metainfo/ChartBubbleSeriesControl.info",
-    "Chart/metainfo/ChartCategoryAxisControl.info",
-    "Chart/metainfo/ChartLegendControl.info",
-    "Chart/metainfo/ChartPieSeriesControl.info",
-    "Chart/metainfo/ChartRangebarControl.info",
-    "Chart/metainfo/ChartTitleControl.info",
-    "Chart/metainfo/ChartTooltipControl.info",
-    "Chart/metainfo/ChartCrosshairControl.info",
-    "Chart/metainfo/ChartSelectionControl.info",
-    "Chart/metainfo/ChartClickEventInfo.info",
-    "Chart/metainfo/ChartDragEventInfo.info",
-    "Chart/metainfo/ChartRangeZoomEventInfo.info",
-    "Chart/metainfo/ChartMouseEventInfo.info",
-    "Chart/metainfo/PieChart.info",
-    "Chart/metainfo/RadarChart.info",
-    "Chart/metainfo/ChartRadarCategoryAxisControl.info",
-    "Chart/metainfo/ChartRadarValueAxisControl.info",
-    "Chart/metainfo/ChartRadarSeriesControl.info",
-    "Chart/metainfo/RoseChart.info",
-    "Chart/metainfo/ChartRoseCategoryAxisControl.info",
-    "Chart/metainfo/ChartRoseValueAxisControl.info",
-    "Chart/metainfo/ChartRoseSeriesControl.info",
-    "Chart/metainfo/GaugeChart.info",
-    "Chart/metainfo/ChartGaugeValueAxisControl.info",
-    "Chart/metainfo/ChartGaugeSeriesControl.info",
-    "Chart/metainfo/ChartGaugeIndicatorControl.info",
-    "Chart/metainfo/FloatChart.info",
-    "Chart/metainfo/ChartFloatSeriesControl.info",
-    "Chart/metainfo/ChartFloatValueAxisControl.info",
-    "Chart/metainfo/ChartFloatCategoryAxisControl.info",
-    "Chart/metainfo/PyramidChart.info",
-    "Chart/metainfo/ChartPyramidSeriesControl.info",
-    "Chart/metainfo/AxisChartBase.info",
-    "Chart/metainfo/ChartBase.info",
-    "Chart/metainfo/SeriesBase.info"
+    "Chart/_metainfo_/ChartBase.info",
+    "Chart/_metainfo_/SeriesBase.info",
+    "Chart/_metainfo_/AxisChartBase.info",
+    "Chart/_metainfo_/ChartBoardControl.info",
+    "Chart/_metainfo_/ChartLegendControl.info",
+    "Chart/_metainfo_/ChartRangebarControl.info",
+    "Chart/_metainfo_/ChartTitleControl.info",
+    "Chart/_metainfo_/ChartTooltipControl.info",
+    "Chart/_metainfo_/ChartCrosshairControl.info",
+    "Chart/_metainfo_/ChartSelectionControl.info",
+    "Chart/_metainfo_/ChartClickEventInfo.info",
+    "Chart/_metainfo_/ChartDragEventInfo.info",
+    "Chart/_metainfo_/ChartRangeZoomEventInfo.info",
+    "Chart/_metainfo_/ChartMouseEventInfo.info",
+    "Chart/_metainfo_/ChartAxisControl.info",
+    "Chart/_metainfo_/ChartCategoryAxisControl.info",
+    "Chart/_metainfo_/BasicChart.info",
+    "Chart/_metainfo_/ChartBasicSeriesControl.info",
+    "Chart/_metainfo_/BubbleChart.info",
+    "Chart/_metainfo_/ChartBubbleSeriesControl.info",
+    "Chart/_metainfo_/PieChart.info",
+    "Chart/_metainfo_/ChartPieSeriesControl.info",
+    "Chart/_metainfo_/GaugeChart.info",
+    "Chart/_metainfo_/ChartGaugeSeriesControl.info",
+    "Chart/_metainfo_/ChartGaugeValueAxisControl.info",
+    "Chart/_metainfo_/ChartGaugeIndicatorControl.info",
+    "Chart/_metainfo_/RadarChart.info",
+    "Chart/_metainfo_/ChartRadarSeriesControl.info",
+    "Chart/_metainfo_/ChartRadarCategoryAxisControl.info",
+    "Chart/_metainfo_/ChartRadarValueAxisControl.info",
+    "Chart/_metainfo_/RoseChart.info",
+    "Chart/_metainfo_/ChartRoseSeriesControl.info",
+    "Chart/_metainfo_/ChartRoseCategoryAxisControl.info",
+    "Chart/_metainfo_/ChartRoseValueAxisControl.info",
+    "Chart/_metainfo_/FloatChart.info",
+    "Chart/_metainfo_/ChartFloatSeriesControl.info",
+    "Chart/_metainfo_/ChartFloatCategoryAxisControl.info",
+    "Chart/_metainfo_/ChartFloatValueAxisControl.info",
+    "Chart/_metainfo_/PyramidChart.info",
+    "Chart/_metainfo_/ChartPyramidSeriesControl.info"
 	],
 	"scripts": [
     "Chart/GraphicsChart.js",
@@ -52,25 +53,64 @@
     "Chart/BasicChart.js",
     "Chart/BubbleChart.js",
     "Chart/PieChart.js",
+    "Chart/GaugeChart.js",
     "Chart/RadarChart.js",
     "Chart/RoseChart.js",
-    "Chart/GaugeChart.js",
     "Chart/FloatChart.js",
     "Chart/PyramidChart.js"
 	],
 	"designscripts": [
-    "Chart/Design/DesignGraphicsChart.js",
-    "Chart/Design/DesignChartBase.js",
-    "Chart/Design/DesignBasicChart.js",
-    "Chart/Design/DesignBubbleChart.js",
-    "Chart/Design/DesignPieChart.js",
-    "Chart/Design/DesignRadarChart.js",
-    "Chart/Design/DesignRoseChart.js",
-    "Chart/Design/DesignGaugeChart.js",
-    "Chart/Design/DesignFloatChart.js",
-    "Chart/Design/DesignPyramidChart.js"
+    "Chart/DesignChartBase.js",
+    "Chart/DesignBasicChart.js",
+    "Chart/DesignBubbleChart.js",
+    "Chart/DesignPieChart.js",
+    "Chart/DesignGaugeChart.js",
+    "Chart/DesignRadarChart.js",
+    "Chart/DesignRoseChart.js",
+    "Chart/DesignFloatChart.js",
+    "Chart/DesignPyramidChart.js"
 	],
-	"help": "Chart/Help/",
-	"resources": ""
+	"help": "Chart/_help_/",	
+	"xcss": "Chart/_xcss_/Chart.xcss",
+	"images": "",	
+	"licensefiles": "Chart/_license_/",
+	"icons": "Chart/_icons_/",
+	"userfolder": [
+
+	],
+	"contentseditor": [
+    {
+    "classname":"nexacro.BasicChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::BasicChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.BubbleChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::BubbleChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.PieChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::PieChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.GaugeChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::GaugeChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.RadarChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::RadarChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.RoseChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::RoseChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.FloatChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::FloatChartContentsEditor.xfdl"
+    },{
+    "classname":"nexacro.PyramidChart",
+    "launch":"Chart/_contentseditor_/ChartCtse/start.json",
+    "contentsform":"ContentsForm::PyramidChartContentsEditor.xfdl"
+    }
+	]
 }
-//# sourceURL=Chart.json

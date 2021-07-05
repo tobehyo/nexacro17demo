@@ -1,4 +1,5 @@
 #nexacro17lib
 nexacro17lib
-_resource_/$temporary$/caddyfile
-$typedefinition.xml$
+$*$
+$Geninfo$.geninfo
+Chart_17.0

@@ -436,7 +436,6 @@ if (!nexacro._ChartBase) {
 		if (width <= 0 || height <= 0) {
 			return;
 		}
-
 		var control_elem = this.getElement();
 		if (control_elem && this._is_created_contents) {
 			if (this._firstredraw) {
@@ -1495,7 +1494,15 @@ if (!nexacro._ChartBase) {
 					refobject.object = targets[i]["_axis"];
 					refobject.eventid = "onaxisclick";
 					if (targets[i]["_axis"]._type == "categoryAxis") {
-						itemindex = 0;
+					    //itemindex = 0;
+						//무조건 첫번째에 break 가 걸리므로......
+						if (targets.length > 1)
+						{   
+						    value = targets[1].text;
+						    itemindex = targets[1]._index;;
+						} else {
+							itemindex = 0;
+						}
 					}
 					else {
 						if (this._type_name == "RadarChart" || this._type_name == "RoseChart") {
@@ -7039,6 +7046,10 @@ if (!nexacro.ChartAxisControl) {
 					++i;
 				} while (v < max && v != prev);
 
+                //tickmax 가 tickinterval의 배수가 아닐 경우 tickmax 값 표기 처리
+				//if (v && max && v > max)
+				//	ticks.push(max);
+
 				return ticks;
 			};
 		}
@@ -7095,6 +7106,9 @@ if (!nexacro.ChartAxisControl) {
 			subtickvaluegap = parseInt((v1 - v0) / subTick);
 		}
 
+		var bLabelCheck = false;
+		var nTickinterval = this._tickinterval;
+		
 		for (var i = 0; i < tickLength; i++) {
 			var label = null;
 			var t = tickGen[i];
@@ -7114,7 +7128,24 @@ if (!nexacro.ChartAxisControl) {
 				date.setTime(label);
 				label = date;
 			}
-			label = nexacro._getChartDisplaytText(i, label, locale, labeltype, labelmask, this.parent, this);
+			bLabelCheck = true;
+			if (this._type == "categoryAxis") {
+				if(this.visible == false) bLabelCheck = false;
+				if(nTickinterval > 1)
+				{
+					if((i%nTickinterval) != 0)
+					{
+						//bLabelCheck = false;  //label이 드문드문 나오는 문제발생
+						bLabelCheck = true;
+					}
+				}
+			}
+			if(bLabelCheck)
+			{
+				label = nexacro._getChartDisplaytText(i, label, locale, labeltype, labelmask, this.parent, this);
+			} else {
+				label = "";
+			}
 
 			if (!isNaN(v)) {
 				this._ticks.push({
@@ -7331,18 +7362,41 @@ if (!nexacro.ChartAxisControl) {
 
 	_pChartAxisControl._setTransformationHelpers = function (width, height) {
 		var s, m, tickmin = this._min, tickmax = this._max;
-
+		var nBasePos = 0;	// 20-05-27
+		var tickabs = Math.abs(tickmax - tickmin);
+		var tickabsmax = Math.abs(tickmax);
+		var tickabsmin = Math.abs(tickmin);
+		var direction = this._direction;
+		var iscategory = (this._type_name == "ChartCategoryAxisControl" && this.parent._type_name == "BasicChart");
 		if (this._direction == "x") {
-			s = this._scale = width / Math.abs(tickmax - tickmin);
+			if(tickabsmax == tickabsmin && iscategory) {	// 20-05-27
+				s = this._scale = width * tickabs;
+				nBasePos = ((width/2) - ((s)/2));
+			} else {
+				s = this._scale = width / tickabs;
+			}
 			m = Math.min(tickmax, tickmin);
 		}
 		else {
-			s = this._scale = height / Math.abs(tickmax - tickmin);
+			if(tickabsmax == tickabsmin && iscategory) {	// 20-05-27
+				s = this._scale = height * tickabs;
+				nBasePos = ((height/2) - ((s)/2));
+			} else {
+				s = this._scale = height / tickabs;
+			}		
 			s = -s;
 			m = Math.max(tickmax, tickmin);
 		}
 
 		this.p2c = function (p) {
+			if(iscategory && nBasePos !== 0) {	// 20-05-27
+				if(direction == "x")
+				{
+					return nBasePos + Math.abs((p - m) * width);
+				} else {
+					return nBasePos + Math.abs((p - m) * height);
+				}
+			}
 			return (p - m) * s;
 		};
 
@@ -16305,7 +16359,7 @@ if (!nexacro.ChartTooltipControl) {
 			posX += shiftXW;
 		}
 		else if (posExtRight > posRight) {
-			shiftXE = posExtRight - posRight;
+			shiftXE = posExtRight - posRight + 2;
 			posX -= shiftXE;
 		}
 
@@ -16730,8 +16784,15 @@ if (!nexacro._getChartDisplaytText) {
 		}
 		else {
 			displaytext = this._getChartAttrValue(text, idx, mask, chart, series);
-			if (targetcontrol && targetcontrol._type_name == "ChartCategoryAxisControl" && chart.categoryaxis && chart.categoryaxis._isTimeAxis == true) {
-				return this._getChartDisplayText_datetime2(displaytext, idx, locale, mask, chart);
+			if (targetcontrol && targetcontrol._type_name == "ChartCategoryAxisControl" && chart.categoryaxis) {
+				if (chart.categoryaxis._isTimeAxis == true) {
+					return this._getChartDisplayText_datetime2(displaytext, idx, locale, mask, chart);
+				}
+				else {
+					if (mask && mask != "" && (mask.indexOf("MM") >= 0 || mask.indexOf("dd") >= 0)) {
+						return this._getChartDisplayText_datetime2(displaytext, idx, locale, mask, chart);
+					}
+				}
 			}
 
 			if (type == "text") {

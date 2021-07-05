@@ -1406,13 +1406,24 @@ if (!nexacro.ChartPieSeriesControl) {
 				isselectitem = false;
 			}
 			valuedata = allitems[i].value;
-			if (valuedata && allitems[i]._isShow) {
-				selectlength = selectedallItem.length;
-				if (selectlength > 0) {
-					selectedItem.push(selectedallItem[i]);
-				}
+			if(this.startangle || this.endangle){
+				if (valuedata != undefined && valuedata != null && allitems[i]._isShow) {
+					selectlength = selectedallItem.length;
+					if (selectlength > 0) {
+						selectedItem.push(selectedallItem[i]);
+					}
 
-				items.push(allitems[i]);
+					items.push(allitems[i]);
+				}
+			}else{
+				if (valuedata && allitems[i]._isShow ) {			
+						selectlength = selectedallItem.length;
+						if (selectlength > 0) {
+							selectedItem.push(selectedallItem[i]);
+						}
+	
+						items.push(allitems[i]);
+				}
 			}
 			this._itemCnt++;
 		}

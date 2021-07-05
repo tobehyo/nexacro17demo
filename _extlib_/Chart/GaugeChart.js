@@ -2377,7 +2377,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 			}
 
 			var valuedata = allitems[i].value;
-			if (valuedata && allitems[i]._isShow) {
+			if (!nexacro._isNull(valuedata) && allitems[i]._isShow) {
 				selectlength = selectedallItem.length;
 				if (selectlength > 0) {
 					selectedItem.push(selectedallItem[i]);
@@ -2431,7 +2431,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 					currentAngle += items[drawitemCnt - 1].angle;
 				}
 
-				if (bEllipse) {
+				if (bEllipse && drawvalue !== 0) {
 					p0 = (Math.sin(rStartAngle) * w + centerX) + " " + (-Math.cos(rStartAngle) * h + centerY);
 					p1 = (Math.sin(rEndAngle) * w + centerX) + " " + (-Math.cos(rEndAngle) * h + centerY);
 					pM0 = (Math.sin(rMiddleAngle) * w + centerX) + " " + (-Math.cos(rMiddleAngle) * h + centerY);
@@ -2936,6 +2936,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 			}
 
 			this._drawBar(0, 0, bottom, barLeft, barRight, this._chart.valueaxes[0], this._chart.valueaxes[0], linestyle, fillstyle, opacity, index);
+			this._drawBarUserRange(this._chart.valueaxes[0]);
 			if (isselectitem) {
 				this._drawBarGauge(0, points[i + 1], gaugebottom, barGaugeLeft, barGaugeRight, this._chart.valueaxes[0], this._chart.valueaxes[0], selectbarlinestyle, selectbarfillstyle, selectbaropacity, index);
 			}
@@ -2950,7 +2951,6 @@ if (!nexacro.ChartGaugeSeriesControl) {
 
 	_pChartGaugeSeriesControl._drawBar = function (x, y, b, barLeft, barRight, axisx, axisy, linestyle, fillstyle, opacity, index, item) {
 		var left, right, bottom, top, rotateaxis = this._chart.gaugetype == "horizontal" ? true : false, tickstartgap;
-
 		if (rotateaxis) {
 			left = y;
 			right = b;
@@ -3074,7 +3074,6 @@ if (!nexacro.ChartGaugeSeriesControl) {
 
 	_pChartGaugeSeriesControl._drawBarGauge = function (x, y, b, barLeft, barRight, axisx, axisy, barlinestyle, barfillstyle, baropacity, index, item) {
 		var left, right, bottom, top, rotateaxis = this._chart.gaugetype == "horizontal" ? true : false, effect = this._chart_aniframe_obj, tickstartgap;
-
 		if (effect && effect.isloadanimation) {
 			y = this._getanimationdrawvalue(y);
 		}
@@ -3194,6 +3193,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 				}
 
 				rect._points = points;
+				
 			}
 		}
 
@@ -3224,6 +3224,119 @@ if (!nexacro.ChartGaugeSeriesControl) {
 			}
 		}
 	};
+	
+	_pChartGaugeSeriesControl._drawBarUserRange = function (axis) {
+		var	seriesGroup = this._chart._seriesGroup;
+	
+		var colorRange = this._userrange;
+		if(!colorRange || colorRange == "" || !seriesGroup) return;
+		
+		var chart = this._chart, width = 0, height = 0;
+		var location = axis._location;
+		var left, right, bottom, top, rotateaxis = this._chart.gaugetype == "horizontal" ? true : false;
+		var tickstartgap = axis ? axis._tickstartgap : 0;
+		var axissize = axis ? axis._axissize : 0;
+		var rotateaxis = this._chart.gaugetype == "horizontal" ? true : false;
+		if (axissize && axis && axis.visible) {
+			axissizewidth = axissize.width;
+			axissizeheight = axissize.height;
+		}
+		var userrangeradius = this.userrangeradius * 0.01;
+		var barLeft, barRight, barWidth, barHeight, axissizewidth, axissizeheight;
+		if (axissize && axis && axis.visible) {
+			axissizewidth = axissize.width;
+			axissizeheight = axissize.height;
+		}
+
+		if (rotateaxis) {
+			if (location == "top") {
+				barWidth = userrangeradius * ((this._chart._boardHeight / 2) - axissizeheight);
+				barLeft = (this._chart._boardHeight / 2) - ((barWidth + axissizeheight) / 2) + axissizeheight;
+				barRight = barLeft + barWidth;
+			} else {
+				barWidth = userrangeradius * ((this._chart._boardHeight / 2) - axissizeheight);
+				barLeft = (this._chart._boardHeight / 2) - ((barWidth + axissizeheight) / 2);
+				barRight = barLeft + barWidth;
+			}
+		} else {
+			if (location == "right") {
+				barWidth = userrangeradius * ((this._chart._boardWidth / 2) - axissizewidth);
+				barLeft = this._chart._centerLeft - ((barWidth + axissizewidth) / 2);
+				barRight = barLeft + barWidth;
+			} else {
+				barWidth = userrangeradius * ((this._chart._boardWidth / 2) - axissizewidth);
+				barLeft = this._chart._centerLeft - ((barWidth + axissizewidth) / 2) + axissizewidth;
+				barRight = barLeft + barWidth;
+			}
+		}		
+		
+		function drawUserColorBand(idx, left, width, top, height, barfillstyle) {
+			var seriesId = this._configIndex + " SeriesUserBarGaugeItem_" + idx;
+			var rect = seriesGroup.getObjectByID(seriesId);
+			if (!rect) {
+				rect = new nexacro.ChartGraphicsRect(left, top, width, height);
+				rect.set_id(seriesId);
+				seriesGroup.addChild(rect);
+			} else {
+				rect.set_x(left);
+				rect.set_width(width);
+				rect.set_y(top);
+				rect.set_height(height);
+			}
+			rect.set_fillstyle(barfillstyle);
+			rect.index = idx;
+		}
+		
+
+		
+		if (colorRange instanceof Array) {
+			var colorRangeLeng = colorRange.length;
+			var colRange;
+			for (i = 0; i < colorRangeLeng; i++) {
+				colRange = colorRange[i];
+				if(colRange.length != 3) continue;
+				if(colRange[0] < axis._tickmin) colRange[0] = axis._tickmin;
+				if(colRange[1] > axis._tickmax) colRange[1] = axis._tickmax;
+				
+				if (rotateaxis) {	// 가로
+					left = this._calcValueposition(colRange[0]);
+					right = this._calcValueposition(colRange[1]);
+					top = barLeft;
+					bottom = barRight;
+				} else {
+					left = barLeft;
+					right = barRight;
+					bottom = this._calcValueposition(colRange[0]);
+					top = this._calcValueposition(colRange[1]);
+				}
+
+				if (!rotateaxis) {
+					if (tickstartgap) {
+						left += tickstartgap;
+						right += tickstartgap;
+					}
+				} else {
+					if (tickstartgap) {
+						bottom += tickstartgap;
+						top += tickstartgap;
+					}
+				}
+				width = right - left;
+				height = bottom - top;
+
+				if (width < 0) {
+					left += width;
+					width = Math.abs(width);
+				}
+				if (height < 0) {
+					top += height;
+					height = Math.abs(height);
+				}			
+			
+				drawUserColorBand(i, left, width, top, height, colRange[2]);
+			}
+		}			
+	};	
 
 	_pChartGaugeSeriesControl._drawBarItemText = function (left, right, bottom, top, width, height, item) {
 		var seriesGroup = this._chart._seriesGroup;
@@ -3454,7 +3567,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 
 		for (var i = 0; i < this._itemCnt; i++) {
 			var valuedata = items[i].value;
-			if (valuedata && items[i]._isShow) {
+			if (!nexacro._isNull(valuedata) && items[i]._isShow) {
 				drawLabel(items[i], startAngle, i, pThis);
 				startAngle += items[i].angle;
 			}
@@ -3603,7 +3716,7 @@ if (!nexacro.ChartGaugeSeriesControl) {
 
 		for (var i = 0; i < items.length; i++) {
 			item = items[i];
-			if (item._isShow && item.value) {
+			if (item._isShow && !nexacro._isNull(item.value)) {
 				var itemColor = colorset[colorcnt];
 				if (itemColor) {
 					colorcnt++;

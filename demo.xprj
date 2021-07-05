@@ -7,4 +7,5 @@
     <AppInfo url="App_Desktop.xadl"/>
     <AppInfo url="App_Phone.xadl"/>
   </AppInfos>
+  <BootstrapCustomize url="bootstrap.xml"/>
 </Project>

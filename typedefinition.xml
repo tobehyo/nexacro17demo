@@ -6,7 +6,7 @@
     <Module url="Grid.json"/>
     <Module url="ListView.json"/>
     <Module url="DeviceAPI.json"/>
-    <Module url="extlib::extlibLoad.json"/>
+    <Module url="extlib::extlibLoad.json"/>    
   </Modules>
   <Components>
     <Component type="JavaScript" id="Static" classname="nexacro.Static"/>
@@ -76,22 +76,42 @@
   </Services>
   <Protocols/>
   <Update>
-    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server"/>
+    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server">
+      <Version name="Windows 10" enginesetupkey="701B46D8-E1C4-4A14-AC06-F537B82A814B">
+        <Resource type="Engine" file="nexacro17_SetupRuntime_x86.exe" version="0" targetpath="./"/>
+      </Version>
+      <Version name="Windows 8 / 8.1, Windows 7, Windows Vista, Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2016" enginesetupkey="701B46D8-E1C4-4A14-AC06-F537B82A814B">
+        <Resource type="Engine" file="nexacro17_SetupRuntime_x86.exe" version="0" targetpath="./"/>
+      </Version>
+      <Version name="Windows 10 64bit" enginesetupkey="DEAD1C30-1F73-4DE5-AA28-36BACD93F4EE">
+        <Resource type="Engine" file="nexacro17_SetupRuntime_x64.exe" version="0" targetpath="./"/>
+      </Version>
+      <Version name="Windows 8 / 8.1 64bit, Windows 7 64bit, Windows Vista 64bit, Windows Server 2003 64bit, Windows Server 2008 64bit, Windows Server 2012 64bit, Windows Server 2016 64bit" enginesetupkey="DEAD1C30-1F73-4DE5-AA28-36BACD93F4EE">
+        <Resource type="Engine" file="nexacro17_SetupRuntime_x64.exe" version="0" targetpath="./"/>
+      </Version>
+    </Os>
     <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
       <Version name="common">
         <Resource type="Engine" file="nexacrodemo.apk" version="2020.03.13.01" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="1.0.0" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="1.0.12" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="1.0.15" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="1.0.0" targetpath="./" description=""/>
       </Version>
     </Os>
     <Os name="iOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
       <Version name="common">
+        <Resource type="Engine" file="https://cacao.tobesoft.co.kr/~nexacro/appbuilder/tops//923/app.plist" version="2020.03.13.01" targetpath="./"/>
         <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20200316122932" targetpath="./" description=""/>
+        <Resource type="Engine" file="Run.zip" version="20200410123329" targetpath="./" description=""/>
         <Resource type="File" file="Archive00.xzip" version="1.0.0" targetpath="./" description=""/>
         <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
-        <Resource type="Engine" file="https://cacao.tobesoft.co.kr/~nexacro/appbuilder/tops//923/app.plist" version="2020.03.13.01" targetpath="./"/>
+      </Version>
+    </Os>
+    <Os name="macOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+      <Version name="common">
+        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
+        <Resource type="File" file="Archive00.xzip" version="0" targetpath="./" description=""/>
+        <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
       </Version>
     </Os>
   </Update>
@@ -99,5 +119,7 @@
     <Os name="Windows"/>
     <Os name="Android"/>
     <Os name="iOS"/>
+    <Os name="macOS"/>
   </Deploy>
+  <DeviceAdaptors/>
 </TypeDefinition>
