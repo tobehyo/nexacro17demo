@@ -6,7 +6,7 @@
         <Div id="divBody" taborder="0" text="Div04" left="0" top="280" height="1600" cssclass="div_WF_mainContent" right="0">
           <Layouts>
             <Layout>
-              <Div id="divMain01" taborder="0" text="Div" left="20" top="22" height="120" background="#ffffff" right="20">
+              <Div id="divMain01" taborder="0" text="Div" left="20" top="22" height="120" background="#ffffff" right="20" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static00" taborder="0" text="Daily" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
@@ -18,7 +18,7 @@
                   <Layout name="Layout1"/>
                 </Layouts>
               </Div>
-              <Div id="divMain02" taborder="1" text="Div" left="20" top="152" height="120" background="#ffffff" right="20">
+              <Div id="divMain02" taborder="1" text="Div" left="20" top="152" height="120" background="#ffffff" right="20" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static00" taborder="0" text="Weekly" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
@@ -30,7 +30,7 @@
                   <Layout name="Layout1"/>
                 </Layouts>
               </Div>
-              <Div id="divMain03" taborder="2" text="Div" left="20" top="282" height="120" background="#ffffff" right="20">
+              <Div id="divMain03" taborder="2" text="Div" left="20" top="282" height="120" background="#ffffff" right="20" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static00" taborder="0" text="Total Views" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
@@ -42,7 +42,7 @@
                   <Layout name="Layout1"/>
                 </Layouts>
               </Div>
-              <Div id="divMain04" taborder="3" left="20" top="412" height="120" background="#ffffff" right="20">
+              <Div id="divMain04" taborder="3" left="20" top="412" height="120" background="#ffffff" right="20" formscrolltype="none">
                 <Layouts>
                   <Layout>
                     <Static id="Static00" taborder="0" text="Average" left="21" top="3" width="172" height="34" cssclass="sta_WF_chartTitle"/>
