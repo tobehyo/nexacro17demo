@@ -26,7 +26,12 @@
     "UbiReport4/ubihtml.js",
     "UbiReport4/ubiexcanvas.js",
     "UbiReport4/ubinonax.js",
-    "UbiReport4/msg.js"
+    "UbiReport4/msg.js",
+		"i18next/i18next.min.js",
+		"../languageFile/ko/ko.js",
+		"../languageFile/en/en.js",
+		"../languageFile/ja/ja.js",
+		"../languageFile/zh/zh-CN.js"
   ],
   "designscripts": [
     "Chart/DesignChartBase.js",

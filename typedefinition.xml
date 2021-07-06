@@ -49,6 +49,7 @@
     <Component type="JavaScript" id="FloatChart" classname="nexacro.FloatChart"/>
     <Component type="JavaScript" id="Series" classname="nexacro.ChartFloatSeriesControl"/>
     <Component type="JavaScript" id="PyramidChart" classname="nexacro.PyramidChart"/>
+    <Component type="JavaScript" id="DataObject" classname="nexacro.DataObject"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
@@ -77,6 +78,7 @@
     <Service prefixid="radarChart" type="form" cachelevel="session" url="./chart/radarChart/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="mainChart" type="form" cachelevel="session" url="./chart/mainChart/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="html" type="file" url="./html/" version="0" cachelevel="dynamic" include_subdir="true" communicationversion="0"/>
+    <Service prefixid="languageFile" type="file" url="./languageFile/" version="0" cachelevel="session" include_subdir="true" communicationversion="0"/>
   </Services>
   <Protocols/>
   <Update>

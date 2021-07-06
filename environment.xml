@@ -9,4 +9,152 @@
     <Cookies/>
     <httpheader/>
   </Environment>
+  <Script type="xscript5.1"><![CDATA[/**
+ * Init i18next
+ */
+i18next.init({
+	lng: "en",
+	//debug: true,
+	//fallbackLng: 'ko',
+	resources: {
+	  en: {
+		translation: nexacro.translation.en
+	  },
+	  ko: {
+		translation: nexacro.translation.ko
+	  },
+	  ja: {
+		translation: nexacro.translation.ja
+	  },
+	  zh_CN: {
+		translation: nexacro.translation.zh_CN
+	  }	
+	}
+  }, function(err, t) {
+	// initialized and ready to go!
+	if (err) return trace('something went wrong loading', err);	  
+  });
+
+/**
+ * 	Multilingual Text
+ * 
+ */
+
+/**
+ * @param {string} stringFuncton 함수 문자열 function.toString()
+ * @returns {object}  {functionParam, functionBody} {함수 인자,  function(){}를 제거한 함수 내용} 
+ */
+function trimFunctionString(stringFuncton) {
+	var functionRegex = /function.*?\{/;
+	var functionParamRegex = /\((.*?)\)/;
+	var lastCurlyBraceRegex = /\}$/;
+	stringFuncton = stringFuncton.replace(/\n\/\*\`\`\*\//,"");
+	var functionText = stringFuncton.match(functionRegex).pop();	
+	var arrayFunctionParameter = functionText.match(functionParamRegex).pop().split(",");	
+	var replaceFunction = stringFuncton.replace(functionRegex, "").replace(lastCurlyBraceRegex, "");
+
+	var trimResult = {functionParam: arrayFunctionParameter, functionBody:replaceFunction};
+	return trimResult;
+}
+
+/**
+ * @param {function} orgFunction 
+ * @param {string} stringHookFunctionBody 
+ * @param {int} indexParameter 
+ * @returns {function} replace function
+ * @description replace $dynamicParameter variable from original function's parameter
+ */
+
+/**
+ * @param {function} orgFunction 변경할 원본 함수
+ * @param {string} stringHookFunctionBody 추가할 함수 body 문자열
+ * @param {int} indexParameter 변경할 함수 인자 순번
+ * @returns {function} 변경한 함수
+ * @description $dynamicParameter 변수를 원본 function의 변수(parameter)로 변경(replace)
+ */
+
+function replaceFunctionParameter(orgFunction, stringHookFunctionBody, indexParameter, stringReplaceParmeter) {				
+	if(typeof orgFunction !== 'function') return;
+	if(indexParameter === undefined) throw Error("set index of function parameter what you like to hook");
+	if(stringReplaceParmeter === undefined) throw Error("set stringReplaceParmeter");
+
+	var strOrgFunction = orgFunction.toString();
+	var functonInfo = trimFunctionString(strOrgFunction);
+	
+	stringReplaceParmeter = stringReplaceParmeter.replace(/\$/g, '\\$');	
+	var reg = new RegExp(stringReplaceParmeter, "g");	
+	var replaceHookFunctionParameter = stringHookFunctionBody.replace(reg, functonInfo.functionParam[indexParameter]);
+	var strNewFunction = replaceHookFunctionParameter + functonInfo.functionBody;	
+	functonInfo.functionParam.push(strNewFunction);	
+	return Function.apply(null, functonInfo.functionParam);	
+}
+
+/**
+ * @param {array} arrayObject 변경할 함수가 있는 nexacro object
+ * @param {array} arrayFunctionName 변경할 함수명 및 [Option] parameter 순번, ex: "functionname=1" 1 는 파라미터 순번, default 0
+ * @param {string} stringHookFunctionBody 추가할 함수 body 문자열
+ * @param {string} stringReplaceParmeter 변경할 함수 parameter 를 replace 하기 위한 사용자가 정의한 변수명 ex: "$dynamicParameter" 
+ */
+function hookFuntionParameter(arrayObject, arrayFunctionName, stringHookFunctionBody, stringReplaceParmeter) {
+	var arrayObjectLength = arrayObject.length;
+	var arrayFunctionNameLenght = arrayFunctionName.length;
+	for(var i=0; i < arrayObjectLength; i++) {
+		var target = arrayObject[i];
+				
+		var targetObject = target.prototype?target.prototype:target;		
+		for(var j=0; j < arrayFunctionNameLenght; j++) {
+			//var functionName = arrayFunctionName[j];
+			var tempArray = arrayFunctionName[j].split("=");			
+			var functionName = tempArray[0];
+			var indexParameter = tempArray.length>1 ? tempArray[1] : 0;			
+			var orgFunction = targetObject[functionName];
+			targetObject[functionName] = replaceFunctionParameter(orgFunction, stringHookFunctionBody, indexParameter, stringReplaceParmeter);
+		}	
+	}
+}
+
+(function runHook() {	
+	
+	var tempHookFn;
+	var stringFunctonForHook;
+	var targetInfo;
+
+	// hook parameter only
+	tempHookFn = function() {
+		var splitChar = ":::";
+		var orgText = $dynamicParameter;
+		if(orgText === undefined) orgText = "";
+		var splitText = orgText.split(splitChar);
+		var i18Key = splitText[0].toLowerCase();
+		var i18Args = splitText.length===1?null:JSON.parse(splitText[1]);
+		var translateText = i18next.t(i18Key, i18Args);		
+		$dynamicParameter = translateText===undefined?orgText:translateText;		
+	}	
+
+	stringFunctonForHook = trimFunctionString(tempHookFn.toString());
+	hookFuntionParameter([nexacro.InputElement], ["setElementDisplayNullText", "setElementDisplayInvalidText"], stringFunctonForHook.functionBody, "$dynamicParameter");
+
+	stringFunctonForHook = trimFunctionString(tempHookFn.toString());
+	hookFuntionParameter([nexacro], ["_getTextSize", "_alert=1", "_confirm=1"], stringFunctonForHook.functionBody, "$dynamicParameter");	
+	
+	// hook parameter with condition
+	tempHookFn = function() {
+		var splitChar = ":::";
+		var orgText = $dynamicParameter;
+		if(orgText === undefined) orgText = "";		
+		var splitText = orgText.split(splitChar);		
+		var i18Key = splitText[0].toLowerCase();
+		var i18Args = splitText.length===1?null:JSON.parse(splitText[1]);
+		var translateText = i18next.t(i18Key, i18Args);		
+		$dynamicParameter = translateText===undefined?orgText:translateText;		
+		var isGridBody = (this.parent.typeselector==="GridCellControl") && (this.name.indexOf("multilingual") === -1) && (this.name.indexOf("body") !== -1);
+		var isCalendar = (this.name.indexOf("datepicker") !== -1);		
+		if(isGridBody || isCalendar) {
+			$dynamicParameter = orgText;
+		}		
+	}	
+	stringFunctonForHook = trimFunctionString(tempHookFn.toString());
+	hookFuntionParameter([nexacro.TextBoxElement, nexacro.IconTextElement], ["setElementText"], stringFunctonForHook.functionBody, "$dynamicParameter");
+}
+)();]]></Script>
 </ENV>
