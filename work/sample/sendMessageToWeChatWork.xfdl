@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="sendMessageToWeChatWork" width="440" height="960" titletext="New Form" onload="sendMessageToWeChatWork_onload">
+    <Layouts>
+      <Layout height="960" width="440">
+        <Static id="Static00" taborder="0" text="To Users" left="20" top="90" width="100" height="40" font="normal 16px &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Helvetica&quot;"/>
+        <Edit id="UsersEdit" taborder="1" left="Static00:30" top="90" width="250" height="40" displaynulltext="kj | zhao"/>
+        <Static id="Static01" taborder="2" text="Content" left="20" top="UsersEdit:20" width="100" height="40" font="normal 16px &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Helvetica&quot;"/>
+        <TextArea id="ContentTextArea" taborder="3" left="Static01:30" top="UsersEdit:20" width="250" height="137"/>
+        <Button id="btnSendMessage" taborder="4" text="Send Message" left="150" top="ContentTextArea:10" width="120" height="40" onclick="btnSendMessage_onclick" font="normal 16px &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Helvetica&quot;"/>
+        <Static id="Static02" taborder="6" text="Log" left="20" top="btnSendMessage:10" width="100" height="40" font="normal 16px &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Helvetica&quot;"/>
+        <TextArea id="LogTextArea" taborder="5" left="Static02:30" top="btnSendMessage:10" width="250" height="143"/>
+        <Static id="Static03" taborder="7" text="Send post data to Server" left="20" top="25" height="40" right="20" cssclass="sta_WF_chartText"/>
+        <Static id="Static04" taborder="8" text="A Dataobject is an object that calls or manages data.&#13;&#10;&#13;&#10;It supports REST API call function and one-way binding with Dataset object.&#13;&#10;&#13;&#10;You can communicate with the server using the dataobject's request method.&#13;&#10;In this case, the XMLHttpRequest object is used internally." left="20" top="545" width="380" height="370" font="normal 16pt/normal &quot;Arial&quot;" wordWrap="english" verticalAlign="top" border="2px dashed #cccccc" padding="10px" visible="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.sendMessageToWeChatWork_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+
+};
+
+this.btnSendMessage_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var usersData = this.UsersEdit.value;
+	var msg = this.ContentTextArea.value;
+	
+	if(usersData === "" || usersData === undefined) {
+		alert("please fill user name in the Users box"); 
+		this.UsersEdit.setFocus();
+		return;
+	}
+	
+	if(msg === "" || msg === undefined) {
+		alert("Please fill message in the Content box");
+		this.ContentTextArea.setFocus();
+		return;
+	}
+
+	var strJsonData = JSON.stringify({
+		users: usersData.replace(/\s/g,""),
+		message: msg
+	});
+
+	// send JSON data to Server
+	var strServiceid = "sendMessageToWeChatWork";
+	var strMethod = "POST";
+	var async = true;
+	var url = "http://os.tobesoft.com:3000/wechat/sendMessage";
+	var header = {"Content-Type" : "application/json;charset=UTF-8"};
+	var objParam = {
+		"httpheader" : header,
+		"postdata" : strJsonData,
+		"async" : async
+	}
+	
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.open(strMethod, url, async);
+// 	xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+// 	xhr.setRequestHeader('Accept', 'application/json');
+// 	
+// 	var pThis = this;
+// 	xhr.onreadystatechange = function() {
+// 		if (this.readyState === 4) {
+// 			pThis.LogTextArea.set_value(xhr.responseText);
+// 		} 
+// 	}
+// 	xhr.send(strJsonData);
+	
+	this.DataObject00.request(strServiceid, strMethod, url, objParam);
+};
+
+this.DataObject00_onerror = function(obj:nexacro.DataObject,e:nexacro.DataObjectErrorEventInfo)
+{
+	trace(e.statuscode, e.errordata, e.errormsg);	
+	this.LogTextArea.set_value("e.statuscode: " + e.statuscode + "\ne.errormsg: "+e.errormsg);	
+};
+
+this.DataObject00_onsuccess = function(obj:nexacro.DataObject,e:nexacro.DataObjectEventInfo)
+{
+	trace(e.serviceid, e.statuscode, e.response);	
+	this.LogTextArea.set_value(e.response);	
+};]]></Script>
+    <Objects>
+      <DataObject id="DataObject00" onload="DataObject00_onload" onerror="DataObject00_onerror" onsuccess="DataObject00_onsuccess"/>
+    </Objects>
+  </Form>
+</FDL>

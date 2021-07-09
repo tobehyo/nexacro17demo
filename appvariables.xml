@@ -268,7 +268,7 @@
           <Col id="MENU_ID">6000</Col>
           <Col id="MENU_NM">Template</Col>
           <Col id="PARENT_MENU_ID">0</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_ID">6001</Col>
@@ -276,7 +276,7 @@
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_NM">CRUD</Col>
           <Col id="MENU_LVL">1</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_LVL">1</Col>
@@ -284,7 +284,7 @@
           <Col id="MENU_NM">Inquiry screen</Col>
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_URL">template::Template01.xfdl</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_LVL">1</Col>
@@ -292,7 +292,7 @@
           <Col id="MENU_NM">Grid + Detail</Col>
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_URL">template::Template02.xfdl</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_LVL">1</Col>
@@ -300,7 +300,7 @@
           <Col id="MENU_NM">Detail + master</Col>
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_URL">template::Template03.xfdl</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_LVL">1</Col>
@@ -308,7 +308,7 @@
           <Col id="MENU_NM">Grid 2+ tab</Col>
           <Col id="PARENT_MENU_ID">6000</Col>
           <Col id="MENU_URL">template::Template04.xfdl</Col>
-          <Col id="MOBILE_YN">P</Col>
+          <Col id="MOBILE_YN">none</Col>
         </Row>
         <Row>
           <Col id="MENU_LVL">0</Col>
@@ -341,6 +341,21 @@
           <Col id="PARENT_MENU_ID">7000</Col>
           <Col id="MENU_URL">guide::Guide03.xfdl</Col>
           <Col id="MOBILE_YN">P</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">0</Col>
+          <Col id="MENU_ID">8000</Col>
+          <Col id="MENU_NM">Sample</Col>
+          <Col id="PARENT_MENU_ID">0</Col>
+          <Col id="MOBILE_YN"> </Col>
+        </Row>
+        <Row>
+          <Col id="MENU_LVL">1</Col>
+          <Col id="MENU_ID">8001</Col>
+          <Col id="MENU_NM">WeChat</Col>
+          <Col id="MENU_URL">sample::sendMessageToWeChatWork.xfdl</Col>
+          <Col id="PARENT_MENU_ID">8000</Col>
+          <Col id="MOBILE_YN"> </Col>
         </Row>
       </Rows>
     </Dataset>
@@ -769,4 +784,5 @@
     </Dataset>
   </Datasets>
   <Variables/>
+  <DataObjects/>
 </AppVariables>
