@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ADL version="2.0">
-  <Application id="App_Desktop" screenid="desktop" onerror="Application_onerror" onload="Application_onload">
+  <Application id="App_Desktop" screenid="desktop" onerror="Application_onerror" onload="Application_onload" licenseurl="../license/nexacro17_client_license.xml">
     <Layout>
       <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="720" titletext="nexacro platform demo" showcascadetitletext="false" layered="true">
         <VFrameSet id="VFrameSet" separatesize="*,0,0" showtitlebar="false">
@@ -43,23 +43,18 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 	var urlPath;
 	
 	var strPrjPath = nexacro.getProjectPath();
-	if(strPrjPath.indexOf("http://localhost:8080/") > -1)
-	{
-		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
-		{
-			urlPath = "http://localhost:8080/";
-		}
-		else 
-		{
-			urlPath = objSvcUrl
-		}
+	if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined) {
+		urlPath = "http://localhost:8080/";
 	}
-	else
-	{
-		urlPath = "http://samples.nexaweb.com:8080/";
+	else {
+		urlPath = objSvcUrl
 	}
- 	objEnv.services["svcurl"].set_url(urlPath+"demo/");
- 	//objEnv.services["xeni"].set_url(urlPath);
+	
+	if(strPrjPath.indexOf("os.tobesoft") !==-1) {
+		urlPath = "http://os.tobesoft.com/"
+	}
+ 	objEnv.services["svcurl"].set_url(urlPath);
+ 	objEnv.services["xeni"].set_url(urlPath + "nexacro-xeni/");
 };
 
 /**

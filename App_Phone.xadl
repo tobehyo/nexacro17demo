@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ADL version="2.0">
-  <Application id="App_Phone" screenid="mobile" onload="Application_onload" onerror="Application_onerror" licenseurl="http://cacao.tobesoft.co.kr/appbuilder/dev/nexacro17_client_license.xml">
+  <Application id="App_Phone" screenid="mobile" onload="Application_onload" onerror="Application_onerror" licenseurl="../license/nexacro17_client_license.xml">
     <Layout>
       <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="480" height="768" showcascadetitletext="false" titletext="nexacro platform demo">
         <ChildFrame id="ChildFrame" formurl="mobile::Mobile_main.xfdl" showtitlebar="false" showtitleicon="false"/>
@@ -20,46 +20,24 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 
 	//접속 환경별 서비스 URL 셋팅
 	// Set "Service URL" each connection environment
+	
 	var objEnv = nexacro.getEnvironment();
-	var objSvcUrl = objEnv.services["svcurl"];
+	var objSvcUrl = objEnv.services["svcurl"].url;
 	var urlPath;
 	
-	if (system.navigatorname == "nexacro")
-	{
-		if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
-		{
-			urlPath = "http://localhost:8080/nexacro-demo/";
-		}
-		else 
-		{
-			urlPath = objSvcUrl;
-		}
+	var strPrjPath = nexacro.getProjectPath();
+	if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined) {
+		urlPath = "http://localhost:8080/";
 	}
-	else
-	{
-		var sXadl = nexacro.getApplication().xadl;
-		if(sXadl.indexOf("http://127.0.0.1/") > -1)
-		{
-			if(objSvcUrl == null || objSvcUrl !='' || objSvcUrl!= undefined)
-			{
-				urlPath = "http://localhost:8080/nexacro-demo/";
-			}
-			else 
-			{
-				urlPath = objSvcUrl;
-			}
-		}
-		else if (system.navigatorname === "nexacro EmbedRuntime")
-		{
-			urlPath = "http://127.0.0.1";
-		}
-		else
-		{
-			urlPath = window.location.protocol + "//" + window.location.host + "/nexacro-demo/";
-		}
+	else {
+		urlPath = objSvcUrl
 	}
 	
-	objEnv.services["svcurl"].set_url(urlPath);
+	if(strPrjPath.indexOf("os.tobesoft") !==-1) {
+		urlPath = "http://os.tobesoft.com/"
+	}
+ 	objEnv.services["svcurl"].set_url(urlPath);
+ 	objEnv.services["xeni"].set_url(urlPath + "nexacro-xeni/");
 };
 
 /**
