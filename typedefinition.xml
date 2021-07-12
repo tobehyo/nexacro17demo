@@ -78,26 +78,19 @@
     <Service prefixid="radarChart" type="form" cachelevel="session" url="./chart/radarChart/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="mainChart" type="form" cachelevel="session" url="./chart/mainChart/" version="0" communicationversion="0" include_subdir="false"/>
     <Service prefixid="html" type="file" url="./html/" version="0" cachelevel="dynamic" include_subdir="true" communicationversion="0"/>
-    <Service prefixid="languageFile" type="file" url="./languageFile/" version="0" cachelevel="session" include_subdir="true" communicationversion="0"/>
+    <Service prefixid="languageFile" type="file" url="./_extlib_/languageFile/" version="0" cachelevel="session" include_subdir="true" communicationversion="0"/>
   </Services>
   <Protocols/>
   <Update>
     <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server"/>
-    <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+    <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server">
       <Version name="common">
-        <Resource type="Engine" file="demoNexacroMain.apk" version="2020.11.23" targetpath="./"/>
-        <Resource type="Module" file="nexacro17lib.zip" version="1.0.0" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="1.0.12" targetpath="./" description=""/>
-        <Resource type="Resource" file="Resource.zip" version="1.0.0" targetpath="./" description=""/>
+        <Resource type="Engine" file="demoNexacroMain.apk" version="1.0.0" targetpath="./"/>
       </Version>
     </Os>
-    <Os name="iOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="update">
+    <Os name="iOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server">
       <Version name="common">
-        <Resource type="Engine" file="https://cacao.tobesoft.co.kr:8443/~nexacro/appbuilder/M2/tops/162/app.plist" version="2020.11.23" targetpath="./"/>
-        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="./" description=""/>
-        <Resource type="Engine" file="Run.zip" version="20201123112148" targetpath="./" description=""/>
-        <Resource type="File" file="Archive00.xzip" version="1.0.0" targetpath="./" description=""/>
-        <Resource type="Resource" file="Resource.zip" version="0" targetpath="./" description=""/>
+        <Resource type="Engine" file="https://cacao.tobesoft.co.kr:8443/~nexacro/appbuilder/M2/tops/162/app.plist" version="1.0.0" targetpath="./"/>
       </Version>
     </Os>
   </Update>
