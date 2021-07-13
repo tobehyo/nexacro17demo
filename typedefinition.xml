@@ -7,6 +7,7 @@
     <Module url="ListView.json"/>
     <Module url="DeviceAPI.json"/>
     <Module url="extlib::extlibLoad.json"/>
+    <Module url="Graphics.json"/>
   </Modules>
   <Components>
     <Component type="JavaScript" id="Static" classname="nexacro.Static"/>
@@ -50,6 +51,7 @@
     <Component type="JavaScript" id="Series" classname="nexacro.ChartFloatSeriesControl"/>
     <Component type="JavaScript" id="PyramidChart" classname="nexacro.PyramidChart"/>
     <Component type="JavaScript" id="DataObject" classname="nexacro.DataObject"/>
+    <Component type="JavaScript" id="Graphics" classname="nexacro.Graphics"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" cachelevel="session" include_subdir="true"/>
