@@ -19,7 +19,7 @@
         <Div id="divFavorite" taborder="3" left="330" top="40" right="-330" bottom="0" formscrollbartype="none none" formscrolltype="none" maxheight="" visible="false" text="" cssclass="div_LF_menuBg">
           <Layouts>
             <Layout>
-              <Grid id="grdFavorite" taborder="0" left="0" top="12" right="0" bottom="210" cssclass="grd_LF_TreeGrd" autofittype="col" scrollbartype="default default" binddataset="gdsFavorite" oncellclick="grdMenuOnclick">
+              <Grid id="grdFavoriteMultilingual" taborder="0" left="0" top="12" right="0" bottom="210" cssclass="grd_LF_TreeGrd" autofittype="col" scrollbartype="default default" binddataset="gdsFavorite" oncellclick="grdMenuOnclick">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -34,7 +34,7 @@
                   </Format>
                 </Formats>
               </Grid>
-              <Grid id="grdRecent" taborder="1" left="0" right="0" cssclass="grd_LF_TreeGrd" autofittype="col" height="161" scrollbartype="none none" scrolltype="none" autosizingtype="none" selectscrollmode="select" tabstop="false" bottom="0" binddataset="gdsRecent" oncellclick="grdMenuOnclick">
+              <Grid id="grdRecentMultilingual" taborder="1" left="0" right="0" cssclass="grd_LF_TreeGrd" autofittype="col" height="161" scrollbartype="none none" scrolltype="none" autosizingtype="none" selectscrollmode="select" tabstop="false" bottom="0" binddataset="gdsRecent" oncellclick="grdMenuOnclick">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -96,7 +96,8 @@ this.Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	
 	var objApp = nexacro.getApplication();
 	var objMenuDs 	= objApp.gdsMenu;
-	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	//objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	objMenuDs.filter("MOBILE_YN!='M' && MOBILE_YN!='none' && MENU_ID!=4070 && MENU_ID!=4080 && MENU_ID!=4090");
 	this.dsMenu.copyData(objMenuDs, true);
 	objMenuDs.filter("");
 	

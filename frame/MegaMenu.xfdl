@@ -21,7 +21,8 @@ this.form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	var objApp = nexacro.getApplication();
 	var objMenuDs 	= objApp.gdsMenu;
-	objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	//objMenuDs.filter("MOBILE_YN!='M'"); // If it is not a mobile screen
+	objMenuDs.filter("MOBILE_YN!='M' && MOBILE_YN!='none' && MENU_ID!=4070 && MENU_ID!=4080 && MENU_ID!=4090");
 	this.dsMenu.copyData(objApp.gdsMenu,true);
 	objMenuDs.filter("");
 	this.fnDrawMenu();
