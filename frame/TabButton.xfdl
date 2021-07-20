@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FDL version="2.0">
+<FDL version="2.1">
   <Form id="TabButton" width="200" height="31" titletext="New Form" onload="form_onload">
     <Layouts>
       <Layout height="31" mobileorientation="landscape" width="200">
@@ -37,7 +37,7 @@ this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
 	
 	if(tabNm.length > 13)
 	{
-		tabNm = tabNm.substr(0,13) + "...";
+		//tabNm = tabNm.substr(0,13) + "...";
 	}
 	
 	this.btnTab.set_text(tabNm);
