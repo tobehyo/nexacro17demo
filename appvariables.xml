@@ -429,14 +429,6 @@
           <Col id="PARENT_MENU_ID">2000</Col>
           <Col id="MOBILE_YN"/>
         </Row>
-        <Row>
-          <Col id="MENU_LVL">1</Col>
-          <Col id="MENU_ID">6011</Col>
-          <Col id="MENU_NM">Detail(1), Grid(1)</Col>
-          <Col id="PARENT_MENU_ID">6000</Col>
-          <Col id="MENU_URL">template::11_Temp.xfdl</Col>
-          <Col id="MOBILE_YN">P</Col>
-        </Row>
       </Rows>
     </Dataset>
     <Dataset id="gdsMenuKo">
