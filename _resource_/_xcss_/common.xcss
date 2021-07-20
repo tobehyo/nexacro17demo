@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Button.btn_language_flag_ko, .Button.btn_language_flag_ko[status=mouseover], .Button.btn_language_flag_ko[userstatus=pushed],
+.Button.btn_language_flag_ko[status=focused], .Button.btn_language_flag_ko[userstatus=selected], .Button.btn_language_flag_ko[status=disabled]
+{
+	background : url('imagerc::img_language_flag_ko_32.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_en, .Button.btn_language_flag_en[status=mouseover], .Button.btn_language_flag_en[userstatus=pushed],
+.Button.btn_language_flag_en[status=focused], .Button.btn_language_flag_en[userstatus=selected], .Button.btn_language_flag_en[status=disabled]
+{
+	background : url('imagerc::img_language_flag_en_32.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_ja, .Button.btn_language_flag_ja[status=mouseover], .Button.btn_language_flag_ja[userstatus=pushed],
+.Button.btn_language_flag_ja[status=focused], .Button.btn_language_flag_ja[userstatus=selected], .Button.btn_language_flag_ja[status=disabled]
+{
+	background : url('imagerc::img_language_flag_ja_32.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_zh_CN, .Button.btn_language_flag_zh_CN[status=mouseover], .Button.btn_language_flag_zh_CN[userstatus=pushed],
+.Button.btn_language_flag_zh_CN[status=focused], .Button.btn_language_flag_zh_CN[userstatus=selected], .Button.btn_language_flag_zh_CN[status=disabled]
+{
+	background : url('imagerc::img_language_flag_zh-CN_32.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_ko_64, .Button.btn_language_flag_ko_64[status=mouseover], .Button.btn_language_flag_ko_64[userstatus=pushed],
+.Button.btn_language_flag_ko_64[status=focused], .Button.btn_language_flag_ko_64[userstatus=selected], .Button.btn_language_flag_ko_64[status=disabled]
+{
+	background : url('imagerc::img_language_flag_ko_64.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_en_64, .Button.btn_language_flag_en_64[status=mouseover], .Button.btn_language_flag_en_64[userstatus=pushed],
+.Button.btn_language_flag_en_64[status=focused], .Button.btn_language_flag_en_64[userstatus=selected], .Button.btn_language_flag_en_64[status=disabled]
+{
+	background : url('imagerc::img_language_flag_en_64.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_ja_64, .Button.btn_language_flag_ja_64[status=mouseover], .Button.btn_language_flag_ja_64[userstatus=pushed],
+.Button.btn_language_flag_ja_64[status=focused], .Button.btn_language_flag_ja_64[userstatus=selected], .Button.btn_language_flag_ja_64[status=disabled]
+{
+	background : url('imagerc::img_language_flag_ja_64.png') no-repeat center center #032c6c;
+}
+
+.Button.btn_language_flag_zh_CN_64, .Button.btn_language_flag_zh_CN_64[status=mouseover], .Button.btn_language_fbtn_language_flag_zh_CN_64lag_zh_CN[userstatus=pushed],
+.Button.btn_language_flag_zh_CN_64[status=focused], .Button.btn_language_flag_zh_CN_64[userstatus=selected], .Button.btn_language_flag_zh_CN_64[status=disabled]
+{
+	background : url('imagerc::img_language_flag_zh-CN_64.png') no-repeat center center #032c6c;
+}
+
+.Button.background_black
+{
+	background : #0f0f0f;
+	font : 16pt/normal "Arial","Microsoft YaHei";
+}
+
+.Button.background_transparent
+{
+	background : transparent;
+	font : 16pt/normal "Arial","Microsoft YaHei";
+}.Static.download_text_white, .Static.download_text_white[status=mouseover]
+{
+	color : #ffffff;
+	font : 16pt "Arial","Microsoft YaHei";
+	cursor : pointer;
+
+}
+.ImageViewer.download_icon_transparent, .ImageViewer.download_icon_transparent[status=focused], .ImageViewer.download_icon_transparent[status=mouseover]
+{
+	background : transparent;
+	-nexa-border : 0px none;
+}
+.Div.div_download_box,
+.Div.div_download_box[status=mouseover],
+.Div.div_download_box[status=focused]
+{
+	border-radius : 10px;
+	-nexa-border : 1px solid #ffffff;
+}
+]]></XCSS>
