@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompressConfigue version="1.0">
+  <IgnoreCompress>
+    <File path=".\_extlib_\i18next\i18next.min.js"/>
+  </IgnoreCompress>
+</CompressConfigue>
