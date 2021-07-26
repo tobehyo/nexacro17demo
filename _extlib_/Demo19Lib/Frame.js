@@ -52,7 +52,7 @@ pForm.gfnOpenMenu = function(sMenuId, args, argsComp)
 
 	if(nRow < 0)
 	{
-		alert("해당 메뉴 ID가 존재하지 않습니다.");
+		alert("warn.menuidnotexist");
 		return false;
 	}
 
@@ -97,7 +97,7 @@ pForm.gfnOpenMenu = function(sMenuId, args, argsComp)
 		//최대 갯수 10개 제한
 		if(gWorkFrameSet.frames.length > 9)
 		{
-			alert("메뉴를 10개이상 오픈할 수 없습니다.");
+			alert("warn.menulimit");
 			return false;
 		}
 		
