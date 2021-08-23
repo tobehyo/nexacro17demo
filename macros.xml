@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NexacroMacros version="1.0">
+  <Macros>
+    <Macro key="%(robocopyDestination)" value="\\172.10.13.52\os.tobesoft.com\demo"/>
+    <Macro key="%(robocopyLog)" value="D:\robocopy.log"/>
+    <Macro key="%(excludeFilesWindows)" value="'%(DeployDir)\_windows_\environment.xml.js' '%(DeployDir)\_windows_\start.json'"/>
+    <Macro key="%(excludeDirWindows)" value="'%(DeployDir)\_windows_\_extlib_' '%(DeployDir)\_windows_\_resource_' '%(DeployDir)\_windows_\nexacro17lib' '%(DeployDir)\_windows_\nexacro17lib.zipnexacro17lib'"/>
+  </Macros>
+</NexacroMacros>
