@@ -84,7 +84,23 @@
   </Services>
   <Protocols/>
   <Update>
-    <Os name="Windows" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server"/>
+    <Os name="Windows" updatetype="server" url="./" timeout="30" retry="3" autoupdate="auto">
+      <Version name="Windows 10" enginesetupkey="701B46D8-E1C4-4A14-AC06-F537B82A814B">
+        <Resource type="Engine" file="Nexacro_Demo_App_Install_x86.exe" version="17.1.3.700" targetpath="./"/>
+      </Version>
+      <Version name="Windows 8 / 8.1, Windows 7, Windows Vista, Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2016" enginesetupkey="701B46D8-E1C4-4A14-AC06-F537B82A814B">
+        <Resource type="Engine" file="Nexacro_Demo_App_Install_x86.exe" version="17.1.3.700" targetpath="./"/>
+      </Version>
+      <Version name="Windows 10 64bit" enginesetupkey="DEAD1C30-1F73-4DE5-AA28-36BACD93F4EE">
+        <Resource type="Engine" file="Nexacro_Demo_App_Install_x64.exe" version="17.1.3.700" targetpath="./"/>
+      </Version>
+      <Version name="Windows 8 / 8.1 64bit, Windows 7 64bit, Windows Vista 64bit, Windows Server 2003 64bit, Windows Server 2008 64bit, Windows Server 2012 64bit, Windows Server 2016 64bit" enginesetupkey="DEAD1C30-1F73-4DE5-AA28-36BACD93F4EE">
+        <Resource type="Engine" file="Nexacro_Demo_App_Install_x64.exe" version="17.1.3.700" targetpath="./"/>
+      </Version>
+      <Version name="common">
+        <Resource type="Module" file="nexacro17lib.zip" version="0" targetpath="" description=""/>
+      </Version>
+    </Os>
     <Os name="Android" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server">
       <Version name="common">
         <Resource type="Engine" file="demoNexacroMain.apk" version="1.0.0" targetpath="./"/>
@@ -95,11 +111,17 @@
         <Resource type="Engine" file="https://cacao.tobesoft.co.kr:8443/~nexacro/appbuilder/M2/tops/162/app.plist" version="1.0.0" targetpath="./"/>
       </Version>
     </Os>
+    <Os name="macOS" url="./" timeout="30" retry="3" autoupdate="auto" updatetype="server">
+      <Version name="common">
+        <Resource type="Engine" file="demoNexacroMain.dmg" version="1.0.0" targetpath="./"/>
+      </Version>
+    </Os>
   </Update>
   <Deploy>
     <Os name="Windows"/>
     <Os name="Android"/>
     <Os name="iOS"/>
+    <Os name="macOS"/>
   </Deploy>
   <DeviceAdaptors/>
 </TypeDefinition>
