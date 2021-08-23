@@ -9,8 +9,9 @@
             <Layout>
               <Static id="Static02" taborder="1" left="0" top="0" height="88" right="0" cssclass="sta_MB_topBg" text=""/>
               <Button id="btnMenu" taborder="0" left="0" top="0" width="85" height="88" onclick="btnMenu_onclick" cssclass="btn_MB_menu"/>
-              <Static id="staLogo" taborder="2" left="106" top="14" height="60" cssclass="sta_MB_titlelogo" text="" onclick="staLogo_onclick" right="105"/>
+              <Static id="staLogo" taborder="2" left="btnMenu:5" top="14" height="60" cssclass="sta_MB_titlelogo" text="" onclick="staLogo_onclick" right="140"/>
               <Button id="btnHome" taborder="3" top="0" height="88" cssclass="btn_MB_home" width="85" right="0" onclick="divTop_btnHome_onclick"/>
+              <Div id="divLanguage" taborder="4" left="staLogo:-16" top="0" formscrolltype="none" url="frame::LanguageButton.xfdl" border="none" minwidth="" minheight="" bottom="0" width="88"/>
             </Layout>
           </Layouts>
         </Div>
@@ -65,9 +66,9 @@ this.Mobile_main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  * MenuList : grid::CellTypes.xfdl,comp::Components.xfdl,comp::nexacroChart.xfdl,comp::ListView.xfdl,ext::GoogleMap.xfdl
 **/
 	var objApp = nexacro.getApplication();
-	var objMenuDs 	= objApp.gdsMenu;
+	var objMenuDs = objApp.gdsMenu;
 	//objMenuDs.filter("MOBILE_YN!='P'"); // P is only for Desktop
-	objMenuDs.filter("MOBILE_YN!='P' && MENU_ID!=4080 && MENU_ID!='1080' && MENU_ID!='2050'");
+	objMenuDs.filter("MOBILE_YN!='P' && MOBILE_YN!='none' && MENU_ID!=4080 && MENU_ID!='1080' && MENU_ID!='2050' && MENU_ID!=4000 && MENU_ID!=4060");
 	this.ds_menu.copyData(objMenuDs, true);
 	// check menu list
 	//trace(this.getColumnDataAll("MENU_URL", "MENU_LVL > 0", this.ds_menu));
@@ -77,7 +78,6 @@ this.Mobile_main_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 	this.divMenu.set_left(0);
 	this.divMenu.set_right(0);
 	this.divMenu.set_height(this.divBody.getOffsetBottom());
-	
 };
 
 /************************************************************************************************
@@ -186,12 +186,13 @@ this.mgfn_openMenu = function(menuId, args)
 	//div_body,divMenu set height
 	this.divBody.set_bottom(0);
 	this.divMenu.set_bottom(0);
-	this.resetScroll();
-	
+	this.resetScroll();	
 	
 	var nRow = this.ds_menu.findRow("MENU_ID", menuId);
 	var formUrl = this.ds_menu.getColumn(nRow, "MENU_URL");
-	
+
+	this.divMenu.set_visible(false);
+
 	this.divBody.set_url(formUrl);
 	
 	// reset scroll hide area
@@ -206,7 +207,7 @@ this.mgfn_openMenu = function(menuId, args)
 		this.divBody.form.resetScroll();
 	}
 	
-	this.divMenu.set_visible(false);
+	
 }
 
 
@@ -224,7 +225,7 @@ this.Mobile_main_ondevicebuttonup = function(obj:nexacro.Form,e:nexacro.DeviceBu
 		else if (this.divBody.form.name === "Mobile_sub")
 		{
 			// press android back key when it's home screen
-			if(this.confirm("Are you sure you want to quit?","FNC")){
+			if(this.confirm("warn.quit","Nexacro")){
 				nexacro.getApplication().exit();
 			}
 		}				

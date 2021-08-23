@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="DownloadScreen" width="1280" height="720" titletext="Download App">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280" screenid="desktop">
+        <Div id="divConainer" taborder="3" text="Div00" left="0" top="0" right="0" bottom="0" cssclass="div_WF_mainImg03">
+          <Layouts>
+            <Layout>
+              <ImageViewer id="imgAlldevice" taborder="0" left="15%" top="30" background="transparent" image="url('imagerc::img_all_device.png')" border="0px none" stretch="fixaspectratio" minwidth="" minheight="" height="360" right="25.00%" maxwidth="720" cursor="auto"/>
+              <ImageViewer id="imgPhone" taborder="1" top="75" height="270" image="url('imagerc::img_demo_phone.png')" background="transparent" border="0px none" stretch="fixaspectratio" text="" visible="true" width="200" cursor="auto" left="imgAlldevice:-90"/>
+              <Div id="divDownloadBox_ios" taborder="2" left="250" top="446" width="300" height="60" formscrolltype="none" onclick="divConainer_divDownloadBox00_onclick">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_text_ios" taborder="1" text="download.ios" left="60" top="2" height="56" cssclass="download_text_white" onclick="download_onclick" right="0"/>
+                    <ImageViewer id="img_icon_ios" taborder="1" left="0" top="0" width="56" height="56" cssclass="download_icon_transparent" image="url('imagerc::icon_apple.png')" stretch="none" onclick="download_onclick" text=""/>
+                  </Layout>
+                  <Layout name="Layout0">
+                    <Static id="stc_text_ios" left="56" top="2" height="56" right="0"/>
+                    <ImageViewer id="img_icon_ios" width="56" left="0" top="0" height="56"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divDownloadBox_android" taborder="3" left="670" top="446" width="300" height="60" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_text_android" taborder="1" text="download.android" left="60" top="2" height="56" cssclass="download_text_white" right="0" onclick="download_onclick"/>
+                    <ImageViewer id="img_icon_android" taborder="1" left="0" top="0" width="56" height="56" cssclass="download_icon_transparent" image="url('imagerc::icon_android.png')" stretch="none" onclick="download_onclick"/>
+                  </Layout>
+                  <Layout name="Layout0">
+                    <Static id="stc_text_android" left="56" top="2" height="56" right="0"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divDownloadBox_macos" taborder="4" left="250" top="556" width="300" height="60" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_text_macos" taborder="1" text="download.macos" left="60" top="2" height="56" cssclass="download_text_white" right="0" onclick="download_onclick"/>
+                    <ImageViewer id="img_icon_macos" taborder="1" left="0" top="0" width="56" height="56" cssclass="download_icon_transparent" image="url('imagerc::icon_apple.png')" onclick="download_onclick"/>
+                  </Layout>
+                  <Layout name="Layout0">
+                    <Static id="stc_text_macos" left="80" top="0" height="80" right="0"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divDownloadBox_windows64" taborder="5" left="670" top="556" width="400" height="60" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_text_windows64" taborder="1" text="download.windows64" left="60" top="2" height="56" cssclass="download_text_white" right="0" onclick="download_onclick"/>
+                    <ImageViewer id="img_icon_windows64" taborder="1" left="0" top="0" width="56" height="56" cssclass="download_icon_transparent" image="url('imagerc::icon_windows.png')" stretch="none" onclick="download_onclick"/>
+                  </Layout>
+                  <Layout name="Layout0">
+                    <Static id="stc_text_windows64" left="80" top="0" height="80" right="0"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <Div id="divDownloadBox_windows32" taborder="6" left="670" top="636" width="400" height="60" formscrolltype="none">
+                <Layouts>
+                  <Layout>
+                    <Static id="stc_text_windows32" taborder="1" text="download.windows32" left="60" top="2" height="56" cssclass="download_text_white" right="0" onclick="download_onclick"/>
+                    <ImageViewer id="img_icon_windows32" taborder="1" left="0" top="0" width="56" height="56" cssclass="download_icon_transparent" image="url('imagerc::icon_windows.png')" stretch="none" onclick="download_onclick"/>
+                  </Layout>
+                  <Layout name="Layout0">
+                    <Static id="stc_text_windows32" left="80" top="0" height="80" right="0"/>
+                  </Layout>
+                </Layouts>
+              </Div>
+              <ImageViewer id="img_qr_ios" taborder="7" left="547" top="434" width="85" height="85" image="url('http://cacao.tobesoft.co.kr/appbuilder/projects/162/ios/qrcode/demoNexacroMain.png')" cursor="auto"/>
+              <ImageViewer id="img_qr_android" taborder="8" left="970" top="434" width="85" height="85" image="url('http://cacao.tobesoft.co.kr/appbuilder/projects/162/ios/qrcode/demoNexacroMain.png')" cursor="auto"/>
+              <Static id="Static00" taborder="9" left="4" top="509" width="176" height="58" cssclass="sta_MB_titlelogo" visible="false"/>
+              <Static id="stcClose" taborder="11" text="X" top="10" height="50" color="#ffffff" font="30pt &quot;Malgun Gothic&quot;,&quot;Arial&quot;,&quot;Microsoft YaHei&quot;" textAlign="right" onclick="divConainer_stcClose_onclick" cursor="pointer" left="20" right="20"/>
+              <Static id="Static01" taborder="10" left="0" top="540" height="5" right="0" border="2px solid #ffffff, 0px none, 0px none"/>
+            </Layout>
+            <Layout name="Layout0">
+              <ImageViewer id="imgAlldevice" top="0" width="450" height="293" left="485" visible="false" taborder="0"/>
+              <ImageViewer id="imgPhone" left="-10" top="150" width="230" visible="true" taborder="1" height="325"/>
+              <Div id="divDownloadBox_ios" left="200" top="130" height="60" right="0"/>
+              <Div id="divDownloadBox_android" left="200" top="320" height="60" right="0"/>
+              <Div id="divDownloadBox_macos" left="90" top="746" width="300" height="60" visible="false"/>
+              <Div id="divDownloadBox_windows64" left="40" top="846" width="400" height="60" visible="false"/>
+              <Div id="divDownloadBox_windows32" left="40" top="956" width="400" height="60" visible="false"/>
+              <ImageViewer id="img_qr_ios" left="290" top="200" height="85" width="85"/>
+              <ImageViewer id="img_qr_android" left="290" top="390" width="85" height="85"/>
+              <Static id="Static00" left="0" top="10" height="60" right="0" visible="true"/>
+              <Static id="Static01" visible="false"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+      <Layout name="Layout0" width="480" height="1000" mobileorientation="portrait" screenid="mobile">
+        <Div id="divConainer" left="0" top="0" right="0" bottom="0" text="Div00"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.download_onclick = function(obj, e:nexacro.ClickEventInfo)
+{
+	var downloadURL;
+	var baseURL = nexacro.getProjectPath();
+	//baseURL = "http://os.tobesoft.com/demo";
+	if(obj.id.indexOf("ios") !== -1) downloadURL = "http://cacao.tobesoft.co.kr:80/appbuilder/file/downloadFile.do?file_idx=22481";
+	if(obj.id.indexOf("macos") !== -1) downloadURL = "http://cacao.tobesoft.co.kr:80/appbuilder/file/downloadFile.do?file_idx=67062";
+	if(obj.id.indexOf("android") !== -1) downloadURL = "http://cacao.tobesoft.co.kr:80/appbuilder/file/downloadFile.do?file_idx=66409";
+	if(obj.id.indexOf("windows64") !== -1) downloadURL = baseURL + "/_windows_/Nexacro_Demo_App_Install_x64.exe";
+	if(obj.id.indexOf("windows32") !== -1) downloadURL = baseURL + "/_windows_/Nexacro_Demo_App_Install_x86.exe";
+	
+	this.FileDownTransfer00.download(downloadURL);
+
+};
+
+this.divConainer_stcClose_onclick = function(obj:nexacro.Static,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+]]></Script>
+    <Objects>
+      <FileDownTransfer id="FileDownTransfer00"/>
+    </Objects>
+  </Form>
+</FDL>

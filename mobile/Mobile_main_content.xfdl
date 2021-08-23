@@ -177,10 +177,10 @@
           </Layouts>
         </Div>
         <Div id="divMainVisual" taborder="2" left="0" top="0" height="280" cssclass="div_WF_mainVisual" right="0" url="mobile::Mobile_main_content_step.xfdl"/>
-        <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" height="90" cssclass="div_WF_mainFooter" right="0">
+        <Div id="Div02" taborder="3" text="Div02" left="0" top="2190" cssclass="div_WF_mainFooter" right="0" height="90">
           <Layouts>
             <Layout>
-              <Static id="Static02" taborder="1" text="60 Mall Road, Suite 310, Burlington MA 01803 | TEL: 781-345-5500&#13;&#10;COPYRIGHT(C) BY 2020 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="0" top="15" height="62" cssclass="sta_WF_footerAddress" right="0"/>
+              <Static id="Static02" taborder="1" left="0" top="15" cssclass="sta_WF_footerAddress" right="0" text="companyContact" height="62"/>
             </Layout>
             <Layout name="Layout0">
               <Static id="Static00" width="18.82%"/>
@@ -194,6 +194,7 @@
             </Layout>
           </Layouts>
         </Div>
+        <Div id="divDownloadScreen" taborder="4" top="150" height="60" url="frame::DownloadButton.xfdl" left="0" right="60"/>
       </Layout>
     </Layouts>
     <Objects/>
@@ -372,6 +373,16 @@ this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 			system.execBrowser("http://tobetong.com/");
 			break;
 	}
-};]]></Script>
+};
+this.divMainVisual_onsetfocus = function(obj:nexacro.Div,e:nexacro.SetFocusEventInfo)
+{
+	this.killTimer(5555);
+};
+
+this.divMainVisual_onkillfocus = function(obj:nexacro.Div,e:nexacro.KillFocusEventInfo)
+{
+	this.setTimer(5555, 3000);
+};
+]]></Script>
   </Form>
 </FDL>

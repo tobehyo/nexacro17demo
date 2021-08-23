@@ -10,6 +10,7 @@
               <Button id="btn_sysConfig" taborder="1" top="17" width="30" height="30" cssclass="btn_TF_setting" right="60" visible="false" text=""/>
               <Button id="btn_sysConfig00" taborder="2" top="17" width="30" height="30" cssclass="btn_TF_userInfo" right="20" visible="false"/>
               <Static id="Static00" taborder="3" left="64" top="7" width="150" height="50" cssclass="sta_TF_logo" onclick="home_onclick" cursor="pointer"/>
+              <Div id="divLanguage" taborder="4" top="0" width="64" formscrolltype="none" borderRadius="40px" url="frame::LanguageButton.xfdl" left="Static00:0" text="" height="64"/>
             </Layout>
           </Layouts>
         </Div>

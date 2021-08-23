@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="LanguageButton" width="80" height="80" titletext="New Form" scrolltype="none">
+    <Layouts>
+      <Layout height="80" width="80">
+        <Button id="btn_lang" taborder="0" left="0" top="0" font="normal 12pt/normal &quot;Arial&quot;" textAlign="center" onclick="btn_lang_onclick" border="none" right="0" bottom="0" text="가A&#13;&#10;あ文"/>
+        <PopupDiv id="popupDivFlag" text="PopupDiv00" visible="false" left="100" top="0" width="160" height="200">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="0" top="0" right="0" bottom="0" binddataset="ds_flag" cssclass="grd_LF_TreeGrd" oncellclick="popupDivFlag_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="50"/>
+                      <Column size="110"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="50"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:url" displaytype="imagecontrol" imagestretch="bind:fit" padding="5px"/>
+                      <Cell col="1" text="bind:title" displaytype="normal" padding="0px 0px 0px 10px"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Button id="btn_lang00" taborder="1" left="290" top="0" height="80" font="normal 12pt/normal &quot;Arial&quot;" textAlign="center" width="80" onclick="btn_lang_onclick" border="none" background="" text="가A&#13;&#10;あ文" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_flag">
+        <ColumnInfo>
+          <Column id="title" type="STRING" size="256"/>
+          <Column id="url" type="STRING" size="256"/>
+          <Column id="langcode" type="STRING" size="256"/>
+          <Column id="fit" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="title">한국어</Col>
+            <Col id="url">imagerc::flag_korea.png</Col>
+            <Col id="fit">fixaspectratio</Col>
+            <Col id="langcode">ko</Col>
+          </Row>
+          <Row>
+            <Col id="title">中文</Col>
+            <Col id="url">imagerc::flag_china.png</Col>
+            <Col id="fit">fixaspectratio</Col>
+            <Col id="langcode">zh-CN</Col>
+          </Row>
+          <Row>
+            <Col id="title">English</Col>
+            <Col id="url">imagerc::flag_usa.png</Col>
+            <Col id="fit">fixaspectratio</Col>
+            <Col id="langcode">en</Col>
+          </Row>
+          <Row>
+            <Col id="title">日语</Col>
+            <Col id="url">imagerc::flag_japan.png</Col>
+            <Col id="fit">fixaspectratio</Col>
+            <Col id="langcode">ja</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_lang_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.popupDivFlag.trackPopupByComponent(obj, 5, 5);
+};
+
+this.popupDivFlag_Grid00_oncellclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var langcode = obj.getBindDataset().getColumn(e.row, "langcode");
+	i18next.changeLanguage(langcode, this.afterChangeLanguage.bind(this));	
+};
+
+this.afterChangeLanguage = function(err) {
+	if (err) return trace("Error", err);	
+	var app = nexacro.getApplication();
+	var screenid = app.screenid;
+	
+	if(this.popupDivFlag.isPopup()) this.popupDivFlag.closePopup();
+	this.setLanguageButtonCss(i18next.language);
+	if(screenid === "mobile") {
+		var divBody = app.mainframe.ChildFrame.form.divBody;
+		var divMenuGrid = app.mainframe.ChildFrame.form.divMenu.form.grdLeftMenu;		
+		divBody.reload();		
+		divMenuGrid.redraw();
+	}
+	
+	if(screenid === "desktop") {
+		var vFrameMain = app.mainframe.VFrameSet;
+		var mainForm = app.mainframe.VFrameSet.Main.form;
+		var topForm = vFrameMain.Top.form;
+		var leftForm = vFrameMain.HFrameSet.Left.form;
+		var divButtonListForm = vFrameMain.HFrameSet.VFrameSet00.Tab.form.divButtonList.form;
+		var workFrameSet = vFrameMain.HFrameSet.VFrameSet00.Work;		
+		var isMain = ("*" === vFrameMain.separatesize.split(",")[0]);
+		
+		
+		//mainForm.reload();			
+		//vFrameMain.Top.form.reload();
+		//vFrameMain.HFrameSet.Left.form.reload();
+		this.resetText(mainForm);
+		this.resetText(topForm);
+		this.resetText(leftForm);
+		this.resetText(divButtonListForm);
+		
+		// work frame reset text
+		var activeFrame = workFrameSet.getActiveFrame();
+		var workFrames = workFrameSet.frames;
+		for(var i=0; i < workFrames.length; i++) {
+			//workFrames[i].form.reload();
+			this.resetText(workFrames[i].form);
+		}
+		//activeFrame && activeFrame.setFocus();
+	}	
+}
+
+this.setLanguageButtonCss = function(lng) {	
+	var langCode = lng?lng:i18next.language;	
+	langCode = langCode === "zh-CN"?"zh_CN":langCode;
+	this.btn_lang.set_text("");	
+	if(this.parent.id === "divLanguageMain") langCode = langCode + "_64";	
+	this.btn_lang.set_cssclass("btn_language_flag_"+ langCode);	
+}
+
+this.resetText = function(objForm) {
+
+    var comps = objForm.components;
+	var compCount = comps.length;
+	
+    for (var i=0; i < compCount; i++) {
+	
+        var comp = comps[i]
+		var txt;		
+		
+		if (comp instanceof nexacro.Button || comp instanceof nexacro.Static) {
+			
+			txt = comp.text;
+			txt && comp.set_text("");
+            txt && comp.set_text(txt);
+			txt = comp.tooltiptext;
+			txt && comp.set_tooltiptext("")
+            txt && comp.set_tooltiptext(txt);
+        }
+		
+		if (comp instanceof nexacro.Combo || 
+			comp instanceof nexacro.Edit || 
+			comp instanceof nexacro.MaskEdit || 
+			comp instanceof nexacro.Spin || 
+			comp instanceof nexacro.TextArea) {
+			
+            txt = comp.displaynulltext;
+			txt && comp.set_displaynulltext("");
+            txt && comp.set_displaynulltext(txt);
+        }
+		
+		if (comp instanceof nexacro.Grid) {
+			comp.redraw();
+        }
+
+        if (comp instanceof nexacro.Div || comp instanceof nexacro.PopupDiv) {
+            this.resetText(comp.form);
+			//comp.form.resetScroll();
+        }
+		
+		if (comp instanceof nexacro.Tab) {
+            var tabpages = comp.tabpages;
+			var nCount = tabpages.length;
+            for (var j = 0; j < nCount; j++) {
+                txt = tabpages[j].text;
+				txt && tabpages[j].set_text("");
+                txt && tabpages[j].set_text(txt);
+				
+                this.resetText(tabpages[j].form);
+                //tabpages[i].form.resetScroll();
+            }
+        }
+		
+    }
+}
+
+]]></Script>
+  </Form>
+</FDL>

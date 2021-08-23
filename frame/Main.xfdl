@@ -3,7 +3,7 @@
   <Form id="Main" width="1280" height="1830" titletext="New Form" onload="Main_onload" onhscroll="Main_onhscroll" onvscroll="Main_onvscroll" ontimer="Main_ontimer">
     <Layouts>
       <Layout height="1830" mobileorientation="landscape" width="1280">
-        <Div id="divMainVisual" taborder="0" left="0" top="0" height="450" right="0" cssclass="div_WF_mainVisual" formscrolltype="none" formscrollbartype="autoindicator none" url="frame::MainStep.xfdl" text=""/>
+        <Div id="divMainVisual" taborder="0" left="0" top="0" height="450" right="0" cssclass="div_WF_mainVisual" formscrolltype="none" formscrollbartype="autoindicator none" url="frame::MainStep.xfdl" text="" onsetfocus="divMainVisual_onsetfocus" onkillfocus="divMainVisual_onkillfocus"/>
         <Div id="Div01" taborder="1" text="Div01" left="0" top="450" width="100.00%" height="120" cssclass="div_WF_mainQuick">
           <Layouts>
             <Layout>
@@ -24,7 +24,7 @@
             <Layout>
               <Static id="Static00" taborder="0" left="40" top="18" width="160" height="43" cssclass="sta_WF_footerLogo01"/>
               <Static id="Static01" taborder="1" top="17" width="160" height="43" right="40" cssclass="sta_WF_footerLogo02"/>
-              <Static id="Static02" taborder="2" text="Intops Building, 617, Bongeunsa-ro, Gangnam-gu, Seoul, Korea | TEL: 02-2140-7700&#13;&#10;COPYRIGHT(C) BY 2018 TOBESOFT.CO.LTD. ALL RIGHTS RESERVED" left="20.23%" top="18" height="43" cssclass="sta_WF_footerAddress" right="20.23%"/>
+              <Static id="Static02" taborder="2" left="20.23%" top="18" height="43" cssclass="sta_WF_footerAddress" right="20.23%" text="companyContact"/>
             </Layout>
             <Layout name="Layout0">
               <Static id="Static00" width="18.82%"/>
@@ -189,6 +189,8 @@
           </Layouts>
         </Div>
         <Button id="btn_menu" taborder="5" left="20" top="20" width="80" height="80" cssclass="btn_WF_mainFloat" onclick="divMainVisual_btn_menu_onclick" text=""/>
+        <Div id="divLanguageMain" taborder="6" top="20" width="80" height="80" formscrolltype="none" right="20" borderRadius="40px" url="frame::LanguageButton.xfdl"/>
+        <Div id="divDownloadScreen" taborder="7" left="25.00%" top="320" width="200" height="60" url="frame::DownloadButton.xfdl"/>
       </Layout>
       <Layout name="Layout0" width="850" height="2430" mobileorientation="portrait">
         <Div id="Div02" left="0" top="2350" width="100.00%" height="80"/>
@@ -407,7 +409,17 @@ this.fnGoSite = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 			system.execBrowser("http://tobetong.com/");
 			break;
 	}
-};]]></Script>
+};
+this.divMainVisual_onsetfocus = function(obj:nexacro.Div,e:nexacro.SetFocusEventInfo)
+{
+	this.killTimer(6666);
+};
+
+this.divMainVisual_onkillfocus = function(obj:nexacro.Div,e:nexacro.KillFocusEventInfo)
+{
+	this.setTimer(6666, 5000);
+};
+]]></Script>
     <Objects/>
   </Form>
 </FDL>

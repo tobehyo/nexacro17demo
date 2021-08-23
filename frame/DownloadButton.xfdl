@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="DownloadButton" width="200" height="60" titletext="New Form">
+    <Layouts>
+      <Layout height="60" width="200">
+        <Button id="btn_download" taborder="0" left="0" top="0" textAlign="center" onclick="btn_lang_onclick" right="0" bottom="0" text="download.download" font="normal 16pt/normal &quot;Arial&quot;, &quot;Microsoft YaHei&quot;" icon="url('imagerc::download_icon.png')" textPadding="0px 0px 0px 10px" background="transparent" borderRadius="10px" border="0px solid #ffffff"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_lang_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var objChildFrame = new ChildFrame();
+	var objParentFrame = this.getOwnerFrame();
+	var nLeft = objParentFrame.getOffsetWidth()/2;	
+	
+	objChildFrame.init("downlaodScreen", null, null, 600, 400);
+	objChildFrame.set_formurl("frame::DownloadScreen.xfdl");
+	objChildFrame.set_openalign("center middle");
+	objChildFrame.set_showtitlebar(false);
+	var vRtn = objChildFrame.showModal("downlaodScreen", objParentFrame, null, this);	
+	
+};]]></Script>
+  </Form>
+</FDL>
