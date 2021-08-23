@@ -3,17 +3,17 @@
   <Form id="MainStep" width="1280" height="450" titletext="New Form">
     <Layouts>
       <Layout height="450" mobileorientation="landscape" width="1280" stepcount="3">
-        <Div id="divMainImg01" taborder="0" left="0" top="0" cssclass="div_WF_mainImg01" bottom="0" right="0">
+        <Div id="divMainImg01" taborder="0" left="0" top="0" bottom="0" right="0" cssclass="div_WF_mainImg01">
           <Layouts>
             <Layout>
               <ImageViewer id="ImageViewer00" taborder="2" top="14.89%" stretch="fixaspectratio" image="url('theme://images/img_WF_mainVisual0001.png')" border="0px none" background="transparent" width="45.16%" bottom="61" right="6.88%"/>
               <Static id="Static01" taborder="1" text="Convenient responsive web development" left="15.47%" top="147" height="60" cssclass="sta_WF_mainTextS" width="552" font="30px &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
-              <Static id="Static00" taborder="0" text="Experience it on mobile!" left="15.47%" top="216" height="80" cssclass="sta_WF_mainTextB" right="37.50%" font="normal 700 40pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
+              <Static id="Static00" taborder="0" text="Experience it on mobile!" left="12.00%" top="216" height="80" cssclass="sta_WF_mainTextB" right="37.50%" font="normal 700 40pt/normal &quot;Malgun Gothic&quot;,&quot;Arial&quot;"/>
               <ImageViewer id="ImageViewer01" taborder="3" top="56" image="url('theme://images/img_WF_mainVisual_QR.png')" stretch="fixaspectratio" background="transparent" right="4.61%" border="0px none" width="11.02%" bottom="250"/>
             </Layout>
             <Layout name="Layout0">
               <ImageViewer id="ImageViewer00" left="63.18%" top="32.67%" width="32.12%" height="58.22%"/>
-              <Static id="Static00" left="15.18%" top="156" width="544" height="12.89%"/>
+              <Static id="Static00" left="15.18%" top="156" height="12.89%" width="544"/>
               <ImageViewer id="ImageViewer01" top="50.89%" width="15.53%" right="Static00:-63.0%" height="31%"/>
               <Static id="Static01" left="15.18%" top="87" width="544" height="60"/>
             </Layout>
