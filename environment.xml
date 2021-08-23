@@ -9,25 +9,36 @@
     <Cookies/>
     <httpheader/>
   </Environment>
-  <Script type="xscript5.1"><![CDATA[/**
+  <Script type="xscript5.1"><![CDATA[this.getLanguageCode = function() {
+	var langcode = system.locale;	
+	if(langcode.indexOf("en") !== -1) return "en";
+	if(langcode.indexOf("ko") !== -1) return "ko";
+	if(langcode.indexOf("ja") !== -1) return "ja";
+	if(langcode.indexOf("zh") !== -1) return "zh-CN";	
+};
+
+/**
  * Init i18next
  */
 i18next.init({
-	lng: "en",
+	lng: this.getLanguageCode(),
 	//debug: true,
-	//fallbackLng: 'ko',
+	//fallbackLng: ['en'],
+	//nsSeparator: false,
+	//keySeparator: false,
+	//fallbackLng: false,
 	resources: {
-	  en: {
-		translation: nexacro.translation.en
+	  'en': {
+		translation: nexacro.translation['en']
 	  },
-	  ko: {
-		translation: nexacro.translation.ko
+	  'ko': {
+		translation: nexacro.translation['ko']
 	  },
-	  ja: {
-		translation: nexacro.translation.ja
+	  'ja': {
+		translation: nexacro.translation['ja']
 	  },
-	  zh_CN: {
-		translation: nexacro.translation.zh_CN
+	  'zh-CN': {
+		translation: nexacro.translation["zh-CN"]
 	  }	
 	}
   }, function(err, t) {
@@ -114,20 +125,27 @@ function hookFuntionParameter(arrayObject, arrayFunctionName, stringHookFunction
 }
 
 (function runHook() {	
+
+	if(!nexacro.allText) {
+		nexacro.allText = [];
+	}
 	
 	var tempHookFn;
 	var stringFunctonForHook;
 	var targetInfo;
 
 	// hook parameter only
+	/**
+	* text 에 ::: 을 구분자로 이용하여 i18next 의 옵션을 이용
+	*/
 	tempHookFn = function() {
 		var splitChar = ":::";
 		var orgText = $dynamicParameter;
 		if(orgText === undefined) orgText = "";
-		var splitText = orgText.split(splitChar);
-		var i18Key = splitText[0].toLowerCase();
+		var splitText = orgText.split(splitChar);		
+		var i18Key = splitText[0];
 		var i18Args = splitText.length===1?null:JSON.parse(splitText[1]);
-		var translateText = i18next.t(i18Key, i18Args);		
+		var translateText = i18next.t(i18Key, i18Args);
 		$dynamicParameter = translateText===undefined?orgText:translateText;		
 	}	
 
@@ -141,13 +159,14 @@ function hookFuntionParameter(arrayObject, arrayFunctionName, stringHookFunction
 	tempHookFn = function() {
 		var splitChar = ":::";
 		var orgText = $dynamicParameter;
+		//if(orgText && orgText.search(/[0-9]/g)===-1) nexacro.allText.push(orgText);
 		if(orgText === undefined) orgText = "";		
-		var splitText = orgText.split(splitChar);		
-		var i18Key = splitText[0].toLowerCase();
+		var splitText = orgText.split(splitChar);
+		var i18Key = splitText[0];		
 		var i18Args = splitText.length===1?null:JSON.parse(splitText[1]);
-		var translateText = i18next.t(i18Key, i18Args);		
+		var translateText = i18next.t(i18Key, i18Args);
 		$dynamicParameter = translateText===undefined?orgText:translateText;		
-		var isGridBody = (this.parent.typeselector==="GridCellControl") && (this.name.indexOf("multilingual") === -1) && (this.name.indexOf("body") !== -1);
+		var isGridBody = (this.parent.typeselector==="GridCellControl") && (this.name.indexOf("Multilingual") === -1) && (this.name.indexOf("body") !== -1);
 		var isCalendar = (this.name.indexOf("datepicker") !== -1);		
 		if(isGridBody || isCalendar) {
 			$dynamicParameter = orgText;
