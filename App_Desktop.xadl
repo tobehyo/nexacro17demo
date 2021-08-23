@@ -2,7 +2,7 @@
 <ADL version="2.0">
   <Application id="App_Desktop" screenid="desktop" onerror="Application_onerror" onload="Application_onload" licenseurl="../license/nexacro17_client_license.xml">
     <Layout>
-      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="720" titletext="nexacro platform demo" showcascadetitletext="false" layered="true">
+      <MainFrame id="mainframe" showtitlebar="true" showstatusbar="false" width="1280" height="720" titletext="nexacro platform demo" showcascadetitletext="false" layered="true" openalign="center middle" openstatus="maximize">
         <VFrameSet id="VFrameSet" separatesize="*,0,0" showtitlebar="false">
           <Frames>
             <ChildFrame id="Main" formurl="frame::Main.xfdl" showtitlebar="false" dragmovetype="none"/>
@@ -27,6 +27,7 @@
     <Style url="xcssrc::NxPivot.xcss"/>
     <Style url="xcssrc::component.xcss"/>
     <Style url="xcssrc::grid.xcss"/>
+    <Style url="xcssrc::common.xcss"/>
   </Application>
   <Script type="xscript5.1"><![CDATA[
 /************************************************************************************************
@@ -51,7 +52,8 @@ this.Application_onload = function(obj:nexacro.Application,e:nexacro.LoadEventIn
 	}
 	
 	if(strPrjPath.indexOf("os.tobesoft") !==-1) {
-		urlPath = "http://os.tobesoft.com/"
+		var parseURL = strPrjPath.split("/");
+		urlPath = parseURL[0] + "//" + parseURL[2] + "/";
 	}
  	objEnv.services["svcurl"].set_url(urlPath);
  	objEnv.services["xeni"].set_url(urlPath + "nexacro-xeni/");
